@@ -8,4 +8,12 @@ class Student < ActiveRecord::Base
   def has_valid_medical_on date
     (self.medical_forms.where 'date > ?', date - 1.year).length > 0
   end
+
+  def passed_safety_test?
+    if Date.today.month < 9
+      (self.safety_tests.where 'date > ?', (Date.new Date.today.year - 1, 9, 1)).length > 0
+    else
+      (self.safety_tests.where 'date > ?', (Date.new Date.today.year, 9, 1)).length > 0
+    end
+  end
 end
