@@ -1,2 +1,50 @@
-<h1>Students#edit</h1>
-<p>Find me in app/views/students/edit.html.erb</p>
+<div class="row-fluid">
+  <div class="span12">
+    <h1>Editing Student</h1>
+  </div>
+</div>
+<%= form_for @student do |f| %>
+<div class="row-fluid">
+    <div class="span6">
+      <h2>Student</h2>
+      <div class="control-group">
+        <%= f.label :first_name, 'First Name', class: 'control-label' %>
+        <%= f.text_field :first_name %>
+        <%= f.label :last_name, 'Last Name', class: 'control-label' %>
+        <%= f.text_field :last_name %>
+        <%= f.label :year, class: 'control-label' %>
+        <%= f.text_field :year %>
+        <%= f.label :student_id, 'ID', class: 'control-label' %>
+        <%= f.text_field :student_id %>
+        <%= f.label :student_email, 'Email', class: 'control-label' %>
+        <%= f.text_field :student_email %>
+        <%= f.label :student_cell_phone, 'Cell Phone', class: 'control-label' %>
+        <%= f.text_field :student_cell_phone %>
+      </div>
+    </div>
+    <div class="span6">
+      <h2>Parents</h2>
+      <div class="control-group">
+        <%= f.label :mother_name, 'Mother', class: 'control-label' %>
+        <%= f.text_field :mother_name %>
+        <%= f.label :father_name, 'Father', class: 'control-label' %>
+        <%= f.text_field :father_name %>
+        <%= f.label :parent_email, 'Email', class: 'control-label' %>
+        <%= f.text_field :parent_email %>
+        <%= f.label :parent_home_phone, 'Home Phone', class: 'control-label' %>
+        <%= f.text_field :parent_home_phone %>
+        <%= f.label :parent_cell_phone, 'Cell Phone', class: 'control-label' %>
+        <%= f.text_field :parent_cell_phone %>
+        <%= f.label :preferred_language, 'Preferred Language', class: 'control-label' %>
+        <%= f.text_field :preferred_language %>
+      </div>
+    </div>
+  </div>
+<div class="row-fluid">
+  <div class="span12">
+    <div class="form-actions">
+      <%= f.submit 'Save', class: 'btn' %>
+    </div>
+  </div>
+</div>
+<% end %>

@@ -1,15 +1,30 @@
-<h1><%= @student.full_name %></h1>
-
-<h2>Student</h2>
-<p><strong>Year:</strong> <%= @student.year %></p>
-<p><strong>ID:</strong> <%= @student.student_id %></p>
-<p><strong>Email:</strong> <%= @student.student_email %></p>
-<p><strong>Cell Phone:</strong> <%= number_to_phone @student.student_cell_phone, area_code: true %></p>
-
-<h2>Parents</h2>
-<p><strong>Mother:</strong> <%= @student.mother_name %></p>
-<p><strong>Father:</strong> <%= @student.father_name %></p>
-<p><strong>Email:</strong> <%= @student.parent_email %></p>
-<p><strong>Home Phone:</strong> <%= number_to_phone @student.parent_home_phone, area_code: true %></p>
-<p><strong>Cell Phone:</strong> <%= number_to_phone @student.parent_cell_phone, area_code: true %></p>
-<p><strong>Preferred Language:</strong> <%= @student.preferred_language %></p>
+<div class="row-fluid">
+  <div class="span12">
+    <h1><%= @student.full_name %></h1>
+  </div>
+</div>
+<div class="row-fluid">
+  <div class="span6">
+    <h2>Student</h2>
+    <p><strong>Year:</strong> <%= @student.year %></p>
+    <p><strong>ID:</strong> <%= @student.student_id %></p>
+    <p><strong>Email:</strong> <%= @student.student_email %></p>
+    <p><strong>Cell Phone:</strong> <%= number_to_phone @student.student_cell_phone, area_code: true %></p>
+  </div>
+  <div class="span6">
+    <h2>Parents</h2>
+    <p><strong>Mother:</strong> <%= @student.mother_name %></p>
+    <p><strong>Father:</strong> <%= @student.father_name %></p>
+    <p><strong>Email:</strong> <%= @student.parent_email %></p>
+    <p><strong>Home Phone:</strong> <%= number_to_phone @student.parent_home_phone, area_code: true %></p>
+    <p><strong>Cell Phone:</strong> <%= number_to_phone @student.parent_cell_phone, area_code: true %></p>
+    <p><strong>Preferred Language:</strong> <%= @student.preferred_language %></p>
+  </div>
+</div>
+<div class="row-fluid">
+  <div class="span12">
+    <%= link_to 'Back', students_path, class: 'btn' %>
+    <%= link_to 'Edit', {action: 'edit'}, class: 'btn' %>
+    <%= link_to 'Delete', {action: 'destroy'}, class: 'btn btn-danger' %>
+  </div>
+</div>
