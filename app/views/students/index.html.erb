@@ -1,5 +1,5 @@
 <h1>Students</h1>
-<table>
+<table class="table">
     <tr>
         <th>Last Name</th>
         <th>First Name</th>
@@ -11,7 +11,7 @@
         <td><%= student.last_name %></td>
         <td><%= student.first_name %></td>
         <td><%= student.year %></td>
-        <td><%= student.student_cell_phone %></td>
+        <td><%= number_to_phone student.student_cell_phone, area_code: true %></td>
     </tr>
 <% end %>
 </table>
