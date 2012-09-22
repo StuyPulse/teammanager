@@ -5,6 +5,10 @@ class Student < ActiveRecord::Base
   has_many :parent_permission_forms
   has_many :teacher_permission_forms
 
+  def full_name
+    "#{self.first_name} #{self.last_name}"
+  end
+
   def has_valid_medical_on date
     (self.medical_forms.where 'date > ?', date - 1.year).length > 0
   end
