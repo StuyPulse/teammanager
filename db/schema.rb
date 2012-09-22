@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120922054202) do
+ActiveRecord::Schema.define(:version => 20120922173852) do
 
   create_table "medical_forms", :force => true do |t|
     t.date     "date"
@@ -39,13 +39,13 @@ ActiveRecord::Schema.define(:version => 20120922054202) do
     t.string   "last_name"
     t.integer  "year"
     t.string   "student_email"
-    t.integer  "student_cell_phone"
+    t.string   "student_cell_phone"
     t.string   "mother_name"
     t.string   "father_name"
     t.string   "preferred_language"
     t.string   "parent_email"
-    t.integer  "parent_home_phone"
-    t.integer  "parent_cell_phone"
+    t.string   "parent_home_phone"
+    t.string   "parent_cell_phone"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
   end
