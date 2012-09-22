@@ -3,4 +3,8 @@ class Student < ActiveRecord::Base
   has_many :medical_forms
   has_many :parent_permission_forms
   has_many :teacher_permission_forms
+
+  def has_valid_medical_on date
+    (self.medical_forms.where 'date > ?', date - 1.year).length > 0
+  end
 end
