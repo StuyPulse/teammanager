@@ -1,4 +1,6 @@
 Teammanager::Application.routes.draw do
+  root to: 'dashboard#home'
+
   resources :students
 
   # The priority is based upon order of creation:
