@@ -27,7 +27,7 @@ class StudentsController < ApplicationController
   def update
     @student = Student.find params[:id]
     if @student.update_attributes params[:student]
-      redirect_to @student
+      redirect_to action: 'show', message: 'Student updated successfully.'
     else
       render action: 'edit'
     end

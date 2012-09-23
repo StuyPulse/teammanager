@@ -27,7 +27,7 @@ class TripsController < ApplicationController
   def update
     @trip = Trip.find params[:id]
     if @trip.update_attributes params[:trip]
-      redirect_to @trip
+      redirect_to action: 'show', message: 'Trip updated successfully.'
     else
       render action: 'edit'
     end
