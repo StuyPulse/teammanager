@@ -4,6 +4,8 @@ class Student < ActiveRecord::Base
   has_many :safety_tests
   has_many :parent_permission_forms
   has_many :teacher_permission_forms
+  has_many :p_trips, through: :parent_permission_forms, source: :trip
+  has_many :t_trips, through: :teacher_permission_forms, source: :trip
 
   before_save :remove_non_digits_from_phone_number
 
@@ -27,5 +29,9 @@ class Student < ActiveRecord::Base
     student_cell_phone.gsub! /\D/, ''
     parent_home_phone.gsub! /\D/, ''
     parent_cell_phone.gsub! /\D/, ''
+  end
+
+  def all_trips
+    (self.p_trips + self.t_trips).sort { |a, b| b.date <=> a.date } # Sort by date descending
   end
 end
