@@ -4,6 +4,9 @@ class Trip < ActiveRecord::Base
   has_many :teacher_permission_forms
   has_many :p_students, through: :parent_permission_forms, source: :student
   has_many :t_students, through: :teacher_permission_forms, source: :student
+  validates :name, presence: true
+  validates :start_date, presence: true
+  validates :end_date, presence: true
 
   def all_students
     (self.p_students + self.t_students).sort do |a, b|

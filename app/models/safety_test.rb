@@ -1,6 +1,7 @@
 class SafetyTest < ActiveRecord::Base
   attr_accessible :date
   belongs_to :student
+  validates :date, presence: true
 
   def is_valid?
     if Date.today.month < 9

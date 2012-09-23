@@ -6,6 +6,8 @@ class Student < ActiveRecord::Base
   has_many :teacher_permission_forms
   has_many :p_trips, through: :parent_permission_forms, source: :trip
   has_many :t_trips, through: :teacher_permission_forms, source: :trip
+  validates :first_name, presence: true
+  validates :last_name, presence: true
 
   before_save :remove_non_digits_from_phone_number
 
