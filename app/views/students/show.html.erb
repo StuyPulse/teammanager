@@ -38,7 +38,7 @@
   <div class="span6">
     <h3>Safety Tests</h3>
     <div style="text-align:right">
-      <%= link_to 'Add Safety Test', {action: 'new'}, class: 'btn', style: 'margin-top:-88px' %>
+      <%= link_to 'Add Safety Test', {controller: 'safety_tests', action: 'new', student_id: @student.id}, class: 'btn', style: 'margin-top:-88px' %>
     </div>
     <table class="table" style="margin-top:-20px">
       <tr>
