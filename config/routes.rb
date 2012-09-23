@@ -3,6 +3,7 @@ Teammanager::Application.routes.draw do
 
   resources :students
   resources :trips
+  resources :safety_tests
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
