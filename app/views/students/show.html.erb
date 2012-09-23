@@ -34,3 +34,41 @@
     <%= button_to 'Delete', {action: 'destroy', id: @student.id}, method: :delete, class: 'btn btn-danger', confirm: 'Are you sure?', style: 'margin-top:10px' %>
   </div>
 </div>
+<div class="row-fluid">
+  <div class="span6">
+    <h3>Safety Tests</h3>
+    <div style="text-align:right">
+      <%= link_to 'Add Safety Test', {action: 'new'}, class: 'btn', style: 'margin-top:-88px' %>
+    </div>
+    <table class="table" style="margin-top:-20px">
+      <tr>
+        <th>Date</th>
+        <th>Valid?</th>
+      </tr>
+      <% @student.safety_tests.order('date DESC').each do |safety_test| %>
+        <tr class="<%= safety_test.is_valid? ? 'success' : 'error' %>">
+          <td><%= safety_test.date %></td>
+          <td><%= safety_test.is_valid? ? 'Yes' : 'No' %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+  <div class="span6">
+    <h3>Medical Forms</h3>
+    <div style="text-align:right">
+      <%= link_to 'Add Medical Form', {action: 'new'}, class: 'btn', style: 'margin-top:-88px' %>
+    </div>
+    <table class="table" style="margin-top:-20px">
+      <tr>
+        <th>Date</th>
+        <th>Valid?</th>
+      </tr>
+      <% @student.medical_forms.order('date DESC').each do |medical_form| %>
+        <tr class="<%= medical_form.is_valid? ? 'success' : 'error' %>">
+          <td><%= medical_form.date %></td>
+          <td><%= medical_form.is_valid? ? 'Yes' : 'No' %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
