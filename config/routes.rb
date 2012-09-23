@@ -1,21 +1,8 @@
 Teammanager::Application.routes.draw do
-  get "trips/index"
-
-  get "trips/show"
-
-  get "trips/new"
-
-  get "trips/create"
-
-  get "trips/edit"
-
-  get "trips/update"
-
-  get "trips/destroy"
-
   root to: 'dashboard#home'
 
   resources :students
+  resources :trips
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
