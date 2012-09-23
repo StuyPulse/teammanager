@@ -81,3 +81,36 @@
     </table>
   </div>
 </div>
+<div class="row-fluid">
+  <div class="span6">
+    <h3>Parent Permission Forms</h3>
+    <div style="text-align:right">
+      <%= link_to 'Add Form', {controller: 'medical_forms', action: 'new', student_id: @student.id}, class: 'btn', style: 'margin-top:-88px' %>
+    </div>
+    <table class="table" style="margin-top:-20px">
+      <tr>
+        <th>Trip</th>
+        <th></th>
+      </tr>
+      <% @student.p_trips.order('start_date DESC').each do |trip| %>
+        <td><%= link_to "#{trip.name} (#{trip.start_date.year})", trip %></td>
+        <td><a href="#">Delete</a></td>
+      <% end %>
+    </table>
+  </div>
+  <div class="span6">
+    <h3>Teacher Permission Forms</h3>
+    <div style="text-align:right">
+      <%= link_to 'Add Form', {controller: 'medical_forms', action: 'new', student_id: @student.id}, class: 'btn', style: 'margin-top:-88px' %>
+    </div>
+    <table class="table" style="margin-top:-20px">
+      <tr>
+        <th>Trip</th>
+      </tr>
+      <% @student.t_trips.order('start_date DESC').each do |trip| %>
+        <td><%= link_to "#{trip.name} (#{trip.start_date.year})", trip %></td>
+        <td><a href="#">Delete</a></td>
+      <% end %>
+    </table>
+  </div>
+</div>
