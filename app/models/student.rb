@@ -48,6 +48,6 @@ class Student < ActiveRecord::Base
   def can_attend_trip trip
     self.has_parent_permission_form_for trip \
     and (!trip.requires_teacher_permission_form or self.has_teacher_permission_form_for trip) \
-    and self.has_valid_medical_on trip.end_date
+    and (!trip.requires_medical_form or self.has_valid_medical_on trip.end_date)
   end
 end
