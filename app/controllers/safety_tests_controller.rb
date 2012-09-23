@@ -13,5 +13,9 @@ class SafetyTestsController < ApplicationController
   end
 
   def destroy
+    test = SafetyTest.find(params[:id])
+    student_id = test.student_id
+    test.destroy
+    redirect_to controller: 'students', action: 'show', id: student_id, message: 'Safety test deleted succesfully.'
   end
 end

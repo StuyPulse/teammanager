@@ -13,5 +13,9 @@ class MedicalFormsController < ApplicationController
   end
 
   def destroy
+    form = MedicalForm.find(params[:id])
+    student_id = form.student_id
+    form.destroy
+    redirect_to controller: 'students', action: 'show', id: student_id, message: 'Medical form deleted succesfully.'
   end
 end

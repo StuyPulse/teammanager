@@ -1,3 +1,8 @@
+<script>
+  $(document).ready(function() {
+    $('form.tr-form').css('margin', 0);
+  });
+</script>
 <div class="row-fluid">
   <div class="span12">
     <% if params[:message] %>
@@ -44,11 +49,13 @@
       <tr>
         <th>Date</th>
         <th>Valid?</th>
+        <th></th>
       </tr>
       <% @student.safety_tests.order('date DESC').each do |safety_test| %>
         <tr class="<%= safety_test.is_valid? ? 'success' : 'error' %>">
           <td><%= safety_test.date %></td>
           <td><%= safety_test.is_valid? ? 'Yes' : 'No' %></td>
+          <td><%= button_to 'Delete', {controller: 'safety_tests', action: 'destroy', id: safety_test.id}, method: :delete, class: 'btn btn-link', confirm: 'Are you sure?', style: 'margin:0px; padding:0px; border:0px', form_class: 'tr-form' %></td>
         </tr>
       <% end %>
     </table>
@@ -62,11 +69,13 @@
       <tr>
         <th>Date</th>
         <th>Valid?</th>
+        <th></th>
       </tr>
       <% @student.medical_forms.order('date DESC').each do |medical_form| %>
         <tr class="<%= medical_form.is_valid? ? 'success' : 'error' %>">
           <td><%= medical_form.date %></td>
           <td><%= medical_form.is_valid? ? 'Yes' : 'No' %></td>
+          <td><%= button_to 'Delete', {controller: 'medical_forms', action: 'destroy', id: medical_form.id}, method: :delete, class: 'btn btn-link', confirm: 'Are you sure?', style: 'margin:0px; padding:0px; border:0px', form_class: 'tr-form' %></td>
         </tr>
       <% end %>
     </table>
