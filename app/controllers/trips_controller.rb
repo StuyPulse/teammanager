@@ -21,9 +21,16 @@ class TripsController < ApplicationController
   end
 
   def edit
+    @trip = Trip.find params[:id]
   end
 
   def update
+    @trip = Trip.find params[:id]
+    if @trip.update_attributes params[:trip]
+      redirect_to @trip
+    else
+      render action: 'edit'
+    end
   end
 
   def destroy

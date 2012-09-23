@@ -1,2 +1,17 @@
-<h1>Trips#edit</h1>
-<p>Find me in app/views/trips/edit.html.erb</p>
+<h1>Editing Trip</h1>
+<%= form_for @trip do |f| %>
+  <div class="control-group">
+    <%= f.label :name, class: 'control-label' %>
+    <%= f.text_field :name %>
+    <%= f.label :start_date, 'Start Date', class: 'control-label' %>
+    <%= f.text_field :start_date %>
+    <%= f.label :end_date, 'End Date', class: 'control-label' %>
+    <%= f.text_field :end_date %>
+    <label class="checkbox">
+      <%= f.check_box :requires_teacher_permission_form %> Requires teacher permission form
+    </label>
+  </div>
+  <div class="form-actions">
+    <%= f.submit 'Save', class: 'btn' %>
+  </div>
+<% end %>
