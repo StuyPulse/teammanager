@@ -1,2 +1,16 @@
-<h1>Trips#show</h1>
-<p>Find me in app/views/trips/show.html.erb</p>
+<% if params[:message] %>
+  <div class="alert alert-success">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    <%= params[:message] %>
+  </div>
+<% end %>
+<h1><%= @trip.name %></h1>
+<h4>From <%= @trip.start_date %> to <%= @trip.end_date %></h4>
+<% if @trip.requires_teacher_permission_form %>
+  <p>Requires teacher permission form.</p>
+<% else %>
+  <p>Does not require teacher permission form.</p>
+<% end %>
+<%= link_to 'Back', students_path, class: 'btn' %>
+<%= link_to 'Edit', {action: 'edit'}, class: 'btn' %>
+<%= button_to 'Delete', {action: 'destroy', id: @trip.id}, method: :delete, class: 'btn btn-danger', confirm: 'Are you sure?', style: 'margin-top:10px' %>
