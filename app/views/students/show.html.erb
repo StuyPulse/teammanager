@@ -56,7 +56,7 @@
   <div class="span6">
     <h3>Medical Forms</h3>
     <div style="text-align:right">
-      <%= link_to 'Add Medical Form', {action: 'new'}, class: 'btn', style: 'margin-top:-88px' %>
+      <%= link_to 'Add Medical Form', {controller: 'medical_forms', action: 'new', student_id: @student.id}, class: 'btn', style: 'margin-top:-88px' %>
     </div>
     <table class="table" style="margin-top:-20px">
       <tr>
