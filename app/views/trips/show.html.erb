@@ -14,3 +14,22 @@
 <%= link_to 'Back', trips_path, class: 'btn' %>
 <%= link_to 'Edit', {action: 'edit'}, class: 'btn' %>
 <%= button_to 'Delete', {action: 'destroy', id: @trip.id}, method: :delete, class: 'btn btn-danger', confirm: 'Are you sure?', style: 'margin-top:10px' %>
+<h2>Students</h2>
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th>Parent Permission Form</th>
+    <% if @trip.requires_teacher_permission_form %><th>Teacher Permission Form</th><% end %>
+    <th>Valid Medical Form</th>
+  </tr>
+  <% @trip.all_students.each do |student| %>
+    <tr class="<%= student.can_attend_trip(@trip) ? 'success' : 'error' %>">
+      <td><%= link_to student.full_name, student %></td>
+      <td><%= student.has_parent_permission_form_for(@trip) ? 'Yes' : 'No' %></td>
+      <% if @trip.requires_teacher_permission_form %>
+        <td><%= student.has_teacher_permission_form_for(@trip) ? 'Yes' : 'No' %></td>
+      <% end %>
+      <td><%= student.has_valid_medical_on(@trip.end_date) ? 'Yes' : 'No' %></td>
+    </tr>
+  <% end %>
+</table>

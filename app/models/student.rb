@@ -36,4 +36,18 @@ class Student < ActiveRecord::Base
   def all_trips
     (self.p_trips + self.t_trips).sort { |a, b| b.date <=> a.date } # Sort by date descending
   end
+
+  def has_parent_permission_form_for trip
+    self.parent_permission_forms.where(trip_id: trip.id).count > 0
+  end
+
+  def has_teacher_permission_form_for trip
+    self.teacher_permission_forms.where(trip_id: trip.id).count > 0
+  end
+
+  def can_attend_trip trip
+    self.has_parent_permission_form_for trip \
+    and (!trip.requires_teacher_permission_form or self.has_teacher_permission_form_for trip) \
+    and self.has_valid_medical_on trip.end_date
+  end
 end
