@@ -1,5 +1,11 @@
 <div class="row-fluid">
   <div class="span12">
+    <% if params[:message] %>
+      <div class="alert alert-success">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <%= params[:message] %>
+      </div>
+    <% end %>
     <h1>Students</h1>
   </div>
 </div>

@@ -5,6 +5,8 @@ class Student < ActiveRecord::Base
   has_many :parent_permission_forms
   has_many :teacher_permission_forms
 
+  before_save :remove_non_digits_from_phone_number
+
   def full_name
     "#{self.first_name} #{self.last_name}"
   end
@@ -19,5 +21,11 @@ class Student < ActiveRecord::Base
     else
       (self.safety_tests.where 'date > ?', (Date.new Date.today.year, 9, 1)).length > 0
     end
+  end
+
+  def remove_non_digits_from_phone_number
+    student_cell_phone.gsub! /\D/, ''
+    parent_home_phone.gsub! /\D/, ''
+    parent_cell_phone.gsub! /\D/, ''
   end
 end

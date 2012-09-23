@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Teammanager</title>
+  <title>Team Manager</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -20,7 +20,10 @@
 
   <div class="container-fluid">
     <%= yield %>
+    <hr>
+    <footer>
+      <p>&copy; 2012 Kevin Wang - 694 Software Engineering</p>
+    </footer>
   </div>
-
 </body>
 </html>
