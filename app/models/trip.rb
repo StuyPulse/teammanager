@@ -1,5 +1,5 @@
 class Trip < ActiveRecord::Base
-  attr_accessible :end_date, :name, :requires_teacher_permission_form, :start_date
+  attr_accessible :end_date, :name, :requires_medical_form, :requires_teacher_permission_form, :start_date
   has_many :parent_permission_forms
   has_many :teacher_permission_forms
   has_many :p_students, through: :parent_permission_forms, source: :student
