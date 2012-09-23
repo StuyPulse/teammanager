@@ -14,7 +14,7 @@ class TripsController < ApplicationController
   def create
     @trip = Trip.new params[:trip]
     if @trip.save
-      redirect_to controller: 'trips', action: 'show', id: @trip.id, message: 'Trip successfully created.'
+      redirect_to controller: 'trips', action: 'show', id: @trip.id, message: 'Trip created successfully.'
     else
       render action: 'new'
     end
@@ -34,5 +34,7 @@ class TripsController < ApplicationController
   end
 
   def destroy
+    Trip.find(params[:id]).destroy
+    redirect_to controller: 'trips', action: 'index', message: 'Trip deleted successfully.'
   end
 end

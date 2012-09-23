@@ -14,7 +14,7 @@ class StudentsController < ApplicationController
   def create
     @student = Student.new params[:student]
     if @student.save
-      redirect_to controller: 'students', action: 'show', id: @student.id, message: 'Student successfully created.'
+      redirect_to controller: 'students', action: 'show', id: @student.id, message: 'Student created successfully.'
     else
       render action: 'new'
     end
@@ -35,6 +35,6 @@ class StudentsController < ApplicationController
 
   def destroy
     Student.find(params[:id]).destroy
-    redirect_to controller: 'students', action: 'index', message: 'Student successfully deleted.'
+    redirect_to controller: 'students', action: 'index', message: 'Student deleted successfully.'
   end
 end
