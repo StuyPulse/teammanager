@@ -1,2 +1,13 @@
-<h1>ParentPermissionForms#new</h1>
-<p>Find me in app/views/parent_permission_forms/new.html.erb</p>
+<h1>Add Parent Permission Form</h1>
+<%= form_for @parent_permission_form do |f| %>
+  <div class="control-group">
+    <%= f.label 'Student' %>
+    <input type="hidden" name="student_id" value=<%= params[:student_id] %> />
+    <input type="text" value="<%= Student.find(params[:student_id]).full_name %>" disabled />
+    <%= f.label :trip_id, class: 'control-label' %>
+    <%= select 'parent_permission_form', 'trip_id', Trip.all.collect { |t| [t.name, t.id] }, include_blank: false %>
+  </div>
+  <div class="form-actions">
+    <%= f.submit 'Save', class: 'btn' %>
+  </div>
+<% end %>
