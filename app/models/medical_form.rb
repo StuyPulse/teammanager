@@ -4,6 +4,6 @@ class MedicalForm < ActiveRecord::Base
   validates :date, presence: true
 
   def is_valid?
-    self.date > Date.today - 1.year
+    self.date > 1.year.ago.to_date
   end
 end
