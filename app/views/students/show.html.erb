@@ -104,16 +104,19 @@
   <div class="span6">
     <h3>Teacher Permission Forms</h3>
     <div style="text-align:right">
-      <%= link_to 'Add Form', {controller: 'medical_forms', action: 'new', student_id: @student.id}, class: 'btn', style: 'margin-top:-88px' %>
+      <%= link_to 'Add Form', {controller: 'teacher_permission_forms', action: 'new', student_id: @student.id}, class: 'btn', style: 'margin-top:-88px' %>
     </div>
     <table class="table" style="margin-top:-20px">
       <tr>
         <th>Trip</th>
       </tr>
-      <% @student.t_trips.order('start_date DESC').each do |trip| %>
-        <td><%= link_to "#{trip.name} (#{trip.start_date.year})", trip %></td>
-        <td><a href="#">Delete</a></td>
+      <% @student.teacher_permission_forms.each do |form| %>
+        <tr>
+          <% trip = Trip.find form.trip_id %>
+          <td><%= link_to "#{trip.name} (#{trip.start_date.year})", trip %></td>
+          <td><%= button_to 'Delete', {controller: 'teacher_permission_forms', action: 'destroy', id: form.id}, method: :delete, class: 'btn btn-link', confirm: 'Are you sure?', style: 'margin:0px; padding:0px; border:0px', form_class: 'tr-form' %></td>
+        </tr>
       <% end %>
-    </table>
+      </table>
   </div>
 </div>
