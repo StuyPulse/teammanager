@@ -6,6 +6,7 @@ Teammanager::Application.routes.draw do
   resources :safety_tests
   resources :medical_forms
   resources :parent_permission_forms
+  resources :teacher_permission_forms
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
