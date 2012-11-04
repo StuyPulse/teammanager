@@ -1,15 +1,9 @@
-<div class="row-fluid">
+<div class="row">
   <div class="span12">
-    <% if params[:message] %>
-      <div class="alert alert-success">
-        <button type="button" class="close" data-dismiss="alert">×</button>
-        <%= params[:message] %>
-      </div>
-    <% end %>
     <h1><%= @student.full_name %></h1>
   </div>
 </div>
-<div class="row-fluid">
+<div class="row">
   <div class="span6">
     <h2>Student</h2>
     <p><strong>Year:</strong> <%= @student.year %></p>
@@ -27,14 +21,14 @@
     <p><strong>Preferred Language:</strong> <%= @student.preferred_language %></p>
   </div>
 </div>
-<div class="row-fluid">
+<div class="row">
   <div class="span12">
     <%= link_to 'Back', students_path, class: 'btn' %>
     <%= link_to 'Edit', {action: 'edit'}, class: 'btn' %>
     <%= button_to 'Delete', {action: 'destroy', id: @student.id}, method: :delete, class: 'btn btn-danger', confirm: 'Are you sure?', style: 'margin-top:10px' %>
   </div>
 </div>
-<div class="row-fluid">
+<div class="row">
   <div class="span6">
     <h3>Safety Tests</h3>
     <div style="text-align:right">
@@ -50,7 +44,7 @@
         <tr class="<%= safety_test.is_valid? ? 'success' : 'error' %>">
           <td><%= safety_test.date %></td>
           <td><%= safety_test.is_valid? ? 'Yes' : 'No' %></td>
-          <td><%= button_to 'Delete', {controller: 'safety_tests', action: 'destroy', id: safety_test.id}, method: :delete, class: 'btn btn-link', confirm: 'Are you sure?', style: 'margin:0px; padding:0px; border:0px', form_class: 'tr-form' %></td>
+          <td><%= link_to 'Delete', {controller: 'safety_tests', action: 'destroy', id: safety_test.id}, method: :delete, confirm: 'Are you sure?' %></td>
         </tr>
       <% end %>
     </table>
@@ -70,13 +64,13 @@
         <tr class="<%= medical_form.is_valid? ? 'success' : 'error' %>">
           <td><%= medical_form.date %></td>
           <td><%= medical_form.is_valid? ? 'Yes' : 'No' %></td>
-          <td><%= button_to 'Delete', {controller: 'medical_forms', action: 'destroy', id: medical_form.id}, method: :delete, class: 'btn btn-link', confirm: 'Are you sure?', style: 'margin:0px; padding:0px; border:0px', form_class: 'tr-form' %></td>
+          <td><%= link_to 'Delete', {controller: 'medical_forms', action: 'destroy', id: medical_form.id}, method: :delete, confirm: 'Are you sure?' %></td>
         </tr>
       <% end %>
     </table>
   </div>
 </div>
-<div class="row-fluid">
+<div class="row">
   <div class="span6">
     <h3>Parent Permission Forms</h3>
     <div style="text-align:right">
@@ -91,7 +85,7 @@
         <tr>
           <% trip = Trip.find form.trip_id %>
           <td><%= link_to "#{trip.name} (#{trip.start_date.year})", trip %></td>
-          <td><%= button_to 'Delete', {controller: 'parent_permission_forms', action: 'destroy', id: form.id}, method: :delete, class: 'btn btn-link', confirm: 'Are you sure?', style: 'margin:0px; padding:0px; border:0px', form_class: 'tr-form' %></td>
+          <td><%= link_to 'Delete', {controller: 'parent_permission_forms', action: 'destroy', id: form.id}, method: :delete, confirm: 'Are you sure?' %></td>
         </tr>
       <% end %>
     </table>
@@ -109,13 +103,13 @@
         <tr>
           <% trip = Trip.find form.trip_id %>
           <td><%= link_to "#{trip.name} (#{trip.start_date.year})", trip %></td>
-          <td><%= button_to 'Delete', {controller: 'teacher_permission_forms', action: 'destroy', id: form.id}, method: :delete, class: 'btn btn-link', confirm: 'Are you sure?', style: 'margin:0px; padding:0px; border:0px', form_class: 'tr-form' %></td>
+          <td><%= link_to 'Delete', {controller: 'teacher_permission_forms', action: 'destroy', id: form.id}, method: :delete, confirm: 'Are you sure?' %></td>
         </tr>
       <% end %>
     </table>
   </div>
 </div>
-<div class="row-fluid">
+<div class="row">
   <div class="span6">
     <h3>Trip Deposits</h3>
     <div style="text-align:right">
@@ -126,11 +120,11 @@
         <th>Trip</th>
         <th></th>
       </tr>
-      <% @student.trip_deposits.each do |form| %>
+      <% @student.trip_deposits.each do |trip_deposit| %>
         <tr>
-          <% trip = Trip.find form.trip_id %>
+          <% trip = Trip.find trip_deposit.trip_id %>
           <td><%= link_to "#{trip.name} (#{trip.start_date.year})", trip %></td>
-          <td><%= button_to 'Delete', {controller: 'trip_deposits', action: 'destroy', id: form.id}, method: :delete, class: 'btn btn-link', confirm: 'Are you sure?', style: 'margin:0px; padding:0px; border:0px', form_class: 'tr-form' %></td>
+          <td><%= link_to 'Delete', {controller: 'trip_deposits', action: 'destroy', id: trip_deposit.id}, method: :delete, confirm: 'Are you sure?' %></td>
         </tr>
       <% end %>
     </table>
@@ -144,11 +138,11 @@
       <tr>
         <th>Trip</th>
       </tr>
-      <% @student.trip_fees.each do |form| %>
+      <% @student.trip_fees.each do |trip_fee| %>
         <tr>
-          <% trip = Trip.find form.trip_id %>
+          <% trip = Trip.find trip_fee.trip_id %>
           <td><%= link_to "#{trip.name} (#{trip.start_date.year})", trip %></td>
-          <td><%= button_to 'Delete', {controller: 'trip_fees', action: 'destroy', id: form.id}, method: :delete, class: 'btn btn-link', confirm: 'Are you sure?', style: 'margin:0px; padding:0px; border:0px', form_class: 'tr-form' %></td>
+          <td><%= link_to 'Delete', {controller: 'trip_fees', action: 'destroy', id: trip_fee.id}, method: :delete, confirm: 'Are you sure?' %></td>
         </tr>
       <% end %>
     </table>
