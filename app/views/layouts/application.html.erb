@@ -11,11 +11,11 @@
     <div class="navbar-inner">
       <div class="container">
         <%= link_to 'Team Manager', root_url, class: 'brand' %>
-        <ul class="nav">
-          <li><%= link_to 'Students', students_path %></li>
-          <li><%= link_to 'Trips', trips_path %></li>
-        </ul>
         <% if user_signed_in? %>
+          <ul class="nav">
+            <li><%= link_to 'Students', students_path %></li>
+            <li><%= link_to 'Trips', trips_path %></li>
+          </ul>
           <ul class="nav pull-right">
             <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
           </ul>
