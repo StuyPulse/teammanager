@@ -6,8 +6,10 @@ class MedicalFormsController < ApplicationController
   def create
     @medical_form = Student.find(params[:student_id]).medical_forms.new params[:medical_form]
     if @medical_form.save
-      redirect_to controller: 'students', action: 'show', id: params[:student_id], message: 'Medical form added successfully.'
+      flash[:notice] = 'Medical form added successfully.'
+      redirect_to controller: 'students', action: 'show', id: params[:student_id]
     else
+      flash.now[:alert] = @medical_form.errors.full_messages.join('<br>').html_safe
       render action: 'new'
     end
   end
@@ -16,6 +18,7 @@ class MedicalFormsController < ApplicationController
     form = MedicalForm.find(params[:id])
     student_id = form.student_id
     form.destroy
-    redirect_to controller: 'students', action: 'show', id: student_id, message: 'Medical form deleted succesfully.'
+    flash[:notice] = 'Medical form deleted successfully.'
+    redirect_to controller: 'students', action: 'show', id: student_id
   end
 end

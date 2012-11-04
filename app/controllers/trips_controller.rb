@@ -14,8 +14,10 @@ class TripsController < ApplicationController
   def create
     @trip = Trip.new params[:trip]
     if @trip.save
-      redirect_to controller: 'trips', action: 'show', id: @trip.id, message: 'Trip created successfully.'
+      flash[:notice] = 'Trip created successfully.'
+      redirect_to controller: 'trips', action: 'show', id: @trip.id
     else
+      flash.now[:alert] = @trip.errors.full_messages.join('<br>').html_safe
       render action: 'new'
     end
   end
@@ -27,14 +29,17 @@ class TripsController < ApplicationController
   def update
     @trip = Trip.find params[:id]
     if @trip.update_attributes params[:trip]
-      redirect_to action: 'show', message: 'Trip updated successfully.'
+      flash[:notice] = 'Trip updated successfully.'
+      redirect_to action: 'show'
     else
+      flash.now[:alert] = @trip.errors.full_messages.join('<br>').html_safe
       render action: 'edit'
     end
   end
 
   def destroy
     Trip.find(params[:id]).destroy
-    redirect_to controller: 'trips', action: 'index', message: 'Trip deleted successfully.'
+    flash[:notice] = 'Trip deleted successfully.'
+    redirect_to controller: 'trips', action: 'index'
   end
 end

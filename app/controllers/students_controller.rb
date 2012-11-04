@@ -14,8 +14,10 @@ class StudentsController < ApplicationController
   def create
     @student = Student.new params[:student]
     if @student.save
-      redirect_to controller: 'students', action: 'show', id: @student.id, message: 'Student created successfully.'
+      flash[:notice] = 'Student created successfully.'
+      redirect_to controller: 'students', action: 'show', id: @student.id
     else
+      flash.now[:alert] = @student.errors.full_messages.join('<br>').html_safe
       render action: 'new'
     end
   end
@@ -27,14 +29,17 @@ class StudentsController < ApplicationController
   def update
     @student = Student.find params[:id]
     if @student.update_attributes params[:student]
-      redirect_to action: 'show', message: 'Student updated successfully.'
+      flash[:notice] = 'Student updated successfully.'
+      redirect_to action: 'show'
     else
+      flash.now[:alert] = @student.errors.full_messages.join('<br>').html_safe
       render action: 'edit'
     end
   end
 
   def destroy
     Student.find(params[:id]).destroy
-    redirect_to controller: 'students', action: 'index', message: 'Student deleted successfully.'
+    flash[:notice] = 'Student deleted successfully.'
+    redirect_to controller: 'students', action: 'index'
   end
 end

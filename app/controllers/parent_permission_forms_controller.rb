@@ -6,8 +6,10 @@ class ParentPermissionFormsController < ApplicationController
   def create
     @parent_permission_form = Student.find(params[:student_id]).parent_permission_forms.new params[:parent_permission_form]
     if @parent_permission_form.save
-      redirect_to controller: 'students', action: 'show', id: params[:student_id], message: 'Parent permission form added successfully.'
+      flash[:notice] = 'Parent permission form added successfully.'
+      redirect_to controller: 'students', action: 'show', id: params[:student_id]
     else
+      flash.now[:alert] = @parent_permission_form.errors.full_messages.join('<br>').html_safe
       render action: 'new'
     end
   end
@@ -16,6 +18,7 @@ class ParentPermissionFormsController < ApplicationController
     form = ParentPermissionForm.find(params[:id])
     student_id = form.student_id
     form.destroy
-    redirect_to controller: 'students', action: 'show', id: student_id, message: 'Parent permission form deleted succesfully.'
+    flash[:notice] = 'Parent permission form deleted successfully.'
+    redirect_to controller: 'students', action: 'show', id: student_id
   end
 end

@@ -6,8 +6,10 @@ class TripDepositsController < ApplicationController
   def create
     @trip_deposit = Student.find(params[:student_id]).trip_deposits.new params[:trip_deposit]
     if @trip_deposit.save
-      redirect_to controller: 'students', action: 'show', id: params[:student_id], message: 'Trip fee added successfully.'
+      flash[:notice] = 'Trip deposit added successfully.'
+      redirect_to controller: 'students', action: 'show', id: params[:student_id]
     else
+      flash.now[:alert] = @trip_deposit.errors.full_messages.join('<br>').html_safe
       render action: 'new'
     end
   end
@@ -16,6 +18,7 @@ class TripDepositsController < ApplicationController
     fee = TripDeposit.find(params[:id])
     student_id = fee.student_id
     fee.destroy
-    redirect_to controller: 'students', action: 'show', id: student_id, message: 'Trip fee deleted succesfully.'
+    flash[:notice] = 'Trip deposit deleted successfully.'
+    redirect_to controller: 'students', action: 'show', id: student_id
   end
 end
