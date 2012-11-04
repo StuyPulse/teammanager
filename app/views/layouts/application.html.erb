@@ -15,11 +15,46 @@
           <li><%= link_to 'Students', students_path %></li>
           <li><%= link_to 'Trips', trips_path %></li>
         </ul>
+        <% if user_signed_in? %>
+          <ul class="nav pull-right">
+            <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+          </ul>
+        <% end %>
       </div>
     </div>
   </div>
 
-  <div class="container-fluid">
+  <div class="container">
+    <% if params[:message] %>
+      <div class="row">
+        <div class="span12">
+          <div class="alert alert-success">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <%= params[:message] %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <% if notice %>
+      <div class="row">
+        <div class="span12">
+          <div class="alert alert-success">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <%= notice %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <% if alert %>
+      <div class="row">
+        <div class="span12">
+          <div class="alert alert-error">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <%= alert %>
+          </div>
+        </div>
+      </div>
+    <% end %>
     <%= yield %>
     <hr>
     <footer>
