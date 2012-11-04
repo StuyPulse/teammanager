@@ -47,9 +47,18 @@ class Student < ActiveRecord::Base
     self.teacher_permission_forms.where(trip_id: trip.id).count > 0
   end
 
+  def has_trip_deposit_for trip
+    self.trip_deposits.where(trip_id: trip.id).count > 0
+  end
+  def has_trip_fee_for trip
+    self.trip_fees.where(trip_id: trip.id).count > 0
+  end
+
   def can_attend_trip trip
     self.has_parent_permission_form_for trip \
     and (!trip.requires_teacher_permission_form or self.has_teacher_permission_form_for trip) \
+    and (!trip.requires_trip_deposit or self.has_trip_deposit_for trip) \
+    and (!trip.requires_trip_fee or self.has_trip_fee_for trip) \
     and (!trip.requires_medical_form or self.has_valid_medical_on trip.end_date)
   end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120924220959) do
+ActiveRecord::Schema.define(:version => 20121104182348) do
 
   create_table "medical_forms", :force => true do |t|
     t.date     "date"
@@ -80,6 +80,8 @@ ActiveRecord::Schema.define(:version => 20120924220959) do
     t.datetime "created_at",                       :null => false
     t.datetime "updated_at",                       :null => false
     t.boolean  "requires_medical_form"
+    t.boolean  "requires_trip_deposit"
+    t.boolean  "requires_trip_fee"
   end
 
 end

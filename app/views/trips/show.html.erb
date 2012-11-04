@@ -11,6 +11,16 @@
 <% else %>
   <p>Does not require teacher permission form.</p>
 <% end %>
+<% if @trip.requires_trip_deposit %>
+  <p>Requires trip deposit.</p>
+<% else %>
+  <p>Does not require trip deposit.</p>
+<% end %>
+<% if @trip.requires_trip_fee %>
+  <p>Requires trip fee.</p>
+<% else %>
+  <p>Does not require trip fee.</p>
+<% end %>
 <% if @trip.requires_medical_form %>
   <p>Requires medical form.</p>
 <% else %>
@@ -25,6 +35,8 @@
     <th>Name</th>
     <th>Parent Permission Form</th>
     <% if @trip.requires_teacher_permission_form %><th>Teacher Permission Form</th><% end %>
+    <% if @trip.requires_trip_deposit %><th>Trip Deposit</th><% end %>
+    <% if @trip.requires_trip_fee %><th>Trip Fee</th><% end %>
     <% if @trip.requires_medical_form %><th>Medical Form</th><% end %>
   </tr>
   <% @trip.all_students.each do |student| %>
@@ -33,6 +45,12 @@
       <td><%= student.has_parent_permission_form_for(@trip) ? 'Yes' : 'No' %></td>
       <% if @trip.requires_teacher_permission_form %>
         <td><%= student.has_teacher_permission_form_for(@trip) ? 'Yes' : 'No' %></td>
+      <% end %>
+      <% if @trip.requires_trip_deposit %>
+        <td><%= student.has_trip_deposit_for(@trip) ? 'Yes' : 'No' %></td>
+      <% end %>
+      <% if @trip.requires_trip_fee %>
+        <td><%= student.has_trip_fee_for(@trip) ? 'Yes' : 'No' %></td>
       <% end %>
       <% if @trip.requires_medical_form %>
         <td><%= student.has_valid_medical_on(@trip.end_date) ? 'Yes' : 'No' %></td>
