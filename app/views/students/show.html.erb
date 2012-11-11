@@ -36,13 +36,13 @@
     </div>
     <table class="table" style="margin-top:-20px">
       <tr>
-        <th>Date</th>
+        <th>Year</th>
         <th>Valid?</th>
         <th></th>
       </tr>
-      <% @student.safety_tests.order('date DESC').each do |safety_test| %>
+      <% @student.safety_tests.order('year DESC').each do |safety_test| %>
         <tr class="<%= safety_test.is_valid? ? 'success' : 'error' %>">
-          <td><%= safety_test.date %></td>
+          <td><%= safety_test.year %></td>
           <td><%= safety_test.is_valid? ? 'Yes' : 'No' %></td>
           <td><%= link_to 'Delete', {controller: 'safety_tests', action: 'destroy', id: safety_test.id}, method: :delete, confirm: 'Are you sure?' %></td>
         </tr>

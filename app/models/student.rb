@@ -21,14 +21,6 @@ class Student < ActiveRecord::Base
     self.medical_forms.where('date > ?', date - 1.year).count > 0
   end
 
-  def passed_safety_test?
-    if Date.today.month < 9
-      self.safety_tests.where('date > ?', (Date.new 1.year.ago.year, 9, 1)).count > 0
-    else
-      self.safety_tests.where('date > ?', (Date.new Date.today.year, 9, 1)).count > 0
-    end
-  end
-
   def remove_non_digits_from_phone_number
     student_cell_phone.gsub! /\D/, ''
     parent_home_phone.gsub! /\D/, ''
