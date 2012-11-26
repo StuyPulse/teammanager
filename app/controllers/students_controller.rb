@@ -1,6 +1,11 @@
+require 'csv'
+
 class StudentsController < ApplicationController
   def index
     @students = Student.order :last_name
+    respond_to do |format|
+      format.csv {render :layout => false}
+    end
   end
 
   def show
@@ -41,5 +46,18 @@ class StudentsController < ApplicationController
     Student.find(params[:id]).destroy
     flash[:notice] = 'Student deleted successfully.'
     redirect_to controller: 'students', action: 'index'
+  end
+
+re 'csv'
+
+  def generate_csv
+    csv_string = CSV.generate do |csv|
+      csv << ["Name", "Email"]
+      Student.order(:last_name).each do |student|
+        CSV << [student.first_name + student.last_name, student.email]
+      end
+    end
+
+    send_data csv_string, :type => 'text/csv; charset=iso-8859-1; header=present', :disposition => "attachment; filename=users.csv"
   end
 end
