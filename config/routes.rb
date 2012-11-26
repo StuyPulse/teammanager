@@ -11,6 +11,7 @@ Teammanager::Application.routes.draw do
   resources :teacher_permission_forms
   resources :trip_deposits
   resources :trip_fees
+  match '/students/awesome_csv', to: "students#create_csv"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
