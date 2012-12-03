@@ -48,13 +48,11 @@ class StudentsController < ApplicationController
     redirect_to controller: 'students', action: 'index'
   end
 
-re 'csv'
-
-  def generate_csv
+  def csv 
     csv_string = CSV.generate do |csv|
       csv << ["Name", "Email"]
       Student.order(:last_name).each do |student|
-        CSV << [student.first_name + student.last_name, student.email]
+        csv << [student.first_name + student.last_name, student.email]
       end
     end
 
