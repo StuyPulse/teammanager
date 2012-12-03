@@ -3,9 +3,6 @@ require 'csv'
 class StudentsController < ApplicationController
   def index
     @students = Student.order :last_name
-    respond_to do |format|
-      format.csv {render :layout => false}
-    end
   end
 
   def show
@@ -52,7 +49,7 @@ class StudentsController < ApplicationController
     csv_string = CSV.generate do |csv|
       csv << ["Name", "Email"]
       Student.order(:last_name).each do |student|
-        csv << [student.first_name + student.last_name, student.email]
+        csv << [student.last_name + student.first_name, student.email]
       end
     end
 
