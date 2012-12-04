@@ -3,6 +3,10 @@ require 'csv'
 class StudentsController < ApplicationController
   def index
     @students = Student.order :last_name
+    respond_to do |format|
+      format.html
+      format.csv { render text: @students.to_csv }
+    end
   end
 
   def show
@@ -46,13 +50,5 @@ class StudentsController < ApplicationController
   end
 
   def csv 
-    csv_string = CSV.generate do |csv|
-      csv << ["Name", "Email"]
-      Student.order(:last_name).each do |student|
-        csv << [student.last_name + student.first_name, student.email]
-      end
-    end
-
-    send_data csv_string, :type => 'text/csv; charset=iso-8859-1; header=present', :disposition => "attachment; filename=users.csv"
   end
 end

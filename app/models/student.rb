@@ -53,4 +53,15 @@ class Student < ActiveRecord::Base
     and (!trip.requires_trip_fee or self.has_trip_fee_for trip) \
     and (!trip.requires_medical_form or self.has_valid_medical_on trip.end_date)
   end
+  def self.to_csv
+    csv_string = CSV.generate do |csv|
+      #csv << ["Student Name", "Email", "Student ID"]
+      csv << column_names
+      Student.order(:last_name).each do |student|
+         csv << student.attributes.values_at(*column_names)
+        #csv << ["#{student.last_name}, #{student.first_name}", student.student_email, student.student_id]
+         
+      end
+    end
+  end
 end
