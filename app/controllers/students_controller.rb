@@ -48,7 +48,4 @@ class StudentsController < ApplicationController
     flash[:notice] = 'Student deleted successfully.'
     redirect_to controller: 'students', action: 'index'
   end
-
-  def csv 
-  end
 end
