@@ -1,3 +1,5 @@
+require 'csv'
+
 class Student < ActiveRecord::Base
   attr_accessible :father_name, :first_name, :last_name, :mother_name, :parent_cell_phone, :parent_email, :parent_home_phone, :preferred_language, :student_cell_phone, :student_email, :student_id, :year
   has_many :medical_forms
