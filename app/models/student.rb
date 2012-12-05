@@ -55,11 +55,9 @@ class Student < ActiveRecord::Base
   end
   def self.to_csv
     csv_string = CSV.generate do |csv|
-      #csv << ["Student Name", "Email", "Student ID"]
       csv << column_names
       Student.order(:last_name).each do |student|
          csv << student.attributes.values_at(*column_names)
-        #csv << ["#{student.last_name}, #{student.first_name}", student.student_email, student.student_id]
          
       end
     end
