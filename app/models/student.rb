@@ -1,3 +1,5 @@
+require 'csv'
+
 class Student < ActiveRecord::Base
   attr_accessible :father_name, :first_name, :last_name, :mother_name, :parent_cell_phone, :parent_email, :parent_home_phone, :preferred_language, :student_cell_phone, :student_email, :student_id, :year
   has_many :medical_forms
@@ -52,5 +54,14 @@ class Student < ActiveRecord::Base
     and (!trip.requires_trip_deposit or self.has_trip_deposit_for trip) \
     and (!trip.requires_trip_fee or self.has_trip_fee_for trip) \
     and (!trip.requires_medical_form or self.has_valid_medical_on trip.end_date)
+  end
+  def self.to_csv
+    csv_string = CSV.generate do |csv|
+      csv << column_names.map { |name| Student.human_attribute_name(name) }
+      Student.order(:last_name).each do |student|
+         csv << student.attributes.values_at(*column_names)
+         
+      end
+    end
   end
 end
