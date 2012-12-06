@@ -58,9 +58,10 @@ class Student < ActiveRecord::Base
   def self.to_csv
     csv_string = CSV.generate do |csv|
       csv << column_names.map { |name| Student.human_attribute_name(name) }
+      csv "Safety Test"
       Student.order(:last_name).each do |student|
          csv << student.attributes.values_at(*column_names)
-         
+         csv << (student.safety_tests.order('date DESC').first.is_valid?).to_s
       end
     end
   end
