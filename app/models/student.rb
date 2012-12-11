@@ -8,6 +8,7 @@ class Student < ActiveRecord::Base
   has_many :teacher_permission_forms
   has_many :trip_fees
   has_many :trip_deposits
+  has_many :team_dues
   has_many :p_trips, through: :parent_permission_forms, source: :trip
   has_many :t_trips, through: :teacher_permission_forms, source: :trip
   validates :first_name, presence: true

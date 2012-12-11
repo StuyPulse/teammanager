@@ -1,4 +1,6 @@
 Teammanager::Application.routes.draw do
+  get "team_dues/create"
+
   devise_for :users
 
   root to: 'dashboard#home'
