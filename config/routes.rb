@@ -1,5 +1,4 @@
 Teammanager::Application.routes.draw do
-  get "team_dues/create"
 
   devise_for :users
 
@@ -13,6 +12,7 @@ Teammanager::Application.routes.draw do
   resources :teacher_permission_forms
   resources :trip_deposits
   resources :trip_fees
+  resources :team_dues
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
