@@ -1,3 +1,4 @@
 == Team Manager
 A Rails-based team administration and organization project.
+Created and developed by Stuy 694, Stuypulse Robotics
 
