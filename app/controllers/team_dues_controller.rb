@@ -4,7 +4,7 @@ class TeamDuesController < ApplicationController
   end
   
   def create
-    @team_due = Student.find(params[:student_id[).team_dues.new params[:team_due]
+    @team_due = Student.find(params[:student_id]).team_dues.new params[:team_due]
     if @team_due.save
       flash[:notice] = "Team Due added successfully."
       redirect_to_controller: "students", action: "show", id: params[:student_id]
