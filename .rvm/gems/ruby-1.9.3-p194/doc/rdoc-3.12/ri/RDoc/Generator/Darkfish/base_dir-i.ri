@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"base_dir:EFI"'RDoc::Generator::Darkfish#base_dir;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"JThe path to generate files into, combined with <tt>--op</tt> from the;TI"options for a full path.;T:
+@fileI"#lib/rdoc/generator/darkfish.rb;TF@

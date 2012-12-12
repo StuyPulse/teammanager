@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module Mail::Multibyte::Unicode - mail-2.4.4 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/mail/multibyte/unicode.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-compose_codepoints">#compose_codepoints</a>
+    
+    <li><a href="#method-i-decompose_codepoints">#decompose_codepoints</a>
+    
+    <li><a href="#method-i-g_pack">#g_pack</a>
+    
+    <li><a href="#method-i-g_unpack">#g_unpack</a>
+    
+    <li><a href="#method-i-in_char_class-3F">#in_char_class?</a>
+    
+    <li><a href="#method-i-normalize">#normalize</a>
+    
+    <li><a href="#method-i-reorder_characters">#reorder_characters</a>
+    
+    <li><a href="#method-i-tidy_bytes">#tidy_bytes</a>
+    
+    <li><a href="#method-i-u_unpack">#u_unpack</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../CHANGELOG_rdoc.html">CHANGELOG</a>
+  
+    <li class="file"><a href="../../TODO_rdoc.html">TODO</a>
+  
+    <li class="file"><a href="../../lib/VERSION.html">VERSION</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../Mail.html">Mail</a>
+  
+    <li><a href="../../Mail/Address.html">Mail::Address</a>
+  
+    <li><a href="../../Mail/AddressContainer.html">Mail::AddressContainer</a>
+  
+    <li><a href="../../Mail/AddressLists.html">Mail::AddressLists</a>
+  
+    <li><a href="../../Mail/AddressLists/PrimaryAddress0.html">Mail::AddressLists::PrimaryAddress0</a>
+  
+    <li><a href="../../Mail/AddressLists/PrimaryAddress1.html">Mail::AddressLists::PrimaryAddress1</a>
+  
+    <li><a href="../../Mail/AddressListsParser.html">Mail::AddressListsParser</a>
+  
+    <li><a href="../../Mail/AttachmentsList.html">Mail::AttachmentsList</a>
+  
+    <li><a href="../../Mail/BccField.html">Mail::BccField</a>
+  
+    <li><a href="../../Mail/Body.html">Mail::Body</a>
+  
+    <li><a href="../../Mail/CcField.html">Mail::CcField</a>
+  
+    <li><a href="../../Mail/CommentsField.html">Mail::CommentsField</a>
+  
+    <li><a href="../../Mail/Configuration.html">Mail::Configuration</a>
+  
+    <li><a href="../../Mail/ContentDescriptionField.html">Mail::ContentDescriptionField</a>
+  
+    <li><a href="../../Mail/ContentDisposition.html">Mail::ContentDisposition</a>
+  
+    <li><a href="../../Mail/ContentDisposition/ContentDisposition0.html">Mail::ContentDisposition::ContentDisposition0</a>
+  
+    <li><a href="../../Mail/ContentDisposition/ContentDisposition1.html">Mail::ContentDisposition::ContentDisposition1</a>
+  
+    <li><a href="../../Mail/ContentDisposition/ContentDisposition2.html">Mail::ContentDisposition::ContentDisposition2</a>
+  
+    <li><a href="../../Mail/ContentDisposition/DispositionType0.html">Mail::ContentDisposition::DispositionType0</a>
+  
+    <li><a href="../../Mail/ContentDisposition/DispositionType1.html">Mail::ContentDisposition::DispositionType1</a>
+  
+    <li><a href="../../Mail/ContentDisposition/Parameter0.html">Mail::ContentDisposition::Parameter0</a>
+  
+    <li><a href="../../Mail/ContentDisposition/Parameter1.html">Mail::ContentDisposition::Parameter1</a>
+  
+    <li><a href="../../Mail/ContentDisposition/Value0.html">Mail::ContentDisposition::Value0</a>
+  
+    <li><a href="../../Mail/ContentDispositionField.html">Mail::ContentDispositionField</a>
+  
+    <li><a href="../../Mail/ContentDispositionParser.html">Mail::ContentDispositionParser</a>
+  
+    <li><a href="../../Mail/ContentIdField.html">Mail::ContentIdField</a>
+  
+    <li><a href="../../Mail/ContentLocation.html">Mail::ContentLocation</a>
+  
+    <li><a href="../../Mail/ContentLocation/Location0.html">Mail::ContentLocation::Location0</a>
+  
+    <li><a href="../../Mail/ContentLocation/Primary0.html">Mail::ContentLocation::Primary0</a>
+  
+    <li><a href="../../Mail/ContentLocationField.html">Mail::ContentLocationField</a>
+  
+    <li><a href="../../Mail/ContentLocationParser.html">Mail::ContentLocationParser</a>
+  
+    <li><a href="../../Mail/ContentTransferEncoding.html">Mail::ContentTransferEncoding</a>
+  
+    <li><a href="../../Mail/ContentTransferEncoding/Encoding0.html">Mail::ContentTransferEncoding::Encoding0</a>
+  
+    <li><a href="../../Mail/ContentTransferEncoding/Encoding1.html">Mail::ContentTransferEncoding::Encoding1</a>
+  
+    <li><a href="../../Mail/ContentTransferEncoding/Primary0.html">Mail::ContentTransferEncoding::Primary0</a>
+  
+    <li><a href="../../Mail/ContentTransferEncodingElement.html">Mail::ContentTransferEncodingElement</a>
+  
+    <li><a href="../../Mail/ContentTransferEncodingField.html">Mail::ContentTransferEncodingField</a>
+  
+    <li><a href="../../Mail/ContentTransferEncodingParser.html">Mail::ContentTransferEncodingParser</a>
+  
+    <li><a href="../../Mail/ContentType.html">Mail::ContentType</a>
+  
+    <li><a href="../../Mail/ContentType/CompositeType0.html">Mail::ContentType::CompositeType0</a>
+  
+    <li><a href="../../Mail/ContentType/CompositeType1.html">Mail::ContentType::CompositeType1</a>
+  
+    <li><a href="../../Mail/ContentType/ContentType0.html">Mail::ContentType::ContentType0</a>
+  
+    <li><a href="../../Mail/ContentType/ContentType1.html">Mail::ContentType::ContentType1</a>
+  
+    <li><a href="../../Mail/ContentType/ContentType2.html">Mail::ContentType::ContentType2</a>
+  
+    <li><a href="../../Mail/ContentType/DiscreteType0.html">Mail::ContentType::DiscreteType0</a>
+  
+    <li><a href="../../Mail/ContentType/DiscreteType1.html">Mail::ContentType::DiscreteType1</a>
+  
+    <li><a href="../../Mail/ContentType/DiscreteType2.html">Mail::ContentType::DiscreteType2</a>
+  
+    <li><a href="../../Mail/ContentType/DiscreteType3.html">Mail::ContentType::DiscreteType3</a>
+  
+    <li><a href="../../Mail/ContentType/DiscreteType4.html">Mail::ContentType::DiscreteType4</a>
+  
+    <li><a href="../../Mail/ContentType/Parameter0.html">Mail::ContentType::Parameter0</a>
+  
+    <li><a href="../../Mail/ContentType/Parameter1.html">Mail::ContentType::Parameter1</a>
+  
+    <li><a href="../../Mail/ContentType/Value0.html">Mail::ContentType::Value0</a>
+  
+    <li><a href="../../Mail/ContentTypeField.html">Mail::ContentTypeField</a>
+  
+    <li><a href="../../Mail/ContentTypeParser.html">Mail::ContentTypeParser</a>
+  
+    <li><a href="../../Mail/DateField.html">Mail::DateField</a>
+  
+    <li><a href="../../Mail/DateTime.html">Mail::DateTime</a>
+  
+    <li><a href="../../Mail/DateTime/Primary0.html">Mail::DateTime::Primary0</a>
+  
+    <li><a href="../../Mail/DateTime/Primary1.html">Mail::DateTime::Primary1</a>
+  
+    <li><a href="../../Mail/DateTimeParser.html">Mail::DateTimeParser</a>
+  
+    <li><a href="../../Mail/Encodings.html">Mail::Encodings</a>
+  
+    <li><a href="../../Mail/Encodings/Base64.html">Mail::Encodings::Base64</a>
+  
+    <li><a href="../../Mail/Encodings/Binary.html">Mail::Encodings::Binary</a>
+  
+    <li><a href="../../Mail/Encodings/EightBit.html">Mail::Encodings::EightBit</a>
+  
+    <li><a href="../../Mail/Encodings/QuotedPrintable.html">Mail::Encodings::QuotedPrintable</a>
+  
+    <li><a href="../../Mail/Encodings/SevenBit.html">Mail::Encodings::SevenBit</a>
+  
+    <li><a href="../../Mail/Encodings/TransferEncoding.html">Mail::Encodings::TransferEncoding</a>
+  
+    <li><a href="../../Mail/Envelope.html">Mail::Envelope</a>
+  
+    <li><a href="../../Mail/EnvelopeFrom.html">Mail::EnvelopeFrom</a>
+  
+    <li><a href="../../Mail/EnvelopeFrom/CtimeDate0.html">Mail::EnvelopeFrom::CtimeDate0</a>
+  
+    <li><a href="../../Mail/EnvelopeFrom/Primary0.html">Mail::EnvelopeFrom::Primary0</a>
+  
+    <li><a href="../../Mail/EnvelopeFromElement.html">Mail::EnvelopeFromElement</a>
+  
+    <li><a href="../../Mail/EnvelopeFromParser.html">Mail::EnvelopeFromParser</a>
+  
+    <li><a href="../../Mail/Exim.html">Mail::Exim</a>
+  
+    <li><a href="../../Mail/Field.html">Mail::Field</a>
+  
+    <li><a href="../../Mail/Field/FieldError.html">Mail::Field::FieldError</a>
+  
+    <li><a href="../../Mail/FieldList.html">Mail::FieldList</a>
+  
+    <li><a href="../../Mail/FileDelivery.html">Mail::FileDelivery</a>
+  
+    <li><a href="../../Mail/FromField.html">Mail::FromField</a>
+  
+    <li><a href="../../Mail/Header.html">Mail::Header</a>
+  
+    <li><a href="../../Mail/IMAP.html">Mail::IMAP</a>
+  
+    <li><a href="../../Mail/InReplyToField.html">Mail::InReplyToField</a>
+  
+    <li><a href="../../Mail/IndifferentHash.html">Mail::IndifferentHash</a>
+  
+    <li><a href="../../Mail/KeywordsField.html">Mail::KeywordsField</a>
+  
+    <li><a href="../../Mail/Matchers.html">Mail::Matchers</a>
+  
+    <li><a href="../../Mail/Matchers/HasSentEmailMatcher.html">Mail::Matchers::HasSentEmailMatcher</a>
+  
+    <li><a href="../../Mail/Message.html">Mail::Message</a>
+  
+    <li><a href="../../Mail/MessageIdField.html">Mail::MessageIdField</a>
+  
+    <li><a href="../../Mail/MessageIds.html">Mail::MessageIds</a>
+  
+    <li><a href="../../Mail/MessageIds/Primary0.html">Mail::MessageIds::Primary0</a>
+  
+    <li><a href="../../Mail/MessageIdsElement.html">Mail::MessageIdsElement</a>
+  
+    <li><a href="../../Mail/MessageIdsParser.html">Mail::MessageIdsParser</a>
+  
+    <li><a href="../../Mail/MimeVersion.html">Mail::MimeVersion</a>
+  
+    <li><a href="../../Mail/MimeVersion/Version0.html">Mail::MimeVersion::Version0</a>
+  
+    <li><a href="../../Mail/MimeVersion/Version1.html">Mail::MimeVersion::Version1</a>
+  
+    <li><a href="../../Mail/MimeVersionElement.html">Mail::MimeVersionElement</a>
+  
+    <li><a href="../../Mail/MimeVersionField.html">Mail::MimeVersionField</a>
+  
+    <li><a href="../../Mail/MimeVersionParser.html">Mail::MimeVersionParser</a>
+  
+    <li><a href="../../Mail/Multibyte.html">Mail::Multibyte</a>
+  
+    <li><a href="../../Mail/Multibyte/Chars.html">Mail::Multibyte::Chars</a>
+  
+    <li><a href="../../Mail/Multibyte/EncodingError.html">Mail::Multibyte::EncodingError</a>
+  
+    <li><a href="../../Mail/Multibyte/Unicode.html">Mail::Multibyte::Unicode</a>
+  
+    <li><a href="../../Mail/Multibyte/Unicode/Codepoint.html">Mail::Multibyte::Unicode::Codepoint</a>
+  
+    <li><a href="../../Mail/Multibyte/Unicode/UnicodeDatabase.html">Mail::Multibyte::Unicode::UnicodeDatabase</a>
+  
+    <li><a href="../../Mail/OptionalField.html">Mail::OptionalField</a>
+  
+    <li><a href="../../Mail/POP3.html">Mail::POP3</a>
+  
+    <li><a href="../../Mail/ParameterHash.html">Mail::ParameterHash</a>
+  
+    <li><a href="../../Mail/Part.html">Mail::Part</a>
+  
+    <li><a href="../../Mail/PartsList.html">Mail::PartsList</a>
+  
+    <li><a href="../../Mail/Patterns.html">Mail::Patterns</a>
+  
+    <li><a href="../../Mail/PhraseList.html">Mail::PhraseList</a>
+  
+    <li><a href="../../Mail/PhraseLists.html">Mail::PhraseLists</a>
+  
+    <li><a href="../../Mail/PhraseLists/PrimaryPhrase0.html">Mail::PhraseLists::PrimaryPhrase0</a>
+  
+    <li><a href="../../Mail/PhraseListsParser.html">Mail::PhraseListsParser</a>
+  
+    <li><a href="../../Mail/RFC2045.html">Mail::RFC2045</a>
+  
+    <li><a href="../../Mail/RFC2045/CustomXToken0.html">Mail::RFC2045::CustomXToken0</a>
+  
+    <li><a href="../../Mail/RFC2045Parser.html">Mail::RFC2045Parser</a>
+  
+    <li><a href="../../Mail/RFC2822.html">Mail::RFC2822</a>
+  
+    <li><a href="../../Mail/RFC2822/AddrSpec0.html">Mail::RFC2822::AddrSpec0</a>
+  
+    <li><a href="../../Mail/RFC2822/Address0.html">Mail::RFC2822::Address0</a>
+  
+    <li><a href="../../Mail/RFC2822/Address1.html">Mail::RFC2822::Address1</a>
+  
+    <li><a href="../../Mail/RFC2822/AddressList0.html">Mail::RFC2822::AddressList0</a>
+  
+    <li><a href="../../Mail/RFC2822/AddressList1.html">Mail::RFC2822::AddressList1</a>
+  
+    <li><a href="../../Mail/RFC2822/AngleAddr0.html">Mail::RFC2822::AngleAddr0</a>
+  
+    <li><a href="../../Mail/RFC2822/Atom0.html">Mail::RFC2822::Atom0</a>
+  
+    <li><a href="../../Mail/RFC2822/CFWS0.html">Mail::RFC2822::CFWS0</a>
+  
+    <li><a href="../../Mail/RFC2822/CFWS1.html">Mail::RFC2822::CFWS1</a>
+  
+    <li><a href="../../Mail/RFC2822/Comment0.html">Mail::RFC2822::Comment0</a>
+  
+    <li><a href="../../Mail/RFC2822/Comment1.html">Mail::RFC2822::Comment1</a>
+  
+    <li><a href="../../Mail/RFC2822/Date0.html">Mail::RFC2822::Date0</a>
+  
+    <li><a href="../../Mail/RFC2822/DateTime0.html">Mail::RFC2822::DateTime0</a>
+  
+    <li><a href="../../Mail/RFC2822/DateTime1.html">Mail::RFC2822::DateTime1</a>
+  
+    <li><a href="../../Mail/RFC2822/Day0.html">Mail::RFC2822::Day0</a>
+  
+    <li><a href="../../Mail/RFC2822/DayOfWeek0.html">Mail::RFC2822::DayOfWeek0</a>
+  
+    <li><a href="../../Mail/RFC2822/DomainLiteral0.html">Mail::RFC2822::DomainLiteral0</a>
+  
+    <li><a href="../../Mail/RFC2822/DomainLiteral1.html">Mail::RFC2822::DomainLiteral1</a>
+  
+    <li><a href="../../Mail/RFC2822/DomainText0.html">Mail::RFC2822::DomainText0</a>
+  
+    <li><a href="../../Mail/RFC2822/DomainText1.html">Mail::RFC2822::DomainText1</a>
+  
+    <li><a href="../../Mail/RFC2822/DotAtom0.html">Mail::RFC2822::DotAtom0</a>
+  
+    <li><a href="../../Mail/RFC2822/DotAtomText0.html">Mail::RFC2822::DotAtomText0</a>
+  
+    <li><a href="../../Mail/RFC2822/FWS0.html">Mail::RFC2822::FWS0</a>
+  
+    <li><a href="../../Mail/RFC2822/FWS1.html">Mail::RFC2822::FWS1</a>
+  
+    <li><a href="../../Mail/RFC2822/Group0.html">Mail::RFC2822::Group0</a>
+  
+    <li><a href="../../Mail/RFC2822/Hour0.html">Mail::RFC2822::Hour0</a>
+  
+    <li><a href="../../Mail/RFC2822/ItemName0.html">Mail::RFC2822::ItemName0</a>
+  
+    <li><a href="../../Mail/RFC2822/ItemName1.html">Mail::RFC2822::ItemName1</a>
+  
+    <li><a href="../../Mail/RFC2822/LocalDotAtom0.html">Mail::RFC2822::LocalDotAtom0</a>
+  
+    <li><a href="../../Mail/RFC2822/LocalDotAtomText0.html">Mail::RFC2822::LocalDotAtomText0</a>
+  
+    <li><a href="../../Mail/RFC2822/MailboxList0.html">Mail::RFC2822::MailboxList0</a>
+  
+    <li><a href="../../Mail/RFC2822/MailboxList1.html">Mail::RFC2822::MailboxList1</a>
+  
+    <li><a href="../../Mail/RFC2822/MailboxListGroup0.html">Mail::RFC2822::MailboxListGroup0</a>
+  
+    <li><a href="../../Mail/RFC2822/MessageIds0.html">Mail::RFC2822::MessageIds0</a>
+  
+    <li><a href="../../Mail/RFC2822/MessageIds1.html">Mail::RFC2822::MessageIds1</a>
+  
+    <li><a href="../../Mail/RFC2822/Minute0.html">Mail::RFC2822::Minute0</a>
+  
+    <li><a href="../../Mail/RFC2822/Month0.html">Mail::RFC2822::Month0</a>
+  
+    <li><a href="../../Mail/RFC2822/MsgId0.html">Mail::RFC2822::MsgId0</a>
+  
+    <li><a href="../../Mail/RFC2822/MsgIdDomainText0.html">Mail::RFC2822::MsgIdDomainText0</a>
+  
+    <li><a href="../../Mail/RFC2822/MsgIdDomainText1.html">Mail::RFC2822::MsgIdDomainText1</a>
+  
+    <li><a href="../../Mail/RFC2822/MsgIdDotAtomText0.html">Mail::RFC2822::MsgIdDotAtomText0</a>
+  
+    <li><a href="../../Mail/RFC2822/MsgIdValue0.html">Mail::RFC2822::MsgIdValue0</a>
+  
+    <li><a href="../../Mail/RFC2822/NameAddr0.html">Mail::RFC2822::NameAddr0</a>
+  
+    <li><a href="../../Mail/RFC2822/NameValList0.html">Mail::RFC2822::NameValList0</a>
+  
+    <li><a href="../../Mail/RFC2822/NameValList1.html">Mail::RFC2822::NameValList1</a>
+  
+    <li><a href="../../Mail/RFC2822/NameValList2.html">Mail::RFC2822::NameValList2</a>
+  
+    <li><a href="../../Mail/RFC2822/NameValPair0.html">Mail::RFC2822::NameValPair0</a>
+  
+    <li><a href="../../Mail/RFC2822/NoFoldLiteral0.html">Mail::RFC2822::NoFoldLiteral0</a>
+  
+    <li><a href="../../Mail/RFC2822/NoFoldQuote0.html">Mail::RFC2822::NoFoldQuote0</a>
+  
+    <li><a href="../../Mail/RFC2822/Path0.html">Mail::RFC2822::Path0</a>
+  
+    <li><a href="../../Mail/RFC2822/PhraseList0.html">Mail::RFC2822::PhraseList0</a>
+  
+    <li><a href="../../Mail/RFC2822/PhraseList1.html">Mail::RFC2822::PhraseList1</a>
+  
+    <li><a href="../../Mail/RFC2822/QuotedDomain0.html">Mail::RFC2822::QuotedDomain0</a>
+  
+    <li><a href="../../Mail/RFC2822/QuotedPair0.html">Mail::RFC2822::QuotedPair0</a>
+  
+    <li><a href="../../Mail/RFC2822/QuotedString0.html">Mail::RFC2822::QuotedString0</a>
+  
+    <li><a href="../../Mail/RFC2822/QuotedString1.html">Mail::RFC2822::QuotedString1</a>
+  
+    <li><a href="../../Mail/RFC2822/Received0.html">Mail::RFC2822::Received0</a>
+  
+    <li><a href="../../Mail/RFC2822/Return0.html">Mail::RFC2822::Return0</a>
+  
+    <li><a href="../../Mail/RFC2822/Second0.html">Mail::RFC2822::Second0</a>
+  
+    <li><a href="../../Mail/RFC2822/Time0.html">Mail::RFC2822::Time0</a>
+  
+    <li><a href="../../Mail/RFC2822/TimeOfDay0.html">Mail::RFC2822::TimeOfDay0</a>
+  
+    <li><a href="../../Mail/RFC2822/TimeOfDay1.html">Mail::RFC2822::TimeOfDay1</a>
+  
+    <li><a href="../../Mail/RFC2822/Year0.html">Mail::RFC2822::Year0</a>
+  
+    <li><a href="../../Mail/RFC2822/Zone0.html">Mail::RFC2822::Zone0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete.html">Mail::RFC2822Obsolete</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsAddrList0.html">Mail::RFC2822Obsolete::ObsAddrList0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsAddrList1.html">Mail::RFC2822Obsolete::ObsAddrList1</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsAngleAddr0.html">Mail::RFC2822Obsolete::ObsAngleAddr0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsBcc0.html">Mail::RFC2822Obsolete::ObsBcc0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsCc0.html">Mail::RFC2822Obsolete::ObsCc0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsComments0.html">Mail::RFC2822Obsolete::ObsComments0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsDay0.html">Mail::RFC2822Obsolete::ObsDay0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsDay1.html">Mail::RFC2822Obsolete::ObsDay1</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsDayOfWeek0.html">Mail::RFC2822Obsolete::ObsDayOfWeek0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsDomain0.html">Mail::RFC2822Obsolete::ObsDomain0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsDomain1.html">Mail::RFC2822Obsolete::ObsDomain1</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsDomainList0.html">Mail::RFC2822Obsolete::ObsDomainList0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsDomainList1.html">Mail::RFC2822Obsolete::ObsDomainList1</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsFWS0.html">Mail::RFC2822Obsolete::ObsFWS0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsFWS1.html">Mail::RFC2822Obsolete::ObsFWS1</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsFrom0.html">Mail::RFC2822Obsolete::ObsFrom0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsHour0.html">Mail::RFC2822Obsolete::ObsHour0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsHour1.html">Mail::RFC2822Obsolete::ObsHour1</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsInReplyTo0.html">Mail::RFC2822Obsolete::ObsInReplyTo0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsKeywords0.html">Mail::RFC2822Obsolete::ObsKeywords0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsLocalPart0.html">Mail::RFC2822Obsolete::ObsLocalPart0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsLocalPart1.html">Mail::RFC2822Obsolete::ObsLocalPart1</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsMboxList0.html">Mail::RFC2822Obsolete::ObsMboxList0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsMboxList1.html">Mail::RFC2822Obsolete::ObsMboxList1</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsMessageId0.html">Mail::RFC2822Obsolete::ObsMessageId0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsMinute0.html">Mail::RFC2822Obsolete::ObsMinute0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsMinute1.html">Mail::RFC2822Obsolete::ObsMinute1</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsMonth0.html">Mail::RFC2822Obsolete::ObsMonth0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsOptional0.html">Mail::RFC2822Obsolete::ObsOptional0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsOrigDate0.html">Mail::RFC2822Obsolete::ObsOrigDate0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsPhraseList0.html">Mail::RFC2822Obsolete::ObsPhraseList0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsPhraseList1.html">Mail::RFC2822Obsolete::ObsPhraseList1</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsQp0.html">Mail::RFC2822Obsolete::ObsQp0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsReceived0.html">Mail::RFC2822Obsolete::ObsReceived0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsReferences0.html">Mail::RFC2822Obsolete::ObsReferences0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsReplyTo0.html">Mail::RFC2822Obsolete::ObsReplyTo0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsResentBcc0.html">Mail::RFC2822Obsolete::ObsResentBcc0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsResentCc0.html">Mail::RFC2822Obsolete::ObsResentCc0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsResentDate0.html">Mail::RFC2822Obsolete::ObsResentDate0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsResentFrom0.html">Mail::RFC2822Obsolete::ObsResentFrom0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsResentMid0.html">Mail::RFC2822Obsolete::ObsResentMid0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsResentRply0.html">Mail::RFC2822Obsolete::ObsResentRply0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsResentSend0.html">Mail::RFC2822Obsolete::ObsResentSend0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsResentTo0.html">Mail::RFC2822Obsolete::ObsResentTo0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsReturn0.html">Mail::RFC2822Obsolete::ObsReturn0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsRoute0.html">Mail::RFC2822Obsolete::ObsRoute0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsSecond0.html">Mail::RFC2822Obsolete::ObsSecond0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsSecond1.html">Mail::RFC2822Obsolete::ObsSecond1</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsSender0.html">Mail::RFC2822Obsolete::ObsSender0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsSubject0.html">Mail::RFC2822Obsolete::ObsSubject0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsText0.html">Mail::RFC2822Obsolete::ObsText0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsText1.html">Mail::RFC2822Obsolete::ObsText1</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsTo0.html">Mail::RFC2822Obsolete::ObsTo0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsYear0.html">Mail::RFC2822Obsolete::ObsYear0</a>
+  
+    <li><a href="../../Mail/RFC2822Obsolete/ObsYear1.html">Mail::RFC2822Obsolete::ObsYear1</a>
+  
+    <li><a href="../../Mail/RFC2822ObsoleteParser.html">Mail::RFC2822ObsoleteParser</a>
+  
+    <li><a href="../../Mail/RFC2822Parser.html">Mail::RFC2822Parser</a>
+  
+    <li><a href="../../Mail/Received.html">Mail::Received</a>
+  
+    <li><a href="../../Mail/Received/Primary0.html">Mail::Received::Primary0</a>
+  
+    <li><a href="../../Mail/ReceivedElement.html">Mail::ReceivedElement</a>
+  
+    <li><a href="../../Mail/ReceivedField.html">Mail::ReceivedField</a>
+  
+    <li><a href="../../Mail/ReceivedParser.html">Mail::ReceivedParser</a>
+  
+    <li><a href="../../Mail/ReferencesField.html">Mail::ReferencesField</a>
+  
+    <li><a href="../../Mail/ReplyToField.html">Mail::ReplyToField</a>
+  
+    <li><a href="../../Mail/ResentBccField.html">Mail::ResentBccField</a>
+  
+    <li><a href="../../Mail/ResentCcField.html">Mail::ResentCcField</a>
+  
+    <li><a href="../../Mail/ResentDateField.html">Mail::ResentDateField</a>
+  
+    <li><a href="../../Mail/ResentFromField.html">Mail::ResentFromField</a>
+  
+    <li><a href="../../Mail/ResentMessageIdField.html">Mail::ResentMessageIdField</a>
+  
+    <li><a href="../../Mail/ResentSenderField.html">Mail::ResentSenderField</a>
+  
+    <li><a href="../../Mail/ResentToField.html">Mail::ResentToField</a>
+  
+    <li><a href="../../Mail/Retriever.html">Mail::Retriever</a>
+  
+    <li><a href="../../Mail/ReturnPathField.html">Mail::ReturnPathField</a>
+  
+    <li><a href="../../Mail/Ruby18.html">Mail::Ruby18</a>
+  
+    <li><a href="../../Mail/Ruby19.html">Mail::Ruby19</a>
+  
+    <li><a href="../../Mail/SMTP.html">Mail::SMTP</a>
+  
+    <li><a href="../../Mail/SMTPConnection.html">Mail::SMTPConnection</a>
+  
+    <li><a href="../../Mail/SenderField.html">Mail::SenderField</a>
+  
+    <li><a href="../../Mail/Sendmail.html">Mail::Sendmail</a>
+  
+    <li><a href="../../Mail/ShellEscape.html">Mail::ShellEscape</a>
+  
+    <li><a href="../../Mail/StructuredField.html">Mail::StructuredField</a>
+  
+    <li><a href="../../Mail/SubjectField.html">Mail::SubjectField</a>
+  
+    <li><a href="../../Mail/TestMailer.html">Mail::TestMailer</a>
+  
+    <li><a href="../../Mail/TestRetriever.html">Mail::TestRetriever</a>
+  
+    <li><a href="../../Mail/ToField.html">Mail::ToField</a>
+  
+    <li><a href="../../Mail/UnstructuredField.html">Mail::UnstructuredField</a>
+  
+    <li><a href="../../Mail/Utilities.html">Mail::Utilities</a>
+  
+    <li><a href="../../Mail/VERSION.html">Mail::VERSION</a>
+  
+    <li><a href="../../Net.html">Net</a>
+  
+    <li><a href="../../Net/SMTP.html">Net::SMTP</a>
+  
+    <li><a href="../../Object.html">Object</a>
+  
+    <li><a href="../../String.html">String</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Mail::Multibyte::Unicode</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="HANGUL_JAMO_FIRST">HANGUL_JAMO_FIRST
+        
+        <dd class="description">
+        
+      
+        <dt id="HANGUL_JAMO_LAST">HANGUL_JAMO_LAST
+        
+        <dd class="description">
+        
+      
+        <dt id="HANGUL_LBASE">HANGUL_LBASE
+        
+        <dd class="description">
+        
+      
+        <dt id="HANGUL_LCOUNT">HANGUL_LCOUNT
+        
+        <dd class="description">
+        
+      
+        <dt id="HANGUL_NCOUNT">HANGUL_NCOUNT
+        
+        <dd class="description">
+        
+      
+        <dt id="HANGUL_SBASE">HANGUL_SBASE
+        
+        <dd class="description"><p>Hangul character boundaries and properties</p>
+        
+      
+        <dt id="HANGUL_SCOUNT">HANGUL_SCOUNT
+        
+        <dd class="description">
+        
+      
+        <dt id="HANGUL_SLAST">HANGUL_SLAST
+        
+        <dd class="description">
+        
+      
+        <dt id="HANGUL_TBASE">HANGUL_TBASE
+        
+        <dd class="description">
+        
+      
+        <dt id="HANGUL_TCOUNT">HANGUL_TCOUNT
+        
+        <dd class="description">
+        
+      
+        <dt id="HANGUL_VBASE">HANGUL_VBASE
+        
+        <dd class="description">
+        
+      
+        <dt id="HANGUL_VCOUNT">HANGUL_VCOUNT
+        
+        <dd class="description">
+        
+      
+        <dt id="LEADERS_AND_TRAILERS">LEADERS_AND_TRAILERS
+        
+        <dd class="description"><p>BOM (byte order mark) can also be seen as whitespace, it’s a non-rendering
+character used to distinguish between little and big endian. This is not an
+issue in utf-8, so it must be ignored.</p>
+        
+      
+        <dt id="LEADERS_PAT">LEADERS_PAT
+        
+        <dd class="description">
+        
+      
+        <dt id="NORMALIZATION_FORMS">NORMALIZATION_FORMS
+        
+        <dd class="description"><p>A list of all available normalization forms. See <a
+href="http://www.unicode.org/reports/tr15/tr15-29.html">www.unicode.org/reports/tr15/tr15-29.html</a>
+for more information about normalization.</p>
+        
+      
+        <dt id="TRAILERS_PAT">TRAILERS_PAT
+        
+        <dd class="description">
+        
+      
+        <dt id="UNICODE_VERSION">UNICODE_VERSION
+        
+        <dd class="description"><p>The <a href="Unicode.html">Unicode</a> version that is supported by the
+implementation</p>
+        
+      
+        <dt id="WHITESPACE">WHITESPACE
+        
+        <dd class="description"><p>All the unicode whitespace</p>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-default_normalization_form" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">default_normalization_form</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>The default normalization used for operations that require normalization.
+It can be set to any of the normalizations in <a
+href="Unicode.html#NORMALIZATION_FORMS">NORMALIZATION_FORMS</a>.</p>
+
+<p>Example:</p>
+
+<pre>Mail::Multibyte::Unicode.default_normalization_form = :c</pre>
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-compose_codepoints" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">compose_codepoints</span><span
+            class="method-args">(codepoints)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Compose decomposed characters to the composed form.</p>
+          
+
+          
+          <div class="method-source-code" id="compose_codepoints-source">
+            <pre><span class="ruby-comment"># File lib/mail/multibyte/unicode.rb, line 166</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">compose_codepoints</span>(<span class="ruby-identifier">codepoints</span>)
+  <span class="ruby-identifier">pos</span> = <span class="ruby-value">0</span>
+  <span class="ruby-identifier">eoa</span> = <span class="ruby-identifier">codepoints</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>
+  <span class="ruby-identifier">starter_pos</span> = <span class="ruby-value">0</span>
+  <span class="ruby-identifier">starter_char</span> = <span class="ruby-identifier">codepoints</span>[<span class="ruby-value">0</span>]
+  <span class="ruby-identifier">previous_combining_class</span> = <span class="ruby-value">-1</span>
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">pos</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">eoa</span>
+    <span class="ruby-identifier">pos</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+    <span class="ruby-identifier">lindex</span> = <span class="ruby-identifier">starter_char</span> <span class="ruby-operator">-</span> <span class="ruby-constant">HANGUL_LBASE</span>
+    <span class="ruby-comment"># -- Hangul</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-value">0</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">lindex</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">lindex</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">HANGUL_LCOUNT</span>
+      <span class="ruby-identifier">vindex</span> = <span class="ruby-identifier">codepoints</span>[<span class="ruby-identifier">starter_pos</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>] <span class="ruby-operator">-</span> <span class="ruby-constant">HANGUL_VBASE</span> <span class="ruby-keyword">rescue</span> <span class="ruby-identifier">vindex</span> = <span class="ruby-value">-1</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-value">0</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">vindex</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">vindex</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">HANGUL_VCOUNT</span>
+        <span class="ruby-identifier">tindex</span> = <span class="ruby-identifier">codepoints</span>[<span class="ruby-identifier">starter_pos</span><span class="ruby-operator">+</span><span class="ruby-value">2</span>] <span class="ruby-operator">-</span> <span class="ruby-constant">HANGUL_TBASE</span> <span class="ruby-keyword">rescue</span> <span class="ruby-identifier">tindex</span> = <span class="ruby-value">-1</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-value">0</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">tindex</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">tindex</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">HANGUL_TCOUNT</span>
+          <span class="ruby-identifier">j</span> = <span class="ruby-identifier">starter_pos</span> <span class="ruby-operator">+</span> <span class="ruby-value">2</span>
+          <span class="ruby-identifier">eoa</span> <span class="ruby-operator">-=</span> <span class="ruby-value">2</span>
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">tindex</span> = <span class="ruby-value">0</span>
+          <span class="ruby-identifier">j</span> = <span class="ruby-identifier">starter_pos</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
+          <span class="ruby-identifier">eoa</span> <span class="ruby-operator">-=</span> <span class="ruby-value">1</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">codepoints</span>[<span class="ruby-identifier">starter_pos</span><span class="ruby-operator">..</span><span class="ruby-identifier">j</span>] = (<span class="ruby-identifier">lindex</span> * <span class="ruby-constant">HANGUL_VCOUNT</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">vindex</span>) * <span class="ruby-constant">HANGUL_TCOUNT</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">tindex</span> <span class="ruby-operator">+</span> <span class="ruby-constant">HANGUL_SBASE</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">starter_pos</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+      <span class="ruby-identifier">starter_char</span> = <span class="ruby-identifier">codepoints</span>[<span class="ruby-identifier">starter_pos</span>]
+    <span class="ruby-comment"># -- Other characters</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">current_char</span> = <span class="ruby-identifier">codepoints</span>[<span class="ruby-identifier">pos</span>]
+      <span class="ruby-identifier">current</span> = <span class="ruby-identifier">database</span>.<span class="ruby-identifier">codepoints</span>[<span class="ruby-identifier">current_char</span>]
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">current</span>.<span class="ruby-identifier">combining_class</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">previous_combining_class</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">ref</span> = <span class="ruby-identifier">database</span>.<span class="ruby-identifier">composition_map</span>[<span class="ruby-identifier">starter_char</span>]
+          <span class="ruby-identifier">composition</span> = <span class="ruby-identifier">ref</span>[<span class="ruby-identifier">current_char</span>]
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">composition</span> = <span class="ruby-keyword">nil</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">unless</span> <span class="ruby-identifier">composition</span>.<span class="ruby-identifier">nil?</span>
+          <span class="ruby-identifier">codepoints</span>[<span class="ruby-identifier">starter_pos</span>] = <span class="ruby-identifier">composition</span>
+          <span class="ruby-identifier">starter_char</span> = <span class="ruby-identifier">composition</span>
+          <span class="ruby-identifier">codepoints</span>.<span class="ruby-identifier">delete_at</span> <span class="ruby-identifier">pos</span>
+          <span class="ruby-identifier">eoa</span> <span class="ruby-operator">-=</span> <span class="ruby-value">1</span>
+          <span class="ruby-identifier">pos</span> <span class="ruby-operator">-=</span> <span class="ruby-value">1</span>
+          <span class="ruby-identifier">previous_combining_class</span> = <span class="ruby-value">-1</span>
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">previous_combining_class</span> = <span class="ruby-identifier">current</span>.<span class="ruby-identifier">combining_class</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">previous_combining_class</span> = <span class="ruby-identifier">current</span>.<span class="ruby-identifier">combining_class</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">current</span>.<span class="ruby-identifier">combining_class</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+        <span class="ruby-identifier">starter_pos</span> = <span class="ruby-identifier">pos</span>
+        <span class="ruby-identifier">starter_char</span> = <span class="ruby-identifier">codepoints</span>[<span class="ruby-identifier">pos</span>]
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">codepoints</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- compose_codepoints-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- compose_codepoints-method -->
+
+    
+      <div id="method-i-decompose_codepoints" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">decompose_codepoints</span><span
+            class="method-args">(type, codepoints)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Decompose composed characters to the decomposed form.</p>
+          
+
+          
+          <div class="method-source-code" id="decompose_codepoints-source">
+            <pre><span class="ruby-comment"># File lib/mail/multibyte/unicode.rb, line 145</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">decompose_codepoints</span>(<span class="ruby-identifier">type</span>, <span class="ruby-identifier">codepoints</span>)
+  <span class="ruby-identifier">codepoints</span>.<span class="ruby-identifier">inject</span>([]) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">decomposed</span>, <span class="ruby-identifier">cp</span><span class="ruby-operator">|</span>
+    <span class="ruby-comment"># if it's a hangul syllable starter character</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-constant">HANGUL_SBASE</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">cp</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">cp</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">HANGUL_SLAST</span>
+      <span class="ruby-identifier">sindex</span> = <span class="ruby-identifier">cp</span> <span class="ruby-operator">-</span> <span class="ruby-constant">HANGUL_SBASE</span>
+      <span class="ruby-identifier">ncp</span> = [] <span class="ruby-comment"># new codepoints</span>
+      <span class="ruby-identifier">ncp</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">HANGUL_LBASE</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">sindex</span> <span class="ruby-operator">/</span> <span class="ruby-constant">HANGUL_NCOUNT</span>
+      <span class="ruby-identifier">ncp</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">HANGUL_VBASE</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">sindex</span> <span class="ruby-operator">%</span> <span class="ruby-constant">HANGUL_NCOUNT</span>) <span class="ruby-operator">/</span> <span class="ruby-constant">HANGUL_TCOUNT</span>
+      <span class="ruby-identifier">tindex</span> = <span class="ruby-identifier">sindex</span> <span class="ruby-operator">%</span> <span class="ruby-constant">HANGUL_TCOUNT</span>
+      <span class="ruby-identifier">ncp</span> <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-constant">HANGUL_TBASE</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">tindex</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">tindex</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+      <span class="ruby-identifier">decomposed</span>.<span class="ruby-identifier">concat</span> <span class="ruby-identifier">ncp</span>
+    <span class="ruby-comment"># if the codepoint is decomposable in with the current decomposition type</span>
+    <span class="ruby-keyword">elsif</span> (<span class="ruby-identifier">ncp</span> = <span class="ruby-identifier">database</span>.<span class="ruby-identifier">codepoints</span>[<span class="ruby-identifier">cp</span>].<span class="ruby-identifier">decomp_mapping</span>) <span class="ruby-keyword">and</span> (<span class="ruby-operator">!</span><span class="ruby-identifier">database</span>.<span class="ruby-identifier">codepoints</span>[<span class="ruby-identifier">cp</span>].<span class="ruby-identifier">decomp_type</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:compatability</span>)
+      <span class="ruby-identifier">decomposed</span>.<span class="ruby-identifier">concat</span> <span class="ruby-identifier">decompose_codepoints</span>(<span class="ruby-identifier">type</span>, <span class="ruby-identifier">ncp</span>.<span class="ruby-identifier">dup</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">decomposed</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">cp</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- decompose_codepoints-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- decompose_codepoints-method -->
+
+    
+      <div id="method-i-g_pack" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">g_pack</span><span
+            class="method-args">(unpacked)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Reverse operation of g_unpack.</p>
+
+<p>Example:</p>
+
+<pre class="ruby"><span class="ruby-constant">Unicode</span>.<span class="ruby-identifier">g_pack</span>(<span class="ruby-constant">Unicode</span>.<span class="ruby-identifier">g_unpack</span>(<span class="ruby-string">'क्षि'</span>)) <span class="ruby-comment"># =&gt; 'क्षि'</span>
+</pre>
+          
+
+          
+          <div class="method-source-code" id="g_pack-source">
+            <pre><span class="ruby-comment"># File lib/mail/multibyte/unicode.rb, line 124</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">g_pack</span>(<span class="ruby-identifier">unpacked</span>)
+  (<span class="ruby-identifier">unpacked</span>.<span class="ruby-identifier">flatten</span>).<span class="ruby-identifier">pack</span>(<span class="ruby-string">'U*'</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- g_pack-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- g_pack-method -->
+
+    
+      <div id="method-i-g_unpack" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">g_unpack</span><span
+            class="method-args">(string)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Unpack the string at grapheme boundaries. Returns a list of character
+lists.</p>
+
+<p>Example:</p>
+
+<pre class="ruby"><span class="ruby-constant">Unicode</span>.<span class="ruby-identifier">g_unpack</span>(<span class="ruby-string">'क्षि'</span>) <span class="ruby-comment"># =&gt; [[2325, 2381], [2359], [2367]]</span>
+<span class="ruby-constant">Unicode</span>.<span class="ruby-identifier">g_unpack</span>(<span class="ruby-string">'Café'</span>) <span class="ruby-comment"># =&gt; [[67], [97], [102], [233]]</span>
+</pre>
+          
+
+          
+          <div class="method-source-code" id="g_unpack-source">
+            <pre><span class="ruby-comment"># File lib/mail/multibyte/unicode.rb, line 90</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">g_unpack</span>(<span class="ruby-identifier">string</span>)
+  <span class="ruby-identifier">codepoints</span> = <span class="ruby-identifier">u_unpack</span>(<span class="ruby-identifier">string</span>)
+  <span class="ruby-identifier">unpacked</span> = []
+  <span class="ruby-identifier">pos</span> = <span class="ruby-value">0</span>
+  <span class="ruby-identifier">marker</span> = <span class="ruby-value">0</span>
+  <span class="ruby-identifier">eoc</span> = <span class="ruby-identifier">codepoints</span>.<span class="ruby-identifier">length</span>
+  <span class="ruby-keyword">while</span>(<span class="ruby-identifier">pos</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">eoc</span>)
+    <span class="ruby-identifier">pos</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+    <span class="ruby-identifier">previous</span> = <span class="ruby-identifier">codepoints</span>[<span class="ruby-identifier">pos</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>]
+    <span class="ruby-identifier">current</span> = <span class="ruby-identifier">codepoints</span>[<span class="ruby-identifier">pos</span>]
+    <span class="ruby-keyword">if</span> (
+        <span class="ruby-comment"># CR X LF</span>
+        ( <span class="ruby-identifier">previous</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">database</span>.<span class="ruby-identifier">boundary</span>[<span class="ruby-value">:cr</span>] <span class="ruby-keyword">and</span> <span class="ruby-identifier">current</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">database</span>.<span class="ruby-identifier">boundary</span>[<span class="ruby-value">:lf</span>] ) <span class="ruby-keyword">or</span>
+        <span class="ruby-comment"># L X (L|V|LV|LVT)</span>
+        ( <span class="ruby-identifier">database</span>.<span class="ruby-identifier">boundary</span>[<span class="ruby-value">:l</span>] <span class="ruby-operator">===</span> <span class="ruby-identifier">previous</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">in_char_class?</span>(<span class="ruby-identifier">current</span>, [<span class="ruby-value">:l</span>,<span class="ruby-value">:v</span>,<span class="ruby-value">:lv</span>,<span class="ruby-value">:lvt</span>]) ) <span class="ruby-keyword">or</span>
+        <span class="ruby-comment"># (LV|V) X (V|T)</span>
+        ( <span class="ruby-identifier">in_char_class?</span>(<span class="ruby-identifier">previous</span>, [<span class="ruby-value">:lv</span>,<span class="ruby-value">:v</span>]) <span class="ruby-keyword">and</span> <span class="ruby-identifier">in_char_class?</span>(<span class="ruby-identifier">current</span>, [<span class="ruby-value">:v</span>,<span class="ruby-value">:t</span>]) ) <span class="ruby-keyword">or</span>
+        <span class="ruby-comment"># (LVT|T) X (T)</span>
+        ( <span class="ruby-identifier">in_char_class?</span>(<span class="ruby-identifier">previous</span>, [<span class="ruby-value">:lvt</span>,<span class="ruby-value">:t</span>]) <span class="ruby-keyword">and</span> <span class="ruby-identifier">database</span>.<span class="ruby-identifier">boundary</span>[<span class="ruby-value">:t</span>] <span class="ruby-operator">===</span> <span class="ruby-identifier">current</span> ) <span class="ruby-keyword">or</span>
+        <span class="ruby-comment"># X Extend</span>
+        (<span class="ruby-identifier">database</span>.<span class="ruby-identifier">boundary</span>[<span class="ruby-value">:extend</span>] <span class="ruby-operator">===</span> <span class="ruby-identifier">current</span>)
+      )
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">unpacked</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">codepoints</span>[<span class="ruby-identifier">marker</span><span class="ruby-operator">..</span><span class="ruby-identifier">pos</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>]
+      <span class="ruby-identifier">marker</span> = <span class="ruby-identifier">pos</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">unpacked</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- g_unpack-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- g_unpack-method -->
+
+    
+      <div id="method-i-in_char_class-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">in_char_class?</span><span
+            class="method-args">(codepoint, classes)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Detect whether the codepoint is in a certain character class. Returns
+<code>true</code> when it’s in the specified character class and
+<code>false</code> otherwise. Valid character classes are:
+<code>:cr</code>, <code>:lf</code>, <code>:l</code>, <code>:v</code>,
+<code>:lv</code>, <code>:lvt</code> and <code>:t</code>.</p>
+
+<p>Primarily used by the grapheme cluster support.</p>
+          
+
+          
+          <div class="method-source-code" id="in_char_class-3F-source">
+            <pre><span class="ruby-comment"># File lib/mail/multibyte/unicode.rb, line 81</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">in_char_class?</span>(<span class="ruby-identifier">codepoint</span>, <span class="ruby-identifier">classes</span>)
+  <span class="ruby-identifier">classes</span>.<span class="ruby-identifier">detect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">database</span>.<span class="ruby-identifier">boundary</span>[<span class="ruby-identifier">c</span>] <span class="ruby-operator">===</span> <span class="ruby-identifier">codepoint</span> } <span class="ruby-operator">?</span> <span class="ruby-keyword">true</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- in_char_class-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- in_char_class-3F-method -->
+
+    
+      <div id="method-i-normalize" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">normalize</span><span
+            class="method-args">(string, form=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the KC normalization of the string by default. NFKC is considered
+the best normalization form for passing strings to databases and
+validations.</p>
+<ul><li>
+<p><code>string</code> - The string to perform normalization on.</p>
+</li><li>
+<p><code>form</code> - The form you want to normalize in. Should be one of the
+following: <code>:c</code>, <code>:kc</code>, <code>:d</code>, or
+<code>:kd</code>. Default is Mail::Multibyte.default_normalization_form</p>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="normalize-source">
+            <pre><span class="ruby-comment"># File lib/mail/multibyte/unicode.rb, line 282</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">normalize</span>(<span class="ruby-identifier">string</span>, <span class="ruby-identifier">form</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">form</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@default_normalization_form</span>
+  <span class="ruby-comment"># See http://www.unicode.org/reports/tr15, Table 1</span>
+  <span class="ruby-identifier">codepoints</span> = <span class="ruby-identifier">u_unpack</span>(<span class="ruby-identifier">string</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">form</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:d</span>
+      <span class="ruby-identifier">reorder_characters</span>(<span class="ruby-identifier">decompose_codepoints</span>(<span class="ruby-value">:canonical</span>, <span class="ruby-identifier">codepoints</span>))
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:c</span>
+      <span class="ruby-identifier">compose_codepoints</span>(<span class="ruby-identifier">reorder_characters</span>(<span class="ruby-identifier">decompose_codepoints</span>(<span class="ruby-value">:canonical</span>, <span class="ruby-identifier">codepoints</span>)))
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:kd</span>
+      <span class="ruby-identifier">reorder_characters</span>(<span class="ruby-identifier">decompose_codepoints</span>(<span class="ruby-value">:compatability</span>, <span class="ruby-identifier">codepoints</span>))
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:kc</span>
+      <span class="ruby-identifier">compose_codepoints</span>(<span class="ruby-identifier">reorder_characters</span>(<span class="ruby-identifier">decompose_codepoints</span>(<span class="ruby-value">:compatability</span>, <span class="ruby-identifier">codepoints</span>)))
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;#{form} is not a valid normalization variant&quot;</span>, <span class="ruby-identifier">caller</span>
+  <span class="ruby-keyword">end</span>.<span class="ruby-identifier">pack</span>(<span class="ruby-string">'U*'</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- normalize-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- normalize-method -->
+
+    
+      <div id="method-i-reorder_characters" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">reorder_characters</span><span
+            class="method-args">(codepoints)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Re-order codepoints so the string becomes canonical.</p>
+          
+
+          
+          <div class="method-source-code" id="reorder_characters-source">
+            <pre><span class="ruby-comment"># File lib/mail/multibyte/unicode.rb, line 129</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">reorder_characters</span>(<span class="ruby-identifier">codepoints</span>)
+  <span class="ruby-identifier">length</span> = <span class="ruby-identifier">codepoints</span>.<span class="ruby-identifier">length</span><span class="ruby-operator">-</span> <span class="ruby-value">1</span>
+  <span class="ruby-identifier">pos</span> = <span class="ruby-value">0</span>
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">pos</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">length</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">cp1</span>, <span class="ruby-identifier">cp2</span> = <span class="ruby-identifier">database</span>.<span class="ruby-identifier">codepoints</span>[<span class="ruby-identifier">codepoints</span>[<span class="ruby-identifier">pos</span>]], <span class="ruby-identifier">database</span>.<span class="ruby-identifier">codepoints</span>[<span class="ruby-identifier">codepoints</span>[<span class="ruby-identifier">pos</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>]]
+    <span class="ruby-keyword">if</span> (<span class="ruby-identifier">cp1</span>.<span class="ruby-identifier">combining_class</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">cp2</span>.<span class="ruby-identifier">combining_class</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">cp2</span>.<span class="ruby-identifier">combining_class</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>)
+      <span class="ruby-identifier">codepoints</span>[<span class="ruby-identifier">pos</span><span class="ruby-operator">..</span><span class="ruby-identifier">pos</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>] = <span class="ruby-identifier">cp2</span>.<span class="ruby-identifier">code</span>, <span class="ruby-identifier">cp1</span>.<span class="ruby-identifier">code</span>
+      <span class="ruby-identifier">pos</span> <span class="ruby-operator">+=</span> (<span class="ruby-identifier">pos</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span> <span class="ruby-operator">?</span> <span class="ruby-value">-1</span> <span class="ruby-operator">:</span> <span class="ruby-value">1</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">pos</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">codepoints</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- reorder_characters-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- reorder_characters-method -->
+
+    
+      <div id="method-i-tidy_bytes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">tidy_bytes</span><span
+            class="method-args">(string, force = false)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Replaces all ISO-8859-1 or CP1252 characters by their UTF-8 equivalent
+resulting in a valid UTF-8 string.</p>
+
+<p>Passing <code>true</code> will forcibly tidy all bytes, assuming that the
+string’s encoding is entirely CP1252 or ISO-8859-1.</p>
+          
+
+          
+          <div class="method-source-code" id="tidy_bytes-source">
+            <pre><span class="ruby-comment"># File lib/mail/multibyte/unicode.rb, line 227</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">tidy_bytes</span>(<span class="ruby-identifier">string</span>, <span class="ruby-identifier">force</span> = <span class="ruby-keyword">false</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">force</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">string</span>.<span class="ruby-identifier">unpack</span>(<span class="ruby-string">&quot;C*&quot;</span>).<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">b</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">tidy_byte</span>(<span class="ruby-identifier">b</span>)
+    <span class="ruby-keyword">end</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">pack</span>(<span class="ruby-string">&quot;C*&quot;</span>).<span class="ruby-identifier">unpack</span>(<span class="ruby-string">&quot;U*&quot;</span>).<span class="ruby-identifier">pack</span>(<span class="ruby-string">&quot;U*&quot;</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">bytes</span> = <span class="ruby-identifier">string</span>.<span class="ruby-identifier">unpack</span>(<span class="ruby-string">&quot;C*&quot;</span>)
+  <span class="ruby-identifier">conts_expected</span> = <span class="ruby-value">0</span>
+  <span class="ruby-identifier">last_lead</span> = <span class="ruby-value">0</span>
+
+  <span class="ruby-identifier">bytes</span>.<span class="ruby-identifier">each_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+
+    <span class="ruby-identifier">byte</span>          = <span class="ruby-identifier">bytes</span>[<span class="ruby-identifier">i</span>]
+    <span class="ruby-identifier">is_cont</span>       = <span class="ruby-identifier">byte</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">127</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">byte</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">192</span>
+    <span class="ruby-identifier">is_lead</span>       = <span class="ruby-identifier">byte</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">191</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">byte</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">245</span>
+    <span class="ruby-identifier">is_unused</span>     = <span class="ruby-identifier">byte</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">240</span>
+    <span class="ruby-identifier">is_restricted</span> = <span class="ruby-identifier">byte</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">244</span>
+
+    <span class="ruby-comment"># Impossible or highly unlikely byte? Clean it.</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">is_unused</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">is_restricted</span>
+      <span class="ruby-identifier">bytes</span>[<span class="ruby-identifier">i</span>] = <span class="ruby-identifier">tidy_byte</span>(<span class="ruby-identifier">byte</span>)
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">is_cont</span>
+      <span class="ruby-comment"># Not expecting contination byte? Clean up. Otherwise, now expect one less.</span>
+      <span class="ruby-identifier">conts_expected</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">bytes</span>[<span class="ruby-identifier">i</span>] = <span class="ruby-identifier">tidy_byte</span>(<span class="ruby-identifier">byte</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">conts_expected</span> <span class="ruby-operator">-=</span> <span class="ruby-value">1</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">conts_expected</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+        <span class="ruby-comment"># Expected continuation, but got ASCII or leading? Clean backwards up to</span>
+        <span class="ruby-comment"># the leading byte.</span>
+        (<span class="ruby-value">1</span><span class="ruby-operator">..</span>(<span class="ruby-identifier">i</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">last_lead</span>)).<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">j</span><span class="ruby-operator">|</span> <span class="ruby-identifier">bytes</span>[<span class="ruby-identifier">i</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">j</span>] = <span class="ruby-identifier">tidy_byte</span>(<span class="ruby-identifier">bytes</span>[<span class="ruby-identifier">i</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">j</span>])}
+        <span class="ruby-identifier">conts_expected</span> = <span class="ruby-value">0</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">is_lead</span>
+        <span class="ruby-comment"># Final byte is leading? Clean it.</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">bytes</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>
+          <span class="ruby-identifier">bytes</span>[<span class="ruby-identifier">i</span>] = <span class="ruby-identifier">tidy_byte</span>(<span class="ruby-identifier">bytes</span>.<span class="ruby-identifier">last</span>)
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-comment"># Valid leading byte? Expect continuations determined by position of</span>
+          <span class="ruby-comment"># first zero bit, with max of 3.</span>
+          <span class="ruby-identifier">conts_expected</span> = <span class="ruby-identifier">byte</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">224</span> <span class="ruby-operator">?</span> <span class="ruby-value">1</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">byte</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">240</span> <span class="ruby-operator">?</span> <span class="ruby-value">2</span> <span class="ruby-operator">:</span> <span class="ruby-value">3</span>
+          <span class="ruby-identifier">last_lead</span> = <span class="ruby-identifier">i</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">bytes</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">?</span> <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">bytes</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">pack</span>(<span class="ruby-string">&quot;C*&quot;</span>).<span class="ruby-identifier">unpack</span>(<span class="ruby-string">&quot;U*&quot;</span>).<span class="ruby-identifier">pack</span>(<span class="ruby-string">&quot;U*&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- tidy_bytes-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- tidy_bytes-method -->
+
+    
+      <div id="method-i-u_unpack" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">u_unpack</span><span
+            class="method-args">(string)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Unpack the string at codepoints boundaries. Raises an <a
+href="EncodingError.html">EncodingError</a> when the encoding of the string
+isn’t valid UTF-8.</p>
+
+<p>Example:</p>
+
+<pre class="ruby"><span class="ruby-constant">Unicode</span>.<span class="ruby-identifier">u_unpack</span>(<span class="ruby-string">'Café'</span>) <span class="ruby-comment"># =&gt; [67, 97, 102, 233]</span>
+</pre>
+          
+
+          
+          <div class="method-source-code" id="u_unpack-source">
+            <pre><span class="ruby-comment"># File lib/mail/multibyte/unicode.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">u_unpack</span>(<span class="ruby-identifier">string</span>)
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">string</span>.<span class="ruby-identifier">unpack</span> <span class="ruby-string">'U*'</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">ArgumentError</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">EncodingError</span>, <span class="ruby-string">'malformed UTF-8 character'</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- u_unpack-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- u_unpack-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

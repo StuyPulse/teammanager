@@ -1,0 +1,2904 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>Table of Contents - actionpack-3.2.3 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body class="indexpage">
+<h1>Table of Contents - actionpack-3.2.3 Documentation</h1>
+
+
+<h2 id="classes">Classes/Modules</h2>
+<ul>
+  <li class="module">
+    <a href="ActionDispatch.html">ActionDispatch</a>
+  </li>
+    <li class="module">
+    <a href="ActionDispatch/Assertions.html">ActionDispatch::Assertions</a>
+  </li>
+    <li class="module">
+    <a href="ActionDispatch/Assertions/DomAssertions.html">ActionDispatch::Assertions::DomAssertions</a>
+  </li>
+    <li class="module">
+    <a href="ActionDispatch/Assertions/ResponseAssertions.html">ActionDispatch::Assertions::ResponseAssertions</a>
+  </li>
+    <li class="module">
+    <a href="ActionDispatch/Assertions/RoutingAssertions.html">ActionDispatch::Assertions::RoutingAssertions</a>
+  </li>
+    <li class="module">
+    <a href="ActionDispatch/Assertions/SelectorAssertions.html">ActionDispatch::Assertions::SelectorAssertions</a>
+  </li>
+    <li class="module">
+    <a href="ActionDispatch/Assertions/TagAssertions.html">ActionDispatch::Assertions::TagAssertions</a>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/BestStandardsSupport.html">ActionDispatch::BestStandardsSupport</a>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/BodyProxy.html">ActionDispatch::BodyProxy</a>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/Callbacks.html">ActionDispatch::Callbacks</a>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/Cookies.html">ActionDispatch::Cookies</a>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/Cookies/CookieOverflow.html">ActionDispatch::Cookies::CookieOverflow</a>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/DebugExceptions.html">ActionDispatch::DebugExceptions</a>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/ExceptionWrapper.html">ActionDispatch::ExceptionWrapper</a>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/FileHandler.html">ActionDispatch::FileHandler</a>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/Flash.html">ActionDispatch::Flash</a>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/Flash/FlashHash.html">ActionDispatch::Flash::FlashHash</a>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/Head.html">ActionDispatch::Head</a>
+  </li>
+    <li class="module">
+    <a href="ActionDispatch/Http.html">ActionDispatch::Http</a>
+  </li>
+    <li class="module">
+    <a href="ActionDispatch/Http/Cache.html">ActionDispatch::Http::Cache</a>
+  </li>
+    <li class="module">
+    <a href="ActionDispatch/Http/Cache/Request.html">ActionDispatch::Http::Cache::Request</a>
+  </li>
+    <li class="module">
+    <a href="ActionDispatch/Http/Cache/Response.html">ActionDispatch::Http::Cache::Response</a>
+  </li>
+    <li class="module">
+    <a href="ActionDispatch/Http/FilterParameters.html">ActionDispatch::Http::FilterParameters</a>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/Http/Headers.html">ActionDispatch::Http::Headers</a>
+  </li>
+    <li class="module">
+    <a href="ActionDispatch/Http/MimeNegotiation.html">ActionDispatch::Http::MimeNegotiation</a>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/Http/ParameterFilter.html">ActionDispatch::Http::ParameterFilter</a>
+  </li>
+    <li class="module">
+    <a href="ActionDispatch/Http/Parameters.html">ActionDispatch::Http::Parameters</a>
+  </li>
+    <li class="module">
+    <a href="ActionDispatch/Http/URL.html">ActionDispatch::Http::URL</a>
+  </li>
+    <li class="module">
+    <a href="ActionDispatch/Http/Upload.html">ActionDispatch::Http::Upload</a>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/Http/UploadedFile.html">ActionDispatch::Http::UploadedFile</a>
+  </li>
+    <li class="module">
+    <a href="ActionDispatch/Integration.html">ActionDispatch::Integration</a>
+  </li>
+    <li class="module">
+    <a href="ActionDispatch/Integration/RequestHelpers.html">ActionDispatch::Integration::RequestHelpers</a>
+  </li>
+    <li class="module">
+    <a href="ActionDispatch/Integration/Runner.html">ActionDispatch::Integration::Runner</a>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/Integration/Session.html">ActionDispatch::Integration::Session</a>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/IntegrationTest.html">ActionDispatch::IntegrationTest</a>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/MiddlewareStack.html">ActionDispatch::MiddlewareStack</a>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/MiddlewareStack/Middleware.html">ActionDispatch::MiddlewareStack::Middleware</a>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/ParamsParser.html">ActionDispatch::ParamsParser</a>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/PerformanceTest.html">ActionDispatch::PerformanceTest</a>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/PublicExceptions.html">ActionDispatch::PublicExceptions</a>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/RailsEntityStore.html">ActionDispatch::RailsEntityStore</a>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/RailsMetaStore.html">ActionDispatch::RailsMetaStore</a>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/Railtie.html">ActionDispatch::Railtie</a>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/Reloader.html">ActionDispatch::Reloader</a>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/RemoteIp.html">ActionDispatch::RemoteIp</a>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/RemoteIp/GetIp.html">ActionDispatch::RemoteIp::GetIp</a>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/RemoteIp/IpSpoofAttackError.html">ActionDispatch::RemoteIp::IpSpoofAttackError</a>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/Request.html">ActionDispatch::Request</a>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/RequestId.html">ActionDispatch::RequestId</a>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/Rescue.html">ActionDispatch::Rescue</a>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/Response.html">ActionDispatch::Response</a>
+  </li>
+    <li class="module">
+    <a href="ActionDispatch/Routing.html">ActionDispatch::Routing</a>
+
+    <img class="toc-toggle" src="images/transparent.png" alt="" title="toggle headings">
+    <ul class="initially-hidden">
+      <li><a href="ActionDispatch/Routing.html#label-Resources">Resources</a>
+      <li><a href="ActionDispatch/Routing.html#label-Named+routes">Named routes</a>
+      <li><a href="ActionDispatch/Routing.html#label-Pretty+URLs">Pretty URLs</a>
+      <li><a href="ActionDispatch/Routing.html#label-Regular+Expressions+and+parameters">Regular Expressions and parameters</a>
+      <li><a href="ActionDispatch/Routing.html#label-Default+route">Default route</a>
+      <li><a href="ActionDispatch/Routing.html#label-HTTP+Methods">HTTP Methods</a>
+      <li><a href="ActionDispatch/Routing.html#label-HTTP+helper+methods">HTTP helper methods</a>
+      <li><a href="ActionDispatch/Routing.html#label-External+redirects">External redirects</a>
+      <li><a href="ActionDispatch/Routing.html#label-Routing+to+Rack+Applications">Routing to Rack Applications</a>
+      <li><a href="ActionDispatch/Routing.html#label-Reloading+routes">Reloading routes</a>
+      <li><a href="ActionDispatch/Routing.html#label-Testing+Routes">Testing Routes</a>
+      <li><a href="ActionDispatch/Routing.html#label-assert_routing"><code>assert_routing</code></a>
+      <li><a href="ActionDispatch/Routing.html#label-assert_recognizes"><code>assert_recognizes</code></a>
+      <li><a href="ActionDispatch/Routing.html#label-View+a+list+of+all+your+routes">View a list of all your routes</a>
+    </ul>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/Routing/Mapper.html">ActionDispatch::Routing::Mapper</a>
+  </li>
+    <li class="module">
+    <a href="ActionDispatch/Routing/Mapper/Base.html">ActionDispatch::Routing::Mapper::Base</a>
+  </li>
+    <li class="module">
+    <a href="ActionDispatch/Routing/Mapper/HttpHelpers.html">ActionDispatch::Routing::Mapper::HttpHelpers</a>
+  </li>
+    <li class="module">
+    <a href="ActionDispatch/Routing/Mapper/Resources.html">ActionDispatch::Routing::Mapper::Resources</a>
+  </li>
+    <li class="module">
+    <a href="ActionDispatch/Routing/Mapper/Scoping.html">ActionDispatch::Routing::Mapper::Scoping</a>
+  </li>
+    <li class="module">
+    <a href="ActionDispatch/Routing/PolymorphicRoutes.html">ActionDispatch::Routing::PolymorphicRoutes</a>
+
+    <img class="toc-toggle" src="images/transparent.png" alt="" title="toggle headings">
+    <ul class="initially-hidden">
+      <li><a href="ActionDispatch/Routing/PolymorphicRoutes.html#label-Usage+within+the+framework">Usage within the framework</a>
+      <li><a href="ActionDispatch/Routing/PolymorphicRoutes.html#label-Prefixed+polymorphic+helpers">Prefixed polymorphic helpers</a>
+      <li><a href="ActionDispatch/Routing/PolymorphicRoutes.html#label-Using+with+mounted+engines">Using with mounted engines</a>
+    </ul>
+  </li>
+    <li class="module">
+    <a href="ActionDispatch/Routing/Redirection.html">ActionDispatch::Routing::Redirection</a>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/Routing/RouteSet.html">ActionDispatch::Routing::RouteSet</a>
+  </li>
+    <li class="module">
+    <a href="ActionDispatch/Routing/RouteSet/MountedHelpers.html">ActionDispatch::Routing::RouteSet::MountedHelpers</a>
+  </li>
+    <li class="module">
+    <a href="ActionDispatch/Routing/UrlFor.html">ActionDispatch::Routing::UrlFor</a>
+
+    <img class="toc-toggle" src="images/transparent.png" alt="" title="toggle headings">
+    <ul class="initially-hidden">
+      <li><a href="ActionDispatch/Routing/UrlFor.html#label-URL+generation+from+parameters">URL generation from parameters</a>
+      <li><a href="ActionDispatch/Routing/UrlFor.html#label-URL+generation+for+named+routes">URL generation for named routes</a>
+    </ul>
+  </li>
+    <li class="module">
+    <a href="ActionDispatch/Session.html">ActionDispatch::Session</a>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/Session/AbstractStore.html">ActionDispatch::Session::AbstractStore</a>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/Session/CacheStore.html">ActionDispatch::Session::CacheStore</a>
+  </li>
+    <li class="module">
+    <a href="ActionDispatch/Session/Compatibility.html">ActionDispatch::Session::Compatibility</a>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/Session/CookieStore.html">ActionDispatch::Session::CookieStore</a>
+  </li>
+    <li class="module">
+    <a href="ActionDispatch/Session/DestroyableSession.html">ActionDispatch::Session::DestroyableSession</a>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/Session/MemCacheStore.html">ActionDispatch::Session::MemCacheStore</a>
+  </li>
+    <li class="module">
+    <a href="ActionDispatch/Session/StaleSessionCheck.html">ActionDispatch::Session::StaleSessionCheck</a>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/ShowExceptions.html">ActionDispatch::ShowExceptions</a>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/Static.html">ActionDispatch::Static</a>
+  </li>
+    <li class="module">
+    <a href="ActionDispatch/TestProcess.html">ActionDispatch::TestProcess</a>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/TestRequest.html">ActionDispatch::TestRequest</a>
+  </li>
+    <li class="class">
+    <a href="ActionDispatch/TestResponse.html">ActionDispatch::TestResponse</a>
+  </li>
+    <li class="module">
+    <a href="ActionController.html">ActionController</a>
+  </li>
+    <li class="class">
+    <a href="ActionController/Base.html">ActionController::Base</a>
+
+    <img class="toc-toggle" src="images/transparent.png" alt="" title="toggle headings">
+    <ul class="initially-hidden">
+      <li><a href="ActionController/Base.html#label-Requests">Requests</a>
+      <li><a href="ActionController/Base.html#label-Parameters">Parameters</a>
+      <li><a href="ActionController/Base.html#label-Sessions">Sessions</a>
+      <li><a href="ActionController/Base.html#label-Responses">Responses</a>
+      <li><a href="ActionController/Base.html#label-Renders">Renders</a>
+      <li><a href="ActionController/Base.html#label-Redirects">Redirects</a>
+      <li><a href="ActionController/Base.html#label-Calling+multiple+redirects+or+renders">Calling multiple redirects or renders</a>
+    </ul>
+  </li>
+    <li class="module">
+    <a href="ActionController/Caching.html">ActionController::Caching</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/Caching/Actions.html">ActionController::Caching::Actions</a>
+  </li>
+    <li class="class">
+    <a href="ActionController/Caching/Actions/ActionCachePath.html">ActionController::Caching::Actions::ActionCachePath</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/Caching/Actions/ClassMethods.html">ActionController::Caching::Actions::ClassMethods</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/Caching/ConfigMethods.html">ActionController::Caching::ConfigMethods</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/Caching/Fragments.html">ActionController::Caching::Fragments</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/Caching/Pages.html">ActionController::Caching::Pages</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/Caching/Pages/ClassMethods.html">ActionController::Caching::Pages::ClassMethods</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/Caching/Sweeping.html">ActionController::Caching::Sweeping</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/Compatibility.html">ActionController::Compatibility</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/ConditionalGet.html">ActionController::ConditionalGet</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/Cookies.html">ActionController::Cookies</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/DataStreaming.html">ActionController::DataStreaming</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/Flash.html">ActionController::Flash</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/ForceSSL.html">ActionController::ForceSSL</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/ForceSSL/ClassMethods.html">ActionController::ForceSSL::ClassMethods</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/Head.html">ActionController::Head</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/Helpers.html">ActionController::Helpers</a>
+
+    <img class="toc-toggle" src="images/transparent.png" alt="" title="toggle headings">
+    <ul class="initially-hidden">
+      <li><a href="ActionController/Helpers.html#label-Examples">Examples</a>
+    </ul>
+  </li>
+    <li class="module">
+    <a href="ActionController/Helpers/ClassMethods.html">ActionController::Helpers::ClassMethods</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/HideActions.html">ActionController::HideActions</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/HideActions/ClassMethods.html">ActionController::HideActions::ClassMethods</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/HttpAuthentication.html">ActionController::HttpAuthentication</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/HttpAuthentication/Basic.html">ActionController::HttpAuthentication::Basic</a>
+
+    <img class="toc-toggle" src="images/transparent.png" alt="" title="toggle headings">
+    <ul class="initially-hidden">
+      <li><a href="ActionController/HttpAuthentication/Basic.html#label-Simple+Basic+example">Simple Basic example</a>
+      <li><a href="ActionController/HttpAuthentication/Basic.html#label-Advanced+Basic+example">Advanced Basic example</a>
+      <li><a href="ActionController/HttpAuthentication/Basic.html#label-Simple+Digest+example">Simple Digest example</a>
+      <li><a href="ActionController/HttpAuthentication/Basic.html#label-Notes">Notes</a>
+    </ul>
+  </li>
+    <li class="module">
+    <a href="ActionController/HttpAuthentication/Basic/ControllerMethods.html">ActionController::HttpAuthentication::Basic::ControllerMethods</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/HttpAuthentication/Basic/ControllerMethods/ClassMethods.html">ActionController::HttpAuthentication::Basic::ControllerMethods::ClassMethods</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/HttpAuthentication/Digest.html">ActionController::HttpAuthentication::Digest</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/HttpAuthentication/Digest/ControllerMethods.html">ActionController::HttpAuthentication::Digest::ControllerMethods</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/HttpAuthentication/Token.html">ActionController::HttpAuthentication::Token</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/HttpAuthentication/Token/ControllerMethods.html">ActionController::HttpAuthentication::Token::ControllerMethods</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/ImplicitRender.html">ActionController::ImplicitRender</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/Instrumentation.html">ActionController::Instrumentation</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/Instrumentation/ClassMethods.html">ActionController::Instrumentation::ClassMethods</a>
+  </li>
+    <li class="class">
+    <a href="ActionController/LogSubscriber.html">ActionController::LogSubscriber</a>
+  </li>
+    <li class="class">
+    <a href="ActionController/Metal.html">ActionController::Metal</a>
+
+    <img class="toc-toggle" src="images/transparent.png" alt="" title="toggle headings">
+    <ul class="initially-hidden">
+      <li><a href="ActionController/Metal.html#label-Rendering+Helpers">Rendering Helpers</a>
+      <li><a href="ActionController/Metal.html#label-Redirection+Helpers">Redirection Helpers</a>
+      <li><a href="ActionController/Metal.html#label-Other+Helpers">Other Helpers</a>
+    </ul>
+  </li>
+    <li class="class">
+    <a href="ActionController/Middleware.html">ActionController::Middleware</a>
+  </li>
+    <li class="class">
+    <a href="ActionController/Middleware/ActionMiddleware.html">ActionController::Middleware::ActionMiddleware</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/MimeResponds.html">ActionController::MimeResponds</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/MimeResponds/ClassMethods.html">ActionController::MimeResponds::ClassMethods</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/ParamsWrapper.html">ActionController::ParamsWrapper</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/ParamsWrapper/ClassMethods.html">ActionController::ParamsWrapper::ClassMethods</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/RackDelegation.html">ActionController::RackDelegation</a>
+  </li>
+    <li class="class">
+    <a href="ActionController/Railtie.html">ActionController::Railtie</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/Railties.html">ActionController::Railties</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/Railties/Paths.html">ActionController::Railties::Paths</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/RecordIdentifier.html">ActionController::RecordIdentifier</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/Redirecting.html">ActionController::Redirecting</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/Renderers.html">ActionController::Renderers</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/Renderers/All.html">ActionController::Renderers::All</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/Renderers/ClassMethods.html">ActionController::Renderers::ClassMethods</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/Rendering.html">ActionController::Rendering</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/RequestForgeryProtection.html">ActionController::RequestForgeryProtection</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/RequestForgeryProtection/ClassMethods.html">ActionController::RequestForgeryProtection::ClassMethods</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/Rescue.html">ActionController::Rescue</a>
+  </li>
+    <li class="class">
+    <a href="ActionController/Responder.html">ActionController::Responder</a>
+
+    <img class="toc-toggle" src="images/transparent.png" alt="" title="toggle headings">
+    <ul class="initially-hidden">
+      <li><a href="ActionController/Responder.html#label-Builtin+HTTP+verb+semantics">Builtin HTTP verb semantics</a>
+      <li><a href="ActionController/Responder.html#label-Nested+resources">Nested resources</a>
+      <li><a href="ActionController/Responder.html#label-Custom+options">Custom options</a>
+    </ul>
+  </li>
+    <li class="module">
+    <a href="ActionController/SessionManagement.html">ActionController::SessionManagement</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/SessionManagement/ClassMethods.html">ActionController::SessionManagement::ClassMethods</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/Streaming.html">ActionController::Streaming</a>
+
+    <img class="toc-toggle" src="images/transparent.png" alt="" title="toggle headings">
+    <ul class="initially-hidden">
+      <li><a href="ActionController/Streaming.html#label-Examples">Examples</a>
+      <li><a href="ActionController/Streaming.html#label-When+to+use+streaming">When to use streaming</a>
+      <li><a href="ActionController/Streaming.html#label-Communication+between+layout+and+template">Communication between layout and template</a>
+      <li><a href="ActionController/Streaming.html#label-Headers%2C+cookies%2C+session+and+flash">Headers, cookies, session and flash</a>
+      <li><a href="ActionController/Streaming.html#label-Middlewares">Middlewares</a>
+      <li><a href="ActionController/Streaming.html#label-Errors">Errors</a>
+      <li><a href="ActionController/Streaming.html#label-Web+server+support">Web server support</a>
+      <li><a href="ActionController/Streaming.html#label-Unicorn">Unicorn</a>
+      <li><a href="ActionController/Streaming.html#label-Passenger">Passenger</a>
+    </ul>
+  </li>
+    <li class="module">
+    <a href="ActionController/TemplateAssertions.html">ActionController::TemplateAssertions</a>
+  </li>
+    <li class="class">
+    <a href="ActionController/TestCase.html">ActionController::TestCase</a>
+
+    <img class="toc-toggle" src="images/transparent.png" alt="" title="toggle headings">
+    <ul class="initially-hidden">
+      <li><a href="ActionController/TestCase.html#label-Basic+example">Basic example</a>
+      <li><a href="ActionController/TestCase.html#label-Special+instance+variables">Special instance variables</a>
+      <li><a href="ActionController/TestCase.html#label-Controller+is+automatically+inferred">Controller is automatically inferred</a>
+      <li><a href="ActionController/TestCase.html#label-Testing+controller+internals">Testing controller internals</a>
+      <li><a href="ActionController/TestCase.html#label-Manipulating+session+and+cookie+variables">Manipulating session and cookie variables</a>
+      <li><a href="ActionController/TestCase.html#label-Testing+named+routes">Testing named routes</a>
+    </ul>
+  </li>
+    <li class="module">
+    <a href="ActionController/TestCase/Behavior.html">ActionController::TestCase::Behavior</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/TestCase/Behavior/ClassMethods.html">ActionController::TestCase::Behavior::ClassMethods</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/TestCase/RaiseActionExceptions.html">ActionController::TestCase::RaiseActionExceptions</a>
+  </li>
+    <li class="class">
+    <a href="ActionController/TestResponse.html">ActionController::TestResponse</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/Testing.html">ActionController::Testing</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/Testing/ClassMethods.html">ActionController::Testing::ClassMethods</a>
+  </li>
+    <li class="module">
+    <a href="ActionController/UrlFor.html">ActionController::UrlFor</a>
+  </li>
+    <li class="module">
+    <a href="ActionView.html">ActionView</a>
+  </li>
+    <li class="class">
+    <a href="ActionView/Base.html">ActionView::Base</a>
+  </li>
+    <li class="module">
+    <a href="ActionView/Context.html">ActionView::Context</a>
+
+    <img class="toc-toggle" src="images/transparent.png" alt="" title="toggle headings">
+    <ul class="initially-hidden">
+      <li><a href="ActionView/Context.html#label-Action+View+Context">Action View Context</a>
+    </ul>
+  </li>
+    <li class="class">
+    <a href="ActionView/FileSystemResolver.html">ActionView::FileSystemResolver</a>
+
+    <img class="toc-toggle" src="images/transparent.png" alt="" title="toggle headings">
+    <ul class="initially-hidden">
+      <li><a href="ActionView/FileSystemResolver.html#label-Examples">Examples</a>
+      <li><a href="ActionView/FileSystemResolver.html#label-Pattern+format+and+variables">Pattern format and variables</a>
+    </ul>
+  </li>
+    <li class="class">
+    <a href="ActionView/FixtureResolver.html">ActionView::FixtureResolver</a>
+  </li>
+    <li class="module">
+    <a href="ActionView/Helpers.html">ActionView::Helpers</a>
+  </li>
+    <li class="module">
+    <a href="ActionView/Helpers/ActiveModelHelper.html">ActionView::Helpers::ActiveModelHelper</a>
+  </li>
+    <li class="module">
+    <a href="ActionView/Helpers/ActiveModelInstanceTag.html">ActionView::Helpers::ActiveModelInstanceTag</a>
+  </li>
+    <li class="class">
+    <a href="ActionView/AssetPaths.html">ActionView::Helpers::AssetPaths</a>
+  </li>
+    <li class="module">
+    <a href="ActionView/Helpers/AssetTagHelper.html">ActionView::Helpers::AssetTagHelper</a>
+
+    <img class="toc-toggle" src="images/transparent.png" alt="" title="toggle headings">
+    <ul class="initially-hidden">
+      <li><a href="ActionView/Helpers/AssetTagHelper.html#label-Using+asset+hosts">Using asset hosts</a>
+      <li><a href="ActionView/Helpers/AssetTagHelper.html#label-Customizing+the+asset+path">Customizing the asset path</a>
+    </ul>
+  </li>
+    <li class="class">
+    <a href="ActionView/Helpers/AssetTagHelper/AssetIncludeTag.html">ActionView::Helpers::AssetTagHelper::AssetIncludeTag</a>
+  </li>
+    <li class="class">
+    <a href="ActionView/Helpers/AssetTagHelper/JavascriptIncludeTag.html">ActionView::Helpers::AssetTagHelper::JavascriptIncludeTag</a>
+  </li>
+    <li class="module">
+    <a href="ActionView/Helpers/AssetTagHelper/JavascriptTagHelpers.html">ActionView::Helpers::AssetTagHelper::JavascriptTagHelpers</a>
+  </li>
+    <li class="module">
+    <a href="ActionView/Helpers/AssetTagHelper/JavascriptTagHelpers/ClassMethods.html">ActionView::Helpers::AssetTagHelper::JavascriptTagHelpers::ClassMethods</a>
+  </li>
+    <li class="class">
+    <a href="ActionView/Helpers/AssetTagHelper/StylesheetIncludeTag.html">ActionView::Helpers::AssetTagHelper::StylesheetIncludeTag</a>
+  </li>
+    <li class="module">
+    <a href="ActionView/Helpers/AssetTagHelper/StylesheetTagHelpers.html">ActionView::Helpers::AssetTagHelper::StylesheetTagHelpers</a>
+  </li>
+    <li class="module">
+    <a href="ActionView/Helpers/AssetTagHelper/StylesheetTagHelpers/ClassMethods.html">ActionView::Helpers::AssetTagHelper::StylesheetTagHelpers::ClassMethods</a>
+  </li>
+    <li class="module">
+    <a href="ActionView/Helpers/AtomFeedHelper.html">ActionView::Helpers::AtomFeedHelper</a>
+  </li>
+    <li class="class">
+    <a href="ActionView/Helpers/AtomFeedHelper/AtomBuilder.html">ActionView::Helpers::AtomFeedHelper::AtomBuilder</a>
+  </li>
+    <li class="class">
+    <a href="ActionView/Helpers/AtomFeedHelper/AtomFeedBuilder.html">ActionView::Helpers::AtomFeedHelper::AtomFeedBuilder</a>
+  </li>
+    <li class="module">
+    <a href="ActionView/Helpers/CacheHelper.html">ActionView::Helpers::CacheHelper</a>
+  </li>
+    <li class="module">
+    <a href="ActionView/Helpers/CaptureHelper.html">ActionView::Helpers::CaptureHelper</a>
+  </li>
+    <li class="module">
+    <a href="ActionView/Helpers/CsrfHelper.html">ActionView::Helpers::CsrfHelper</a>
+  </li>
+    <li class="module">
+    <a href="ActionView/Helpers/DateHelper.html">ActionView::Helpers::DateHelper</a>
+
+    <img class="toc-toggle" src="images/transparent.png" alt="" title="toggle headings">
+    <ul class="initially-hidden">
+      <li><a href="ActionView/Helpers/DateHelper.html#label-Action+View+Date+Helpers">Action View Date Helpers</a>
+    </ul>
+  </li>
+    <li class="module">
+    <a href="ActionView/Helpers/DateHelperInstanceTag.html">ActionView::Helpers::DateHelperInstanceTag</a>
+  </li>
+    <li class="module">
+    <a href="ActionView/Helpers/DebugHelper.html">ActionView::Helpers::DebugHelper</a>
+  </li>
+    <li class="class">
+    <a href="ActionView/Helpers/FormBuilder.html">ActionView::Helpers::FormBuilder</a>
+  </li>
+    <li class="module">
+    <a href="ActionView/Helpers/FormHelper.html">ActionView::Helpers::FormHelper</a>
+  </li>
+    <li class="module">
+    <a href="ActionView/Helpers/FormOptionsHelper.html">ActionView::Helpers::FormOptionsHelper</a>
+
+    <img class="toc-toggle" src="images/transparent.png" alt="" title="toggle headings">
+    <ul class="initially-hidden">
+      <li><a href="ActionView/Helpers/FormOptionsHelper.html#label-Options">Options</a>
+    </ul>
+  </li>
+    <li class="module">
+    <a href="ActionView/Helpers/FormTagHelper.html">ActionView::Helpers::FormTagHelper</a>
+  </li>
+    <li class="class">
+    <a href="ActionView/Helpers/InstanceTag.html">ActionView::Helpers::InstanceTag</a>
+  </li>
+    <li class="module">
+    <a href="ActionView/Helpers/JavaScriptHelper.html">ActionView::Helpers::JavaScriptHelper</a>
+  </li>
+    <li class="module">
+    <a href="ActionView/Helpers/NumberHelper.html">ActionView::Helpers::NumberHelper</a>
+  </li>
+    <li class="class">
+    <a href="ActionView/Helpers/NumberHelper/InvalidNumberError.html">ActionView::Helpers::NumberHelper::InvalidNumberError</a>
+  </li>
+    <li class="module">
+    <a href="ActionView/Helpers/OutputSafetyHelper.html">ActionView::Helpers::OutputSafetyHelper</a>
+  </li>
+    <li class="module">
+    <a href="ActionView/Helpers/RecordTagHelper.html">ActionView::Helpers::RecordTagHelper</a>
+  </li>
+    <li class="module">
+    <a href="ActionView/Helpers/RenderingHelper.html">ActionView::Helpers::RenderingHelper</a>
+
+    <img class="toc-toggle" src="images/transparent.png" alt="" title="toggle headings">
+    <ul class="initially-hidden">
+      <li><a href="ActionView/Helpers/RenderingHelper.html#label-Action+View+Rendering">Action View Rendering</a>
+    </ul>
+  </li>
+    <li class="module">
+    <a href="ActionView/Helpers/SanitizeHelper.html">ActionView::Helpers::SanitizeHelper</a>
+  </li>
+    <li class="module">
+    <a href="ActionView/Helpers/TagHelper.html">ActionView::Helpers::TagHelper</a>
+  </li>
+    <li class="module">
+    <a href="ActionView/Helpers/TextHelper.html">ActionView::Helpers::TextHelper</a>
+
+    <img class="toc-toggle" src="images/transparent.png" alt="" title="toggle headings">
+    <ul class="initially-hidden">
+      <li><a href="ActionView/Helpers/TextHelper.html#label-Sanitization">Sanitization</a>
+    </ul>
+  </li>
+    <li class="module">
+    <a href="ActionView/Helpers/TranslationHelper.html">ActionView::Helpers::TranslationHelper</a>
+  </li>
+    <li class="module">
+    <a href="ActionView/Helpers/UrlHelper.html">ActionView::Helpers::UrlHelper</a>
+  </li>
+    <li class="class">
+    <a href="ActionView/LogSubscriber.html">ActionView::LogSubscriber</a>
+
+    <img class="toc-toggle" src="images/transparent.png" alt="" title="toggle headings">
+    <ul class="initially-hidden">
+      <li><a href="ActionView/LogSubscriber.html#label-Action+View+Log+Subscriber">Action View Log Subscriber</a>
+    </ul>
+  </li>
+    <li class="class">
+    <a href="ActionView/LookupContext.html">ActionView::LookupContext</a>
+  </li>
+    <li class="module">
+    <a href="ActionView/LookupContext/DetailsCache.html">ActionView::LookupContext::DetailsCache</a>
+  </li>
+    <li class="module">
+    <a href="ActionView/LookupContext/ViewPaths.html">ActionView::LookupContext::ViewPaths</a>
+  </li>
+    <li class="class">
+    <a href="ActionView/NullResolver.html">ActionView::NullResolver</a>
+  </li>
+    <li class="class">
+    <a href="ActionView/PartialRenderer.html">ActionView::PartialRenderer</a>
+
+    <img class="toc-toggle" src="images/transparent.png" alt="" title="toggle headings">
+    <ul class="initially-hidden">
+      <li><a href="ActionView/PartialRenderer.html#label-Action+View+Partials">Action View Partials</a>
+      <li><a href="ActionView/PartialRenderer.html#label-The+%3Aas+and+%3Aobject+options">The :as and :object options</a>
+      <li><a href="ActionView/PartialRenderer.html#label-Rendering+a+collection+of+partials">Rendering a collection of partials</a>
+      <li><a href="ActionView/PartialRenderer.html#label-Rendering+shared+partials">Rendering shared partials</a>
+      <li><a href="ActionView/PartialRenderer.html#label-Rendering+objects+that+respond+to+%60to_partial_path%60">Rendering objects that respond to `to_partial_path`</a>
+      <li><a href="ActionView/PartialRenderer.html#label-Rendering+the+default+case">Rendering the default case</a>
+      <li><a href="ActionView/PartialRenderer.html#label-Rendering+partials+with+layouts">Rendering partials with layouts</a>
+    </ul>
+  </li>
+    <li class="class">
+    <a href="ActionView/Railtie.html">ActionView::Railtie</a>
+
+    <img class="toc-toggle" src="images/transparent.png" alt="" title="toggle headings">
+    <ul class="initially-hidden">
+      <li><a href="ActionView/Railtie.html#label-Action+View+Railtie">Action View Railtie</a>
+    </ul>
+  </li>
+    <li class="class">
+    <a href="ActionView/Renderer.html">ActionView::Renderer</a>
+  </li>
+    <li class="class">
+    <a href="ActionView/Resolver.html">ActionView::Resolver</a>
+
+    <img class="toc-toggle" src="images/transparent.png" alt="" title="toggle headings">
+    <ul class="initially-hidden">
+      <li><a href="ActionView/Resolver.html#label-Action+View+Resolver">Action View Resolver</a>
+    </ul>
+  </li>
+    <li class="class">
+    <a href="ActionView/Resolver/Path.html">ActionView::Resolver::Path</a>
+  </li>
+    <li class="class">
+    <a href="ActionView/Template.html">ActionView::Template</a>
+  </li>
+    <li class="module">
+    <a href="ActionView/Template/Handlers.html">ActionView::Template::Handlers</a>
+  </li>
+    <li class="class">
+    <a href="ActionView/Template/Handlers/Builder.html">ActionView::Template::Handlers::Builder</a>
+  </li>
+    <li class="class">
+    <a href="ActionView/Template/Handlers/ERB.html">ActionView::Template::Handlers::ERB</a>
+  </li>
+    <li class="class">
+    <a href="ActionView/Template/Handlers/Erubis.html">ActionView::Template::Handlers::Erubis</a>
+  </li>
+    <li class="class">
+    <a href="ActionView/TestCase.html">ActionView::TestCase</a>
+
+    <img class="toc-toggle" src="images/transparent.png" alt="" title="toggle headings">
+    <ul class="initially-hidden">
+      <li><a href="ActionView/TestCase.html#label-Action+View+Test+Case">Action View Test Case</a>
+    </ul>
+  </li>
+    <li class="module">
+    <a href="ActionView/TestCase/Behavior.html">ActionView::TestCase::Behavior</a>
+  </li>
+    <li class="module">
+    <a href="ActionView/TestCase/Behavior/ClassMethods.html">ActionView::TestCase::Behavior::ClassMethods</a>
+  </li>
+    <li class="module">
+    <a href="ActionView/TestCase/Behavior/Locals.html">ActionView::TestCase::Behavior::Locals</a>
+  </li>
+    <li class="class">
+    <a href="ActionView/TestCase/TestController.html">ActionView::TestCase::TestController</a>
+  </li>
+    <li class="module">
+    <a href="AbstractController.html">AbstractController</a>
+  </li>
+    <li class="class">
+    <a href="AbstractController/ActionNotFound.html">AbstractController::ActionNotFound</a>
+  </li>
+    <li class="module">
+    <a href="AbstractController/AssetPaths.html">AbstractController::AssetPaths</a>
+  </li>
+    <li class="class">
+    <a href="AbstractController/Base.html">AbstractController::Base</a>
+  </li>
+    <li class="module">
+    <a href="AbstractController/Callbacks.html">AbstractController::Callbacks</a>
+  </li>
+    <li class="module">
+    <a href="AbstractController/Callbacks/ClassMethods.html">AbstractController::Callbacks::ClassMethods</a>
+  </li>
+    <li class="module">
+    <a href="AbstractController/Collector.html">AbstractController::Collector</a>
+  </li>
+    <li class="class">
+    <a href="AbstractController/DoubleRenderError.html">AbstractController::DoubleRenderError</a>
+  </li>
+    <li class="class">
+    <a href="AbstractController/Error.html">AbstractController::Error</a>
+  </li>
+    <li class="module">
+    <a href="AbstractController/Helpers.html">AbstractController::Helpers</a>
+  </li>
+    <li class="module">
+    <a href="AbstractController/Helpers/ClassMethods.html">AbstractController::Helpers::ClassMethods</a>
+  </li>
+    <li class="module">
+    <a href="AbstractController/Layouts.html">AbstractController::Layouts</a>
+
+    <img class="toc-toggle" src="images/transparent.png" alt="" title="toggle headings">
+    <ul class="initially-hidden">
+      <li><a href="AbstractController/Layouts.html#label-Accessing+shared+variables">Accessing shared variables</a>
+      <li><a href="AbstractController/Layouts.html#label-Layout+assignment">Layout assignment</a>
+      <li><a href="AbstractController/Layouts.html#label-Inheritance+Examples">Inheritance Examples</a>
+      <li><a href="AbstractController/Layouts.html#label-Types+of+layouts">Types of layouts</a>
+      <li><a href="AbstractController/Layouts.html#label-Conditional+layouts">Conditional layouts</a>
+      <li><a href="AbstractController/Layouts.html#label-Using+a+different+layout+in+the+action+render+call">Using a different layout in the action render call</a>
+    </ul>
+  </li>
+    <li class="module">
+    <a href="AbstractController/Layouts/ClassMethods.html">AbstractController::Layouts::ClassMethods</a>
+  </li>
+    <li class="module">
+    <a href="AbstractController/Layouts/ClassMethods/LayoutConditions.html">AbstractController::Layouts::ClassMethods::LayoutConditions</a>
+  </li>
+    <li class="module">
+    <a href="AbstractController/Logger.html">AbstractController::Logger</a>
+  </li>
+    <li class="module">
+    <a href="AbstractController/Railties.html">AbstractController::Railties</a>
+  </li>
+    <li class="module">
+    <a href="AbstractController/Railties/RoutesHelpers.html">AbstractController::Railties::RoutesHelpers</a>
+  </li>
+    <li class="module">
+    <a href="AbstractController/Rendering.html">AbstractController::Rendering</a>
+  </li>
+    <li class="module">
+    <a href="AbstractController/Rendering/ClassMethods.html">AbstractController::Rendering::ClassMethods</a>
+  </li>
+    <li class="module">
+    <a href="AbstractController/Translation.html">AbstractController::Translation</a>
+  </li>
+    <li class="module">
+    <a href="AbstractController/UrlFor.html">AbstractController::UrlFor</a>
+  </li>
+    <li class="module">
+    <a href="AbstractController/UrlFor/ClassMethods.html">AbstractController::UrlFor::ClassMethods</a>
+  </li>
+    <li class="module">
+    <a href="AbstractController/ViewPaths.html">AbstractController::ViewPaths</a>
+  </li>
+    <li class="module">
+    <a href="AbstractController/ViewPaths/ClassMethods.html">AbstractController::ViewPaths::ClassMethods</a>
+  </li>
+    <li class="module">
+    <a href="Sprockets.html">Sprockets</a>
+  </li>
+    <li class="class">
+    <a href="Sprockets/Bootstrap.html">Sprockets::Bootstrap</a>
+  </li>
+    <li class="module">
+    <a href="Sprockets/Compressors.html">Sprockets::Compressors</a>
+  </li>
+    <li class="module">
+    <a href="Sprockets/Helpers.html">Sprockets::Helpers</a>
+  </li>
+    <li class="module">
+    <a href="Sprockets/Helpers/IsolatedHelper.html">Sprockets::Helpers::IsolatedHelper</a>
+  </li>
+    <li class="module">
+    <a href="Sprockets/Helpers/RailsHelper.html">Sprockets::Helpers::RailsHelper</a>
+  </li>
+    <li class="class">
+    <a href="Sprockets/Helpers/RailsHelper/AssetPaths.html">Sprockets::Helpers::RailsHelper::AssetPaths</a>
+  </li>
+    <li class="class">
+    <a href="Sprockets/Helpers/RailsHelper/AssetPaths/AssetNotPrecompiledError.html">Sprockets::Helpers::RailsHelper::AssetPaths::AssetNotPrecompiledError</a>
+  </li>
+    <li class="class">
+    <a href="Sprockets/Railtie.html">Sprockets::Railtie</a>
+  </li>
+    <li class="class">
+    <a href="Sprockets/StaticCompiler.html">Sprockets::StaticCompiler</a>
+  </li>
+    <li class="module">
+    <a href="HTML.html">HTML</a>
+  </li>
+    <li class="class">
+    <a href="HTML/FullSanitizer.html">HTML::FullSanitizer</a>
+  </li>
+    <li class="class">
+    <a href="HTML/LinkSanitizer.html">HTML::LinkSanitizer</a>
+  </li>
+    <li class="class">
+    <a href="HTML/Sanitizer.html">HTML::Sanitizer</a>
+  </li>
+    <li class="class">
+    <a href="HTML/Selector.html">HTML::Selector</a>
+
+    <img class="toc-toggle" src="images/transparent.png" alt="" title="toggle headings">
+    <ul class="initially-hidden">
+      <li><a href="HTML/Selector.html#label-Matching+Elements">Matching Elements</a>
+      <li><a href="HTML/Selector.html#label-Selecting+Elements">Selecting Elements</a>
+      <li><a href="HTML/Selector.html#label-Expressions">Expressions</a>
+      <li><a href="HTML/Selector.html#label-Attribute+Values">Attribute Values</a>
+      <li><a href="HTML/Selector.html#label-Alternatives%2C+siblings%2C+children">Alternatives, siblings, children</a>
+      <li><a href="HTML/Selector.html#label-Pseudo+classes">Pseudo classes</a>
+      <li><a href="HTML/Selector.html#label-Substitution+Values">Substitution Values</a>
+    </ul>
+  </li>
+    <li class="class">
+    <a href="HTML/Tag.html">HTML::Tag</a>
+  </li>
+    <li class="class">
+    <a href="HTML/WhiteListSanitizer.html">HTML::WhiteListSanitizer</a>
+  </li>
+    <li class="module">
+    <a href="Mime.html">Mime</a>
+  </li>
+    <li class="class">
+    <a href="Mime/Mimes.html">Mime::Mimes</a>
+  </li>
+    <li class="class">
+    <a href="Mime/Type.html">Mime::Type</a>
+  </li>
+    <li class="module">
+    <a href="I18n.html">I18n</a>
+  </li>
+    <li class="class">
+    <a href="I18n/ExceptionHandler.html">I18n::ExceptionHandler</a>
+  </li>
+    <li class="module">
+    <a href="ActionPack.html">ActionPack</a>
+  </li>
+    <li class="class">
+    <a href="Object.html">Object</a>
+  </li>
+    <li class="module">
+    <a href="Rack.html">Rack</a>
+  </li>
+  
+</ul>
+
+<h2 id="methods">Methods</h2>
+<ul>
+  
+    <li class="method"><a href="Mime.html#method-c-5B-5D">::[] &mdash; Mime</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormBuilder.html#method-c-_to_partial_path">::_to_partial_path &mdash; ActionView::Helpers::FormBuilder</a>
+  
+    <li class="method"><a href="AbstractController/Base.html#method-c-abstract-21">::abstract! &mdash; AbstractController::Base</a>
+  
+    <li class="method"><a href="ActionController/Metal.html#method-c-action">::action &mdash; ActionController::Metal</a>
+  
+    <li class="method"><a href="AbstractController/Base.html#method-c-action_methods">::action_methods &mdash; AbstractController::Base</a>
+  
+    <li class="method"><a href="ActionController/Renderers.html#method-c-add">::add &mdash; ActionController::Renderers</a>
+  
+    <li class="method"><a href="ActionController.html#method-c-add_renderer">::add_renderer &mdash; ActionController</a>
+  
+    <li class="method"><a href="ActionDispatch/Callbacks.html#method-c-after">::after &mdash; ActionDispatch::Callbacks</a>
+  
+    <li class="method"><a href="ActionDispatch/IntegrationTest.html#method-c-app">::app &mdash; ActionDispatch::IntegrationTest</a>
+  
+    <li class="method"><a href="ActionDispatch/IntegrationTest.html#method-c-app-3D">::app= &mdash; ActionDispatch::IntegrationTest</a>
+  
+    <li class="method"><a href="ActionDispatch/Callbacks.html#method-c-before">::before &mdash; ActionDispatch::Callbacks</a>
+  
+    <li class="method"><a href="ActionController/Middleware.html#method-c-build">::build &mdash; ActionController::Middleware</a>
+  
+    <li class="method"><a href="ActionView/Resolver/Path.html#method-c-build">::build &mdash; ActionView::Resolver::Path</a>
+  
+    <li class="method"><a href="ActionView/Base.html#method-c-cache_template_loading">::cache_template_loading &mdash; ActionView::Base</a>
+  
+    <li class="method"><a href="ActionView/Base.html#method-c-cache_template_loading-3D">::cache_template_loading= &mdash; ActionView::Base</a>
+  
+    <li class="method"><a href="ActionView/Template/Handlers/ERB.html#method-c-call">::call &mdash; ActionView::Template::Handlers::ERB</a>
+  
+    <li class="method"><a href="ActionController/Metal.html#method-c-call">::call &mdash; ActionController::Metal</a>
+  
+    <li class="method"><a href="ActionController/Responder.html#method-c-call">::call &mdash; ActionController::Responder</a>
+  
+    <li class="method"><a href="ActionView/Helpers/InstanceTag.html#method-c-check_box_checked-3F">::check_box_checked? &mdash; ActionView::Helpers::InstanceTag</a>
+  
+    <li class="method"><a href="ActionDispatch/Reloader.html#method-c-cleanup-21">::cleanup! &mdash; ActionDispatch::Reloader</a>
+  
+    <li class="method"><a href="AbstractController/Base.html#method-c-clear_action_methods-21">::clear_action_methods! &mdash; AbstractController::Base</a>
+  
+    <li class="method"><a href="ActionController/Metal.html#method-c-controller_name">::controller_name &mdash; ActionController::Metal</a>
+  
+    <li class="method"><a href="AbstractController/Base.html#method-c-controller_path">::controller_path &mdash; AbstractController::Base</a>
+  
+    <li class="method"><a href="ActionController/Compatibility.html#method-c-default_charset-3D">::default_charset= &mdash; ActionController::Compatibility</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/URL.html#method-c-extract_domain">::extract_domain &mdash; ActionDispatch::Http::URL</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/URL.html#method-c-extract_subdomain">::extract_subdomain &mdash; ActionDispatch::Http::URL</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/URL.html#method-c-extract_subdomains">::extract_subdomains &mdash; ActionDispatch::Http::URL</a>
+  
+    <li class="method"><a href="HTML/Selector.html#method-c-for_class">::for_class &mdash; HTML::Selector</a>
+  
+    <li class="method"><a href="HTML/Selector.html#method-c-for_id">::for_id &mdash; HTML::Selector</a>
+  
+    <li class="method"><a href="ActionDispatch/TestResponse.html#method-c-from_response">::from_response &mdash; ActionDispatch::TestResponse</a>
+  
+    <li class="method"><a href="AbstractController/Collector.html#method-c-generate_method_for_mime">::generate_method_for_mime &mdash; AbstractController::Collector</a>
+  
+    <li class="method"><a href="AbstractController/Base.html#method-c-hidden_actions">::hidden_actions &mdash; AbstractController::Base</a>
+  
+    <li class="method"><a href="ActionController/TestCase/RaiseActionExceptions.html#method-c-included">::included &mdash; ActionController::TestCase::RaiseActionExceptions</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AssetTagHelper/AssetIncludeTag.html#method-c-inherited">::inherited &mdash; ActionView::Helpers::AssetTagHelper::AssetIncludeTag</a>
+  
+    <li class="method"><a href="AbstractController/Base.html#method-c-internal_methods">::internal_methods &mdash; AbstractController::Base</a>
+  
+    <li class="method"><a href="Mime/Type.html#method-c-lookup">::lookup &mdash; Mime::Type</a>
+  
+    <li class="method"><a href="Mime/Type.html#method-c-lookup_by_extension">::lookup_by_extension &mdash; Mime::Type</a>
+  
+    <li class="method"><a href="AbstractController/Base.html#method-c-method_added">::method_added &mdash; AbstractController::Base</a>
+  
+    <li class="method"><a href="ActionController/Metal.html#method-c-middleware">::middleware &mdash; ActionController::Metal</a>
+  
+    <li class="method"><a href="ActionDispatch/ExceptionWrapper.html#method-c-new">::new &mdash; ActionDispatch::ExceptionWrapper</a>
+  
+    <li class="method"><a href="ActionDispatch/RemoteIp/GetIp.html#method-c-new">::new &mdash; ActionDispatch::RemoteIp::GetIp</a>
+  
+    <li class="method"><a href="ActionDispatch/RemoteIp.html#method-c-new">::new &mdash; ActionDispatch::RemoteIp</a>
+  
+    <li class="method"><a href="ActionDispatch/Reloader.html#method-c-new">::new &mdash; ActionDispatch::Reloader</a>
+  
+    <li class="method"><a href="ActionDispatch/Head.html#method-c-new">::new &mdash; ActionDispatch::Head</a>
+  
+    <li class="method"><a href="ActionDispatch/BodyProxy.html#method-c-new">::new &mdash; ActionDispatch::BodyProxy</a>
+  
+    <li class="method"><a href="ActionView/Template.html#method-c-new">::new &mdash; ActionView::Template</a>
+  
+    <li class="method"><a href="Sprockets/StaticCompiler.html#method-c-new">::new &mdash; Sprockets::StaticCompiler</a>
+  
+    <li class="method"><a href="Sprockets/Bootstrap.html#method-c-new">::new &mdash; Sprockets::Bootstrap</a>
+  
+    <li class="method"><a href="ActionDispatch/Rescue.html#method-c-new">::new &mdash; ActionDispatch::Rescue</a>
+  
+    <li class="method"><a href="ActionDispatch/Response.html#method-c-new">::new &mdash; ActionDispatch::Response</a>
+  
+    <li class="method"><a href="ActionView/FixtureResolver.html#method-c-new">::new &mdash; ActionView::FixtureResolver</a>
+  
+    <li class="method"><a href="ActionView/Renderer.html#method-c-new">::new &mdash; ActionView::Renderer</a>
+  
+    <li class="method"><a href="ActionView/FileSystemResolver.html#method-c-new">::new &mdash; ActionView::FileSystemResolver</a>
+  
+    <li class="method"><a href="ActionDispatch/Session/Compatibility.html#method-c-new">::new &mdash; ActionDispatch::Session::Compatibility</a>
+  
+    <li class="method"><a href="ActionDispatch/Cookies.html#method-c-new">::new &mdash; ActionDispatch::Cookies</a>
+  
+    <li class="method"><a href="ActionDispatch/DebugExceptions.html#method-c-new">::new &mdash; ActionDispatch::DebugExceptions</a>
+  
+    <li class="method"><a href="ActionDispatch/Session/MemCacheStore.html#method-c-new">::new &mdash; ActionDispatch::Session::MemCacheStore</a>
+  
+    <li class="method"><a href="ActionDispatch/Routing/UrlFor.html#method-c-new">::new &mdash; ActionDispatch::Routing::UrlFor</a>
+  
+    <li class="method"><a href="ActionDispatch/Integration/Session.html#method-c-new">::new &mdash; ActionDispatch::Integration::Session</a>
+  
+    <li class="method"><a href="ActionView/Resolver/Path.html#method-c-new">::new &mdash; ActionView::Resolver::Path</a>
+  
+    <li class="method"><a href="ActionDispatch/Session/CacheStore.html#method-c-new">::new &mdash; ActionDispatch::Session::CacheStore</a>
+  
+    <li class="method"><a href="ActionDispatch/TestRequest.html#method-c-new">::new &mdash; ActionDispatch::TestRequest</a>
+  
+    <li class="method"><a href="ActionDispatch/TestRequest.html#method-c-new">::new &mdash; ActionDispatch::TestRequest</a>
+  
+    <li class="method"><a href="ActionDispatch/RailsEntityStore.html#method-c-new">::new &mdash; ActionDispatch::RailsEntityStore</a>
+  
+    <li class="method"><a href="HTML/Selector.html#method-c-new">::new &mdash; HTML::Selector</a>
+  
+    <li class="method"><a href="AbstractController/Layouts.html#method-c-new">::new &mdash; AbstractController::Layouts</a>
+  
+    <li class="method"><a href="ActionDispatch/Flash.html#method-c-new">::new &mdash; ActionDispatch::Flash</a>
+  
+    <li class="method"><a href="ActionDispatch/BestStandardsSupport.html#method-c-new">::new &mdash; ActionDispatch::BestStandardsSupport</a>
+  
+    <li class="method"><a href="ActionDispatch/Callbacks.html#method-c-new">::new &mdash; ActionDispatch::Callbacks</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/Headers.html#method-c-new">::new &mdash; ActionDispatch::Http::Headers</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/ParameterFilter.html#method-c-new">::new &mdash; ActionDispatch::Http::ParameterFilter</a>
+  
+    <li class="method"><a href="ActionDispatch/RailsMetaStore.html#method-c-new">::new &mdash; ActionDispatch::RailsMetaStore</a>
+  
+    <li class="method"><a href="ActionDispatch/PublicExceptions.html#method-c-new">::new &mdash; ActionDispatch::PublicExceptions</a>
+  
+    <li class="method"><a href="ActionDispatch/ShowExceptions.html#method-c-new">::new &mdash; ActionDispatch::ShowExceptions</a>
+  
+    <li class="method"><a href="ActionController/Middleware.html#method-c-new">::new &mdash; ActionController::Middleware</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AssetTagHelper/AssetIncludeTag.html#method-c-new">::new &mdash; ActionView::Helpers::AssetTagHelper::AssetIncludeTag</a>
+  
+    <li class="method"><a href="ActionController/Responder.html#method-c-new">::new &mdash; ActionController::Responder</a>
+  
+    <li class="method"><a href="ActionController/Middleware.html#method-c-new">::new &mdash; ActionController::Middleware</a>
+  
+    <li class="method"><a href="ActionView/PartialRenderer.html#method-c-new">::new &mdash; ActionView::PartialRenderer</a>
+  
+    <li class="method"><a href="ActionController/Middleware/ActionMiddleware.html#method-c-new">::new &mdash; ActionController::Middleware::ActionMiddleware</a>
+  
+    <li class="method"><a href="ActionView/Resolver.html#method-c-new">::new &mdash; ActionView::Resolver</a>
+  
+    <li class="method"><a href="ActionController/Caching/Actions/ActionCachePath.html#method-c-new">::new &mdash; ActionController::Caching::Actions::ActionCachePath</a>
+  
+    <li class="method"><a href="AbstractController/DoubleRenderError.html#method-c-new">::new &mdash; AbstractController::DoubleRenderError</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormBuilder.html#method-c-new">::new &mdash; ActionView::Helpers::FormBuilder</a>
+  
+    <li class="method"><a href="ActionView/Helpers/InstanceTag.html#method-c-new">::new &mdash; ActionView::Helpers::InstanceTag</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AtomFeedHelper/AtomFeedBuilder.html#method-c-new">::new &mdash; ActionView::Helpers::AtomFeedHelper::AtomFeedBuilder</a>
+  
+    <li class="method"><a href="Mime/Type.html#method-c-new">::new &mdash; Mime::Type</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AtomFeedHelper/AtomBuilder.html#method-c-new">::new &mdash; ActionView::Helpers::AtomFeedHelper::AtomBuilder</a>
+  
+    <li class="method"><a href="ActionView/Helpers/NumberHelper/InvalidNumberError.html#method-c-new">::new &mdash; ActionView::Helpers::NumberHelper::InvalidNumberError</a>
+  
+    <li class="method"><a href="ActionController/Metal.html#method-c-new">::new &mdash; ActionController::Metal</a>
+  
+    <li class="method"><a href="ActionView/TestCase/TestController.html#method-c-new">::new &mdash; ActionView::TestCase::TestController</a>
+  
+    <li class="method"><a href="ActionDispatch/MiddlewareStack/Middleware.html#method-c-new">::new &mdash; ActionDispatch::MiddlewareStack::Middleware</a>
+  
+    <li class="method"><a href="ActionDispatch/RequestId.html#method-c-new">::new &mdash; ActionDispatch::RequestId</a>
+  
+    <li class="method"><a href="ActionDispatch/MiddlewareStack.html#method-c-new">::new &mdash; ActionDispatch::MiddlewareStack</a>
+  
+    <li class="method"><a href="ActionDispatch/Static.html#method-c-new">::new &mdash; ActionDispatch::Static</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/UploadedFile.html#method-c-new">::new &mdash; ActionDispatch::Http::UploadedFile</a>
+  
+    <li class="method"><a href="ActionDispatch/ParamsParser.html#method-c-new">::new &mdash; ActionDispatch::ParamsParser</a>
+  
+    <li class="method"><a href="ActionDispatch/FileHandler.html#method-c-new">::new &mdash; ActionDispatch::FileHandler</a>
+  
+    <li class="method"><a href="ActionDispatch/Routing/Mapper.html#method-c-normalize_name">::normalize_name &mdash; ActionDispatch::Routing::Mapper</a>
+  
+    <li class="method"><a href="ActionDispatch/Routing/Mapper.html#method-c-normalize_path">::normalize_path &mdash; ActionDispatch::Routing::Mapper</a>
+  
+    <li class="method"><a href="Mime/Type.html#method-c-parse">::parse &mdash; Mime::Type</a>
+  
+    <li class="method"><a href="Mime/Type.html#method-c-parse_data_with_trailing_star">::parse_data_with_trailing_star &mdash; Mime::Type</a>
+  
+    <li class="method"><a href="ActionDispatch/Reloader.html#method-c-prepare-21">::prepare! &mdash; ActionDispatch::Reloader</a>
+  
+    <li class="method"><a href="ActionView/Base.html#method-c-process_view_paths">::process_view_paths &mdash; ActionView::Base</a>
+  
+    <li class="method"><a href="ActionView/Helpers/InstanceTag.html#method-c-radio_button_checked-3F">::radio_button_checked? &mdash; ActionView::Helpers::InstanceTag</a>
+  
+    <li class="method"><a href="Mime/Type.html#method-c-register">::register &mdash; Mime::Type</a>
+  
+    <li class="method"><a href="Mime/Type.html#method-c-register_alias">::register_alias &mdash; Mime::Type</a>
+  
+    <li class="method"><a href="Sprockets/Compressors.html#method-c-register_css_compressor">::register_css_compressor &mdash; Sprockets::Compressors</a>
+  
+    <li class="method"><a href="Sprockets/Compressors.html#method-c-register_js_compressor">::register_js_compressor &mdash; Sprockets::Compressors</a>
+  
+    <li class="method"><a href="Sprockets/Compressors.html#method-c-registered_css_compressor">::registered_css_compressor &mdash; Sprockets::Compressors</a>
+  
+    <li class="method"><a href="Sprockets/Compressors.html#method-c-registered_js_compressor">::registered_js_compressor &mdash; Sprockets::Compressors</a>
+  
+    <li class="method"><a href="ActionDispatch/ShowExceptions.html#method-c-rescue_responses">::rescue_responses &mdash; ActionDispatch::ShowExceptions</a>
+  
+    <li class="method"><a href="ActionDispatch/ShowExceptions.html#method-c-rescue_templates">::rescue_templates &mdash; ActionDispatch::ShowExceptions</a>
+  
+    <li class="method"><a href="ActionDispatch/RailsEntityStore.html#method-c-resolve">::resolve &mdash; ActionDispatch::RailsEntityStore</a>
+  
+    <li class="method"><a href="ActionDispatch/RailsMetaStore.html#method-c-resolve">::resolve &mdash; ActionDispatch::RailsMetaStore</a>
+  
+    <li class="method"><a href="HTML.html#method-c-selector">::selector &mdash; HTML</a>
+  
+    <li class="method"><a href="ActionDispatch/Reloader.html#method-c-to_cleanup">::to_cleanup &mdash; ActionDispatch::Reloader</a>
+  
+    <li class="method"><a href="ActionDispatch/Reloader.html#method-c-to_prepare">::to_prepare &mdash; ActionDispatch::Reloader</a>
+  
+    <li class="method"><a href="Mime/Type.html#method-c-unregister">::unregister &mdash; Mime::Type</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/URL.html#method-c-url_for">::url_for &mdash; ActionDispatch::Http::URL</a>
+  
+    <li class="method"><a href="ActionController/Metal.html#method-c-use">::use &mdash; ActionController::Metal</a>
+  
+    <li class="method"><a href="ActionView/Helpers/InstanceTag.html#method-c-value">::value &mdash; ActionView::Helpers::InstanceTag</a>
+  
+    <li class="method"><a href="ActionView/Helpers/InstanceTag.html#method-c-value_before_type_cast">::value_before_type_cast &mdash; ActionView::Helpers::InstanceTag</a>
+  
+    <li class="method"><a href="ActionController/Railties/Paths.html#method-c-with">::with &mdash; ActionController::Railties::Paths</a>
+  
+    <li class="method"><a href="AbstractController/Railties/RoutesHelpers.html#method-c-with">::with &mdash; AbstractController::Railties::RoutesHelpers</a>
+  
+    <li class="method"><a href="ActionController/Base.html#method-c-without_modules">::without_modules &mdash; ActionController::Base</a>
+  
+    <li class="method"><a href="ActionDispatch/MiddlewareStack/Middleware.html#method-i-3D-3D">#== &mdash; ActionDispatch::MiddlewareStack::Middleware</a>
+  
+    <li class="method"><a href="ActionView/FileSystemResolver.html#method-i-3D-3D">#== &mdash; ActionView::FileSystemResolver</a>
+  
+    <li class="method"><a href="Mime/Type.html#method-i-3D-3D">#== &mdash; Mime::Type</a>
+  
+    <li class="method"><a href="Mime/Type.html#method-i-3D-3D-3D">#=== &mdash; Mime::Type</a>
+  
+    <li class="method"><a href="Mime/Type.html#method-i-3D-7E">#=~ &mdash; Mime::Type</a>
+  
+    <li class="method"><a href="ActionDispatch/Request.html#method-i-GET">#GET &mdash; ActionDispatch::Request</a>
+  
+    <li class="method"><a href="ActionDispatch/Request.html#method-i-POST">#POST &mdash; ActionDispatch::Request</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/Headers.html#method-i-5B-5D">#[] &mdash; ActionDispatch::Http::Headers</a>
+  
+    <li class="method"><a href="ActionDispatch/MiddlewareStack.html#method-i-5B-5D">#[] &mdash; ActionDispatch::MiddlewareStack</a>
+  
+    <li class="method"><a href="ActionDispatch/Flash/FlashHash.html#method-i-5B-5D">#[] &mdash; ActionDispatch::Flash::FlashHash</a>
+  
+    <li class="method"><a href="ActionController/Compatibility.html#method-i-_handle_method_missing">#_handle_method_missing &mdash; ActionController::Compatibility</a>
+  
+    <li class="method"><a href="ActionController/Renderers.html#method-i-_handle_render_options">#_handle_render_options &mdash; ActionController::Renderers</a>
+  
+    <li class="method"><a href="AbstractController/Layouts/ClassMethods.html#method-i-_implied_layout_name">#_implied_layout_name &mdash; AbstractController::Layouts::ClassMethods</a>
+  
+    <li class="method"><a href="AbstractController/Callbacks/ClassMethods.html#method-i-_insert_callbacks">#_insert_callbacks &mdash; AbstractController::Callbacks::ClassMethods</a>
+  
+    <li class="method"><a href="ActionView/Helpers/RenderingHelper.html#method-i-_layout_for">#_layout_for &mdash; ActionView::Helpers::RenderingHelper</a>
+  
+    <li class="method"><a href="ActionView/Context.html#method-i-_layout_for">#_layout_for &mdash; ActionView::Context</a>
+  
+    <li class="method"><a href="AbstractController/Callbacks/ClassMethods.html#method-i-_normalize_callback_options">#_normalize_callback_options &mdash; AbstractController::Callbacks::ClassMethods</a>
+  
+    <li class="method"><a href="AbstractController/Layouts.html#method-i-_normalize_options">#_normalize_options &mdash; AbstractController::Layouts</a>
+  
+    <li class="method"><a href="ActionController/Compatibility.html#method-i-_normalize_options">#_normalize_options &mdash; ActionController::Compatibility</a>
+  
+    <li class="method"><a href="AbstractController/ViewPaths.html#method-i-_prefixes">#_prefixes &mdash; AbstractController::ViewPaths</a>
+  
+    <li class="method"><a href="ActionView/Context.html#method-i-_prepare_context">#_prepare_context &mdash; ActionView::Context</a>
+  
+    <li class="method"><a href="AbstractController/UrlFor/ClassMethods.html#method-i-_routes">#_routes &mdash; AbstractController::UrlFor::ClassMethods</a>
+  
+    <li class="method"><a href="AbstractController/UrlFor.html#method-i-_routes">#_routes &mdash; AbstractController::UrlFor</a>
+  
+    <li class="method"><a href="ActionView/Helpers/UrlHelper.html#method-i-_routes_context">#_routes_context &mdash; ActionView::Helpers::UrlHelper</a>
+  
+    <li class="method"><a href="ActionDispatch/Routing/UrlFor.html#method-i-_routes_context">#_routes_context &mdash; ActionDispatch::Routing::UrlFor</a>
+  
+    <li class="method"><a href="ActionController/Caching/Actions.html#method-i-_save_fragment">#_save_fragment &mdash; ActionController::Caching::Actions</a>
+  
+    <li class="method"><a href="ActionView/LookupContext/DetailsCache.html#method-i-_set_detail">#_set_detail &mdash; ActionView::LookupContext::DetailsCache</a>
+  
+    <li class="method"><a href="ActionController/ParamsWrapper/ClassMethods.html#method-i-_set_wrapper_defaults">#_set_wrapper_defaults &mdash; ActionController::ParamsWrapper::ClassMethods</a>
+  
+    <li class="method"><a href="ActionDispatch/Routing/UrlFor.html#method-i-_with_routes">#_with_routes &mdash; ActionDispatch::Routing::UrlFor</a>
+  
+    <li class="method"><a href="AbstractController/Layouts/ClassMethods.html#method-i-_write_layout_method">#_write_layout_method &mdash; AbstractController::Layouts::ClassMethods</a>
+  
+    <li class="method"><a href="ActionDispatch/TestRequest.html#method-i-accept-3D">#accept= &mdash; ActionDispatch::TestRequest</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/MimeNegotiation.html#method-i-accepts">#accepts &mdash; ActionDispatch::Http::MimeNegotiation</a>
+  
+    <li class="method"><a href="ActionDispatch/TestRequest.html#method-i-action-3D">#action= &mdash; ActionDispatch::TestRequest</a>
+  
+    <li class="method"><a href="AbstractController/Layouts.html#method-i-action_has_layout-3F">#action_has_layout? &mdash; AbstractController::Layouts</a>
+  
+    <li class="method"><a href="ActionController/HideActions/ClassMethods.html#method-i-action_methods">#action_methods &mdash; ActionController::HideActions::ClassMethods</a>
+  
+    <li class="method"><a href="AbstractController/UrlFor/ClassMethods.html#method-i-action_methods">#action_methods &mdash; AbstractController::UrlFor::ClassMethods</a>
+  
+    <li class="method"><a href="AbstractController/Base.html#method-i-action_methods">#action_methods &mdash; AbstractController::Base</a>
+  
+    <li class="method"><a href="ActionView/Template/Handlers/Erubis.html#method-i-add_expr_escaped">#add_expr_escaped &mdash; ActionView::Template::Handlers::Erubis</a>
+  
+    <li class="method"><a href="ActionView/Template/Handlers/Erubis.html#method-i-add_expr_literal">#add_expr_literal &mdash; ActionView::Template::Handlers::Erubis</a>
+  
+    <li class="method"><a href="ActionView/Template/Handlers/Erubis.html#method-i-add_postamble">#add_postamble &mdash; ActionView::Template::Handlers::Erubis</a>
+  
+    <li class="method"><a href="ActionView/Template/Handlers/Erubis.html#method-i-add_preamble">#add_preamble &mdash; ActionView::Template::Handlers::Erubis</a>
+  
+    <li class="method"><a href="ActionView/Template/Handlers/Erubis.html#method-i-add_text">#add_text &mdash; ActionView::Template::Handlers::Erubis</a>
+  
+    <li class="method"><a href="AbstractController/Callbacks/ClassMethods.html#method-i-after_filter">#after_filter &mdash; AbstractController::Callbacks::ClassMethods</a>
+  
+    <li class="method"><a href="ActionDispatch/Flash/FlashHash.html#method-i-alert">#alert &mdash; ActionDispatch::Flash::FlashHash</a>
+  
+    <li class="method"><a href="ActionDispatch/Flash/FlashHash.html#method-i-alert-3D">#alert= &mdash; ActionDispatch::Flash::FlashHash</a>
+  
+    <li class="method"><a href="ActionController/Helpers/ClassMethods.html#method-i-all_helpers_from_path">#all_helpers_from_path &mdash; ActionController::Helpers::ClassMethods</a>
+  
+    <li class="method"><a href="ActionController/Responder.html#method-i-api_behavior">#api_behavior &mdash; ActionController::Responder</a>
+  
+    <li class="method"><a href="ActionController/Responder.html#method-i-api_location">#api_location &mdash; ActionController::Responder</a>
+  
+    <li class="method"><a href="ActionDispatch/Integration/Runner.html#method-i-app">#app &mdash; ActionDispatch::Integration::Runner</a>
+  
+    <li class="method"><a href="ActionDispatch/IntegrationTest.html#method-i-app">#app &mdash; ActionDispatch::IntegrationTest</a>
+  
+    <li class="method"><a href="AbstractController/Callbacks/ClassMethods.html#method-i-append_after_filter">#append_after_filter &mdash; AbstractController::Callbacks::ClassMethods</a>
+  
+    <li class="method"><a href="AbstractController/Callbacks/ClassMethods.html#method-i-append_around_filter">#append_around_filter &mdash; AbstractController::Callbacks::ClassMethods</a>
+  
+    <li class="method"><a href="AbstractController/Callbacks/ClassMethods.html#method-i-append_before_filter">#append_before_filter &mdash; AbstractController::Callbacks::ClassMethods</a>
+  
+    <li class="method"><a href="AbstractController/ViewPaths/ClassMethods.html#method-i-append_view_path">#append_view_path &mdash; AbstractController::ViewPaths::ClassMethods</a>
+  
+    <li class="method"><a href="AbstractController/ViewPaths.html#method-i-append_view_path">#append_view_path &mdash; AbstractController::ViewPaths</a>
+  
+    <li class="method"><a href="ActionDispatch/ExceptionWrapper.html#method-i-application_trace">#application_trace &mdash; ActionDispatch::ExceptionWrapper</a>
+  
+    <li class="method"><a href="AbstractController/Callbacks/ClassMethods.html#method-i-around_filter">#around_filter &mdash; AbstractController::Callbacks::ClassMethods</a>
+  
+    <li class="method"><a href="ActionDispatch/Assertions/DomAssertions.html#method-i-assert_dom_equal">#assert_dom_equal &mdash; ActionDispatch::Assertions::DomAssertions</a>
+  
+    <li class="method"><a href="ActionDispatch/Assertions/DomAssertions.html#method-i-assert_dom_not_equal">#assert_dom_not_equal &mdash; ActionDispatch::Assertions::DomAssertions</a>
+  
+    <li class="method"><a href="ActionDispatch/Assertions/RoutingAssertions.html#method-i-assert_generates">#assert_generates &mdash; ActionDispatch::Assertions::RoutingAssertions</a>
+  
+    <li class="method"><a href="ActionDispatch/MiddlewareStack.html#method-i-assert_index">#assert_index &mdash; ActionDispatch::MiddlewareStack</a>
+  
+    <li class="method"><a href="ActionDispatch/Assertions/TagAssertions.html#method-i-assert_no_tag">#assert_no_tag &mdash; ActionDispatch::Assertions::TagAssertions</a>
+  
+    <li class="method"><a href="ActionDispatch/Assertions/RoutingAssertions.html#method-i-assert_recognizes">#assert_recognizes &mdash; ActionDispatch::Assertions::RoutingAssertions</a>
+  
+    <li class="method"><a href="ActionDispatch/Assertions/ResponseAssertions.html#method-i-assert_redirected_to">#assert_redirected_to &mdash; ActionDispatch::Assertions::ResponseAssertions</a>
+  
+    <li class="method"><a href="ActionDispatch/Assertions/ResponseAssertions.html#method-i-assert_response">#assert_response &mdash; ActionDispatch::Assertions::ResponseAssertions</a>
+  
+    <li class="method"><a href="ActionDispatch/Assertions/RoutingAssertions.html#method-i-assert_routing">#assert_routing &mdash; ActionDispatch::Assertions::RoutingAssertions</a>
+  
+    <li class="method"><a href="ActionDispatch/Assertions/SelectorAssertions.html#method-i-assert_select">#assert_select &mdash; ActionDispatch::Assertions::SelectorAssertions</a>
+  
+    <li class="method"><a href="ActionDispatch/Assertions/SelectorAssertions.html#method-i-assert_select_email">#assert_select_email &mdash; ActionDispatch::Assertions::SelectorAssertions</a>
+  
+    <li class="method"><a href="ActionDispatch/Assertions/SelectorAssertions.html#method-i-assert_select_encoded">#assert_select_encoded &mdash; ActionDispatch::Assertions::SelectorAssertions</a>
+  
+    <li class="method"><a href="ActionDispatch/Assertions/TagAssertions.html#method-i-assert_tag">#assert_tag &mdash; ActionDispatch::Assertions::TagAssertions</a>
+  
+    <li class="method"><a href="ActionController/TemplateAssertions.html#method-i-assert_template">#assert_template &mdash; ActionController::TemplateAssertions</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AssetTagHelper/JavascriptIncludeTag.html#method-i-asset_name">#asset_name &mdash; ActionView::Helpers::AssetTagHelper::JavascriptIncludeTag</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AssetTagHelper/StylesheetIncludeTag.html#method-i-asset_name">#asset_name &mdash; ActionView::Helpers::AssetTagHelper::StylesheetIncludeTag</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AssetTagHelper/AssetIncludeTag.html#method-i-asset_name">#asset_name &mdash; ActionView::Helpers::AssetTagHelper::AssetIncludeTag</a>
+  
+    <li class="method"><a href="Sprockets/Helpers/RailsHelper.html#method-i-asset_path">#asset_path &mdash; Sprockets::Helpers::RailsHelper</a>
+  
+    <li class="method"><a href="Sprockets/Helpers/RailsHelper.html#method-i-asset_paths">#asset_paths &mdash; Sprockets::Helpers::RailsHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AssetTagHelper/StylesheetIncludeTag.html#method-i-asset_tag">#asset_tag &mdash; ActionView::Helpers::AssetTagHelper::StylesheetIncludeTag</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AssetTagHelper/JavascriptIncludeTag.html#method-i-asset_tag">#asset_tag &mdash; ActionView::Helpers::AssetTagHelper::JavascriptIncludeTag</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AssetTagHelper/AssetIncludeTag.html#method-i-asset_tag">#asset_tag &mdash; ActionView::Helpers::AssetTagHelper::AssetIncludeTag</a>
+  
+    <li class="method"><a href="ActionController/Compatibility.html#method-i-assign_shortcuts">#assign_shortcuts &mdash; ActionController::Compatibility</a>
+  
+    <li class="method"><a href="ActionDispatch/TestProcess.html#method-i-assigns">#assigns &mdash; ActionDispatch::TestProcess</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AtomFeedHelper.html#method-i-atom_feed">#atom_feed &mdash; ActionView::Helpers::AtomFeedHelper</a>
+  
+    <li class="method"><a href="HTML/Selector.html#method-i-attribute_match">#attribute_match &mdash; HTML::Selector</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AssetTagHelper.html#method-i-audio_path">#audio_path &mdash; ActionView::Helpers::AssetTagHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AssetTagHelper.html#method-i-audio_tag">#audio_tag &mdash; ActionView::Helpers::AssetTagHelper</a>
+  
+    <li class="method"><a href="ActionController/HttpAuthentication/Token.html#method-i-authenticate">#authenticate &mdash; ActionController::HttpAuthentication::Token</a>
+  
+    <li class="method"><a href="ActionController/HttpAuthentication/Digest.html#method-i-authenticate">#authenticate &mdash; ActionController::HttpAuthentication::Digest</a>
+  
+    <li class="method"><a href="ActionController/HttpAuthentication/Basic.html#method-i-authenticate">#authenticate &mdash; ActionController::HttpAuthentication::Basic</a>
+  
+    <li class="method"><a href="ActionController/HttpAuthentication/Basic/ControllerMethods.html#method-i-authenticate_or_request_with_http_basic">#authenticate_or_request_with_http_basic &mdash; ActionController::HttpAuthentication::Basic::ControllerMethods</a>
+  
+    <li class="method"><a href="ActionController/HttpAuthentication/Digest/ControllerMethods.html#method-i-authenticate_or_request_with_http_digest">#authenticate_or_request_with_http_digest &mdash; ActionController::HttpAuthentication::Digest::ControllerMethods</a>
+  
+    <li class="method"><a href="ActionController/HttpAuthentication/Token/ControllerMethods.html#method-i-authenticate_or_request_with_http_token">#authenticate_or_request_with_http_token &mdash; ActionController::HttpAuthentication::Token::ControllerMethods</a>
+  
+    <li class="method"><a href="ActionController/HttpAuthentication/Basic/ControllerMethods.html#method-i-authenticate_with_http_basic">#authenticate_with_http_basic &mdash; ActionController::HttpAuthentication::Basic::ControllerMethods</a>
+  
+    <li class="method"><a href="ActionController/HttpAuthentication/Digest/ControllerMethods.html#method-i-authenticate_with_http_digest">#authenticate_with_http_digest &mdash; ActionController::HttpAuthentication::Digest::ControllerMethods</a>
+  
+    <li class="method"><a href="ActionController/HttpAuthentication/Token/ControllerMethods.html#method-i-authenticate_with_http_token">#authenticate_with_http_token &mdash; ActionController::HttpAuthentication::Token::ControllerMethods</a>
+  
+    <li class="method"><a href="ActionController/HttpAuthentication/Digest.html#method-i-authentication_header">#authentication_header &mdash; ActionController::HttpAuthentication::Digest</a>
+  
+    <li class="method"><a href="ActionController/HttpAuthentication/Digest.html#method-i-authentication_request">#authentication_request &mdash; ActionController::HttpAuthentication::Digest</a>
+  
+    <li class="method"><a href="ActionController/HttpAuthentication/Token.html#method-i-authentication_request">#authentication_request &mdash; ActionController::HttpAuthentication::Token</a>
+  
+    <li class="method"><a href="ActionController/HttpAuthentication/Basic.html#method-i-authentication_request">#authentication_request &mdash; ActionController::HttpAuthentication::Basic</a>
+  
+    <li class="method"><a href="ActionDispatch/Request.html#method-i-authorization">#authorization &mdash; ActionDispatch::Request</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AssetTagHelper.html#method-i-auto_discovery_link_tag">#auto_discovery_link_tag &mdash; ActionView::Helpers::AssetTagHelper</a>
+  
+    <li class="method"><a href="AbstractController/Base.html#method-i-available_action-3F">#available_action? &mdash; AbstractController::Base</a>
+  
+    <li class="method"><a href="AbstractController/Callbacks/ClassMethods.html#method-i-before_filter">#before_filter &mdash; AbstractController::Callbacks::ClassMethods</a>
+  
+    <li class="method"><a href="ActionController/Testing/ClassMethods.html#method-i-before_filters">#before_filters &mdash; ActionController::Testing::ClassMethods</a>
+  
+    <li class="method"><a href="ActionDispatch/Request.html#method-i-body">#body &mdash; ActionDispatch::Request</a>
+  
+    <li class="method"><a href="ActionDispatch/Response.html#method-i-body">#body &mdash; ActionDispatch::Response</a>
+  
+    <li class="method"><a href="ActionDispatch/Response.html#method-i-body-3D">#body= &mdash; ActionDispatch::Response</a>
+  
+    <li class="method"><a href="ActionDispatch/Response.html#method-i-body_parts">#body_parts &mdash; ActionDispatch::Response</a>
+  
+    <li class="method"><a href="ActionDispatch/MiddlewareStack.html#method-i-build">#build &mdash; ActionDispatch::MiddlewareStack</a>
+  
+    <li class="method"><a href="ActionDispatch/MiddlewareStack/Middleware.html#method-i-build">#build &mdash; ActionDispatch::MiddlewareStack::Middleware</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormBuilder.html#method-i-button">#button &mdash; ActionView::Helpers::FormBuilder</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormTagHelper.html#method-i-button_tag">#button_tag &mdash; ActionView::Helpers::FormTagHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/UrlHelper.html#method-i-button_to">#button_to &mdash; ActionView::Helpers::UrlHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/JavaScriptHelper.html#method-i-button_to_function">#button_to_function &mdash; ActionView::Helpers::JavaScriptHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/CacheHelper.html#method-i-cache">#cache &mdash; ActionView::Helpers::CacheHelper</a>
+  
+    <li class="method"><a href="ActionController/Caching.html#method-i-cache">#cache &mdash; ActionController::Caching</a>
+  
+    <li class="method"><a href="ActionController/Caching/Pages/ClassMethods.html#method-i-cache_page">#cache_page &mdash; ActionController::Caching::Pages::ClassMethods</a>
+  
+    <li class="method"><a href="ActionController/Caching/Pages.html#method-i-cache_page">#cache_page &mdash; ActionController::Caching::Pages</a>
+  
+    <li class="method"><a href="ActionController/Caching/ConfigMethods.html#method-i-cache_store">#cache_store &mdash; ActionController::Caching::ConfigMethods</a>
+  
+    <li class="method"><a href="ActionController/Caching/ConfigMethods.html#method-i-cache_store-3D">#cache_store= &mdash; ActionController::Caching::ConfigMethods</a>
+  
+    <li class="method"><a href="ActionController/Caching/Actions/ClassMethods.html#method-i-caches_action">#caches_action &mdash; ActionController::Caching::Actions::ClassMethods</a>
+  
+    <li class="method"><a href="ActionController/Caching/Pages/ClassMethods.html#method-i-caches_page">#caches_page &mdash; ActionController::Caching::Pages::ClassMethods</a>
+  
+    <li class="method"><a href="ActionController/Caching.html#method-i-caching_allowed-3F">#caching_allowed? &mdash; ActionController::Caching</a>
+  
+    <li class="method"><a href="ActionDispatch/RemoteIp/GetIp.html#method-i-calculate_ip">#calculate_ip &mdash; ActionDispatch::RemoteIp::GetIp</a>
+  
+    <li class="method"><a href="ActionDispatch/Static.html#method-i-call">#call &mdash; ActionDispatch::Static</a>
+  
+    <li class="method"><a href="ActionDispatch/PublicExceptions.html#method-i-call">#call &mdash; ActionDispatch::PublicExceptions</a>
+  
+    <li class="method"><a href="I18n/ExceptionHandler.html#method-i-call">#call &mdash; I18n::ExceptionHandler</a>
+  
+    <li class="method"><a href="ActionDispatch/Rescue.html#method-i-call">#call &mdash; ActionDispatch::Rescue</a>
+  
+    <li class="method"><a href="ActionDispatch/BestStandardsSupport.html#method-i-call">#call &mdash; ActionDispatch::BestStandardsSupport</a>
+  
+    <li class="method"><a href="ActionDispatch/Flash.html#method-i-call">#call &mdash; ActionDispatch::Flash</a>
+  
+    <li class="method"><a href="ActionView/Template/Handlers/ERB.html#method-i-call">#call &mdash; ActionView::Template::Handlers::ERB</a>
+  
+    <li class="method"><a href="ActionView/Template/Handlers/Builder.html#method-i-call">#call &mdash; ActionView::Template::Handlers::Builder</a>
+  
+    <li class="method"><a href="ActionDispatch/ShowExceptions.html#method-i-call">#call &mdash; ActionDispatch::ShowExceptions</a>
+  
+    <li class="method"><a href="ActionDispatch/FileHandler.html#method-i-call">#call &mdash; ActionDispatch::FileHandler</a>
+  
+    <li class="method"><a href="ActionController/Middleware/ActionMiddleware.html#method-i-call">#call &mdash; ActionController::Middleware::ActionMiddleware</a>
+  
+    <li class="method"><a href="ActionDispatch/Head.html#method-i-call">#call &mdash; ActionDispatch::Head</a>
+  
+    <li class="method"><a href="ActionDispatch/ParamsParser.html#method-i-call">#call &mdash; ActionDispatch::ParamsParser</a>
+  
+    <li class="method"><a href="ActionDispatch/DebugExceptions.html#method-i-call">#call &mdash; ActionDispatch::DebugExceptions</a>
+  
+    <li class="method"><a href="ActionDispatch/RequestId.html#method-i-call">#call &mdash; ActionDispatch::RequestId</a>
+  
+    <li class="method"><a href="ActionDispatch/Cookies.html#method-i-call">#call &mdash; ActionDispatch::Cookies</a>
+  
+    <li class="method"><a href="ActionDispatch/RemoteIp.html#method-i-call">#call &mdash; ActionDispatch::RemoteIp</a>
+  
+    <li class="method"><a href="ActionDispatch/Reloader.html#method-i-call">#call &mdash; ActionDispatch::Reloader</a>
+  
+    <li class="method"><a href="ActionDispatch/Callbacks.html#method-i-call">#call &mdash; ActionDispatch::Callbacks</a>
+  
+    <li class="method"><a href="ActionView/Helpers/CaptureHelper.html#method-i-capture">#capture &mdash; ActionView::Helpers::CaptureHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/TagHelper.html#method-i-cdata_section">#cdata_section &mdash; ActionView::Helpers::TagHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormBuilder.html#method-i-check_box">#check_box &mdash; ActionView::Helpers::FormBuilder</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormHelper.html#method-i-check_box">#check_box &mdash; ActionView::Helpers::FormHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormTagHelper.html#method-i-check_box_tag">#check_box_tag &mdash; ActionView::Helpers::FormTagHelper</a>
+  
+    <li class="method"><a href="ActionDispatch/Flash/FlashHash.html#method-i-clear">#clear &mdash; ActionDispatch::Flash::FlashHash</a>
+  
+    <li class="method"><a href="ActionView/Resolver.html#method-i-clear_cache">#clear_cache &mdash; ActionView::Resolver</a>
+  
+    <li class="method"><a href="AbstractController/Helpers/ClassMethods.html#method-i-clear_helpers">#clear_helpers &mdash; AbstractController::Helpers::ClassMethods</a>
+  
+    <li class="method"><a href="ActionController/MimeResponds/ClassMethods.html#method-i-clear_respond_to">#clear_respond_to &mdash; ActionController::MimeResponds::ClassMethods</a>
+  
+    <li class="method"><a href="ActionDispatch/Response.html#method-i-close">#close &mdash; ActionDispatch::Response</a>
+  
+    <li class="method"><a href="ActionDispatch/BodyProxy.html#method-i-close">#close &mdash; ActionDispatch::BodyProxy</a>
+  
+    <li class="method"><a href="ActionDispatch/BodyProxy.html#method-i-closed-3F">#closed? &mdash; ActionDispatch::BodyProxy</a>
+  
+    <li class="method"><a href="ActionDispatch/Response.html#method-i-code">#code &mdash; ActionDispatch::Response</a>
+  
+    <li class="method"><a href="ActionDispatch/Routing/Mapper/Resources.html#method-i-collection">#collection &mdash; ActionDispatch::Routing::Mapper::Resources</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormOptionsHelper.html#method-i-collection_select">#collection_select &mdash; ActionView::Helpers::FormOptionsHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormBuilder.html#method-i-collection_select">#collection_select &mdash; ActionView::Helpers::FormBuilder</a>
+  
+    <li class="method"><a href="Sprockets/StaticCompiler.html#method-i-compile">#compile &mdash; Sprockets::StaticCompiler</a>
+  
+    <li class="method"><a href="Sprockets/StaticCompiler.html#method-i-compile_path-3F">#compile_path? &mdash; Sprockets::StaticCompiler</a>
+  
+    <li class="method"><a href="ActionView/Helpers/TextHelper.html#method-i-concat">#concat &mdash; ActionView::Helpers::TextHelper</a>
+  
+    <li class="method"><a href="AbstractController/Layouts.html#method-i-conditional_layout-3F">#conditional_layout? &mdash; AbstractController::Layouts</a>
+  
+    <li class="method"><a href="AbstractController/Layouts/ClassMethods/LayoutConditions.html#method-i-conditional_layout-3F">#conditional_layout? &mdash; AbstractController::Layouts::ClassMethods::LayoutConditions</a>
+  
+    <li class="method"><a href="Sprockets/Helpers/IsolatedHelper.html#method-i-config">#config &mdash; Sprockets::Helpers::IsolatedHelper</a>
+  
+    <li class="method"><a href="ActionView/TestCase/Behavior.html#method-i-config">#config &mdash; ActionView::TestCase::Behavior</a>
+  
+    <li class="method"><a href="ActionDispatch/Routing/Mapper/Scoping.html#method-i-constraints">#constraints &mdash; ActionDispatch::Routing::Mapper::Scoping</a>
+  
+    <li class="method"><a href="HTML/WhiteListSanitizer.html#method-i-contains_bad_protocols-3F">#contains_bad_protocols? &mdash; HTML::WhiteListSanitizer</a>
+  
+    <li class="method"><a href="ActionView/Helpers/CaptureHelper.html#method-i-content_for">#content_for &mdash; ActionView::Helpers::CaptureHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/CaptureHelper.html#method-i-content_for-3F">#content_for? &mdash; ActionView::Helpers::CaptureHelper</a>
+  
+    <li class="method"><a href="ActionDispatch/Request.html#method-i-content_length">#content_length &mdash; ActionDispatch::Request</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/MimeNegotiation.html#method-i-content_mime_type">#content_mime_type &mdash; ActionDispatch::Http::MimeNegotiation</a>
+  
+    <li class="method"><a href="ActionView/Helpers/TagHelper.html#method-i-content_tag">#content_tag &mdash; ActionView::Helpers::TagHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/RecordTagHelper.html#method-i-content_tag_for">#content_tag_for &mdash; ActionView::Helpers::RecordTagHelper</a>
+  
+    <li class="method"><a href="ActionController/Metal.html#method-i-content_type">#content_type &mdash; ActionController::Metal</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/MimeNegotiation.html#method-i-content_type">#content_type &mdash; ActionDispatch::Http::MimeNegotiation</a>
+  
+    <li class="method"><a href="ActionController/Metal.html#method-i-content_type-3D">#content_type= &mdash; ActionController::Metal</a>
+  
+    <li class="method"><a href="ActionDispatch/Routing/Mapper/Scoping.html#method-i-controller">#controller &mdash; ActionDispatch::Routing::Mapper::Scoping</a>
+  
+    <li class="method"><a href="Sprockets/Helpers/IsolatedHelper.html#method-i-controller">#controller &mdash; Sprockets::Helpers::IsolatedHelper</a>
+  
+    <li class="method"><a href="ActionController/TestCase/Behavior/ClassMethods.html#method-i-controller_class">#controller_class &mdash; ActionController::TestCase::Behavior::ClassMethods</a>
+  
+    <li class="method"><a href="ActionController/TestCase/Behavior/ClassMethods.html#method-i-controller_class-3D">#controller_class= &mdash; ActionController::TestCase::Behavior::ClassMethods</a>
+  
+    <li class="method"><a href="ActionController/Metal.html#method-i-controller_name">#controller_name &mdash; ActionController::Metal</a>
+  
+    <li class="method"><a href="AbstractController/Base.html#method-i-controller_path">#controller_path &mdash; AbstractController::Base</a>
+  
+    <li class="method"><a href="ActionView/TestCase/TestController.html#method-i-controller_path-3D">#controller_path= &mdash; ActionView::TestCase::TestController</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormHelper.html#method-i-convert_to_model">#convert_to_model &mdash; ActionView::Helpers::FormHelper</a>
+  
+    <li class="method"><a href="ActionDispatch/Request.html#method-i-cookie_jar">#cookie_jar &mdash; ActionDispatch::Request</a>
+  
+    <li class="method"><a href="ActionDispatch/TestRequest.html#method-i-cookies">#cookies &mdash; ActionDispatch::TestRequest</a>
+  
+    <li class="method"><a href="ActionDispatch/TestProcess.html#method-i-cookies">#cookies &mdash; ActionDispatch::TestProcess</a>
+  
+    <li class="method"><a href="ActionDispatch/Integration/Session.html#method-i-cookies">#cookies &mdash; ActionDispatch::Integration::Session</a>
+  
+    <li class="method"><a href="ActionDispatch/Response.html#method-i-cookies">#cookies &mdash; ActionDispatch::Response</a>
+  
+    <li class="method"><a href="ActionView/Helpers/CsrfHelper.html#method-i-csrf_meta_tag">#csrf_meta_tag &mdash; ActionView::Helpers::CsrfHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/CsrfHelper.html#method-i-csrf_meta_tags">#csrf_meta_tags &mdash; ActionView::Helpers::CsrfHelper</a>
+  
+    <li class="method"><a href="ActionDispatch/Assertions/SelectorAssertions.html#method-i-css_select">#css_select &mdash; ActionDispatch::Assertions::SelectorAssertions</a>
+  
+    <li class="method"><a href="ActionView/Helpers/TextHelper.html#method-i-current_cycle">#current_cycle &mdash; ActionView::Helpers::TextHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/UrlHelper.html#method-i-current_page-3F">#current_page? &mdash; ActionView::Helpers::UrlHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AssetTagHelper/StylesheetIncludeTag.html#method-i-custom_dir">#custom_dir &mdash; ActionView::Helpers::AssetTagHelper::StylesheetIncludeTag</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AssetTagHelper/AssetIncludeTag.html#method-i-custom_dir">#custom_dir &mdash; ActionView::Helpers::AssetTagHelper::AssetIncludeTag</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AssetTagHelper/JavascriptIncludeTag.html#method-i-custom_dir">#custom_dir &mdash; ActionView::Helpers::AssetTagHelper::JavascriptIncludeTag</a>
+  
+    <li class="method"><a href="ActionView/Helpers/TextHelper.html#method-i-cycle">#cycle &mdash; ActionView::Helpers::TextHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormBuilder.html#method-i-date_select">#date_select &mdash; ActionView::Helpers::FormBuilder</a>
+  
+    <li class="method"><a href="ActionView/Helpers/DateHelper.html#method-i-date_select">#date_select &mdash; ActionView::Helpers::DateHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/DateHelper.html#method-i-datetime_select">#datetime_select &mdash; ActionView::Helpers::DateHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormBuilder.html#method-i-datetime_select">#datetime_select &mdash; ActionView::Helpers::FormBuilder</a>
+  
+    <li class="method"><a href="ActionView/Helpers/DebugHelper.html#method-i-debug">#debug &mdash; ActionView::Helpers::DebugHelper</a>
+  
+    <li class="method"><a href="ActionController/HttpAuthentication/Digest.html#method-i-decode_credentials">#decode_credentials &mdash; ActionController::HttpAuthentication::Digest</a>
+  
+    <li class="method"><a href="ActionController/HttpAuthentication/Basic.html#method-i-decode_credentials">#decode_credentials &mdash; ActionController::HttpAuthentication::Basic</a>
+  
+    <li class="method"><a href="ActionController/HttpAuthentication/Digest.html#method-i-decode_credentials_header">#decode_credentials_header &mdash; ActionController::HttpAuthentication::Digest</a>
+  
+    <li class="method"><a href="ActionController/Responder.html#method-i-default_action">#default_action &mdash; ActionController::Responder</a>
+  
+    <li class="method"><a href="ActionController/Responder.html#method-i-default_render">#default_render &mdash; ActionController::Responder</a>
+  
+    <li class="method"><a href="ActionController/ImplicitRender.html#method-i-default_render">#default_render &mdash; ActionController::ImplicitRender</a>
+  
+    <li class="method"><a href="ActionDispatch/Integration/Session.html#method-i-default_url_options">#default_url_options &mdash; ActionDispatch::Integration::Session</a>
+  
+    <li class="method"><a href="ActionDispatch/Routing/Mapper/Base.html#method-i-default_url_options">#default_url_options &mdash; ActionDispatch::Routing::Mapper::Base</a>
+  
+    <li class="method"><a href="ActionDispatch/Routing/Mapper/Base.html#method-i-default_url_options-3D">#default_url_options= &mdash; ActionDispatch::Routing::Mapper::Base</a>
+  
+    <li class="method"><a href="ActionDispatch/Routing/Mapper/Scoping.html#method-i-defaults">#defaults &mdash; ActionDispatch::Routing::Mapper::Scoping</a>
+  
+    <li class="method"><a href="ActionDispatch/Integration/RequestHelpers.html#method-i-delete">#delete &mdash; ActionDispatch::Integration::RequestHelpers</a>
+  
+    <li class="method"><a href="ActionDispatch/MiddlewareStack.html#method-i-delete">#delete &mdash; ActionDispatch::MiddlewareStack</a>
+  
+    <li class="method"><a href="ActionDispatch/Flash/FlashHash.html#method-i-delete">#delete &mdash; ActionDispatch::Flash::FlashHash</a>
+  
+    <li class="method"><a href="ActionDispatch/Routing/Mapper/HttpHelpers.html#method-i-delete">#delete &mdash; ActionDispatch::Routing::Mapper::HttpHelpers</a>
+  
+    <li class="method"><a href="ActionController/TestCase/Behavior.html#method-i-delete">#delete &mdash; ActionController::TestCase::Behavior</a>
+  
+    <li class="method"><a href="ActionDispatch/Request.html#method-i-delete-3F">#delete? &mdash; ActionDispatch::Request</a>
+  
+    <li class="method"><a href="ActionDispatch/Response.html#method-i-delete_cookie">#delete_cookie &mdash; ActionDispatch::Response</a>
+  
+    <li class="method"><a href="ActionDispatch/Integration/RequestHelpers.html#method-i-delete_via_redirect">#delete_via_redirect &mdash; ActionDispatch::Integration::RequestHelpers</a>
+  
+    <li class="method"><a href="ActionDispatch/Session/DestroyableSession.html#method-i-destroy">#destroy &mdash; ActionDispatch::Session::DestroyableSession</a>
+  
+    <li class="method"><a href="ActionDispatch/Session/CacheStore.html#method-i-destroy_session">#destroy_session &mdash; ActionDispatch::Session::CacheStore</a>
+  
+    <li class="method"><a href="ActionView/LookupContext/ViewPaths.html#method-i-detail_args_for">#detail_args_for &mdash; ActionView::LookupContext::ViewPaths</a>
+  
+    <li class="method"><a href="AbstractController/ViewPaths.html#method-i-details_for_lookup">#details_for_lookup &mdash; AbstractController::ViewPaths</a>
+  
+    <li class="method"><a href="ActionController/TestCase/Behavior/ClassMethods.html#method-i-determine_default_controller_class">#determine_default_controller_class &mdash; ActionController::TestCase::Behavior::ClassMethods</a>
+  
+    <li class="method"><a href="ActionView/TestCase/Behavior/ClassMethods.html#method-i-determine_default_helper_class">#determine_default_helper_class &mdash; ActionView::TestCase::Behavior::ClassMethods</a>
+  
+    <li class="method"><a href="ActionView/LookupContext/DetailsCache.html#method-i-disable_cache">#disable_cache &mdash; ActionView::LookupContext::DetailsCache</a>
+  
+    <li class="method"><a href="ActionDispatch/Flash/FlashHash.html#method-i-discard">#discard &mdash; ActionDispatch::Flash::FlashHash</a>
+  
+    <li class="method"><a href="ActionController/RackDelegation.html#method-i-dispatch">#dispatch &mdash; ActionController::RackDelegation</a>
+  
+    <li class="method"><a href="ActionController/Responder.html#method-i-display">#display &mdash; ActionController::Responder</a>
+  
+    <li class="method"><a href="ActionController/Responder.html#method-i-display_errors">#display_errors &mdash; ActionController::Responder</a>
+  
+    <li class="method"><a href="ActionView/Helpers/DateHelper.html#method-i-distance_of_time_in_words">#distance_of_time_in_words &mdash; ActionView::Helpers::DateHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/DateHelper.html#method-i-distance_of_time_in_words_to_now">#distance_of_time_in_words_to_now &mdash; ActionView::Helpers::DateHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/RecordTagHelper.html#method-i-div_for">#div_for &mdash; ActionView::Helpers::RecordTagHelper</a>
+  
+    <li class="method"><a href="ActionController/RecordIdentifier.html#method-i-dom_class">#dom_class &mdash; ActionController::RecordIdentifier</a>
+  
+    <li class="method"><a href="ActionController/RecordIdentifier.html#method-i-dom_id">#dom_id &mdash; ActionController::RecordIdentifier</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/URL.html#method-i-domain">#domain &mdash; ActionDispatch::Http::URL</a>
+  
+    <li class="method"><a href="ActionDispatch/MiddlewareStack.html#method-i-each">#each &mdash; ActionDispatch::MiddlewareStack</a>
+  
+    <li class="method"><a href="ActionDispatch/Flash/FlashHash.html#method-i-each">#each &mdash; ActionDispatch::Flash::FlashHash</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormHelper.html#method-i-email_field">#email_field &mdash; ActionView::Helpers::FormHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormTagHelper.html#method-i-email_field_tag">#email_field_tag &mdash; ActionView::Helpers::FormTagHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormBuilder.html#method-i-emitted_hidden_id-3F">#emitted_hidden_id? &mdash; ActionView::Helpers::FormBuilder</a>
+  
+    <li class="method"><a href="ActionDispatch/Flash/FlashHash.html#method-i-empty-3F">#empty? &mdash; ActionDispatch::Flash::FlashHash</a>
+  
+    <li class="method"><a href="ActionView/Template.html#method-i-encode-21">#encode! &mdash; ActionView::Template</a>
+  
+    <li class="method"><a href="ActionController/HttpAuthentication/Basic.html#method-i-encode_credentials">#encode_credentials &mdash; ActionController::HttpAuthentication::Basic</a>
+  
+    <li class="method"><a href="ActionController/HttpAuthentication/Digest.html#method-i-encode_credentials">#encode_credentials &mdash; ActionController::HttpAuthentication::Digest</a>
+  
+    <li class="method"><a href="ActionController/HttpAuthentication/Token.html#method-i-encode_credentials">#encode_credentials &mdash; ActionController::HttpAuthentication::Token</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AtomFeedHelper/AtomFeedBuilder.html#method-i-entry">#entry &mdash; ActionView::Helpers::AtomFeedHelper::AtomFeedBuilder</a>
+  
+    <li class="method"><a href="ActionController/Metal.html#method-i-env">#env &mdash; ActionController::Metal</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/FilterParameters.html#method-i-env_filter">#env_filter &mdash; ActionDispatch::Http::FilterParameters</a>
+  
+    <li class="method"><a href="ActionView/FileSystemResolver.html#method-i-eql-3F">#eql? &mdash; ActionView::FileSystemResolver</a>
+  
+    <li class="method"><a href="ActionView/Helpers/ActiveModelInstanceTag.html#method-i-error_message">#error_message &mdash; ActionView::Helpers::ActiveModelInstanceTag</a>
+  
+    <li class="method"><a href="ActionView/Helpers/ActiveModelInstanceTag.html#method-i-error_wrapping">#error_wrapping &mdash; ActionView::Helpers::ActiveModelInstanceTag</a>
+  
+    <li class="method"><a href="ActionDispatch/FileHandler.html#method-i-escape_glob_chars">#escape_glob_chars &mdash; ActionDispatch::FileHandler</a>
+  
+    <li class="method"><a href="ActionView/Helpers/JavaScriptHelper.html#method-i-escape_javascript">#escape_javascript &mdash; ActionView::Helpers::JavaScriptHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/TagHelper.html#method-i-escape_once">#escape_once &mdash; ActionView::Helpers::TagHelper</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/Cache/Response.html#method-i-etag-3D">#etag= &mdash; ActionDispatch::Http::Cache::Response</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/Cache/Request.html#method-i-etag_matches-3F">#etag_matches? &mdash; ActionDispatch::Http::Cache::Request</a>
+  
+    <li class="method"><a href="ActionView/Helpers/TextHelper.html#method-i-excerpt">#excerpt &mdash; ActionView::Helpers::TextHelper</a>
+  
+    <li class="method"><a href="ActionDispatch/RailsEntityStore.html#method-i-exist-3F">#exist? &mdash; ActionDispatch::RailsEntityStore</a>
+  
+    <li class="method"><a href="ActionView/LookupContext/ViewPaths.html#method-i-exists-3F">#exists? &mdash; ActionView::LookupContext::ViewPaths</a>
+  
+    <li class="method"><a href="ActionController/HttpAuthentication/Digest.html#method-i-expected_response">#expected_response &mdash; ActionController::HttpAuthentication::Digest</a>
+  
+    <li class="method"><a href="ActionController/Caching/Actions.html#method-i-expire_action">#expire_action &mdash; ActionController::Caching::Actions</a>
+  
+    <li class="method"><a href="ActionController/Caching/Fragments.html#method-i-expire_fragment">#expire_fragment &mdash; ActionController::Caching::Fragments</a>
+  
+    <li class="method"><a href="ActionController/Caching/Pages.html#method-i-expire_page">#expire_page &mdash; ActionController::Caching::Pages</a>
+  
+    <li class="method"><a href="ActionController/Caching/Pages/ClassMethods.html#method-i-expire_page">#expire_page &mdash; ActionController::Caching::Pages::ClassMethods</a>
+  
+    <li class="method"><a href="ActionController/ConditionalGet.html#method-i-expires_in">#expires_in &mdash; ActionController::ConditionalGet</a>
+  
+    <li class="method"><a href="ActionController/ConditionalGet.html#method-i-expires_now">#expires_now &mdash; ActionController::ConditionalGet</a>
+  
+    <li class="method"><a href="ActionDispatch/FileHandler.html#method-i-ext">#ext &mdash; ActionDispatch::FileHandler</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AssetTagHelper/StylesheetIncludeTag.html#method-i-extension">#extension &mdash; ActionView::Helpers::AssetTagHelper::StylesheetIncludeTag</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AssetTagHelper/JavascriptIncludeTag.html#method-i-extension">#extension &mdash; ActionView::Helpers::AssetTagHelper::JavascriptIncludeTag</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AssetTagHelper/AssetIncludeTag.html#method-i-extension">#extension &mdash; ActionView::Helpers::AssetTagHelper::AssetIncludeTag</a>
+  
+    <li class="method"><a href="ActionDispatch/Session/StaleSessionCheck.html#method-i-extract_session_id">#extract_session_id &mdash; ActionDispatch::Session::StaleSessionCheck</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AssetTagHelper.html#method-i-favicon_link_tag">#favicon_link_tag &mdash; ActionView::Helpers::AssetTagHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormTagHelper.html#method-i-field_set_tag">#field_set_tag &mdash; ActionView::Helpers::FormTagHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormBuilder.html#method-i-fields_for">#fields_for &mdash; ActionView::Helpers::FormBuilder</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormHelper.html#method-i-fields_for">#fields_for &mdash; ActionView::Helpers::FormHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormHelper.html#method-i-file_field">#file_field &mdash; ActionView::Helpers::FormHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormBuilder.html#method-i-file_field">#file_field &mdash; ActionView::Helpers::FormBuilder</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormTagHelper.html#method-i-file_field_tag">#file_field_tag &mdash; ActionView::Helpers::FormTagHelper</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/ParameterFilter.html#method-i-filter">#filter &mdash; ActionDispatch::Http::ParameterFilter</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/FilterParameters.html#method-i-filtered_env">#filtered_env &mdash; ActionDispatch::Http::FilterParameters</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/FilterParameters.html#method-i-filtered_parameters">#filtered_parameters &mdash; ActionDispatch::Http::FilterParameters</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/FilterParameters.html#method-i-filtered_path">#filtered_path &mdash; ActionDispatch::Http::FilterParameters</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/FilterParameters.html#method-i-filtered_query_string">#filtered_query_string &mdash; ActionDispatch::Http::FilterParameters</a>
+  
+    <li class="method"><a href="ActionView/LookupContext/ViewPaths.html#method-i-find">#find &mdash; ActionView::LookupContext::ViewPaths</a>
+  
+    <li class="method"><a href="ActionView/LookupContext/ViewPaths.html#method-i-find_all">#find_all &mdash; ActionView::LookupContext::ViewPaths</a>
+  
+    <li class="method"><a href="ActionView/Resolver.html#method-i-find_all">#find_all &mdash; ActionView::Resolver</a>
+  
+    <li class="method"><a href="ActionDispatch/Assertions/TagAssertions.html#method-i-find_all_tag">#find_all_tag &mdash; ActionDispatch::Assertions::TagAssertions</a>
+  
+    <li class="method"><a href="ActionDispatch/Assertions/TagAssertions.html#method-i-find_tag">#find_tag &mdash; ActionDispatch::Assertions::TagAssertions</a>
+  
+    <li class="method"><a href="ActionView/LookupContext/ViewPaths.html#method-i-find_template">#find_template &mdash; ActionView::LookupContext::ViewPaths</a>
+  
+    <li class="method"><a href="ActionDispatch/TestProcess.html#method-i-fixture_file_upload">#fixture_file_upload &mdash; ActionDispatch::TestProcess</a>
+  
+    <li class="method"><a href="ActionDispatch/Request.html#method-i-flash">#flash &mdash; ActionDispatch::Request</a>
+  
+    <li class="method"><a href="ActionDispatch/TestProcess.html#method-i-flash">#flash &mdash; ActionDispatch::TestProcess</a>
+  
+    <li class="method"><a href="ActionDispatch/Integration/RequestHelpers.html#method-i-follow_redirect-21">#follow_redirect! &mdash; ActionDispatch::Integration::RequestHelpers</a>
+  
+    <li class="method"><a href="Sprockets/Helpers/RailsHelper.html#method-i-font_path">#font_path &mdash; Sprockets::Helpers::RailsHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AssetTagHelper.html#method-i-font_path">#font_path &mdash; ActionView::Helpers::AssetTagHelper</a>
+  
+    <li class="method"><a href="ActionController/ForceSSL/ClassMethods.html#method-i-force_ssl">#force_ssl &mdash; ActionController::ForceSSL::ClassMethods</a>
+  
+    <li class="method"><a href="ActionController/RequestForgeryProtection.html#method-i-form_authenticity_param">#form_authenticity_param &mdash; ActionController::RequestForgeryProtection</a>
+  
+    <li class="method"><a href="ActionController/RequestForgeryProtection.html#method-i-form_authenticity_token">#form_authenticity_token &mdash; ActionController::RequestForgeryProtection</a>
+  
+    <li class="method"><a href="ActionDispatch/Request.html#method-i-form_data-3F">#form_data? &mdash; ActionDispatch::Request</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormHelper.html#method-i-form_for">#form_for &mdash; ActionView::Helpers::FormHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormTagHelper.html#method-i-form_tag">#form_tag &mdash; ActionView::Helpers::FormTagHelper</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/MimeNegotiation.html#method-i-format">#format &mdash; ActionDispatch::Http::MimeNegotiation</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/MimeNegotiation.html#method-i-format-3D">#format= &mdash; ActionDispatch::Http::MimeNegotiation</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/MimeNegotiation.html#method-i-formats">#formats &mdash; ActionDispatch::Http::MimeNegotiation</a>
+  
+    <li class="method"><a href="ActionController/Caching/Fragments.html#method-i-fragment_cache_key">#fragment_cache_key &mdash; ActionController::Caching::Fragments</a>
+  
+    <li class="method"><a href="ActionController/Caching/Fragments.html#method-i-fragment_exist-3F">#fragment_exist? &mdash; ActionController::Caching::Fragments</a>
+  
+    <li class="method"><a href="ActionDispatch/ExceptionWrapper.html#method-i-framework_trace">#framework_trace &mdash; ActionDispatch::ExceptionWrapper</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/Cache/Request.html#method-i-fresh-3F">#fresh? &mdash; ActionDispatch::Http::Cache::Request</a>
+  
+    <li class="method"><a href="ActionController/ConditionalGet.html#method-i-fresh_when">#fresh_when &mdash; ActionController::ConditionalGet</a>
+  
+    <li class="method"><a href="ActionView/LogSubscriber.html#method-i-from_rails_root">#from_rails_root &mdash; ActionView::LogSubscriber</a>
+  
+    <li class="method"><a href="ActionDispatch/ExceptionWrapper.html#method-i-full_trace">#full_trace &mdash; ActionDispatch::ExceptionWrapper</a>
+  
+    <li class="method"><a href="ActionDispatch/Request.html#method-i-fullpath">#fullpath &mdash; ActionDispatch::Request</a>
+  
+    <li class="method"><a href="ActionDispatch/Session/Compatibility.html#method-i-generate_sid">#generate_sid &mdash; ActionDispatch::Session::Compatibility</a>
+  
+    <li class="method"><a href="ActionDispatch/Routing/Mapper/HttpHelpers.html#method-i-get">#get &mdash; ActionDispatch::Routing::Mapper::HttpHelpers</a>
+  
+    <li class="method"><a href="ActionDispatch/Integration/RequestHelpers.html#method-i-get">#get &mdash; ActionDispatch::Integration::RequestHelpers</a>
+  
+    <li class="method"><a href="ActionController/TestCase/Behavior.html#method-i-get">#get &mdash; ActionController::TestCase::Behavior</a>
+  
+    <li class="method"><a href="ActionDispatch/Request.html#method-i-get-3F">#get? &mdash; ActionDispatch::Request</a>
+  
+    <li class="method"><a href="ActionDispatch/Session/CacheStore.html#method-i-get_session">#get_session &mdash; ActionDispatch::Session::CacheStore</a>
+  
+    <li class="method"><a href="ActionDispatch/Integration/RequestHelpers.html#method-i-get_via_redirect">#get_via_redirect &mdash; ActionDispatch::Integration::RequestHelpers</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormBuilder.html#method-i-grouped_collection_select">#grouped_collection_select &mdash; ActionView::Helpers::FormBuilder</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormOptionsHelper.html#method-i-grouped_collection_select">#grouped_collection_select &mdash; ActionView::Helpers::FormOptionsHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormOptionsHelper.html#method-i-grouped_options_for_select">#grouped_options_for_select &mdash; ActionView::Helpers::FormOptionsHelper</a>
+  
+    <li class="method"><a href="ActionController/HttpAuthentication/Digest.html#method-i-ha1">#ha1 &mdash; ActionController::HttpAuthentication::Digest</a>
+  
+    <li class="method"><a href="ActionController/LogSubscriber.html#method-i-halted_callback">#halted_callback &mdash; ActionController::LogSubscriber</a>
+  
+    <li class="method"><a href="ActionController/RequestForgeryProtection.html#method-i-handle_unverified_request">#handle_unverified_request &mdash; ActionController::RequestForgeryProtection</a>
+  
+    <li class="method"><a href="ActionView/Template/Handlers/ERB.html#method-i-handles_encoding-3F">#handles_encoding? &mdash; ActionView::Template::Handlers::ERB</a>
+  
+    <li class="method"><a href="ActionController/Responder.html#method-i-has_errors-3F">#has_errors? &mdash; ActionController::Responder</a>
+  
+    <li class="method"><a href="ActionDispatch/Integration/RequestHelpers.html#method-i-head">#head &mdash; ActionDispatch::Integration::RequestHelpers</a>
+  
+    <li class="method"><a href="ActionController/Head.html#method-i-head">#head &mdash; ActionController::Head</a>
+  
+    <li class="method"><a href="ActionController/TestCase/Behavior.html#method-i-head">#head &mdash; ActionController::TestCase::Behavior</a>
+  
+    <li class="method"><a href="ActionDispatch/Request.html#method-i-head-3F">#head? &mdash; ActionDispatch::Request</a>
+  
+    <li class="method"><a href="ActionDispatch/Request.html#method-i-headers">#headers &mdash; ActionDispatch::Request</a>
+  
+    <li class="method"><a href="ActionController/Testing.html#method-i-headers-3D">#headers= &mdash; ActionController::Testing</a>
+  
+    <li class="method"><a href="AbstractController/Helpers/ClassMethods.html#method-i-helper">#helper &mdash; AbstractController::Helpers::ClassMethods</a>
+  
+    <li class="method"><a href="ActionController/Helpers/ClassMethods.html#method-i-helper_attr">#helper_attr &mdash; ActionController::Helpers::ClassMethods</a>
+  
+    <li class="method"><a href="ActionView/TestCase/Behavior/ClassMethods.html#method-i-helper_class">#helper_class &mdash; ActionView::TestCase::Behavior::ClassMethods</a>
+  
+    <li class="method"><a href="ActionView/TestCase/Behavior/ClassMethods.html#method-i-helper_method">#helper_method &mdash; ActionView::TestCase::Behavior::ClassMethods</a>
+  
+    <li class="method"><a href="AbstractController/Helpers/ClassMethods.html#method-i-helper_method">#helper_method &mdash; AbstractController::Helpers::ClassMethods</a>
+  
+    <li class="method"><a href="ActionController/Helpers/ClassMethods.html#method-i-helpers">#helpers &mdash; ActionController::Helpers::ClassMethods</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormBuilder.html#method-i-hidden_field">#hidden_field &mdash; ActionView::Helpers::FormBuilder</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormHelper.html#method-i-hidden_field">#hidden_field &mdash; ActionView::Helpers::FormHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormTagHelper.html#method-i-hidden_field_tag">#hidden_field_tag &mdash; ActionView::Helpers::FormTagHelper</a>
+  
+    <li class="method"><a href="ActionController/HideActions/ClassMethods.html#method-i-hide_action">#hide_action &mdash; ActionController::HideActions::ClassMethods</a>
+  
+    <li class="method"><a href="ActionView/Helpers/TextHelper.html#method-i-highlight">#highlight &mdash; ActionView::Helpers::TextHelper</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/URL.html#method-i-host">#host &mdash; ActionDispatch::Http::URL</a>
+  
+    <li class="method"><a href="ActionDispatch/Integration/Session.html#method-i-host">#host &mdash; ActionDispatch::Integration::Session</a>
+  
+    <li class="method"><a href="ActionDispatch/TestRequest.html#method-i-host-3D">#host= &mdash; ActionDispatch::TestRequest</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/URL.html#method-i-host_with_port">#host_with_port &mdash; ActionDispatch::Http::URL</a>
+  
+    <li class="method"><a href="Mime/Type.html#method-i-html-3F">#html? &mdash; Mime::Type</a>
+  
+    <li class="method"><a href="ActionDispatch/Assertions/TagAssertions.html#method-i-html_document">#html_document &mdash; ActionDispatch::Assertions::TagAssertions</a>
+  
+    <li class="method"><a href="ActionController/HttpAuthentication/Basic/ControllerMethods/ClassMethods.html#method-i-http_basic_authenticate_with">#http_basic_authenticate_with &mdash; ActionController::HttpAuthentication::Basic::ControllerMethods::ClassMethods</a>
+  
+    <li class="method"><a href="ActionDispatch/Integration/Session.html#method-i-https-21">#https! &mdash; ActionDispatch::Integration::Session</a>
+  
+    <li class="method"><a href="ActionDispatch/Integration/Session.html#method-i-https-3F">#https? &mdash; ActionDispatch::Integration::Session</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/Cache/Request.html#method-i-if_modified_since">#if_modified_since &mdash; ActionDispatch::Http::Cache::Request</a>
+  
+    <li class="method"><a href="ActionDispatch/TestRequest.html#method-i-if_modified_since-3D">#if_modified_since= &mdash; ActionDispatch::TestRequest</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/Cache/Request.html#method-i-if_none_match">#if_none_match &mdash; ActionDispatch::Http::Cache::Request</a>
+  
+    <li class="method"><a href="ActionDispatch/TestRequest.html#method-i-if_none_match-3D">#if_none_match= &mdash; ActionDispatch::TestRequest</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AssetTagHelper.html#method-i-image_alt">#image_alt &mdash; ActionView::Helpers::AssetTagHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AssetTagHelper.html#method-i-image_path">#image_path &mdash; ActionView::Helpers::AssetTagHelper</a>
+  
+    <li class="method"><a href="Sprockets/Helpers/RailsHelper.html#method-i-image_path">#image_path &mdash; Sprockets::Helpers::RailsHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormTagHelper.html#method-i-image_submit_tag">#image_submit_tag &mdash; ActionView::Helpers::FormTagHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AssetTagHelper.html#method-i-image_tag">#image_tag &mdash; ActionView::Helpers::AssetTagHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AssetTagHelper/AssetIncludeTag.html#method-i-include_tag">#include_tag &mdash; ActionView::Helpers::AssetTagHelper::AssetIncludeTag</a>
+  
+    <li class="method"><a href="ActionController/Middleware.html#method-i-index">#index &mdash; ActionController::Middleware</a>
+  
+    <li class="method"><a href="ActionController/HideActions/ClassMethods.html#method-i-inherited">#inherited &mdash; ActionController::HideActions::ClassMethods</a>
+  
+    <li class="method"><a href="AbstractController/Helpers/ClassMethods.html#method-i-inherited">#inherited &mdash; AbstractController::Helpers::ClassMethods</a>
+  
+    <li class="method"><a href="AbstractController/Layouts/ClassMethods.html#method-i-inherited">#inherited &mdash; AbstractController::Layouts::ClassMethods</a>
+  
+    <li class="method"><a href="ActionController/ParamsWrapper/ClassMethods.html#method-i-inherited">#inherited &mdash; ActionController::ParamsWrapper::ClassMethods</a>
+  
+    <li class="method"><a href="ActionDispatch/Flash/FlashHash.html#method-i-initialize_copy">#initialize_copy &mdash; ActionDispatch::Flash::FlashHash</a>
+  
+    <li class="method"><a href="ActionDispatch/MiddlewareStack.html#method-i-initialize_copy">#initialize_copy &mdash; ActionDispatch::MiddlewareStack</a>
+  
+    <li class="method"><a href="ActionDispatch/Session/Compatibility.html#method-i-initialize_sid">#initialize_sid &mdash; ActionDispatch::Session::Compatibility</a>
+  
+    <li class="method"><a href="ActionController/Compatibility.html#method-i-initialize_template_class">#initialize_template_class &mdash; ActionController::Compatibility</a>
+  
+    <li class="method"><a href="ActionDispatch/MiddlewareStack.html#method-i-insert">#insert &mdash; ActionDispatch::MiddlewareStack</a>
+  
+    <li class="method"><a href="ActionDispatch/MiddlewareStack.html#method-i-insert_after">#insert_after &mdash; ActionDispatch::MiddlewareStack</a>
+  
+    <li class="method"><a href="ActionDispatch/MiddlewareStack.html#method-i-insert_before">#insert_before &mdash; ActionDispatch::MiddlewareStack</a>
+  
+    <li class="method"><a href="ActionView/Template.html#method-i-inspect">#inspect &mdash; ActionView::Template</a>
+  
+    <li class="method"><a href="ActionDispatch/MiddlewareStack/Middleware.html#method-i-inspect">#inspect &mdash; ActionDispatch::MiddlewareStack::Middleware</a>
+  
+    <li class="method"><a href="ActionController/Caching/Fragments.html#method-i-instrument_fragment_cache">#instrument_fragment_cache &mdash; ActionController::Caching::Fragments</a>
+  
+    <li class="method"><a href="ActionDispatch/Request.html#method-i-ip">#ip &mdash; ActionDispatch::Request</a>
+  
+    <li class="method"><a href="ActionDispatch/RemoteIp/GetIp.html#method-i-ips_from">#ips_from &mdash; ActionDispatch::RemoteIp::GetIp</a>
+  
+    <li class="method"><a href="ActionView/Helpers/JavaScriptHelper.html#method-i-j">#j &mdash; ActionView::Helpers::JavaScriptHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AssetTagHelper/JavascriptTagHelpers.html#method-i-javascript_include_tag">#javascript_include_tag &mdash; ActionView::Helpers::AssetTagHelper::JavascriptTagHelpers</a>
+  
+    <li class="method"><a href="Sprockets/Helpers/RailsHelper.html#method-i-javascript_include_tag">#javascript_include_tag &mdash; Sprockets::Helpers::RailsHelper</a>
+  
+    <li class="method"><a href="Sprockets/Helpers/RailsHelper.html#method-i-javascript_path">#javascript_path &mdash; Sprockets::Helpers::RailsHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AssetTagHelper/JavascriptTagHelpers.html#method-i-javascript_path">#javascript_path &mdash; ActionView::Helpers::AssetTagHelper::JavascriptTagHelpers</a>
+  
+    <li class="method"><a href="ActionView/Helpers/JavaScriptHelper.html#method-i-javascript_tag">#javascript_tag &mdash; ActionView::Helpers::JavaScriptHelper</a>
+  
+    <li class="method"><a href="ActionController/Responder.html#method-i-json_resource_errors">#json_resource_errors &mdash; ActionController::Responder</a>
+  
+    <li class="method"><a href="ActionDispatch/Flash/FlashHash.html#method-i-keep">#keep &mdash; ActionDispatch::Flash::FlashHash</a>
+  
+    <li class="method"><a href="ActionDispatch/Flash/FlashHash.html#method-i-key-3F">#key? &mdash; ActionDispatch::Flash::FlashHash</a>
+  
+    <li class="method"><a href="ActionDispatch/Request.html#method-i-key-3F">#key? &mdash; ActionDispatch::Request</a>
+  
+    <li class="method"><a href="ActionDispatch/Flash/FlashHash.html#method-i-keys">#keys &mdash; ActionDispatch::Flash::FlashHash</a>
+  
+    <li class="method"><a href="ActionDispatch/MiddlewareStack/Middleware.html#method-i-klass">#klass &mdash; ActionDispatch::MiddlewareStack::Middleware</a>
+  
+    <li class="method"><a href="AbstractController/Translation.html#method-i-l">#l &mdash; AbstractController::Translation</a>
+  
+    <li class="method"><a href="ActionView/Helpers/TranslationHelper.html#method-i-l">#l &mdash; ActionView::Helpers::TranslationHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormBuilder.html#method-i-label">#label &mdash; ActionView::Helpers::FormBuilder</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormHelper.html#method-i-label">#label &mdash; ActionView::Helpers::FormHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormTagHelper.html#method-i-label_tag">#label_tag &mdash; ActionView::Helpers::FormTagHelper</a>
+  
+    <li class="method"><a href="ActionDispatch/MiddlewareStack.html#method-i-last">#last &mdash; ActionDispatch::MiddlewareStack</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/Cache/Response.html#method-i-last_modified">#last_modified &mdash; ActionDispatch::Http::Cache::Response</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/Cache/Response.html#method-i-last_modified-3D">#last_modified= &mdash; ActionDispatch::Http::Cache::Response</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/Cache/Response.html#method-i-last_modified-3F">#last_modified? &mdash; ActionDispatch::Http::Cache::Response</a>
+  
+    <li class="method"><a href="AbstractController/Layouts/ClassMethods.html#method-i-layout">#layout &mdash; AbstractController::Layouts::ClassMethods</a>
+  
+    <li class="method"><a href="ActionView/Helpers/UrlHelper.html#method-i-link_to">#link_to &mdash; ActionView::Helpers::UrlHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/JavaScriptHelper.html#method-i-link_to_function">#link_to_function &mdash; ActionView::Helpers::JavaScriptHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/UrlHelper.html#method-i-link_to_if">#link_to_if &mdash; ActionView::Helpers::UrlHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/UrlHelper.html#method-i-link_to_unless">#link_to_unless &mdash; ActionView::Helpers::UrlHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/UrlHelper.html#method-i-link_to_unless_current">#link_to_unless_current &mdash; ActionView::Helpers::UrlHelper</a>
+  
+    <li class="method"><a href="ActionDispatch/Session/StaleSessionCheck.html#method-i-load_session">#load_session &mdash; ActionDispatch::Session::StaleSessionCheck</a>
+  
+    <li class="method"><a href="ActionDispatch/Request.html#method-i-local-3F">#local? &mdash; ActionDispatch::Request</a>
+  
+    <li class="method"><a href="ActionView/Helpers/TranslationHelper.html#method-i-localize">#localize &mdash; ActionView::Helpers::TranslationHelper</a>
+  
+    <li class="method"><a href="AbstractController/Translation.html#method-i-localize">#localize &mdash; AbstractController::Translation</a>
+  
+    <li class="method"><a href="ActionView/TestCase/Behavior.html#method-i-locals">#locals &mdash; ActionView::TestCase::Behavior</a>
+  
+    <li class="method"><a href="ActionDispatch/Response.html#method-i-location">#location &mdash; ActionDispatch::Response</a>
+  
+    <li class="method"><a href="ActionController/Metal.html#method-i-location">#location &mdash; ActionController::Metal</a>
+  
+    <li class="method"><a href="ActionDispatch/Response.html#method-i-location-3D">#location= &mdash; ActionDispatch::Response</a>
+  
+    <li class="method"><a href="ActionController/Metal.html#method-i-location-3D">#location= &mdash; ActionController::Metal</a>
+  
+    <li class="method"><a href="ActionView/LogSubscriber.html#method-i-logger">#logger &mdash; ActionView::LogSubscriber</a>
+  
+    <li class="method"><a href="ActionController/LogSubscriber.html#method-i-logger">#logger &mdash; ActionController::LogSubscriber</a>
+  
+    <li class="method"><a href="AbstractController/ViewPaths.html#method-i-lookup_context">#lookup_context &mdash; AbstractController::ViewPaths</a>
+  
+    <li class="method"><a href="ActionView/Helpers/UrlHelper.html#method-i-mail_to">#mail_to &mdash; ActionView::Helpers::UrlHelper</a>
+  
+    <li class="method"><a href="ActionDispatch/Routing/Mapper/Resources.html#method-i-match">#match &mdash; ActionDispatch::Routing::Mapper::Resources</a>
+  
+    <li class="method"><a href="ActionDispatch/Routing/Mapper/Base.html#method-i-match">#match &mdash; ActionDispatch::Routing::Mapper::Base</a>
+  
+    <li class="method"><a href="HTML/Selector.html#method-i-match">#match &mdash; HTML::Selector</a>
+  
+    <li class="method"><a href="ActionDispatch/FileHandler.html#method-i-match-3F">#match? &mdash; ActionDispatch::FileHandler</a>
+  
+    <li class="method"><a href="ActionDispatch/Request.html#method-i-media_type">#media_type &mdash; ActionDispatch::Request</a>
+  
+    <li class="method"><a href="ActionDispatch/Routing/Mapper/Resources.html#method-i-member">#member &mdash; ActionDispatch::Routing::Mapper::Resources</a>
+  
+    <li class="method"><a href="ActionDispatch/Response.html#method-i-message">#message &mdash; ActionDispatch::Response</a>
+  
+    <li class="method"><a href="ActionDispatch/Request.html#method-i-method">#method &mdash; ActionDispatch::Request</a>
+  
+    <li class="method"><a href="ActionController/Compatibility.html#method-i-method_for_action">#method_for_action &mdash; ActionController::Compatibility</a>
+  
+    <li class="method"><a href="ActionController/ImplicitRender.html#method-i-method_for_action">#method_for_action &mdash; ActionController::ImplicitRender</a>
+  
+    <li class="method"><a href="ActionDispatch/Integration/Runner.html#method-i-method_missing">#method_missing &mdash; ActionDispatch::Integration::Runner</a>
+  
+    <li class="method"><a href="AbstractController/Collector.html#method-i-method_missing">#method_missing &mdash; AbstractController::Collector</a>
+  
+    <li class="method"><a href="ActionDispatch/BodyProxy.html#method-i-method_missing">#method_missing &mdash; ActionDispatch::BodyProxy</a>
+  
+    <li class="method"><a href="ActionDispatch/Assertions/RoutingAssertions.html#method-i-method_missing">#method_missing &mdash; ActionDispatch::Assertions::RoutingAssertions</a>
+  
+    <li class="method"><a href="ActionDispatch/Request.html#method-i-method_symbol">#method_symbol &mdash; ActionDispatch::Request</a>
+  
+    <li class="method"><a href="ActionView/Template.html#method-i-mime_type">#mime_type &mdash; ActionView::Template</a>
+  
+    <li class="method"><a href="ActionController/Helpers/ClassMethods.html#method-i-modules_for_helpers">#modules_for_helpers &mdash; ActionController::Helpers::ClassMethods</a>
+  
+    <li class="method"><a href="AbstractController/Helpers/ClassMethods.html#method-i-modules_for_helpers">#modules_for_helpers &mdash; AbstractController::Helpers::ClassMethods</a>
+  
+    <li class="method"><a href="ActionDispatch/Routing/Mapper/Base.html#method-i-mount">#mount &mdash; ActionDispatch::Routing::Mapper::Base</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormBuilder.html#method-i-multipart-3D">#multipart= &mdash; ActionView::Helpers::FormBuilder</a>
+  
+    <li class="method"><a href="ActionDispatch/Routing/Mapper/Scoping.html#method-i-namespace">#namespace &mdash; ActionDispatch::Routing::Mapper::Scoping</a>
+  
+    <li class="method"><a href="ActionDispatch/Routing/Mapper/Resources.html#method-i-namespace">#namespace &mdash; ActionDispatch::Routing::Mapper::Resources</a>
+  
+    <li class="method"><a href="ActionController/Responder.html#method-i-navigation_behavior">#navigation_behavior &mdash; ActionController::Responder</a>
+  
+    <li class="method"><a href="ActionController/Responder.html#method-i-navigation_location">#navigation_location &mdash; ActionController::Responder</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/MimeNegotiation.html#method-i-negotiate_mime">#negotiate_mime &mdash; ActionDispatch::Http::MimeNegotiation</a>
+  
+    <li class="method"><a href="ActionDispatch/Routing/Mapper/Resources.html#method-i-nested">#nested &mdash; ActionDispatch::Routing::Mapper::Resources</a>
+  
+    <li class="method"><a href="ActionView/TestCase/Behavior/ClassMethods.html#method-i-new">#new &mdash; ActionView::TestCase::Behavior::ClassMethods</a>
+  
+    <li class="method"><a href="ActionDispatch/Routing/Mapper/Resources.html#method-i-new">#new &mdash; ActionDispatch::Routing::Mapper::Resources</a>
+  
+    <li class="method"><a href="HTML/Selector.html#method-i-next_element">#next_element &mdash; HTML::Selector</a>
+  
+    <li class="method"><a href="HTML/Selector.html#method-i-next_selector">#next_selector &mdash; HTML::Selector</a>
+  
+    <li class="method"><a href="ActionController/HttpAuthentication/Digest.html#method-i-nonce">#nonce &mdash; ActionController::HttpAuthentication::Digest</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/Cache/Request.html#method-i-not_modified-3F">#not_modified? &mdash; ActionDispatch::Http::Cache::Request</a>
+  
+    <li class="method"><a href="ActionDispatch/Flash/FlashHash.html#method-i-notice">#notice &mdash; ActionDispatch::Flash::FlashHash</a>
+  
+    <li class="method"><a href="ActionDispatch/Flash/FlashHash.html#method-i-notice-3D">#notice= &mdash; ActionDispatch::Flash::FlashHash</a>
+  
+    <li class="method"><a href="ActionDispatch/Flash/FlashHash.html#method-i-now">#now &mdash; ActionDispatch::Flash::FlashHash</a>
+  
+    <li class="method"><a href="ActionDispatch/Flash/FlashHash.html#method-i-now_is_loaded-3F">#now_is_loaded? &mdash; ActionDispatch::Flash::FlashHash</a>
+  
+    <li class="method"><a href="HTML/Selector.html#method-i-nth_child">#nth_child &mdash; HTML::Selector</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormHelper.html#method-i-number_field">#number_field &mdash; ActionView::Helpers::FormHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormTagHelper.html#method-i-number_field_tag">#number_field_tag &mdash; ActionView::Helpers::FormTagHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/NumberHelper.html#method-i-number_to_currency">#number_to_currency &mdash; ActionView::Helpers::NumberHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/NumberHelper.html#method-i-number_to_human">#number_to_human &mdash; ActionView::Helpers::NumberHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/NumberHelper.html#method-i-number_to_human_size">#number_to_human_size &mdash; ActionView::Helpers::NumberHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/NumberHelper.html#method-i-number_to_percentage">#number_to_percentage &mdash; ActionView::Helpers::NumberHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/NumberHelper.html#method-i-number_to_phone">#number_to_phone &mdash; ActionView::Helpers::NumberHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/NumberHelper.html#method-i-number_with_delimiter">#number_with_delimiter &mdash; ActionView::Helpers::NumberHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/NumberHelper.html#method-i-number_with_precision">#number_with_precision &mdash; ActionView::Helpers::NumberHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/ActiveModelInstanceTag.html#method-i-object">#object &mdash; ActionView::Helpers::ActiveModelInstanceTag</a>
+  
+    <li class="method"><a href="HTML/Selector.html#method-i-only_child">#only_child &mdash; HTML::Selector</a>
+  
+    <li class="method"><a href="ActionController/HttpAuthentication/Digest.html#method-i-opaque">#opaque &mdash; ActionController::HttpAuthentication::Digest</a>
+  
+    <li class="method"><a href="ActionDispatch/RailsEntityStore.html#method-i-open">#open &mdash; ActionDispatch::RailsEntityStore</a>
+  
+    <li class="method"><a href="ActionDispatch/Integration/Runner.html#method-i-open_session">#open_session &mdash; ActionDispatch::Integration::Runner</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormOptionsHelper.html#method-i-option_groups_from_collection_for_select">#option_groups_from_collection_for_select &mdash; ActionView::Helpers::FormOptionsHelper</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/URL.html#method-i-optional_port">#optional_port &mdash; ActionDispatch::Http::URL</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormOptionsHelper.html#method-i-options_for_select">#options_for_select &mdash; ActionView::Helpers::FormOptionsHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormOptionsHelper.html#method-i-options_from_collection_for_select">#options_from_collection_for_select &mdash; ActionView::Helpers::FormOptionsHelper</a>
+  
+    <li class="method"><a href="ActionDispatch/Request.html#method-i-original_fullpath">#original_fullpath &mdash; ActionDispatch::Request</a>
+  
+    <li class="method"><a href="ActionDispatch/Request.html#method-i-original_url">#original_url &mdash; ActionDispatch::Request</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/FilterParameters.html#method-i-parameter_filter">#parameter_filter &mdash; ActionDispatch::Http::FilterParameters</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/FilterParameters.html#method-i-parameter_filter_for">#parameter_filter_for &mdash; ActionDispatch::Http::FilterParameters</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/Parameters.html#method-i-parameters">#parameters &mdash; ActionDispatch::Http::Parameters</a>
+  
+    <li class="method"><a href="ActionController/TestCase/Behavior.html#method-i-paramify_values">#paramify_values &mdash; ActionController::TestCase::Behavior</a>
+  
+    <li class="method"><a href="ActionController/Metal.html#method-i-params">#params &mdash; ActionController::Metal</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/Parameters.html#method-i-params">#params &mdash; ActionDispatch::Http::Parameters</a>
+  
+    <li class="method"><a href="ActionController/Metal.html#method-i-params-3D">#params= &mdash; ActionController::Metal</a>
+  
+    <li class="method"><a href="AbstractController/ViewPaths/ClassMethods.html#method-i-parent_prefixes">#parent_prefixes &mdash; AbstractController::ViewPaths::ClassMethods</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormHelper.html#method-i-password_field">#password_field &mdash; ActionView::Helpers::FormHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormTagHelper.html#method-i-password_field_tag">#password_field_tag &mdash; ActionView::Helpers::FormTagHelper</a>
+  
+    <li class="method"><a href="ActionDispatch/TestRequest.html#method-i-path-3D">#path= &mdash; ActionDispatch::TestRequest</a>
+  
+    <li class="method"><a href="Sprockets/StaticCompiler.html#method-i-path_for">#path_for &mdash; Sprockets::StaticCompiler</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/Parameters.html#method-i-path_parameters">#path_parameters &mdash; ActionDispatch::Http::Parameters</a>
+  
+    <li class="method"><a href="Sprockets/Helpers/RailsHelper.html#method-i-path_to_asset">#path_to_asset &mdash; Sprockets::Helpers::RailsHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AssetTagHelper.html#method-i-path_to_audio">#path_to_audio &mdash; ActionView::Helpers::AssetTagHelper</a>
+  
+    <li class="method"><a href="Sprockets/Helpers/RailsHelper.html#method-i-path_to_font">#path_to_font &mdash; Sprockets::Helpers::RailsHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AssetTagHelper.html#method-i-path_to_font">#path_to_font &mdash; ActionView::Helpers::AssetTagHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AssetTagHelper.html#method-i-path_to_image">#path_to_image &mdash; ActionView::Helpers::AssetTagHelper</a>
+  
+    <li class="method"><a href="Sprockets/Helpers/RailsHelper.html#method-i-path_to_image">#path_to_image &mdash; Sprockets::Helpers::RailsHelper</a>
+  
+    <li class="method"><a href="Sprockets/Helpers/RailsHelper.html#method-i-path_to_javascript">#path_to_javascript &mdash; Sprockets::Helpers::RailsHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AssetTagHelper/JavascriptTagHelpers.html#method-i-path_to_javascript">#path_to_javascript &mdash; ActionView::Helpers::AssetTagHelper::JavascriptTagHelpers</a>
+  
+    <li class="method"><a href="Sprockets/Helpers/RailsHelper.html#method-i-path_to_stylesheet">#path_to_stylesheet &mdash; Sprockets::Helpers::RailsHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AssetTagHelper/StylesheetTagHelpers.html#method-i-path_to_stylesheet">#path_to_stylesheet &mdash; ActionView::Helpers::AssetTagHelper::StylesheetTagHelpers</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AssetTagHelper.html#method-i-path_to_video">#path_to_video &mdash; ActionView::Helpers::AssetTagHelper</a>
+  
+    <li class="method"><a href="ActionController/Metal.html#method-i-performed-3F">#performed? &mdash; ActionController::Metal</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormHelper.html#method-i-phone_field">#phone_field &mdash; ActionView::Helpers::FormHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormTagHelper.html#method-i-phone_field_tag">#phone_field_tag &mdash; ActionView::Helpers::FormTagHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/TextHelper.html#method-i-pluralize">#pluralize &mdash; ActionView::Helpers::TextHelper</a>
+  
+    <li class="method"><a href="ActionDispatch/Routing/PolymorphicRoutes.html#method-i-polymorphic_path">#polymorphic_path &mdash; ActionDispatch::Routing::PolymorphicRoutes</a>
+  
+    <li class="method"><a href="ActionDispatch/Routing/PolymorphicRoutes.html#method-i-polymorphic_url">#polymorphic_url &mdash; ActionDispatch::Routing::PolymorphicRoutes</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/URL.html#method-i-port">#port &mdash; ActionDispatch::Http::URL</a>
+  
+    <li class="method"><a href="ActionDispatch/TestRequest.html#method-i-port-3D">#port= &mdash; ActionDispatch::TestRequest</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/URL.html#method-i-port_string">#port_string &mdash; ActionDispatch::Http::URL</a>
+  
+    <li class="method"><a href="ActionDispatch/Routing/Mapper/HttpHelpers.html#method-i-post">#post &mdash; ActionDispatch::Routing::Mapper::HttpHelpers</a>
+  
+    <li class="method"><a href="ActionController/TestCase/Behavior.html#method-i-post">#post &mdash; ActionController::TestCase::Behavior</a>
+  
+    <li class="method"><a href="ActionDispatch/Integration/RequestHelpers.html#method-i-post">#post &mdash; ActionDispatch::Integration::RequestHelpers</a>
+  
+    <li class="method"><a href="ActionDispatch/Request.html#method-i-post-3F">#post? &mdash; ActionDispatch::Request</a>
+  
+    <li class="method"><a href="ActionDispatch/Integration/RequestHelpers.html#method-i-post_via_redirect">#post_via_redirect &mdash; ActionDispatch::Integration::RequestHelpers</a>
+  
+    <li class="method"><a href="ActionDispatch/Response.html#method-i-prepare-21">#prepare! &mdash; ActionDispatch::Response</a>
+  
+    <li class="method"><a href="ActionController/TestCase/Behavior/ClassMethods.html#method-i-prepare_controller_class">#prepare_controller_class &mdash; ActionController::TestCase::Behavior::ClassMethods</a>
+  
+    <li class="method"><a href="AbstractController/Callbacks/ClassMethods.html#method-i-prepend_after_filter">#prepend_after_filter &mdash; AbstractController::Callbacks::ClassMethods</a>
+  
+    <li class="method"><a href="AbstractController/Callbacks/ClassMethods.html#method-i-prepend_around_filter">#prepend_around_filter &mdash; AbstractController::Callbacks::ClassMethods</a>
+  
+    <li class="method"><a href="AbstractController/Callbacks/ClassMethods.html#method-i-prepend_before_filter">#prepend_before_filter &mdash; AbstractController::Callbacks::ClassMethods</a>
+  
+    <li class="method"><a href="AbstractController/ViewPaths/ClassMethods.html#method-i-prepend_view_path">#prepend_view_path &mdash; AbstractController::ViewPaths::ClassMethods</a>
+  
+    <li class="method"><a href="AbstractController/ViewPaths.html#method-i-prepend_view_path">#prepend_view_path &mdash; AbstractController::ViewPaths</a>
+  
+    <li class="method"><a href="ActionController/Middleware.html#method-i-process">#process &mdash; ActionController::Middleware</a>
+  
+    <li class="method"><a href="ActionController/TemplateAssertions.html#method-i-process">#process &mdash; ActionController::TemplateAssertions</a>
+  
+    <li class="method"><a href="AbstractController/Base.html#method-i-process">#process &mdash; AbstractController::Base</a>
+  
+    <li class="method"><a href="ActionController/TestCase/Behavior.html#method-i-process">#process &mdash; ActionController::TestCase::Behavior</a>
+  
+    <li class="method"><a href="ActionController/ParamsWrapper.html#method-i-process_action">#process_action &mdash; ActionController::ParamsWrapper</a>
+  
+    <li class="method"><a href="AbstractController/Callbacks.html#method-i-process_action">#process_action &mdash; AbstractController::Callbacks</a>
+  
+    <li class="method"><a href="ActionController/LogSubscriber.html#method-i-process_action">#process_action &mdash; ActionController::LogSubscriber</a>
+  
+    <li class="method"><a href="ActionController/Instrumentation.html#method-i-process_action">#process_action &mdash; ActionController::Instrumentation</a>
+  
+    <li class="method"><a href="HTML/WhiteListSanitizer.html#method-i-process_attributes_for">#process_attributes_for &mdash; HTML::WhiteListSanitizer</a>
+  
+    <li class="method"><a href="HTML/Sanitizer.html#method-i-process_node">#process_node &mdash; HTML::Sanitizer</a>
+  
+    <li class="method"><a href="HTML/LinkSanitizer.html#method-i-process_node">#process_node &mdash; HTML::LinkSanitizer</a>
+  
+    <li class="method"><a href="HTML/WhiteListSanitizer.html#method-i-process_node">#process_node &mdash; HTML::WhiteListSanitizer</a>
+  
+    <li class="method"><a href="HTML/FullSanitizer.html#method-i-process_node">#process_node &mdash; HTML::FullSanitizer</a>
+  
+    <li class="method"><a href="ActionController/Testing.html#method-i-process_with_new_base_test">#process_with_new_base_test &mdash; ActionController::Testing</a>
+  
+    <li class="method"><a href="ActionController/RequestForgeryProtection.html#method-i-protect_against_forgery-3F">#protect_against_forgery? &mdash; ActionController::RequestForgeryProtection</a>
+  
+    <li class="method"><a href="ActionController/RequestForgeryProtection/ClassMethods.html#method-i-protect_from_forgery">#protect_from_forgery &mdash; ActionController::RequestForgeryProtection::ClassMethods</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/URL.html#method-i-protocol">#protocol &mdash; ActionDispatch::Http::URL</a>
+  
+    <li class="method"><a href="ActionView/Helpers/CaptureHelper.html#method-i-provide">#provide &mdash; ActionView::Helpers::CaptureHelper</a>
+  
+    <li class="method"><a href="ActionDispatch/Routing/Mapper/HttpHelpers.html#method-i-put">#put &mdash; ActionDispatch::Routing::Mapper::HttpHelpers</a>
+  
+    <li class="method"><a href="ActionController/TestCase/Behavior.html#method-i-put">#put &mdash; ActionController::TestCase::Behavior</a>
+  
+    <li class="method"><a href="ActionDispatch/Integration/RequestHelpers.html#method-i-put">#put &mdash; ActionDispatch::Integration::RequestHelpers</a>
+  
+    <li class="method"><a href="ActionDispatch/Request.html#method-i-put-3F">#put? &mdash; ActionDispatch::Request</a>
+  
+    <li class="method"><a href="ActionDispatch/Integration/RequestHelpers.html#method-i-put_via_redirect">#put_via_redirect &mdash; ActionDispatch::Integration::RequestHelpers</a>
+  
+    <li class="method"><a href="ActionView/NullResolver.html#method-i-query">#query &mdash; ActionView::NullResolver</a>
+  
+    <li class="method"><a href="ActionDispatch/Request.html#method-i-query_parameters">#query_parameters &mdash; ActionDispatch::Request</a>
+  
+    <li class="method"><a href="ActionDispatch/TestRequest.html#method-i-rack_cookies">#rack_cookies &mdash; ActionDispatch::TestRequest</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormHelper.html#method-i-radio_button">#radio_button &mdash; ActionView::Helpers::FormHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormBuilder.html#method-i-radio_button">#radio_button &mdash; ActionView::Helpers::FormBuilder</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormTagHelper.html#method-i-radio_button_tag">#radio_button_tag &mdash; ActionView::Helpers::FormTagHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormHelper.html#method-i-range_field">#range_field &mdash; ActionView::Helpers::FormHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormTagHelper.html#method-i-range_field_tag">#range_field_tag &mdash; ActionView::Helpers::FormTagHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/OutputSafetyHelper.html#method-i-raw">#raw &mdash; ActionView::Helpers::OutputSafetyHelper</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/URL.html#method-i-raw_host_with_port">#raw_host_with_port &mdash; ActionDispatch::Http::URL</a>
+  
+    <li class="method"><a href="ActionDispatch/Request.html#method-i-raw_post">#raw_post &mdash; ActionDispatch::Request</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/UploadedFile.html#method-i-read">#read &mdash; ActionDispatch::Http::UploadedFile</a>
+  
+    <li class="method"><a href="ActionDispatch/RailsMetaStore.html#method-i-read">#read &mdash; ActionDispatch::RailsMetaStore</a>
+  
+    <li class="method"><a href="ActionDispatch/RailsEntityStore.html#method-i-read">#read &mdash; ActionDispatch::RailsEntityStore</a>
+  
+    <li class="method"><a href="ActionController/Caching/Fragments.html#method-i-read_fragment">#read_fragment &mdash; ActionController::Caching::Fragments</a>
+  
+    <li class="method"><a href="ActionController/RecordIdentifier.html#method-i-record_key_for_dom_id">#record_key_for_dom_id &mdash; ActionController::RecordIdentifier</a>
+  
+    <li class="method"><a href="ActionController/Testing.html#method-i-recycle-21">#recycle! &mdash; ActionController::Testing</a>
+  
+    <li class="method"><a href="ActionController/TestResponse.html#method-i-recycle-21">#recycle! &mdash; ActionController::TestResponse</a>
+  
+    <li class="method"><a href="ActionDispatch/Routing/Redirection.html#method-i-redirect">#redirect &mdash; ActionDispatch::Routing::Redirection</a>
+  
+    <li class="method"><a href="ActionController/Flash.html#method-i-redirect_to">#redirect_to &mdash; ActionController::Flash</a>
+  
+    <li class="method"><a href="ActionController/LogSubscriber.html#method-i-redirect_to">#redirect_to &mdash; ActionController::LogSubscriber</a>
+  
+    <li class="method"><a href="ActionController/Redirecting.html#method-i-redirect_to">#redirect_to &mdash; ActionController::Redirecting</a>
+  
+    <li class="method"><a href="ActionController/Instrumentation.html#method-i-redirect_to">#redirect_to &mdash; ActionController::Instrumentation</a>
+  
+    <li class="method"><a href="ActionDispatch/TestProcess.html#method-i-redirect_to_url">#redirect_to_url &mdash; ActionDispatch::TestProcess</a>
+  
+    <li class="method"><a href="ActionDispatch/Response.html#method-i-redirect_url">#redirect_url &mdash; ActionDispatch::Response</a>
+  
+    <li class="method"><a href="Mime/Type.html#method-i-ref">#ref &mdash; Mime::Type</a>
+  
+    <li class="method"><a href="ActionView/Template.html#method-i-refresh">#refresh &mdash; ActionView::Template</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AssetTagHelper/JavascriptTagHelpers/ClassMethods.html#method-i-register_javascript_expansion">#register_javascript_expansion &mdash; ActionView::Helpers::AssetTagHelper::JavascriptTagHelpers::ClassMethods</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AssetTagHelper/StylesheetTagHelpers/ClassMethods.html#method-i-register_stylesheet_expansion">#register_stylesheet_expansion &mdash; ActionView::Helpers::AssetTagHelper::StylesheetTagHelpers::ClassMethods</a>
+  
+    <li class="method"><a href="ActionDispatch/TestRequest.html#method-i-remote_addr-3D">#remote_addr= &mdash; ActionDispatch::TestRequest</a>
+  
+    <li class="method"><a href="ActionDispatch/Request.html#method-i-remote_ip">#remote_ip &mdash; ActionDispatch::Request</a>
+  
+    <li class="method"><a href="ActionView/Renderer.html#method-i-render">#render &mdash; ActionView::Renderer</a>
+  
+    <li class="method"><a href="ActionController/Instrumentation.html#method-i-render">#render &mdash; ActionController::Instrumentation</a>
+  
+    <li class="method"><a href="ActionView/Template.html#method-i-render">#render &mdash; ActionView::Template</a>
+  
+    <li class="method"><a href="ActionView/TestCase/Behavior/Locals.html#method-i-render">#render &mdash; ActionView::TestCase::Behavior::Locals</a>
+  
+    <li class="method"><a href="ActionView/TestCase/Behavior.html#method-i-render">#render &mdash; ActionView::TestCase::Behavior</a>
+  
+    <li class="method"><a href="ActionView/PartialRenderer.html#method-i-render">#render &mdash; ActionView::PartialRenderer</a>
+  
+    <li class="method"><a href="AbstractController/Rendering.html#method-i-render">#render &mdash; AbstractController::Rendering</a>
+  
+    <li class="method"><a href="ActionView/Helpers/RenderingHelper.html#method-i-render">#render &mdash; ActionView::Helpers::RenderingHelper</a>
+  
+    <li class="method"><a href="ActionView/Renderer.html#method-i-render_body">#render_body &mdash; ActionView::Renderer</a>
+  
+    <li class="method"><a href="ActionView/LogSubscriber.html#method-i-render_collection">#render_collection &mdash; ActionView::LogSubscriber</a>
+  
+    <li class="method"><a href="ActionView/PartialRenderer.html#method-i-render_collection">#render_collection &mdash; ActionView::PartialRenderer</a>
+  
+    <li class="method"><a href="ActionView/LogSubscriber.html#method-i-render_partial">#render_partial &mdash; ActionView::LogSubscriber</a>
+  
+    <li class="method"><a href="ActionView/PartialRenderer.html#method-i-render_partial">#render_partial &mdash; ActionView::PartialRenderer</a>
+  
+    <li class="method"><a href="ActionView/LogSubscriber.html#method-i-render_template">#render_template &mdash; ActionView::LogSubscriber</a>
+  
+    <li class="method"><a href="AbstractController/Rendering.html#method-i-render_to_body">#render_to_body &mdash; AbstractController::Rendering</a>
+  
+    <li class="method"><a href="ActionController/Renderers.html#method-i-render_to_body">#render_to_body &mdash; ActionController::Renderers</a>
+  
+    <li class="method"><a href="ActionController/Compatibility.html#method-i-render_to_body">#render_to_body &mdash; ActionController::Compatibility</a>
+  
+    <li class="method"><a href="AbstractController/Rendering.html#method-i-render_to_string">#render_to_string &mdash; AbstractController::Rendering</a>
+  
+    <li class="method"><a href="ActionController/Rendering.html#method-i-render_to_string">#render_to_string &mdash; ActionController::Rendering</a>
+  
+    <li class="method"><a href="ActionController/HttpAuthentication/Basic/ControllerMethods.html#method-i-request_http_basic_authentication">#request_http_basic_authentication &mdash; ActionController::HttpAuthentication::Basic::ControllerMethods</a>
+  
+    <li class="method"><a href="ActionController/HttpAuthentication/Digest/ControllerMethods.html#method-i-request_http_digest_authentication">#request_http_digest_authentication &mdash; ActionController::HttpAuthentication::Digest::ControllerMethods</a>
+  
+    <li class="method"><a href="ActionController/HttpAuthentication/Token/ControllerMethods.html#method-i-request_http_token_authentication">#request_http_token_authentication &mdash; ActionController::HttpAuthentication::Token::ControllerMethods</a>
+  
+    <li class="method"><a href="ActionDispatch/Request.html#method-i-request_method">#request_method &mdash; ActionDispatch::Request</a>
+  
+    <li class="method"><a href="ActionDispatch/TestRequest.html#method-i-request_method-3D">#request_method= &mdash; ActionDispatch::TestRequest</a>
+  
+    <li class="method"><a href="ActionDispatch/Request.html#method-i-request_method_symbol">#request_method_symbol &mdash; ActionDispatch::Request</a>
+  
+    <li class="method"><a href="ActionDispatch/Request.html#method-i-request_parameters">#request_parameters &mdash; ActionDispatch::Request</a>
+  
+    <li class="method"><a href="ActionDispatch/TestRequest.html#method-i-request_uri-3D">#request_uri= &mdash; ActionDispatch::TestRequest</a>
+  
+    <li class="method"><a href="ActionDispatch/Integration/RequestHelpers.html#method-i-request_via_redirect">#request_via_redirect &mdash; ActionDispatch::Integration::RequestHelpers</a>
+  
+    <li class="method"><a href="ActionView/Template/Handlers/Builder.html#method-i-require_engine">#require_engine &mdash; ActionView::Template::Handlers::Builder</a>
+  
+    <li class="method"><a href="ActionController/Compatibility.html#method-i-rescue_action">#rescue_action &mdash; ActionController::Compatibility</a>
+  
+    <li class="method"><a href="ActionController/TestCase/RaiseActionExceptions.html#method-i-rescue_action_without_handler">#rescue_action_without_handler &mdash; ActionController::TestCase::RaiseActionExceptions</a>
+  
+    <li class="method"><a href="ActionDispatch/Rescue.html#method-i-rescue_from">#rescue_from &mdash; ActionDispatch::Rescue</a>
+  
+    <li class="method"><a href="ActionDispatch/ExceptionWrapper.html#method-i-rescue_template">#rescue_template &mdash; ActionDispatch::ExceptionWrapper</a>
+  
+    <li class="method"><a href="ActionController/Rescue.html#method-i-rescue_with_handler">#rescue_with_handler &mdash; ActionController::Rescue</a>
+  
+    <li class="method"><a href="ActionDispatch/Integration/Session.html#method-i-reset-21">#reset! &mdash; ActionDispatch::Integration::Session</a>
+  
+    <li class="method"><a href="ActionDispatch/Integration/Runner.html#method-i-reset-21">#reset! &mdash; ActionDispatch::Integration::Runner</a>
+  
+    <li class="method"><a href="ActionView/Helpers/TextHelper.html#method-i-reset_cycle">#reset_cycle &mdash; ActionView::Helpers::TextHelper</a>
+  
+    <li class="method"><a href="ActionDispatch/Request.html#method-i-reset_session">#reset_session &mdash; ActionDispatch::Request</a>
+  
+    <li class="method"><a href="ActionController/RackDelegation.html#method-i-reset_session">#reset_session &mdash; ActionController::RackDelegation</a>
+  
+    <li class="method"><a href="ActionDispatch/Routing/Mapper/Resources.html#method-i-resource">#resource &mdash; ActionDispatch::Routing::Mapper::Resources</a>
+  
+    <li class="method"><a href="ActionController/Responder.html#method-i-resource_errors">#resource_errors &mdash; ActionController::Responder</a>
+  
+    <li class="method"><a href="ActionController/Responder.html#method-i-resource_location">#resource_location &mdash; ActionController::Responder</a>
+  
+    <li class="method"><a href="ActionController/Responder.html#method-i-resourceful-3F">#resourceful? &mdash; ActionController::Responder</a>
+  
+    <li class="method"><a href="ActionDispatch/Routing/Mapper/Resources.html#method-i-resources">#resources &mdash; ActionDispatch::Routing::Mapper::Resources</a>
+  
+    <li class="method"><a href="ActionDispatch/Routing/Mapper/Resources.html#method-i-resources_path_names">#resources_path_names &mdash; ActionDispatch::Routing::Mapper::Resources</a>
+  
+    <li class="method"><a href="ActionController/Responder.html#method-i-respond">#respond &mdash; ActionController::Responder</a>
+  
+    <li class="method"><a href="ActionController/MimeResponds/ClassMethods.html#method-i-respond_to">#respond_to &mdash; ActionController::MimeResponds::ClassMethods</a>
+  
+    <li class="method"><a href="ActionController/MimeResponds.html#method-i-respond_to">#respond_to &mdash; ActionController::MimeResponds</a>
+  
+    <li class="method"><a href="ActionDispatch/BodyProxy.html#method-i-respond_to-3F">#respond_to? &mdash; ActionDispatch::BodyProxy</a>
+  
+    <li class="method"><a href="ActionDispatch/Response.html#method-i-respond_to-3F">#respond_to? &mdash; ActionDispatch::Response</a>
+  
+    <li class="method"><a href="ActionDispatch/Integration/Runner.html#method-i-respond_to-3F">#respond_to? &mdash; ActionDispatch::Integration::Runner</a>
+  
+    <li class="method"><a href="ActionController/MimeResponds.html#method-i-respond_with">#respond_with &mdash; ActionController::MimeResponds</a>
+  
+    <li class="method"><a href="ActionController/RackDelegation.html#method-i-response_body-3D">#response_body= &mdash; ActionController::RackDelegation</a>
+  
+    <li class="method"><a href="ActionController/Metal.html#method-i-response_body-3D">#response_body= &mdash; ActionController::Metal</a>
+  
+    <li class="method"><a href="ActionDispatch/Response.html#method-i-response_code">#response_code &mdash; ActionDispatch::Response</a>
+  
+    <li class="method"><a href="ActionDispatch/Assertions/SelectorAssertions.html#method-i-response_from_page">#response_from_page &mdash; ActionDispatch::Assertions::SelectorAssertions</a>
+  
+    <li class="method"><a href="ActionController/Responder.html#method-i-response_overridden-3F">#response_overridden? &mdash; ActionController::Responder</a>
+  
+    <li class="method"><a href="ActionView/Helpers/InstanceTag.html#method-i-retrieve_autoindex">#retrieve_autoindex &mdash; ActionView::Helpers::InstanceTag</a>
+  
+    <li class="method"><a href="ActionView/Helpers/InstanceTag.html#method-i-retrieve_object">#retrieve_object &mdash; ActionView::Helpers::InstanceTag</a>
+  
+    <li class="method"><a href="ActionDispatch/Routing/Mapper/Base.html#method-i-root">#root &mdash; ActionDispatch::Routing::Mapper::Base</a>
+  
+    <li class="method"><a href="ActionDispatch/Routing/Mapper/Resources.html#method-i-root">#root &mdash; ActionDispatch::Routing::Mapper::Resources</a>
+  
+    <li class="method"><a href="Sprockets/Bootstrap.html#method-i-run">#run &mdash; Sprockets::Bootstrap</a>
+  
+    <li class="method"><a href="ActionView/Helpers/TextHelper.html#method-i-safe_concat">#safe_concat &mdash; ActionView::Helpers::TextHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/OutputSafetyHelper.html#method-i-safe_join">#safe_join &mdash; ActionView::Helpers::OutputSafetyHelper</a>
+  
+    <li class="method"><a href="HTML/FullSanitizer.html#method-i-sanitize">#sanitize &mdash; HTML::FullSanitizer</a>
+  
+    <li class="method"><a href="HTML/Sanitizer.html#method-i-sanitize">#sanitize &mdash; HTML::Sanitizer</a>
+  
+    <li class="method"><a href="ActionView/Helpers/SanitizeHelper.html#method-i-sanitize">#sanitize &mdash; ActionView::Helpers::SanitizeHelper</a>
+  
+    <li class="method"><a href="HTML/WhiteListSanitizer.html#method-i-sanitize_css">#sanitize_css &mdash; HTML::WhiteListSanitizer</a>
+  
+    <li class="method"><a href="ActionView/Helpers/SanitizeHelper.html#method-i-sanitize_css">#sanitize_css &mdash; ActionView::Helpers::SanitizeHelper</a>
+  
+    <li class="method"><a href="ActionController/RecordIdentifier.html#method-i-sanitize_dom_id">#sanitize_dom_id &mdash; ActionController::RecordIdentifier</a>
+  
+    <li class="method"><a href="HTML/Sanitizer.html#method-i-sanitizeable-3F">#sanitizeable? &mdash; HTML::Sanitizer</a>
+  
+    <li class="method"><a href="HTML/LinkSanitizer.html#method-i-sanitizeable-3F">#sanitizeable? &mdash; HTML::LinkSanitizer</a>
+  
+    <li class="method"><a href="ActionDispatch/Routing/Mapper/Scoping.html#method-i-scope">#scope &mdash; ActionDispatch::Routing::Mapper::Scoping</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormHelper.html#method-i-search_field">#search_field &mdash; ActionView::Helpers::FormHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormTagHelper.html#method-i-search_field_tag">#search_field_tag &mdash; ActionView::Helpers::FormTagHelper</a>
+  
+    <li class="method"><a href="ActionController/HttpAuthentication/Digest.html#method-i-secret_token">#secret_token &mdash; ActionController::HttpAuthentication::Digest</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormOptionsHelper.html#method-i-select">#select &mdash; ActionView::Helpers::FormOptionsHelper</a>
+  
+    <li class="method"><a href="HTML/Selector.html#method-i-select">#select &mdash; HTML::Selector</a>
+  
+    <li class="method"><a href="HTML/Tag.html#method-i-select">#select &mdash; HTML::Tag</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormBuilder.html#method-i-select">#select &mdash; ActionView::Helpers::FormBuilder</a>
+  
+    <li class="method"><a href="ActionView/Helpers/DateHelper.html#method-i-select_date">#select_date &mdash; ActionView::Helpers::DateHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/DateHelper.html#method-i-select_datetime">#select_datetime &mdash; ActionView::Helpers::DateHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/DateHelper.html#method-i-select_day">#select_day &mdash; ActionView::Helpers::DateHelper</a>
+  
+    <li class="method"><a href="HTML/Selector.html#method-i-select_first">#select_first &mdash; HTML::Selector</a>
+  
+    <li class="method"><a href="ActionView/Helpers/DateHelper.html#method-i-select_hour">#select_hour &mdash; ActionView::Helpers::DateHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/DateHelper.html#method-i-select_minute">#select_minute &mdash; ActionView::Helpers::DateHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/DateHelper.html#method-i-select_month">#select_month &mdash; ActionView::Helpers::DateHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/DateHelper.html#method-i-select_second">#select_second &mdash; ActionView::Helpers::DateHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormTagHelper.html#method-i-select_tag">#select_tag &mdash; ActionView::Helpers::FormTagHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/DateHelper.html#method-i-select_time">#select_time &mdash; ActionView::Helpers::DateHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/DateHelper.html#method-i-select_year">#select_year &mdash; ActionView::Helpers::DateHelper</a>
+  
+    <li class="method"><a href="ActionController/ImplicitRender.html#method-i-send_action">#send_action &mdash; ActionController::ImplicitRender</a>
+  
+    <li class="method"><a href="ActionController/LogSubscriber.html#method-i-send_data">#send_data &mdash; ActionController::LogSubscriber</a>
+  
+    <li class="method"><a href="ActionController/DataStreaming.html#method-i-send_data">#send_data &mdash; ActionController::DataStreaming</a>
+  
+    <li class="method"><a href="ActionController/Instrumentation.html#method-i-send_data">#send_data &mdash; ActionController::Instrumentation</a>
+  
+    <li class="method"><a href="ActionController/Instrumentation.html#method-i-send_file">#send_file &mdash; ActionController::Instrumentation</a>
+  
+    <li class="method"><a href="ActionController/LogSubscriber.html#method-i-send_file">#send_file &mdash; ActionController::LogSubscriber</a>
+  
+    <li class="method"><a href="ActionController/DataStreaming.html#method-i-send_file">#send_file &mdash; ActionController::DataStreaming</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/URL.html#method-i-server_port">#server_port &mdash; ActionDispatch::Http::URL</a>
+  
+    <li class="method"><a href="ActionDispatch/Request.html#method-i-server_software">#server_software &mdash; ActionDispatch::Request</a>
+  
+    <li class="method"><a href="ActionDispatch/TestProcess.html#method-i-session">#session &mdash; ActionDispatch::TestProcess</a>
+  
+    <li class="method"><a href="ActionDispatch/Request.html#method-i-session_options-3D">#session_options= &mdash; ActionDispatch::Request</a>
+  
+    <li class="method"><a href="ActionDispatch/Response.html#method-i-set_cookie">#set_cookie &mdash; ActionDispatch::Response</a>
+  
+    <li class="method"><a href="ActionDispatch/Session/CacheStore.html#method-i-set_session">#set_session &mdash; ActionDispatch::Session::CacheStore</a>
+  
+    <li class="method"><a href="ActionController/TestCase/Behavior.html#method-i-setup_controller_request_and_response">#setup_controller_request_and_response &mdash; ActionController::TestCase::Behavior</a>
+  
+    <li class="method"><a href="ActionController/TemplateAssertions.html#method-i-setup_subscriptions">#setup_subscriptions &mdash; ActionController::TemplateAssertions</a>
+  
+    <li class="method"><a href="ActionView/TestCase/Behavior.html#method-i-setup_with_controller">#setup_with_controller &mdash; ActionView::TestCase::Behavior</a>
+  
+    <li class="method"><a href="ActionDispatch/Routing/Mapper/Resources.html#method-i-shallow">#shallow &mdash; ActionDispatch::Routing::Mapper::Resources</a>
+  
+    <li class="method"><a href="ActionDispatch/Routing/Mapper/Resources.html#method-i-shallow-3F">#shallow? &mdash; ActionDispatch::Routing::Mapper::Resources</a>
+  
+    <li class="method"><a href="ActionController/Rescue.html#method-i-show_detailed_exceptions-3F">#show_detailed_exceptions? &mdash; ActionController::Rescue</a>
+  
+    <li class="method"><a href="ActionView/Helpers/TextHelper.html#method-i-simple_format">#simple_format &mdash; ActionView::Helpers::TextHelper</a>
+  
+    <li class="method"><a href="HTML/Selector.html#method-i-simple_selector">#simple_selector &mdash; HTML::Selector</a>
+  
+    <li class="method"><a href="ActionDispatch/MiddlewareStack.html#method-i-size">#size &mdash; ActionDispatch::MiddlewareStack</a>
+  
+    <li class="method"><a href="AbstractController/Callbacks/ClassMethods.html#method-i-skip_after_filter">#skip_after_filter &mdash; AbstractController::Callbacks::ClassMethods</a>
+  
+    <li class="method"><a href="AbstractController/Callbacks/ClassMethods.html#method-i-skip_around_filter">#skip_around_filter &mdash; AbstractController::Callbacks::ClassMethods</a>
+  
+    <li class="method"><a href="AbstractController/Callbacks/ClassMethods.html#method-i-skip_before_filter">#skip_before_filter &mdash; AbstractController::Callbacks::ClassMethods</a>
+  
+    <li class="method"><a href="AbstractController/Callbacks/ClassMethods.html#method-i-skip_filter">#skip_filter &mdash; AbstractController::Callbacks::ClassMethods</a>
+  
+    <li class="method"><a href="ActionController/ConditionalGet.html#method-i-stale-3F">#stale? &mdash; ActionController::ConditionalGet</a>
+  
+    <li class="method"><a href="ActionDispatch/Session/StaleSessionCheck.html#method-i-stale_session_check-21">#stale_session_check! &mdash; ActionDispatch::Session::StaleSessionCheck</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/URL.html#method-i-standard_port">#standard_port &mdash; ActionDispatch::Http::URL</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/URL.html#method-i-standard_port-3F">#standard_port? &mdash; ActionDispatch::Http::URL</a>
+  
+    <li class="method"><a href="ActionController/LogSubscriber.html#method-i-start_processing">#start_processing &mdash; ActionController::LogSubscriber</a>
+  
+    <li class="method"><a href="ActionController/Metal.html#method-i-status">#status &mdash; ActionController::Metal</a>
+  
+    <li class="method"><a href="ActionController/Metal.html#method-i-status-3D">#status= &mdash; ActionController::Metal</a>
+  
+    <li class="method"><a href="ActionDispatch/Response.html#method-i-status-3D">#status= &mdash; ActionDispatch::Response</a>
+  
+    <li class="method"><a href="ActionDispatch/ExceptionWrapper.html#method-i-status_code">#status_code &mdash; ActionDispatch::ExceptionWrapper</a>
+  
+    <li class="method"><a href="ActionDispatch/Response.html#method-i-status_message">#status_message &mdash; ActionDispatch::Response</a>
+  
+    <li class="method"><a href="ActionView/Helpers/SanitizeHelper.html#method-i-strip_links">#strip_links &mdash; ActionView::Helpers::SanitizeHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/SanitizeHelper.html#method-i-strip_tags">#strip_tags &mdash; ActionView::Helpers::SanitizeHelper</a>
+  
+    <li class="method"><a href="Sprockets/Helpers/RailsHelper.html#method-i-stylesheet_link_tag">#stylesheet_link_tag &mdash; Sprockets::Helpers::RailsHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AssetTagHelper/StylesheetTagHelpers.html#method-i-stylesheet_link_tag">#stylesheet_link_tag &mdash; ActionView::Helpers::AssetTagHelper::StylesheetTagHelpers</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AssetTagHelper/StylesheetTagHelpers.html#method-i-stylesheet_path">#stylesheet_path &mdash; ActionView::Helpers::AssetTagHelper::StylesheetTagHelpers</a>
+  
+    <li class="method"><a href="Sprockets/Helpers/RailsHelper.html#method-i-stylesheet_path">#stylesheet_path &mdash; Sprockets::Helpers::RailsHelper</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/URL.html#method-i-subdomain">#subdomain &mdash; ActionDispatch::Http::URL</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/URL.html#method-i-subdomains">#subdomains &mdash; ActionDispatch::Http::URL</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormBuilder.html#method-i-submit">#submit &mdash; ActionView::Helpers::FormBuilder</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormTagHelper.html#method-i-submit_tag">#submit_tag &mdash; ActionView::Helpers::FormTagHelper</a>
+  
+    <li class="method"><a href="ActionView/Template/Handlers/ERB.html#method-i-supports_streaming-3F">#supports_streaming? &mdash; ActionView::Template::Handlers::ERB</a>
+  
+    <li class="method"><a href="ActionView/Template.html#method-i-supports_streaming-3F">#supports_streaming? &mdash; ActionView::Template</a>
+  
+    <li class="method"><a href="ActionDispatch/MiddlewareStack.html#method-i-swap">#swap &mdash; ActionDispatch::MiddlewareStack</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/Parameters.html#method-i-symbolized_path_parameters">#symbolized_path_parameters &mdash; ActionDispatch::Http::Parameters</a>
+  
+    <li class="method"><a href="Mime/Mimes.html#method-i-symbols">#symbols &mdash; Mime::Mimes</a>
+  
+    <li class="method"><a href="AbstractController/Translation.html#method-i-t">#t &mdash; AbstractController::Translation</a>
+  
+    <li class="method"><a href="ActionView/Helpers/TranslationHelper.html#method-i-t">#t &mdash; ActionView::Helpers::TranslationHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/ActiveModelInstanceTag.html#method-i-tag">#tag &mdash; ActionView::Helpers::ActiveModelInstanceTag</a>
+  
+    <li class="method"><a href="ActionView/Helpers/TagHelper.html#method-i-tag">#tag &mdash; ActionView::Helpers::TagHelper</a>
+  
+    <li class="method"><a href="ActionController/TemplateAssertions.html#method-i-teardown_subscriptions">#teardown_subscriptions &mdash; ActionController::TemplateAssertions</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormHelper.html#method-i-telephone_field">#telephone_field &mdash; ActionView::Helpers::FormHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormTagHelper.html#method-i-telephone_field_tag">#telephone_field_tag &mdash; ActionView::Helpers::FormTagHelper</a>
+  
+    <li class="method"><a href="ActionView/LookupContext/ViewPaths.html#method-i-template_exists-3F">#template_exists? &mdash; ActionView::LookupContext::ViewPaths</a>
+  
+    <li class="method"><a href="ActionView/TestCase/Behavior/ClassMethods.html#method-i-tests">#tests &mdash; ActionView::TestCase::Behavior::ClassMethods</a>
+  
+    <li class="method"><a href="ActionController/TestCase/Behavior/ClassMethods.html#method-i-tests">#tests &mdash; ActionController::TestCase::Behavior::ClassMethods</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormHelper.html#method-i-text_area">#text_area &mdash; ActionView::Helpers::FormHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormTagHelper.html#method-i-text_area_tag">#text_area_tag &mdash; ActionView::Helpers::FormTagHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormHelper.html#method-i-text_field">#text_field &mdash; ActionView::Helpers::FormHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormTagHelper.html#method-i-text_field_tag">#text_field_tag &mdash; ActionView::Helpers::FormTagHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/DateHelper.html#method-i-time_ago_in_words">#time_ago_in_words &mdash; ActionView::Helpers::DateHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormBuilder.html#method-i-time_select">#time_select &mdash; ActionView::Helpers::FormBuilder</a>
+  
+    <li class="method"><a href="ActionView/Helpers/DateHelper.html#method-i-time_select">#time_select &mdash; ActionView::Helpers::DateHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/DateHelper.html#method-i-time_tag">#time_tag &mdash; ActionView::Helpers::DateHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormOptionsHelper.html#method-i-time_zone_options_for_select">#time_zone_options_for_select &mdash; ActionView::Helpers::FormOptionsHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormBuilder.html#method-i-time_zone_select">#time_zone_select &mdash; ActionView::Helpers::FormBuilder</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormOptionsHelper.html#method-i-time_zone_select">#time_zone_select &mdash; ActionView::Helpers::FormOptionsHelper</a>
+  
+    <li class="method"><a href="ActionDispatch/Response.html#method-i-to_a">#to_a &mdash; ActionDispatch::Response</a>
+  
+    <li class="method"><a href="ActionDispatch/Response.html#method-i-to_ary">#to_ary &mdash; ActionDispatch::Response</a>
+  
+    <li class="method"><a href="ActionView/Helpers/InstanceTag.html#method-i-to_boolean_select_tag">#to_boolean_select_tag &mdash; ActionView::Helpers::InstanceTag</a>
+  
+    <li class="method"><a href="ActionView/Helpers/InstanceTag.html#method-i-to_check_box_tag">#to_check_box_tag &mdash; ActionView::Helpers::InstanceTag</a>
+  
+    <li class="method"><a href="ActionView/Helpers/InstanceTag.html#method-i-to_content_tag">#to_content_tag &mdash; ActionView::Helpers::InstanceTag</a>
+  
+    <li class="method"><a href="ActionView/Helpers/DateHelperInstanceTag.html#method-i-to_date_select_tag">#to_date_select_tag &mdash; ActionView::Helpers::DateHelperInstanceTag</a>
+  
+    <li class="method"><a href="ActionView/Helpers/DateHelperInstanceTag.html#method-i-to_datetime_select_tag">#to_datetime_select_tag &mdash; ActionView::Helpers::DateHelperInstanceTag</a>
+  
+    <li class="method"><a href="ActionController/Responder.html#method-i-to_format">#to_format &mdash; ActionController::Responder</a>
+  
+    <li class="method"><a href="ActionDispatch/Flash/FlashHash.html#method-i-to_hash">#to_hash &mdash; ActionDispatch::Flash::FlashHash</a>
+  
+    <li class="method"><a href="ActionController/Responder.html#method-i-to_html">#to_html &mdash; ActionController::Responder</a>
+  
+    <li class="method"><a href="ActionView/Helpers/InstanceTag.html#method-i-to_input_field_tag">#to_input_field_tag &mdash; ActionView::Helpers::InstanceTag</a>
+  
+    <li class="method"><a href="ActionController/Responder.html#method-i-to_js">#to_js &mdash; ActionController::Responder</a>
+  
+    <li class="method"><a href="ActionView/Helpers/InstanceTag.html#method-i-to_label_tag">#to_label_tag &mdash; ActionView::Helpers::InstanceTag</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormBuilder.html#method-i-to_model">#to_model &mdash; ActionView::Helpers::FormBuilder</a>
+  
+    <li class="method"><a href="ActionView/Helpers/InstanceTag.html#method-i-to_number_field_tag">#to_number_field_tag &mdash; ActionView::Helpers::InstanceTag</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormBuilder.html#method-i-to_partial_path">#to_partial_path &mdash; ActionView::Helpers::FormBuilder</a>
+  
+    <li class="method"><a href="ActionDispatch/Response.html#method-i-to_path">#to_path &mdash; ActionDispatch::Response</a>
+  
+    <li class="method"><a href="ActionView/FileSystemResolver.html#method-i-to_path">#to_path &mdash; ActionView::FileSystemResolver</a>
+  
+    <li class="method"><a href="ActionView/Helpers/InstanceTag.html#method-i-to_radio_button_tag">#to_radio_button_tag &mdash; ActionView::Helpers::InstanceTag</a>
+  
+    <li class="method"><a href="ActionView/FixtureResolver.html#method-i-to_s">#to_s &mdash; ActionView::FixtureResolver</a>
+  
+    <li class="method"><a href="ActionDispatch/RemoteIp/GetIp.html#method-i-to_s">#to_s &mdash; ActionDispatch::RemoteIp::GetIp</a>
+  
+    <li class="method"><a href="Mime/Type.html#method-i-to_s">#to_s &mdash; Mime::Type</a>
+  
+    <li class="method"><a href="ActionView/FileSystemResolver.html#method-i-to_s">#to_s &mdash; ActionView::FileSystemResolver</a>
+  
+    <li class="method"><a href="Mime/Type.html#method-i-to_str">#to_str &mdash; Mime::Type</a>
+  
+    <li class="method"><a href="Mime/Type.html#method-i-to_sym">#to_sym &mdash; Mime::Type</a>
+  
+    <li class="method"><a href="ActionView/Helpers/InstanceTag.html#method-i-to_text_area_tag">#to_text_area_tag &mdash; ActionView::Helpers::InstanceTag</a>
+  
+    <li class="method"><a href="ActionView/Helpers/DateHelperInstanceTag.html#method-i-to_time_select_tag">#to_time_select_tag &mdash; ActionView::Helpers::DateHelperInstanceTag</a>
+  
+    <li class="method"><a href="ActionController/HttpAuthentication/Token.html#method-i-token_and_options">#token_and_options &mdash; ActionController::HttpAuthentication::Token</a>
+  
+    <li class="method"><a href="HTML/WhiteListSanitizer.html#method-i-tokenize">#tokenize &mdash; HTML::WhiteListSanitizer</a>
+  
+    <li class="method"><a href="HTML/Sanitizer.html#method-i-tokenize">#tokenize &mdash; HTML::Sanitizer</a>
+  
+    <li class="method"><a href="ActionView/Helpers/TranslationHelper.html#method-i-translate">#translate &mdash; ActionView::Helpers::TranslationHelper</a>
+  
+    <li class="method"><a href="AbstractController/Translation.html#method-i-translate">#translate &mdash; AbstractController::Translation</a>
+  
+    <li class="method"><a href="ActionView/Helpers/TextHelper.html#method-i-truncate">#truncate &mdash; ActionView::Helpers::TextHelper</a>
+  
+    <li class="method"><a href="ActionDispatch/FileHandler.html#method-i-unescape_path">#unescape_path &mdash; ActionDispatch::FileHandler</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AtomFeedHelper/AtomFeedBuilder.html#method-i-updated">#updated &mdash; ActionView::Helpers::AtomFeedHelper::AtomFeedBuilder</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/URL.html#method-i-url">#url &mdash; ActionDispatch::Http::URL</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormHelper.html#method-i-url_field">#url_field &mdash; ActionView::Helpers::FormHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormTagHelper.html#method-i-url_field_tag">#url_field_tag &mdash; ActionView::Helpers::FormTagHelper</a>
+  
+    <li class="method"><a href="ActionController/Metal.html#method-i-url_for">#url_for &mdash; ActionController::Metal</a>
+  
+    <li class="method"><a href="ActionDispatch/Routing/UrlFor.html#method-i-url_for">#url_for &mdash; ActionDispatch::Routing::UrlFor</a>
+  
+    <li class="method"><a href="ActionView/Helpers/UrlHelper.html#method-i-url_for">#url_for &mdash; ActionView::Helpers::UrlHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/UrlHelper.html#method-i-url_options">#url_options &mdash; ActionView::Helpers::UrlHelper</a>
+  
+    <li class="method"><a href="ActionDispatch/Routing/UrlFor.html#method-i-url_options">#url_options &mdash; ActionDispatch::Routing::UrlFor</a>
+  
+    <li class="method"><a href="ActionDispatch/Integration/Runner.html#method-i-url_options">#url_options &mdash; ActionDispatch::Integration::Runner</a>
+  
+    <li class="method"><a href="ActionController/UrlFor.html#method-i-url_options">#url_options &mdash; ActionController::UrlFor</a>
+  
+    <li class="method"><a href="ActionDispatch/Flash/FlashHash.html#method-i-use">#use &mdash; ActionDispatch::Flash::FlashHash</a>
+  
+    <li class="method"><a href="ActionDispatch/MiddlewareStack.html#method-i-use">#use &mdash; ActionDispatch::MiddlewareStack</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/MimeNegotiation.html#method-i-use_accept_header">#use_accept_header &mdash; ActionDispatch::Http::MimeNegotiation</a>
+  
+    <li class="method"><a href="ActionController/Renderers/ClassMethods.html#method-i-use_renderer">#use_renderer &mdash; ActionController::Renderers::ClassMethods</a>
+  
+    <li class="method"><a href="ActionController/Renderers/ClassMethods.html#method-i-use_renderers">#use_renderers &mdash; ActionController::Renderers::ClassMethods</a>
+  
+    <li class="method"><a href="ActionDispatch/TestRequest.html#method-i-user_agent-3D">#user_agent= &mdash; ActionDispatch::TestRequest</a>
+  
+    <li class="method"><a href="ActionController/HttpAuthentication/Basic.html#method-i-user_name_and_password">#user_name_and_password &mdash; ActionController::HttpAuthentication::Basic</a>
+  
+    <li class="method"><a href="ActionView/Helpers/FormTagHelper.html#method-i-utf8_enforcer_tag">#utf8_enforcer_tag &mdash; ActionView::Helpers::FormTagHelper</a>
+  
+    <li class="method"><a href="ActionDispatch/Request.html#method-i-uuid">#uuid &mdash; ActionDispatch::Request</a>
+  
+    <li class="method"><a href="ActionDispatch/Http/MimeNegotiation.html#method-i-valid_accept_header">#valid_accept_header &mdash; ActionDispatch::Http::MimeNegotiation</a>
+  
+    <li class="method"><a href="ActionController/HttpAuthentication/Digest.html#method-i-validate_digest_response">#validate_digest_response &mdash; ActionController::HttpAuthentication::Digest</a>
+  
+    <li class="method"><a href="ActionController/HttpAuthentication/Digest.html#method-i-validate_nonce">#validate_nonce &mdash; ActionController::HttpAuthentication::Digest</a>
+  
+    <li class="method"><a href="ActionView/Helpers/InstanceTag.html#method-i-value">#value &mdash; ActionView::Helpers::InstanceTag</a>
+  
+    <li class="method"><a href="ActionView/Helpers/InstanceTag.html#method-i-value_before_type_cast">#value_before_type_cast &mdash; ActionView::Helpers::InstanceTag</a>
+  
+    <li class="method"><a href="ActionController/RequestForgeryProtection.html#method-i-verified_request-3F">#verified_request? &mdash; ActionController::RequestForgeryProtection</a>
+  
+    <li class="method"><a href="ActionController/RequestForgeryProtection.html#method-i-verify_authenticity_token">#verify_authenticity_token &mdash; ActionController::RequestForgeryProtection</a>
+  
+    <li class="method"><a href="Mime/Type.html#method-i-verify_request-3F">#verify_request? &mdash; Mime::Type</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AssetTagHelper.html#method-i-video_path">#video_path &mdash; ActionView::Helpers::AssetTagHelper</a>
+  
+    <li class="method"><a href="ActionView/Helpers/AssetTagHelper.html#method-i-video_tag">#video_tag &mdash; ActionView::Helpers::AssetTagHelper</a>
+  
+    <li class="method"><a href="AbstractController/Rendering.html#method-i-view_assigns">#view_assigns &mdash; AbstractController::Rendering</a>
+  
+    <li class="method"><a href="AbstractController/Rendering.html#method-i-view_context">#view_context &mdash; AbstractController::Rendering</a>
+  
+    <li class="method"><a href="AbstractController/Rendering.html#method-i-view_context_class">#view_context_class &mdash; AbstractController::Rendering</a>
+  
+    <li class="method"><a href="AbstractController/Rendering/ClassMethods.html#method-i-view_context_class">#view_context_class &mdash; AbstractController::Rendering::ClassMethods</a>
+  
+    <li class="method"><a href="AbstractController/ViewPaths/ClassMethods.html#method-i-view_paths">#view_paths &mdash; AbstractController::ViewPaths::ClassMethods</a>
+  
+    <li class="method"><a href="ActionView/LookupContext/ViewPaths.html#method-i-view_paths-3D">#view_paths= &mdash; ActionView::LookupContext::ViewPaths</a>
+  
+    <li class="method"><a href="AbstractController/ViewPaths/ClassMethods.html#method-i-view_paths-3D">#view_paths= &mdash; AbstractController::ViewPaths::ClassMethods</a>
+  
+    <li class="method"><a href="AbstractController/Rendering.html#method-i-view_renderer">#view_renderer &mdash; AbstractController::Rendering</a>
+  
+    <li class="method"><a href="ActionController/HideActions/ClassMethods.html#method-i-visible_action-3F">#visible_action? &mdash; ActionController::HideActions::ClassMethods</a>
+  
+    <li class="method"><a href="ActionDispatch/Routing/Mapper/Base.html#method-i-with_default_scope">#with_default_scope &mdash; ActionDispatch::Routing::Mapper::Base</a>
+  
+    <li class="method"><a href="ActionDispatch/Routing/Mapper/Resources.html#method-i-with_exclusive_scope">#with_exclusive_scope &mdash; ActionDispatch::Routing::Mapper::Resources</a>
+  
+    <li class="method"><a href="ActionView/LookupContext/ViewPaths.html#method-i-with_fallbacks">#with_fallbacks &mdash; ActionView::LookupContext::ViewPaths</a>
+  
+    <li class="method"><a href="ActionDispatch/Assertions/RoutingAssertions.html#method-i-with_routing">#with_routing &mdash; ActionDispatch::Assertions::RoutingAssertions</a>
+  
+    <li class="method"><a href="ActionDispatch/Routing/Mapper/Resources.html#method-i-with_scope_level">#with_scope_level &mdash; ActionDispatch::Routing::Mapper::Resources</a>
+  
+    <li class="method"><a href="ActionView/Helpers/TextHelper.html#method-i-word_wrap">#word_wrap &mdash; ActionView::Helpers::TextHelper</a>
+  
+    <li class="method"><a href="ActionController/ParamsWrapper/ClassMethods.html#method-i-wrap_parameters">#wrap_parameters &mdash; ActionController::ParamsWrapper::ClassMethods</a>
+  
+    <li class="method"><a href="ActionDispatch/RailsEntityStore.html#method-i-write">#write &mdash; ActionDispatch::RailsEntityStore</a>
+  
+    <li class="method"><a href="ActionDispatch/RailsMetaStore.html#method-i-write">#write &mdash; ActionDispatch::RailsMetaStore</a>
+  
+    <li class="method"><a href="Sprockets/StaticCompiler.html#method-i-write_asset">#write_asset &mdash; Sprockets::StaticCompiler</a>
+  
+    <li class="method"><a href="ActionController/Caching/Fragments.html#method-i-write_fragment">#write_fragment &mdash; ActionController::Caching::Fragments</a>
+  
+    <li class="method"><a href="Sprockets/StaticCompiler.html#method-i-write_manifest">#write_manifest &mdash; Sprockets::StaticCompiler</a>
+  
+    <li class="method"><a href="ActionDispatch/Integration/RequestHelpers.html#method-i-xhr">#xhr &mdash; ActionDispatch::Integration::RequestHelpers</a>
+  
+    <li class="method"><a href="ActionController/TestCase/Behavior.html#method-i-xhr">#xhr &mdash; ActionController::TestCase::Behavior</a>
+  
+    <li class="method"><a href="ActionDispatch/Request.html#method-i-xhr-3F">#xhr? &mdash; ActionDispatch::Request</a>
+  
+    <li class="method"><a href="ActionController/TestCase/Behavior.html#method-i-xml_http_request">#xml_http_request &mdash; ActionController::TestCase::Behavior</a>
+  
+    <li class="method"><a href="ActionDispatch/Integration/RequestHelpers.html#method-i-xml_http_request">#xml_http_request &mdash; ActionDispatch::Integration::RequestHelpers</a>
+  
+    <li class="method"><a href="ActionDispatch/Request.html#method-i-xml_http_request-3F">#xml_http_request? &mdash; ActionDispatch::Request</a>
+  
+</ul>
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

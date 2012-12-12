@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Object::HashWithIndifferentAccess - activesupport-3.2.3 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/active_support/hash_with_indifferent_access.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="../Hash.html">Hash</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-c-new_from_hash_copying_default">::new_from_hash_copying_default</a>
+    
+    <li><a href="#method-i-5B-5D-3D">#[]=</a>
+    
+    <li><a href="#method-i-convert_key">#convert_key</a>
+    
+    <li><a href="#method-i-convert_value">#convert_value</a>
+    
+    <li><a href="#method-i-default">#default</a>
+    
+    <li><a href="#method-i-delete">#delete</a>
+    
+    <li><a href="#method-i-dup">#dup</a>
+    
+    <li><a href="#method-i-extractable_options-3F">#extractable_options?</a>
+    
+    <li><a href="#method-i-fetch">#fetch</a>
+    
+    <li><a href="#method-i-has_key-3F">#has_key?</a>
+    
+    <li><a href="#method-i-include-3F">#include?</a>
+    
+    <li><a href="#method-i-key-3F">#key?</a>
+    
+    <li><a href="#method-i-member-3F">#member?</a>
+    
+    <li><a href="#method-i-merge">#merge</a>
+    
+    <li><a href="#method-i-merge-21">#merge!</a>
+    
+    <li><a href="#method-i-nested_under_indifferent_access">#nested_under_indifferent_access</a>
+    
+    <li><a href="#method-i-regular_update">#regular_update</a>
+    
+    <li><a href="#method-i-regular_writer">#regular_writer</a>
+    
+    <li><a href="#method-i-reverse_merge">#reverse_merge</a>
+    
+    <li><a href="#method-i-reverse_merge-21">#reverse_merge!</a>
+    
+    <li><a href="#method-i-store">#store</a>
+    
+    <li><a href="#method-i-stringify_keys">#stringify_keys</a>
+    
+    <li><a href="#method-i-stringify_keys-21">#stringify_keys!</a>
+    
+    <li><a href="#method-i-symbolize_keys">#symbolize_keys</a>
+    
+    <li><a href="#method-i-to_hash">#to_hash</a>
+    
+    <li><a href="#method-i-to_options-21">#to_options!</a>
+    
+    <li><a href="#method-i-update">#update</a>
+    
+    <li><a href="#method-i-values_at">#values_at</a>
+    
+    <li><a href="#method-i-with_indifferent_access">#with_indifferent_access</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../ActiveSupport.html">ActiveSupport</a>
+  
+    <li><a href="../ActiveSupport/Autoload.html">ActiveSupport::Autoload</a>
+  
+    <li><a href="../ActiveSupport/BacktraceCleaner.html">ActiveSupport::BacktraceCleaner</a>
+  
+    <li><a href="../ActiveSupport/Base64.html">ActiveSupport::Base64</a>
+  
+    <li><a href="../ActiveSupport/BasicObject.html">ActiveSupport::BasicObject</a>
+  
+    <li><a href="../ActiveSupport/Benchmarkable.html">ActiveSupport::Benchmarkable</a>
+  
+    <li><a href="../ActiveSupport/BufferedLogger.html">ActiveSupport::BufferedLogger</a>
+  
+    <li><a href="../ActiveSupport/BufferedLogger/Severity.html">ActiveSupport::BufferedLogger::Severity</a>
+  
+    <li><a href="../ActiveSupport/Cache.html">ActiveSupport::Cache</a>
+  
+    <li><a href="../ActiveSupport/Cache/Entry.html">ActiveSupport::Cache::Entry</a>
+  
+    <li><a href="../ActiveSupport/Cache/FileStore.html">ActiveSupport::Cache::FileStore</a>
+  
+    <li><a href="../ActiveSupport/Cache/MemCacheStore.html">ActiveSupport::Cache::MemCacheStore</a>
+  
+    <li><a href="../ActiveSupport/Cache/MemoryStore.html">ActiveSupport::Cache::MemoryStore</a>
+  
+    <li><a href="../ActiveSupport/Cache/NullStore.html">ActiveSupport::Cache::NullStore</a>
+  
+    <li><a href="../ActiveSupport/Cache/Store.html">ActiveSupport::Cache::Store</a>
+  
+    <li><a href="../ActiveSupport/Cache/Strategy.html">ActiveSupport::Cache::Strategy</a>
+  
+    <li><a href="../ActiveSupport/Cache/Strategy/LocalCache.html">ActiveSupport::Cache::Strategy::LocalCache</a>
+  
+    <li><a href="../ActiveSupport/Cache/Strategy/LocalCache/LocalStore.html">ActiveSupport::Cache::Strategy::LocalCache::LocalStore</a>
+  
+    <li><a href="../ActiveSupport/Callbacks.html">ActiveSupport::Callbacks</a>
+  
+    <li><a href="../ActiveSupport/Callbacks/ClassMethods.html">ActiveSupport::Callbacks::ClassMethods</a>
+  
+    <li><a href="../ActiveSupport/Concern.html">ActiveSupport::Concern</a>
+  
+    <li><a href="../ActiveSupport/Configurable.html">ActiveSupport::Configurable</a>
+  
+    <li><a href="../ActiveSupport/Configurable/ClassMethods.html">ActiveSupport::Configurable::ClassMethods</a>
+  
+    <li><a href="../ActiveSupport/Configurable/Configuration.html">ActiveSupport::Configurable::Configuration</a>
+  
+    <li><a href="../ActiveSupport/Dependencies.html">ActiveSupport::Dependencies</a>
+  
+    <li><a href="../ActiveSupport/Dependencies/ClassCache.html">ActiveSupport::Dependencies::ClassCache</a>
+  
+    <li><a href="../ActiveSupport/Dependencies/WatchStack.html">ActiveSupport::Dependencies::WatchStack</a>
+  
+    <li><a href="../ActiveSupport/Deprecation.html">ActiveSupport::Deprecation</a>
+  
+    <li><a href="../ActiveSupport/DescendantsTracker.html">ActiveSupport::DescendantsTracker</a>
+  
+    <li><a href="../ActiveSupport/Duration.html">ActiveSupport::Duration</a>
+  
+    <li><a href="../ActiveSupport/FileUpdateChecker.html">ActiveSupport::FileUpdateChecker</a>
+  
+    <li><a href="../ActiveSupport/FileWatcher.html">ActiveSupport::FileWatcher</a>
+  
+    <li><a href="../ActiveSupport/FileWatcher/Backend.html">ActiveSupport::FileWatcher::Backend</a>
+  
+    <li><a href="../ActiveSupport/Gzip.html">ActiveSupport::Gzip</a>
+  
+    <li><a href="../ActiveSupport/Gzip/Stream.html">ActiveSupport::Gzip::Stream</a>
+  
+    <li><a href="../ActiveSupport/HashWithIndifferentAccess.html">ActiveSupport::HashWithIndifferentAccess</a>
+  
+    <li><a href="../ActiveSupport/HashWithIndifferentAccess.html">ActiveSupport::HashWithIndifferentAccess</a>
+  
+    <li><a href="../ActiveSupport/Inflector.html">ActiveSupport::Inflector</a>
+  
+    <li><a href="../ActiveSupport/Inflector/Inflections.html">ActiveSupport::Inflector::Inflections</a>
+  
+    <li><a href="../ActiveSupport/InheritableOptions.html">ActiveSupport::InheritableOptions</a>
+  
+    <li><a href="../ActiveSupport/JSON.html">ActiveSupport::JSON</a>
+  
+    <li><a href="../ActiveSupport/JSON/Encoding.html">ActiveSupport::JSON::Encoding</a>
+  
+    <li><a href="../ActiveSupport/JSON/Encoding/CircularReferenceError.html">ActiveSupport::JSON::Encoding::CircularReferenceError</a>
+  
+    <li><a href="../ActiveSupport/JSON/Encoding/Encoder.html">ActiveSupport::JSON::Encoding::Encoder</a>
+  
+    <li><a href="../ActiveSupport/JSON/Variable.html">ActiveSupport::JSON::Variable</a>
+  
+    <li><a href="../ActiveSupport/LogSubscriber.html">ActiveSupport::LogSubscriber</a>
+  
+    <li><a href="../ActiveSupport/LogSubscriber/TestHelper.html">ActiveSupport::LogSubscriber::TestHelper</a>
+  
+    <li><a href="../ActiveSupport/LogSubscriber/TestHelper/MockLogger.html">ActiveSupport::LogSubscriber::TestHelper::MockLogger</a>
+  
+    <li><a href="../ActiveSupport/Memoizable.html">ActiveSupport::Memoizable</a>
+  
+    <li><a href="../ActiveSupport/Memoizable/InstanceMethods.html">ActiveSupport::Memoizable::InstanceMethods</a>
+  
+    <li><a href="../ActiveSupport/MessageEncryptor.html">ActiveSupport::MessageEncryptor</a>
+  
+    <li><a href="../ActiveSupport/MessageEncryptor/InvalidMessage.html">ActiveSupport::MessageEncryptor::InvalidMessage</a>
+  
+    <li><a href="../ActiveSupport/MessageVerifier.html">ActiveSupport::MessageVerifier</a>
+  
+    <li><a href="../ActiveSupport/MessageVerifier/InvalidSignature.html">ActiveSupport::MessageVerifier::InvalidSignature</a>
+  
+    <li><a href="../ActiveSupport/Multibyte.html">ActiveSupport::Multibyte</a>
+  
+    <li><a href="../ActiveSupport/Multibyte/Chars.html">ActiveSupport::Multibyte::Chars</a>
+  
+    <li><a href="../ActiveSupport/Multibyte/EncodingError.html">ActiveSupport::Multibyte::EncodingError</a>
+  
+    <li><a href="../ActiveSupport/Multibyte/Unicode.html">ActiveSupport::Multibyte::Unicode</a>
+  
+    <li><a href="../ActiveSupport/Multibyte/Unicode/Codepoint.html">ActiveSupport::Multibyte::Unicode::Codepoint</a>
+  
+    <li><a href="../ActiveSupport/Multibyte/Unicode/UnicodeDatabase.html">ActiveSupport::Multibyte::Unicode::UnicodeDatabase</a>
+  
+    <li><a href="../ActiveSupport/Notifications.html">ActiveSupport::Notifications</a>
+  
+    <li><a href="../ActiveSupport/Notifications/Event.html">ActiveSupport::Notifications::Event</a>
+  
+    <li><a href="../ActiveSupport/Notifications/Fanout.html">ActiveSupport::Notifications::Fanout</a>
+  
+    <li><a href="../ActiveSupport/Notifications/Instrumenter.html">ActiveSupport::Notifications::Instrumenter</a>
+  
+    <li><a href="../ActiveSupport/OrderedHash.html">ActiveSupport::OrderedHash</a>
+  
+    <li><a href="../ActiveSupport/OrderedOptions.html">ActiveSupport::OrderedOptions</a>
+  
+    <li><a href="../ActiveSupport/Railtie.html">ActiveSupport::Railtie</a>
+  
+    <li><a href="../ActiveSupport/Rescuable.html">ActiveSupport::Rescuable</a>
+  
+    <li><a href="../ActiveSupport/Rescuable/ClassMethods.html">ActiveSupport::Rescuable::ClassMethods</a>
+  
+    <li><a href="../ActiveSupport/SafeBuffer.html">ActiveSupport::SafeBuffer</a>
+  
+    <li><a href="../ActiveSupport/SafeBuffer/SafeConcatError.html">ActiveSupport::SafeBuffer::SafeConcatError</a>
+  
+    <li><a href="../ActiveSupport/StringInquirer.html">ActiveSupport::StringInquirer</a>
+  
+    <li><a href="../ActiveSupport/TaggedLogging.html">ActiveSupport::TaggedLogging</a>
+  
+    <li><a href="../ActiveSupport/TestCase.html">ActiveSupport::TestCase</a>
+  
+    <li><a href="../ActiveSupport/Testing.html">ActiveSupport::Testing</a>
+  
+    <li><a href="../ActiveSupport/Testing/Assertions.html">ActiveSupport::Testing::Assertions</a>
+  
+    <li><a href="../ActiveSupport/Testing/Declarative.html">ActiveSupport::Testing::Declarative</a>
+  
+    <li><a href="../ActiveSupport/Testing/Isolation.html">ActiveSupport::Testing::Isolation</a>
+  
+    <li><a href="../ActiveSupport/Testing/Isolation/Forking.html">ActiveSupport::Testing::Isolation::Forking</a>
+  
+    <li><a href="../ActiveSupport/Testing/Isolation/MiniTest.html">ActiveSupport::Testing::Isolation::MiniTest</a>
+  
+    <li><a href="../ActiveSupport/Testing/Isolation/Subprocess.html">ActiveSupport::Testing::Isolation::Subprocess</a>
+  
+    <li><a href="../ActiveSupport/Testing/Isolation/TestUnit.html">ActiveSupport::Testing::Isolation::TestUnit</a>
+  
+    <li><a href="../ActiveSupport/Testing/Pending.html">ActiveSupport::Testing::Pending</a>
+  
+    <li><a href="../ActiveSupport/Testing/Performance.html">ActiveSupport::Testing::Performance</a>
+  
+    <li><a href="../ActiveSupport/Testing/Performance/Benchmarker.html">ActiveSupport::Testing::Performance::Benchmarker</a>
+  
+    <li><a href="../ActiveSupport/Testing/Performance/ForClassicTestUnit.html">ActiveSupport::Testing::Performance::ForClassicTestUnit</a>
+  
+    <li><a href="../ActiveSupport/Testing/Performance/ForMiniTest.html">ActiveSupport::Testing::Performance::ForMiniTest</a>
+  
+    <li><a href="../ActiveSupport/Testing/Performance/Metrics.html">ActiveSupport::Testing::Performance::Metrics</a>
+  
+    <li><a href="../ActiveSupport/Testing/Performance/Metrics/Amount.html">ActiveSupport::Testing::Performance::Metrics::Amount</a>
+  
+    <li><a href="../ActiveSupport/Testing/Performance/Metrics/Base.html">ActiveSupport::Testing::Performance::Metrics::Base</a>
+  
+    <li><a href="../ActiveSupport/Testing/Performance/Metrics/CpuTime.html">ActiveSupport::Testing::Performance::Metrics::CpuTime</a>
+  
+    <li><a href="../ActiveSupport/Testing/Performance/Metrics/DigitalInformationUnit.html">ActiveSupport::Testing::Performance::Metrics::DigitalInformationUnit</a>
+  
+    <li><a href="../ActiveSupport/Testing/Performance/Metrics/GcRuns.html">ActiveSupport::Testing::Performance::Metrics::GcRuns</a>
+  
+    <li><a href="../ActiveSupport/Testing/Performance/Metrics/GcTime.html">ActiveSupport::Testing::Performance::Metrics::GcTime</a>
+  
+    <li><a href="../ActiveSupport/Testing/Performance/Metrics/Memory.html">ActiveSupport::Testing::Performance::Metrics::Memory</a>
+  
+    <li><a href="../ActiveSupport/Testing/Performance/Metrics/Objects.html">ActiveSupport::Testing::Performance::Metrics::Objects</a>
+  
+    <li><a href="../ActiveSupport/Testing/Performance/Metrics/ProcessTime.html">ActiveSupport::Testing::Performance::Metrics::ProcessTime</a>
+  
+    <li><a href="../ActiveSupport/Testing/Performance/Metrics/Time.html">ActiveSupport::Testing::Performance::Metrics::Time</a>
+  
+    <li><a href="../ActiveSupport/Testing/Performance/Metrics/UserTime.html">ActiveSupport::Testing::Performance::Metrics::UserTime</a>
+  
+    <li><a href="../ActiveSupport/Testing/Performance/Metrics/WallTime.html">ActiveSupport::Testing::Performance::Metrics::WallTime</a>
+  
+    <li><a href="../ActiveSupport/Testing/Performance/Performer.html">ActiveSupport::Testing::Performance::Performer</a>
+  
+    <li><a href="../ActiveSupport/Testing/Performance/Profiler.html">ActiveSupport::Testing::Performance::Profiler</a>
+  
+    <li><a href="../ActiveSupport/Testing/ProxyTestResult.html">ActiveSupport::Testing::ProxyTestResult</a>
+  
+    <li><a href="../ActiveSupport/Testing/RemoteError.html">ActiveSupport::Testing::RemoteError</a>
+  
+    <li><a href="../ActiveSupport/Testing/SetupAndTeardown.html">ActiveSupport::Testing::SetupAndTeardown</a>
+  
+    <li><a href="../ActiveSupport/Testing/SetupAndTeardown/ClassMethods.html">ActiveSupport::Testing::SetupAndTeardown::ClassMethods</a>
+  
+    <li><a href="../ActiveSupport/Testing/SetupAndTeardown/ForClassicTestUnit.html">ActiveSupport::Testing::SetupAndTeardown::ForClassicTestUnit</a>
+  
+    <li><a href="../ActiveSupport/Testing/SetupAndTeardown/ForMiniTest.html">ActiveSupport::Testing::SetupAndTeardown::ForMiniTest</a>
+  
+    <li><a href="../ActiveSupport/TimeWithZone.html">ActiveSupport::TimeWithZone</a>
+  
+    <li><a href="../ActiveSupport/TimeZone.html">ActiveSupport::TimeZone</a>
+  
+    <li><a href="../ActiveSupport/XmlMini.html">ActiveSupport::XmlMini</a>
+  
+    <li><a href="../ActiveSupport/XmlMini_LibXMLSAX.html">ActiveSupport::XmlMini_LibXMLSAX</a>
+  
+    <li><a href="../ActiveSupport/XmlMini_LibXMLSAX/HashBuilder.html">ActiveSupport::XmlMini_LibXMLSAX::HashBuilder</a>
+  
+    <li><a href="../ActiveSupport/XmlMini_NokogiriSAX.html">ActiveSupport::XmlMini_NokogiriSAX</a>
+  
+    <li><a href="../ActiveSupport/XmlMini_NokogiriSAX/HashBuilder.html">ActiveSupport::XmlMini_NokogiriSAX::HashBuilder</a>
+  
+    <li><a href="../Test.html">Test</a>
+  
+    <li><a href="../Test/Unit.html">Test::Unit</a>
+  
+    <li><a href="../Test/Unit/Collector.html">Test::Unit::Collector</a>
+  
+    <li><a href="../Test/Unit/Collector/ObjectSpace.html">Test::Unit::Collector::ObjectSpace</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+    <li><a href="../ActiveSupport/HashWithIndifferentAccess.html">Object::HashWithIndifferentAccess</a>
+  
+    <li><a href="../LoadError.html">Object::MissingSourceFile</a>
+  
+    <li><a href="../ERB.html">ERB</a>
+  
+    <li><a href="../ERB/Util.html">ERB::Util</a>
+  
+    <li><a href="../I18n.html">I18n</a>
+  
+    <li><a href="../I18n/Railtie.html">I18n::Railtie</a>
+  
+    <li><a href="../LoadError.html">LoadError</a>
+  
+    <li><a href="../LoadError.html">LoadError</a>
+  
+    <li><a href="../Logger.html">Logger</a>
+  
+    <li><a href="../Logger/SimpleFormatter.html">Logger::SimpleFormatter</a>
+  
+    <li><a href="../Array.html">Array</a>
+  
+    <li><a href="../Base64.html">Base64</a>
+  
+    <li><a href="../Benchmark.html">Benchmark</a>
+  
+    <li><a href="../BigDecimal.html">BigDecimal</a>
+  
+    <li><a href="../Class.html">Class</a>
+  
+    <li><a href="../Date.html">Date</a>
+  
+    <li><a href="../DateTime.html">DateTime</a>
+  
+    <li><a href="../Enumerable.html">Enumerable</a>
+  
+    <li><a href="../FalseClass.html">FalseClass</a>
+  
+    <li><a href="../File.html">File</a>
+  
+    <li><a href="../Float.html">Float</a>
+  
+    <li><a href="../Hash.html">Hash</a>
+  
+    <li><a href="../Integer.html">Integer</a>
+  
+    <li><a href="../Kernel.html">Kernel</a>
+  
+    <li><a href="../Module.html">Module</a>
+  
+    <li><a href="../NameError.html">NameError</a>
+  
+    <li><a href="../NilClass.html">NilClass</a>
+  
+    <li><a href="../Numeric.html">Numeric</a>
+  
+    <li><a href="../Process.html">Process</a>
+  
+    <li><a href="../QualifiedConstUtils.html">QualifiedConstUtils</a>
+  
+    <li><a href="../Range.html">Range</a>
+  
+    <li><a href="../Regexp.html">Regexp</a>
+  
+    <li><a href="../String.html">String</a>
+  
+    <li><a href="../Symbol.html">Symbol</a>
+  
+    <li><a href="../Time.html">Time</a>
+  
+    <li><a href="../TrueClass.html">TrueClass</a>
+  
+    <li><a href="../URI.html">URI</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Object::HashWithIndifferentAccess</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(constructor = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/active_support/hash_with_indifferent_access.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">constructor</span> = {})
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">constructor</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+    <span class="ruby-keyword">super</span>()
+    <span class="ruby-identifier">update</span>(<span class="ruby-identifier">constructor</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">super</span>(<span class="ruby-identifier">constructor</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+      <div id="method-c-new_from_hash_copying_default" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new_from_hash_copying_default</span><span
+            class="method-args">(hash)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new_from_hash_copying_default-source">
+            <pre><span class="ruby-comment"># File lib/active_support/hash_with_indifferent_access.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">new_from_hash_copying_default</span>(<span class="ruby-identifier">hash</span>)
+  <span class="ruby-identifier">new</span>(<span class="ruby-identifier">hash</span>).<span class="ruby-identifier">tap</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">new_hash</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">new_hash</span>.<span class="ruby-identifier">default</span> = <span class="ruby-identifier">hash</span>.<span class="ruby-identifier">default</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new_from_hash_copying_default-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new_from_hash_copying_default-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-5B-5D-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">[]=</span><span
+            class="method-args">(key, value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Assigns a new value to the hash:</p>
+
+<pre>hash = HashWithIndifferentAccess.new
+hash[:key] = &quot;value&quot;</pre>
+          
+
+          
+          <div class="method-source-code" id="5B-5D-3D-source">
+            <pre><span class="ruby-comment"># File lib/active_support/hash_with_indifferent_access.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">[]=</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">regular_writer</span>(<span class="ruby-identifier">convert_key</span>(<span class="ruby-identifier">key</span>), <span class="ruby-identifier">convert_value</span>(<span class="ruby-identifier">value</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 5B-5D-3D-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="HashWithIndifferentAccess.html#method-i-regular_writer">regular_writer</a>, <a href="HashWithIndifferentAccess.html#method-i-store">store</a>
+        </div>
+        
+
+        
+      </div><!-- 5B-5D-3D-method -->
+
+    
+      <div id="method-i-default" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">default</span><span
+            class="method-args">(key = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="default-source">
+            <pre><span class="ruby-comment"># File lib/active_support/hash_with_indifferent_access.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">default</span>(<span class="ruby-identifier">key</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">key</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Symbol</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">include?</span>(<span class="ruby-identifier">key</span> = <span class="ruby-identifier">key</span>.<span class="ruby-identifier">to_s</span>)
+    <span class="ruby-keyword">self</span>[<span class="ruby-identifier">key</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">super</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- default-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- default-method -->
+
+    
+      <div id="method-i-delete" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete</span><span
+            class="method-args">(key)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Removes a specified key from the hash.</p>
+          
+
+          
+          <div class="method-source-code" id="delete-source">
+            <pre><span class="ruby-comment"># File lib/active_support/hash_with_indifferent_access.rb, line 136</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">convert_key</span>(<span class="ruby-identifier">key</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- delete-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- delete-method -->
+
+    
+      <div id="method-i-dup" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">dup</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns an exact copy of the hash.</p>
+          
+
+          
+          <div class="method-source-code" id="dup-source">
+            <pre><span class="ruby-comment"># File lib/active_support/hash_with_indifferent_access.rb, line 113</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">dup</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>).<span class="ruby-identifier">tap</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">new_hash</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">new_hash</span>.<span class="ruby-identifier">default</span> = <span class="ruby-identifier">default</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- dup-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- dup-method -->
+
+    
+      <div id="method-i-extractable_options-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">extractable_options?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Always returns true, so that <code>Array#extract_options!</code> finds
+members of this class.</p>
+          
+
+          
+          <div class="method-source-code" id="extractable_options-3F-source">
+            <pre><span class="ruby-comment"># File lib/active_support/hash_with_indifferent_access.rb, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">extractable_options?</span>
+  <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- extractable_options-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- extractable_options-3F-method -->
+
+    
+      <div id="method-i-fetch" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fetch</span><span
+            class="method-args">(key, *extras)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Fetches the value for the specified key, same as doing <a
+href="http://key">hash</a></p>
+          
+
+          
+          <div class="method-source-code" id="fetch-source">
+            <pre><span class="ruby-comment"># File lib/active_support/hash_with_indifferent_access.rb, line 97</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">key</span>, *<span class="ruby-identifier">extras</span>)
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">convert_key</span>(<span class="ruby-identifier">key</span>), *<span class="ruby-identifier">extras</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- fetch-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- fetch-method -->
+
+    
+      <div id="method-i-has_key-3F" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">has_key?</span><span
+            class="method-args">(key)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="HashWithIndifferentAccess.html#method-i-key-3F">key?</a>
+        </div>
+        
+      </div><!-- has_key-3F-method -->
+
+    
+      <div id="method-i-include-3F" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">include?</span><span
+            class="method-args">(key)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="HashWithIndifferentAccess.html#method-i-key-3F">key?</a>
+        </div>
+        
+      </div><!-- include-3F-method -->
+
+    
+      <div id="method-i-key-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">key?</span><span
+            class="method-args">(key)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Checks the hash for a key matching the argument passed in:</p>
+
+<pre class="ruby"><span class="ruby-identifier">hash</span> = <span class="ruby-constant">HashWithIndifferentAccess</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">hash</span>[<span class="ruby-string">&quot;key&quot;</span>] = <span class="ruby-string">&quot;value&quot;</span>
+<span class="ruby-identifier">hash</span>.<span class="ruby-identifier">key?</span> :<span class="ruby-identifier">key</span>  <span class="ruby-comment"># =&gt; true</span>
+<span class="ruby-identifier">hash</span>.<span class="ruby-identifier">key?</span> <span class="ruby-string">&quot;key&quot;</span> <span class="ruby-comment"># =&gt; true</span>
+</pre>
+          
+
+          
+          <div class="method-source-code" id="key-3F-source">
+            <pre><span class="ruby-comment"># File lib/active_support/hash_with_indifferent_access.rb, line 88</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">key?</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">convert_key</span>(<span class="ruby-identifier">key</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- key-3F-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="HashWithIndifferentAccess.html#method-i-include-3F">include?</a>, <a href="HashWithIndifferentAccess.html#method-i-has_key-3F">has_key?</a>, <a href="HashWithIndifferentAccess.html#method-i-member-3F">member?</a>
+        </div>
+        
+
+        
+      </div><!-- key-3F-method -->
+
+    
+      <div id="method-i-member-3F" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">member?</span><span
+            class="method-args">(key)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="HashWithIndifferentAccess.html#method-i-key-3F">key?</a>
+        </div>
+        
+      </div><!-- member-3F-method -->
+
+    
+      <div id="method-i-merge" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">merge</span><span
+            class="method-args">(hash)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Merges the instantized and the specified hashes together, giving precedence
+to the values from the second hash. Does not overwrite the existing hash.</p>
+          
+
+          
+          <div class="method-source-code" id="merge-source">
+            <pre><span class="ruby-comment"># File lib/active_support/hash_with_indifferent_access.rb, line 121</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">merge</span>(<span class="ruby-identifier">hash</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">dup</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">hash</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- merge-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- merge-method -->
+
+    
+      <div id="method-i-merge-21" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">merge!</span><span
+            class="method-args">(other_hash)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="HashWithIndifferentAccess.html#method-i-update">update</a>
+        </div>
+        
+      </div><!-- merge-21-method -->
+
+    
+      <div id="method-i-nested_under_indifferent_access" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">nested_under_indifferent_access</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="nested_under_indifferent_access-source">
+            <pre><span class="ruby-comment"># File lib/active_support/hash_with_indifferent_access.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">nested_under_indifferent_access</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- nested_under_indifferent_access-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- nested_under_indifferent_access-method -->
+
+    
+      <div id="method-i-regular_update" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">regular_update</span><span
+            class="method-args">(other_hash)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="HashWithIndifferentAccess.html#method-i-update">update</a>
+        </div>
+        
+      </div><!-- regular_update-method -->
+
+    
+      <div id="method-i-regular_writer" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">regular_writer</span><span
+            class="method-args">(key, value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="HashWithIndifferentAccess.html#method-i-5B-5D-3D">[]=</a>
+        </div>
+        
+      </div><!-- regular_writer-method -->
+
+    
+      <div id="method-i-reverse_merge" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">reverse_merge</span><span
+            class="method-args">(other_hash)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Performs the opposite of merge, with the keys and values from the first
+hash taking precedence over the second. This overloaded definition prevents
+returning a regular hash, if <a
+href="HashWithIndifferentAccess.html#method-i-reverse_merge">#reverse_merge</a>
+is called on a <code>HashWithDifferentAccess</code>.</p>
+          
+
+          
+          <div class="method-source-code" id="reverse_merge-source">
+            <pre><span class="ruby-comment"># File lib/active_support/hash_with_indifferent_access.rb, line 127</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">reverse_merge</span>(<span class="ruby-identifier">other_hash</span>)
+  <span class="ruby-keyword">super</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new_from_hash_copying_default</span>(<span class="ruby-identifier">other_hash</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- reverse_merge-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- reverse_merge-method -->
+
+    
+      <div id="method-i-reverse_merge-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">reverse_merge!</span><span
+            class="method-args">(other_hash)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="reverse_merge-21-source">
+            <pre><span class="ruby-comment"># File lib/active_support/hash_with_indifferent_access.rb, line 131</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">reverse_merge!</span>(<span class="ruby-identifier">other_hash</span>)
+  <span class="ruby-identifier">replace</span>(<span class="ruby-identifier">reverse_merge</span>( <span class="ruby-identifier">other_hash</span> ))
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- reverse_merge-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- reverse_merge-21-method -->
+
+    
+      <div id="method-i-store" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">store</span><span
+            class="method-args">(key, value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="HashWithIndifferentAccess.html#method-i-5B-5D-3D">[]=</a>
+        </div>
+        
+      </div><!-- store-method -->
+
+    
+      <div id="method-i-stringify_keys" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">stringify_keys</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="stringify_keys-source">
+            <pre><span class="ruby-comment"># File lib/active_support/hash_with_indifferent_access.rb, line 141</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">stringify_keys</span>; <span class="ruby-identifier">dup</span> <span class="ruby-keyword">end</span></pre>
+          </div><!-- stringify_keys-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- stringify_keys-method -->
+
+    
+      <div id="method-i-stringify_keys-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">stringify_keys!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="stringify_keys-21-source">
+            <pre><span class="ruby-comment"># File lib/active_support/hash_with_indifferent_access.rb, line 140</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">stringify_keys!</span>; <span class="ruby-keyword">self</span> <span class="ruby-keyword">end</span></pre>
+          </div><!-- stringify_keys-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- stringify_keys-21-method -->
+
+    
+      <div id="method-i-symbolize_keys" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">symbolize_keys</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="symbolize_keys-source">
+            <pre><span class="ruby-comment"># File lib/active_support/hash_with_indifferent_access.rb, line 143</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">symbolize_keys</span>; <span class="ruby-identifier">to_hash</span>.<span class="ruby-identifier">symbolize_keys</span> <span class="ruby-keyword">end</span></pre>
+          </div><!-- symbolize_keys-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- symbolize_keys-method -->
+
+    
+      <div id="method-i-to_hash" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_hash</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Convert to a <a href="../Hash.html">Hash</a> with <a
+href="../String.html">String</a> keys.</p>
+          
+
+          
+          <div class="method-source-code" id="to_hash-source">
+            <pre><span class="ruby-comment"># File lib/active_support/hash_with_indifferent_access.rb, line 147</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_hash</span>
+  <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">default</span>).<span class="ruby-identifier">merge!</span>(<span class="ruby-keyword">self</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_hash-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_hash-method -->
+
+    
+      <div id="method-i-to_options-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_options!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="to_options-21-source">
+            <pre><span class="ruby-comment"># File lib/active_support/hash_with_indifferent_access.rb, line 144</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_options!</span>; <span class="ruby-keyword">self</span> <span class="ruby-keyword">end</span></pre>
+          </div><!-- to_options-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_options-21-method -->
+
+    
+      <div id="method-i-update" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update</span><span
+            class="method-args">(other_hash)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Updates the instantized hash with values from the second:</p>
+
+<pre class="ruby"><span class="ruby-identifier">hash_1</span> = <span class="ruby-constant">HashWithIndifferentAccess</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">hash_1</span>[:<span class="ruby-identifier">key</span>] = <span class="ruby-string">&quot;value&quot;</span>
+
+<span class="ruby-identifier">hash_2</span> = <span class="ruby-constant">HashWithIndifferentAccess</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">hash_2</span>[:<span class="ruby-identifier">key</span>] = <span class="ruby-string">&quot;New Value!&quot;</span>
+
+<span class="ruby-identifier">hash_1</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">hash_2</span>) <span class="ruby-comment"># =&gt; {&quot;key&quot;=&gt;&quot;New Value!&quot;}</span>
+</pre>
+          
+
+          
+          <div class="method-source-code" id="update-source">
+            <pre><span class="ruby-comment"># File lib/active_support/hash_with_indifferent_access.rb, line 70</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update</span>(<span class="ruby-identifier">other_hash</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">other_hash</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">HashWithIndifferentAccess</span>
+    <span class="ruby-keyword">super</span>(<span class="ruby-identifier">other_hash</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">other_hash</span>.<span class="ruby-identifier">each_pair</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span> <span class="ruby-identifier">regular_writer</span>(<span class="ruby-identifier">convert_key</span>(<span class="ruby-identifier">key</span>), <span class="ruby-identifier">convert_value</span>(<span class="ruby-identifier">value</span>)) }
+    <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- update-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="HashWithIndifferentAccess.html#method-i-regular_update">regular_update</a>, <a href="HashWithIndifferentAccess.html#method-i-merge-21">merge!</a>
+        </div>
+        
+
+        
+      </div><!-- update-method -->
+
+    
+      <div id="method-i-values_at" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">values_at</span><span
+            class="method-args">(*indices)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns an array of the values at the specified indices:</p>
+
+<pre class="ruby"><span class="ruby-identifier">hash</span> = <span class="ruby-constant">HashWithIndifferentAccess</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">hash</span>[:<span class="ruby-identifier">a</span>] = <span class="ruby-string">&quot;x&quot;</span>
+<span class="ruby-identifier">hash</span>[:<span class="ruby-identifier">b</span>] = <span class="ruby-string">&quot;y&quot;</span>
+<span class="ruby-identifier">hash</span>.<span class="ruby-identifier">values_at</span>(<span class="ruby-string">&quot;a&quot;</span>, <span class="ruby-string">&quot;b&quot;</span>) <span class="ruby-comment"># =&gt; [&quot;x&quot;, &quot;y&quot;]</span>
+</pre>
+          
+
+          
+          <div class="method-source-code" id="values_at-source">
+            <pre><span class="ruby-comment"># File lib/active_support/hash_with_indifferent_access.rb, line 108</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">values_at</span>(*<span class="ruby-identifier">indices</span>)
+  <span class="ruby-identifier">indices</span>.<span class="ruby-identifier">collect</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">convert_key</span>(<span class="ruby-identifier">key</span>)]}
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- values_at-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- values_at-method -->
+
+    
+      <div id="method-i-with_indifferent_access" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">with_indifferent_access</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="with_indifferent_access-source">
+            <pre><span class="ruby-comment"># File lib/active_support/hash_with_indifferent_access.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">with_indifferent_access</span>
+  <span class="ruby-identifier">dup</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- with_indifferent_access-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- with_indifferent_access-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+     <section id="protected-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Protected Instance Methods</h3>
+
+    
+      <div id="method-i-convert_key" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">convert_key</span><span
+            class="method-args">(key)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="convert_key-source">
+            <pre><span class="ruby-comment"># File lib/active_support/hash_with_indifferent_access.rb, line 152</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">convert_key</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-identifier">key</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Symbol</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">key</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">key</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- convert_key-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- convert_key-method -->
+
+    
+      <div id="method-i-convert_value" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">convert_value</span><span
+            class="method-args">(value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="convert_value-source">
+            <pre><span class="ruby-comment"># File lib/active_support/hash_with_indifferent_access.rb, line 156</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">convert_value</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Hash</span>
+    <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nested_under_indifferent_access</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+    <span class="ruby-identifier">value</span>.<span class="ruby-identifier">dup</span>.<span class="ruby-identifier">replace</span>(<span class="ruby-identifier">value</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-identifier">convert_value</span>(<span class="ruby-identifier">e</span>) })
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- convert_value-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- convert_value-method -->
+
+    
+    </section><!-- protected-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

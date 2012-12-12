@@ -1,0 +1,172 @@
+[2012-09-11 20:11:10] make 
+make  all-recursive
+make[1]: Entering directory `/home/stuy/.rvm/src/yaml-0.1.4'
+Making all in include
+make[2]: Entering directory `/home/stuy/.rvm/src/yaml-0.1.4/include'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/stuy/.rvm/src/yaml-0.1.4/include'
+Making all in src
+make[2]: Entering directory `/home/stuy/.rvm/src/yaml-0.1.4/src'
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include   -g -O2 -MT api.lo -MD -MP -MF .deps/api.Tpo -c -o api.lo api.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -g -O2 -MT api.lo -MD -MP -MF .deps/api.Tpo -c api.c  -fPIC -DPIC -o .libs/api.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -g -O2 -MT api.lo -MD -MP -MF .deps/api.Tpo -c api.c -o api.o >/dev/null 2>&1
+mv -f .deps/api.Tpo .deps/api.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include   -g -O2 -MT reader.lo -MD -MP -MF .deps/reader.Tpo -c -o reader.lo reader.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -g -O2 -MT reader.lo -MD -MP -MF .deps/reader.Tpo -c reader.c  -fPIC -DPIC -o .libs/reader.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -g -O2 -MT reader.lo -MD -MP -MF .deps/reader.Tpo -c reader.c -o reader.o >/dev/null 2>&1
+mv -f .deps/reader.Tpo .deps/reader.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include   -g -O2 -MT scanner.lo -MD -MP -MF .deps/scanner.Tpo -c -o scanner.lo scanner.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -g -O2 -MT scanner.lo -MD -MP -MF .deps/scanner.Tpo -c scanner.c  -fPIC -DPIC -o .libs/scanner.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -g -O2 -MT scanner.lo -MD -MP -MF .deps/scanner.Tpo -c scanner.c -o scanner.o >/dev/null 2>&1
+mv -f .deps/scanner.Tpo .deps/scanner.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include   -g -O2 -MT parser.lo -MD -MP -MF .deps/parser.Tpo -c -o parser.lo parser.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -g -O2 -MT parser.lo -MD -MP -MF .deps/parser.Tpo -c parser.c  -fPIC -DPIC -o .libs/parser.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -g -O2 -MT parser.lo -MD -MP -MF .deps/parser.Tpo -c parser.c -o parser.o >/dev/null 2>&1
+mv -f .deps/parser.Tpo .deps/parser.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include   -g -O2 -MT loader.lo -MD -MP -MF .deps/loader.Tpo -c -o loader.lo loader.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -g -O2 -MT loader.lo -MD -MP -MF .deps/loader.Tpo -c loader.c  -fPIC -DPIC -o .libs/loader.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -g -O2 -MT loader.lo -MD -MP -MF .deps/loader.Tpo -c loader.c -o loader.o >/dev/null 2>&1
+mv -f .deps/loader.Tpo .deps/loader.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include   -g -O2 -MT writer.lo -MD -MP -MF .deps/writer.Tpo -c -o writer.lo writer.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -g -O2 -MT writer.lo -MD -MP -MF .deps/writer.Tpo -c writer.c  -fPIC -DPIC -o .libs/writer.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -g -O2 -MT writer.lo -MD -MP -MF .deps/writer.Tpo -c writer.c -o writer.o >/dev/null 2>&1
+mv -f .deps/writer.Tpo .deps/writer.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include   -g -O2 -MT emitter.lo -MD -MP -MF .deps/emitter.Tpo -c -o emitter.lo emitter.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -g -O2 -MT emitter.lo -MD -MP -MF .deps/emitter.Tpo -c emitter.c  -fPIC -DPIC -o .libs/emitter.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -g -O2 -MT emitter.lo -MD -MP -MF .deps/emitter.Tpo -c emitter.c -o emitter.o >/dev/null 2>&1
+mv -f .deps/emitter.Tpo .deps/emitter.Plo
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include   -g -O2 -MT dumper.lo -MD -MP -MF .deps/dumper.Tpo -c -o dumper.lo dumper.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -g -O2 -MT dumper.lo -MD -MP -MF .deps/dumper.Tpo -c dumper.c  -fPIC -DPIC -o .libs/dumper.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -g -O2 -MT dumper.lo -MD -MP -MF .deps/dumper.Tpo -c dumper.c -o dumper.o >/dev/null 2>&1
+mv -f .deps/dumper.Tpo .deps/dumper.Plo
+/bin/bash ../libtool --tag=CC   --mode=link gcc  -g -O2 -release 0 -version-info 2:2:0  -o libyaml.la -rpath /home/stuy/.rvm/usr/lib api.lo reader.lo scanner.lo parser.lo loader.lo writer.lo emitter.lo dumper.lo  
+libtool: link: gcc -shared  -fPIC -DPIC  .libs/api.o .libs/reader.o .libs/scanner.o .libs/parser.o .libs/loader.o .libs/writer.o .libs/emitter.o .libs/dumper.o    -O2   -Wl,-soname -Wl,libyaml-0.so.2 -o .libs/libyaml-0.so.2.0.2
+libtool: link: (cd ".libs" && rm -f "libyaml-0.so.2" && ln -s "libyaml-0.so.2.0.2" "libyaml-0.so.2")
+libtool: link: (cd ".libs" && rm -f "libyaml.so" && ln -s "libyaml-0.so.2.0.2" "libyaml.so")
+libtool: link: ar cru .libs/libyaml.a  api.o reader.o scanner.o parser.o loader.o writer.o emitter.o dumper.o
+libtool: link: ranlib .libs/libyaml.a
+libtool: link: ( cd ".libs" && rm -f "libyaml.la" && ln -s "../libyaml.la" "libyaml.la" )
+make[2]: Leaving directory `/home/stuy/.rvm/src/yaml-0.1.4/src'
+Making all in .
+make[2]: Entering directory `/home/stuy/.rvm/src/yaml-0.1.4'
+make[2]: Leaving directory `/home/stuy/.rvm/src/yaml-0.1.4'
+Making all in tests
+make[2]: Entering directory `/home/stuy/.rvm/src/yaml-0.1.4/tests'
+gcc -DHAVE_CONFIG_H -I. -I..  -I../include   -g -O2 -MT run-scanner.o -MD -MP -MF .deps/run-scanner.Tpo -c -o run-scanner.o run-scanner.c
+mv -f .deps/run-scanner.Tpo .deps/run-scanner.Po
+/bin/bash ../libtool --tag=CC   --mode=link gcc  -g -O2   -o run-scanner run-scanner.o ../src/libyaml.la 
+libtool: link: gcc -g -O2 -o .libs/run-scanner run-scanner.o  ../src/.libs/libyaml.so -Wl,-rpath -Wl,/home/stuy/.rvm/usr/lib
+gcc -DHAVE_CONFIG_H -I. -I..  -I../include   -g -O2 -MT run-parser.o -MD -MP -MF .deps/run-parser.Tpo -c -o run-parser.o run-parser.c
+mv -f .deps/run-parser.Tpo .deps/run-parser.Po
+/bin/bash ../libtool --tag=CC   --mode=link gcc  -g -O2   -o run-parser run-parser.o ../src/libyaml.la 
+libtool: link: gcc -g -O2 -o .libs/run-parser run-parser.o  ../src/.libs/libyaml.so -Wl,-rpath -Wl,/home/stuy/.rvm/usr/lib
+gcc -DHAVE_CONFIG_H -I. -I..  -I../include   -g -O2 -MT run-loader.o -MD -MP -MF .deps/run-loader.Tpo -c -o run-loader.o run-loader.c
+mv -f .deps/run-loader.Tpo .deps/run-loader.Po
+/bin/bash ../libtool --tag=CC   --mode=link gcc  -g -O2   -o run-loader run-loader.o ../src/libyaml.la 
+libtool: link: gcc -g -O2 -o .libs/run-loader run-loader.o  ../src/.libs/libyaml.so -Wl,-rpath -Wl,/home/stuy/.rvm/usr/lib
+gcc -DHAVE_CONFIG_H -I. -I..  -I../include   -g -O2 -MT run-emitter.o -MD -MP -MF .deps/run-emitter.Tpo -c -o run-emitter.o run-emitter.c
+run-emitter.c: In function ‘print_output’:
+run-emitter.c:208:5: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘size_t’ [-Wformat]
+run-emitter.c:209:5: warning: format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘size_t’ [-Wformat]
+run-emitter.c: In function ‘main’:
+run-emitter.c:322:9: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘size_t’ [-Wformat]
+mv -f .deps/run-emitter.Tpo .deps/run-emitter.Po
+/bin/bash ../libtool --tag=CC   --mode=link gcc  -g -O2   -o run-emitter run-emitter.o ../src/libyaml.la 
+libtool: link: gcc -g -O2 -o .libs/run-emitter run-emitter.o  ../src/.libs/libyaml.so -Wl,-rpath -Wl,/home/stuy/.rvm/usr/lib
+gcc -DHAVE_CONFIG_H -I. -I..  -I../include   -g -O2 -MT run-dumper.o -MD -MP -MF .deps/run-dumper.Tpo -c -o run-dumper.o run-dumper.c
+run-dumper.c: In function ‘print_output’:
+run-dumper.c:182:5: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘size_t’ [-Wformat]
+run-dumper.c:183:5: warning: format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘size_t’ [-Wformat]
+run-dumper.c: In function ‘main’:
+run-dumper.c:306:9: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘size_t’ [-Wformat]
+mv -f .deps/run-dumper.Tpo .deps/run-dumper.Po
+/bin/bash ../libtool --tag=CC   --mode=link gcc  -g -O2   -o run-dumper run-dumper.o ../src/libyaml.la 
+libtool: link: gcc -g -O2 -o .libs/run-dumper run-dumper.o  ../src/.libs/libyaml.so -Wl,-rpath -Wl,/home/stuy/.rvm/usr/lib
+gcc -DHAVE_CONFIG_H -I. -I..  -I../include   -g -O2 -MT example-reformatter.o -MD -MP -MF .deps/example-reformatter.Tpo -c -o example-reformatter.o example-reformatter.c
+example-reformatter.c: In function ‘main’:
+example-reformatter.c:124:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 5 has type ‘size_t’ [-Wformat]
+example-reformatter.c:128:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘size_t’ [-Wformat]
+example-reformatter.c:138:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘size_t’ [-Wformat]
+example-reformatter.c:138:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 5 has type ‘size_t’ [-Wformat]
+example-reformatter.c:138:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 7 has type ‘size_t’ [-Wformat]
+example-reformatter.c:138:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘size_t’ [-Wformat]
+example-reformatter.c:143:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘size_t’ [-Wformat]
+example-reformatter.c:143:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 5 has type ‘size_t’ [-Wformat]
+example-reformatter.c:153:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘size_t’ [-Wformat]
+example-reformatter.c:153:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 5 has type ‘size_t’ [-Wformat]
+example-reformatter.c:153:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 7 has type ‘size_t’ [-Wformat]
+example-reformatter.c:153:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘size_t’ [-Wformat]
+example-reformatter.c:158:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘size_t’ [-Wformat]
+example-reformatter.c:158:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 5 has type ‘size_t’ [-Wformat]
+mv -f .deps/example-reformatter.Tpo .deps/example-reformatter.Po
+/bin/bash ../libtool --tag=CC   --mode=link gcc  -g -O2   -o example-reformatter example-reformatter.o ../src/libyaml.la 
+libtool: link: gcc -g -O2 -o .libs/example-reformatter example-reformatter.o  ../src/.libs/libyaml.so -Wl,-rpath -Wl,/home/stuy/.rvm/usr/lib
+gcc -DHAVE_CONFIG_H -I. -I..  -I../include   -g -O2 -MT example-reformatter-alt.o -MD -MP -MF .deps/example-reformatter-alt.Tpo -c -o example-reformatter-alt.o example-reformatter-alt.c
+example-reformatter-alt.c: In function ‘main’:
+example-reformatter-alt.c:124:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 5 has type ‘size_t’ [-Wformat]
+example-reformatter-alt.c:128:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘size_t’ [-Wformat]
+example-reformatter-alt.c:138:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘size_t’ [-Wformat]
+example-reformatter-alt.c:138:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 5 has type ‘size_t’ [-Wformat]
+example-reformatter-alt.c:138:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 7 has type ‘size_t’ [-Wformat]
+example-reformatter-alt.c:138:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘size_t’ [-Wformat]
+example-reformatter-alt.c:143:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘size_t’ [-Wformat]
+example-reformatter-alt.c:143:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 5 has type ‘size_t’ [-Wformat]
+example-reformatter-alt.c:153:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘size_t’ [-Wformat]
+example-reformatter-alt.c:153:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 5 has type ‘size_t’ [-Wformat]
+example-reformatter-alt.c:153:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 7 has type ‘size_t’ [-Wformat]
+example-reformatter-alt.c:153:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘size_t’ [-Wformat]
+example-reformatter-alt.c:158:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘size_t’ [-Wformat]
+example-reformatter-alt.c:158:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 5 has type ‘size_t’ [-Wformat]
+example-reformatter-alt.c:168:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘size_t’ [-Wformat]
+example-reformatter-alt.c:168:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 5 has type ‘size_t’ [-Wformat]
+example-reformatter-alt.c:168:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 7 has type ‘size_t’ [-Wformat]
+example-reformatter-alt.c:168:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘size_t’ [-Wformat]
+example-reformatter-alt.c:173:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘size_t’ [-Wformat]
+example-reformatter-alt.c:173:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 5 has type ‘size_t’ [-Wformat]
+mv -f .deps/example-reformatter-alt.Tpo .deps/example-reformatter-alt.Po
+/bin/bash ../libtool --tag=CC   --mode=link gcc  -g -O2   -o example-reformatter-alt example-reformatter-alt.o ../src/libyaml.la 
+libtool: link: gcc -g -O2 -o .libs/example-reformatter-alt example-reformatter-alt.o  ../src/.libs/libyaml.so -Wl,-rpath -Wl,/home/stuy/.rvm/usr/lib
+gcc -DHAVE_CONFIG_H -I. -I..  -I../include   -g -O2 -MT example-deconstructor.o -MD -MP -MF .deps/example-deconstructor.Tpo -c -o example-deconstructor.o example-deconstructor.c
+example-deconstructor.c: In function ‘main’:
+example-deconstructor.c:1037:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 5 has type ‘size_t’ [-Wformat]
+example-deconstructor.c:1041:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘size_t’ [-Wformat]
+example-deconstructor.c:1051:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘size_t’ [-Wformat]
+example-deconstructor.c:1051:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 5 has type ‘size_t’ [-Wformat]
+example-deconstructor.c:1051:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 7 has type ‘size_t’ [-Wformat]
+example-deconstructor.c:1051:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘size_t’ [-Wformat]
+example-deconstructor.c:1056:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘size_t’ [-Wformat]
+example-deconstructor.c:1056:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 5 has type ‘size_t’ [-Wformat]
+example-deconstructor.c:1066:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘size_t’ [-Wformat]
+example-deconstructor.c:1066:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 5 has type ‘size_t’ [-Wformat]
+example-deconstructor.c:1066:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 7 has type ‘size_t’ [-Wformat]
+example-deconstructor.c:1066:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘size_t’ [-Wformat]
+example-deconstructor.c:1071:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘size_t’ [-Wformat]
+example-deconstructor.c:1071:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 5 has type ‘size_t’ [-Wformat]
+mv -f .deps/example-deconstructor.Tpo .deps/example-deconstructor.Po
+/bin/bash ../libtool --tag=CC   --mode=link gcc  -g -O2   -o example-deconstructor example-deconstructor.o ../src/libyaml.la 
+libtool: link: gcc -g -O2 -o .libs/example-deconstructor example-deconstructor.o  ../src/.libs/libyaml.so -Wl,-rpath -Wl,/home/stuy/.rvm/usr/lib
+gcc -DHAVE_CONFIG_H -I. -I..  -I../include   -g -O2 -MT example-deconstructor-alt.o -MD -MP -MF .deps/example-deconstructor-alt.Tpo -c -o example-deconstructor-alt.o example-deconstructor-alt.c
+example-deconstructor-alt.c: In function ‘main’:
+example-deconstructor-alt.c:707:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 5 has type ‘size_t’ [-Wformat]
+example-deconstructor-alt.c:711:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘size_t’ [-Wformat]
+example-deconstructor-alt.c:721:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘size_t’ [-Wformat]
+example-deconstructor-alt.c:721:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 5 has type ‘size_t’ [-Wformat]
+example-deconstructor-alt.c:721:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 7 has type ‘size_t’ [-Wformat]
+example-deconstructor-alt.c:721:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘size_t’ [-Wformat]
+example-deconstructor-alt.c:726:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘size_t’ [-Wformat]
+example-deconstructor-alt.c:726:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 5 has type ‘size_t’ [-Wformat]
+example-deconstructor-alt.c:736:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘size_t’ [-Wformat]
+example-deconstructor-alt.c:736:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 5 has type ‘size_t’ [-Wformat]
+example-deconstructor-alt.c:736:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 7 has type ‘size_t’ [-Wformat]
+example-deconstructor-alt.c:736:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘size_t’ [-Wformat]
+example-deconstructor-alt.c:741:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘size_t’ [-Wformat]
+example-deconstructor-alt.c:741:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 5 has type ‘size_t’ [-Wformat]
+mv -f .deps/example-deconstructor-alt.Tpo .deps/example-deconstructor-alt.Po
+/bin/bash ../libtool --tag=CC   --mode=link gcc  -g -O2   -o example-deconstructor-alt example-deconstructor-alt.o ../src/libyaml.la 
+libtool: link: gcc -g -O2 -o .libs/example-deconstructor-alt example-deconstructor-alt.o  ../src/.libs/libyaml.so -Wl,-rpath -Wl,/home/stuy/.rvm/usr/lib
+make[2]: Leaving directory `/home/stuy/.rvm/src/yaml-0.1.4/tests'
+Making all in win32
+make[2]: Entering directory `/home/stuy/.rvm/src/yaml-0.1.4/win32'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/stuy/.rvm/src/yaml-0.1.4/win32'
+make[1]: Leaving directory `/home/stuy/.rvm/src/yaml-0.1.4'

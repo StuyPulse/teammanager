@@ -1,0 +1,2500 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class RDoc::RI::Driver - rdoc-3.12 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/rdoc/ri/driver.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-default_options">::default_options</a>
+    
+    <li><a href="#method-c-dump">::dump</a>
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-c-process_args">::process_args</a>
+    
+    <li><a href="#method-c-run">::run</a>
+    
+    <li><a href="#method-i-add_also_in">#add_also_in</a>
+    
+    <li><a href="#method-i-add_class">#add_class</a>
+    
+    <li><a href="#method-i-add_from">#add_from</a>
+    
+    <li><a href="#method-i-add_includes">#add_includes</a>
+    
+    <li><a href="#method-i-add_method_list">#add_method_list</a>
+    
+    <li><a href="#method-i-ancestors_of">#ancestors_of</a>
+    
+    <li><a href="#method-i-class_document">#class_document</a>
+    
+    <li><a href="#method-i-classes">#classes</a>
+    
+    <li><a href="#method-i-classes_and_includes_for">#classes_and_includes_for</a>
+    
+    <li><a href="#method-i-complete">#complete</a>
+    
+    <li><a href="#method-i-display">#display</a>
+    
+    <li><a href="#method-i-display_class">#display_class</a>
+    
+    <li><a href="#method-i-display_method">#display_method</a>
+    
+    <li><a href="#method-i-display_name">#display_name</a>
+    
+    <li><a href="#method-i-display_names">#display_names</a>
+    
+    <li><a href="#method-i-expand_class">#expand_class</a>
+    
+    <li><a href="#method-i-expand_name">#expand_name</a>
+    
+    <li><a href="#method-i-filter_methods">#filter_methods</a>
+    
+    <li><a href="#method-i-find_methods">#find_methods</a>
+    
+    <li><a href="#method-i-formatter">#formatter</a>
+    
+    <li><a href="#method-i-in_path-3F">#in_path?</a>
+    
+    <li><a href="#method-i-interactive">#interactive</a>
+    
+    <li><a href="#method-i-list_known_classes">#list_known_classes</a>
+    
+    <li><a href="#method-i-list_methods_matching">#list_methods_matching</a>
+    
+    <li><a href="#method-i-load_method">#load_method</a>
+    
+    <li><a href="#method-i-load_methods_matching">#load_methods_matching</a>
+    
+    <li><a href="#method-i-method_document">#method_document</a>
+    
+    <li><a href="#method-i-method_type">#method_type</a>
+    
+    <li><a href="#method-i-name_regexp">#name_regexp</a>
+    
+    <li><a href="#method-i-page">#page</a>
+    
+    <li><a href="#method-i-paging-3F">#paging?</a>
+    
+    <li><a href="#method-i-parse_name">#parse_name</a>
+    
+    <li><a href="#method-i-run">#run</a>
+    
+    <li><a href="#method-i-setup_pager">#setup_pager</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../DEVELOPERS_rdoc.html">DEVELOPERS</a>
+  
+    <li class="file"><a href="../../History_rdoc.html">History</a>
+  
+    <li class="file"><a href="../../LEGAL_rdoc.html">LEGAL</a>
+  
+    <li class="file"><a href="../../LICENSE_rdoc.html">LICENSE</a>
+  
+    <li class="file"><a href="../../Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="../../README_rdoc.html">README</a>
+  
+    <li class="file"><a href="../../RI_rdoc.html">RI</a>
+  
+    <li class="file"><a href="../../Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="../../TODO_rdoc.html">TODO</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../RDoc.html">RDoc</a>
+  
+    <li><a href="../../RDoc/Alias.html">RDoc::Alias</a>
+  
+    <li><a href="../../RDoc/AnonClass.html">RDoc::AnonClass</a>
+  
+    <li><a href="../../RDoc/AnyMethod.html">RDoc::AnyMethod</a>
+  
+    <li><a href="../../RDoc/Attr.html">RDoc::Attr</a>
+  
+    <li><a href="../../RDoc/ClassModule.html">RDoc::ClassModule</a>
+  
+    <li><a href="../../RDoc/CodeObject.html">RDoc::CodeObject</a>
+  
+    <li><a href="../../RDoc/Comment.html">RDoc::Comment</a>
+  
+    <li><a href="../../RDoc/Constant.html">RDoc::Constant</a>
+  
+    <li><a href="../../RDoc/Context.html">RDoc::Context</a>
+  
+    <li><a href="../../RDoc/Context/Section.html">RDoc::Context::Section</a>
+  
+    <li><a href="../../RDoc/CrossReference.html">RDoc::CrossReference</a>
+  
+    <li><a href="../../RDoc/ERBIO.html">RDoc::ERBIO</a>
+  
+    <li><a href="../../RDoc/Encoding.html">RDoc::Encoding</a>
+  
+    <li><a href="../../RDoc/Error.html">RDoc::Error</a>
+  
+    <li><a href="../../RDoc/Gauntlet.html">RDoc::Gauntlet</a>
+  
+    <li><a href="../../RDoc/Generator.html">RDoc::Generator</a>
+  
+    <li><a href="../../RDoc/Generator/Darkfish.html">RDoc::Generator::Darkfish</a>
+  
+    <li><a href="../../RDoc/Generator/JsonIndex.html">RDoc::Generator::JsonIndex</a>
+  
+    <li><a href="../../RDoc/Generator/Markup.html">RDoc::Generator::Markup</a>
+  
+    <li><a href="../../RDoc/Generator/RI.html">RDoc::Generator::RI</a>
+  
+    <li><a href="../../RDoc/GhostMethod.html">RDoc::GhostMethod</a>
+  
+    <li><a href="../../RDoc/Include.html">RDoc::Include</a>
+  
+    <li><a href="../../RDoc/Markup.html">RDoc::Markup</a>
+  
+    <li><a href="../../RDoc/Markup/AttrChanger.html">RDoc::Markup::AttrChanger</a>
+  
+    <li><a href="../../RDoc/Markup/AttrSpan.html">RDoc::Markup::AttrSpan</a>
+  
+    <li><a href="../../RDoc/Markup/Attribute.html">RDoc::Markup::Attribute</a>
+  
+    <li><a href="../../RDoc/Markup/AttributeManager.html">RDoc::Markup::AttributeManager</a>
+  
+    <li><a href="../../RDoc/Markup/BlankLine.html">RDoc::Markup::BlankLine</a>
+  
+    <li><a href="../../RDoc/Markup/Document.html">RDoc::Markup::Document</a>
+  
+    <li><a href="../../RDoc/Markup/Formatter.html">RDoc::Markup::Formatter</a>
+  
+    <li><a href="../../RDoc/Markup/FormatterTestCase.html">RDoc::Markup::FormatterTestCase</a>
+  
+    <li><a href="../../RDoc/Markup/Heading.html">RDoc::Markup::Heading</a>
+  
+    <li><a href="../../RDoc/Markup/Include.html">RDoc::Markup::Include</a>
+  
+    <li><a href="../../RDoc/Markup/IndentedParagraph.html">RDoc::Markup::IndentedParagraph</a>
+  
+    <li><a href="../../RDoc/Markup/List.html">RDoc::Markup::List</a>
+  
+    <li><a href="../../RDoc/Markup/ListItem.html">RDoc::Markup::ListItem</a>
+  
+    <li><a href="../../RDoc/Markup/Paragraph.html">RDoc::Markup::Paragraph</a>
+  
+    <li><a href="../../RDoc/Markup/Parser.html">RDoc::Markup::Parser</a>
+  
+    <li><a href="../../RDoc/Markup/Parser/Error.html">RDoc::Markup::Parser::Error</a>
+  
+    <li><a href="../../RDoc/Markup/Parser/ParseError.html">RDoc::Markup::Parser::ParseError</a>
+  
+    <li><a href="../../RDoc/Markup/PreProcess.html">RDoc::Markup::PreProcess</a>
+  
+    <li><a href="../../RDoc/Markup/Raw.html">RDoc::Markup::Raw</a>
+  
+    <li><a href="../../RDoc/Markup/Rule.html">RDoc::Markup::Rule</a>
+  
+    <li><a href="../../RDoc/Markup/Special.html">RDoc::Markup::Special</a>
+  
+    <li><a href="../../RDoc/Markup/TextFormatterTestCase.html">RDoc::Markup::TextFormatterTestCase</a>
+  
+    <li><a href="../../RDoc/Markup/ToAnsi.html">RDoc::Markup::ToAnsi</a>
+  
+    <li><a href="../../RDoc/Markup/ToBs.html">RDoc::Markup::ToBs</a>
+  
+    <li><a href="../../RDoc/Markup/ToHtml.html">RDoc::Markup::ToHtml</a>
+  
+    <li><a href="../../RDoc/Markup/ToHtmlCrossref.html">RDoc::Markup::ToHtmlCrossref</a>
+  
+    <li><a href="../../RDoc/Markup/ToHtmlSnippet.html">RDoc::Markup::ToHtmlSnippet</a>
+  
+    <li><a href="../../RDoc/Markup/ToLabel.html">RDoc::Markup::ToLabel</a>
+  
+    <li><a href="../../RDoc/Markup/ToRdoc.html">RDoc::Markup::ToRdoc</a>
+  
+    <li><a href="../../RDoc/Markup/ToTableOfContents.html">RDoc::Markup::ToTableOfContents</a>
+  
+    <li><a href="../../RDoc/Markup/ToTest.html">RDoc::Markup::ToTest</a>
+  
+    <li><a href="../../RDoc/Markup/ToTtOnly.html">RDoc::Markup::ToTtOnly</a>
+  
+    <li><a href="../../RDoc/Markup/Verbatim.html">RDoc::Markup::Verbatim</a>
+  
+    <li><a href="../../RDoc/MetaMethod.html">RDoc::MetaMethod</a>
+  
+    <li><a href="../../RDoc/MethodAttr.html">RDoc::MethodAttr</a>
+  
+    <li><a href="../../RDoc/NormalClass.html">RDoc::NormalClass</a>
+  
+    <li><a href="../../RDoc/NormalModule.html">RDoc::NormalModule</a>
+  
+    <li><a href="../../RDoc/Options.html">RDoc::Options</a>
+  
+    <li><a href="../../RDoc/Parser.html">RDoc::Parser</a>
+  
+    <li><a href="../../RDoc/Parser/C.html">RDoc::Parser::C</a>
+  
+    <li><a href="../../RDoc/Parser/RD.html">RDoc::Parser::RD</a>
+  
+    <li><a href="../../RDoc/Parser/Ruby.html">RDoc::Parser::Ruby</a>
+  
+    <li><a href="../../RDoc/Parser/RubyTools.html">RDoc::Parser::RubyTools</a>
+  
+    <li><a href="../../RDoc/Parser/Simple.html">RDoc::Parser::Simple</a>
+  
+    <li><a href="../../RDoc/Parser/Text.html">RDoc::Parser::Text</a>
+  
+    <li><a href="../../RDoc/RD.html">RDoc::RD</a>
+  
+    <li><a href="../../RDoc/RD/Inline.html">RDoc::RD::Inline</a>
+  
+    <li><a href="../../RDoc/RDoc.html">RDoc::RDoc</a>
+  
+    <li><a href="../../RDoc/RI.html">RDoc::RI</a>
+  
+    <li><a href="../../RDoc/RI/Driver.html">RDoc::RI::Driver</a>
+  
+    <li><a href="../../RDoc/RI/Driver/Error.html">RDoc::RI::Driver::Error</a>
+  
+    <li><a href="../../RDoc/RI/Driver/NotFoundError.html">RDoc::RI::Driver::NotFoundError</a>
+  
+    <li><a href="../../RDoc/RI/Error.html">RDoc::RI::Error</a>
+  
+    <li><a href="../../RDoc/RI/Paths.html">RDoc::RI::Paths</a>
+  
+    <li><a href="../../RDoc/RI/Store.html">RDoc::RI::Store</a>
+  
+    <li><a href="../../RDoc/Require.html">RDoc::Require</a>
+  
+    <li><a href="../../RDoc/RubyLex.html">RDoc::RubyLex</a>
+  
+    <li><a href="../../RDoc/RubyLex/Error.html">RDoc::RubyLex::Error</a>
+  
+    <li><a href="../../RDoc/RubyToken.html">RDoc::RubyToken</a>
+  
+    <li><a href="../../RDoc/RubygemsHook.html">RDoc::RubygemsHook</a>
+  
+    <li><a href="../../RDoc/SingleClass.html">RDoc::SingleClass</a>
+  
+    <li><a href="../../RDoc/Stats.html">RDoc::Stats</a>
+  
+    <li><a href="../../RDoc/Stats/Normal.html">RDoc::Stats::Normal</a>
+  
+    <li><a href="../../RDoc/Stats/Quiet.html">RDoc::Stats::Quiet</a>
+  
+    <li><a href="../../RDoc/Stats/Verbose.html">RDoc::Stats::Verbose</a>
+  
+    <li><a href="../../RDoc/Task.html">RDoc::Task</a>
+  
+    <li><a href="../../RDoc/Task.html">RDoc::Task</a>
+  
+    <li><a href="../../RDoc/TestCase.html">RDoc::TestCase</a>
+  
+    <li><a href="../../RDoc/Text.html">RDoc::Text</a>
+  
+    <li><a href="../../RDoc/TokenStream.html">RDoc::TokenStream</a>
+  
+    <li><a href="../../RDoc/TomDoc.html">RDoc::TomDoc</a>
+  
+    <li><a href="../../RDoc/TopLevel.html">RDoc::TopLevel</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class RDoc::RI::Driver</h1>
+
+  <div id="description" class="description">
+    
+<p>The <a href="../RI.html">RI</a> driver implements the command-line ri tool.</p>
+
+<p>The driver supports:</p>
+<ul><li>
+<p>loading <a href="../RI.html">RI</a> data from:</p>
+<ul><li>
+<p>Ruby’s standard library</p>
+</li><li>
+<p>RubyGems</p>
+</li><li>
+<p>~/.rdoc</p>
+</li><li>
+<p>A user-supplied directory</p>
+</li></ul>
+</li><li>
+<p>Paging output (uses RI_PAGER environment variable, PAGER environment
+variable or the less, more and pager programs)</p>
+</li><li>
+<p>Interactive mode with tab-completion</p>
+</li><li>
+<p>Abbreviated names (ri Zl shows Zlib documentation)</p>
+</li><li>
+<p>Colorized output</p>
+</li><li>
+<p>Merging output from multiple <a href="../RI.html">RI</a> data sources</p>
+</li></ul>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-stores" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">stores</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>An <a href="Store.html">RDoc::RI::Store</a> for each entry in the <a
+href="../RI.html">RI</a> path</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-use_stdout" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">use_stdout</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Controls the user of the pager vs $stdout</p>
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-default_options" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">default_options</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Default options for ri</p>
+          
+
+          
+          <div class="method-source-code" id="default_options-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/ri/driver.rb, line 72</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">default_options</span>
+  <span class="ruby-identifier">options</span> = {}
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:use_stdout</span>] = <span class="ruby-operator">!</span><span class="ruby-identifier">$stdout</span>.<span class="ruby-identifier">tty?</span>
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:width</span>] = <span class="ruby-value">72</span>
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:interactive</span>] = <span class="ruby-keyword">false</span>
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:use_cache</span>] = <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:profile</span>] = <span class="ruby-keyword">false</span>
+
+  <span class="ruby-comment"># By default all standard paths are used.</span>
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:use_system</span>] = <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:use_site</span>] = <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:use_home</span>] = <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:use_gems</span>] = <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:extra_doc_dirs</span>] = []
+
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- default_options-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- default_options-method -->
+
+    
+      <div id="method-c-dump" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">dump</span><span
+            class="method-args">(data_path)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Dump <code>data_path</code> using pp</p>
+          
+
+          
+          <div class="method-source-code" id="dump-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/ri/driver.rb, line 93</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">dump</span> <span class="ruby-identifier">data_path</span>
+  <span class="ruby-identifier">require</span> <span class="ruby-string">'pp'</span>
+
+  <span class="ruby-identifier">open</span> <span class="ruby-identifier">data_path</span>, <span class="ruby-string">'rb'</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">io</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">pp</span> <span class="ruby-constant">Marshal</span>.<span class="ruby-identifier">load</span>(<span class="ruby-identifier">io</span>.<span class="ruby-identifier">read</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- dump-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- dump-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(initial_options = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Creates a new driver using <code>initial_options</code> from <a
+href="Driver.html#method-c-process_args">::process_args</a></p>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/ri/driver.rb, line 326</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span> <span class="ruby-identifier">initial_options</span> = {}
+  <span class="ruby-ivar">@paging</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@classes</span> = <span class="ruby-keyword">nil</span>
+
+  <span class="ruby-identifier">options</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">default_options</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">initial_options</span>)
+
+  <span class="ruby-ivar">@formatter_klass</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:formatter</span>]
+
+  <span class="ruby-identifier">require</span> <span class="ruby-string">'profile'</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:profile</span>]
+
+  <span class="ruby-ivar">@names</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:names</span>]
+  <span class="ruby-ivar">@list</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:list</span>]
+
+  <span class="ruby-ivar">@doc_dirs</span> = []
+  <span class="ruby-ivar">@stores</span>   = []
+
+  <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">RI</span><span class="ruby-operator">::</span><span class="ruby-constant">Paths</span>.<span class="ruby-identifier">each</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:use_system</span>], <span class="ruby-identifier">options</span>[<span class="ruby-value">:use_site</span>],
+                       <span class="ruby-identifier">options</span>[<span class="ruby-value">:use_home</span>], <span class="ruby-identifier">options</span>[<span class="ruby-value">:use_gems</span>],
+                       *<span class="ruby-identifier">options</span>[<span class="ruby-value">:extra_doc_dirs</span>]) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">path</span>, <span class="ruby-identifier">type</span><span class="ruby-operator">|</span>
+    <span class="ruby-ivar">@doc_dirs</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">path</span>
+
+    <span class="ruby-identifier">store</span> = <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">RI</span><span class="ruby-operator">::</span><span class="ruby-constant">Store</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">path</span>, <span class="ruby-identifier">type</span>
+    <span class="ruby-identifier">store</span>.<span class="ruby-identifier">load_cache</span>
+    <span class="ruby-ivar">@stores</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">store</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-ivar">@list_doc_dirs</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:list_doc_dirs</span>]
+
+  <span class="ruby-ivar">@interactive</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:interactive</span>]
+  <span class="ruby-ivar">@use_stdout</span>  = <span class="ruby-identifier">options</span>[<span class="ruby-value">:use_stdout</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+      <div id="method-c-process_args" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">process_args</span><span
+            class="method-args">(argv)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Parses <code>argv</code> and returns a Hash of options</p>
+          
+
+          
+          <div class="method-source-code" id="process_args-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/ri/driver.rb, line 104</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">process_args</span> <span class="ruby-identifier">argv</span>
+    <span class="ruby-identifier">options</span> = <span class="ruby-identifier">default_options</span>
+
+    <span class="ruby-identifier">opts</span> = <span class="ruby-constant">OptionParser</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">opt</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">accept</span> <span class="ruby-constant">File</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span>,<span class="ruby-operator">|</span>
+        <span class="ruby-constant">File</span>.<span class="ruby-identifier">readable?</span>(<span class="ruby-identifier">file</span>) <span class="ruby-keyword">and</span> <span class="ruby-keyword">not</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">file</span>) <span class="ruby-keyword">and</span> <span class="ruby-identifier">file</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">program_name</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span> <span class="ruby-identifier">$0</span>
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">version</span> = <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">VERSION</span>
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">release</span> = <span class="ruby-keyword">nil</span>
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">summary_indent</span> = <span class="ruby-string">' '</span> * <span class="ruby-value">4</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">banner</span> = <span class="ruby-string">&quot;Usage: #{opt.program_name} [options] [names...]
+
+Where name can be:
+
+  Class | Class::method | Class#method | Class.method | method
+
+All class names may be abbreviated to their minimum unambiguous form. If a name
+is ambiguous, all valid options will be listed.
+
+A '.' matches either class or instance methods, while #method
+matches only instance and ::method matches only class methods.
+
+For example:
+
+    #{opt.program_name} Fil
+    #{opt.program_name} File
+    #{opt.program_name} File.new
+    #{opt.program_name} zip
+
+Note that shell quoting or escaping may be required for method names containing
+punctuation:
+
+    #{opt.program_name} 'Array.[]'
+    #{opt.program_name} compact\\!
+
+To see the default directories ri will search, run:
+
+    #{opt.program_name} --list-doc-dirs
+
+Specifying the --system, --site, --home, --gems or --doc-dir options will
+limit ri to searching only the specified directories.
+
+Options may also be set in the 'RI' environment variable.
+&quot;</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-string">&quot;Options:&quot;</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">formatters</span> = <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span>.<span class="ruby-identifier">constants</span>.<span class="ruby-identifier">grep</span>(<span class="ruby-regexp">%r^To[A-Z][a-z]+$/</span>).<span class="ruby-identifier">sort</span>
+      <span class="ruby-identifier">formatters</span> = <span class="ruby-identifier">formatters</span>.<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">formatter</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">formatter</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-string">'To'</span>, <span class="ruby-string">''</span>).<span class="ruby-identifier">downcase</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--format=NAME&quot;</span>, <span class="ruby-string">&quot;-f&quot;</span>,
+             <span class="ruby-string">&quot;Uses the selected formatter. The default&quot;</span>,
+             <span class="ruby-string">&quot;formatter is bs for paged output and ansi&quot;</span>,
+             <span class="ruby-string">&quot;otherwise. Valid formatters are:&quot;</span>,
+             <span class="ruby-identifier">formatters</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">' '</span>), <span class="ruby-identifier">formatters</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">options</span>[<span class="ruby-value">:formatter</span>] = <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span>.<span class="ruby-identifier">const_get</span> <span class="ruby-node">&quot;To#{value.capitalize}&quot;</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--no-pager&quot;</span>, <span class="ruby-string">&quot;-T&quot;</span>,
+             <span class="ruby-string">&quot;Send output directly to stdout,&quot;</span>,
+             <span class="ruby-string">&quot;rather than to a pager.&quot;</span>) <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">options</span>[<span class="ruby-value">:use_stdout</span>] = <span class="ruby-keyword">true</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--width=WIDTH&quot;</span>, <span class="ruby-string">&quot;-w&quot;</span>, <span class="ruby-constant">OptionParser</span><span class="ruby-operator">::</span><span class="ruby-constant">DecimalInteger</span>,
+             <span class="ruby-string">&quot;Set the width of the output.&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">options</span>[<span class="ruby-value">:width</span>] = <span class="ruby-identifier">value</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--interactive&quot;</span>, <span class="ruby-string">&quot;-i&quot;</span>,
+             <span class="ruby-string">&quot;In interactive mode you can repeatedly&quot;</span>,
+             <span class="ruby-string">&quot;look up methods with autocomplete.&quot;</span>) <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">options</span>[<span class="ruby-value">:interactive</span>] = <span class="ruby-keyword">true</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--list&quot;</span>, <span class="ruby-string">&quot;-l&quot;</span>,
+             <span class="ruby-string">&quot;List classes ri knows about.&quot;</span>) <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">options</span>[<span class="ruby-value">:list</span>] = <span class="ruby-keyword">true</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--[no-]profile&quot;</span>,
+             <span class="ruby-string">&quot;Run with the ruby profiler&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">options</span>[<span class="ruby-value">:profile</span>] = <span class="ruby-identifier">value</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-string">&quot;Data source options:&quot;</span>
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--list-doc-dirs&quot;</span>,
+             <span class="ruby-string">&quot;List the directories from which ri will&quot;</span>,
+             <span class="ruby-string">&quot;source documentation on stdout and exit.&quot;</span>) <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">options</span>[<span class="ruby-value">:list_doc_dirs</span>] = <span class="ruby-keyword">true</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--doc-dir=DIRNAME&quot;</span>, <span class="ruby-string">&quot;-d&quot;</span>, <span class="ruby-constant">Array</span>,
+             <span class="ruby-string">&quot;List of directories from which to source&quot;</span>,
+             <span class="ruby-string">&quot;documentation in addition to the standard&quot;</span>,
+             <span class="ruby-string">&quot;directories.  May be repeated.&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">value</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">dir</span><span class="ruby-operator">|</span>
+          <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span> <span class="ruby-identifier">dir</span> <span class="ruby-keyword">then</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-constant">OptionParser</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidArgument</span>, <span class="ruby-node">&quot;#{dir} is not a directory&quot;</span>
+          <span class="ruby-keyword">end</span>
+
+          <span class="ruby-identifier">options</span>[<span class="ruby-value">:extra_doc_dirs</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">dir</span>)
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--no-standard-docs&quot;</span>,
+             <span class="ruby-string">&quot;Do not include documentation from&quot;</span>,
+             <span class="ruby-string">&quot;the Ruby standard library, site_lib,&quot;</span>,
+             <span class="ruby-string">&quot;installed gems, or ~/.rdoc.&quot;</span>,
+             <span class="ruby-string">&quot;Use with --doc-dir&quot;</span>) <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">options</span>[<span class="ruby-value">:use_system</span>] = <span class="ruby-keyword">false</span>
+        <span class="ruby-identifier">options</span>[<span class="ruby-value">:use_site</span>] = <span class="ruby-keyword">false</span>
+        <span class="ruby-identifier">options</span>[<span class="ruby-value">:use_gems</span>] = <span class="ruby-keyword">false</span>
+        <span class="ruby-identifier">options</span>[<span class="ruby-value">:use_home</span>] = <span class="ruby-keyword">false</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--[no-]system&quot;</span>,
+             <span class="ruby-string">&quot;Include documentation from Ruby's standard&quot;</span>,
+             <span class="ruby-string">&quot;library.  Defaults to true.&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">options</span>[<span class="ruby-value">:use_system</span>] = <span class="ruby-identifier">value</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--[no-]site&quot;</span>,
+             <span class="ruby-string">&quot;Include documentation from libraries&quot;</span>,
+             <span class="ruby-string">&quot;installed in site_lib.&quot;</span>,
+             <span class="ruby-string">&quot;Defaults to true.&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">options</span>[<span class="ruby-value">:use_site</span>] = <span class="ruby-identifier">value</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--[no-]gems&quot;</span>,
+             <span class="ruby-string">&quot;Include documentation from RubyGems.&quot;</span>,
+             <span class="ruby-string">&quot;Defaults to true.&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">options</span>[<span class="ruby-value">:use_gems</span>] = <span class="ruby-identifier">value</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--[no-]home&quot;</span>,
+             <span class="ruby-string">&quot;Include documentation stored in ~/.rdoc.&quot;</span>,
+             <span class="ruby-string">&quot;Defaults to true.&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">options</span>[<span class="ruby-value">:use_home</span>] = <span class="ruby-identifier">value</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-string">&quot;Debug options:&quot;</span>
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--dump=CACHE&quot;</span>, <span class="ruby-constant">File</span>,
+             <span class="ruby-string">&quot;Dumps data from an ri cache or data file&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">options</span>[<span class="ruby-value">:dump_path</span>] = <span class="ruby-identifier">value</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">argv</span> = <span class="ruby-constant">ENV</span>[<span class="ruby-string">'RI'</span>].<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">split</span>.<span class="ruby-identifier">concat</span> <span class="ruby-identifier">argv</span>
+
+    <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">parse!</span> <span class="ruby-identifier">argv</span>
+
+    <span class="ruby-identifier">options</span>[<span class="ruby-value">:names</span>] = <span class="ruby-identifier">argv</span>
+
+    <span class="ruby-identifier">options</span>[<span class="ruby-value">:use_stdout</span>] <span class="ruby-operator">||=</span> <span class="ruby-operator">!</span><span class="ruby-identifier">$stdout</span>.<span class="ruby-identifier">tty?</span>
+    <span class="ruby-identifier">options</span>[<span class="ruby-value">:use_stdout</span>] <span class="ruby-operator">||=</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:interactive</span>]
+    <span class="ruby-identifier">options</span>[<span class="ruby-value">:width</span>] <span class="ruby-operator">||=</span> <span class="ruby-value">72</span>
+
+    <span class="ruby-identifier">options</span>
+
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">OptionParser</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidArgument</span>, <span class="ruby-constant">OptionParser</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidOption</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">opts</span>
+    <span class="ruby-identifier">puts</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">exit</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span></pre>
+          </div><!-- process_args-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- process_args-method -->
+
+    
+      <div id="method-c-run" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">run</span><span
+            class="method-args">(argv = ARGV)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Runs the ri command line executable using <code>argv</code></p>
+          
+
+          
+          <div class="method-source-code" id="run-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/ri/driver.rb, line 311</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">run</span> <span class="ruby-identifier">argv</span> = <span class="ruby-constant">ARGV</span>
+  <span class="ruby-identifier">options</span> = <span class="ruby-identifier">process_args</span> <span class="ruby-identifier">argv</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:dump_path</span>] <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">dump</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:dump_path</span>]
+    <span class="ruby-keyword">return</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">ri</span> = <span class="ruby-identifier">new</span> <span class="ruby-identifier">options</span>
+  <span class="ruby-identifier">ri</span>.<span class="ruby-identifier">run</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- run-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- run-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-add_also_in" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_also_in</span><span
+            class="method-args">(out, also_in)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Adds paths for undocumented classes <code>also_in</code> to
+<code>out</code></p>
+          
+
+          
+          <div class="method-source-code" id="add_also_in-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/ri/driver.rb, line 361</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_also_in</span> <span class="ruby-identifier">out</span>, <span class="ruby-identifier">also_in</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">also_in</span>.<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">Rule</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>)
+  <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">Paragraph</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Also found in:&quot;</span>)
+
+  <span class="ruby-identifier">paths</span> = <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">Verbatim</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">also_in</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">store</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">paths</span>.<span class="ruby-identifier">parts</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">store</span>.<span class="ruby-identifier">friendly_path</span>, <span class="ruby-string">&quot;\n&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">paths</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_also_in-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_also_in-method -->
+
+    
+      <div id="method-i-add_class" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_class</span><span
+            class="method-args">(out, name, classes)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Adds a class header to <code>out</code> for class <code>name</code> which
+is described in <code>classes</code>.</p>
+          
+
+          
+          <div class="method-source-code" id="add_class-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/ri/driver.rb, line 378</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_class</span> <span class="ruby-identifier">out</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">classes</span>
+  <span class="ruby-identifier">heading</span> = <span class="ruby-keyword">if</span> <span class="ruby-identifier">classes</span>.<span class="ruby-identifier">all?</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">klass</span><span class="ruby-operator">|</span> <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">module?</span> } <span class="ruby-keyword">then</span>
+              <span class="ruby-identifier">name</span>
+            <span class="ruby-keyword">else</span>
+              <span class="ruby-identifier">superclass</span> = <span class="ruby-identifier">classes</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">klass</span><span class="ruby-operator">|</span>
+                <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">superclass</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">module?</span>
+              <span class="ruby-keyword">end</span>.<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">shift</span> <span class="ruby-operator">||</span> <span class="ruby-string">'Object'</span>
+
+              <span class="ruby-identifier">superclass</span> = <span class="ruby-identifier">superclass</span>.<span class="ruby-identifier">full_name</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">String</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">superclass</span>
+
+              <span class="ruby-node">&quot;#{name} &lt; #{superclass}&quot;</span>
+            <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">Heading</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>, <span class="ruby-identifier">heading</span>)
+  <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">BlankLine</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_class-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_class-method -->
+
+    
+      <div id="method-i-add_from" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_from</span><span
+            class="method-args">(out, store)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Adds “(from …)” to <code>out</code> for <code>store</code></p>
+          
+
+          
+          <div class="method-source-code" id="add_from-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/ri/driver.rb, line 398</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_from</span> <span class="ruby-identifier">out</span>, <span class="ruby-identifier">store</span>
+  <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">Paragraph</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;(from #{store.friendly_path})&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_from-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_from-method -->
+
+    
+      <div id="method-i-add_includes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_includes</span><span
+            class="method-args">(out, includes)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Adds <code>includes</code> to <code>out</code></p>
+          
+
+          
+          <div class="method-source-code" id="add_includes-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/ri/driver.rb, line 405</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_includes</span> <span class="ruby-identifier">out</span>, <span class="ruby-identifier">includes</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">includes</span>.<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">Rule</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>)
+  <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">Heading</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>, <span class="ruby-string">&quot;Includes:&quot;</span>)
+
+  <span class="ruby-identifier">includes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">modules</span>, <span class="ruby-identifier">store</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">modules</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">include</span> = <span class="ruby-identifier">modules</span>.<span class="ruby-identifier">first</span>
+      <span class="ruby-identifier">name</span> = <span class="ruby-identifier">include</span>.<span class="ruby-identifier">name</span>
+      <span class="ruby-identifier">path</span> = <span class="ruby-identifier">store</span>.<span class="ruby-identifier">friendly_path</span>
+      <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">Paragraph</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;#{name} (from #{path})&quot;</span>)
+
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">include</span>.<span class="ruby-identifier">comment</span> <span class="ruby-keyword">then</span>
+        <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">BlankLine</span>.<span class="ruby-identifier">new</span>
+        <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">include</span>.<span class="ruby-identifier">comment</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">Paragraph</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;(from #{store.friendly_path})&quot;</span>)
+
+      <span class="ruby-identifier">wout</span>, <span class="ruby-identifier">with</span> = <span class="ruby-identifier">modules</span>.<span class="ruby-identifier">partition</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">incl</span><span class="ruby-operator">|</span> <span class="ruby-identifier">incl</span>.<span class="ruby-identifier">comment</span>.<span class="ruby-identifier">empty?</span> }
+
+      <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">BlankLine</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">with</span>.<span class="ruby-identifier">empty?</span>
+
+      <span class="ruby-identifier">with</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">incl</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">Paragraph</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">incl</span>.<span class="ruby-identifier">name</span>)
+        <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">BlankLine</span>.<span class="ruby-identifier">new</span>
+        <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">incl</span>.<span class="ruby-identifier">comment</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-keyword">unless</span> <span class="ruby-identifier">wout</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">then</span>
+        <span class="ruby-identifier">verb</span> = <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">Verbatim</span>.<span class="ruby-identifier">new</span>
+
+        <span class="ruby-identifier">wout</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">incl</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">verb</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">incl</span>.<span class="ruby-identifier">name</span>, <span class="ruby-string">&quot;\n&quot;</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">verb</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_includes-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_includes-method -->
+
+    
+      <div id="method-i-add_method_list" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_method_list</span><span
+            class="method-args">(out, methods, name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Adds a list of <code>methods</code> to <code>out</code> with a heading of
+<code>name</code></p>
+          
+
+          
+          <div class="method-source-code" id="add_method_list-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/ri/driver.rb, line 451</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_method_list</span> <span class="ruby-identifier">out</span>, <span class="ruby-identifier">methods</span>, <span class="ruby-identifier">name</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">methods</span>.<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">Heading</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>, <span class="ruby-node">&quot;#{name}:&quot;</span>)
+  <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">BlankLine</span>.<span class="ruby-identifier">new</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@use_stdout</span> <span class="ruby-keyword">and</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@interactive</span>
+    <span class="ruby-identifier">out</span>.<span class="ruby-identifier">push</span>(*<span class="ruby-identifier">methods</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">method</span><span class="ruby-operator">|</span>
+      <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">Verbatim</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">method</span>
+    <span class="ruby-keyword">end</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">IndentedParagraph</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>, <span class="ruby-identifier">methods</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">', '</span>))
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">BlankLine</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_method_list-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_method_list-method -->
+
+    
+      <div id="method-i-ancestors_of" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ancestors_of</span><span
+            class="method-args">(klass)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns ancestor classes of <code>klass</code></p>
+          
+
+          
+          <div class="method-source-code" id="ancestors_of-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/ri/driver.rb, line 471</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ancestors_of</span> <span class="ruby-identifier">klass</span>
+  <span class="ruby-identifier">ancestors</span> = []
+
+  <span class="ruby-identifier">unexamined</span> = [<span class="ruby-identifier">klass</span>]
+  <span class="ruby-identifier">seen</span> = []
+
+  <span class="ruby-identifier">loop</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">break</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">unexamined</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">current</span> = <span class="ruby-identifier">unexamined</span>.<span class="ruby-identifier">shift</span>
+    <span class="ruby-identifier">seen</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">current</span>
+
+    <span class="ruby-identifier">stores</span> = <span class="ruby-identifier">classes</span>[<span class="ruby-identifier">current</span>]
+
+    <span class="ruby-keyword">break</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">stores</span> <span class="ruby-keyword">and</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">stores</span>.<span class="ruby-identifier">empty?</span>
+
+    <span class="ruby-identifier">klasses</span> = <span class="ruby-identifier">stores</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">store</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">store</span>.<span class="ruby-identifier">ancestors</span>[<span class="ruby-identifier">current</span>]
+    <span class="ruby-keyword">end</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">uniq</span>
+
+    <span class="ruby-identifier">klasses</span> = <span class="ruby-identifier">klasses</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">seen</span>
+
+    <span class="ruby-identifier">ancestors</span>.<span class="ruby-identifier">push</span>(*<span class="ruby-identifier">klasses</span>)
+    <span class="ruby-identifier">unexamined</span>.<span class="ruby-identifier">push</span>(*<span class="ruby-identifier">klasses</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">ancestors</span>.<span class="ruby-identifier">reverse</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- ancestors_of-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- ancestors_of-method -->
+
+    
+      <div id="method-i-class_document" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">class_document</span><span
+            class="method-args">(name, found, klasses, includes)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Builds a <a href="../Markup/Document.html">RDoc::Markup::Document</a> from
+<code>found</code>, <code>klasess</code> and <code>includes</code></p>
+          
+
+          
+          <div class="method-source-code" id="class_document-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/ri/driver.rb, line 508</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">class_document</span> <span class="ruby-identifier">name</span>, <span class="ruby-identifier">found</span>, <span class="ruby-identifier">klasses</span>, <span class="ruby-identifier">includes</span>
+  <span class="ruby-identifier">also_in</span> = []
+
+  <span class="ruby-identifier">out</span> = <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">new</span>
+
+  <span class="ruby-identifier">add_class</span> <span class="ruby-identifier">out</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">klasses</span>
+
+  <span class="ruby-identifier">add_includes</span> <span class="ruby-identifier">out</span>, <span class="ruby-identifier">includes</span>
+
+  <span class="ruby-identifier">found</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">store</span>, <span class="ruby-identifier">klass</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">comment</span> = <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">comment</span>
+    <span class="ruby-comment"># TODO the store's cache should always return an empty Array</span>
+    <span class="ruby-identifier">class_methods</span>    = <span class="ruby-identifier">store</span>.<span class="ruby-identifier">class_methods</span>[<span class="ruby-identifier">klass</span>.<span class="ruby-identifier">full_name</span>]    <span class="ruby-operator">||</span> []
+    <span class="ruby-identifier">instance_methods</span> = <span class="ruby-identifier">store</span>.<span class="ruby-identifier">instance_methods</span>[<span class="ruby-identifier">klass</span>.<span class="ruby-identifier">full_name</span>] <span class="ruby-operator">||</span> []
+    <span class="ruby-identifier">attributes</span>       = <span class="ruby-identifier">store</span>.<span class="ruby-identifier">attributes</span>[<span class="ruby-identifier">klass</span>.<span class="ruby-identifier">full_name</span>]       <span class="ruby-operator">||</span> []
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">comment</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">and</span>
+       <span class="ruby-identifier">instance_methods</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">class_methods</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">also_in</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">store</span>
+      <span class="ruby-keyword">next</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">add_from</span> <span class="ruby-identifier">out</span>, <span class="ruby-identifier">store</span>
+
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">comment</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">Rule</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>)
+
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">comment</span>.<span class="ruby-identifier">merged?</span> <span class="ruby-keyword">then</span>
+        <span class="ruby-identifier">parts</span> = <span class="ruby-identifier">comment</span>.<span class="ruby-identifier">parts</span>
+        <span class="ruby-identifier">parts</span> = <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">zip</span> [<span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">BlankLine</span>.<span class="ruby-identifier">new</span>] * <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">length</span>
+        <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">flatten!</span>
+        <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">pop</span>
+
+        <span class="ruby-identifier">out</span>.<span class="ruby-identifier">push</span>(*<span class="ruby-identifier">parts</span>)
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">comment</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">class_methods</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">instance_methods</span> <span class="ruby-keyword">or</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">constants</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">Rule</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">constants</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">Heading</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>, <span class="ruby-string">&quot;Constants:&quot;</span>)
+      <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">BlankLine</span>.<span class="ruby-identifier">new</span>
+      <span class="ruby-identifier">list</span> = <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">List</span>.<span class="ruby-identifier">new</span> <span class="ruby-value">:NOTE</span>
+
+      <span class="ruby-identifier">constants</span> = <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">constants</span>.<span class="ruby-identifier">sort_by</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">constant</span><span class="ruby-operator">|</span> <span class="ruby-identifier">constant</span>.<span class="ruby-identifier">name</span> }
+
+      <span class="ruby-identifier">list</span>.<span class="ruby-identifier">push</span>(*<span class="ruby-identifier">constants</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">constant</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">parts</span> = <span class="ruby-identifier">constant</span>.<span class="ruby-identifier">comment</span>.<span class="ruby-identifier">parts</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">constant</span>.<span class="ruby-identifier">comment</span>
+        <span class="ruby-identifier">parts</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">Paragraph</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'[not documented]'</span>) <span class="ruby-keyword">if</span>
+          <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">empty?</span>
+
+        <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">ListItem</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">constant</span>.<span class="ruby-identifier">name</span>, *<span class="ruby-identifier">parts</span>)
+      <span class="ruby-keyword">end</span>)
+
+      <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">list</span>
+      <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">BlankLine</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">add_method_list</span> <span class="ruby-identifier">out</span>, <span class="ruby-identifier">class_methods</span>,    <span class="ruby-string">'Class methods'</span>
+    <span class="ruby-identifier">add_method_list</span> <span class="ruby-identifier">out</span>, <span class="ruby-identifier">instance_methods</span>, <span class="ruby-string">'Instance methods'</span>
+    <span class="ruby-identifier">add_method_list</span> <span class="ruby-identifier">out</span>, <span class="ruby-identifier">attributes</span>,       <span class="ruby-string">'Attributes'</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">add_also_in</span> <span class="ruby-identifier">out</span>, <span class="ruby-identifier">also_in</span>
+
+  <span class="ruby-identifier">out</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- class_document-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- class_document-method -->
+
+    
+      <div id="method-i-classes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">classes</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Hash mapping a known class or module to the stores it can be loaded from</p>
+          
+
+          
+          <div class="method-source-code" id="classes-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/ri/driver.rb, line 583</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">classes</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@classes</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@classes</span>
+
+  <span class="ruby-ivar">@classes</span> = {}
+
+  <span class="ruby-ivar">@stores</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">store</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">store</span>.<span class="ruby-identifier">cache</span>[<span class="ruby-value">:modules</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">mod</span><span class="ruby-operator">|</span>
+      <span class="ruby-comment"># using default block causes searched-for modules to be added</span>
+      <span class="ruby-ivar">@classes</span>[<span class="ruby-identifier">mod</span>] <span class="ruby-operator">||=</span> []
+      <span class="ruby-ivar">@classes</span>[<span class="ruby-identifier">mod</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">store</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-ivar">@classes</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- classes-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- classes-method -->
+
+    
+      <div id="method-i-classes_and_includes_for" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">classes_and_includes_for</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the stores wherin <code>name</code> is found along with the classes
+and includes that match it</p>
+          
+
+          
+          <div class="method-source-code" id="classes_and_includes_for-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/ri/driver.rb, line 603</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">classes_and_includes_for</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">klasses</span> = []
+  <span class="ruby-identifier">includes</span> = []
+
+  <span class="ruby-identifier">found</span> = <span class="ruby-ivar">@stores</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">store</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-identifier">klass</span> = <span class="ruby-identifier">store</span>.<span class="ruby-identifier">load_class</span> <span class="ruby-identifier">name</span>
+      <span class="ruby-identifier">klasses</span>  <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">klass</span>
+      <span class="ruby-identifier">includes</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">klass</span>.<span class="ruby-identifier">includes</span>, <span class="ruby-identifier">store</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">includes</span>
+      [<span class="ruby-identifier">store</span>, <span class="ruby-identifier">klass</span>]
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ENOENT</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>.<span class="ruby-identifier">compact</span>
+
+  <span class="ruby-identifier">includes</span>.<span class="ruby-identifier">reject!</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">modules</span>,<span class="ruby-operator">|</span> <span class="ruby-identifier">modules</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">end</span>
+
+  [<span class="ruby-identifier">found</span>, <span class="ruby-identifier">klasses</span>, <span class="ruby-identifier">includes</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- classes_and_includes_for-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- classes_and_includes_for-method -->
+
+    
+      <div id="method-i-complete" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">complete</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Completes <code>name</code> based on the caches.  For Readline</p>
+          
+
+          
+          <div class="method-source-code" id="complete-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/ri/driver.rb, line 625</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">complete</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">klasses</span> = <span class="ruby-identifier">classes</span>.<span class="ruby-identifier">keys</span>
+  <span class="ruby-identifier">completions</span> = []
+
+  <span class="ruby-identifier">klass</span>, <span class="ruby-identifier">selector</span>, <span class="ruby-identifier">method</span> = <span class="ruby-identifier">parse_name</span> <span class="ruby-identifier">name</span>
+
+  <span class="ruby-comment"># may need to include Foo when given Foo::</span>
+  <span class="ruby-identifier">klass_name</span> = <span class="ruby-identifier">method</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">klass</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">!~</span> <span class="ruby-node">%r#|\./</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">completions</span> = <span class="ruby-identifier">klasses</span>.<span class="ruby-identifier">grep</span>(<span class="ruby-node">%r^#{Regexp.escape klass_name}[^:]*$/</span>)
+    <span class="ruby-identifier">completions</span>.<span class="ruby-identifier">concat</span> <span class="ruby-identifier">klasses</span>.<span class="ruby-identifier">grep</span>(<span class="ruby-node">%r^#{Regexp.escape name}[^:]*$/</span>) <span class="ruby-keyword">if</span>
+      <span class="ruby-identifier">name</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r::$/</span>
+
+    <span class="ruby-identifier">completions</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">klass</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">classes</span>.<span class="ruby-identifier">key?</span> <span class="ruby-identifier">klass</span> <span class="ruby-comment"># to complete a method name</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">selector</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">completions</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">klass</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">classes</span>.<span class="ruby-identifier">key?</span> <span class="ruby-identifier">klass</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">classes</span>.<span class="ruby-identifier">key?</span> <span class="ruby-identifier">klass_name</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">completions</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">klass_name</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">completions</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">klass</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">=~</span> <span class="ruby-node">%r#|\.|::/</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">methods</span> = <span class="ruby-identifier">list_methods_matching</span> <span class="ruby-identifier">name</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">methods</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-comment"># remove Foo if given Foo:: and a method was found</span>
+      <span class="ruby-identifier">completions</span>.<span class="ruby-identifier">delete</span> <span class="ruby-identifier">klass</span>
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">selector</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-comment"># replace Foo with Foo:: as given</span>
+      <span class="ruby-identifier">completions</span>.<span class="ruby-identifier">delete</span> <span class="ruby-identifier">klass</span>
+      <span class="ruby-identifier">completions</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;#{klass}#{selector}&quot;</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">completions</span>.<span class="ruby-identifier">push</span>(*<span class="ruby-identifier">methods</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">completions</span>.<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">uniq</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- complete-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- complete-method -->
+
+    
+      <div id="method-i-display" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">display</span><span
+            class="method-args">(document)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Converts <code>document</code> to text and writes it to the pager</p>
+          
+
+          
+          <div class="method-source-code" id="display-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/ri/driver.rb, line 667</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">display</span> <span class="ruby-identifier">document</span>
+  <span class="ruby-identifier">page</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">io</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">text</span> = <span class="ruby-identifier">document</span>.<span class="ruby-identifier">accept</span> <span class="ruby-identifier">formatter</span>(<span class="ruby-identifier">io</span>)
+
+    <span class="ruby-identifier">io</span>.<span class="ruby-identifier">write</span> <span class="ruby-identifier">text</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- display-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- display-method -->
+
+    
+      <div id="method-i-display_class" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">display_class</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Outputs formatted <a href="../RI.html">RI</a> data for class
+<code>name</code>.  Groups undocumented classes</p>
+          
+
+          
+          <div class="method-source-code" id="display_class-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/ri/driver.rb, line 678</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">display_class</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">=~</span> <span class="ruby-node">%r#|\./</span>
+
+  <span class="ruby-identifier">found</span>, <span class="ruby-identifier">klasses</span>, <span class="ruby-identifier">includes</span> = <span class="ruby-identifier">classes_and_includes_for</span> <span class="ruby-identifier">name</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">found</span>.<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-identifier">out</span> = <span class="ruby-identifier">class_document</span> <span class="ruby-identifier">name</span>, <span class="ruby-identifier">found</span>, <span class="ruby-identifier">klasses</span>, <span class="ruby-identifier">includes</span>
+
+  <span class="ruby-identifier">display</span> <span class="ruby-identifier">out</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- display_class-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- display_class-method -->
+
+    
+      <div id="method-i-display_method" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">display_method</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Outputs formatted <a href="../RI.html">RI</a> data for method
+<code>name</code></p>
+          
+
+          
+          <div class="method-source-code" id="display_method-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/ri/driver.rb, line 693</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">display_method</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">found</span> = <span class="ruby-identifier">load_methods_matching</span> <span class="ruby-identifier">name</span>
+
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotFoundError</span>, <span class="ruby-identifier">name</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">found</span>.<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-identifier">filtered</span> = <span class="ruby-identifier">filter_methods</span> <span class="ruby-identifier">found</span>, <span class="ruby-identifier">name</span>
+
+  <span class="ruby-identifier">out</span> = <span class="ruby-identifier">method_document</span> <span class="ruby-identifier">name</span>, <span class="ruby-identifier">filtered</span>
+
+  <span class="ruby-identifier">display</span> <span class="ruby-identifier">out</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- display_method-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- display_method-method -->
+
+    
+      <div id="method-i-display_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">display_name</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Outputs formatted <a href="../RI.html">RI</a> data for the class or method
+<code>name</code>.</p>
+
+<p>Returns true if <code>name</code> was found, false if it was not an
+alternative could be guessed, raises an error if <code>name</code> couldn’t
+be guessed.</p>
+          
+
+          
+          <div class="method-source-code" id="display_name-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/ri/driver.rb, line 711</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">display_name</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">display_class</span> <span class="ruby-identifier">name</span>
+
+  <span class="ruby-identifier">display_method</span> <span class="ruby-identifier">name</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">=~</span> <span class="ruby-node">%r::|#|\./</span>
+
+  <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">NotFoundError</span>
+  <span class="ruby-identifier">matches</span> = <span class="ruby-identifier">list_methods_matching</span> <span class="ruby-identifier">name</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">=~</span> <span class="ruby-node">%r::|#|\./</span>
+  <span class="ruby-identifier">matches</span> = <span class="ruby-identifier">classes</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">grep</span>(<span class="ruby-node">%r^#{name}/</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">matches</span>.<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-identifier">raise</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">matches</span>.<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-identifier">page</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">io</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">io</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{name} not found, maybe you meant:&quot;</span>
+    <span class="ruby-identifier">io</span>.<span class="ruby-identifier">puts</span>
+    <span class="ruby-identifier">io</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">matches</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\n&quot;</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- display_name-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- display_name-method -->
+
+    
+      <div id="method-i-display_names" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">display_names</span><span
+            class="method-args">(names)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Displays each name in <code>name</code></p>
+          
+
+          
+          <div class="method-source-code" id="display_names-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/ri/driver.rb, line 735</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">display_names</span> <span class="ruby-identifier">names</span>
+  <span class="ruby-identifier">names</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">name</span> = <span class="ruby-identifier">expand_name</span> <span class="ruby-identifier">name</span>
+
+    <span class="ruby-identifier">display_name</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- display_names-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- display_names-method -->
+
+    
+      <div id="method-i-expand_class" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">expand_class</span><span
+            class="method-args">(klass)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Expands abbreviated klass <code>klass</code> into a fully-qualified class. 
+“Zl::Da” will be expanded to Zlib::DataError.</p>
+          
+
+          
+          <div class="method-source-code" id="expand_class-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/ri/driver.rb, line 747</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">expand_class</span> <span class="ruby-identifier">klass</span>
+  <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">'::'</span>).<span class="ruby-identifier">inject</span> <span class="ruby-string">''</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">expanded</span>, <span class="ruby-identifier">klass_part</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">expanded</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">'::'</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">expanded</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">short</span> = <span class="ruby-identifier">expanded</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">klass_part</span>
+
+    <span class="ruby-identifier">subset</span> = <span class="ruby-identifier">classes</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">select</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">klass_name</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">klass_name</span> <span class="ruby-operator">=~</span> <span class="ruby-node">%r^#{expanded}[^:]*$/</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">abbrevs</span> = <span class="ruby-constant">Abbrev</span>.<span class="ruby-identifier">abbrev</span> <span class="ruby-identifier">subset</span>
+
+    <span class="ruby-identifier">expanded</span> = <span class="ruby-identifier">abbrevs</span>[<span class="ruby-identifier">short</span>]
+
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotFoundError</span>, <span class="ruby-identifier">short</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">expanded</span>
+
+    <span class="ruby-identifier">expanded</span>.<span class="ruby-identifier">dup</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- expand_class-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- expand_class-method -->
+
+    
+      <div id="method-i-expand_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">expand_name</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Expands the class portion of <code>name</code> into a fully-qualified
+class.  See <a href="Driver.html#method-i-expand_class">expand_class</a>.</p>
+          
+
+          
+          <div class="method-source-code" id="expand_name-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/ri/driver.rb, line 770</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">expand_name</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">klass</span>, <span class="ruby-identifier">selector</span>, <span class="ruby-identifier">method</span> = <span class="ruby-identifier">parse_name</span> <span class="ruby-identifier">name</span>
+
+  <span class="ruby-keyword">return</span> [<span class="ruby-identifier">selector</span>, <span class="ruby-identifier">method</span>].<span class="ruby-identifier">join</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-node">&quot;#{expand_class klass}#{selector}#{method}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- expand_name-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- expand_name-method -->
+
+    
+      <div id="method-i-filter_methods" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">filter_methods</span><span
+            class="method-args">(found, name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Filters the methods in <code>found</code> trying to find a match for
+<code>name</code>.</p>
+          
+
+          
+          <div class="method-source-code" id="filter_methods-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/ri/driver.rb, line 781</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">filter_methods</span> <span class="ruby-identifier">found</span>, <span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">regexp</span> = <span class="ruby-identifier">name_regexp</span> <span class="ruby-identifier">name</span>
+
+  <span class="ruby-identifier">filtered</span> = <span class="ruby-identifier">found</span>.<span class="ruby-identifier">find_all</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">store</span>, <span class="ruby-identifier">methods</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">methods</span>.<span class="ruby-identifier">any?</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">method</span><span class="ruby-operator">|</span> <span class="ruby-identifier">method</span>.<span class="ruby-identifier">full_name</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">regexp</span> }
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">filtered</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">filtered</span>.<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-identifier">found</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- filter_methods-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- filter_methods-method -->
+
+    
+      <div id="method-i-find_methods" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_methods</span><span
+            class="method-args">(name) { |*item| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Yields items matching <code>name</code> including the store they were found
+in, the class being searched for, the class they were found in (an
+ancestor) the types of methods to look up (from <a
+href="Driver.html#method-i-method_type">method_type</a>), and the method
+name being searched for</p>
+          
+
+          
+          <div class="method-source-code" id="find_methods-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/ri/driver.rb, line 799</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">find_methods</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">klass</span>, <span class="ruby-identifier">selector</span>, <span class="ruby-identifier">method</span> = <span class="ruby-identifier">parse_name</span> <span class="ruby-identifier">name</span>
+
+  <span class="ruby-identifier">types</span> = <span class="ruby-identifier">method_type</span> <span class="ruby-identifier">selector</span>
+
+  <span class="ruby-identifier">klasses</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">ambiguous</span> = <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">ambiguous</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">klasses</span> = <span class="ruby-identifier">classes</span>.<span class="ruby-identifier">keys</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">klasses</span> = <span class="ruby-identifier">ancestors_of</span> <span class="ruby-identifier">klass</span>
+    <span class="ruby-identifier">klasses</span>.<span class="ruby-identifier">unshift</span> <span class="ruby-identifier">klass</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">methods</span> = []
+
+  <span class="ruby-identifier">klasses</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">ancestor</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">ancestors</span> = <span class="ruby-identifier">classes</span>[<span class="ruby-identifier">ancestor</span>]
+
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">ancestors</span>
+
+    <span class="ruby-identifier">klass</span> = <span class="ruby-identifier">ancestor</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ambiguous</span>
+
+    <span class="ruby-identifier">ancestors</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">store</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">methods</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">store</span>, <span class="ruby-identifier">klass</span>, <span class="ruby-identifier">ancestor</span>, <span class="ruby-identifier">types</span>, <span class="ruby-identifier">method</span>]
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">methods</span> = <span class="ruby-identifier">methods</span>.<span class="ruby-identifier">sort_by</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">_</span>, <span class="ruby-identifier">k</span>, <span class="ruby-identifier">a</span>, <span class="ruby-identifier">_</span>, <span class="ruby-identifier">m</span><span class="ruby-operator">|</span>
+    [<span class="ruby-identifier">k</span>, <span class="ruby-identifier">a</span>, <span class="ruby-identifier">m</span>].<span class="ruby-identifier">compact</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">methods</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">item</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">yield</span>(*<span class="ruby-identifier">item</span>) <span class="ruby-comment"># :yields: store, klass, ancestor, types, method</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find_methods-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find_methods-method -->
+
+    
+      <div id="method-i-formatter" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">formatter</span><span
+            class="method-args">(io)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Creates a new <a
+href="../Markup/Formatter.html">RDoc::Markup::Formatter</a>.  If a
+formatter is given with -f, use it.  If we’re outputting to a pager, use
+bs, otherwise ansi.</p>
+          
+
+          
+          <div class="method-source-code" id="formatter-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/ri/driver.rb, line 843</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">formatter</span>(<span class="ruby-identifier">io</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@formatter_klass</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-ivar">@formatter_klass</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">paging?</span> <span class="ruby-keyword">or</span> <span class="ruby-operator">!</span><span class="ruby-identifier">io</span>.<span class="ruby-identifier">tty?</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">ToBs</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">ToAnsi</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- formatter-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- formatter-method -->
+
+    
+      <div id="method-i-in_path-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">in_path?</span><span
+            class="method-args">(file)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Is <code>file</code> in <a href="http://'PATH'">ENV</a>?</p>
+          
+
+          
+          <div class="method-source-code" id="in_path-3F-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/ri/driver.rb, line 892</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">in_path?</span> <span class="ruby-identifier">file</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">file</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r\A/%</span> <span class="ruby-keyword">and</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span> <span class="ruby-identifier">file</span>
+
+  <span class="ruby-constant">ENV</span>[<span class="ruby-string">'PATH'</span>].<span class="ruby-identifier">split</span>(<span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">PATH_SEPARATOR</span>).<span class="ruby-identifier">any?</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
+    <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">file</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- in_path-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- in_path-3F-method -->
+
+    
+      <div id="method-i-interactive" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">interactive</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Runs ri interactively using Readline if it is available.</p>
+          
+
+          
+          <div class="method-source-code" id="interactive-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/ri/driver.rb, line 856</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">interactive</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;\nEnter the method name you want to look up.&quot;</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">defined?</span> <span class="ruby-constant">Readline</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-constant">Readline</span>.<span class="ruby-identifier">completion_proc</span> = <span class="ruby-identifier">method</span> <span class="ruby-value">:complete</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;You can use tab to autocomplete.&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Enter a blank line to exit.\n\n&quot;</span>
+
+  <span class="ruby-identifier">loop</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">name</span> = <span class="ruby-keyword">if</span> <span class="ruby-keyword">defined?</span> <span class="ruby-constant">Readline</span> <span class="ruby-keyword">then</span>
+             <span class="ruby-constant">Readline</span>.<span class="ruby-identifier">readline</span> <span class="ruby-string">&quot;&gt;&gt; &quot;</span>
+           <span class="ruby-keyword">else</span>
+             <span class="ruby-identifier">print</span> <span class="ruby-string">&quot;&gt;&gt; &quot;</span>
+             <span class="ruby-identifier">$stdin</span>.<span class="ruby-identifier">gets</span>
+           <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">empty?</span>
+
+    <span class="ruby-identifier">name</span> = <span class="ruby-identifier">expand_name</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">strip</span>
+
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-identifier">display_name</span> <span class="ruby-identifier">name</span>
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">NotFoundError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+      <span class="ruby-identifier">puts</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">message</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Interrupt</span>
+  <span class="ruby-identifier">exit</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- interactive-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- interactive-method -->
+
+    
+      <div id="method-i-list_known_classes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">list_known_classes</span><span
+            class="method-args">(names = [])</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Lists classes known to ri starting with <code>names</code>.  If
+<code>names</code> is empty all known classes are shown.</p>
+          
+
+          
+          <div class="method-source-code" id="list_known_classes-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/ri/driver.rb, line 904</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">list_known_classes</span> <span class="ruby-identifier">names</span> = []
+  <span class="ruby-identifier">classes</span> = []
+
+  <span class="ruby-identifier">stores</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">store</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">classes</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">store</span>.<span class="ruby-identifier">modules</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">classes</span> = <span class="ruby-identifier">classes</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">uniq</span>.<span class="ruby-identifier">sort</span>
+
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">names</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">filter</span> = <span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">union</span> <span class="ruby-identifier">names</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span> <span class="ruby-node">%r^#{name}/</span> }
+
+    <span class="ruby-identifier">classes</span> = <span class="ruby-identifier">classes</span>.<span class="ruby-identifier">grep</span> <span class="ruby-identifier">filter</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">page</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">io</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">paging?</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">io</span>.<span class="ruby-identifier">tty?</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">names</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">then</span>
+        <span class="ruby-identifier">io</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Classes and Modules known to ri:&quot;</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">io</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Classes and Modules starting with #{names.join ', '}:&quot;</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">io</span>.<span class="ruby-identifier">puts</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">io</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">classes</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\n&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- list_known_classes-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- list_known_classes-method -->
+
+    
+      <div id="method-i-list_methods_matching" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">list_methods_matching</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns an Array of methods matching <code>name</code></p>
+          
+
+          
+          <div class="method-source-code" id="list_methods_matching-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/ri/driver.rb, line 936</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">list_methods_matching</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">found</span> = []
+
+  <span class="ruby-identifier">find_methods</span> <span class="ruby-identifier">name</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">store</span>, <span class="ruby-identifier">klass</span>, <span class="ruby-identifier">ancestor</span>, <span class="ruby-identifier">types</span>, <span class="ruby-identifier">method</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">types</span> <span class="ruby-operator">==</span> <span class="ruby-value">:instance</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">types</span> <span class="ruby-operator">==</span> <span class="ruby-value">:both</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">methods</span> = <span class="ruby-identifier">store</span>.<span class="ruby-identifier">instance_methods</span>[<span class="ruby-identifier">ancestor</span>]
+
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">methods</span> <span class="ruby-keyword">then</span>
+        <span class="ruby-identifier">matches</span> = <span class="ruby-identifier">methods</span>.<span class="ruby-identifier">grep</span>(<span class="ruby-node">%r^#{Regexp.escape method.to_s}/</span>)
+
+        <span class="ruby-identifier">matches</span> = <span class="ruby-identifier">matches</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">match</span><span class="ruby-operator">|</span>
+          <span class="ruby-node">&quot;#{klass}##{match}&quot;</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-identifier">found</span>.<span class="ruby-identifier">push</span>(*<span class="ruby-identifier">matches</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">types</span> <span class="ruby-operator">==</span> <span class="ruby-value">:class</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">types</span> <span class="ruby-operator">==</span> <span class="ruby-value">:both</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">methods</span> = <span class="ruby-identifier">store</span>.<span class="ruby-identifier">class_methods</span>[<span class="ruby-identifier">ancestor</span>]
+
+      <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">methods</span>
+      <span class="ruby-identifier">matches</span> = <span class="ruby-identifier">methods</span>.<span class="ruby-identifier">grep</span>(<span class="ruby-node">%r^#{Regexp.escape method.to_s}/</span>)
+
+      <span class="ruby-identifier">matches</span> = <span class="ruby-identifier">matches</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">match</span><span class="ruby-operator">|</span>
+        <span class="ruby-node">&quot;#{klass}::#{match}&quot;</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">found</span>.<span class="ruby-identifier">push</span>(*<span class="ruby-identifier">matches</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">found</span>.<span class="ruby-identifier">uniq</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- list_methods_matching-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- list_methods_matching-method -->
+
+    
+      <div id="method-i-load_method" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">load_method</span><span
+            class="method-args">(store, cache, klass, type, name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Loads <a href="../RI.html">RI</a> data for method <code>name</code> on
+<code>klass</code> from <code>store</code>.  <code>type</code> and
+<code>cache</code> indicate if it is a class or instance method.</p>
+          
+
+          
+          <div class="method-source-code" id="load_method-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/ri/driver.rb, line 975</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">load_method</span> <span class="ruby-identifier">store</span>, <span class="ruby-identifier">cache</span>, <span class="ruby-identifier">klass</span>, <span class="ruby-identifier">type</span>, <span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">methods</span> = <span class="ruby-identifier">store</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">cache</span>)[<span class="ruby-identifier">klass</span>]
+
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">methods</span>
+
+  <span class="ruby-identifier">method</span> = <span class="ruby-identifier">methods</span>.<span class="ruby-identifier">find</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">method_name</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">method_name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">method</span>
+
+  <span class="ruby-identifier">store</span>.<span class="ruby-identifier">load_method</span> <span class="ruby-identifier">klass</span>, <span class="ruby-node">&quot;#{type}#{method}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- load_method-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- load_method-method -->
+
+    
+      <div id="method-i-load_methods_matching" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">load_methods_matching</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns an Array of <a href="../RI.html">RI</a> data for methods matching
+<code>name</code></p>
+          
+
+          
+          <div class="method-source-code" id="load_methods_matching-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/ri/driver.rb, line 992</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">load_methods_matching</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">found</span> = []
+
+  <span class="ruby-identifier">find_methods</span> <span class="ruby-identifier">name</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">store</span>, <span class="ruby-identifier">klass</span>, <span class="ruby-identifier">ancestor</span>, <span class="ruby-identifier">types</span>, <span class="ruby-identifier">method</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">methods</span> = []
+
+    <span class="ruby-identifier">methods</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">load_method</span>(<span class="ruby-identifier">store</span>, <span class="ruby-value">:class_methods</span>, <span class="ruby-identifier">ancestor</span>, <span class="ruby-string">'::'</span>,  <span class="ruby-identifier">method</span>) <span class="ruby-keyword">if</span>
+      [<span class="ruby-value">:class</span>, <span class="ruby-value">:both</span>].<span class="ruby-identifier">include?</span> <span class="ruby-identifier">types</span>
+
+    <span class="ruby-identifier">methods</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">load_method</span>(<span class="ruby-identifier">store</span>, <span class="ruby-value">:instance_methods</span>, <span class="ruby-identifier">ancestor</span>, <span class="ruby-string">'#'</span>,  <span class="ruby-identifier">method</span>) <span class="ruby-keyword">if</span>
+      [<span class="ruby-value">:instance</span>, <span class="ruby-value">:both</span>].<span class="ruby-identifier">include?</span> <span class="ruby-identifier">types</span>
+
+    <span class="ruby-identifier">found</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">store</span>, <span class="ruby-identifier">methods</span>.<span class="ruby-identifier">compact</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">found</span>.<span class="ruby-identifier">reject</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">path</span>, <span class="ruby-identifier">methods</span><span class="ruby-operator">|</span> <span class="ruby-identifier">methods</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- load_methods_matching-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- load_methods_matching-method -->
+
+    
+      <div id="method-i-method_document" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">method_document</span><span
+            class="method-args">(name, filtered)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Builds a <a href="../Markup/Document.html">RDoc::Markup::Document</a> from
+<code>found</code>, <code>klasess</code> and <code>includes</code></p>
+          
+
+          
+          <div class="method-source-code" id="method_document-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/ri/driver.rb, line 1013</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">method_document</span> <span class="ruby-identifier">name</span>, <span class="ruby-identifier">filtered</span>
+  <span class="ruby-identifier">out</span> = <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">new</span>
+
+  <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">Heading</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>, <span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">BlankLine</span>.<span class="ruby-identifier">new</span>
+
+  <span class="ruby-identifier">filtered</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">store</span>, <span class="ruby-identifier">methods</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">methods</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">method</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">Paragraph</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;(from #{store.friendly_path})&quot;</span>)
+
+      <span class="ruby-keyword">unless</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">=~</span> <span class="ruby-node">%r^#{Regexp.escape method.parent_name}/</span> <span class="ruby-keyword">then</span>
+        <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">Heading</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">3</span>, <span class="ruby-node">&quot;Implementation from #{method.parent_name}&quot;</span>)
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">Rule</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>)
+
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">method</span>.<span class="ruby-identifier">arglists</span> <span class="ruby-keyword">then</span>
+        <span class="ruby-identifier">arglists</span> = <span class="ruby-identifier">method</span>.<span class="ruby-identifier">arglists</span>.<span class="ruby-identifier">chomp</span>.<span class="ruby-identifier">split</span> <span class="ruby-string">&quot;\n&quot;</span>
+        <span class="ruby-identifier">arglists</span> = <span class="ruby-identifier">arglists</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;\n&quot;</span> }
+        <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">Verbatim</span>.<span class="ruby-identifier">new</span>(*<span class="ruby-identifier">arglists</span>)
+        <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">Rule</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>)
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">BlankLine</span>.<span class="ruby-identifier">new</span>
+      <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">method</span>.<span class="ruby-identifier">comment</span>
+      <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">BlankLine</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">out</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- method_document-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- method_document-method -->
+
+    
+      <div id="method-i-method_type" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">method_type</span><span
+            class="method-args">(selector)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the type of method (:both, :instance, :class) for
+<code>selector</code></p>
+          
+
+          
+          <div class="method-source-code" id="method_type-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/ri/driver.rb, line 1047</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">method_type</span> <span class="ruby-identifier">selector</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">selector</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">'.'</span>, <span class="ruby-keyword">nil</span> <span class="ruby-keyword">then</span> <span class="ruby-value">:both</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">'#'</span>      <span class="ruby-keyword">then</span> <span class="ruby-value">:instance</span>
+  <span class="ruby-keyword">else</span>               <span class="ruby-value">:class</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- method_type-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- method_type-method -->
+
+    
+      <div id="method-i-name_regexp" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">name_regexp</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a regular expression for <code>name</code> that will match an
+RDoc::AnyMethod’s name.</p>
+          
+
+          
+          <div class="method-source-code" id="name_regexp-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/ri/driver.rb, line 1059</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">name_regexp</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">klass</span>, <span class="ruby-identifier">type</span>, <span class="ruby-identifier">name</span> = <span class="ruby-identifier">parse_name</span> <span class="ruby-identifier">name</span>
+
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">type</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">'#'</span>, <span class="ruby-string">'::'</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-node">%r^#{klass}#{type}#{Regexp.escape name}$/</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-node">%r^#{klass}(#|::)#{Regexp.escape name}$/</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- name_regexp-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- name_regexp-method -->
+
+    
+      <div id="method-i-page" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">page</span><span
+            class="method-args">() { |pager| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Paginates output through a pager program.</p>
+          
+
+          
+          <div class="method-source-code" id="page-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/ri/driver.rb, line 1073</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">page</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">pager</span> = <span class="ruby-identifier">setup_pager</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-keyword">yield</span> <span class="ruby-identifier">pager</span>
+    <span class="ruby-keyword">ensure</span>
+      <span class="ruby-identifier">pager</span>.<span class="ruby-identifier">close</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-identifier">$stdout</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EPIPE</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-ivar">@paging</span> = <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- page-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- page-method -->
+
+    
+      <div id="method-i-paging-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">paging?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Are we using a pager?</p>
+          
+
+          
+          <div class="method-source-code" id="paging-3F-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/ri/driver.rb, line 1091</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">paging?</span>
+  <span class="ruby-ivar">@paging</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- paging-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- paging-3F-method -->
+
+    
+      <div id="method-i-parse_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parse_name</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Extracts the class, selector and method name parts from <code>name</code>
+like Foo::Bar#baz.</p>
+
+<p>NOTE: Given Foo::Bar, Bar is considered a class even though it may be a
+method</p>
+          
+
+          
+          <div class="method-source-code" id="parse_name-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/ri/driver.rb, line 1102</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">parse_name</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">parts</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">split</span>(<span class="ruby-node">%r(::|#|\.)/</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">first</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r^[a-z]|^([%&amp;*+\/&lt;&gt;^`|~-]|\+@|-@|&lt;&lt;|&lt;=&gt;?|===?|=&gt;|=~|&gt;&gt;|\[\]=?|~@)$/</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">type</span> = <span class="ruby-string">'.'</span>
+      <span class="ruby-identifier">meth</span> = <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">pop</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">type</span> = <span class="ruby-keyword">nil</span>
+      <span class="ruby-identifier">meth</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">2</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">last</span> <span class="ruby-operator">=~</span> <span class="ruby-node">%r::|#|\./</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">type</span> = <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">pop</span>
+    <span class="ruby-identifier">meth</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">parts</span>[<span class="ruby-value">-2</span>] <span class="ruby-operator">!=</span> <span class="ruby-string">'::'</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">last</span> <span class="ruby-operator">!~</span> <span class="ruby-regexp">%r^[A-Z]/</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">meth</span> = <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">pop</span>
+    <span class="ruby-identifier">type</span> = <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">pop</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">klass</span> = <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">join</span>
+
+  [<span class="ruby-identifier">klass</span>, <span class="ruby-identifier">type</span>, <span class="ruby-identifier">meth</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- parse_name-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- parse_name-method -->
+
+    
+      <div id="method-i-run" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">run</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Looks up and displays ri data according to the options given.</p>
+          
+
+          
+          <div class="method-source-code" id="run-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/ri/driver.rb, line 1129</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">run</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@list_doc_dirs</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-ivar">@doc_dirs</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-ivar">@list</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">list_known_classes</span> <span class="ruby-ivar">@names</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-ivar">@interactive</span> <span class="ruby-keyword">or</span> <span class="ruby-ivar">@names</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">interactive</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">display_names</span> <span class="ruby-ivar">@names</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">NotFoundError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-identifier">abort</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">message</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- run-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- run-method -->
+
+    
+      <div id="method-i-setup_pager" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">setup_pager</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sets up a pager program to pass output through.  Tries the RI_PAGER and
+PAGER environment variables followed by pager, less then more.</p>
+          
+
+          
+          <div class="method-source-code" id="setup_pager-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/ri/driver.rb, line 1147</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">setup_pager</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@use_stdout</span>
+
+  <span class="ruby-identifier">pagers</span> = [<span class="ruby-constant">ENV</span>[<span class="ruby-string">'RI_PAGER'</span>], <span class="ruby-constant">ENV</span>[<span class="ruby-string">'PAGER'</span>], <span class="ruby-string">'pager'</span>, <span class="ruby-string">'less'</span>, <span class="ruby-string">'more'</span>]
+
+  <span class="ruby-identifier">pagers</span>.<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">uniq</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pager</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">pager</span>
+
+    <span class="ruby-identifier">pager_cmd</span> = <span class="ruby-identifier">pager</span>.<span class="ruby-identifier">split</span>.<span class="ruby-identifier">first</span>
+
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">in_path?</span> <span class="ruby-identifier">pager_cmd</span>
+
+    <span class="ruby-identifier">io</span> = <span class="ruby-constant">IO</span>.<span class="ruby-identifier">popen</span>(<span class="ruby-identifier">pager</span>, <span class="ruby-string">'w'</span>) <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">next</span>
+
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">$?</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">$?</span>.<span class="ruby-identifier">exited?</span> <span class="ruby-comment"># pager didn't work</span>
+
+    <span class="ruby-ivar">@paging</span> = <span class="ruby-keyword">true</span>
+
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">io</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-ivar">@use_stdout</span> = <span class="ruby-keyword">true</span>
+
+  <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- setup_pager-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- setup_pager-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"quirks_mode:EFI"-JSON::Pure::Generator::State#quirks_mode;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"HIf this attribute is set to true, quirks mode is enabled, otherwise;TI"it's disabled.;T:
+@fileI"lib/json/pure/generator.rb;TF@

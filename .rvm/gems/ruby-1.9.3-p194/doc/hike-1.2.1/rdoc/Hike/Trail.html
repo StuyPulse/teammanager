@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Hike::Trail - hike-1.2.1 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/hike/trail.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-alias_extension">#alias_extension</a>
+    
+    <li><a href="#method-i-append_extension">#append_extension</a>
+    
+    <li><a href="#method-i-append_extensions">#append_extensions</a>
+    
+    <li><a href="#method-i-append_path">#append_path</a>
+    
+    <li><a href="#method-i-append_paths">#append_paths</a>
+    
+    <li><a href="#method-i-entries">#entries</a>
+    
+    <li><a href="#method-i-find">#find</a>
+    
+    <li><a href="#method-i-index">#index</a>
+    
+    <li><a href="#method-i-prepend_extension">#prepend_extension</a>
+    
+    <li><a href="#method-i-prepend_extensions">#prepend_extensions</a>
+    
+    <li><a href="#method-i-prepend_path">#prepend_path</a>
+    
+    <li><a href="#method-i-prepend_paths">#prepend_paths</a>
+    
+    <li><a href="#method-i-remove_extension">#remove_extension</a>
+    
+    <li><a href="#method-i-remove_path">#remove_path</a>
+    
+    <li><a href="#method-i-root">#root</a>
+    
+    <li><a href="#method-i-stat">#stat</a>
+    
+    <li><a href="#method-i-unalias_extension">#unalias_extension</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Hike.html">Hike</a>
+  
+    <li><a href="../Hike/Extensions.html">Hike::Extensions</a>
+  
+    <li><a href="../Hike/Index.html">Hike::Index</a>
+  
+    <li><a href="../Hike/NormalizedArray.html">Hike::NormalizedArray</a>
+  
+    <li><a href="../Hike/Paths.html">Hike::Paths</a>
+  
+    <li><a href="../Hike/Trail.html">Hike::Trail</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Hike::Trail</h1>
+
+  <div id="description" class="description">
+    
+<p>`Trail` is the public container class for holding paths and extensions.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-aliases" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">aliases</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>`<a href="Index.html#attribute-i-aliases">Hike::Index#aliases</a>` is a
+mutable `Hash` mapping an extension to an `Array` of aliases.</p>
+
+<pre>trail = Hike::Trail.new
+trail.paths.push &quot;~/Projects/hike/site&quot;
+trail.aliases['.htm']   = 'html'
+trail.aliases['.xhtml'] = 'html'
+trail.aliases['.php']   = 'html'</pre>
+
+<p>Aliases provide a fallback when the primary extension is not matched. In
+the example above, a lookup for “foo.html” will check for the existence of
+“foo.htm”, “foo.xhtml”, or “foo.php”.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-extensions" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">extensions</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>`<a href="Trail.html#attribute-i-extensions">#extensions</a>` is a mutable
+`Extensions` collection.</p>
+
+<pre>trail = Hike::Trail.new
+trail.paths.push &quot;~/Projects/hike/lib&quot;
+trail.extensions.push &quot;.rb&quot;</pre>
+
+<p><a href="Extensions.html">Extensions</a> allow you to find files by just
+their name omitting their extension. Is similar to Ruby's require mechanism
+that allows you to require files with specifiying `foo.rb`.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-paths" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">paths</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>`<a href="Trail.html#attribute-i-paths">#paths</a>` is a mutable `Paths`
+collection.</p>
+
+<pre>trail = Hike::Trail.new
+trail.paths.push &quot;~/Projects/hike/lib&quot;, &quot;~/Projects/hike/test&quot;</pre>
+
+<p>The order of the paths is significant. <a href="Paths.html">Paths</a> in
+the beginning of the collection will be checked first. In the example
+above, `~/Projects/hike/lib/hike.rb` would shadow the existent of
+`~/Projects/hike/test/hike.rb`.</p>
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(root = ".")</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>A <a href="Trail.html">Trail</a> accepts an optional root path that
+defaults to your current working directory. Any relative paths added to `<a
+href="Trail.html#attribute-i-paths">#paths</a>` will expanded relative to
+the root.</p>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/hike/trail.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">root</span> = <span class="ruby-string">&quot;.&quot;</span>)
+  <span class="ruby-ivar">@root</span>       = <span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">root</span>).<span class="ruby-identifier">expand_path</span>
+  <span class="ruby-ivar">@paths</span>      = <span class="ruby-constant">Paths</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@root</span>)
+  <span class="ruby-ivar">@extensions</span> = <span class="ruby-constant">Extensions</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@aliases</span>    = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">h</span>, <span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-constant">Extensions</span>.<span class="ruby-identifier">new</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-alias_extension" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">alias_extension</span><span
+            class="method-args">(new_extension, old_extension)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Alias `new_extension` to `old_extension`</p>
+          
+
+          
+          <div class="method-source-code" id="alias_extension-source">
+            <pre><span class="ruby-comment"># File lib/hike/trail.rb, line 95</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">alias_extension</span>(<span class="ruby-identifier">new_extension</span>, <span class="ruby-identifier">old_extension</span>)
+  <span class="ruby-identifier">aliases</span>[<span class="ruby-identifier">normalize_extension</span>(<span class="ruby-identifier">new_extension</span>)] = <span class="ruby-identifier">normalize_extension</span>(<span class="ruby-identifier">old_extension</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- alias_extension-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- alias_extension-method -->
+
+    
+      <div id="method-i-append_extension" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">append_extension</span><span
+            class="method-args">(*extensions)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Trail.html#method-i-append_extensions">append_extensions</a>
+        </div>
+        
+      </div><!-- append_extension-method -->
+
+    
+      <div id="method-i-append_extensions" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">append_extensions</span><span
+            class="method-args">(*extensions)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Append `extension` to `Extensions` collection</p>
+          
+
+          
+          <div class="method-source-code" id="append_extensions-source">
+            <pre><span class="ruby-comment"># File lib/hike/trail.rb, line 84</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">append_extensions</span>(*<span class="ruby-identifier">extensions</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">extensions</span>.<span class="ruby-identifier">push</span>(*<span class="ruby-identifier">extensions</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- append_extensions-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Trail.html#method-i-append_extension">append_extension</a>
+        </div>
+        
+
+        
+      </div><!-- append_extensions-method -->
+
+    
+      <div id="method-i-append_path" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">append_path</span><span
+            class="method-args">(*paths)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Trail.html#method-i-append_paths">append_paths</a>
+        </div>
+        
+      </div><!-- append_path-method -->
+
+    
+      <div id="method-i-append_paths" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">append_paths</span><span
+            class="method-args">(*paths)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Append `path` to `Paths` collection</p>
+          
+
+          
+          <div class="method-source-code" id="append_paths-source">
+            <pre><span class="ruby-comment"># File lib/hike/trail.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">append_paths</span>(*<span class="ruby-identifier">paths</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">paths</span>.<span class="ruby-identifier">push</span>(*<span class="ruby-identifier">paths</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- append_paths-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Trail.html#method-i-append_path">append_path</a>
+        </div>
+        
+
+        
+      </div><!-- append_paths-method -->
+
+    
+      <div id="method-i-entries" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">entries</span><span
+            class="method-args">(*args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>`<a href="Trail.html#method-i-entries">#entries</a>` is equivalent to
+`Dir#entries`. It is not recommend to use this method for general purposes.
+It exists for parity with `<a
+href="Index.html#method-i-entries">Hike::Index#entries</a>`.</p>
+          
+
+          
+          <div class="method-source-code" id="entries-source">
+            <pre><span class="ruby-comment"># File lib/hike/trail.rb, line 159</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">entries</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">index</span>.<span class="ruby-identifier">entries</span>(*<span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- entries-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- entries-method -->
+
+    
+      <div id="method-i-find" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find</span><span
+            class="method-args">(*args, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>`<a href="Trail.html#method-i-find">#find</a>` returns a the expand path
+for a logical path in the path collection.</p>
+
+<pre class="ruby"><span class="ruby-identifier">trail</span> = <span class="ruby-constant">Hike</span><span class="ruby-operator">::</span><span class="ruby-constant">Trail</span>.<span class="ruby-identifier">new</span> <span class="ruby-string">&quot;~/Projects/hike&quot;</span>
+<span class="ruby-identifier">trail</span>.<span class="ruby-identifier">extensions</span>.<span class="ruby-identifier">push</span> <span class="ruby-string">&quot;.rb&quot;</span>
+<span class="ruby-identifier">trail</span>.<span class="ruby-identifier">paths</span>.<span class="ruby-identifier">push</span> <span class="ruby-string">&quot;lib&quot;</span>, <span class="ruby-string">&quot;test&quot;</span>
+
+<span class="ruby-identifier">trail</span>.<span class="ruby-identifier">find</span> <span class="ruby-string">&quot;hike/trail&quot;</span>
+<span class="ruby-comment"># =&gt; &quot;~/Projects/hike/lib/hike/trail.rb&quot;</span>
+
+<span class="ruby-identifier">trail</span>.<span class="ruby-identifier">find</span> <span class="ruby-string">&quot;test_trail&quot;</span>
+<span class="ruby-comment"># =&gt; &quot;~/Projects/hike/test/test_trail.rb&quot;</span>
+</pre>
+
+<p>`find` accepts multiple fallback logical paths that returns the first
+match.</p>
+
+<pre>trail.find &quot;hike&quot;, &quot;hike/index&quot;</pre>
+
+<p>is equivalent to</p>
+
+<pre>trail.find(&quot;hike&quot;) || trail.find(&quot;hike/index&quot;)</pre>
+
+<p>Though `find` always returns the first match, it is possible to iterate
+over all shadowed matches and fallbacks by supplying a block.</p>
+
+<pre class="ruby"><span class="ruby-identifier">trail</span>.<span class="ruby-identifier">find</span>(<span class="ruby-string">&quot;hike&quot;</span>, <span class="ruby-string">&quot;hike/index&quot;</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span> <span class="ruby-identifier">warn</span> <span class="ruby-identifier">path</span> }
+</pre>
+
+<p>This allows you to filter your matches by any condition.</p>
+
+<pre class="ruby"><span class="ruby-identifier">trail</span>.<span class="ruby-identifier">find</span>(<span class="ruby-string">&quot;application&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">path</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">mime_type_for</span>(<span class="ruby-identifier">path</span>) <span class="ruby-operator">==</span> <span class="ruby-string">&quot;text/css&quot;</span>
+<span class="ruby-keyword">end</span>
+</pre>
+          
+
+          
+          <div class="method-source-code" id="find-source">
+            <pre><span class="ruby-comment"># File lib/hike/trail.rb, line 138</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">find</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">index</span>.<span class="ruby-identifier">find</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find-method -->
+
+    
+      <div id="method-i-index" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">index</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>`<a href="Trail.html#method-i-index">#index</a>` returns an `Index` object
+that has the same interface as `Trail`. An `Index` is a cached `Trail`
+object that does not update when the file system changes. If you are
+confident that you are not making changes the paths you are searching,
+`index` will avoid excess system calls.</p>
+
+<pre>index = trail.index
+index.find &quot;hike/trail&quot;
+index.find &quot;test_trail&quot;</pre>
+          
+
+          
+          <div class="method-source-code" id="index-source">
+            <pre><span class="ruby-comment"># File lib/hike/trail.rb, line 152</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">index</span>
+  <span class="ruby-constant">Index</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">root</span>, <span class="ruby-identifier">paths</span>, <span class="ruby-identifier">extensions</span>, <span class="ruby-identifier">aliases</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- index-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- index-method -->
+
+    
+      <div id="method-i-prepend_extension" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">prepend_extension</span><span
+            class="method-args">(*extensions)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Trail.html#method-i-prepend_extensions">prepend_extensions</a>
+        </div>
+        
+      </div><!-- prepend_extension-method -->
+
+    
+      <div id="method-i-prepend_extensions" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">prepend_extensions</span><span
+            class="method-args">(*extensions)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Prepend `extension` to `Extensions` collection</p>
+          
+
+          
+          <div class="method-source-code" id="prepend_extensions-source">
+            <pre><span class="ruby-comment"># File lib/hike/trail.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">prepend_extensions</span>(*<span class="ruby-identifier">extensions</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">extensions</span>.<span class="ruby-identifier">unshift</span>(*<span class="ruby-identifier">extensions</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- prepend_extensions-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Trail.html#method-i-prepend_extension">prepend_extension</a>
+        </div>
+        
+
+        
+      </div><!-- prepend_extensions-method -->
+
+    
+      <div id="method-i-prepend_path" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">prepend_path</span><span
+            class="method-args">(*paths)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Trail.html#method-i-prepend_paths">prepend_paths</a>
+        </div>
+        
+      </div><!-- prepend_path-method -->
+
+    
+      <div id="method-i-prepend_paths" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">prepend_paths</span><span
+            class="method-args">(*paths)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Prepend `path` to `Paths` collection</p>
+          
+
+          
+          <div class="method-source-code" id="prepend_paths-source">
+            <pre><span class="ruby-comment"># File lib/hike/trail.rb, line 61</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">prepend_paths</span>(*<span class="ruby-identifier">paths</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">paths</span>.<span class="ruby-identifier">unshift</span>(*<span class="ruby-identifier">paths</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- prepend_paths-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Trail.html#method-i-prepend_path">prepend_path</a>
+        </div>
+        
+
+        
+      </div><!-- prepend_paths-method -->
+
+    
+      <div id="method-i-remove_extension" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">remove_extension</span><span
+            class="method-args">(extension)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Remove `extension` from `Extensions` collection</p>
+          
+
+          
+          <div class="method-source-code" id="remove_extension-source">
+            <pre><span class="ruby-comment"># File lib/hike/trail.rb, line 90</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">remove_extension</span>(<span class="ruby-identifier">extension</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">extensions</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">extension</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- remove_extension-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- remove_extension-method -->
+
+    
+      <div id="method-i-remove_path" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">remove_path</span><span
+            class="method-args">(path)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Remove `path` from `Paths` collection</p>
+          
+
+          
+          <div class="method-source-code" id="remove_path-source">
+            <pre><span class="ruby-comment"># File lib/hike/trail.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">remove_path</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">paths</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">path</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- remove_path-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- remove_path-method -->
+
+    
+      <div id="method-i-root" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">root</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>`<a href="Trail.html#method-i-root">#root</a>` returns root path as a
+`String`. This attribute is immutable.</p>
+          
+
+          
+          <div class="method-source-code" id="root-source">
+            <pre><span class="ruby-comment"># File lib/hike/trail.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">root</span>
+  <span class="ruby-ivar">@root</span>.<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- root-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- root-method -->
+
+    
+      <div id="method-i-stat" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">stat</span><span
+            class="method-args">(*args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>`<a href="Trail.html#method-i-stat">#stat</a>` is equivalent to
+`File#stat`. It is not recommend to use this method for general purposes.
+It exists for parity with `<a
+href="Index.html#method-i-stat">Hike::Index#stat</a>`.</p>
+          
+
+          
+          <div class="method-source-code" id="stat-source">
+            <pre><span class="ruby-comment"># File lib/hike/trail.rb, line 166</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">stat</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">index</span>.<span class="ruby-identifier">stat</span>(*<span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- stat-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- stat-method -->
+
+    
+      <div id="method-i-unalias_extension" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unalias_extension</span><span
+            class="method-args">(extension)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Remove the alias for `extension`</p>
+          
+
+          
+          <div class="method-source-code" id="unalias_extension-source">
+            <pre><span class="ruby-comment"># File lib/hike/trail.rb, line 100</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">unalias_extension</span>(<span class="ruby-identifier">extension</span>)
+  <span class="ruby-identifier">aliases</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">normalize_extension</span>(<span class="ruby-identifier">extension</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- unalias_extension-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- unalias_extension-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

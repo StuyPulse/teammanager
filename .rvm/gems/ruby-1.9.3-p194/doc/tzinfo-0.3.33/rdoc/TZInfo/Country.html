@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class TZInfo::Country - tzinfo-0.3.33 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/tzinfo/country.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">Comparable</span>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-_load">::_load</a>
+    
+    <li><a href="#method-c-all">::all</a>
+    
+    <li><a href="#method-c-all_codes">::all_codes</a>
+    
+    <li><a href="#method-c-get">::get</a>
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-3C-3D-3E">#&lt;=&gt;</a>
+    
+    <li><a href="#method-i-_dump">#_dump</a>
+    
+    <li><a href="#method-i-code">#code</a>
+    
+    <li><a href="#method-i-eql-3F">#eql?</a>
+    
+    <li><a href="#method-i-hash">#hash</a>
+    
+    <li><a href="#method-i-inspect">#inspect</a>
+    
+    <li><a href="#method-i-name">#name</a>
+    
+    <li><a href="#method-i-to_s">#to_s</a>
+    
+    <li><a href="#method-i-zone_identifiers">#zone_identifiers</a>
+    
+    <li><a href="#method-i-zone_info">#zone_info</a>
+    
+    <li><a href="#method-i-zone_names">#zone_names</a>
+    
+    <li><a href="#method-i-zones">#zones</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../CHANGES.html">CHANGES</a>
+  
+    <li class="file"><a href="../README.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../TZInfo.html">TZInfo</a>
+  
+    <li><a href="../TZInfo/AmbiguousTime.html">TZInfo::AmbiguousTime</a>
+  
+    <li><a href="../TZInfo/Country.html">TZInfo::Country</a>
+  
+    <li><a href="../TZInfo/CountryTimezone.html">TZInfo::CountryTimezone</a>
+  
+    <li><a href="../TZInfo/InvalidCountryCode.html">TZInfo::InvalidCountryCode</a>
+  
+    <li><a href="../TZInfo/InvalidTimezoneIdentifier.html">TZInfo::InvalidTimezoneIdentifier</a>
+  
+    <li><a href="../TZInfo/NoOffsetsDefined.html">TZInfo::NoOffsetsDefined</a>
+  
+    <li><a href="../TZInfo/PeriodNotFound.html">TZInfo::PeriodNotFound</a>
+  
+    <li><a href="../TZInfo/TZDataParser.html">TZInfo::TZDataParser</a>
+  
+    <li><a href="../TZInfo/Timezone.html">TZInfo::Timezone</a>
+  
+    <li><a href="../TZInfo/TimezonePeriod.html">TZInfo::TimezonePeriod</a>
+  
+    <li><a href="../TZInfo/TimezoneProxy.html">TZInfo::TimezoneProxy</a>
+  
+    <li><a href="../TZInfo/UnknownTimezone.html">TZInfo::UnknownTimezone</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class TZInfo::Country</h1>
+
+  <div id="description" class="description">
+    
+<p>An ISO 3166 country. Can be used to get a list of Timezones for a country.
+For example:</p>
+
+<pre>us = Country.get('US')
+us.zone_identifiers
+us.zones
+us.zone_info</pre>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-_load" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">_load</span><span
+            class="method-args">(data)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Loads a marshalled <a href="Country.html">Country</a>.</p>
+          
+
+          
+          <div class="method-source-code" id="_load-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/country.rb, line 157</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">_load</span>(<span class="ruby-identifier">data</span>)
+  <span class="ruby-constant">Country</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">data</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- _load-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- _load-method -->
+
+    
+      <div id="method-c-all" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">all</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns an Array of all the defined Countries.</p>
+          
+
+          
+          <div class="method-source-code" id="all-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/country.rb, line 79</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-identifier">load_index</span>
+  <span class="ruby-constant">Indexes</span><span class="ruby-operator">::</span><span class="ruby-constant">Countries</span>.<span class="ruby-identifier">countries</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">collect</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">code</span><span class="ruby-operator">|</span> <span class="ruby-identifier">get</span>(<span class="ruby-identifier">code</span>)}
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- all-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- all-method -->
+
+    
+      <div id="method-c-all_codes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">all_codes</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns an Array of all the valid country codes.</p>
+          
+
+          
+          <div class="method-source-code" id="all_codes-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/country.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">all_codes</span>
+  <span class="ruby-identifier">load_index</span>
+  <span class="ruby-constant">Indexes</span><span class="ruby-operator">::</span><span class="ruby-constant">Countries</span>.<span class="ruby-identifier">countries</span>.<span class="ruby-identifier">keys</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- all_codes-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- all_codes-method -->
+
+    
+      <div id="method-c-get" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get</span><span
+            class="method-args">(identifier)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Gets a <a href="Country.html">Country</a> by its ISO 3166 code. Raises an
+<a href="InvalidCountryCode.html">InvalidCountryCode</a>  exception if it
+couldn’t be found.</p>
+          
+
+          
+          <div class="method-source-code" id="get-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/country.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">identifier</span>)
+  <span class="ruby-identifier">instance</span> = <span class="ruby-identifier">@@countries</span>[<span class="ruby-identifier">identifier</span>]
+  
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">instance</span>
+    <span class="ruby-identifier">load_index</span>
+    <span class="ruby-identifier">info</span> = <span class="ruby-constant">Indexes</span><span class="ruby-operator">::</span><span class="ruby-constant">Countries</span>.<span class="ruby-identifier">countries</span>[<span class="ruby-identifier">identifier</span>]        
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">InvalidCountryCode</span>.<span class="ruby-identifier">new</span>, <span class="ruby-string">'Invalid identifier'</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">info</span>
+    <span class="ruby-identifier">instance</span> = <span class="ruby-constant">Country</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">info</span>)
+    <span class="ruby-identifier">@@countries</span>[<span class="ruby-identifier">identifier</span>] = <span class="ruby-identifier">instance</span>
+  <span class="ruby-keyword">end</span>      
+  
+  <span class="ruby-identifier">instance</span>        
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(identifier)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>If identifier is a CountryInfo object, initializes the <a
+href="Country.html">Country</a> instance,  otherwise calls get(identifier).</p>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/country.rb, line 62</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">identifier</span>)      
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">identifier</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">CountryInfo</span>)
+    <span class="ruby-identifier">instance</span> = <span class="ruby-keyword">super</span>()
+    <span class="ruby-identifier">instance</span>.<span class="ruby-identifier">send</span> <span class="ruby-value">:setup</span>, <span class="ruby-identifier">identifier</span>
+    <span class="ruby-identifier">instance</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">get</span>(<span class="ruby-identifier">identifier</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-3C-3D-3E" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">&lt;=&gt;</span><span
+            class="method-args">(c)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Compare two Countries based on their code. Returns -1 if c is less than
+self, 0 if c is equal to self and +1 if c is greater than self.</p>
+          
+
+          
+          <div class="method-source-code" id="3C-3D-3E-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/country.rb, line 136</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">&lt;=&gt;</span>(<span class="ruby-identifier">c</span>)
+  <span class="ruby-identifier">code</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">code</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 3C-3D-3E-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 3C-3D-3E-method -->
+
+    
+      <div id="method-i-_dump" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">_dump</span><span
+            class="method-args">(limit)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Dumps this <a href="Country.html">Country</a> for marshalling.</p>
+          
+
+          
+          <div class="method-source-code" id="_dump-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/country.rb, line 152</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">_dump</span>(<span class="ruby-identifier">limit</span>)
+  <span class="ruby-identifier">code</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- _dump-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- _dump-method -->
+
+    
+      <div id="method-i-code" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">code</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The ISO 3166 country code.</p>
+          
+
+          
+          <div class="method-source-code" id="code-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/country.rb, line 85</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">code</span>
+  <span class="ruby-ivar">@info</span>.<span class="ruby-identifier">code</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- code-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- code-method -->
+
+    
+      <div id="method-i-eql-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">eql?</span><span
+            class="method-args">(c)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns true if and only if the code of c is equal to the code of this <a
+href="Country.html">Country</a>.</p>
+          
+
+          
+          <div class="method-source-code" id="eql-3F-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/country.rb, line 142</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">eql?</span>(<span class="ruby-identifier">c</span>)
+  <span class="ruby-keyword">self</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">c</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- eql-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- eql-3F-method -->
+
+    
+      <div id="method-i-hash" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">hash</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a hash value for this <a href="Country.html">Country</a>.</p>
+          
+
+          
+          <div class="method-source-code" id="hash-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/country.rb, line 147</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">hash</span>
+  <span class="ruby-identifier">code</span>.<span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- hash-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- hash-method -->
+
+    
+      <div id="method-i-inspect" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inspect</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns internal object state as a programmer-readable string.</p>
+          
+
+          
+          <div class="method-source-code" id="inspect-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/country.rb, line 100</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">inspect</span>
+  <span class="ruby-node">&quot;#&lt;#{self.class}: #{@info.code}&gt;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- inspect-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- inspect-method -->
+
+    
+      <div id="method-i-name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">name</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The name of the country.</p>
+          
+
+          
+          <div class="method-source-code" id="name-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/country.rb, line 90</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-ivar">@info</span>.<span class="ruby-identifier">name</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- name-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- name-method -->
+
+    
+      <div id="method-i-to_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Alias for name.</p>
+          
+
+          
+          <div class="method-source-code" id="to_s-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/country.rb, line 95</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
+  <span class="ruby-identifier">name</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_s-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_s-method -->
+
+    
+      <div id="method-i-zone_identifiers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">zone_identifiers</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a frozen array of all the zone identifiers for the country. These
+are in an order that</p>
+
+<pre>(1) makes some geographical sense, and
+(2) puts the most populous zones first, where that does not contradict (1).</pre>
+          
+
+          
+          <div class="method-source-code" id="zone_identifiers-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/country.rb, line 108</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">zone_identifiers</span>
+  <span class="ruby-ivar">@info</span>.<span class="ruby-identifier">zone_identifiers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- zone_identifiers-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Country.html#method-i-zone_names">zone_names</a>
+        </div>
+        
+
+        
+      </div><!-- zone_identifiers-method -->
+
+    
+      <div id="method-i-zone_info" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">zone_info</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a frozen array of all the timezones for the for the country as <a
+href="CountryTimezone.html">CountryTimezone</a> instances (containing extra
+information about each zone).  These are in an order that</p>
+
+<pre>(1) makes some geographical sense, and
+(2) puts the most populous zones first, where that does not contradict (1).</pre>
+          
+
+          
+          <div class="method-source-code" id="zone_info-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/country.rb, line 130</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">zone_info</span>
+  <span class="ruby-ivar">@info</span>.<span class="ruby-identifier">zones</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- zone_info-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- zone_info-method -->
+
+    
+      <div id="method-i-zone_names" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">zone_names</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Country.html#method-i-zone_identifiers">zone_identifiers</a>
+        </div>
+        
+      </div><!-- zone_names-method -->
+
+    
+      <div id="method-i-zones" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">zones</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>An array of all the Timezones for this country. Returns <a
+href="TimezoneProxy.html">TimezoneProxy</a> objects to avoid the overhead
+of loading <a href="Timezone.html">Timezone</a> definitions until a
+conversion is actually required. The Timezones are returned in an order
+that</p>
+
+<pre>(1) makes some geographical sense, and
+(2) puts the most populous zones first, where that does not contradict (1).</pre>
+          
+
+          
+          <div class="method-source-code" id="zones-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/country.rb, line 119</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">zones</span>
+  <span class="ruby-identifier">zone_identifiers</span>.<span class="ruby-identifier">collect</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">id</span><span class="ruby-operator">|</span>
+    <span class="ruby-constant">Timezone</span>.<span class="ruby-identifier">get_proxy</span>(<span class="ruby-identifier">id</span>)        
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- zones-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- zones-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"extensions:EFI"MIME::Type#extensions;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"KThe list of extensions which are known to be used for this MIME::Type.;TI"ENon-array values will be coerced into an array with #to_a. Array;TI"7values will be flattened and +nil+ values removed.;T:
+@fileI"lib/mime/types.rb;TF@

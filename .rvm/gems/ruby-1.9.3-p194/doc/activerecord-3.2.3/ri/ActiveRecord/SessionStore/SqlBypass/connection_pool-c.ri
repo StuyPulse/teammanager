@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"connection_pool:EFI";ActiveRecord::SessionStore::SqlBypass::connection_pool;FI"W;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I";Use the ActiveRecord::Base.connection_pool by default.;T:
+@fileI"'lib/active_record/session_store.rb;TT@

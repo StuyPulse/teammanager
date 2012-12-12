@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module Thor::Actions::ClassMethods - thor-0.14.6 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/thor/actions.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-add_runtime_options-21">#add_runtime_options!</a>
+    
+    <li><a href="#method-i-source_paths">#source_paths</a>
+    
+    <li><a href="#method-i-source_paths_for_search">#source_paths_for_search</a>
+    
+    <li><a href="#method-i-source_root">#source_root</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../CHANGELOG_rdoc.html">CHANGELOG</a>
+  
+    <li class="file"><a href="../../LICENSE.html">LICENSE</a>
+  
+    <li class="file"><a href="../../Thorfile.html">Thorfile</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../Thor.html">Thor</a>
+  
+    <li><a href="../../Thor/Actions.html">Thor::Actions</a>
+  
+    <li><a href="../../Thor/Actions/ClassMethods.html">Thor::Actions::ClassMethods</a>
+  
+    <li><a href="../../Thor/Base.html">Thor::Base</a>
+  
+    <li><a href="../../Thor/Base/ClassMethods.html">Thor::Base::ClassMethods</a>
+  
+    <li><a href="../../Thor/DynamicTask.html">Thor::DynamicTask</a>
+  
+    <li><a href="../../Thor/Error.html">Thor::Error</a>
+  
+    <li><a href="../../Thor/Group.html">Thor::Group</a>
+  
+    <li><a href="../../Thor/HiddenTask.html">Thor::HiddenTask</a>
+  
+    <li><a href="../../Thor/Invocation.html">Thor::Invocation</a>
+  
+    <li><a href="../../Thor/Invocation/ClassMethods.html">Thor::Invocation::ClassMethods</a>
+  
+    <li><a href="../../Thor/InvocationError.html">Thor::InvocationError</a>
+  
+    <li><a href="../../Thor/MalformattedArgumentError.html">Thor::MalformattedArgumentError</a>
+  
+    <li><a href="../../Thor/RakeCompat.html">Thor::RakeCompat</a>
+  
+    <li><a href="../../Thor/RequiredArgumentMissingError.html">Thor::RequiredArgumentMissingError</a>
+  
+    <li><a href="../../Thor/Shell.html">Thor::Shell</a>
+  
+    <li><a href="../../Thor/Shell/Basic.html">Thor::Shell::Basic</a>
+  
+    <li><a href="../../Thor/Shell/Color.html">Thor::Shell::Color</a>
+  
+    <li><a href="../../Thor/Shell/HTML.html">Thor::Shell::HTML</a>
+  
+    <li><a href="../../Thor/Task.html">Thor::Task</a>
+  
+    <li><a href="../../Thor/UndefinedTaskError.html">Thor::UndefinedTaskError</a>
+  
+    <li><a href="../../Thor/UnknownArgumentError.html">Thor::UnknownArgumentError</a>
+  
+    <li><a href="../../Thor/Util.html">Thor::Util</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Thor::Actions::ClassMethods</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-add_runtime_options-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_runtime_options!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Add runtime options that help actions execution.</p>
+          
+
+          
+          <div class="method-source-code" id="add_runtime_options-21-source">
+            <pre><span class="ruby-comment"># File lib/thor/actions.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_runtime_options!</span>
+  <span class="ruby-identifier">class_option</span> <span class="ruby-value">:force</span>, <span class="ruby-value">:type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:boolean</span>, <span class="ruby-value">:aliases</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;-f&quot;</span>, <span class="ruby-value">:group</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:runtime</span>,
+                       <span class="ruby-value">:desc</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Overwrite files that already exist&quot;</span>
+
+  <span class="ruby-identifier">class_option</span> <span class="ruby-value">:pretend</span>, <span class="ruby-value">:type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:boolean</span>, <span class="ruby-value">:aliases</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;-p&quot;</span>, <span class="ruby-value">:group</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:runtime</span>,
+                         <span class="ruby-value">:desc</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Run but do not make any changes&quot;</span>
+
+  <span class="ruby-identifier">class_option</span> <span class="ruby-value">:quiet</span>, <span class="ruby-value">:type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:boolean</span>, <span class="ruby-value">:aliases</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;-q&quot;</span>, <span class="ruby-value">:group</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:runtime</span>,
+                       <span class="ruby-value">:desc</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Supress status output&quot;</span>
+
+  <span class="ruby-identifier">class_option</span> <span class="ruby-value">:skip</span>, <span class="ruby-value">:type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:boolean</span>, <span class="ruby-value">:aliases</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;-s&quot;</span>, <span class="ruby-value">:group</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:runtime</span>,
+                      <span class="ruby-value">:desc</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Skip files that already exist&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_runtime_options-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_runtime_options-21-method -->
+
+    
+      <div id="method-i-source_paths" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">source_paths</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Hold source paths for one <a href="../../Thor.html">Thor</a> instance. <a
+href="ClassMethods.html#method-i-source_paths_for_search">#source_paths_for_search</a>
+is the method responsible to gather <a
+href="ClassMethods.html#method-i-source_paths">#source_paths</a> from this
+current class, inherited paths and the source root.</p>
+          
+
+          
+          <div class="method-source-code" id="source_paths-source">
+            <pre><span class="ruby-comment"># File lib/thor/actions.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">source_paths</span>
+  <span class="ruby-ivar">@_source_paths</span> <span class="ruby-operator">||=</span> []
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- source_paths-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- source_paths-method -->
+
+    
+      <div id="method-i-source_paths_for_search" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">source_paths_for_search</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the source paths in the following order:</p>
+
+<pre class="ruby"><span class="ruby-value">1</span>) <span class="ruby-constant">This</span> <span class="ruby-keyword">class</span> <span class="ruby-identifier">source</span> <span class="ruby-identifier">paths</span>
+<span class="ruby-value">2</span>) <span class="ruby-constant">Source</span> <span class="ruby-identifier">root</span>
+<span class="ruby-value">3</span>) <span class="ruby-constant">Parents</span> <span class="ruby-identifier">source</span> <span class="ruby-identifier">paths</span>
+</pre>
+          
+
+          
+          <div class="method-source-code" id="source_paths_for_search-source">
+            <pre><span class="ruby-comment"># File lib/thor/actions.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">source_paths_for_search</span>
+  <span class="ruby-identifier">paths</span> = []
+  <span class="ruby-identifier">paths</span> <span class="ruby-operator">+=</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">source_paths</span>
+  <span class="ruby-identifier">paths</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">source_root</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">source_root</span>
+  <span class="ruby-identifier">paths</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">from_superclass</span>(<span class="ruby-value">:source_paths</span>, [])
+  <span class="ruby-identifier">paths</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- source_paths_for_search-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- source_paths_for_search-method -->
+
+    
+      <div id="method-i-source_root" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">source_root</span><span
+            class="method-args">(path=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Stores and return the source root for this class</p>
+          
+
+          
+          <div class="method-source-code" id="source_root-source">
+            <pre><span class="ruby-comment"># File lib/thor/actions.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">source_root</span>(<span class="ruby-identifier">path</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-ivar">@_source_root</span> = <span class="ruby-identifier">path</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">path</span>
+  <span class="ruby-ivar">@_source_root</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- source_root-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- source_root-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

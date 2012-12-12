@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Sprockets::DirectiveProcessor - sprockets-2.1.3 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/sprockets/directive_processor.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Tilt::Template
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-compat-3F">#compat?</a>
+    
+    <li><a href="#method-i-constants">#constants</a>
+    
+    <li><a href="#method-i-directives">#directives</a>
+    
+    <li><a href="#method-i-evaluate">#evaluate</a>
+    
+    <li><a href="#method-i-prepare">#prepare</a>
+    
+    <li><a href="#method-i-process_compat_directive">#process_compat_directive</a>
+    
+    <li><a href="#method-i-process_depend_on_asset_directive">#process_depend_on_asset_directive</a>
+    
+    <li><a href="#method-i-process_depend_on_directive">#process_depend_on_directive</a>
+    
+    <li><a href="#method-i-process_directives">#process_directives</a>
+    
+    <li><a href="#method-i-process_include_directive">#process_include_directive</a>
+    
+    <li><a href="#method-i-process_provide_directive">#process_provide_directive</a>
+    
+    <li><a href="#method-i-process_require_directive">#process_require_directive</a>
+    
+    <li><a href="#method-i-process_require_directory_directive">#process_require_directory_directive</a>
+    
+    <li><a href="#method-i-process_require_self_directive">#process_require_self_directive</a>
+    
+    <li><a href="#method-i-process_require_tree_directive">#process_require_tree_directive</a>
+    
+    <li><a href="#method-i-process_source">#process_source</a>
+    
+    <li><a href="#method-i-processed_header">#processed_header</a>
+    
+    <li><a href="#method-i-processed_source">#processed_source</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Sprockets.html">Sprockets</a>
+  
+    <li><a href="../Sprockets/ArgumentError.html">Sprockets::ArgumentError</a>
+  
+    <li><a href="../Sprockets/Asset.html">Sprockets::Asset</a>
+  
+    <li><a href="../Sprockets/AssetAttributes.html">Sprockets::AssetAttributes</a>
+  
+    <li><a href="../Sprockets/Base.html">Sprockets::Base</a>
+  
+    <li><a href="../Sprockets/BundledAsset.html">Sprockets::BundledAsset</a>
+  
+    <li><a href="../Sprockets/Cache.html">Sprockets::Cache</a>
+  
+    <li><a href="../Sprockets/Cache/FileStore.html">Sprockets::Cache::FileStore</a>
+  
+    <li><a href="../Sprockets/Caching.html">Sprockets::Caching</a>
+  
+    <li><a href="../Sprockets/CharsetNormalizer.html">Sprockets::CharsetNormalizer</a>
+  
+    <li><a href="../Sprockets/CircularDependencyError.html">Sprockets::CircularDependencyError</a>
+  
+    <li><a href="../Sprockets/ContentTypeMismatch.html">Sprockets::ContentTypeMismatch</a>
+  
+    <li><a href="../Sprockets/Context.html">Sprockets::Context</a>
+  
+    <li><a href="../Sprockets/DirectiveProcessor.html">Sprockets::DirectiveProcessor</a>
+  
+    <li><a href="../Sprockets/EcoTemplate.html">Sprockets::EcoTemplate</a>
+  
+    <li><a href="../Sprockets/EjsTemplate.html">Sprockets::EjsTemplate</a>
+  
+    <li><a href="../Sprockets/EncodingError.html">Sprockets::EncodingError</a>
+  
+    <li><a href="../Sprockets/EngineError.html">Sprockets::EngineError</a>
+  
+    <li><a href="../Sprockets/Engines.html">Sprockets::Engines</a>
+  
+    <li><a href="../Sprockets/Environment.html">Sprockets::Environment</a>
+  
+    <li><a href="../Sprockets/Error.html">Sprockets::Error</a>
+  
+    <li><a href="../Sprockets/FileNotFound.html">Sprockets::FileNotFound</a>
+  
+    <li><a href="../Sprockets/FileOutsidePaths.html">Sprockets::FileOutsidePaths</a>
+  
+    <li><a href="../Sprockets/Index.html">Sprockets::Index</a>
+  
+    <li><a href="../Sprockets/JstProcessor.html">Sprockets::JstProcessor</a>
+  
+    <li><a href="../Sprockets/Mime.html">Sprockets::Mime</a>
+  
+    <li><a href="../Sprockets/ProcessedAsset.html">Sprockets::ProcessedAsset</a>
+  
+    <li><a href="../Sprockets/ProcessedAsset/DependencyFile.html">Sprockets::ProcessedAsset::DependencyFile</a>
+  
+    <li><a href="../Sprockets/Processing.html">Sprockets::Processing</a>
+  
+    <li><a href="../Sprockets/Processor.html">Sprockets::Processor</a>
+  
+    <li><a href="../Sprockets/SafetyColons.html">Sprockets::SafetyColons</a>
+  
+    <li><a href="../Sprockets/Server.html">Sprockets::Server</a>
+  
+    <li><a href="../Sprockets/StaticAsset.html">Sprockets::StaticAsset</a>
+  
+    <li><a href="../Sprockets/Trail.html">Sprockets::Trail</a>
+  
+    <li><a href="../Sprockets/UnserializeError.html">Sprockets::UnserializeError</a>
+  
+    <li><a href="../Sprockets/Utils.html">Sprockets::Utils</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Sprockets::DirectiveProcessor</h1>
+
+  <div id="description" class="description">
+    
+<p>The `DirectiveProcessor` is responsible for parsing and evaluating
+directive comments in a source file.</p>
+
+<p>A directive comment starts with a comment prefix, followed by an “=”, then
+the directive name, then any arguments.</p>
+
+<pre class="ruby"><span class="ruby-regexp">%r/</span> <span class="ruby-constant">JavaScript</span>
+<span class="ruby-regexp">%r/</span>= <span class="ruby-identifier">require</span> <span class="ruby-string">&quot;foo&quot;</span>
+
+<span class="ruby-comment"># CoffeeScript</span>
+<span class="ruby-comment">#= require &quot;bar&quot;</span>
+
+   <span class="ruby-constant">CSS</span>
+ <span class="ruby-operator">*=</span> <span class="ruby-identifier">require</span> <span class="ruby-string">&quot;baz&quot;</span>
+</pre>
+
+<p>The <a href="Processor.html">Processor</a> is implemented as a
+`Tilt::Template` and is loosely coupled to <a
+href="../Sprockets.html">Sprockets</a>. This makes it possible to disable
+or modify the processor to do whatever you’d like. You could add your own
+custom directives or invent your own directive syntax.</p>
+
+<p>`Environment#processors` includes `DirectiveProcessor` by default.</p>
+
+<p>To remove the processor entirely:</p>
+
+<pre>env.unregister_processor('text/css', Sprockets::DirectiveProcessor)
+env.unregister_processor('application/javascript', Sprockets::DirectiveProcessor)</pre>
+
+<p>Then inject your own preprocessor:</p>
+
+<pre>env.register_processor('text/css', MyProcessor)</pre>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="DIRECTIVE_PATTERN">DIRECTIVE_PATTERN
+        
+        <dd class="description"><p>Directives are denoted by a `=` followed by the name, then argument list.</p>
+
+<p>A few different styles are allowed:</p>
+
+<pre class="ruby"><span class="ruby-regexp">%r/</span> =<span class="ruby-identifier">require</span> <span class="ruby-identifier">foo</span>
+<span class="ruby-regexp">%r/</span>= <span class="ruby-identifier">require</span> <span class="ruby-identifier">foo</span>
+<span class="ruby-regexp">%r/</span>= <span class="ruby-identifier">require</span> <span class="ruby-string">&quot;foo&quot;</span>
+</pre>
+        
+      
+        <dt id="HEADER_PATTERN">HEADER_PATTERN
+        
+        <dd class="description"><p>Directives will only be picked up if they are in the header of the source
+file. C style (     ), JavaScript (//), and Ruby (#) comments are
+supported.</p>
+
+<p>Directives in comments after the first non-whitespace line of code will not
+be processed.</p>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-body" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">body</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-context" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">context</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-header" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">header</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-included_pathnames" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">included_pathnames</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-pathname" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">pathname</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-directives" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">directives</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns an Array of directive structures. Each structure is an Array with
+the line number as the first element, the directive name as the second
+element, followed by any arguments.</p>
+
+<pre class="ruby">[[<span class="ruby-value">1</span>, <span class="ruby-string">&quot;require&quot;</span>, <span class="ruby-string">&quot;foo&quot;</span>], [<span class="ruby-value">2</span>, <span class="ruby-string">&quot;require&quot;</span>, <span class="ruby-string">&quot;bar&quot;</span>]]
+</pre>
+          
+
+          
+          <div class="method-source-code" id="directives-source">
+            <pre><span class="ruby-comment"># File lib/sprockets/directive_processor.rb, line 125</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">directives</span>
+  <span class="ruby-ivar">@directives</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">header</span>.<span class="ruby-identifier">lines</span>.<span class="ruby-identifier">each_with_index</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">directive</span> = <span class="ruby-identifier">line</span>[<span class="ruby-constant">DIRECTIVE_PATTERN</span>, <span class="ruby-value">1</span>]
+      <span class="ruby-identifier">name</span>, *<span class="ruby-identifier">args</span> = <span class="ruby-constant">Shellwords</span>.<span class="ruby-identifier">shellwords</span>(<span class="ruby-identifier">directive</span>)
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">respond_to?</span>(<span class="ruby-node">&quot;process_#{name}_directive&quot;</span>)
+        [<span class="ruby-identifier">index</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>, <span class="ruby-identifier">name</span>, *<span class="ruby-identifier">args</span>]
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  }.<span class="ruby-identifier">compact</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- directives-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- directives-method -->
+
+    
+      <div id="method-i-evaluate" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">evaluate</span><span
+            class="method-args">(context, locals, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Implemented for Tilt#render.</p>
+
+<p>`context` is a `Context` instance with methods that allow you to access the
+environment and append to the bundle. See `Context` for the complete API.</p>
+          
+
+          
+          <div class="method-source-code" id="evaluate-source">
+            <pre><span class="ruby-comment"># File lib/sprockets/directive_processor.rb, line 91</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">evaluate</span>(<span class="ruby-identifier">context</span>, <span class="ruby-identifier">locals</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-ivar">@context</span> = <span class="ruby-identifier">context</span>
+
+  <span class="ruby-ivar">@result</span> = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-ivar">@has_written_body</span> = <span class="ruby-keyword">false</span>
+
+  <span class="ruby-identifier">process_directives</span>
+  <span class="ruby-identifier">process_source</span>
+
+  <span class="ruby-ivar">@result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- evaluate-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- evaluate-method -->
+
+    
+      <div id="method-i-prepare" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">prepare</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="prepare-source">
+            <pre><span class="ruby-comment"># File lib/sprockets/directive_processor.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">prepare</span>
+  <span class="ruby-ivar">@pathname</span> = <span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">file</span>)
+
+  <span class="ruby-ivar">@header</span> = <span class="ruby-identifier">data</span>[<span class="ruby-constant">HEADER_PATTERN</span>, <span class="ruby-value">0</span>] <span class="ruby-operator">||</span> <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-ivar">@body</span>   = <span class="ruby-node">$'</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">data</span>
+  <span class="ruby-comment"># Ensure body ends in a new line</span>
+  <span class="ruby-ivar">@body</span>  <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;\n&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@body</span> <span class="ruby-operator">!=</span> <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@body</span> <span class="ruby-operator">!~</span> <span class="ruby-regexp">%r\n\Z/</span>
+
+  <span class="ruby-ivar">@included_pathnames</span> = []
+  <span class="ruby-ivar">@compat</span>             = <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- prepare-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- prepare-method -->
+
+    
+      <div id="method-i-processed_header" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">processed_header</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the header String with any directives stripped.</p>
+          
+
+          
+          <div class="method-source-code" id="processed_header-source">
+            <pre><span class="ruby-comment"># File lib/sprockets/directive_processor.rb, line 104</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">processed_header</span>
+  <span class="ruby-identifier">lineno</span> = <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@processed_header</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">header</span>.<span class="ruby-identifier">lines</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">lineno</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+    <span class="ruby-comment"># Replace directive line with a clean break</span>
+    <span class="ruby-identifier">directives</span>.<span class="ruby-identifier">assoc</span>(<span class="ruby-identifier">lineno</span>) <span class="ruby-operator">?</span> <span class="ruby-string">&quot;\n&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">line</span>
+  }.<span class="ruby-identifier">join</span>.<span class="ruby-identifier">chomp</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- processed_header-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- processed_header-method -->
+
+    
+      <div id="method-i-processed_source" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">processed_source</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the source String with any directives stripped.</p>
+          
+
+          
+          <div class="method-source-code" id="processed_source-source">
+            <pre><span class="ruby-comment"># File lib/sprockets/directive_processor.rb, line 114</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">processed_source</span>
+  <span class="ruby-ivar">@processed_source</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">processed_header</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">body</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- processed_source-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- processed_source-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+     <section id="protected-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Protected Instance Methods</h3>
+
+    
+      <div id="method-i-compat-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">compat?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Checks if <a href="../Sprockets.html">Sprockets</a> 1.x compat mode enabled</p>
+          
+
+          
+          <div class="method-source-code" id="compat-3F-source">
+            <pre><span class="ruby-comment"># File lib/sprockets/directive_processor.rb, line 355</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">compat?</span>
+  <span class="ruby-ivar">@compat</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- compat-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- compat-3F-method -->
+
+    
+      <div id="method-i-constants" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">constants</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a href="../Sprockets.html">Sprockets</a> 1.x allowed for constant
+interpolation if a constants.yml was present. This is only available if
+compat mode is on.</p>
+          
+
+          
+          <div class="method-source-code" id="constants-source">
+            <pre><span class="ruby-comment"># File lib/sprockets/directive_processor.rb, line 362</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">constants</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">compat?</span>
+    <span class="ruby-identifier">pathname</span> = <span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">context</span>.<span class="ruby-identifier">root_path</span>).<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;constants.yml&quot;</span>)
+    <span class="ruby-identifier">stat</span>(<span class="ruby-identifier">pathname</span>) <span class="ruby-operator">?</span> <span class="ruby-constant">YAML</span>.<span class="ruby-identifier">load_file</span>(<span class="ruby-identifier">pathname</span>) <span class="ruby-operator">:</span> {}
+  <span class="ruby-keyword">else</span>
+    {}
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- constants-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- constants-method -->
+
+    
+      <div id="method-i-process_compat_directive" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">process_compat_directive</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Enable <a href="../Sprockets.html">Sprockets</a> 1.x compat mode.</p>
+
+<p>Makes it possible to use the same JavaScript source file in both <a
+href="../Sprockets.html">Sprockets</a> 1 and 2.</p>
+
+<pre>//= compat</pre>
+          
+
+          
+          <div class="method-source-code" id="process_compat_directive-source">
+            <pre><span class="ruby-comment"># File lib/sprockets/directive_processor.rb, line 350</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">process_compat_directive</span>
+  <span class="ruby-ivar">@compat</span> = <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- process_compat_directive-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- process_compat_directive-method -->
+
+    
+      <div id="method-i-process_depend_on_asset_directive" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">process_depend_on_asset_directive</span><span
+            class="method-args">(path)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Allows you to state a dependency on an asset without including it.</p>
+
+<p>This is used for caching purposes. Any changes that would invalid the asset
+dependency will invalidate the cache our the source file.</p>
+
+<p>Unlike `depend_on`, the path must be a requirable asset.</p>
+
+<pre>//= depend_on_asset &quot;bar.js&quot;</pre>
+          
+
+          
+          <div class="method-source-code" id="process_depend_on_asset_directive-source">
+            <pre><span class="ruby-comment"># File lib/sprockets/directive_processor.rb, line 339</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">process_depend_on_asset_directive</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-identifier">context</span>.<span class="ruby-identifier">depend_on_asset</span>(<span class="ruby-identifier">path</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- process_depend_on_asset_directive-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- process_depend_on_asset_directive-method -->
+
+    
+      <div id="method-i-process_depend_on_directive" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">process_depend_on_directive</span><span
+            class="method-args">(path)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Allows you to state a dependency on a file without including it.</p>
+
+<p>This is used for caching purposes. Any changes made to the dependency file
+will invalidate the cache of the source file.</p>
+
+<p>This is useful if you are using ERB and File.read to pull in contents from
+another file.</p>
+
+<pre>//= depend_on &quot;foo.png&quot;</pre>
+          
+
+          
+          <div class="method-source-code" id="process_depend_on_directive-source">
+            <pre><span class="ruby-comment"># File lib/sprockets/directive_processor.rb, line 324</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">process_depend_on_directive</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-identifier">context</span>.<span class="ruby-identifier">depend_on</span>(<span class="ruby-identifier">path</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- process_depend_on_directive-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- process_depend_on_directive-method -->
+
+    
+      <div id="method-i-process_directives" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">process_directives</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Gathers comment directives in the source and processes them. Any directive
+method matching `process_*_directive` will automatically be available. This
+makes it easy to extend the processor.</p>
+
+<p>To implement a custom directive called `require_glob`, subclass
+`Sprockets::DirectiveProcessor`, then add a method called
+`process_require_glob_directive`.</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">DirectiveProcessor</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Sprockets</span><span class="ruby-operator">::</span><span class="ruby-constant">DirectiveProcessor</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">process_require_glob_directive</span>
+    <span class="ruby-constant">Dir</span>[<span class="ruby-node">&quot;#{pathname.dirname}/#{glob}&quot;</span>].<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">filename</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">require</span>(<span class="ruby-identifier">filename</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>Replace the current processor on the environment with your own:</p>
+
+<pre>env.unregister_processor('text/css', Sprockets::DirectiveProcessor)
+env.register_processor('text/css', DirectiveProcessor)</pre>
+          
+
+          
+          <div class="method-source-code" id="process_directives-source">
+            <pre><span class="ruby-comment"># File lib/sprockets/directive_processor.rb, line 162</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">process_directives</span>
+  <span class="ruby-identifier">directives</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line_number</span>, <span class="ruby-identifier">name</span>, *<span class="ruby-identifier">args</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">context</span>.<span class="ruby-identifier">__LINE__</span> = <span class="ruby-identifier">line_number</span>
+    <span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;process_#{name}_directive&quot;</span>, *<span class="ruby-identifier">args</span>)
+    <span class="ruby-identifier">context</span>.<span class="ruby-identifier">__LINE__</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- process_directives-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- process_directives-method -->
+
+    
+      <div id="method-i-process_include_directive" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">process_include_directive</span><span
+            class="method-args">(path)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The `include` directive works similar to `require` but inserts the contents
+of the dependency even if it already has been required.</p>
+
+<pre>//= include &quot;header&quot;</pre>
+          
+
+          
+          <div class="method-source-code" id="process_include_directive-source">
+            <pre><span class="ruby-comment"># File lib/sprockets/directive_processor.rb, line 246</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">process_include_directive</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-identifier">pathname</span> = <span class="ruby-identifier">context</span>.<span class="ruby-identifier">resolve</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-identifier">context</span>.<span class="ruby-identifier">depend_on_asset</span>(<span class="ruby-identifier">pathname</span>)
+  <span class="ruby-identifier">included_pathnames</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">pathname</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- process_include_directive-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- process_include_directive-method -->
+
+    
+      <div id="method-i-process_provide_directive" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">process_provide_directive</span><span
+            class="method-args">(path)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>`provide` is stubbed out for <a href="../Sprockets.html">Sprockets</a> 1.x
+compat. Mutating the path when an asset is being built is not permitted.</p>
+          
+
+          
+          <div class="method-source-code" id="process_provide_directive-source">
+            <pre><span class="ruby-comment"># File lib/sprockets/directive_processor.rb, line 374</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">process_provide_directive</span>(<span class="ruby-identifier">path</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- process_provide_directive-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- process_provide_directive-method -->
+
+    
+      <div id="method-i-process_require_directive" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">process_require_directive</span><span
+            class="method-args">(path)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The `require` directive functions similar to Ruby’s own `require`. It
+provides a way to declare a dependency on a file in your path and ensures
+its only loaded once before the source file.</p>
+
+<p>`require` works with files in the environment path:</p>
+
+<pre class="ruby"><span class="ruby-regexp">%r/</span>= <span class="ruby-identifier">require</span> <span class="ruby-string">&quot;foo.js&quot;</span>
+</pre>
+
+<p>Extensions are optional. If your source file is “.js”, it assumes you are
+requiring another “.js”.</p>
+
+<pre class="ruby"><span class="ruby-regexp">%r/</span>= <span class="ruby-identifier">require</span> <span class="ruby-string">&quot;foo&quot;</span>
+</pre>
+
+<p>Relative paths work too. Use a leading `./` to denote a relative path:</p>
+
+<pre class="ruby"><span class="ruby-regexp">%r/</span>= <span class="ruby-identifier">require</span> <span class="ruby-string">&quot;./bar&quot;</span>
+</pre>
+          
+
+          
+          <div class="method-source-code" id="process_require_directive-source">
+            <pre><span class="ruby-comment"># File lib/sprockets/directive_processor.rb, line 206</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">process_require_directive</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@compat</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">path</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r&lt;([^&gt;]+)&gt;/</span>
+      <span class="ruby-identifier">path</span> = <span class="ruby-node">$1</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">path</span> = <span class="ruby-node">&quot;./#{path}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">relative?</span>(<span class="ruby-identifier">path</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">context</span>.<span class="ruby-identifier">require_asset</span>(<span class="ruby-identifier">path</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- process_require_directive-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- process_require_directive-method -->
+
+    
+      <div id="method-i-process_require_directory_directive" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">process_require_directory_directive</span><span
+            class="method-args">(path = ".")</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>`require_directory` requires all the files inside a single directory. It’s
+similar to `path/*` since it does not follow nested directories.</p>
+
+<pre>//= require_directory &quot;./javascripts&quot;</pre>
+          
+
+          
+          <div class="method-source-code" id="process_require_directory_directive-source">
+            <pre><span class="ruby-comment"># File lib/sprockets/directive_processor.rb, line 258</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">process_require_directory_directive</span>(<span class="ruby-identifier">path</span> = <span class="ruby-string">&quot;.&quot;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">relative?</span>(<span class="ruby-identifier">path</span>)
+    <span class="ruby-identifier">root</span> = <span class="ruby-identifier">pathname</span>.<span class="ruby-identifier">dirname</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">path</span>).<span class="ruby-identifier">expand_path</span>
+
+    <span class="ruby-keyword">unless</span> (<span class="ruby-identifier">stats</span> = <span class="ruby-identifier">stat</span>(<span class="ruby-identifier">root</span>)) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">stats</span>.<span class="ruby-identifier">directory?</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;require_tree argument must be a directory&quot;</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">context</span>.<span class="ruby-identifier">depend_on</span>(<span class="ruby-identifier">root</span>)
+
+    <span class="ruby-identifier">entries</span>(<span class="ruby-identifier">root</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pathname</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">pathname</span> = <span class="ruby-identifier">root</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">pathname</span>)
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">pathname</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">file</span>
+        <span class="ruby-keyword">next</span>
+      <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">context</span>.<span class="ruby-identifier">asset_requirable?</span>(<span class="ruby-identifier">pathname</span>)
+        <span class="ruby-identifier">context</span>.<span class="ruby-identifier">require_asset</span>(<span class="ruby-identifier">pathname</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-comment"># The path must be relative and start with a `./`.</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;require_directory argument must be a relative path&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- process_require_directory_directive-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- process_require_directory_directive-method -->
+
+    
+      <div id="method-i-process_require_self_directive" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">process_require_self_directive</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>`require_self` causes the body of the current file to be inserted before
+any subsequent `require` or `include` directives. Useful in CSS files,
+where it’s common for the index file to contain global styles that need to
+be defined before other dependencies are loaded.</p>
+
+<pre class="ruby"> = <span class="ruby-identifier">require</span> <span class="ruby-string">&quot;reset&quot;</span>
+<span class="ruby-operator">*=</span> <span class="ruby-identifier">require_self</span>
+<span class="ruby-operator">*=</span> <span class="ruby-identifier">require_tree</span> .
+</pre>
+          
+
+          
+          <div class="method-source-code" id="process_require_self_directive-source">
+            <pre><span class="ruby-comment"># File lib/sprockets/directive_processor.rb, line 229</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">process_require_self_directive</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@has_written_body</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;require_self can only be called once per source file&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">context</span>.<span class="ruby-identifier">require_asset</span>(<span class="ruby-identifier">pathname</span>)
+  <span class="ruby-identifier">process_source</span>
+  <span class="ruby-identifier">included_pathnames</span>.<span class="ruby-identifier">clear</span>
+  <span class="ruby-ivar">@has_written_body</span> = <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- process_require_self_directive-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- process_require_self_directive-method -->
+
+    
+      <div id="method-i-process_require_tree_directive" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">process_require_tree_directive</span><span
+            class="method-args">(path = ".")</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>`require_tree` requires all the nested files in a directory. Its glob
+equivalent is `path   /*`.</p>
+
+<pre>//= require_tree &quot;./public&quot;</pre>
+          
+
+          
+          <div class="method-source-code" id="process_require_tree_directive-source">
+            <pre><span class="ruby-comment"># File lib/sprockets/directive_processor.rb, line 287</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">process_require_tree_directive</span>(<span class="ruby-identifier">path</span> = <span class="ruby-string">&quot;.&quot;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">relative?</span>(<span class="ruby-identifier">path</span>)
+    <span class="ruby-identifier">root</span> = <span class="ruby-identifier">pathname</span>.<span class="ruby-identifier">dirname</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">path</span>).<span class="ruby-identifier">expand_path</span>
+
+    <span class="ruby-keyword">unless</span> (<span class="ruby-identifier">stats</span> = <span class="ruby-identifier">stat</span>(<span class="ruby-identifier">root</span>)) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">stats</span>.<span class="ruby-identifier">directory?</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;require_tree argument must be a directory&quot;</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">context</span>.<span class="ruby-identifier">depend_on</span>(<span class="ruby-identifier">root</span>)
+
+    <span class="ruby-identifier">each_entry</span>(<span class="ruby-identifier">root</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pathname</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">pathname</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">file</span>
+        <span class="ruby-keyword">next</span>
+      <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">stat</span>(<span class="ruby-identifier">pathname</span>).<span class="ruby-identifier">directory?</span>
+        <span class="ruby-identifier">context</span>.<span class="ruby-identifier">depend_on</span>(<span class="ruby-identifier">pathname</span>)
+      <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">context</span>.<span class="ruby-identifier">asset_requirable?</span>(<span class="ruby-identifier">pathname</span>)
+        <span class="ruby-identifier">context</span>.<span class="ruby-identifier">require_asset</span>(<span class="ruby-identifier">pathname</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-comment"># The path must be relative and start with a `./`.</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;require_tree argument must be a relative path&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- process_require_tree_directive-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- process_require_tree_directive-method -->
+
+    
+      <div id="method-i-process_source" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">process_source</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="process_source-source">
+            <pre><span class="ruby-comment"># File lib/sprockets/directive_processor.rb, line 170</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">process_source</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@has_written_body</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">processed_header</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-ivar">@result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">processed_header</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;\n&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">included_pathnames</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pathname</span><span class="ruby-operator">|</span>
+    <span class="ruby-ivar">@result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">context</span>.<span class="ruby-identifier">evaluate</span>(<span class="ruby-identifier">pathname</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@has_written_body</span>
+    <span class="ruby-ivar">@result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">body</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">compat?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">constants</span>.<span class="ruby-identifier">any?</span>
+    <span class="ruby-ivar">@result</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">%r&lt;%=(.*?)%&gt;/</span>) { <span class="ruby-identifier">constants</span>[<span class="ruby-node">$1</span>.<span class="ruby-identifier">strip</span>] }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- process_source-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- process_source-method -->
+
+    
+    </section><!-- protected-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

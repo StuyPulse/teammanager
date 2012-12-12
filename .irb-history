@@ -1,0 +1,83 @@
+Student.find
+Student.find(:all)
+User.find(1)
+user = User.new(:email => "test@g.com", :password => "test")
+user.save
+User.create(:email => "test", :password => "test")
+User.errors
+@user = User.new(:email => "test", :password => "test")
+@user
+@user.error
+@user = User.new(:email => "test", :password => "testtt")
+@user = User.new(:email => "test@gmail.com", :password => "testtt")
+@user.save
+@user.errors
+x = Student.new(:first_name => "Hello")
+x.errors
+x = Student.new(first_name: "Hello", last_name: "World")
+x.save
+x = Student.new(first_name: "Hello", last_name: "World", phone_number: "1313131313")
+x = Student.new(first_name: "Hello", last_name: "World", cell_phone: "1313131313")
+x = Student.create(first_name: "Hello", last_name: "World", cell_phone: "1313131313")
+x = Student.create(first_name: "Hello", last_name: "World", student_cell_phone: "1313131313")
+Student.all[0].email
+exit
+user
+users
+User.create(email: "me@me.com", password: "me")
+user = User.create(email: "me@me.com", password: "me")
+user = User.create(email: "me@me.com", password: "mememe")
+user.errors
+t = User.new()
+t = User.new(email: "me@me.com", password: "123456")
+t.save
+t.errors
+Student.all[0]
+User.create(email: "me@me.com", password: "123456")
+me = Student.find(0)
+safety_test
+Safety_Test
+Student.
+attributes
+Student.find(1).attributes
+:q
+ActiveRecord::Base.connection.tables
+Student
+Student.new()
+Student.errors
+me = Student.new
+me = Student.new(first_name: "Philipp", last_name: "Steinmann")
+me = Student.new(first_name: "Philipp", last_name: "Steinmann", student_cell_phone: "3476591618")
+end
+me = Student.new(first_name: "Philipp", last_name: "Steinmann", student_cell_phone: "3476591618", parent_home_phone: "12121212", parent_cell_phone: "12121")
+me.save
+me.errors
+me
+me.class
+me.type
+me.safety_tests
+Student.all
+me.team_dues
+User.create(email: "me@me.com", password: "1123456")
+User
+User.all
+User.count
+me = Student.find(1)
+me.name
+me.full_name
+form = me.medical_forms.new(date: "2013")
+form.save
+form.errors
+form.date
+"HELLO".lowercase
+"HELLO".downcase
+x = []
+x << 2
+x << [2]
+x
+"TRUE".downcase
+false.to_s
+.team_dues.order('year DESC').first.is_valid? ?
+ "yes" : "no"
+Student.find(1).team_dues.order('year DESC').first.is_valid? ?
+"yes" : "no"

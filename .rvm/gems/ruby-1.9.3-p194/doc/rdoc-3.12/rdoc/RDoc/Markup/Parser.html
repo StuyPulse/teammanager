@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class RDoc::Markup::Parser - rdoc-3.12 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/rdoc/markup/parser.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="../Text.html">RDoc::Text</a>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-c-parse">::parse</a>
+    
+    <li><a href="#method-c-tokenize">::tokenize</a>
+    
+    <li><a href="#method-i-build_heading">#build_heading</a>
+    
+    <li><a href="#method-i-build_list">#build_list</a>
+    
+    <li><a href="#method-i-build_paragraph">#build_paragraph</a>
+    
+    <li><a href="#method-i-build_verbatim">#build_verbatim</a>
+    
+    <li><a href="#method-i-get">#get</a>
+    
+    <li><a href="#method-i-parse">#parse</a>
+    
+    <li><a href="#method-i-peek_token">#peek_token</a>
+    
+    <li><a href="#method-i-skip">#skip</a>
+    
+    <li><a href="#method-i-token_pos">#token_pos</a>
+    
+    <li><a href="#method-i-tokenize">#tokenize</a>
+    
+    <li><a href="#method-i-unget">#unget</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../DEVELOPERS_rdoc.html">DEVELOPERS</a>
+  
+    <li class="file"><a href="../../History_rdoc.html">History</a>
+  
+    <li class="file"><a href="../../LEGAL_rdoc.html">LEGAL</a>
+  
+    <li class="file"><a href="../../LICENSE_rdoc.html">LICENSE</a>
+  
+    <li class="file"><a href="../../Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="../../README_rdoc.html">README</a>
+  
+    <li class="file"><a href="../../RI_rdoc.html">RI</a>
+  
+    <li class="file"><a href="../../Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="../../TODO_rdoc.html">TODO</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../RDoc.html">RDoc</a>
+  
+    <li><a href="../../RDoc/Alias.html">RDoc::Alias</a>
+  
+    <li><a href="../../RDoc/AnonClass.html">RDoc::AnonClass</a>
+  
+    <li><a href="../../RDoc/AnyMethod.html">RDoc::AnyMethod</a>
+  
+    <li><a href="../../RDoc/Attr.html">RDoc::Attr</a>
+  
+    <li><a href="../../RDoc/ClassModule.html">RDoc::ClassModule</a>
+  
+    <li><a href="../../RDoc/CodeObject.html">RDoc::CodeObject</a>
+  
+    <li><a href="../../RDoc/Comment.html">RDoc::Comment</a>
+  
+    <li><a href="../../RDoc/Constant.html">RDoc::Constant</a>
+  
+    <li><a href="../../RDoc/Context.html">RDoc::Context</a>
+  
+    <li><a href="../../RDoc/Context/Section.html">RDoc::Context::Section</a>
+  
+    <li><a href="../../RDoc/CrossReference.html">RDoc::CrossReference</a>
+  
+    <li><a href="../../RDoc/ERBIO.html">RDoc::ERBIO</a>
+  
+    <li><a href="../../RDoc/Encoding.html">RDoc::Encoding</a>
+  
+    <li><a href="../../RDoc/Error.html">RDoc::Error</a>
+  
+    <li><a href="../../RDoc/Gauntlet.html">RDoc::Gauntlet</a>
+  
+    <li><a href="../../RDoc/Generator.html">RDoc::Generator</a>
+  
+    <li><a href="../../RDoc/Generator/Darkfish.html">RDoc::Generator::Darkfish</a>
+  
+    <li><a href="../../RDoc/Generator/JsonIndex.html">RDoc::Generator::JsonIndex</a>
+  
+    <li><a href="../../RDoc/Generator/Markup.html">RDoc::Generator::Markup</a>
+  
+    <li><a href="../../RDoc/Generator/RI.html">RDoc::Generator::RI</a>
+  
+    <li><a href="../../RDoc/GhostMethod.html">RDoc::GhostMethod</a>
+  
+    <li><a href="../../RDoc/Include.html">RDoc::Include</a>
+  
+    <li><a href="../../RDoc/Markup.html">RDoc::Markup</a>
+  
+    <li><a href="../../RDoc/Markup/AttrChanger.html">RDoc::Markup::AttrChanger</a>
+  
+    <li><a href="../../RDoc/Markup/AttrSpan.html">RDoc::Markup::AttrSpan</a>
+  
+    <li><a href="../../RDoc/Markup/Attribute.html">RDoc::Markup::Attribute</a>
+  
+    <li><a href="../../RDoc/Markup/AttributeManager.html">RDoc::Markup::AttributeManager</a>
+  
+    <li><a href="../../RDoc/Markup/BlankLine.html">RDoc::Markup::BlankLine</a>
+  
+    <li><a href="../../RDoc/Markup/Document.html">RDoc::Markup::Document</a>
+  
+    <li><a href="../../RDoc/Markup/Formatter.html">RDoc::Markup::Formatter</a>
+  
+    <li><a href="../../RDoc/Markup/FormatterTestCase.html">RDoc::Markup::FormatterTestCase</a>
+  
+    <li><a href="../../RDoc/Markup/Heading.html">RDoc::Markup::Heading</a>
+  
+    <li><a href="../../RDoc/Markup/Include.html">RDoc::Markup::Include</a>
+  
+    <li><a href="../../RDoc/Markup/IndentedParagraph.html">RDoc::Markup::IndentedParagraph</a>
+  
+    <li><a href="../../RDoc/Markup/List.html">RDoc::Markup::List</a>
+  
+    <li><a href="../../RDoc/Markup/ListItem.html">RDoc::Markup::ListItem</a>
+  
+    <li><a href="../../RDoc/Markup/Paragraph.html">RDoc::Markup::Paragraph</a>
+  
+    <li><a href="../../RDoc/Markup/Parser.html">RDoc::Markup::Parser</a>
+  
+    <li><a href="../../RDoc/Markup/Parser/Error.html">RDoc::Markup::Parser::Error</a>
+  
+    <li><a href="../../RDoc/Markup/Parser/ParseError.html">RDoc::Markup::Parser::ParseError</a>
+  
+    <li><a href="../../RDoc/Markup/PreProcess.html">RDoc::Markup::PreProcess</a>
+  
+    <li><a href="../../RDoc/Markup/Raw.html">RDoc::Markup::Raw</a>
+  
+    <li><a href="../../RDoc/Markup/Rule.html">RDoc::Markup::Rule</a>
+  
+    <li><a href="../../RDoc/Markup/Special.html">RDoc::Markup::Special</a>
+  
+    <li><a href="../../RDoc/Markup/TextFormatterTestCase.html">RDoc::Markup::TextFormatterTestCase</a>
+  
+    <li><a href="../../RDoc/Markup/ToAnsi.html">RDoc::Markup::ToAnsi</a>
+  
+    <li><a href="../../RDoc/Markup/ToBs.html">RDoc::Markup::ToBs</a>
+  
+    <li><a href="../../RDoc/Markup/ToHtml.html">RDoc::Markup::ToHtml</a>
+  
+    <li><a href="../../RDoc/Markup/ToHtmlCrossref.html">RDoc::Markup::ToHtmlCrossref</a>
+  
+    <li><a href="../../RDoc/Markup/ToHtmlSnippet.html">RDoc::Markup::ToHtmlSnippet</a>
+  
+    <li><a href="../../RDoc/Markup/ToLabel.html">RDoc::Markup::ToLabel</a>
+  
+    <li><a href="../../RDoc/Markup/ToRdoc.html">RDoc::Markup::ToRdoc</a>
+  
+    <li><a href="../../RDoc/Markup/ToTableOfContents.html">RDoc::Markup::ToTableOfContents</a>
+  
+    <li><a href="../../RDoc/Markup/ToTest.html">RDoc::Markup::ToTest</a>
+  
+    <li><a href="../../RDoc/Markup/ToTtOnly.html">RDoc::Markup::ToTtOnly</a>
+  
+    <li><a href="../../RDoc/Markup/Verbatim.html">RDoc::Markup::Verbatim</a>
+  
+    <li><a href="../../RDoc/MetaMethod.html">RDoc::MetaMethod</a>
+  
+    <li><a href="../../RDoc/MethodAttr.html">RDoc::MethodAttr</a>
+  
+    <li><a href="../../RDoc/NormalClass.html">RDoc::NormalClass</a>
+  
+    <li><a href="../../RDoc/NormalModule.html">RDoc::NormalModule</a>
+  
+    <li><a href="../../RDoc/Options.html">RDoc::Options</a>
+  
+    <li><a href="../../RDoc/Parser.html">RDoc::Parser</a>
+  
+    <li><a href="../../RDoc/Parser/C.html">RDoc::Parser::C</a>
+  
+    <li><a href="../../RDoc/Parser/RD.html">RDoc::Parser::RD</a>
+  
+    <li><a href="../../RDoc/Parser/Ruby.html">RDoc::Parser::Ruby</a>
+  
+    <li><a href="../../RDoc/Parser/RubyTools.html">RDoc::Parser::RubyTools</a>
+  
+    <li><a href="../../RDoc/Parser/Simple.html">RDoc::Parser::Simple</a>
+  
+    <li><a href="../../RDoc/Parser/Text.html">RDoc::Parser::Text</a>
+  
+    <li><a href="../../RDoc/RD.html">RDoc::RD</a>
+  
+    <li><a href="../../RDoc/RD/Inline.html">RDoc::RD::Inline</a>
+  
+    <li><a href="../../RDoc/RDoc.html">RDoc::RDoc</a>
+  
+    <li><a href="../../RDoc/RI.html">RDoc::RI</a>
+  
+    <li><a href="../../RDoc/RI/Driver.html">RDoc::RI::Driver</a>
+  
+    <li><a href="../../RDoc/RI/Driver/Error.html">RDoc::RI::Driver::Error</a>
+  
+    <li><a href="../../RDoc/RI/Driver/NotFoundError.html">RDoc::RI::Driver::NotFoundError</a>
+  
+    <li><a href="../../RDoc/RI/Error.html">RDoc::RI::Error</a>
+  
+    <li><a href="../../RDoc/RI/Paths.html">RDoc::RI::Paths</a>
+  
+    <li><a href="../../RDoc/RI/Store.html">RDoc::RI::Store</a>
+  
+    <li><a href="../../RDoc/Require.html">RDoc::Require</a>
+  
+    <li><a href="../../RDoc/RubyLex.html">RDoc::RubyLex</a>
+  
+    <li><a href="../../RDoc/RubyLex/Error.html">RDoc::RubyLex::Error</a>
+  
+    <li><a href="../../RDoc/RubyToken.html">RDoc::RubyToken</a>
+  
+    <li><a href="../../RDoc/RubygemsHook.html">RDoc::RubygemsHook</a>
+  
+    <li><a href="../../RDoc/SingleClass.html">RDoc::SingleClass</a>
+  
+    <li><a href="../../RDoc/Stats.html">RDoc::Stats</a>
+  
+    <li><a href="../../RDoc/Stats/Normal.html">RDoc::Stats::Normal</a>
+  
+    <li><a href="../../RDoc/Stats/Quiet.html">RDoc::Stats::Quiet</a>
+  
+    <li><a href="../../RDoc/Stats/Verbose.html">RDoc::Stats::Verbose</a>
+  
+    <li><a href="../../RDoc/Task.html">RDoc::Task</a>
+  
+    <li><a href="../../RDoc/Task.html">RDoc::Task</a>
+  
+    <li><a href="../../RDoc/TestCase.html">RDoc::TestCase</a>
+  
+    <li><a href="../../RDoc/Text.html">RDoc::Text</a>
+  
+    <li><a href="../../RDoc/TokenStream.html">RDoc::TokenStream</a>
+  
+    <li><a href="../../RDoc/TomDoc.html">RDoc::TomDoc</a>
+  
+    <li><a href="../../RDoc/TopLevel.html">RDoc::TopLevel</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class RDoc::Markup::Parser</h1>
+
+  <div id="description" class="description">
+    
+<p>A recursive-descent parser for <a href="../RDoc.html">RDoc</a> markup.</p>
+
+<p>The parser tokenizes an input string then parses the tokens into a <a
+href="Document.html">Document</a>. Documents can be converted into output
+formats by writing a visitor like RDoc::Markup::ToHTML.</p>
+
+<p>The parser only handles the block-level constructs <a
+href="Paragraph.html">Paragraph</a>, <a href="List.html">List</a>, <a
+href="ListItem.html">ListItem</a>, <a href="Heading.html">Heading</a>, <a
+href="Verbatim.html">Verbatim</a>, <a href="BlankLine.html">BlankLine</a>
+and <a href="Rule.html">Rule</a>.  Inline markup such as
+<code>+blah+</code> is handled separately by <a
+href="AttributeManager.html">RDoc::Markup::AttributeManager</a>.</p>
+
+<p>To see what markup the <a href="Parser.html">Parser</a> implements read <a
+href="../RDoc.html">RDoc</a>.  To see how to use <a
+href="../RDoc.html">RDoc</a> markup to format text in your program read <a
+href="../Markup.html">RDoc::Markup</a>.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="LIST_TOKENS">LIST_TOKENS
+        
+        <dd class="description"><p><a href="List.html">List</a> token types</p>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-debug" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">debug</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Enables display of debugging information</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-tokens" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">tokens</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Token accessor</p>
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Creates a new <a href="Parser.html">Parser</a>.  See also <a
+href="Parser.html#method-c-parse">::parse</a></p>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/markup/parser.rb, line 77</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
+  <span class="ruby-ivar">@tokens</span> = []
+  <span class="ruby-ivar">@current_token</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@debug</span> = <span class="ruby-keyword">false</span>
+
+  <span class="ruby-ivar">@line</span> = <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@line_pos</span> = <span class="ruby-value">0</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+      <div id="method-c-parse" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parse</span><span
+            class="method-args">(str)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Parses <code>str</code> into a <a href="Document.html">Document</a>.</p>
+
+<p>Use RDoc::Markup#parse instead of this method.</p>
+          
+
+          
+          <div class="method-source-code" id="parse-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/markup/parser.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">parse</span> <span class="ruby-identifier">str</span>
+  <span class="ruby-identifier">parser</span> = <span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">tokenize</span> <span class="ruby-identifier">str</span>
+  <span class="ruby-identifier">doc</span> = <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">parse</span> <span class="ruby-identifier">doc</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- parse-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- parse-method -->
+
+    
+      <div id="method-c-tokenize" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">tokenize</span><span
+            class="method-args">(str)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a token stream for <code>str</code>, for testing</p>
+          
+
+          
+          <div class="method-source-code" id="tokenize-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/markup/parser.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tokenize</span> <span class="ruby-identifier">str</span>
+  <span class="ruby-identifier">parser</span> = <span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">tokenize</span> <span class="ruby-identifier">str</span>
+  <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">tokens</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- tokenize-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- tokenize-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-build_heading" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">build_heading</span><span
+            class="method-args">(level)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Builds a <a href="Heading.html">Heading</a> of <code>level</code></p>
+          
+
+          
+          <div class="method-source-code" id="build_heading-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/markup/parser.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">build_heading</span> <span class="ruby-identifier">level</span>
+  <span class="ruby-identifier">type</span>, <span class="ruby-identifier">text</span>, = <span class="ruby-identifier">get</span>
+
+  <span class="ruby-identifier">text</span> = <span class="ruby-keyword">case</span> <span class="ruby-identifier">type</span>
+         <span class="ruby-keyword">when</span> <span class="ruby-value">:TEXT</span> <span class="ruby-keyword">then</span>
+           <span class="ruby-identifier">skip</span> <span class="ruby-value">:NEWLINE</span>
+           <span class="ruby-identifier">text</span>
+         <span class="ruby-keyword">else</span>
+           <span class="ruby-identifier">unget</span>
+           <span class="ruby-string">''</span>
+         <span class="ruby-keyword">end</span>
+
+  <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">Heading</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">level</span>, <span class="ruby-identifier">text</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- build_heading-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- build_heading-method -->
+
+    
+      <div id="method-i-build_list" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">build_list</span><span
+            class="method-args">(margin)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Builds a <a href="List.html">List</a> flush to <code>margin</code></p>
+          
+
+          
+          <div class="method-source-code" id="build_list-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/markup/parser.rb, line 107</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">build_list</span> <span class="ruby-identifier">margin</span>
+  <span class="ruby-identifier">p</span> <span class="ruby-value">:list_start</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">margin</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@debug</span>
+
+  <span class="ruby-identifier">list</span> = <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">List</span>.<span class="ruby-identifier">new</span>
+
+  <span class="ruby-keyword">until</span> <span class="ruby-ivar">@tokens</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">type</span>, <span class="ruby-identifier">data</span>, <span class="ruby-identifier">column</span>, = <span class="ruby-identifier">get</span>
+
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">type</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:BULLET</span>, <span class="ruby-value">:LABEL</span>, <span class="ruby-value">:LALPHA</span>, <span class="ruby-value">:NOTE</span>, <span class="ruby-value">:NUMBER</span>, <span class="ruby-value">:UALPHA</span> <span class="ruby-keyword">then</span>
+
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">column</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">margin</span> <span class="ruby-operator">||</span> (<span class="ruby-identifier">list</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">list</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">type</span>) <span class="ruby-keyword">then</span>
+        <span class="ruby-identifier">unget</span>
+        <span class="ruby-keyword">break</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">list</span>.<span class="ruby-identifier">type</span> = <span class="ruby-identifier">type</span>
+      <span class="ruby-identifier">peek_type</span>, <span class="ruby-identifier">_</span>, <span class="ruby-identifier">column</span>, = <span class="ruby-identifier">peek_token</span>
+
+      <span class="ruby-keyword">case</span> <span class="ruby-identifier">type</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-value">:NOTE</span>, <span class="ruby-value">:LABEL</span> <span class="ruby-keyword">then</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">peek_type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:NEWLINE</span> <span class="ruby-keyword">then</span>
+          <span class="ruby-comment"># description not on the same line as LABEL/NOTE</span>
+          <span class="ruby-comment"># skip the trailing newline &amp; any blank lines below</span>
+          <span class="ruby-keyword">while</span> <span class="ruby-identifier">peek_type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:NEWLINE</span>
+            <span class="ruby-identifier">get</span>
+            <span class="ruby-identifier">peek_type</span>, <span class="ruby-identifier">_</span>, <span class="ruby-identifier">column</span>, = <span class="ruby-identifier">peek_token</span>
+          <span class="ruby-keyword">end</span>
+
+          <span class="ruby-comment"># we may be:</span>
+          <span class="ruby-comment">#   - at end of stream</span>
+          <span class="ruby-comment">#   - at a column &lt; margin:</span>
+          <span class="ruby-comment">#         [text]</span>
+          <span class="ruby-comment">#       blah blah blah</span>
+          <span class="ruby-comment">#   - at the same column, but with a different type of list item</span>
+          <span class="ruby-comment">#       [text]</span>
+          <span class="ruby-comment">#       * blah blah</span>
+          <span class="ruby-comment">#   - at the same column, with the same type of list item</span>
+          <span class="ruby-comment">#       [one]</span>
+          <span class="ruby-comment">#       [two]</span>
+          <span class="ruby-comment"># In all cases, we have an empty description.</span>
+          <span class="ruby-comment"># In the last case only, we continue.</span>
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">peek_type</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">column</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">margin</span> <span class="ruby-keyword">then</span>
+            <span class="ruby-identifier">empty</span> = <span class="ruby-value">1</span>
+          <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">column</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">margin</span> <span class="ruby-keyword">then</span>
+            <span class="ruby-keyword">case</span> <span class="ruby-identifier">peek_type</span>
+            <span class="ruby-keyword">when</span> <span class="ruby-identifier">type</span>
+              <span class="ruby-identifier">empty</span> = <span class="ruby-value">2</span> <span class="ruby-comment"># continue</span>
+            <span class="ruby-keyword">when</span> *<span class="ruby-constant">LIST_TOKENS</span>
+              <span class="ruby-identifier">empty</span> = <span class="ruby-value">1</span>
+            <span class="ruby-keyword">else</span>
+              <span class="ruby-identifier">empty</span> = <span class="ruby-value">0</span>
+            <span class="ruby-keyword">end</span>
+          <span class="ruby-keyword">else</span>
+            <span class="ruby-identifier">empty</span> = <span class="ruby-value">0</span>
+          <span class="ruby-keyword">end</span>
+
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">empty</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span> <span class="ruby-keyword">then</span>
+            <span class="ruby-identifier">item</span> = <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">ListItem</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">data</span>)
+            <span class="ruby-identifier">item</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">BlankLine</span>.<span class="ruby-identifier">new</span>
+            <span class="ruby-identifier">list</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">item</span>
+            <span class="ruby-keyword">break</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">empty</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+            <span class="ruby-keyword">next</span>
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">data</span> = <span class="ruby-keyword">nil</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">list_item</span> = <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">ListItem</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">data</span>
+      <span class="ruby-identifier">parse</span> <span class="ruby-identifier">list_item</span>, <span class="ruby-identifier">column</span>
+      <span class="ruby-identifier">list</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">list_item</span>
+
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">unget</span>
+      <span class="ruby-keyword">break</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">p</span> <span class="ruby-value">:list_end</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">margin</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@debug</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">list</span>.<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-identifier">list</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- build_list-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- build_list-method -->
+
+    
+      <div id="method-i-build_paragraph" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">build_paragraph</span><span
+            class="method-args">(margin)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Builds a <a href="Paragraph.html">Paragraph</a> that is flush to
+<code>margin</code></p>
+          
+
+          
+          <div class="method-source-code" id="build_paragraph-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/markup/parser.rb, line 196</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">build_paragraph</span> <span class="ruby-identifier">margin</span>
+  <span class="ruby-identifier">p</span> <span class="ruby-value">:paragraph_start</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">margin</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@debug</span>
+
+  <span class="ruby-identifier">paragraph</span> = <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">Paragraph</span>.<span class="ruby-identifier">new</span>
+
+  <span class="ruby-keyword">until</span> <span class="ruby-ivar">@tokens</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">type</span>, <span class="ruby-identifier">data</span>, <span class="ruby-identifier">column</span>, = <span class="ruby-identifier">get</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:TEXT</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">column</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">margin</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">paragraph</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">data</span>
+
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">peek_token</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">==</span> <span class="ruby-value">:BREAK</span> <span class="ruby-keyword">then</span>
+        <span class="ruby-keyword">break</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">skip</span> <span class="ruby-value">:NEWLINE</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">unget</span>
+      <span class="ruby-keyword">break</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">p</span> <span class="ruby-value">:paragraph_end</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">margin</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@debug</span>
+
+  <span class="ruby-identifier">paragraph</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- build_paragraph-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- build_paragraph-method -->
+
+    
+      <div id="method-i-build_verbatim" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">build_verbatim</span><span
+            class="method-args">(margin)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Builds a <a href="Verbatim.html">Verbatim</a> that is indented from
+<code>margin</code>.</p>
+
+<p>The verbatim block is shifted left (the least indented lines start in
+column 0).  Each part of the verbatim is one line of text, always
+terminated by a newline.  Blank lines always consist of a single newline
+character, and there is never a single newline at the end of the verbatim.</p>
+          
+
+          
+          <div class="method-source-code" id="build_verbatim-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/markup/parser.rb, line 231</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">build_verbatim</span> <span class="ruby-identifier">margin</span>
+  <span class="ruby-identifier">p</span> <span class="ruby-value">:verbatim_begin</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">margin</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@debug</span>
+  <span class="ruby-identifier">verbatim</span> = <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">Verbatim</span>.<span class="ruby-identifier">new</span>
+
+  <span class="ruby-identifier">min_indent</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">generate_leading_spaces</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">line</span> = <span class="ruby-string">''</span>
+
+  <span class="ruby-keyword">until</span> <span class="ruby-ivar">@tokens</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">type</span>, <span class="ruby-identifier">data</span>, <span class="ruby-identifier">column</span>, = <span class="ruby-identifier">get</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:NEWLINE</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">line</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">data</span>
+      <span class="ruby-identifier">verbatim</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">line</span>
+      <span class="ruby-identifier">line</span> = <span class="ruby-string">''</span>
+      <span class="ruby-identifier">generate_leading_spaces</span> = <span class="ruby-keyword">true</span>
+      <span class="ruby-keyword">next</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">column</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">margin</span>
+      <span class="ruby-identifier">unget</span>
+      <span class="ruby-keyword">break</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">generate_leading_spaces</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">indent</span> = <span class="ruby-identifier">column</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">margin</span>
+      <span class="ruby-identifier">line</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">' '</span> * <span class="ruby-identifier">indent</span>
+      <span class="ruby-identifier">min_indent</span> = <span class="ruby-identifier">indent</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">min_indent</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">indent</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">min_indent</span>
+      <span class="ruby-identifier">generate_leading_spaces</span> = <span class="ruby-keyword">false</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">type</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:HEADER</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">line</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">'='</span> * <span class="ruby-identifier">data</span>
+      <span class="ruby-identifier">_</span>, <span class="ruby-identifier">_</span>, <span class="ruby-identifier">peek_column</span>, = <span class="ruby-identifier">peek_token</span>
+      <span class="ruby-identifier">peek_column</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">column</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">data</span>
+      <span class="ruby-identifier">indent</span> = <span class="ruby-identifier">peek_column</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">column</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">data</span>
+      <span class="ruby-identifier">line</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">' '</span> * <span class="ruby-identifier">indent</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:RULE</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">width</span> = <span class="ruby-value">2</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">data</span>
+      <span class="ruby-identifier">line</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">'-'</span> * <span class="ruby-identifier">width</span>
+      <span class="ruby-identifier">_</span>, <span class="ruby-identifier">_</span>, <span class="ruby-identifier">peek_column</span>, = <span class="ruby-identifier">peek_token</span>
+      <span class="ruby-identifier">peek_column</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">column</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">width</span>
+      <span class="ruby-identifier">indent</span> = <span class="ruby-identifier">peek_column</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">column</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">width</span>
+      <span class="ruby-identifier">line</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">' '</span> * <span class="ruby-identifier">indent</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:BREAK</span>, <span class="ruby-value">:TEXT</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">line</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">data</span>
+    <span class="ruby-keyword">else</span> <span class="ruby-comment"># *LIST_TOKENS</span>
+      <span class="ruby-identifier">list_marker</span> = <span class="ruby-keyword">case</span> <span class="ruby-identifier">type</span>
+                    <span class="ruby-keyword">when</span> <span class="ruby-value">:BULLET</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">data</span>
+                    <span class="ruby-keyword">when</span> <span class="ruby-value">:LABEL</span>  <span class="ruby-keyword">then</span> <span class="ruby-node">&quot;[#{data}]&quot;</span>
+                    <span class="ruby-keyword">when</span> <span class="ruby-value">:NOTE</span>   <span class="ruby-keyword">then</span> <span class="ruby-node">&quot;#{data}::&quot;</span>
+                    <span class="ruby-keyword">else</span> <span class="ruby-comment"># :LALPHA, :NUMBER, :UALPHA</span>
+                      <span class="ruby-node">&quot;#{data}.&quot;</span>
+                    <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">line</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">list_marker</span>
+      <span class="ruby-identifier">peek_type</span>, <span class="ruby-identifier">_</span>, <span class="ruby-identifier">peek_column</span> = <span class="ruby-identifier">peek_token</span>
+      <span class="ruby-keyword">unless</span> <span class="ruby-identifier">peek_type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:NEWLINE</span> <span class="ruby-keyword">then</span>
+        <span class="ruby-identifier">peek_column</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">column</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">list_marker</span>.<span class="ruby-identifier">length</span>
+        <span class="ruby-identifier">indent</span> = <span class="ruby-identifier">peek_column</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">column</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">list_marker</span>.<span class="ruby-identifier">length</span>
+        <span class="ruby-identifier">line</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">' '</span> * <span class="ruby-identifier">indent</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">verbatim</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;\n&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">verbatim</span>.<span class="ruby-identifier">parts</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">slice!</span>(<span class="ruby-value">0</span>, <span class="ruby-identifier">min_indent</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">p</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;\n&quot;</span> } <span class="ruby-keyword">if</span> <span class="ruby-identifier">min_indent</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+  <span class="ruby-identifier">verbatim</span>.<span class="ruby-identifier">normalize</span>
+
+  <span class="ruby-identifier">p</span> <span class="ruby-value">:verbatim_end</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">margin</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@debug</span>
+
+  <span class="ruby-identifier">verbatim</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- build_verbatim-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- build_verbatim-method -->
+
+    
+      <div id="method-i-get" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Pulls the next token from the stream.</p>
+          
+
+          
+          <div class="method-source-code" id="get-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/markup/parser.rb, line 309</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get</span>
+  <span class="ruby-ivar">@current_token</span> = <span class="ruby-ivar">@tokens</span>.<span class="ruby-identifier">shift</span>
+  <span class="ruby-identifier">p</span> <span class="ruby-value">:get</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@current_token</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@debug</span>
+  <span class="ruby-ivar">@current_token</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get-method -->
+
+    
+      <div id="method-i-parse" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parse</span><span
+            class="method-args">(parent, indent = 0)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Parses the tokens into an array of RDoc::Markup::XXX objects, and appends
+them to the passed <code>parent</code> RDoc::Markup::YYY object.</p>
+
+<p>Exits at the end of the token stream, or when it encounters a token in a
+column less than <code>indent</code> (unless it is a NEWLINE).</p>
+
+<p>Returns <code>parent</code>.</p>
+          
+
+          
+          <div class="method-source-code" id="parse-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/markup/parser.rb, line 324</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">parse</span> <span class="ruby-identifier">parent</span>, <span class="ruby-identifier">indent</span> = <span class="ruby-value">0</span>
+  <span class="ruby-identifier">p</span> <span class="ruby-value">:parse_start</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">indent</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@debug</span>
+
+  <span class="ruby-keyword">until</span> <span class="ruby-ivar">@tokens</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">type</span>, <span class="ruby-identifier">data</span>, <span class="ruby-identifier">column</span>, = <span class="ruby-identifier">get</span>
+
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">type</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:BREAK</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">parent</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">BlankLine</span>.<span class="ruby-identifier">new</span>
+      <span class="ruby-identifier">skip</span> <span class="ruby-value">:NEWLINE</span>, <span class="ruby-keyword">false</span>
+      <span class="ruby-keyword">next</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:NEWLINE</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-comment"># trailing newlines are skipped below, so this is a blank line</span>
+      <span class="ruby-identifier">parent</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">BlankLine</span>.<span class="ruby-identifier">new</span>
+      <span class="ruby-identifier">skip</span> <span class="ruby-value">:NEWLINE</span>, <span class="ruby-keyword">false</span>
+      <span class="ruby-keyword">next</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># indentation change: break or verbatim</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">column</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">indent</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">unget</span>
+      <span class="ruby-keyword">break</span>
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">column</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">indent</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">unget</span>
+      <span class="ruby-identifier">parent</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">build_verbatim</span>(<span class="ruby-identifier">indent</span>)
+      <span class="ruby-keyword">next</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># indentation is the same</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">type</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:HEADER</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">parent</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">build_heading</span>(<span class="ruby-identifier">data</span>)
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:RULE</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">parent</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span><span class="ruby-operator">::</span><span class="ruby-constant">Rule</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">data</span>)
+      <span class="ruby-identifier">skip</span> <span class="ruby-value">:NEWLINE</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:TEXT</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">unget</span>
+      <span class="ruby-identifier">parent</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">build_paragraph</span>(<span class="ruby-identifier">indent</span>)
+    <span class="ruby-keyword">when</span> *<span class="ruby-constant">LIST_TOKENS</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">unget</span>
+      <span class="ruby-identifier">parent</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">build_list</span>(<span class="ruby-identifier">indent</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">type</span>, <span class="ruby-identifier">data</span>, <span class="ruby-identifier">column</span>, <span class="ruby-identifier">line</span> = <span class="ruby-ivar">@current_token</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ParseError</span>, <span class="ruby-node">&quot;Unhandled token #{type} (#{data.inspect}) at #{line}:#{column}&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">p</span> <span class="ruby-value">:parse_end</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">indent</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@debug</span>
+
+  <span class="ruby-identifier">parent</span>
+
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- parse-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- parse-method -->
+
+    
+      <div id="method-i-peek_token" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">peek_token</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the next token on the stream without modifying the stream</p>
+          
+
+          
+          <div class="method-source-code" id="peek_token-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/markup/parser.rb, line 380</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">peek_token</span>
+  <span class="ruby-identifier">token</span> = <span class="ruby-ivar">@tokens</span>.<span class="ruby-identifier">first</span> <span class="ruby-operator">||</span> []
+  <span class="ruby-identifier">p</span> <span class="ruby-value">:peek</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">token</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@debug</span>
+  <span class="ruby-identifier">token</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- peek_token-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- peek_token-method -->
+
+    
+      <div id="method-i-skip" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">skip</span><span
+            class="method-args">(token_type, error = true)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Skips the next token if its type is <code>token_type</code>.</p>
+
+<p>Optionally raises an error if the next token is not of the expected type.</p>
+          
+
+          
+          <div class="method-source-code" id="skip-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/markup/parser.rb, line 391</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">skip</span> <span class="ruby-identifier">token_type</span>, <span class="ruby-identifier">error</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">type</span>, = <span class="ruby-identifier">get</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">type</span> <span class="ruby-comment"># end of stream</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@current_token</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">token_type</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">type</span>
+  <span class="ruby-identifier">unget</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ParseError</span>, <span class="ruby-node">&quot;expected #{token_type} got #{@current_token.inspect}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">error</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- skip-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- skip-method -->
+
+    
+      <div id="method-i-token_pos" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">token_pos</span><span
+            class="method-args">(offset)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Calculates the column and line of the current token based on
+<code>offset</code>.</p>
+          
+
+          
+          <div class="method-source-code" id="token_pos-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/markup/parser.rb, line 489</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">token_pos</span> <span class="ruby-identifier">offset</span>
+  [<span class="ruby-identifier">offset</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@line_pos</span>, <span class="ruby-ivar">@line</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- token_pos-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- token_pos-method -->
+
+    
+      <div id="method-i-tokenize" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">tokenize</span><span
+            class="method-args">(input)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Turns text <code>input</code> into a stream of tokens</p>
+          
+
+          
+          <div class="method-source-code" id="tokenize-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/markup/parser.rb, line 402</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">tokenize</span> <span class="ruby-identifier">input</span>
+  <span class="ruby-identifier">s</span> = <span class="ruby-constant">StringScanner</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">input</span>
+
+  <span class="ruby-ivar">@line</span> = <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@line_pos</span> = <span class="ruby-value">0</span>
+
+  <span class="ruby-keyword">until</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">eos?</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">pos</span> = <span class="ruby-identifier">s</span>.<span class="ruby-identifier">pos</span>
+
+    <span class="ruby-comment"># leading spaces will be reflected by the column of the next token</span>
+    <span class="ruby-comment"># the only thing we loose are trailing spaces at the end of the file</span>
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">%r +/</span>)
+
+    <span class="ruby-comment"># note: after BULLET, LABEL, etc.,</span>
+    <span class="ruby-comment"># indent will be the column of the next non-newline token</span>
+
+    <span class="ruby-ivar">@tokens</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">case</span>
+               <span class="ruby-comment"># [CR]LF =&gt; :NEWLINE</span>
+               <span class="ruby-keyword">when</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">%r\r?\n/</span>) <span class="ruby-keyword">then</span>
+                 <span class="ruby-identifier">token</span> = [<span class="ruby-value">:NEWLINE</span>, <span class="ruby-identifier">s</span>.<span class="ruby-identifier">matched</span>, *<span class="ruby-identifier">token_pos</span>(<span class="ruby-identifier">pos</span>)]
+                 <span class="ruby-ivar">@line_pos</span> = <span class="ruby-identifier">s</span>.<span class="ruby-identifier">pos</span>
+                 <span class="ruby-ivar">@line</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+                 <span class="ruby-identifier">token</span>
+               <span class="ruby-comment"># === text =&gt; :HEADER then :TEXT</span>
+               <span class="ruby-keyword">when</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">%r(=+)(\s*)/</span>) <span class="ruby-keyword">then</span>
+                 <span class="ruby-identifier">level</span> = <span class="ruby-identifier">s</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">length</span>
+                 <span class="ruby-identifier">header</span> = [<span class="ruby-value">:HEADER</span>, <span class="ruby-identifier">level</span>, *<span class="ruby-identifier">token_pos</span>(<span class="ruby-identifier">pos</span>)]
+
+                 <span class="ruby-keyword">if</span> <span class="ruby-identifier">s</span>[<span class="ruby-value">2</span>] <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r^\r?\n/</span> <span class="ruby-keyword">then</span>
+                   <span class="ruby-identifier">s</span>.<span class="ruby-identifier">pos</span> <span class="ruby-operator">-=</span> <span class="ruby-identifier">s</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">length</span>
+                   <span class="ruby-identifier">header</span>
+                 <span class="ruby-keyword">else</span>
+                   <span class="ruby-identifier">pos</span> = <span class="ruby-identifier">s</span>.<span class="ruby-identifier">pos</span>
+                   <span class="ruby-identifier">s</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">%r.*/</span>)
+                   <span class="ruby-ivar">@tokens</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">header</span>
+                   [<span class="ruby-value">:TEXT</span>, <span class="ruby-identifier">s</span>.<span class="ruby-identifier">matched</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">%r\r$/</span>, <span class="ruby-string">''</span>), *<span class="ruby-identifier">token_pos</span>(<span class="ruby-identifier">pos</span>)]
+                 <span class="ruby-keyword">end</span>
+               <span class="ruby-comment"># --- (at least 3) and nothing else on the line =&gt; :RULE</span>
+               <span class="ruby-keyword">when</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">%r(-{3,}) *\r?$/</span>) <span class="ruby-keyword">then</span>
+                 [<span class="ruby-value">:RULE</span>, <span class="ruby-identifier">s</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">length</span> <span class="ruby-operator">-</span> <span class="ruby-value">2</span>, *<span class="ruby-identifier">token_pos</span>(<span class="ruby-identifier">pos</span>)]
+               <span class="ruby-comment"># * or - followed by white space and text =&gt; :BULLET</span>
+               <span class="ruby-keyword">when</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">%r([*-]) +(\S)/</span>) <span class="ruby-keyword">then</span>
+                 <span class="ruby-identifier">s</span>.<span class="ruby-identifier">pos</span> <span class="ruby-operator">-=</span> <span class="ruby-identifier">s</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">bytesize</span> <span class="ruby-comment"># unget \S</span>
+                 [<span class="ruby-value">:BULLET</span>, <span class="ruby-identifier">s</span>[<span class="ruby-value">1</span>], *<span class="ruby-identifier">token_pos</span>(<span class="ruby-identifier">pos</span>)]
+               <span class="ruby-comment"># A. text, a. text, 12. text =&gt; :UALPHA, :LALPHA, :NUMBER</span>
+               <span class="ruby-keyword">when</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">%r([a-z]|\d+)\. +(\S)/</span>) <span class="ruby-keyword">then</span>
+                 <span class="ruby-comment"># FIXME if tab(s), the column will be wrong</span>
+                 <span class="ruby-comment"># either support tabs everywhere by first expanding them to</span>
+                 <span class="ruby-comment"># spaces, or assume that they will have been replaced</span>
+                 <span class="ruby-comment"># before (and provide a check for that at least in debug</span>
+                 <span class="ruby-comment"># mode)</span>
+                 <span class="ruby-identifier">list_label</span> = <span class="ruby-identifier">s</span>[<span class="ruby-value">1</span>]
+                 <span class="ruby-identifier">s</span>.<span class="ruby-identifier">pos</span> <span class="ruby-operator">-=</span> <span class="ruby-identifier">s</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">bytesize</span> <span class="ruby-comment"># unget \S</span>
+                 <span class="ruby-identifier">list_type</span> =
+                   <span class="ruby-keyword">case</span> <span class="ruby-identifier">list_label</span>
+                   <span class="ruby-keyword">when</span> <span class="ruby-regexp">%r[a-z]/</span> <span class="ruby-keyword">then</span> <span class="ruby-value">:LALPHA</span>
+                   <span class="ruby-keyword">when</span> <span class="ruby-regexp">%r[A-Z]/</span> <span class="ruby-keyword">then</span> <span class="ruby-value">:UALPHA</span>
+                   <span class="ruby-keyword">when</span> <span class="ruby-regexp">%r\d/</span>    <span class="ruby-keyword">then</span> <span class="ruby-value">:NUMBER</span>
+                   <span class="ruby-keyword">else</span>
+                     <span class="ruby-identifier">raise</span> <span class="ruby-constant">ParseError</span>, <span class="ruby-node">&quot;BUG token #{list_label}&quot;</span>
+                   <span class="ruby-keyword">end</span>
+                 [<span class="ruby-identifier">list_type</span>, <span class="ruby-identifier">list_label</span>, *<span class="ruby-identifier">token_pos</span>(<span class="ruby-identifier">pos</span>)]
+               <span class="ruby-comment"># [text] followed by spaces or end of line =&gt; :LABEL</span>
+               <span class="ruby-keyword">when</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">%r\[(.*?)\]( +|\r?$)/</span>) <span class="ruby-keyword">then</span>
+                 [<span class="ruby-value">:LABEL</span>, <span class="ruby-identifier">s</span>[<span class="ruby-value">1</span>], *<span class="ruby-identifier">token_pos</span>(<span class="ruby-identifier">pos</span>)]
+               <span class="ruby-comment"># text:: followed by spaces or end of line =&gt; :NOTE</span>
+               <span class="ruby-keyword">when</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">%r(.*?)::( +|\r?$)/</span>) <span class="ruby-keyword">then</span>
+                 [<span class="ruby-value">:NOTE</span>, <span class="ruby-identifier">s</span>[<span class="ruby-value">1</span>], *<span class="ruby-identifier">token_pos</span>(<span class="ruby-identifier">pos</span>)]
+               <span class="ruby-comment"># anything else: :TEXT</span>
+               <span class="ruby-keyword">else</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">%r(.*?)(  )?\r?$/</span>)
+                 <span class="ruby-identifier">token</span> = [<span class="ruby-value">:TEXT</span>, <span class="ruby-identifier">s</span>[<span class="ruby-value">1</span>], *<span class="ruby-identifier">token_pos</span>(<span class="ruby-identifier">pos</span>)]
+
+                 <span class="ruby-keyword">if</span> <span class="ruby-identifier">s</span>[<span class="ruby-value">2</span>] <span class="ruby-keyword">then</span>
+                   <span class="ruby-ivar">@tokens</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">token</span>
+                   [<span class="ruby-value">:BREAK</span>, <span class="ruby-identifier">s</span>[<span class="ruby-value">2</span>], *<span class="ruby-identifier">token_pos</span>(<span class="ruby-identifier">pos</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">s</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">length</span>)]
+                 <span class="ruby-keyword">else</span>
+                   <span class="ruby-identifier">token</span>
+                 <span class="ruby-keyword">end</span>
+               <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- tokenize-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- tokenize-method -->
+
+    
+      <div id="method-i-unget" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unget</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the current token to the token stream</p>
+          
+
+          
+          <div class="method-source-code" id="unget-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/markup/parser.rb, line 496</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">unget</span>
+  <span class="ruby-identifier">token</span> = <span class="ruby-ivar">@current_token</span>
+  <span class="ruby-identifier">p</span> <span class="ruby-value">:unget</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">token</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@debug</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">Error</span>, <span class="ruby-string">'too many #ungets'</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">token</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@tokens</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-ivar">@tokens</span>.<span class="ruby-identifier">unshift</span> <span class="ruby-identifier">token</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">token</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- unget-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- unget-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

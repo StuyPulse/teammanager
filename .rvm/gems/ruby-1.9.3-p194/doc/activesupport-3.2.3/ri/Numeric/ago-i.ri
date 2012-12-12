@@ -1,0 +1,4 @@
+U:RDoc::AnyMethod[iI"ago:EFI"Numeric#ago;FF:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"2Reads best without arguments:  10.minutes.ago;T:
+@fileI"0lib/active_support/core_ext/numeric/time.rb;T00[[I"
+until;Fo;;	[o;
+;	[I"6Reads best with argument:  10.minutes.until(time);T;@I"(time = ::Time.current);T@

@@ -1,0 +1,27 @@
+Thu, 13 Sep 2012 22:03:10 -0400
+lib/journey/routes.rb	Thu, 13 Sep 2012 22:00:42 -0400
+lib/journey/parser.rb	Thu, 13 Sep 2012 22:00:42 -0400
+lib/journey/gtg/simulator.rb	Thu, 13 Sep 2012 22:00:42 -0400
+lib/journey/gtg/transition_table.rb	Thu, 13 Sep 2012 22:00:42 -0400
+lib/journey/gtg/builder.rb	Thu, 13 Sep 2012 22:00:42 -0400
+lib/journey/parser.y	Thu, 13 Sep 2012 22:00:42 -0400
+lib/journey/formatter.rb	Thu, 13 Sep 2012 22:00:42 -0400
+lib/journey/parser_extras.rb	Thu, 13 Sep 2012 22:00:42 -0400
+lib/journey/nodes/node.rb	Thu, 13 Sep 2012 22:00:42 -0400
+lib/journey/backwards.rb	Thu, 13 Sep 2012 22:00:42 -0400
+lib/journey/path/pattern.rb	Thu, 13 Sep 2012 22:00:42 -0400
+lib/journey/router/utils.rb	Thu, 13 Sep 2012 22:00:42 -0400
+lib/journey/router/strexp.rb	Thu, 13 Sep 2012 22:00:42 -0400
+lib/journey/visitors.rb	Thu, 13 Sep 2012 22:00:42 -0400
+lib/journey/router.rb	Thu, 13 Sep 2012 22:00:42 -0400
+lib/journey/nfa/simulator.rb	Thu, 13 Sep 2012 22:00:42 -0400
+lib/journey/nfa/transition_table.rb	Thu, 13 Sep 2012 22:00:42 -0400
+lib/journey/nfa/builder.rb	Thu, 13 Sep 2012 22:00:42 -0400
+lib/journey/nfa/dot.rb	Thu, 13 Sep 2012 22:00:42 -0400
+lib/journey/scanner.rb	Thu, 13 Sep 2012 22:00:42 -0400
+lib/journey/core-ext/hash.rb	Thu, 13 Sep 2012 22:00:42 -0400
+lib/journey/route.rb	Thu, 13 Sep 2012 22:00:42 -0400
+lib/journey.rb	Thu, 13 Sep 2012 22:00:42 -0400
+Manifest.txt	Thu, 13 Sep 2012 22:00:42 -0400
+CHANGELOG.rdoc	Thu, 13 Sep 2012 22:00:42 -0400
+README.rdoc	Thu, 13 Sep 2012 22:00:42 -0400

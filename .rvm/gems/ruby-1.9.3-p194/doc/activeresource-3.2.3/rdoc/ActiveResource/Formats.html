@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module ActiveResource::Formats - activeresource-3.2.3 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/active_resource/formats/xml_format.rb
+    <li>lib/active_resource/formats/json_format.rb
+    <li>lib/active_resource/formats.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-5B-5D">::[]</a>
+    
+    <li><a href="#method-c-remove_root">::remove_root</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../ActiveResource.html">ActiveResource</a>
+  
+    <li><a href="../ActiveResource/Base.html">ActiveResource::Base</a>
+  
+    <li><a href="../ActiveResource/Connection.html">ActiveResource::Connection</a>
+  
+    <li><a href="../ActiveResource/CustomMethods.html">ActiveResource::CustomMethods</a>
+  
+    <li><a href="../ActiveResource/CustomMethods/ClassMethods.html">ActiveResource::CustomMethods::ClassMethods</a>
+  
+    <li><a href="../ActiveResource/Errors.html">ActiveResource::Errors</a>
+  
+    <li><a href="../ActiveResource/Formats.html">ActiveResource::Formats</a>
+  
+    <li><a href="../ActiveResource/Formats/JsonFormat.html">ActiveResource::Formats::JsonFormat</a>
+  
+    <li><a href="../ActiveResource/Formats/XmlFormat.html">ActiveResource::Formats::XmlFormat</a>
+  
+    <li><a href="../ActiveResource/HttpMock.html">ActiveResource::HttpMock</a>
+  
+    <li><a href="../ActiveResource/InvalidRequestError.html">ActiveResource::InvalidRequestError</a>
+  
+    <li><a href="../ActiveResource/LogSubscriber.html">ActiveResource::LogSubscriber</a>
+  
+    <li><a href="../ActiveResource/Observing.html">ActiveResource::Observing</a>
+  
+    <li><a href="../ActiveResource/Railtie.html">ActiveResource::Railtie</a>
+  
+    <li><a href="../ActiveResource/Request.html">ActiveResource::Request</a>
+  
+    <li><a href="../ActiveResource/Response.html">ActiveResource::Response</a>
+  
+    <li><a href="../ActiveResource/SSLError.html">ActiveResource::SSLError</a>
+  
+    <li><a href="../ActiveResource/TimeoutError.html">ActiveResource::TimeoutError</a>
+  
+    <li><a href="../ActiveResource/Validations.html">ActiveResource::Validations</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module ActiveResource::Formats</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-5B-5D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">[]</span><span
+            class="method-args">(mime_type_reference)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Lookup the format class from a mime type reference symbol. Example:</p>
+
+<pre class="ruby"><span class="ruby-constant">ActiveResource</span><span class="ruby-operator">::</span><span class="ruby-constant">Formats</span>[:<span class="ruby-identifier">xml</span>]  <span class="ruby-comment"># =&gt; ActiveResource::Formats::XmlFormat</span>
+<span class="ruby-constant">ActiveResource</span><span class="ruby-operator">::</span><span class="ruby-constant">Formats</span>[:<span class="ruby-identifier">json</span>] <span class="ruby-comment"># =&gt; ActiveResource::Formats::JsonFormat</span>
+</pre>
+          
+
+          
+          <div class="method-source-code" id="5B-5D-source">
+            <pre><span class="ruby-comment"># File lib/active_resource/formats.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-operator">[]</span>(<span class="ruby-identifier">mime_type_reference</span>)
+  <span class="ruby-constant">ActiveResource</span><span class="ruby-operator">::</span><span class="ruby-constant">Formats</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Inflector</span>.<span class="ruby-identifier">camelize</span>(<span class="ruby-identifier">mime_type_reference</span>.<span class="ruby-identifier">to_s</span>) <span class="ruby-operator">+</span> <span class="ruby-string">&quot;Format&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 5B-5D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 5B-5D-method -->
+
+    
+      <div id="method-c-remove_root" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">remove_root</span><span
+            class="method-args">(data)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="remove_root-source">
+            <pre><span class="ruby-comment"># File lib/active_resource/formats.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">remove_root</span>(<span class="ruby-identifier">data</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+    <span class="ruby-identifier">data</span>.<span class="ruby-identifier">values</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">data</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- remove_root-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- remove_root-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

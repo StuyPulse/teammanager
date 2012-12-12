@@ -1,0 +1,7 @@
+{:ancestors{I"MIME::InvalidContentType:EF[I"RuntimeError;FI"MIME::Type;F[I"Comparable;FI"Object;FI"MIME::Types;F[I"Object;F:attributes{I"MIME::Type;F[I"attr_accessor docs;FI"attr_accessor encoding;FI"attr_accessor extensions;FI"attr_accessor system;FI"attr_accessor url;FI"attr_reader content_type;FI"!attr_reader default_encoding;FI"attr_reader media_type;FI"attr_reader raw_media_type;FI"attr_reader raw_sub_type;FI"attr_reader simplified;FI"attr_reader sub_type;FI"attr_reader use_instead;FI"attr_writer obsolete;FI"MIME::Types;F[I"attr_reader data_version;F:class_methods{I"MIME::Type;F[
+I"from_array;FI"from_hash;FI"from_mime_type;FI"new;FI"simplified;FI"MIME::Types;F[
+I"[];FI"add;FI"new;FI"of;FI"type_for;F:encodingIu:Encoding
+UTF-8;F:instance_methods{I"MIME::Type;F[%I"<=>;FI"ascii?;FI"binary?;FI"complete?;FI"content_type;FI"default_encoding;FI"	docs;FI"
+docs=;FI"encoding;FI"	eql?;FI"extensions;FI"
+like?;FI"media_type;FI"obsolete;FI"obsolete?;FI"platform?;FI"priority_compare;FI"raw_media_type;FI"raw_sub_type;FI"registered?;FI"signature?;FI"simplified;FI"sub_type;FI"system;FI"system?;FI"	to_a;FI"to_hash;FI"	to_s;FI"to_str;FI"url;FI"	urls;FI"use_instead;FI"MIME::Types;F[
+I"[];FI"add;FI"data_version;FI"of;FI"type_for;F:modules[	I"	MIME;FI"MIME::InvalidContentType;FI"MIME::Type;FI"MIME::Types;F

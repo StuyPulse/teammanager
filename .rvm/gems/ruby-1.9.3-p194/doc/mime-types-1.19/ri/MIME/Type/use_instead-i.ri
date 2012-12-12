@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"use_instead:EFI"MIME::Type#use_instead;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"HReturns the media type or types that should be used instead of this;TI"Jmedia type, if it is obsolete. If there is no replacement media type,;TI"3or it is not obsolete, +nil+ will be returned.;T:
+@fileI"lib/mime/types.rb;TF@

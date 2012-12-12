@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	root:EFI"(Rack::Cache::EntityStore::Disk#root;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"<Path where entities should be stored. This directory is;TI"Dcreated the first time the store is instansiated if it does not;TI"already exist.;T:
+@fileI""lib/rack/cache/entitystore.rb;TF@

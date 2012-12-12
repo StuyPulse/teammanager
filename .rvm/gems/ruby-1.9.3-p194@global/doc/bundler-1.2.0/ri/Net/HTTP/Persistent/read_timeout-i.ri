@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"read_timeout:EFI"'Net::HTTP::Persistent#read_timeout;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"ISeconds to wait until reading one block.  See Net::HTTP#read_timeout;T:
+@file0FI".lib/bundler/vendor/net/http/persistent.rb;T

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"exclude_zones:EFI"'TZInfo::TZDataParser#exclude_zones;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"JZones to exclude from generation when not using only_zones (set to an;TI"(array containing zone identifiers).;T:
+@fileI"lib/tzinfo/tzdataparser.rb;TF@

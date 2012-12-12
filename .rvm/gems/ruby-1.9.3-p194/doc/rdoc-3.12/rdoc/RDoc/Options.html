@@ -1,0 +1,1807 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class RDoc::Options - rdoc-3.12 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/rdoc/options.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-check_files">#check_files</a>
+    
+    <li><a href="#method-i-check_generator">#check_generator</a>
+    
+    <li><a href="#method-i-default_title-3D">#default_title=</a>
+    
+    <li><a href="#method-i-finish">#finish</a>
+    
+    <li><a href="#method-i-generator_descriptions">#generator_descriptions</a>
+    
+    <li><a href="#method-i-parse">#parse</a>
+    
+    <li><a href="#method-i-quiet">#quiet</a>
+    
+    <li><a href="#method-i-quiet-3D">#quiet=</a>
+    
+    <li><a href="#method-i-sanitize_path">#sanitize_path</a>
+    
+    <li><a href="#method-i-setup_generator">#setup_generator</a>
+    
+    <li><a href="#method-i-template_dir_for">#template_dir_for</a>
+    
+    <li><a href="#method-i-warn">#warn</a>
+    
+    <li><a href="#method-i-write_options">#write_options</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../DEVELOPERS_rdoc.html">DEVELOPERS</a>
+  
+    <li class="file"><a href="../History_rdoc.html">History</a>
+  
+    <li class="file"><a href="../LEGAL_rdoc.html">LEGAL</a>
+  
+    <li class="file"><a href="../LICENSE_rdoc.html">LICENSE</a>
+  
+    <li class="file"><a href="../Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="../README_rdoc.html">README</a>
+  
+    <li class="file"><a href="../RI_rdoc.html">RI</a>
+  
+    <li class="file"><a href="../Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="../TODO_rdoc.html">TODO</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../RDoc.html">RDoc</a>
+  
+    <li><a href="../RDoc/Alias.html">RDoc::Alias</a>
+  
+    <li><a href="../RDoc/AnonClass.html">RDoc::AnonClass</a>
+  
+    <li><a href="../RDoc/AnyMethod.html">RDoc::AnyMethod</a>
+  
+    <li><a href="../RDoc/Attr.html">RDoc::Attr</a>
+  
+    <li><a href="../RDoc/ClassModule.html">RDoc::ClassModule</a>
+  
+    <li><a href="../RDoc/CodeObject.html">RDoc::CodeObject</a>
+  
+    <li><a href="../RDoc/Comment.html">RDoc::Comment</a>
+  
+    <li><a href="../RDoc/Constant.html">RDoc::Constant</a>
+  
+    <li><a href="../RDoc/Context.html">RDoc::Context</a>
+  
+    <li><a href="../RDoc/Context/Section.html">RDoc::Context::Section</a>
+  
+    <li><a href="../RDoc/CrossReference.html">RDoc::CrossReference</a>
+  
+    <li><a href="../RDoc/ERBIO.html">RDoc::ERBIO</a>
+  
+    <li><a href="../RDoc/Encoding.html">RDoc::Encoding</a>
+  
+    <li><a href="../RDoc/Error.html">RDoc::Error</a>
+  
+    <li><a href="../RDoc/Gauntlet.html">RDoc::Gauntlet</a>
+  
+    <li><a href="../RDoc/Generator.html">RDoc::Generator</a>
+  
+    <li><a href="../RDoc/Generator/Darkfish.html">RDoc::Generator::Darkfish</a>
+  
+    <li><a href="../RDoc/Generator/JsonIndex.html">RDoc::Generator::JsonIndex</a>
+  
+    <li><a href="../RDoc/Generator/Markup.html">RDoc::Generator::Markup</a>
+  
+    <li><a href="../RDoc/Generator/RI.html">RDoc::Generator::RI</a>
+  
+    <li><a href="../RDoc/GhostMethod.html">RDoc::GhostMethod</a>
+  
+    <li><a href="../RDoc/Include.html">RDoc::Include</a>
+  
+    <li><a href="../RDoc/Markup.html">RDoc::Markup</a>
+  
+    <li><a href="../RDoc/Markup/AttrChanger.html">RDoc::Markup::AttrChanger</a>
+  
+    <li><a href="../RDoc/Markup/AttrSpan.html">RDoc::Markup::AttrSpan</a>
+  
+    <li><a href="../RDoc/Markup/Attribute.html">RDoc::Markup::Attribute</a>
+  
+    <li><a href="../RDoc/Markup/AttributeManager.html">RDoc::Markup::AttributeManager</a>
+  
+    <li><a href="../RDoc/Markup/BlankLine.html">RDoc::Markup::BlankLine</a>
+  
+    <li><a href="../RDoc/Markup/Document.html">RDoc::Markup::Document</a>
+  
+    <li><a href="../RDoc/Markup/Formatter.html">RDoc::Markup::Formatter</a>
+  
+    <li><a href="../RDoc/Markup/FormatterTestCase.html">RDoc::Markup::FormatterTestCase</a>
+  
+    <li><a href="../RDoc/Markup/Heading.html">RDoc::Markup::Heading</a>
+  
+    <li><a href="../RDoc/Markup/Include.html">RDoc::Markup::Include</a>
+  
+    <li><a href="../RDoc/Markup/IndentedParagraph.html">RDoc::Markup::IndentedParagraph</a>
+  
+    <li><a href="../RDoc/Markup/List.html">RDoc::Markup::List</a>
+  
+    <li><a href="../RDoc/Markup/ListItem.html">RDoc::Markup::ListItem</a>
+  
+    <li><a href="../RDoc/Markup/Paragraph.html">RDoc::Markup::Paragraph</a>
+  
+    <li><a href="../RDoc/Markup/Parser.html">RDoc::Markup::Parser</a>
+  
+    <li><a href="../RDoc/Markup/Parser/Error.html">RDoc::Markup::Parser::Error</a>
+  
+    <li><a href="../RDoc/Markup/Parser/ParseError.html">RDoc::Markup::Parser::ParseError</a>
+  
+    <li><a href="../RDoc/Markup/PreProcess.html">RDoc::Markup::PreProcess</a>
+  
+    <li><a href="../RDoc/Markup/Raw.html">RDoc::Markup::Raw</a>
+  
+    <li><a href="../RDoc/Markup/Rule.html">RDoc::Markup::Rule</a>
+  
+    <li><a href="../RDoc/Markup/Special.html">RDoc::Markup::Special</a>
+  
+    <li><a href="../RDoc/Markup/TextFormatterTestCase.html">RDoc::Markup::TextFormatterTestCase</a>
+  
+    <li><a href="../RDoc/Markup/ToAnsi.html">RDoc::Markup::ToAnsi</a>
+  
+    <li><a href="../RDoc/Markup/ToBs.html">RDoc::Markup::ToBs</a>
+  
+    <li><a href="../RDoc/Markup/ToHtml.html">RDoc::Markup::ToHtml</a>
+  
+    <li><a href="../RDoc/Markup/ToHtmlCrossref.html">RDoc::Markup::ToHtmlCrossref</a>
+  
+    <li><a href="../RDoc/Markup/ToHtmlSnippet.html">RDoc::Markup::ToHtmlSnippet</a>
+  
+    <li><a href="../RDoc/Markup/ToLabel.html">RDoc::Markup::ToLabel</a>
+  
+    <li><a href="../RDoc/Markup/ToRdoc.html">RDoc::Markup::ToRdoc</a>
+  
+    <li><a href="../RDoc/Markup/ToTableOfContents.html">RDoc::Markup::ToTableOfContents</a>
+  
+    <li><a href="../RDoc/Markup/ToTest.html">RDoc::Markup::ToTest</a>
+  
+    <li><a href="../RDoc/Markup/ToTtOnly.html">RDoc::Markup::ToTtOnly</a>
+  
+    <li><a href="../RDoc/Markup/Verbatim.html">RDoc::Markup::Verbatim</a>
+  
+    <li><a href="../RDoc/MetaMethod.html">RDoc::MetaMethod</a>
+  
+    <li><a href="../RDoc/MethodAttr.html">RDoc::MethodAttr</a>
+  
+    <li><a href="../RDoc/NormalClass.html">RDoc::NormalClass</a>
+  
+    <li><a href="../RDoc/NormalModule.html">RDoc::NormalModule</a>
+  
+    <li><a href="../RDoc/Options.html">RDoc::Options</a>
+  
+    <li><a href="../RDoc/Parser.html">RDoc::Parser</a>
+  
+    <li><a href="../RDoc/Parser/C.html">RDoc::Parser::C</a>
+  
+    <li><a href="../RDoc/Parser/RD.html">RDoc::Parser::RD</a>
+  
+    <li><a href="../RDoc/Parser/Ruby.html">RDoc::Parser::Ruby</a>
+  
+    <li><a href="../RDoc/Parser/RubyTools.html">RDoc::Parser::RubyTools</a>
+  
+    <li><a href="../RDoc/Parser/Simple.html">RDoc::Parser::Simple</a>
+  
+    <li><a href="../RDoc/Parser/Text.html">RDoc::Parser::Text</a>
+  
+    <li><a href="../RDoc/RD.html">RDoc::RD</a>
+  
+    <li><a href="../RDoc/RD/Inline.html">RDoc::RD::Inline</a>
+  
+    <li><a href="../RDoc/RDoc.html">RDoc::RDoc</a>
+  
+    <li><a href="../RDoc/RI.html">RDoc::RI</a>
+  
+    <li><a href="../RDoc/RI/Driver.html">RDoc::RI::Driver</a>
+  
+    <li><a href="../RDoc/RI/Driver/Error.html">RDoc::RI::Driver::Error</a>
+  
+    <li><a href="../RDoc/RI/Driver/NotFoundError.html">RDoc::RI::Driver::NotFoundError</a>
+  
+    <li><a href="../RDoc/RI/Error.html">RDoc::RI::Error</a>
+  
+    <li><a href="../RDoc/RI/Paths.html">RDoc::RI::Paths</a>
+  
+    <li><a href="../RDoc/RI/Store.html">RDoc::RI::Store</a>
+  
+    <li><a href="../RDoc/Require.html">RDoc::Require</a>
+  
+    <li><a href="../RDoc/RubyLex.html">RDoc::RubyLex</a>
+  
+    <li><a href="../RDoc/RubyLex/Error.html">RDoc::RubyLex::Error</a>
+  
+    <li><a href="../RDoc/RubyToken.html">RDoc::RubyToken</a>
+  
+    <li><a href="../RDoc/RubygemsHook.html">RDoc::RubygemsHook</a>
+  
+    <li><a href="../RDoc/SingleClass.html">RDoc::SingleClass</a>
+  
+    <li><a href="../RDoc/Stats.html">RDoc::Stats</a>
+  
+    <li><a href="../RDoc/Stats/Normal.html">RDoc::Stats::Normal</a>
+  
+    <li><a href="../RDoc/Stats/Quiet.html">RDoc::Stats::Quiet</a>
+  
+    <li><a href="../RDoc/Stats/Verbose.html">RDoc::Stats::Verbose</a>
+  
+    <li><a href="../RDoc/Task.html">RDoc::Task</a>
+  
+    <li><a href="../RDoc/Task.html">RDoc::Task</a>
+  
+    <li><a href="../RDoc/TestCase.html">RDoc::TestCase</a>
+  
+    <li><a href="../RDoc/Text.html">RDoc::Text</a>
+  
+    <li><a href="../RDoc/TokenStream.html">RDoc::TokenStream</a>
+  
+    <li><a href="../RDoc/TomDoc.html">RDoc::TomDoc</a>
+  
+    <li><a href="../RDoc/TopLevel.html">RDoc::TopLevel</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class RDoc::Options</h1>
+
+  <div id="description" class="description">
+    
+<p><a href="Options.html">RDoc::Options</a> handles the parsing and storage of
+options</p>
+
+<h2 id="label-Saved+Options">Saved <a href="Options.html">Options</a></h2>
+
+<p>You can save some options like the markup format in the
+<code>.rdoc_options</code> file in your gem.  The easiest way to do this
+is:</p>
+
+<pre>rdoc --markup tomdoc --write-options</pre>
+
+<p>Which will automatically create the file and fill it with the options you
+specified.</p>
+
+<p>The following options will not be saved since they interfere with the
+user’s preferences or with the normal operation of RDoc:</p>
+<ul><li>
+<p><code>--coverage-report</code></p>
+</li><li>
+<p><code>--dry-run</code></p>
+</li><li>
+<p><code>--encoding</code></p>
+</li><li>
+<p><code>--force-update</code></p>
+</li><li>
+<p><code>--format</code></p>
+</li><li>
+<p><code>--pipe</code></p>
+</li><li>
+<p><code>--quiet</code></p>
+</li><li>
+<p><code>--template</code></p>
+</li><li>
+<p><code>--verbose</code></p>
+</li></ul>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="DEPRECATED">DEPRECATED
+        
+        <dd class="description"><p>The deprecated options.</p>
+        
+      
+        <dt id="Path">Path
+        
+        <dd class="description"><p><a href="Options.html#Path">Path</a> option validator for OptionParser</p>
+        
+      
+        <dt id="PathArray">PathArray
+        
+        <dd class="description"><p>Array of Paths option validator for OptionParser</p>
+        
+      
+        <dt id="SPECIAL">SPECIAL
+        
+        <dd class="description"><p><a href="RDoc.html">RDoc</a> options ignored (or handled specially) by
+--write-options</p>
+        
+      
+        <dt id="Template">Template
+        
+        <dd class="description"><p><a href="Options.html#Template">Template</a> option validator for
+OptionParser</p>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-charset" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">charset</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Character-set for HTML output.  <a
+href="Options.html#attribute-i-encoding">encoding</a> is preferred over <a
+href="Options.html#attribute-i-charset">charset</a></p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-coverage_report" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">coverage_report</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>If true, only report on undocumented files</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-dry_run" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">dry_run</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>If true, <a href="RDoc.html">RDoc</a> will not write any files.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-encoding" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">encoding</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p><a href="Encoding.html">Encoding</a> of output where.  This is set via
+--encoding.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-exclude" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">exclude</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Files matching this pattern will be excluded</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-files" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">files</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>The list of files to be processed</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-force_output" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">force_output</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Create the output even if the output directory does not look like an rdoc
+output directory</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-force_update" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">force_update</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Scan newer sources than the flag file if true.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-formatter" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">formatter</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Formatter to mark up text with</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-generator" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">generator</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Description of the output generator (set with the <code>--fmt</code>
+option)</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-generator_options" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">generator_options</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Loaded generator options.  Used to prevent –help from loading the same
+options multiple times.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-hyperlink_all" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">hyperlink_all</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Old rdoc behavior: hyperlink all words that match a method name, even if
+not preceded by ‘#’ or ‘::’</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-line_numbers" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">line_numbers</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p><a href="Include.html">Include</a> line numbers in the source code</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-main_page" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">main_page</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Name of the file, class or module to display in the initial index page (if
+not specified the first file we encounter is used)</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-markup" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">markup</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>The default markup format.  The default is ‘rdoc’.  ‘tomdoc’ and ‘rd’ are
+also built-in.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-op_dir" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">op_dir</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>The name of the output directory</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-option_parser" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">option_parser</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>The OptionParser for this instance</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-pipe" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">pipe</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Is <a href="RDoc.html">RDoc</a> in pipe mode?</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-rdoc_include" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">rdoc_include</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Array of directories to search for files to satisfy an :include:</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-show_hash" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">show_hash</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p><a href="Include.html">Include</a> the '#' at the front of hyperlinked
+instance method names</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-static_path" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">static_path</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Directory to copy static files from</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-tab_width" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">tab_width</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>The number of columns in a tab</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-template" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">template</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p><a href="Options.html#Template">Template</a> to be used when generating
+output</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-template_dir" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">template_dir</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Directory the template lives in</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-title" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">title</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Documentation title</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-update_output_dir" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">update_output_dir</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Should <a href="RDoc.html">RDoc</a> update the timestamps in the output
+dir?</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-verbosity" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">verbosity</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Verbosity, zero means quiet</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-visibility" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">visibility</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Minimum visibility of a documented method. One of <code>:public</code>,
+<code>:protected</code>, <code>:private</code>. May be overridden on a
+per-method basis with the :doc: directive.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-webcvs" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">webcvs</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>URL of web cvs frontend</p>
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-check_files" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">check_files</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Check that the files on the command line exist</p>
+          
+
+          
+          <div class="method-source-code" id="check_files-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/options.rb, line 344</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">check_files</span>
+  <span class="ruby-ivar">@files</span>.<span class="ruby-identifier">delete_if</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span> <span class="ruby-identifier">file</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">readable?</span> <span class="ruby-identifier">file</span> <span class="ruby-keyword">then</span>
+        <span class="ruby-keyword">false</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;file '#{file}' not readable&quot;</span>
+
+        <span class="ruby-keyword">true</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;file '#{file}' not found&quot;</span>
+
+      <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- check_files-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- check_files-method -->
+
+    
+      <div id="method-i-check_generator" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">check_generator</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Ensure only one generator is loaded</p>
+          
+
+          
+          <div class="method-source-code" id="check_generator-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/options.rb, line 365</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">check_generator</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@generator</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">OptionParser</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidOption</span>,
+      <span class="ruby-node">&quot;generator already set to #{@generator_name}&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- check_generator-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- check_generator-method -->
+
+    
+      <div id="method-i-default_title-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">default_title=</span><span
+            class="method-args">(string)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Set the title, but only if not already set. Used to set the title from a
+source file, so that a title set from the command line will have the
+priority.</p>
+          
+
+          
+          <div class="method-source-code" id="default_title-3D-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/options.rb, line 377</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">default_title=</span>(<span class="ruby-identifier">string</span>)
+  <span class="ruby-ivar">@title</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">string</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- default_title-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- default_title-3D-method -->
+
+    
+      <div id="method-i-finish" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">finish</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Completes any unfinished option setup business such as filtering for
+existent files, creating a regexp for <a
+href="Options.html#attribute-i-exclude">exclude</a> and setting a default
+<a href="Options.html#attribute-i-template">template</a>.</p>
+          
+
+          
+          <div class="method-source-code" id="finish-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/options.rb, line 404</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">finish</span>
+  <span class="ruby-ivar">@op_dir</span> <span class="ruby-operator">||=</span> <span class="ruby-string">'doc'</span>
+
+  <span class="ruby-ivar">@rdoc_include</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;.&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@rdoc_include</span>.<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@exclude</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">or</span> <span class="ruby-constant">Regexp</span> <span class="ruby-operator">===</span> <span class="ruby-ivar">@exclude</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-comment"># done, #finish is being re-run</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-ivar">@exclude</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-ivar">@exclude</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@exclude</span> = <span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@exclude</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;|&quot;</span>))
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">check_files</span>
+
+  <span class="ruby-comment"># If no template was specified, use the default template for the output</span>
+  <span class="ruby-comment"># formatter</span>
+
+  <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@template</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-ivar">@template</span>     = <span class="ruby-ivar">@generator_name</span>
+    <span class="ruby-ivar">@template_dir</span> = <span class="ruby-identifier">template_dir_for</span> <span class="ruby-ivar">@template</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- finish-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- finish-method -->
+
+    
+      <div id="method-i-generator_descriptions" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">generator_descriptions</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a properly-space list of generators and their descriptions.</p>
+          
+
+          
+          <div class="method-source-code" id="generator_descriptions-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/options.rb, line 433</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">generator_descriptions</span>
+  <span class="ruby-identifier">lengths</span> = []
+
+  <span class="ruby-identifier">generators</span> = <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">GENERATORS</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">generator</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">lengths</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">length</span>
+
+    <span class="ruby-identifier">description</span> = <span class="ruby-identifier">generator</span><span class="ruby-operator">::</span><span class="ruby-constant">DESCRIPTION</span> <span class="ruby-keyword">if</span>
+      <span class="ruby-identifier">generator</span>.<span class="ruby-identifier">const_defined?</span> <span class="ruby-value">:DESCRIPTION</span>
+
+    [<span class="ruby-identifier">name</span>, <span class="ruby-identifier">description</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">longest</span> = <span class="ruby-identifier">lengths</span>.<span class="ruby-identifier">max</span>
+
+  <span class="ruby-identifier">generators</span>.<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">description</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">description</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-string">&quot;  %-*s - %s&quot;</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">longest</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">description</span>]
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-node">&quot;  #{name}&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>.<span class="ruby-identifier">join</span> <span class="ruby-string">&quot;\n&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- generator_descriptions-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- generator_descriptions-method -->
+
+    
+      <div id="method-i-parse" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parse</span><span
+            class="method-args">(argv)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Parses command line options.</p>
+          
+
+          
+          <div class="method-source-code" id="parse-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/options.rb, line 459</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">parse</span> <span class="ruby-identifier">argv</span>
+    <span class="ruby-identifier">ignore_invalid</span> = <span class="ruby-keyword">true</span>
+
+    <span class="ruby-identifier">argv</span>.<span class="ruby-identifier">insert</span>(<span class="ruby-value">0</span>, *<span class="ruby-constant">ENV</span>[<span class="ruby-string">'RDOCOPT'</span>].<span class="ruby-identifier">split</span>) <span class="ruby-keyword">if</span> <span class="ruby-constant">ENV</span>[<span class="ruby-string">'RDOCOPT'</span>]
+
+    <span class="ruby-identifier">opts</span> = <span class="ruby-constant">OptionParser</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">opt</span><span class="ruby-operator">|</span>
+      <span class="ruby-ivar">@option_parser</span> = <span class="ruby-identifier">opt</span>
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">program_name</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span> <span class="ruby-identifier">$0</span>
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">version</span> = <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">VERSION</span>
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">release</span> = <span class="ruby-keyword">nil</span>
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">summary_indent</span> = <span class="ruby-string">' '</span> * <span class="ruby-value">4</span>
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">banner</span> = <span class="ruby-string">&quot;Usage: #{opt.program_name} [options] [names...]
+
+  Files are parsed, and the information they contain collected, before any
+  output is produced. This allows cross references between all files to be
+  resolved. If a name is a directory, it is traversed. If no names are
+  specified, all Ruby files in the current directory (and subdirectories) are
+  processed.
+
+  How RDoc generates output depends on the output formatter being used, and on
+  the options you give.
+
+  Options can be specified via the RDOCOPT environment variable, which
+  functions similar to the RUBYOPT environment variable for ruby.
+
+    $ export RDOCOPT=&quot;--show-hash&quot;
+
+  will make rdoc show hashes in method links by default.  Command-line options
+  always will override those in RDOCOPT.
+
+  Available formatters:
+
+#{generator_descriptions}
+
+  RDoc understands the following file formats:
+
+&quot;</span>
+
+      <span class="ruby-identifier">parsers</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">h</span>,<span class="ruby-identifier">parser</span><span class="ruby-operator">|</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">parser</span>] = [] }
+
+      <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Parser</span>.<span class="ruby-identifier">parsers</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">regexp</span>, <span class="ruby-identifier">parser</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">parsers</span>[<span class="ruby-identifier">parser</span>.<span class="ruby-identifier">name</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-string">'RDoc::Parser::'</span>, <span class="ruby-string">''</span>)] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">regexp</span>.<span class="ruby-identifier">source</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">parsers</span>.<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">parser</span>, <span class="ruby-identifier">regexp</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">banner</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;  - #{parser}: #{regexp.join ', '}\n&quot;</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">banner</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;\n  The following options are deprecated:\n\n&quot;</span>
+
+      <span class="ruby-identifier">name_length</span> = <span class="ruby-constant">DEPRECATED</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">sort_by</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">k</span>.<span class="ruby-identifier">length</span> }.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">length</span>
+
+      <span class="ruby-constant">DEPRECATED</span>.<span class="ruby-identifier">sort_by</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-operator">|</span> <span class="ruby-identifier">k</span> }.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">reason</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">banner</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;    %*1$2$s  %3$s\n&quot;</span> <span class="ruby-operator">%</span> [<span class="ruby-operator">-</span><span class="ruby-identifier">name_length</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">reason</span>]
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">accept</span> <span class="ruby-constant">Template</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">template</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">template_dir</span> = <span class="ruby-identifier">template_dir_for</span> <span class="ruby-identifier">template</span>
+
+        <span class="ruby-keyword">unless</span> <span class="ruby-identifier">template_dir</span> <span class="ruby-keyword">then</span>
+          <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;could not find template #{template}&quot;</span>
+          <span class="ruby-keyword">nil</span>
+        <span class="ruby-keyword">else</span>
+          [<span class="ruby-identifier">template</span>, <span class="ruby-identifier">template_dir</span>]
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">accept</span> <span class="ruby-constant">Path</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">directory</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">directory</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span> <span class="ruby-identifier">directory</span>
+
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">OptionParser</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidArgument</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span> <span class="ruby-identifier">directory</span>
+
+        <span class="ruby-identifier">directory</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">accept</span> <span class="ruby-constant">PathArray</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">directories</span>,<span class="ruby-operator">|</span>
+        <span class="ruby-identifier">directories</span> = <span class="ruby-keyword">if</span> <span class="ruby-identifier">directories</span> <span class="ruby-keyword">then</span>
+                        <span class="ruby-identifier">directories</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">','</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">d</span><span class="ruby-operator">|</span> <span class="ruby-identifier">d</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">empty?</span> }
+                      <span class="ruby-keyword">end</span>
+
+        <span class="ruby-identifier">directories</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">directory</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">directory</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span> <span class="ruby-identifier">directory</span>
+
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">OptionParser</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidArgument</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span> <span class="ruby-identifier">directory</span>
+
+          <span class="ruby-identifier">directory</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-string">&quot;Parsing options:&quot;</span>
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-keyword">if</span> <span class="ruby-constant">Object</span>.<span class="ruby-identifier">const_defined?</span> <span class="ruby-value">:Encoding</span> <span class="ruby-keyword">then</span>
+        <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--encoding=ENCODING&quot;</span>, <span class="ruby-string">&quot;-e&quot;</span>, <span class="ruby-constant">Encoding</span>.<span class="ruby-identifier">list</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">name</span> },
+               <span class="ruby-string">&quot;Specifies the output encoding.  All files&quot;</span>,
+               <span class="ruby-string">&quot;read will be converted to this encoding.&quot;</span>,
+               <span class="ruby-string">&quot;Preferred over --charset&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+                 <span class="ruby-ivar">@encoding</span> = <span class="ruby-constant">Encoding</span>.<span class="ruby-identifier">find</span> <span class="ruby-identifier">value</span>
+                 <span class="ruby-ivar">@charset</span> = <span class="ruby-ivar">@encoding</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-comment"># may not be valid value</span>
+               <span class="ruby-keyword">end</span>
+
+        <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--all&quot;</span>, <span class="ruby-string">&quot;-a&quot;</span>,
+             <span class="ruby-string">&quot;Synonym for --visibility=private.&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+        <span class="ruby-ivar">@visibility</span> = <span class="ruby-value">:private</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--exclude=PATTERN&quot;</span>, <span class="ruby-string">&quot;-x&quot;</span>, <span class="ruby-constant">Regexp</span>,
+             <span class="ruby-string">&quot;Do not process files or directories&quot;</span>,
+             <span class="ruby-string">&quot;matching PATTERN.&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+        <span class="ruby-ivar">@exclude</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">value</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--extension=NEW=OLD&quot;</span>, <span class="ruby-string">&quot;-E&quot;</span>,
+             <span class="ruby-string">&quot;Treat files ending with .new as if they&quot;</span>,
+             <span class="ruby-string">&quot;ended with .old. Using '-E cgi=rb' will&quot;</span>,
+             <span class="ruby-string">&quot;cause xxx.cgi to be parsed as a Ruby file.&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">new</span>, <span class="ruby-identifier">old</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">%r=/</span>, <span class="ruby-value">2</span>)
+
+        <span class="ruby-keyword">unless</span> <span class="ruby-identifier">new</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">old</span> <span class="ruby-keyword">then</span>
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">OptionParser</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidArgument</span>, <span class="ruby-string">&quot;Invalid parameter to '-E'&quot;</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-keyword">unless</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Parser</span>.<span class="ruby-identifier">alias_extension</span> <span class="ruby-identifier">old</span>, <span class="ruby-identifier">new</span> <span class="ruby-keyword">then</span>
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">OptionParser</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidArgument</span>, <span class="ruby-node">&quot;Unknown extension .#{old} to -E&quot;</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--[no-]force-update&quot;</span>, <span class="ruby-string">&quot;-U&quot;</span>,
+             <span class="ruby-string">&quot;Forces rdoc to scan all sources even if&quot;</span>,
+             <span class="ruby-string">&quot;newer than the flag file.&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+        <span class="ruby-ivar">@force_update</span> = <span class="ruby-identifier">value</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--pipe&quot;</span>,
+             <span class="ruby-string">&quot;Convert RDoc on stdin to HTML&quot;</span>) <span class="ruby-keyword">do</span>
+        <span class="ruby-ivar">@pipe</span> = <span class="ruby-keyword">true</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--tab-width=WIDTH&quot;</span>, <span class="ruby-string">&quot;-w&quot;</span>, <span class="ruby-constant">OptionParser</span><span class="ruby-operator">::</span><span class="ruby-constant">DecimalInteger</span>,
+             <span class="ruby-string">&quot;Set the width of tab characters.&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+        <span class="ruby-ivar">@tab_width</span> = <span class="ruby-identifier">value</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--visibility=VISIBILITY&quot;</span>, <span class="ruby-string">&quot;-V&quot;</span>, <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">VISIBILITIES</span>,
+             <span class="ruby-string">&quot;Minimum visibility to document a method.&quot;</span>,
+             <span class="ruby-string">&quot;One of 'public', 'protected' (the default)&quot;</span>,
+             <span class="ruby-string">&quot;or 'private'. Can be abbreviated.&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+        <span class="ruby-ivar">@visibility</span> = <span class="ruby-identifier">value</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">markup_formats</span> = <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Text</span><span class="ruby-operator">::</span><span class="ruby-constant">MARKUP_FORMAT</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">sort</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--markup=MARKUP&quot;</span>, <span class="ruby-identifier">markup_formats</span>,
+             <span class="ruby-string">&quot;The markup format for the named files.&quot;</span>,
+             <span class="ruby-string">&quot;The default is rdoc.  Valid values are:&quot;</span>,
+             <span class="ruby-identifier">markup_formats</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">', '</span>)) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+        <span class="ruby-ivar">@markup</span> = <span class="ruby-identifier">value</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-string">&quot;Common generator options:&quot;</span>
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--force-output&quot;</span>, <span class="ruby-string">&quot;-O&quot;</span>,
+             <span class="ruby-string">&quot;Forces rdoc to write the output files,&quot;</span>,
+             <span class="ruby-string">&quot;even if the output directory exists&quot;</span>,
+             <span class="ruby-string">&quot;and does not seem to have been created&quot;</span>,
+             <span class="ruby-string">&quot;by rdoc.&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+        <span class="ruby-ivar">@force_output</span> = <span class="ruby-identifier">value</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">generator_text</span> = <span class="ruby-ivar">@generators</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;  #{name}&quot;</span> }.<span class="ruby-identifier">sort</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;-f&quot;</span>, <span class="ruby-string">&quot;--fmt=FORMAT&quot;</span>, <span class="ruby-string">&quot;--format=FORMAT&quot;</span>, <span class="ruby-ivar">@generators</span>.<span class="ruby-identifier">keys</span>,
+             <span class="ruby-string">&quot;Set the output formatter.  One of:&quot;</span>, *<span class="ruby-identifier">generator_text</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">check_generator</span>
+
+        <span class="ruby-ivar">@generator_name</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">downcase</span>
+        <span class="ruby-identifier">setup_generator</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--include=DIRECTORIES&quot;</span>, <span class="ruby-string">&quot;-i&quot;</span>, <span class="ruby-constant">PathArray</span>,
+             <span class="ruby-string">&quot;Set (or add to) the list of directories to&quot;</span>,
+             <span class="ruby-string">&quot;be searched when satisfying :include:&quot;</span>,
+             <span class="ruby-string">&quot;requests. Can be used more than once.&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+        <span class="ruby-ivar">@rdoc_include</span>.<span class="ruby-identifier">concat</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">dir</span><span class="ruby-operator">|</span> <span class="ruby-identifier">dir</span>.<span class="ruby-identifier">strip</span> }
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--[no-]coverage-report=[LEVEL]&quot;</span>, <span class="ruby-string">&quot;--[no-]dcov&quot;</span>, <span class="ruby-string">&quot;-C&quot;</span>, <span class="ruby-constant">Integer</span>,
+             <span class="ruby-string">&quot;Prints a report on undocumented items.&quot;</span>,
+             <span class="ruby-string">&quot;Does not generate files.&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">value</span> = <span class="ruby-value">0</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-comment"># Integer converts -C to nil</span>
+
+        <span class="ruby-ivar">@coverage_report</span> = <span class="ruby-identifier">value</span>
+        <span class="ruby-ivar">@force_update</span> = <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--output=DIR&quot;</span>, <span class="ruby-string">&quot;--op&quot;</span>, <span class="ruby-string">&quot;-o&quot;</span>,
+             <span class="ruby-string">&quot;Set the output directory.&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+        <span class="ruby-ivar">@op_dir</span> = <span class="ruby-identifier">value</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;-d&quot;</span>,
+             <span class="ruby-string">&quot;Deprecated --diagram option.&quot;</span>,
+             <span class="ruby-string">&quot;Prevents firing debug mode&quot;</span>,
+             <span class="ruby-string">&quot;with legacy invocation.&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-string">'HTML generator options:'</span>
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--charset=CHARSET&quot;</span>, <span class="ruby-string">&quot;-c&quot;</span>,
+             <span class="ruby-string">&quot;Specifies the output HTML character-set.&quot;</span>,
+             <span class="ruby-string">&quot;Use --encoding instead of --charset if&quot;</span>,
+             <span class="ruby-string">&quot;available.&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+        <span class="ruby-ivar">@charset</span> = <span class="ruby-identifier">value</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--hyperlink-all&quot;</span>, <span class="ruby-string">&quot;-A&quot;</span>,
+             <span class="ruby-string">&quot;Generate hyperlinks for all words that&quot;</span>,
+             <span class="ruby-string">&quot;correspond to known methods, even if they&quot;</span>,
+             <span class="ruby-node">&quot;do not start with '#' or '::' (legacy&quot;</span>,
+             <span class="ruby-string">&quot;behavior).&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+        <span class="ruby-ivar">@hyperlink_all</span> = <span class="ruby-identifier">value</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--main=NAME&quot;</span>, <span class="ruby-string">&quot;-m&quot;</span>,
+             <span class="ruby-string">&quot;NAME will be the initial page displayed.&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+        <span class="ruby-ivar">@main_page</span> = <span class="ruby-identifier">value</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--[no-]line-numbers&quot;</span>, <span class="ruby-string">&quot;-N&quot;</span>,
+             <span class="ruby-string">&quot;Include line numbers in the source code.&quot;</span>,
+             <span class="ruby-string">&quot;By default, only the number of the first&quot;</span>,
+             <span class="ruby-string">&quot;line is displayed, in a leading comment.&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+        <span class="ruby-ivar">@line_numbers</span> = <span class="ruby-identifier">value</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--show-hash&quot;</span>, <span class="ruby-string">&quot;-H&quot;</span>,
+             <span class="ruby-node">&quot;A name of the form #name in a comment is a&quot;</span>,
+             <span class="ruby-string">&quot;possible hyperlink to an instance method&quot;</span>,
+             <span class="ruby-node">&quot;name. When displayed, the '#' is removed&quot;</span>,
+             <span class="ruby-string">&quot;unless this option is specified.&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+        <span class="ruby-ivar">@show_hash</span> = <span class="ruby-identifier">value</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--template=NAME&quot;</span>, <span class="ruby-string">&quot;-T&quot;</span>, <span class="ruby-constant">Template</span>,
+             <span class="ruby-string">&quot;Set the template used when generating&quot;</span>,
+             <span class="ruby-string">&quot;output. The default depends on the&quot;</span>,
+             <span class="ruby-string">&quot;formatter used.&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span>(<span class="ruby-identifier">template</span>, <span class="ruby-identifier">template_dir</span>)<span class="ruby-operator">|</span>
+        <span class="ruby-ivar">@template</span>     = <span class="ruby-identifier">template</span>
+        <span class="ruby-ivar">@template_dir</span> = <span class="ruby-identifier">template_dir</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--title=TITLE&quot;</span>, <span class="ruby-string">&quot;-t&quot;</span>,
+             <span class="ruby-string">&quot;Set TITLE as the title for HTML output.&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+        <span class="ruby-ivar">@title</span> = <span class="ruby-identifier">value</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--copy-files=PATH&quot;</span>, <span class="ruby-constant">Path</span>,
+             <span class="ruby-string">&quot;Specify a file or directory to copy static&quot;</span>,
+             <span class="ruby-string">&quot;files from.&quot;</span>,
+             <span class="ruby-string">&quot;If a file is given it will be copied into&quot;</span>,
+             <span class="ruby-string">&quot;the output dir.  If a directory is given the&quot;</span>,
+             <span class="ruby-string">&quot;entire directory will be copied.&quot;</span>,
+             <span class="ruby-string">&quot;You can use this multiple times&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+        <span class="ruby-ivar">@static_path</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">value</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--webcvs=URL&quot;</span>, <span class="ruby-string">&quot;-W&quot;</span>,
+             <span class="ruby-string">&quot;Specify a URL for linking to a web frontend&quot;</span>,
+             <span class="ruby-string">&quot;to CVS. If the URL contains a '\%s', the&quot;</span>,
+             <span class="ruby-string">&quot;name of the current file will be&quot;</span>,
+             <span class="ruby-string">&quot;substituted; if the URL doesn't contain a&quot;</span>,
+             <span class="ruby-string">&quot;'\%s', the filename will be appended to it.&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+        <span class="ruby-ivar">@webcvs</span> = <span class="ruby-identifier">value</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-string">&quot;ri generator options:&quot;</span>
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--ri&quot;</span>, <span class="ruby-string">&quot;-r&quot;</span>,
+             <span class="ruby-string">&quot;Generate output for use by `ri`. The files&quot;</span>,
+             <span class="ruby-string">&quot;are stored in the '.rdoc' directory under&quot;</span>,
+             <span class="ruby-string">&quot;your home directory unless overridden by a&quot;</span>,
+             <span class="ruby-string">&quot;subsequent --op parameter, so no special&quot;</span>,
+             <span class="ruby-string">&quot;privileges are needed.&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">check_generator</span>
+
+        <span class="ruby-ivar">@generator_name</span> = <span class="ruby-string">&quot;ri&quot;</span>
+        <span class="ruby-ivar">@op_dir</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">RI</span><span class="ruby-operator">::</span><span class="ruby-constant">Paths</span><span class="ruby-operator">::</span><span class="ruby-constant">HOMEDIR</span>
+        <span class="ruby-identifier">setup_generator</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--ri-site&quot;</span>, <span class="ruby-string">&quot;-R&quot;</span>,
+             <span class="ruby-string">&quot;Generate output for use by `ri`. The files&quot;</span>,
+             <span class="ruby-string">&quot;are stored in a site-wide directory,&quot;</span>,
+             <span class="ruby-string">&quot;making them accessible to others, so&quot;</span>,
+             <span class="ruby-string">&quot;special privileges are needed.&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">check_generator</span>
+
+        <span class="ruby-ivar">@generator_name</span> = <span class="ruby-string">&quot;ri&quot;</span>
+        <span class="ruby-ivar">@op_dir</span> = <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">RI</span><span class="ruby-operator">::</span><span class="ruby-constant">Paths</span><span class="ruby-operator">::</span><span class="ruby-constant">SITEDIR</span>
+        <span class="ruby-identifier">setup_generator</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-string">&quot;Generic options:&quot;</span>
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--write-options&quot;</span>,
+             <span class="ruby-string">&quot;Write .rdoc_options to the current&quot;</span>,
+             <span class="ruby-string">&quot;directory with the given options.  Not all&quot;</span>,
+             <span class="ruby-string">&quot;options will be used.  See RDoc::Options&quot;</span>,
+             <span class="ruby-string">&quot;for details.&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+        <span class="ruby-ivar">@write_options</span> = <span class="ruby-keyword">true</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--[no-]dry-run&quot;</span>,
+             <span class="ruby-string">&quot;Don't write any files&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+        <span class="ruby-ivar">@dry_run</span> = <span class="ruby-identifier">value</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;-D&quot;</span>, <span class="ruby-string">&quot;--[no-]debug&quot;</span>,
+             <span class="ruby-string">&quot;Displays lots on internal stuff.&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">$DEBUG_RDOC</span> = <span class="ruby-identifier">value</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--[no-]ignore-invalid&quot;</span>,
+             <span class="ruby-string">&quot;Ignore invalid options and continue&quot;</span>,
+             <span class="ruby-string">&quot;(default true).&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">ignore_invalid</span> = <span class="ruby-identifier">value</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--quiet&quot;</span>, <span class="ruby-string">&quot;-q&quot;</span>,
+             <span class="ruby-string">&quot;Don't show progress as we parse.&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+        <span class="ruby-ivar">@verbosity</span> = <span class="ruby-value">0</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--verbose&quot;</span>, <span class="ruby-string">&quot;-v&quot;</span>,
+             <span class="ruby-string">&quot;Display extra progress as RDoc parses&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+        <span class="ruby-ivar">@verbosity</span> = <span class="ruby-value">2</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--help&quot;</span>,
+             <span class="ruby-string">&quot;Display this help&quot;</span>) <span class="ruby-keyword">do</span>
+        <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">GENERATORS</span>.<span class="ruby-identifier">each_key</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">generator</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">setup_generator</span> <span class="ruby-identifier">generator</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-identifier">puts</span> <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">help</span>
+        <span class="ruby-identifier">exit</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">setup_generator</span> <span class="ruby-string">'darkfish'</span> <span class="ruby-keyword">if</span>
+      <span class="ruby-identifier">argv</span>.<span class="ruby-identifier">grep</span>(<span class="ruby-regexp">%r\A(-f|--fmt|--format|-r|-R|--ri|--ri-site)\b/</span>).<span class="ruby-identifier">empty?</span>
+
+    <span class="ruby-identifier">deprecated</span> = []
+    <span class="ruby-identifier">invalid</span> = []
+
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">parse!</span> <span class="ruby-identifier">argv</span>
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">OptionParser</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidArgument</span>, <span class="ruby-constant">OptionParser</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidOption</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-constant">DEPRECATED</span>[<span class="ruby-identifier">e</span>.<span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>] <span class="ruby-keyword">then</span>
+        <span class="ruby-identifier">deprecated</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>
+      <span class="ruby-keyword">elsif</span> <span class="ruby-node">%w[--format --ri -r --ri-site -R]</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span> <span class="ruby-keyword">then</span>
+        <span class="ruby-identifier">raise</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">invalid</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">args</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">' '</span>)
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-keyword">retry</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@generator</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-ivar">@generator</span> = <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Generator</span><span class="ruby-operator">::</span><span class="ruby-constant">Darkfish</span>
+      <span class="ruby-ivar">@generator_name</span> = <span class="ruby-string">'darkfish'</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@pipe</span> <span class="ruby-keyword">and</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">argv</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-ivar">@pipe</span> = <span class="ruby-keyword">false</span>
+      <span class="ruby-identifier">invalid</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">'-p (with files)'</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">quiet</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">deprecated</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">opt</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'option '</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">opt</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">' is deprecated: '</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">DEPRECATED</span>[<span class="ruby-identifier">opt</span>]
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-keyword">unless</span> <span class="ruby-identifier">invalid</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">then</span>
+        <span class="ruby-identifier">invalid</span> = <span class="ruby-node">&quot;invalid options: #{invalid.join ', '}&quot;</span>
+
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">ignore_invalid</span> <span class="ruby-keyword">then</span>
+          <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">invalid</span>
+          <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'(invalid options are ignored)'</span>
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">opts</span>
+          <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">invalid</span>
+          <span class="ruby-identifier">exit</span> <span class="ruby-value">1</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-ivar">@files</span> = <span class="ruby-identifier">argv</span>.<span class="ruby-identifier">dup</span>
+
+    <span class="ruby-identifier">finish</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@write_options</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">write_options</span>
+      <span class="ruby-identifier">exit</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">end</span></pre>
+          </div><!-- parse-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- parse-method -->
+
+    
+      <div id="method-i-quiet" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">quiet</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Don’t display progress as we process the files</p>
+          
+
+          
+          <div class="method-source-code" id="quiet-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/options.rb, line 941</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">quiet</span>
+  <span class="ruby-ivar">@verbosity</span>.<span class="ruby-identifier">zero?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- quiet-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- quiet-method -->
+
+    
+      <div id="method-i-quiet-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">quiet=</span><span
+            class="method-args">(bool)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Set quietness to <code>bool</code></p>
+          
+
+          
+          <div class="method-source-code" id="quiet-3D-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/options.rb, line 948</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">quiet=</span> <span class="ruby-identifier">bool</span>
+  <span class="ruby-ivar">@verbosity</span> = <span class="ruby-identifier">bool</span> <span class="ruby-operator">?</span> <span class="ruby-value">0</span> <span class="ruby-operator">:</span> <span class="ruby-value">1</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- quiet-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- quiet-3D-method -->
+
+    
+      <div id="method-i-sanitize_path" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">sanitize_path</span><span
+            class="method-args">(path)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Removes directories from <code>path</code> that are outside the current
+directory</p>
+          
+
+          
+          <div class="method-source-code" id="sanitize_path-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/options.rb, line 955</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">sanitize_path</span> <span class="ruby-identifier">path</span>
+  <span class="ruby-identifier">require</span> <span class="ruby-string">'pathname'</span>
+  <span class="ruby-identifier">dot</span> = <span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'.'</span>).<span class="ruby-identifier">expand_path</span>
+
+  <span class="ruby-identifier">path</span>.<span class="ruby-identifier">reject</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">item</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">path</span> = <span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">item</span>).<span class="ruby-identifier">expand_path</span>
+    <span class="ruby-identifier">relative</span> = <span class="ruby-identifier">path</span>.<span class="ruby-identifier">relative_path_from</span>(<span class="ruby-identifier">dot</span>).<span class="ruby-identifier">to_s</span>
+    <span class="ruby-identifier">relative</span>.<span class="ruby-identifier">start_with?</span> <span class="ruby-string">'..'</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- sanitize_path-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- sanitize_path-method -->
+
+    
+      <div id="method-i-setup_generator" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">setup_generator</span><span
+            class="method-args">(generator_name = @generator_name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Set up an output generator for the named <code>generator_name</code>.</p>
+
+<p>If the found generator responds to :setup_options it will be called with
+the options instance.  This allows generators to add custom options or set
+default options.</p>
+          
+
+          
+          <div class="method-source-code" id="setup_generator-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/options.rb, line 973</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">setup_generator</span> <span class="ruby-identifier">generator_name</span> = <span class="ruby-ivar">@generator_name</span>
+  <span class="ruby-ivar">@generator</span> = <span class="ruby-ivar">@generators</span>[<span class="ruby-identifier">generator_name</span>]
+
+  <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@generator</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">OptionParser</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidArgument</span>,
+          <span class="ruby-node">&quot;Invalid output formatter #{generator_name}&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@generator_options</span>.<span class="ruby-identifier">include?</span> <span class="ruby-ivar">@generator</span>
+
+  <span class="ruby-ivar">@generator_name</span> = <span class="ruby-identifier">generator_name</span>
+  <span class="ruby-ivar">@generator_options</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@generator</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@generator</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-value">:setup_options</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-ivar">@option_parser</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">OptionParser</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-ivar">@generator</span>.<span class="ruby-identifier">setup_options</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- setup_generator-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- setup_generator-method -->
+
+    
+      <div id="method-i-template_dir_for" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">template_dir_for</span><span
+            class="method-args">(template)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Finds the template dir for <code>template</code></p>
+          
+
+          
+          <div class="method-source-code" id="template_dir_for-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/options.rb, line 995</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">template_dir_for</span> <span class="ruby-identifier">template</span>
+  <span class="ruby-identifier">template_path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-string">'rdoc'</span>, <span class="ruby-string">'generator'</span>, <span class="ruby-string">'template'</span>, <span class="ruby-identifier">template</span>
+
+  <span class="ruby-identifier">$LOAD_PATH</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
+    <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">path</span>), <span class="ruby-identifier">template_path</span>
+  <span class="ruby-keyword">end</span>.<span class="ruby-identifier">find</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">dir</span><span class="ruby-operator">|</span>
+    <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span> <span class="ruby-identifier">dir</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- template_dir_for-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- template_dir_for-method -->
+
+    
+      <div id="method-i-warn" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">warn</span><span
+            class="method-args">(message)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Displays a warning using Kernel#warn if we’re being verbose</p>
+          
+
+          
+          <div class="method-source-code" id="warn-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/options.rb, line 1021</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">warn</span> <span class="ruby-identifier">message</span>
+  <span class="ruby-keyword">super</span> <span class="ruby-identifier">message</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@verbosity</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- warn-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- warn-method -->
+
+    
+      <div id="method-i-write_options" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">write_options</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Writes the YAML file .rdoc_options to the current directory containing the
+parsed options.</p>
+          
+
+          
+          <div class="method-source-code" id="write_options-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/options.rb, line 1029</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">write_options</span>
+  <span class="ruby-constant">RDoc</span>.<span class="ruby-identifier">load_yaml</span>
+
+  <span class="ruby-identifier">open</span> <span class="ruby-string">'.rdoc_options'</span>, <span class="ruby-string">'w'</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">io</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">io</span>.<span class="ruby-identifier">set_encoding</span> <span class="ruby-constant">Encoding</span><span class="ruby-operator">::</span><span class="ruby-constant">UTF_8</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">Object</span>.<span class="ruby-identifier">const_defined?</span> <span class="ruby-value">:Encoding</span>
+
+    <span class="ruby-constant">YAML</span>.<span class="ruby-identifier">dump</span> <span class="ruby-keyword">self</span>, <span class="ruby-identifier">io</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- write_options-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- write_options-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module JSON::Pure::Generator::GeneratorMethods::String - json-1.7.5 Documentation</title>
+
+<link type="text/css" media="screen" href="../../../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../../../index.html">Home</a>
+    <a href="../../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/json/pure/generator.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-included">::included</a>
+    
+    <li><a href="#method-i-to_json">#to_json</a>
+    
+    <li><a href="#method-i-to_json_raw">#to_json_raw</a>
+    
+    <li><a href="#method-i-to_json_raw_object">#to_json_raw_object</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../../../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../../../JSON.html">JSON</a>
+  
+    <li><a href="../../../../JSON/Ext.html">JSON::Ext</a>
+  
+    <li><a href="../../../../JSON/GeneratorError.html">JSON::GeneratorError</a>
+  
+    <li><a href="../../../../JSON/GenericObject.html">JSON::GenericObject</a>
+  
+    <li><a href="../../../../JSON/JSONError.html">JSON::JSONError</a>
+  
+    <li><a href="../../../../JSON/MissingUnicodeSupport.html">JSON::MissingUnicodeSupport</a>
+  
+    <li><a href="../../../../JSON/NestingError.html">JSON::NestingError</a>
+  
+    <li><a href="../../../../JSON/ParserError.html">JSON::ParserError</a>
+  
+    <li><a href="../../../../JSON/Pure.html">JSON::Pure</a>
+  
+    <li><a href="../../../../JSON/Pure/Generator.html">JSON::Pure::Generator</a>
+  
+    <li><a href="../../../../JSON/Pure/Generator/GeneratorMethods.html">JSON::Pure::Generator::GeneratorMethods</a>
+  
+    <li><a href="../../../../JSON/Pure/Generator/GeneratorMethods/Array.html">JSON::Pure::Generator::GeneratorMethods::Array</a>
+  
+    <li><a href="../../../../JSON/Pure/Generator/GeneratorMethods/FalseClass.html">JSON::Pure::Generator::GeneratorMethods::FalseClass</a>
+  
+    <li><a href="../../../../JSON/Pure/Generator/GeneratorMethods/Float.html">JSON::Pure::Generator::GeneratorMethods::Float</a>
+  
+    <li><a href="../../../../JSON/Pure/Generator/GeneratorMethods/Hash.html">JSON::Pure::Generator::GeneratorMethods::Hash</a>
+  
+    <li><a href="../../../../JSON/Pure/Generator/GeneratorMethods/Integer.html">JSON::Pure::Generator::GeneratorMethods::Integer</a>
+  
+    <li><a href="../../../../JSON/Pure/Generator/GeneratorMethods/NilClass.html">JSON::Pure::Generator::GeneratorMethods::NilClass</a>
+  
+    <li><a href="../../../../JSON/Pure/Generator/GeneratorMethods/Object.html">JSON::Pure::Generator::GeneratorMethods::Object</a>
+  
+    <li><a href="../../../../JSON/Pure/Generator/GeneratorMethods/String.html">JSON::Pure::Generator::GeneratorMethods::String</a>
+  
+    <li><a href="../../../../JSON/Pure/Generator/GeneratorMethods/String/Extend.html">JSON::Pure::Generator::GeneratorMethods::String::Extend</a>
+  
+    <li><a href="../../../../JSON/Pure/Generator/GeneratorMethods/TrueClass.html">JSON::Pure::Generator::GeneratorMethods::TrueClass</a>
+  
+    <li><a href="../../../../JSON/Pure/Generator/State.html">JSON::Pure::Generator::State</a>
+  
+    <li><a href="../../../../JSON/Pure/Parser.html">JSON::Pure::Parser</a>
+  
+    <li><a href="../../../../JSON/GeneratorError.html">JSON::UnparserError</a>
+  
+    <li><a href="../../../../BigDecimal.html">BigDecimal</a>
+  
+    <li><a href="../../../../Class.html">Class</a>
+  
+    <li><a href="../../../../Complex.html">Complex</a>
+  
+    <li><a href="../../../../Date.html">Date</a>
+  
+    <li><a href="../../../../DateTime.html">DateTime</a>
+  
+    <li><a href="../../../../Exception.html">Exception</a>
+  
+    <li><a href="../../../../Kernel.html">Kernel</a>
+  
+    <li><a href="../../../../OpenStruct.html">OpenStruct</a>
+  
+    <li><a href="../../../../Range.html">Range</a>
+  
+    <li><a href="../../../../Rational.html">Rational</a>
+  
+    <li><a href="../../../../Regexp.html">Regexp</a>
+  
+    <li><a href="../../../../Struct.html">Struct</a>
+  
+    <li><a href="../../../../Symbol.html">Symbol</a>
+  
+    <li><a href="../../../../Time.html">Time</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module JSON::Pure::Generator::GeneratorMethods::String</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-included" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">included</span><span
+            class="method-args">(modul)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Extends <em>modul</em> with the <a
+href="String/Extend.html">String::Extend</a> module.</p>
+          
+
+          
+          <div class="method-source-code" id="included-source">
+            <pre><span class="ruby-comment"># File lib/json/pure/generator.rb, line 433</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">included</span>(<span class="ruby-identifier">modul</span>)
+  <span class="ruby-identifier">modul</span>.<span class="ruby-identifier">extend</span> <span class="ruby-constant">Extend</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- included-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- included-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-to_json" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_json</span><span
+            class="method-args">(state = nil, *args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This string should be encoded with UTF-8 A call to this method returns a <a
+href="../../../../JSON.html">JSON</a> string encoded with UTF16 big endian
+characters as u????.</p>
+          
+
+          
+          <div class="method-source-code" id="to_json-source">
+            <pre><span class="ruby-comment"># File lib/json/pure/generator.rb, line 394</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_json</span>(<span class="ruby-identifier">state</span> = <span class="ruby-keyword">nil</span>, *<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">state</span> = <span class="ruby-constant">State</span>.<span class="ruby-identifier">from_state</span>(<span class="ruby-identifier">state</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">encoding</span> <span class="ruby-operator">==</span> <span class="ruby-operator">::</span><span class="ruby-constant">Encoding</span><span class="ruby-operator">::</span><span class="ruby-constant">UTF_8</span>
+    <span class="ruby-identifier">string</span> = <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">string</span> = <span class="ruby-identifier">encode</span>(<span class="ruby-operator">::</span><span class="ruby-constant">Encoding</span><span class="ruby-operator">::</span><span class="ruby-constant">UTF_8</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">state</span>.<span class="ruby-identifier">ascii_only?</span>
+    <span class="ruby-string">'&quot;'</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">utf8_to_json_ascii</span>(<span class="ruby-identifier">string</span>) <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">'&quot;'</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-string">'&quot;'</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">utf8_to_json</span>(<span class="ruby-identifier">string</span>) <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">'&quot;'</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_json-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_json-method -->
+
+    
+      <div id="method-i-to_json_raw" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_json_raw</span><span
+            class="method-args">(*args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This method creates a <a href="../../../../JSON.html">JSON</a> text from
+the result of a call to <a
+href="String.html#method-i-to_json_raw_object">#to_json_raw_object</a> of
+this <a href="String.html">String</a>.</p>
+          
+
+          
+          <div class="method-source-code" id="to_json_raw-source">
+            <pre><span class="ruby-comment"># File lib/json/pure/generator.rb, line 450</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_json_raw</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">to_json_raw_object</span>.<span class="ruby-identifier">to_json</span>(*<span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_json_raw-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_json_raw-method -->
+
+    
+      <div id="method-i-to_json_raw_object" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_json_raw_object</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This method creates a raw object hash, that can be nested into other data
+structures and will be unparsed as a raw string. This method should be
+used, if you want to convert raw strings to <a
+href="../../../../JSON.html">JSON</a> instead of UTF-8 strings, e. g.
+binary data.</p>
+          
+
+          
+          <div class="method-source-code" id="to_json_raw_object-source">
+            <pre><span class="ruby-comment"># File lib/json/pure/generator.rb, line 441</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_json_raw_object</span>
+  {
+    <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">create_id</span>  =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">name</span>,
+    <span class="ruby-string">'raw'</span>           =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">unpack</span>(<span class="ruby-string">'C*'</span>),
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_json_raw_object-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_json_raw_object-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

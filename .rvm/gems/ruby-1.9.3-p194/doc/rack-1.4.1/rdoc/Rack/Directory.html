@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Rack::Directory - rack-1.4.1 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/rack/directory.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-_call">#_call</a>
+    
+    <li><a href="#method-i-call">#call</a>
+    
+    <li><a href="#method-i-check_forbidden">#check_forbidden</a>
+    
+    <li><a href="#method-i-each">#each</a>
+    
+    <li><a href="#method-i-entity_not_found">#entity_not_found</a>
+    
+    <li><a href="#method-i-filesize_format">#filesize_format</a>
+    
+    <li><a href="#method-i-list_directory">#list_directory</a>
+    
+    <li><a href="#method-i-list_path">#list_path</a>
+    
+    <li><a href="#method-i-stat">#stat</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../KNOWN-ISSUES.html">KNOWN-ISSUES</a>
+  
+    <li class="file"><a href="../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Rack.html">Rack</a>
+  
+    <li><a href="../Rack/Auth.html">Rack::Auth</a>
+  
+    <li><a href="../Rack/Auth/AbstractHandler.html">Rack::Auth::AbstractHandler</a>
+  
+    <li><a href="../Rack/Auth/AbstractRequest.html">Rack::Auth::AbstractRequest</a>
+  
+    <li><a href="../Rack/Auth/Basic.html">Rack::Auth::Basic</a>
+  
+    <li><a href="../Rack/Auth/Basic/Request.html">Rack::Auth::Basic::Request</a>
+  
+    <li><a href="../Rack/Auth/Digest.html">Rack::Auth::Digest</a>
+  
+    <li><a href="../Rack/Auth/Digest/MD5.html">Rack::Auth::Digest::MD5</a>
+  
+    <li><a href="../Rack/Auth/Digest/Nonce.html">Rack::Auth::Digest::Nonce</a>
+  
+    <li><a href="../Rack/Auth/Digest/Params.html">Rack::Auth::Digest::Params</a>
+  
+    <li><a href="../Rack/Auth/Digest/Request.html">Rack::Auth::Digest::Request</a>
+  
+    <li><a href="../Rack/BodyProxy.html">Rack::BodyProxy</a>
+  
+    <li><a href="../Rack/Builder.html">Rack::Builder</a>
+  
+    <li><a href="../Rack/Cascade.html">Rack::Cascade</a>
+  
+    <li><a href="../Rack/Chunked.html">Rack::Chunked</a>
+  
+    <li><a href="../Rack/Chunked/Body.html">Rack::Chunked::Body</a>
+  
+    <li><a href="../Rack/CommonLogger.html">Rack::CommonLogger</a>
+  
+    <li><a href="../Rack/ConditionalGet.html">Rack::ConditionalGet</a>
+  
+    <li><a href="../Rack/Config.html">Rack::Config</a>
+  
+    <li><a href="../Rack/ContentLength.html">Rack::ContentLength</a>
+  
+    <li><a href="../Rack/ContentType.html">Rack::ContentType</a>
+  
+    <li><a href="../Rack/Deflater.html">Rack::Deflater</a>
+  
+    <li><a href="../Rack/Deflater/DeflateStream.html">Rack::Deflater::DeflateStream</a>
+  
+    <li><a href="../Rack/Deflater/GzipStream.html">Rack::Deflater::GzipStream</a>
+  
+    <li><a href="../Rack/Directory.html">Rack::Directory</a>
+  
+    <li><a href="../Rack/ETag.html">Rack::ETag</a>
+  
+    <li><a href="../Rack/File.html">Rack::File</a>
+  
+    <li><a href="../Rack/ForwardRequest.html">Rack::ForwardRequest</a>
+  
+    <li><a href="../Rack/Handler.html">Rack::Handler</a>
+  
+    <li><a href="../Rack/Handler/CGI.html">Rack::Handler::CGI</a>
+  
+    <li><a href="../Rack/Handler/EventedMongrel.html">Rack::Handler::EventedMongrel</a>
+  
+    <li><a href="../Rack/Handler/FastCGI.html">Rack::Handler::FastCGI</a>
+  
+    <li><a href="../Rack/Handler/LSWS.html">Rack::Handler::LSWS</a>
+  
+    <li><a href="../Rack/Handler/Mongrel.html">Rack::Handler::Mongrel</a>
+  
+    <li><a href="../Rack/Handler/SCGI.html">Rack::Handler::SCGI</a>
+  
+    <li><a href="../Rack/Handler/SwiftipliedMongrel.html">Rack::Handler::SwiftipliedMongrel</a>
+  
+    <li><a href="../Rack/Handler/Thin.html">Rack::Handler::Thin</a>
+  
+    <li><a href="../Rack/Handler/WEBrick.html">Rack::Handler::WEBrick</a>
+  
+    <li><a href="../Rack/Head.html">Rack::Head</a>
+  
+    <li><a href="../Rack/Lint.html">Rack::Lint</a>
+  
+    <li><a href="../Rack/Lobster.html">Rack::Lobster</a>
+  
+    <li><a href="../Rack/Lock.html">Rack::Lock</a>
+  
+    <li><a href="../Rack/Logger.html">Rack::Logger</a>
+  
+    <li><a href="../Rack/MethodOverride.html">Rack::MethodOverride</a>
+  
+    <li><a href="../Rack/Mime.html">Rack::Mime</a>
+  
+    <li><a href="../Rack/MockRequest.html">Rack::MockRequest</a>
+  
+    <li><a href="../Rack/MockRequest/FatalWarner.html">Rack::MockRequest::FatalWarner</a>
+  
+    <li><a href="../Rack/MockRequest/FatalWarning.html">Rack::MockRequest::FatalWarning</a>
+  
+    <li><a href="../Rack/MockResponse.html">Rack::MockResponse</a>
+  
+    <li><a href="../Rack/Multipart.html">Rack::Multipart</a>
+  
+    <li><a href="../Rack/Multipart/Generator.html">Rack::Multipart::Generator</a>
+  
+    <li><a href="../Rack/Multipart/Parser.html">Rack::Multipart::Parser</a>
+  
+    <li><a href="../Rack/Multipart/UploadedFile.html">Rack::Multipart::UploadedFile</a>
+  
+    <li><a href="../Rack/NullLogger.html">Rack::NullLogger</a>
+  
+    <li><a href="../Rack/Recursive.html">Rack::Recursive</a>
+  
+    <li><a href="../Rack/Reloader.html">Rack::Reloader</a>
+  
+    <li><a href="../Rack/Reloader/Stat.html">Rack::Reloader::Stat</a>
+  
+    <li><a href="../Rack/Request.html">Rack::Request</a>
+  
+    <li><a href="../Rack/Response.html">Rack::Response</a>
+  
+    <li><a href="../Rack/Response/Helpers.html">Rack::Response::Helpers</a>
+  
+    <li><a href="../Rack/RewindableInput.html">Rack::RewindableInput</a>
+  
+    <li><a href="../Rack/RewindableInput/Tempfile.html">Rack::RewindableInput::Tempfile</a>
+  
+    <li><a href="../Rack/Runtime.html">Rack::Runtime</a>
+  
+    <li><a href="../Rack/Sendfile.html">Rack::Sendfile</a>
+  
+    <li><a href="../Rack/Server.html">Rack::Server</a>
+  
+    <li><a href="../Rack/Server/Options.html">Rack::Server::Options</a>
+  
+    <li><a href="../Rack/Session.html">Rack::Session</a>
+  
+    <li><a href="../Rack/Session/Abstract.html">Rack::Session::Abstract</a>
+  
+    <li><a href="../Rack/Session/Abstract/ID.html">Rack::Session::Abstract::ID</a>
+  
+    <li><a href="../Rack/Session/Abstract/SessionHash.html">Rack::Session::Abstract::SessionHash</a>
+  
+    <li><a href="../Rack/Session/Cookie.html">Rack::Session::Cookie</a>
+  
+    <li><a href="../Rack/Session/Cookie/Base64.html">Rack::Session::Cookie::Base64</a>
+  
+    <li><a href="../Rack/Session/Cookie/Base64/Marshal.html">Rack::Session::Cookie::Base64::Marshal</a>
+  
+    <li><a href="../Rack/Session/Cookie/Identity.html">Rack::Session::Cookie::Identity</a>
+  
+    <li><a href="../Rack/Session/Cookie/Reverse.html">Rack::Session::Cookie::Reverse</a>
+  
+    <li><a href="../Rack/Session/Memcache.html">Rack::Session::Memcache</a>
+  
+    <li><a href="../Rack/Session/Pool.html">Rack::Session::Pool</a>
+  
+    <li><a href="../Rack/ShowExceptions.html">Rack::ShowExceptions</a>
+  
+    <li><a href="../Rack/ShowStatus.html">Rack::ShowStatus</a>
+  
+    <li><a href="../Rack/Static.html">Rack::Static</a>
+  
+    <li><a href="../Rack/URLMap.html">Rack::URLMap</a>
+  
+    <li><a href="../Rack/Utils.html">Rack::Utils</a>
+  
+    <li><a href="../Rack/Utils/Context.html">Rack::Utils::Context</a>
+  
+    <li><a href="../Rack/Utils/HeaderHash.html">Rack::Utils::HeaderHash</a>
+  
+    <li><a href="../Rack/Utils/KeySpaceConstrainedParams.html">Rack::Utils::KeySpaceConstrainedParams</a>
+  
+    <li><a href="../FCGI.html">FCGI</a>
+  
+    <li><a href="../FCGI/Stream.html">FCGI::Stream</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Rack::Directory</h1>
+
+  <div id="description" class="description">
+    
+<p><a href="Directory.html">Rack::Directory</a> serves entries below the
+<code>root</code> given, according to the path info of the <a
+href="../Rack.html">Rack</a> request. If a directory is found, the file's
+contents will be presented in an html based index. If a file is found, the
+env will be passed to the specified <code>app</code>.</p>
+
+<p>If <code>app</code> is not specified, a <a href="File.html">Rack::File</a>
+of the same <code>root</code> will be used.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="DIR_FILE">DIR_FILE
+        
+        <dd class="description">
+        
+      
+        <dt id="DIR_PAGE">DIR_PAGE
+        
+        <dd class="description">
+        
+      
+        <dt id="F">F
+        
+        <dd class="description">
+        
+      
+        <dt id="FILESIZE_FORMAT">FILESIZE_FORMAT
+        
+        <dd class="description"><p>Stolen from Ramaze</p>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-files" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">files</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-path" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">path</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-root" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">root</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(root, app=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/rack/directory.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">root</span>, <span class="ruby-identifier">app</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-ivar">@root</span> = <span class="ruby-constant">F</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">root</span>)
+  <span class="ruby-ivar">@app</span> = <span class="ruby-identifier">app</span> <span class="ruby-operator">||</span> <span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@root</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-_call" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">_call</span><span
+            class="method-args">(env)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="_call-source">
+            <pre><span class="ruby-comment"># File lib/rack/directory.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">_call</span>(<span class="ruby-identifier">env</span>)
+  <span class="ruby-ivar">@env</span> = <span class="ruby-identifier">env</span>
+  <span class="ruby-ivar">@script_name</span> = <span class="ruby-identifier">env</span>[<span class="ruby-string">'SCRIPT_NAME'</span>]
+  <span class="ruby-ivar">@path_info</span> = <span class="ruby-constant">Utils</span>.<span class="ruby-identifier">unescape</span>(<span class="ruby-identifier">env</span>[<span class="ruby-string">'PATH_INFO'</span>])
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">forbidden</span> = <span class="ruby-identifier">check_forbidden</span>
+    <span class="ruby-identifier">forbidden</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@path</span> = <span class="ruby-constant">F</span>.<span class="ruby-identifier">join</span>(<span class="ruby-ivar">@root</span>, <span class="ruby-ivar">@path_info</span>)
+    <span class="ruby-identifier">list_path</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- _call-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- _call-method -->
+
+    
+      <div id="method-i-call" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">call</span><span
+            class="method-args">(env)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="call-source">
+            <pre><span class="ruby-comment"># File lib/rack/directory.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">call</span>(<span class="ruby-identifier">env</span>)
+  <span class="ruby-identifier">dup</span>.<span class="ruby-identifier">_call</span>(<span class="ruby-identifier">env</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- call-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- call-method -->
+
+    
+      <div id="method-i-check_forbidden" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">check_forbidden</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="check_forbidden-source">
+            <pre><span class="ruby-comment"># File lib/rack/directory.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">check_forbidden</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@path_info</span>.<span class="ruby-identifier">include?</span> <span class="ruby-string">&quot;..&quot;</span>
+
+  <span class="ruby-identifier">body</span> = <span class="ruby-string">&quot;Forbidden\n&quot;</span>
+  <span class="ruby-identifier">size</span> = <span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">Utils</span>.<span class="ruby-identifier">bytesize</span>(<span class="ruby-identifier">body</span>)
+  <span class="ruby-keyword">return</span> [<span class="ruby-value">403</span>, {<span class="ruby-string">&quot;Content-Type&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;text/plain&quot;</span>,
+    <span class="ruby-string">&quot;Content-Length&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">size</span>.<span class="ruby-identifier">to_s</span>,
+    <span class="ruby-string">&quot;X-Cascade&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;pass&quot;</span>}, [<span class="ruby-identifier">body</span>]]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- check_forbidden-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- check_forbidden-method -->
+
+    
+      <div id="method-i-each" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">each</span><span
+            class="method-args">() { |l| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="each-source">
+            <pre><span class="ruby-comment"># File lib/rack/directory.rb, line 137</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">each</span>
+  <span class="ruby-identifier">show_path</span> = <span class="ruby-ivar">@path</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-node">%r^#{@root}/</span>,<span class="ruby-string">''</span>)
+  <span class="ruby-identifier">files</span> = <span class="ruby-ivar">@files</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-constant">DIR_FILE</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">f</span> }*<span class="ruby-string">&quot;\n&quot;</span>
+  <span class="ruby-identifier">page</span>  = <span class="ruby-constant">DIR_PAGE</span> <span class="ruby-operator">%</span> [ <span class="ruby-identifier">show_path</span>, <span class="ruby-identifier">show_path</span> , <span class="ruby-identifier">files</span> ]
+  <span class="ruby-identifier">page</span>.<span class="ruby-identifier">each_line</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">l</span><span class="ruby-operator">|</span> <span class="ruby-keyword">yield</span> <span class="ruby-identifier">l</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- each-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- each-method -->
+
+    
+      <div id="method-i-entity_not_found" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">entity_not_found</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="entity_not_found-source">
+            <pre><span class="ruby-comment"># File lib/rack/directory.rb, line 129</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">entity_not_found</span>
+  <span class="ruby-identifier">body</span> = <span class="ruby-node">&quot;Entity not found: #{@path_info}\n&quot;</span>
+  <span class="ruby-identifier">size</span> = <span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">Utils</span>.<span class="ruby-identifier">bytesize</span>(<span class="ruby-identifier">body</span>)
+  <span class="ruby-keyword">return</span> [<span class="ruby-value">404</span>, {<span class="ruby-string">&quot;Content-Type&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;text/plain&quot;</span>,
+    <span class="ruby-string">&quot;Content-Length&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">size</span>.<span class="ruby-identifier">to_s</span>,
+    <span class="ruby-string">&quot;X-Cascade&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;pass&quot;</span>}, [<span class="ruby-identifier">body</span>]]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- entity_not_found-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- entity_not_found-method -->
+
+    
+      <div id="method-i-filesize_format" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">filesize_format</span><span
+            class="method-args">(int)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="filesize_format-source">
+            <pre><span class="ruby-comment"># File lib/rack/directory.rb, line 153</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">filesize_format</span>(<span class="ruby-identifier">int</span>)
+  <span class="ruby-constant">FILESIZE_FORMAT</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span>, <span class="ruby-identifier">size</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">format</span> <span class="ruby-operator">%</span> (<span class="ruby-identifier">int</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">size</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">int</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">size</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">int</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-string">'B'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- filesize_format-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- filesize_format-method -->
+
+    
+      <div id="method-i-list_directory" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">list_directory</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="list_directory-source">
+            <pre><span class="ruby-comment"># File lib/rack/directory.rb, line 79</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">list_directory</span>
+  <span class="ruby-ivar">@files</span> = [[<span class="ruby-string">'../'</span>,<span class="ruby-string">'Parent Directory'</span>,<span class="ruby-string">''</span>,<span class="ruby-string">''</span>,<span class="ruby-string">''</span>]]
+  <span class="ruby-identifier">glob</span> = <span class="ruby-constant">F</span>.<span class="ruby-identifier">join</span>(<span class="ruby-ivar">@path</span>, <span class="ruby-string">'*'</span>)
+
+  <span class="ruby-identifier">url_head</span> = ([<span class="ruby-ivar">@script_name</span>] <span class="ruby-operator">+</span> <span class="ruby-ivar">@path_info</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">'/'</span>)).<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">part</span><span class="ruby-operator">|</span>
+    <span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">Utils</span>.<span class="ruby-identifier">escape</span> <span class="ruby-identifier">part</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-constant">Dir</span>[<span class="ruby-identifier">glob</span>].<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">node</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">stat</span> = <span class="ruby-identifier">stat</span>(<span class="ruby-identifier">node</span>)
+    <span class="ruby-keyword">next</span>  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">stat</span>
+    <span class="ruby-identifier">basename</span> = <span class="ruby-constant">F</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">node</span>)
+    <span class="ruby-identifier">ext</span> = <span class="ruby-constant">F</span>.<span class="ruby-identifier">extname</span>(<span class="ruby-identifier">node</span>)
+
+    <span class="ruby-identifier">url</span> = <span class="ruby-constant">F</span>.<span class="ruby-identifier">join</span>(*<span class="ruby-identifier">url_head</span> <span class="ruby-operator">+</span> [<span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">Utils</span>.<span class="ruby-identifier">escape</span>(<span class="ruby-identifier">basename</span>)])
+    <span class="ruby-identifier">size</span> = <span class="ruby-identifier">stat</span>.<span class="ruby-identifier">size</span>
+    <span class="ruby-identifier">type</span> = <span class="ruby-identifier">stat</span>.<span class="ruby-identifier">directory?</span> <span class="ruby-operator">?</span> <span class="ruby-string">'directory'</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Mime</span>.<span class="ruby-identifier">mime_type</span>(<span class="ruby-identifier">ext</span>)
+    <span class="ruby-identifier">size</span> = <span class="ruby-identifier">stat</span>.<span class="ruby-identifier">directory?</span> <span class="ruby-operator">?</span> <span class="ruby-string">'-'</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">filesize_format</span>(<span class="ruby-identifier">size</span>)
+    <span class="ruby-identifier">mtime</span> = <span class="ruby-identifier">stat</span>.<span class="ruby-identifier">mtime</span>.<span class="ruby-identifier">httpdate</span>
+    <span class="ruby-identifier">url</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">'/'</span>  <span class="ruby-keyword">if</span> <span class="ruby-identifier">stat</span>.<span class="ruby-identifier">directory?</span>
+    <span class="ruby-identifier">basename</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">'/'</span>  <span class="ruby-keyword">if</span> <span class="ruby-identifier">stat</span>.<span class="ruby-identifier">directory?</span>
+
+    <span class="ruby-ivar">@files</span> <span class="ruby-operator">&lt;&lt;</span> [ <span class="ruby-identifier">url</span>, <span class="ruby-identifier">basename</span>, <span class="ruby-identifier">size</span>, <span class="ruby-identifier">type</span>, <span class="ruby-identifier">mtime</span> ]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">return</span> [ <span class="ruby-value">200</span>, {<span class="ruby-string">'Content-Type'</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">'text/html; charset=utf-8'</span>}, <span class="ruby-keyword">self</span> ]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- list_directory-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- list_directory-method -->
+
+    
+      <div id="method-i-list_path" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">list_path</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>TODO: add correct response if not readable, not sure if 404 is the best</p>
+
+<pre>option</pre>
+          
+
+          
+          <div class="method-source-code" id="list_path-source">
+            <pre><span class="ruby-comment"># File lib/rack/directory.rb, line 115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">list_path</span>
+  <span class="ruby-ivar">@stat</span> = <span class="ruby-constant">F</span>.<span class="ruby-identifier">stat</span>(<span class="ruby-ivar">@path</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@stat</span>.<span class="ruby-identifier">readable?</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">call</span>(<span class="ruby-ivar">@env</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@stat</span>.<span class="ruby-identifier">file?</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">list_directory</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@stat</span>.<span class="ruby-identifier">directory?</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ENOENT</span>, <span class="ruby-string">'No such file or directory'</span>
+  <span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ENOENT</span>, <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ELOOP</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">entity_not_found</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- list_path-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- list_path-method -->
+
+    
+      <div id="method-i-stat" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">stat</span><span
+            class="method-args">(node, max = 10)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="stat-source">
+            <pre><span class="ruby-comment"># File lib/rack/directory.rb, line 107</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">stat</span>(<span class="ruby-identifier">node</span>, <span class="ruby-identifier">max</span> = <span class="ruby-value">10</span>)
+  <span class="ruby-constant">F</span>.<span class="ruby-identifier">stat</span>(<span class="ruby-identifier">node</span>)
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ENOENT</span>, <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ELOOP</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- stat-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- stat-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

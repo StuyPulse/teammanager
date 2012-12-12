@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Rack::Server::Options - rack-1.4.1 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/rack/server.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-handler_opts">#handler_opts</a>
+    
+    <li><a href="#method-i-parse-21">#parse!</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../KNOWN-ISSUES.html">KNOWN-ISSUES</a>
+  
+    <li class="file"><a href="../../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../Rack.html">Rack</a>
+  
+    <li><a href="../../Rack/Auth.html">Rack::Auth</a>
+  
+    <li><a href="../../Rack/Auth/AbstractHandler.html">Rack::Auth::AbstractHandler</a>
+  
+    <li><a href="../../Rack/Auth/AbstractRequest.html">Rack::Auth::AbstractRequest</a>
+  
+    <li><a href="../../Rack/Auth/Basic.html">Rack::Auth::Basic</a>
+  
+    <li><a href="../../Rack/Auth/Basic/Request.html">Rack::Auth::Basic::Request</a>
+  
+    <li><a href="../../Rack/Auth/Digest.html">Rack::Auth::Digest</a>
+  
+    <li><a href="../../Rack/Auth/Digest/MD5.html">Rack::Auth::Digest::MD5</a>
+  
+    <li><a href="../../Rack/Auth/Digest/Nonce.html">Rack::Auth::Digest::Nonce</a>
+  
+    <li><a href="../../Rack/Auth/Digest/Params.html">Rack::Auth::Digest::Params</a>
+  
+    <li><a href="../../Rack/Auth/Digest/Request.html">Rack::Auth::Digest::Request</a>
+  
+    <li><a href="../../Rack/BodyProxy.html">Rack::BodyProxy</a>
+  
+    <li><a href="../../Rack/Builder.html">Rack::Builder</a>
+  
+    <li><a href="../../Rack/Cascade.html">Rack::Cascade</a>
+  
+    <li><a href="../../Rack/Chunked.html">Rack::Chunked</a>
+  
+    <li><a href="../../Rack/Chunked/Body.html">Rack::Chunked::Body</a>
+  
+    <li><a href="../../Rack/CommonLogger.html">Rack::CommonLogger</a>
+  
+    <li><a href="../../Rack/ConditionalGet.html">Rack::ConditionalGet</a>
+  
+    <li><a href="../../Rack/Config.html">Rack::Config</a>
+  
+    <li><a href="../../Rack/ContentLength.html">Rack::ContentLength</a>
+  
+    <li><a href="../../Rack/ContentType.html">Rack::ContentType</a>
+  
+    <li><a href="../../Rack/Deflater.html">Rack::Deflater</a>
+  
+    <li><a href="../../Rack/Deflater/DeflateStream.html">Rack::Deflater::DeflateStream</a>
+  
+    <li><a href="../../Rack/Deflater/GzipStream.html">Rack::Deflater::GzipStream</a>
+  
+    <li><a href="../../Rack/Directory.html">Rack::Directory</a>
+  
+    <li><a href="../../Rack/ETag.html">Rack::ETag</a>
+  
+    <li><a href="../../Rack/File.html">Rack::File</a>
+  
+    <li><a href="../../Rack/ForwardRequest.html">Rack::ForwardRequest</a>
+  
+    <li><a href="../../Rack/Handler.html">Rack::Handler</a>
+  
+    <li><a href="../../Rack/Handler/CGI.html">Rack::Handler::CGI</a>
+  
+    <li><a href="../../Rack/Handler/EventedMongrel.html">Rack::Handler::EventedMongrel</a>
+  
+    <li><a href="../../Rack/Handler/FastCGI.html">Rack::Handler::FastCGI</a>
+  
+    <li><a href="../../Rack/Handler/LSWS.html">Rack::Handler::LSWS</a>
+  
+    <li><a href="../../Rack/Handler/Mongrel.html">Rack::Handler::Mongrel</a>
+  
+    <li><a href="../../Rack/Handler/SCGI.html">Rack::Handler::SCGI</a>
+  
+    <li><a href="../../Rack/Handler/SwiftipliedMongrel.html">Rack::Handler::SwiftipliedMongrel</a>
+  
+    <li><a href="../../Rack/Handler/Thin.html">Rack::Handler::Thin</a>
+  
+    <li><a href="../../Rack/Handler/WEBrick.html">Rack::Handler::WEBrick</a>
+  
+    <li><a href="../../Rack/Head.html">Rack::Head</a>
+  
+    <li><a href="../../Rack/Lint.html">Rack::Lint</a>
+  
+    <li><a href="../../Rack/Lobster.html">Rack::Lobster</a>
+  
+    <li><a href="../../Rack/Lock.html">Rack::Lock</a>
+  
+    <li><a href="../../Rack/Logger.html">Rack::Logger</a>
+  
+    <li><a href="../../Rack/MethodOverride.html">Rack::MethodOverride</a>
+  
+    <li><a href="../../Rack/Mime.html">Rack::Mime</a>
+  
+    <li><a href="../../Rack/MockRequest.html">Rack::MockRequest</a>
+  
+    <li><a href="../../Rack/MockRequest/FatalWarner.html">Rack::MockRequest::FatalWarner</a>
+  
+    <li><a href="../../Rack/MockRequest/FatalWarning.html">Rack::MockRequest::FatalWarning</a>
+  
+    <li><a href="../../Rack/MockResponse.html">Rack::MockResponse</a>
+  
+    <li><a href="../../Rack/Multipart.html">Rack::Multipart</a>
+  
+    <li><a href="../../Rack/Multipart/Generator.html">Rack::Multipart::Generator</a>
+  
+    <li><a href="../../Rack/Multipart/Parser.html">Rack::Multipart::Parser</a>
+  
+    <li><a href="../../Rack/Multipart/UploadedFile.html">Rack::Multipart::UploadedFile</a>
+  
+    <li><a href="../../Rack/NullLogger.html">Rack::NullLogger</a>
+  
+    <li><a href="../../Rack/Recursive.html">Rack::Recursive</a>
+  
+    <li><a href="../../Rack/Reloader.html">Rack::Reloader</a>
+  
+    <li><a href="../../Rack/Reloader/Stat.html">Rack::Reloader::Stat</a>
+  
+    <li><a href="../../Rack/Request.html">Rack::Request</a>
+  
+    <li><a href="../../Rack/Response.html">Rack::Response</a>
+  
+    <li><a href="../../Rack/Response/Helpers.html">Rack::Response::Helpers</a>
+  
+    <li><a href="../../Rack/RewindableInput.html">Rack::RewindableInput</a>
+  
+    <li><a href="../../Rack/RewindableInput/Tempfile.html">Rack::RewindableInput::Tempfile</a>
+  
+    <li><a href="../../Rack/Runtime.html">Rack::Runtime</a>
+  
+    <li><a href="../../Rack/Sendfile.html">Rack::Sendfile</a>
+  
+    <li><a href="../../Rack/Server.html">Rack::Server</a>
+  
+    <li><a href="../../Rack/Server/Options.html">Rack::Server::Options</a>
+  
+    <li><a href="../../Rack/Session.html">Rack::Session</a>
+  
+    <li><a href="../../Rack/Session/Abstract.html">Rack::Session::Abstract</a>
+  
+    <li><a href="../../Rack/Session/Abstract/ID.html">Rack::Session::Abstract::ID</a>
+  
+    <li><a href="../../Rack/Session/Abstract/SessionHash.html">Rack::Session::Abstract::SessionHash</a>
+  
+    <li><a href="../../Rack/Session/Cookie.html">Rack::Session::Cookie</a>
+  
+    <li><a href="../../Rack/Session/Cookie/Base64.html">Rack::Session::Cookie::Base64</a>
+  
+    <li><a href="../../Rack/Session/Cookie/Base64/Marshal.html">Rack::Session::Cookie::Base64::Marshal</a>
+  
+    <li><a href="../../Rack/Session/Cookie/Identity.html">Rack::Session::Cookie::Identity</a>
+  
+    <li><a href="../../Rack/Session/Cookie/Reverse.html">Rack::Session::Cookie::Reverse</a>
+  
+    <li><a href="../../Rack/Session/Memcache.html">Rack::Session::Memcache</a>
+  
+    <li><a href="../../Rack/Session/Pool.html">Rack::Session::Pool</a>
+  
+    <li><a href="../../Rack/ShowExceptions.html">Rack::ShowExceptions</a>
+  
+    <li><a href="../../Rack/ShowStatus.html">Rack::ShowStatus</a>
+  
+    <li><a href="../../Rack/Static.html">Rack::Static</a>
+  
+    <li><a href="../../Rack/URLMap.html">Rack::URLMap</a>
+  
+    <li><a href="../../Rack/Utils.html">Rack::Utils</a>
+  
+    <li><a href="../../Rack/Utils/Context.html">Rack::Utils::Context</a>
+  
+    <li><a href="../../Rack/Utils/HeaderHash.html">Rack::Utils::HeaderHash</a>
+  
+    <li><a href="../../Rack/Utils/KeySpaceConstrainedParams.html">Rack::Utils::KeySpaceConstrainedParams</a>
+  
+    <li><a href="../../FCGI.html">FCGI</a>
+  
+    <li><a href="../../FCGI/Stream.html">FCGI::Stream</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Rack::Server::Options</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-handler_opts" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handler_opts</span><span
+            class="method-args">(options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="handler_opts-source">
+            <pre><span class="ruby-comment"># File lib/rack/server.rb, line 96</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handler_opts</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">info</span> = []
+    <span class="ruby-identifier">server</span> = <span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">Handler</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:server</span>]) <span class="ruby-operator">||</span> <span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">Handler</span>.<span class="ruby-identifier">default</span>(<span class="ruby-identifier">options</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">server</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">server</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:valid_options</span>)
+      <span class="ruby-identifier">info</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;&quot;</span>
+      <span class="ruby-identifier">info</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;Server-specific options for #{server.name}:&quot;</span>
+
+      <span class="ruby-identifier">has_options</span> = <span class="ruby-keyword">false</span>
+      <span class="ruby-identifier">server</span>.<span class="ruby-identifier">valid_options</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">description</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">match</span>(<span class="ruby-regexp">%r^(Host|Port)[^a-zA-Z]/</span>) <span class="ruby-comment"># ignore handler's host and port options, we do our own.</span>
+        <span class="ruby-identifier">info</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;  -O %-21s %s&quot;</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">name</span>, <span class="ruby-identifier">description</span>]
+        <span class="ruby-identifier">has_options</span> = <span class="ruby-keyword">true</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">has_options</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">info</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\n&quot;</span>)
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">NameError</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-node">&quot;Warning: Could not find handler specified (#{options[:server] || 'default'}) to determine handler-specific options&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handler_opts-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handler_opts-method -->
+
+    
+      <div id="method-i-parse-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parse!</span><span
+            class="method-args">(args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="parse-21-source">
+            <pre><span class="ruby-comment"># File lib/rack/server.rb, line 6</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">parse!</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">options</span> = {}
+  <span class="ruby-identifier">opt_parser</span> = <span class="ruby-constant">OptionParser</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;&quot;</span>, <span class="ruby-value">24</span>, <span class="ruby-string">'  '</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">opts</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">banner</span> = <span class="ruby-string">&quot;Usage: rackup [ruby options] [rack options] [rackup config]&quot;</span>
+
+    <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">separator</span> <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">separator</span> <span class="ruby-string">&quot;Ruby options:&quot;</span>
+
+    <span class="ruby-identifier">lineno</span> = <span class="ruby-value">1</span>
+    <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;-e&quot;</span>, <span class="ruby-string">&quot;--eval LINE&quot;</span>, <span class="ruby-string">&quot;evaluate a LINE of code&quot;</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">eval</span> <span class="ruby-identifier">line</span>, <span class="ruby-constant">TOPLEVEL_BINDING</span>, <span class="ruby-string">&quot;-e&quot;</span>, <span class="ruby-identifier">lineno</span>
+      <span class="ruby-identifier">lineno</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+    }
+
+    <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;-d&quot;</span>, <span class="ruby-string">&quot;--debug&quot;</span>, <span class="ruby-string">&quot;set debugging flags (set $DEBUG to true)&quot;</span>) {
+      <span class="ruby-identifier">options</span>[<span class="ruby-value">:debug</span>] = <span class="ruby-keyword">true</span>
+    }
+    <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;-w&quot;</span>, <span class="ruby-string">&quot;--warn&quot;</span>, <span class="ruby-string">&quot;turn warnings on for your script&quot;</span>) {
+      <span class="ruby-identifier">options</span>[<span class="ruby-value">:warn</span>] = <span class="ruby-keyword">true</span>
+    }
+
+    <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;-I&quot;</span>, <span class="ruby-string">&quot;--include PATH&quot;</span>,
+            <span class="ruby-string">&quot;specify $LOAD_PATH (may be used more than once)&quot;</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">options</span>[<span class="ruby-value">:include</span>] = <span class="ruby-identifier">path</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;:&quot;</span>)
+    }
+
+    <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;-r&quot;</span>, <span class="ruby-string">&quot;--require LIBRARY&quot;</span>,
+            <span class="ruby-string">&quot;require the library, before executing your script&quot;</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">library</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">options</span>[<span class="ruby-value">:require</span>] = <span class="ruby-identifier">library</span>
+    }
+
+    <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">separator</span> <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">separator</span> <span class="ruby-string">&quot;Rack options:&quot;</span>
+    <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;-s&quot;</span>, <span class="ruby-string">&quot;--server SERVER&quot;</span>, <span class="ruby-string">&quot;serve using SERVER (webrick/mongrel)&quot;</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">options</span>[<span class="ruby-value">:server</span>] = <span class="ruby-identifier">s</span>
+    }
+
+    <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;-o&quot;</span>, <span class="ruby-string">&quot;--host HOST&quot;</span>, <span class="ruby-string">&quot;listen on HOST (default: 0.0.0.0)&quot;</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">host</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">options</span>[<span class="ruby-value">:Host</span>] = <span class="ruby-identifier">host</span>
+    }
+
+    <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;-p&quot;</span>, <span class="ruby-string">&quot;--port PORT&quot;</span>, <span class="ruby-string">&quot;use PORT (default: 9292)&quot;</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">port</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">options</span>[<span class="ruby-value">:Port</span>] = <span class="ruby-identifier">port</span>
+    }
+
+    <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;-O&quot;</span>, <span class="ruby-string">&quot;--option NAME[=VALUE]&quot;</span>, <span class="ruby-node">&quot;pass VALUE to the server as option NAME. If no VALUE, sets it to true. Run '#{$0} -s SERVER -h' to get a list of options for SERVER&quot;</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">'='</span>, <span class="ruby-value">2</span>)
+      <span class="ruby-identifier">value</span> = <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">options</span>[<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_sym</span>] = <span class="ruby-identifier">value</span>
+    }
+
+    <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;-E&quot;</span>, <span class="ruby-string">&quot;--env ENVIRONMENT&quot;</span>, <span class="ruby-string">&quot;use ENVIRONMENT for defaults (default: development)&quot;</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">options</span>[<span class="ruby-value">:environment</span>] = <span class="ruby-identifier">e</span>
+    }
+
+    <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;-D&quot;</span>, <span class="ruby-string">&quot;--daemonize&quot;</span>, <span class="ruby-string">&quot;run daemonized in the background&quot;</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">d</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">options</span>[<span class="ruby-value">:daemonize</span>] = <span class="ruby-identifier">d</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">true</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    }
+
+    <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;-P&quot;</span>, <span class="ruby-string">&quot;--pid FILE&quot;</span>, <span class="ruby-string">&quot;file to store PID (default: rack.pid)&quot;</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">options</span>[<span class="ruby-value">:pid</span>] = <span class="ruby-operator">::</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">f</span>)
+    }
+
+    <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">separator</span> <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">separator</span> <span class="ruby-string">&quot;Common options:&quot;</span>
+
+    <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on_tail</span>(<span class="ruby-string">&quot;-h&quot;</span>, <span class="ruby-string">&quot;-?&quot;</span>, <span class="ruby-string">&quot;--help&quot;</span>, <span class="ruby-string">&quot;Show this message&quot;</span>) <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">puts</span> <span class="ruby-identifier">opts</span>
+      <span class="ruby-identifier">puts</span> <span class="ruby-identifier">handler_opts</span>(<span class="ruby-identifier">options</span>)
+
+      <span class="ruby-identifier">exit</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on_tail</span>(<span class="ruby-string">&quot;--version&quot;</span>, <span class="ruby-string">&quot;Show version&quot;</span>) <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Rack #{Rack.version} (Release: #{Rack.release})&quot;</span>
+      <span class="ruby-identifier">exit</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">opt_parser</span>.<span class="ruby-identifier">parse!</span> <span class="ruby-identifier">args</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">OptionParser</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidOption</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">warn</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">message</span>
+    <span class="ruby-identifier">abort</span> <span class="ruby-identifier">opt_parser</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:config</span>] = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">last</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">last</span>
+  <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- parse-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- parse-21-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"remote_addr:EFI"5ActionDispatch::Integration::Session#remote_addr;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I".The remote_addr used in the last request.;T:
+@fileI"/lib/action_dispatch/testing/integration.rb;TF@

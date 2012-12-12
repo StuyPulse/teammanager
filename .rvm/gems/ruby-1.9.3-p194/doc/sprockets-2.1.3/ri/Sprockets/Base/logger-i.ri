@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"logger:EFI"Sprockets::Base#logger;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"#Get and set `Logger` instance.;T:
+@fileI"lib/sprockets/base.rb;TF@

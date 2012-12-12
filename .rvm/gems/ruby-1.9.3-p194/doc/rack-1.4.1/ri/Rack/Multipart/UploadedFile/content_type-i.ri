@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"content_type:EFI"/Rack::Multipart::UploadedFile#content_type;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I",The content type of the "uploaded" file;T:
+@fileI"(lib/rack/multipart/uploaded_file.rb;TF@

@@ -1,0 +1,3 @@
+U:RDoc::Attr[iI"default_encoding:EFI" MIME::Type#default_encoding;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"GReturns the default encoding for the MIME::Type based on the media;TI"
+type.;T:
+@fileI"lib/mime/types.rb;TF@

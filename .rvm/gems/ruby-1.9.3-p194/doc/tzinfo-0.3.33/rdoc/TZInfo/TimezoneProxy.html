@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class TZInfo::TimezoneProxy - tzinfo-0.3.33 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/tzinfo/timezone_proxy.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="Timezone.html">TZInfo::Timezone</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-_load">::_load</a>
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-_dump">#_dump</a>
+    
+    <li><a href="#method-i-identifier">#identifier</a>
+    
+    <li><a href="#method-i-period_for_utc">#period_for_utc</a>
+    
+    <li><a href="#method-i-periods_for_local">#periods_for_local</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../CHANGES.html">CHANGES</a>
+  
+    <li class="file"><a href="../README.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../TZInfo.html">TZInfo</a>
+  
+    <li><a href="../TZInfo/AmbiguousTime.html">TZInfo::AmbiguousTime</a>
+  
+    <li><a href="../TZInfo/Country.html">TZInfo::Country</a>
+  
+    <li><a href="../TZInfo/CountryTimezone.html">TZInfo::CountryTimezone</a>
+  
+    <li><a href="../TZInfo/InvalidCountryCode.html">TZInfo::InvalidCountryCode</a>
+  
+    <li><a href="../TZInfo/InvalidTimezoneIdentifier.html">TZInfo::InvalidTimezoneIdentifier</a>
+  
+    <li><a href="../TZInfo/NoOffsetsDefined.html">TZInfo::NoOffsetsDefined</a>
+  
+    <li><a href="../TZInfo/PeriodNotFound.html">TZInfo::PeriodNotFound</a>
+  
+    <li><a href="../TZInfo/TZDataParser.html">TZInfo::TZDataParser</a>
+  
+    <li><a href="../TZInfo/Timezone.html">TZInfo::Timezone</a>
+  
+    <li><a href="../TZInfo/TimezonePeriod.html">TZInfo::TimezonePeriod</a>
+  
+    <li><a href="../TZInfo/TimezoneProxy.html">TZInfo::TimezoneProxy</a>
+  
+    <li><a href="../TZInfo/UnknownTimezone.html">TZInfo::UnknownTimezone</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class TZInfo::TimezoneProxy</h1>
+
+  <div id="description" class="description">
+    
+<p>A proxy class representing a timezone with a given identifier. <a
+href="TimezoneProxy.html">TimezoneProxy</a> inherits from <a
+href="Timezone.html">Timezone</a> and can be treated like any <a
+href="Timezone.html">Timezone</a> loaded with <a
+href="Timezone.html#method-c-get">TZInfo::Timezone.get</a>.</p>
+
+<p>The first time an attempt is made to access the data for the timezone, the 
+real <a href="Timezone.html">Timezone</a> is loaded. If the proxy’s
+identifier was not valid, then an  exception will be raised at this point.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-_load" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">_load</span><span
+            class="method-args">(data)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Loads a marshalled <a href="TimezoneProxy.html">TimezoneProxy</a>.</p>
+          
+
+          
+          <div class="method-source-code" id="_load-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timezone_proxy.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">_load</span>(<span class="ruby-identifier">data</span>)
+  <span class="ruby-constant">TimezoneProxy</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">data</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- _load-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- _load-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(identifier)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Construct a new <a href="TimezoneProxy.html">TimezoneProxy</a> for the
+given identifier. The identifier is not checked when constructing the
+proxy. It will be validated on the when the real <a
+href="Timezone.html">Timezone</a> is loaded.</p>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timezone_proxy.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">identifier</span>)
+  <span class="ruby-comment"># Need to override new to undo the behaviour introduced in Timezone#new.</span>
+  <span class="ruby-identifier">tzp</span> = <span class="ruby-keyword">super</span>()
+  <span class="ruby-identifier">tzp</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:setup</span>, <span class="ruby-identifier">identifier</span>)
+  <span class="ruby-identifier">tzp</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-_dump" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">_dump</span><span
+            class="method-args">(limit)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Dumps this <a href="TimezoneProxy.html">TimezoneProxy</a> for marshalling.</p>
+          
+
+          
+          <div class="method-source-code" id="_dump-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timezone_proxy.rb, line 64</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">_dump</span>(<span class="ruby-identifier">limit</span>)
+  <span class="ruby-identifier">identifier</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- _dump-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- _dump-method -->
+
+    
+      <div id="method-i-identifier" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">identifier</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The identifier of the timezone, e.g. “Europe/Paris”.</p>
+          
+
+          
+          <div class="method-source-code" id="identifier-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timezone_proxy.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">identifier</span>
+  <span class="ruby-ivar">@real_timezone</span> <span class="ruby-operator">?</span> <span class="ruby-ivar">@real_timezone</span>.<span class="ruby-identifier">identifier</span> <span class="ruby-operator">:</span> <span class="ruby-ivar">@identifier</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- identifier-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- identifier-method -->
+
+    
+      <div id="method-i-period_for_utc" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">period_for_utc</span><span
+            class="method-args">(utc)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the <a href="TimezonePeriod.html">TimezonePeriod</a> for the given
+UTC time. utc can either be a DateTime, Time or integer timestamp
+(Time.to_i). Any timezone  information in utc is ignored (it is treated as
+a UTC time).</p>
+          
+
+          
+          <div class="method-source-code" id="period_for_utc-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timezone_proxy.rb, line 51</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">period_for_utc</span>(<span class="ruby-identifier">utc</span>)            
+  <span class="ruby-identifier">real_timezone</span>.<span class="ruby-identifier">period_for_utc</span>(<span class="ruby-identifier">utc</span>)            
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- period_for_utc-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- period_for_utc-method -->
+
+    
+      <div id="method-i-periods_for_local" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">periods_for_local</span><span
+            class="method-args">(local)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the set of <a href="TimezonePeriod.html">TimezonePeriod</a>
+instances that are valid for the given local time as an array. If you just
+want a single period, use  period_for_local instead and specify how
+abiguities should be resolved. Returns an empty array if no periods are
+found for the given time.</p>
+          
+
+          
+          <div class="method-source-code" id="periods_for_local-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timezone_proxy.rb, line 59</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">periods_for_local</span>(<span class="ruby-identifier">local</span>)
+  <span class="ruby-identifier">real_timezone</span>.<span class="ruby-identifier">periods_for_local</span>(<span class="ruby-identifier">local</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- periods_for_local-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- periods_for_local-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

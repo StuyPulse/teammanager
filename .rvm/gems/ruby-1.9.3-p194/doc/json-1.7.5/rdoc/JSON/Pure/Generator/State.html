@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class JSON::Pure::Generator::State - json-1.7.5 Documentation</title>
+
+<link type="text/css" media="screen" href="../../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../../index.html">Home</a>
+    <a href="../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/json/pure/generator.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-from_state">::from_state</a>
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-5B-5D">#[]</a>
+    
+    <li><a href="#method-i-allow_nan-3F">#allow_nan?</a>
+    
+    <li><a href="#method-i-ascii_only-3F">#ascii_only?</a>
+    
+    <li><a href="#method-i-check_circular-3F">#check_circular?</a>
+    
+    <li><a href="#method-i-configure">#configure</a>
+    
+    <li><a href="#method-i-generate">#generate</a>
+    
+    <li><a href="#method-i-merge">#merge</a>
+    
+    <li><a href="#method-i-quirks_mode-3F">#quirks_mode?</a>
+    
+    <li><a href="#method-i-to_h">#to_h</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../../JSON.html">JSON</a>
+  
+    <li><a href="../../../JSON/Ext.html">JSON::Ext</a>
+  
+    <li><a href="../../../JSON/GeneratorError.html">JSON::GeneratorError</a>
+  
+    <li><a href="../../../JSON/GenericObject.html">JSON::GenericObject</a>
+  
+    <li><a href="../../../JSON/JSONError.html">JSON::JSONError</a>
+  
+    <li><a href="../../../JSON/MissingUnicodeSupport.html">JSON::MissingUnicodeSupport</a>
+  
+    <li><a href="../../../JSON/NestingError.html">JSON::NestingError</a>
+  
+    <li><a href="../../../JSON/ParserError.html">JSON::ParserError</a>
+  
+    <li><a href="../../../JSON/Pure.html">JSON::Pure</a>
+  
+    <li><a href="../../../JSON/Pure/Generator.html">JSON::Pure::Generator</a>
+  
+    <li><a href="../../../JSON/Pure/Generator/GeneratorMethods.html">JSON::Pure::Generator::GeneratorMethods</a>
+  
+    <li><a href="../../../JSON/Pure/Generator/GeneratorMethods/Array.html">JSON::Pure::Generator::GeneratorMethods::Array</a>
+  
+    <li><a href="../../../JSON/Pure/Generator/GeneratorMethods/FalseClass.html">JSON::Pure::Generator::GeneratorMethods::FalseClass</a>
+  
+    <li><a href="../../../JSON/Pure/Generator/GeneratorMethods/Float.html">JSON::Pure::Generator::GeneratorMethods::Float</a>
+  
+    <li><a href="../../../JSON/Pure/Generator/GeneratorMethods/Hash.html">JSON::Pure::Generator::GeneratorMethods::Hash</a>
+  
+    <li><a href="../../../JSON/Pure/Generator/GeneratorMethods/Integer.html">JSON::Pure::Generator::GeneratorMethods::Integer</a>
+  
+    <li><a href="../../../JSON/Pure/Generator/GeneratorMethods/NilClass.html">JSON::Pure::Generator::GeneratorMethods::NilClass</a>
+  
+    <li><a href="../../../JSON/Pure/Generator/GeneratorMethods/Object.html">JSON::Pure::Generator::GeneratorMethods::Object</a>
+  
+    <li><a href="../../../JSON/Pure/Generator/GeneratorMethods/String.html">JSON::Pure::Generator::GeneratorMethods::String</a>
+  
+    <li><a href="../../../JSON/Pure/Generator/GeneratorMethods/String/Extend.html">JSON::Pure::Generator::GeneratorMethods::String::Extend</a>
+  
+    <li><a href="../../../JSON/Pure/Generator/GeneratorMethods/TrueClass.html">JSON::Pure::Generator::GeneratorMethods::TrueClass</a>
+  
+    <li><a href="../../../JSON/Pure/Generator/State.html">JSON::Pure::Generator::State</a>
+  
+    <li><a href="../../../JSON/Pure/Parser.html">JSON::Pure::Parser</a>
+  
+    <li><a href="../../../JSON/GeneratorError.html">JSON::UnparserError</a>
+  
+    <li><a href="../../../BigDecimal.html">BigDecimal</a>
+  
+    <li><a href="../../../Class.html">Class</a>
+  
+    <li><a href="../../../Complex.html">Complex</a>
+  
+    <li><a href="../../../Date.html">Date</a>
+  
+    <li><a href="../../../DateTime.html">DateTime</a>
+  
+    <li><a href="../../../Exception.html">Exception</a>
+  
+    <li><a href="../../../Kernel.html">Kernel</a>
+  
+    <li><a href="../../../OpenStruct.html">OpenStruct</a>
+  
+    <li><a href="../../../Range.html">Range</a>
+  
+    <li><a href="../../../Rational.html">Rational</a>
+  
+    <li><a href="../../../Regexp.html">Regexp</a>
+  
+    <li><a href="../../../Struct.html">Struct</a>
+  
+    <li><a href="../../../Symbol.html">Symbol</a>
+  
+    <li><a href="../../../Time.html">Time</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class JSON::Pure::Generator::State</h1>
+
+  <div id="description" class="description">
+    
+<p>This class is used to create <a href="State.html">State</a> instances, that
+are use to hold data while generating a <a
+href="../../../JSON.html">JSON</a> text from a Ruby data structure.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-array_nl" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">array_nl</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>This string is put at the end of a line that holds a <a
+href="../../../JSON.html">JSON</a> array.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-depth" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">depth</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>This integer returns the current depth data structure nesting in the
+generated <a href="../../../JSON.html">JSON</a>.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-indent" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">indent</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>This string is used to indent levels in the <a
+href="../../../JSON.html">JSON</a> text.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-max_nesting" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">max_nesting</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>This integer returns the maximum level of data structure nesting in the
+generated <a href="../../../JSON.html">JSON</a>, <a
+href="State.html#attribute-i-max_nesting">#max_nesting</a> = 0 if no
+maximum is checked.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-object_nl" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">object_nl</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>This string is put at the end of a line that holds a <a
+href="../../../JSON.html">JSON</a> object (or Hash).</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-quirks_mode" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">quirks_mode</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>If this attribute is set to true, quirks mode is enabled, otherwise it’s
+disabled.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-space" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">space</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>This string is used to insert a space between the tokens in a <a
+href="../../../JSON.html">JSON</a> string.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-space_before" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">space_before</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>This string is used to insert a space before the ‘:’ in <a
+href="../../../JSON.html">JSON</a> objects.</p>
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-from_state" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">from_state</span><span
+            class="method-args">(opts)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Creates a <a href="State.html">State</a> object from <em>opts</em>, which
+ought to be Hash to create a new <a href="State.html">State</a> instance
+configured by <em>opts</em>, something else to create an unconfigured
+instance. If <em>opts</em> is a <a href="State.html">State</a> object, it
+is just returned.</p>
+          
+
+          
+          <div class="method-source-code" id="from_state-source">
+            <pre><span class="ruby-comment"># File lib/json/pure/generator.rb, line 108</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">from_state</span>(<span class="ruby-identifier">opts</span>)
+  <span class="ruby-keyword">case</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-keyword">self</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">opts</span>
+    <span class="ruby-identifier">opts</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_hash</span>)
+    <span class="ruby-identifier">new</span>(<span class="ruby-identifier">opts</span>.<span class="ruby-identifier">to_hash</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_h</span>)
+    <span class="ruby-identifier">new</span>(<span class="ruby-identifier">opts</span>.<span class="ruby-identifier">to_h</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">SAFE_STATE_PROTOTYPE</span>.<span class="ruby-identifier">dup</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- from_state-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- from_state-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(opts = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Instantiates a new <a href="State.html">State</a> object, configured by
+<em>opts</em>.</p>
+
+<p><em>opts</em> can have the following keys:</p>
+<ul><li>
+<p><strong>indent</strong>: a string used to indent levels (default: "),</p>
+</li><li>
+<p><strong>space</strong>: a string that is put after, a : or , delimiter
+(default: "),</p>
+</li><li>
+<p><strong><a
+href="State.html#attribute-i-space_before">#space_before</a></strong>: a
+string that is put before a : pair delimiter (default: "),</p>
+</li><li>
+<p><strong><a href="State.html#attribute-i-object_nl">#object_nl</a></strong>:
+a string that is put at the end of a <a href="../../../JSON.html">JSON</a>
+object (default: "),</p>
+</li><li>
+<p><strong><a href="State.html#attribute-i-array_nl">#array_nl</a></strong>: a
+string that is put at the end of a <a href="../../../JSON.html">JSON</a>
+array (default: "),</p>
+</li><li>
+<p><strong>check_circular</strong>: is deprecated now, use the :<a
+href="State.html#attribute-i-max_nesting">#max_nesting</a> option instead,</p>
+</li><li>
+<p><strong><a
+href="State.html#attribute-i-max_nesting">#max_nesting</a></strong>: sets
+the maximum level of data structure nesting in the generated <a
+href="../../../JSON.html">JSON</a>, <a
+href="State.html#attribute-i-max_nesting">#max_nesting</a> = 0 if no
+maximum should be checked.</p>
+</li><li>
+<p><strong>allow_nan</strong>: true if NaN, Infinity, and -Infinity should be
+generated, otherwise an exception is thrown, if these values are
+encountered. This options defaults to false.</p>
+</li><li>
+<p><strong><a
+href="State.html#attribute-i-quirks_mode">#quirks_mode</a></strong>:
+Enables <a href="State.html#attribute-i-quirks_mode">#quirks_mode</a> for
+parser, that is for example generating single <a
+href="../../../JSON.html">JSON</a> values instead of documents is possible.</p>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/json/pure/generator.rb, line 138</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">opts</span> = {})
+  <span class="ruby-ivar">@indent</span>                = <span class="ruby-string">''</span>
+  <span class="ruby-ivar">@space</span>                 = <span class="ruby-string">''</span>
+  <span class="ruby-ivar">@space_before</span>          = <span class="ruby-string">''</span>
+  <span class="ruby-ivar">@object_nl</span>             = <span class="ruby-string">''</span>
+  <span class="ruby-ivar">@array_nl</span>              = <span class="ruby-string">''</span>
+  <span class="ruby-ivar">@allow_nan</span>             = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@ascii_only</span>            = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@quirks_mode</span>           = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@buffer_initial_length</span> = <span class="ruby-value">1024</span>
+  <span class="ruby-identifier">configure</span> <span class="ruby-identifier">opts</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-5B-5D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">[]</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return the value returned by method <code>name</code>.</p>
+          
+
+          
+          <div class="method-source-code" id="5B-5D-source">
+            <pre><span class="ruby-comment"># File lib/json/pure/generator.rb, line 269</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">__send__</span> <span class="ruby-identifier">name</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 5B-5D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 5B-5D-method -->
+
+    
+      <div id="method-i-allow_nan-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">allow_nan?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns true if NaN, Infinity, and -Infinity should be considered as valid
+<a href="../../../JSON.html">JSON</a> and output.</p>
+          
+
+          
+          <div class="method-source-code" id="allow_nan-3F-source">
+            <pre><span class="ruby-comment"># File lib/json/pure/generator.rb, line 205</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">allow_nan?</span>
+  <span class="ruby-ivar">@allow_nan</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- allow_nan-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- allow_nan-3F-method -->
+
+    
+      <div id="method-i-ascii_only-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ascii_only?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns true, if only ASCII characters should be generated. Otherwise
+returns false.</p>
+          
+
+          
+          <div class="method-source-code" id="ascii_only-3F-source">
+            <pre><span class="ruby-comment"># File lib/json/pure/generator.rb, line 211</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ascii_only?</span>
+  <span class="ruby-ivar">@ascii_only</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- ascii_only-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- ascii_only-3F-method -->
+
+    
+      <div id="method-i-check_circular-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">check_circular?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns true, if circular data structures are checked, otherwise returns
+false.</p>
+          
+
+          
+          <div class="method-source-code" id="check_circular-3F-source">
+            <pre><span class="ruby-comment"># File lib/json/pure/generator.rb, line 199</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">check_circular?</span>
+  <span class="ruby-operator">!</span><span class="ruby-ivar">@max_nesting</span>.<span class="ruby-identifier">zero?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- check_circular-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- check_circular-3F-method -->
+
+    
+      <div id="method-i-configure" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">configure</span><span
+            class="method-args">(opts)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Configure this <a href="State.html">State</a> instance with the Hash
+<em>opts</em>, and return itself.</p>
+          
+
+          
+          <div class="method-source-code" id="configure-source">
+            <pre><span class="ruby-comment"># File lib/json/pure/generator.rb, line 222</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">configure</span>(<span class="ruby-identifier">opts</span>)
+  <span class="ruby-ivar">@indent</span>         = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:indent</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-value">:indent</span>)
+  <span class="ruby-ivar">@space</span>          = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:space</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-value">:space</span>)
+  <span class="ruby-ivar">@space_before</span>   = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:space_before</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-value">:space_before</span>)
+  <span class="ruby-ivar">@object_nl</span>      = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:object_nl</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-value">:object_nl</span>)
+  <span class="ruby-ivar">@array_nl</span>       = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:array_nl</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-value">:array_nl</span>)
+  <span class="ruby-ivar">@allow_nan</span>      = <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-identifier">opts</span>[<span class="ruby-value">:allow_nan</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-value">:allow_nan</span>)
+  <span class="ruby-ivar">@ascii_only</span>     = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:ascii_only</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-value">:ascii_only</span>)
+  <span class="ruby-ivar">@depth</span>          = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:depth</span>] <span class="ruby-operator">||</span> <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@quirks_mode</span>    = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:quirks_mode</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-value">:quirks_mode</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">opts</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-value">:max_nesting</span>) <span class="ruby-comment"># defaults to 19</span>
+    <span class="ruby-ivar">@max_nesting</span> = <span class="ruby-value">19</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">opts</span>[<span class="ruby-value">:max_nesting</span>]
+    <span class="ruby-ivar">@max_nesting</span> = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:max_nesting</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@max_nesting</span> = <span class="ruby-value">0</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- configure-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="State.html#method-i-merge">merge</a>
+        </div>
+        
+
+        
+      </div><!-- configure-method -->
+
+    
+      <div id="method-i-generate" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">generate</span><span
+            class="method-args">(obj)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Generates a valid <a href="../../../JSON.html">JSON</a> document from
+object <code>obj</code> and returns the result. If no valid <a
+href="../../../JSON.html">JSON</a> document can be created this method
+raises a <a href="../../GeneratorError.html">GeneratorError</a> exception.</p>
+          
+
+          
+          <div class="method-source-code" id="generate-source">
+            <pre><span class="ruby-comment"># File lib/json/pure/generator.rb, line 256</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">generate</span>(<span class="ruby-identifier">obj</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">to_json</span>(<span class="ruby-keyword">self</span>)
+  <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@quirks_mode</span>
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">result</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r\A\s*\[/</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">result</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r\]\s*\Z/</span> <span class="ruby-operator">||</span>
+      <span class="ruby-identifier">result</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r\A\s*\{/</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">result</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r\}\s*\Z/</span>
+    <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">GeneratorError</span>, <span class="ruby-string">&quot;only generation of JSON objects or arrays allowed&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- generate-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- generate-method -->
+
+    
+      <div id="method-i-merge" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">merge</span><span
+            class="method-args">(opts)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="State.html#method-i-configure">configure</a>
+        </div>
+        
+      </div><!-- merge-method -->
+
+    
+      <div id="method-i-quirks_mode-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">quirks_mode?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns true, if quirks mode is enabled. Otherwise returns false.</p>
+          
+
+          
+          <div class="method-source-code" id="quirks_mode-3F-source">
+            <pre><span class="ruby-comment"># File lib/json/pure/generator.rb, line 216</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">quirks_mode?</span>
+  <span class="ruby-ivar">@quirks_mode</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- quirks_mode-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- quirks_mode-3F-method -->
+
+    
+      <div id="method-i-to_h" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_h</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the configuration instance variables as a hash, that can be passed
+to the configure method.</p>
+          
+
+          
+          <div class="method-source-code" id="to_h-source">
+            <pre><span class="ruby-comment"># File lib/json/pure/generator.rb, line 245</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_h</span>
+  <span class="ruby-identifier">result</span> = {}
+  <span class="ruby-keyword">for</span> <span class="ruby-identifier">iv</span> <span class="ruby-keyword">in</span> <span class="ruby-node">%w[indent space space_before object_nl array_nl allow_nan max_nesting ascii_only quirks_mode buffer_initial_length depth]</span>
+    <span class="ruby-identifier">result</span>[<span class="ruby-identifier">iv</span>.<span class="ruby-identifier">intern</span>] = <span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-node">&quot;@#{iv}&quot;</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_h-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_h-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

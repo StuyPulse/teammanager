@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"code_object:EFI"%RDoc::Markup::ToHtml#code_object;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"GThe RDoc::CodeObject HTML is being generated for.  This is used to;TI"&generate namespaced URI fragments;T:
+@fileI"lib/rdoc/markup/to_html.rb;TF@

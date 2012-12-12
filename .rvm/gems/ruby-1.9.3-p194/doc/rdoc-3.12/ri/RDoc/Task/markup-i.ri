@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"markup:EFI"RDoc::Task#markup;FI"RW;F:privateo:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"LComment markup format.  rdoc, rd and tomdoc are supported.  (default is;TI"'rdoc');T:
+@fileI"lib/rdoc/task.rb;TF@

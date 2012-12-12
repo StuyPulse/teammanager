@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module Erubis::Helpers::RailsFormHelper - erubis-2.7.0 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/erubis/helpers/rails_form_helper.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-_pp_check_box_checked-3F">#_pp_check_box_checked?</a>
+    
+    <li><a href="#method-i-_pp_error_tags">#_pp_error_tags</a>
+    
+    <li><a href="#method-i-_pp_radio_button_checked-3F">#_pp_radio_button_checked?</a>
+    
+    <li><a href="#method-i-_pp_remove_error_div">#_pp_remove_error_div</a>
+    
+    <li><a href="#method-i-_pp_select">#_pp_select</a>
+    
+    <li><a href="#method-i-_pp_select_options">#_pp_select_options</a>
+    
+    <li><a href="#method-i-pp_check_box">#pp_check_box</a>
+    
+    <li><a href="#method-i-pp_collection_select">#pp_collection_select</a>
+    
+    <li><a href="#method-i-pp_country_select">#pp_country_select</a>
+    
+    <li><a href="#method-i-pp_error_on">#pp_error_on</a>
+    
+    <li><a href="#method-i-pp_file_field">#pp_file_field</a>
+    
+    <li><a href="#method-i-pp_form_tag">#pp_form_tag</a>
+    
+    <li><a href="#method-i-pp_hidden_field">#pp_hidden_field</a>
+    
+    <li><a href="#method-i-pp_image_submit_tag">#pp_image_submit_tag</a>
+    
+    <li><a href="#method-i-pp_password_field">#pp_password_field</a>
+    
+    <li><a href="#method-i-pp_radio_button">#pp_radio_button</a>
+    
+    <li><a href="#method-i-pp_render_partial">#pp_render_partial</a>
+    
+    <li><a href="#method-i-pp_select">#pp_select</a>
+    
+    <li><a href="#method-i-pp_submit_tag">#pp_submit_tag</a>
+    
+    <li><a href="#method-i-pp_tag_helper">#pp_tag_helper</a>
+    
+    <li><a href="#method-i-pp_template_filename">#pp_template_filename</a>
+    
+    <li><a href="#method-i-pp_text_area">#pp_text_area</a>
+    
+    <li><a href="#method-i-pp_text_field">#pp_text_field</a>
+    
+    <li><a href="#method-i-pp_time_zone_select">#pp_time_zone_select</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../Erubis.html">Erubis</a>
+  
+    <li><a href="../../Erubis/ArrayBufferEnhancer.html">Erubis::ArrayBufferEnhancer</a>
+  
+    <li><a href="../../Erubis/ArrayBufferEruby.html">Erubis::ArrayBufferEruby</a>
+  
+    <li><a href="../../Erubis/ArrayEnhancer.html">Erubis::ArrayEnhancer</a>
+  
+    <li><a href="../../Erubis/ArrayEruby.html">Erubis::ArrayEruby</a>
+  
+    <li><a href="../../Erubis/Basic.html">Erubis::Basic</a>
+  
+    <li><a href="../../Erubis/Basic/Converter.html">Erubis::Basic::Converter</a>
+  
+    <li><a href="../../Erubis/Basic/Engine.html">Erubis::Basic::Engine</a>
+  
+    <li><a href="../../Erubis/BiPatternEnhancer.html">Erubis::BiPatternEnhancer</a>
+  
+    <li><a href="../../Erubis/BiPatternEruby.html">Erubis::BiPatternEruby</a>
+  
+    <li><a href="../../Erubis/CGenerator.html">Erubis::CGenerator</a>
+  
+    <li><a href="../../Erubis/CommandOptionError.html">Erubis::CommandOptionError</a>
+  
+    <li><a href="../../Erubis/Context.html">Erubis::Context</a>
+  
+    <li><a href="../../Erubis/Converter.html">Erubis::Converter</a>
+  
+    <li><a href="../../Erubis/CppGenerator.html">Erubis::CppGenerator</a>
+  
+    <li><a href="../../Erubis/DeleteIndentEnhancer.html">Erubis::DeleteIndentEnhancer</a>
+  
+    <li><a href="../../Erubis/DeleteIndentEruby.html">Erubis::DeleteIndentEruby</a>
+  
+    <li><a href="../../Erubis/Ec.html">Erubis::Ec</a>
+  
+    <li><a href="../../Erubis/Ecpp.html">Erubis::Ecpp</a>
+  
+    <li><a href="../../Erubis/Ejava.html">Erubis::Ejava</a>
+  
+    <li><a href="../../Erubis/Ejavascript.html">Erubis::Ejavascript</a>
+  
+    <li><a href="../../Erubis/Ejavascript.html">Erubis::Ejs</a>
+  
+    <li><a href="../../Erubis/Engine.html">Erubis::Engine</a>
+  
+    <li><a href="../../Erubis/Eperl.html">Erubis::Eperl</a>
+  
+    <li><a href="../../Erubis/Ephp.html">Erubis::Ephp</a>
+  
+    <li><a href="../../Erubis/ErboutEnhancer.html">Erubis::ErboutEnhancer</a>
+  
+    <li><a href="../../Erubis/ErboutEruby.html">Erubis::ErboutEruby</a>
+  
+    <li><a href="../../Erubis/ErubisError.html">Erubis::ErubisError</a>
+  
+    <li><a href="../../Erubis/Eruby.html">Erubis::Eruby</a>
+  
+    <li><a href="../../Erubis/EscapeEnhancer.html">Erubis::EscapeEnhancer</a>
+  
+    <li><a href="../../Erubis/EscapedEc.html">Erubis::EscapedEc</a>
+  
+    <li><a href="../../Erubis/EscapedEcpp.html">Erubis::EscapedEcpp</a>
+  
+    <li><a href="../../Erubis/EscapedEjava.html">Erubis::EscapedEjava</a>
+  
+    <li><a href="../../Erubis/EscapedEjavascript.html">Erubis::EscapedEjavascript</a>
+  
+    <li><a href="../../Erubis/EscapedEjavascript.html">Erubis::EscapedEjs</a>
+  
+    <li><a href="../../Erubis/EscapedEperl.html">Erubis::EscapedEperl</a>
+  
+    <li><a href="../../Erubis/EscapedEphp.html">Erubis::EscapedEphp</a>
+  
+    <li><a href="../../Erubis/EscapedEruby.html">Erubis::EscapedEruby</a>
+  
+    <li><a href="../../Erubis/EscapedEscheme.html">Erubis::EscapedEscheme</a>
+  
+    <li><a href="../../Erubis/Escheme.html">Erubis::Escheme</a>
+  
+    <li><a href="../../Erubis/Evaluator.html">Erubis::Evaluator</a>
+  
+    <li><a href="../../Erubis/FastEruby.html">Erubis::FastEruby</a>
+  
+    <li><a href="../../Erubis/Generator.html">Erubis::Generator</a>
+  
+    <li><a href="../../Erubis/HeaderFooterEnhancer.html">Erubis::HeaderFooterEnhancer</a>
+  
+    <li><a href="../../Erubis/HeaderFooterEruby.html">Erubis::HeaderFooterEruby</a>
+  
+    <li><a href="../../Erubis/Helpers.html">Erubis::Helpers</a>
+  
+    <li><a href="../../Erubis/Helpers/RailsFormHelper.html">Erubis::Helpers::RailsFormHelper</a>
+  
+    <li><a href="../../Erubis/Helpers/RailsHelper.html">Erubis::Helpers::RailsHelper</a>
+  
+    <li><a href="../../Erubis/Helpers/RailsHelper/TemplateConverter.html">Erubis::Helpers::RailsHelper::TemplateConverter</a>
+  
+    <li><a href="../../Erubis/InterpolationEnhancer.html">Erubis::InterpolationEnhancer</a>
+  
+    <li><a href="../../Erubis/InterpolationEruby.html">Erubis::InterpolationEruby</a>
+  
+    <li><a href="../../Erubis/JavaGenerator.html">Erubis::JavaGenerator</a>
+  
+    <li><a href="../../Erubis/JavascriptGenerator.html">Erubis::JavascriptGenerator</a>
+  
+    <li><a href="../../Erubis/Main.html">Erubis::Main</a>
+  
+    <li><a href="../../Erubis/NoCodeEnhancer.html">Erubis::NoCodeEnhancer</a>
+  
+    <li><a href="../../Erubis/NoCodeEruby.html">Erubis::NoCodeEruby</a>
+  
+    <li><a href="../../Erubis/NoTextEnhancer.html">Erubis::NoTextEnhancer</a>
+  
+    <li><a href="../../Erubis/NoTextEruby.html">Erubis::NoTextEruby</a>
+  
+    <li><a href="../../Erubis/NotSupportedError.html">Erubis::NotSupportedError</a>
+  
+    <li><a href="../../Erubis/OptimizedEruby.html">Erubis::OptimizedEruby</a>
+  
+    <li><a href="../../Erubis/OptimizedGenerator.html">Erubis::OptimizedGenerator</a>
+  
+    <li><a href="../../Erubis/OptimizedXmlEruby.html">Erubis::OptimizedXmlEruby</a>
+  
+    <li><a href="../../Erubis/PI.html">Erubis::PI</a>
+  
+    <li><a href="../../Erubis/PI/Converter.html">Erubis::PI::Converter</a>
+  
+    <li><a href="../../Erubis/PI/Ec.html">Erubis::PI::Ec</a>
+  
+    <li><a href="../../Erubis/PI/Ecpp.html">Erubis::PI::Ecpp</a>
+  
+    <li><a href="../../Erubis/PI/Ejava.html">Erubis::PI::Ejava</a>
+  
+    <li><a href="../../Erubis/PI/Ejavascript.html">Erubis::PI::Ejavascript</a>
+  
+    <li><a href="../../Erubis/PI/Engine.html">Erubis::PI::Engine</a>
+  
+    <li><a href="../../Erubis/PI/Eperl.html">Erubis::PI::Eperl</a>
+  
+    <li><a href="../../Erubis/PI/Ephp.html">Erubis::PI::Ephp</a>
+  
+    <li><a href="../../Erubis/PI/Eruby.html">Erubis::PI::Eruby</a>
+  
+    <li><a href="../../Erubis/PI/Escheme.html">Erubis::PI::Escheme</a>
+  
+    <li><a href="../../Erubis/PI/TinyEruby.html">Erubis::PI::TinyEruby</a>
+  
+    <li><a href="../../Erubis/PercentLineEnhancer.html">Erubis::PercentLineEnhancer</a>
+  
+    <li><a href="../../Erubis/PercentLineEruby.html">Erubis::PercentLineEruby</a>
+  
+    <li><a href="../../Erubis/PerlGenerator.html">Erubis::PerlGenerator</a>
+  
+    <li><a href="../../Erubis/PhpGenerator.html">Erubis::PhpGenerator</a>
+  
+    <li><a href="../../Erubis/PrefixedLineEnhancer.html">Erubis::PrefixedLineEnhancer</a>
+  
+    <li><a href="../../Erubis/PrefixedLineEruby.html">Erubis::PrefixedLineEruby</a>
+  
+    <li><a href="../../Erubis/PreprocessingEruby.html">Erubis::PreprocessingEruby</a>
+  
+    <li><a href="../../Erubis/PreprocessingHelper.html">Erubis::PreprocessingHelper</a>
+  
+    <li><a href="../../Erubis/PrintEnabledEnhancer.html">Erubis::PrintEnabledEnhancer</a>
+  
+    <li><a href="../../Erubis/PrintEnabledEruby.html">Erubis::PrintEnabledEruby</a>
+  
+    <li><a href="../../Erubis/PrintOutEnhancer.html">Erubis::PrintOutEnhancer</a>
+  
+    <li><a href="../../Erubis/PrintOutEruby.html">Erubis::PrintOutEruby</a>
+  
+    <li><a href="../../Erubis/PrintOutSimplifiedEruby.html">Erubis::PrintOutSimplifiedEruby</a>
+  
+    <li><a href="../../Erubis/RubyEvaluator.html">Erubis::RubyEvaluator</a>
+  
+    <li><a href="../../Erubis/RubyGenerator.html">Erubis::RubyGenerator</a>
+  
+    <li><a href="../../Erubis/SchemeGenerator.html">Erubis::SchemeGenerator</a>
+  
+    <li><a href="../../Erubis/SimplifiedEruby.html">Erubis::SimplifiedEruby</a>
+  
+    <li><a href="../../Erubis/SimplifyEnhancer.html">Erubis::SimplifyEnhancer</a>
+  
+    <li><a href="../../Erubis/StdoutEnhancer.html">Erubis::StdoutEnhancer</a>
+  
+    <li><a href="../../Erubis/StdoutEruby.html">Erubis::StdoutEruby</a>
+  
+    <li><a href="../../Erubis/StdoutSimplifiedEruby.html">Erubis::StdoutSimplifiedEruby</a>
+  
+    <li><a href="../../Erubis/StringBufferEnhancer.html">Erubis::StringBufferEnhancer</a>
+  
+    <li><a href="../../Erubis/StringBufferEruby.html">Erubis::StringBufferEruby</a>
+  
+    <li><a href="../../Erubis/StringIOEruby.html">Erubis::StringIOEruby</a>
+  
+    <li><a href="../../Erubis/TinyEruby.html">Erubis::TinyEruby</a>
+  
+    <li><a href="../../Erubis/XmlEruby.html">Erubis::XmlEruby</a>
+  
+    <li><a href="../../Erubis/XmlHelper.html">Erubis::XmlHelper</a>
+  
+    <li><a href="../../ActionView.html">ActionView</a>
+  
+    <li><a href="../../ActionView/TemplateHandlers.html">ActionView::TemplateHandlers</a>
+  
+    <li><a href="../../ActionView/TemplateHandlers/ErubisHandler.html">ActionView::TemplateHandlers::ErubisHandler</a>
+  
+    <li><a href="../../ERB.html">ERB</a>
+  
+    <li><a href="../../Kernel.html">Kernel</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Erubis::Helpers::RailsFormHelper</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-_pp_check_box_checked-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">_pp_check_box_checked?</span><span
+            class="method-args">(value, checked_value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="_pp_check_box_checked-3F-source">
+            <pre><span class="ruby-comment"># File lib/erubis/helpers/rails_form_helper.rb, line 106</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">_pp_check_box_checked?</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">checked_value</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">ActionView</span><span class="ruby-operator">::</span><span class="ruby-constant">Helpers</span><span class="ruby-operator">::</span><span class="ruby-constant">InstanceTag</span><span class="ruby-operator">::</span><span class="ruby-identifier">check_box_checked?</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">checked_value</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- _pp_check_box_checked-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- _pp_check_box_checked-3F-method -->
+
+    
+      <div id="method-i-_pp_error_tags" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">_pp_error_tags</span><span
+            class="method-args">(value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="_pp_error_tags-source">
+            <pre><span class="ruby-comment"># File lib/erubis/helpers/rails_form_helper.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">_pp_error_tags</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">?</span> [<span class="ruby-string">'&lt;div class=&quot;fieldWithErrors&quot;&gt;'</span>, <span class="ruby-string">'&lt;/div&gt;'</span>] <span class="ruby-operator">:</span> [<span class="ruby-string">''</span>, <span class="ruby-string">''</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- _pp_error_tags-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- _pp_error_tags-method -->
+
+    
+      <div id="method-i-_pp_radio_button_checked-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">_pp_radio_button_checked?</span><span
+            class="method-args">(value, tag_value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="_pp_radio_button_checked-3F-source">
+            <pre><span class="ruby-comment"># File lib/erubis/helpers/rails_form_helper.rb, line 117</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">_pp_radio_button_checked?</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">tag_value</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">ActionView</span><span class="ruby-operator">::</span><span class="ruby-constant">Helpers</span><span class="ruby-operator">::</span><span class="ruby-constant">InstanceTag</span><span class="ruby-operator">::</span><span class="ruby-identifier">radio_button_checked?</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">tag_value</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- _pp_radio_button_checked-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- _pp_radio_button_checked-3F-method -->
+
+    
+      <div id="method-i-_pp_remove_error_div" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">_pp_remove_error_div</span><span
+            class="method-args">(s)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="_pp_remove_error_div-source">
+            <pre><span class="ruby-comment"># File lib/erubis/helpers/rails_form_helper.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">_pp_remove_error_div</span>(<span class="ruby-identifier">s</span>)
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-regexp">%r\A&lt;div class=&quot;fieldWithErrors&quot;&gt;(.*)&lt;\/div&gt;\z/</span>, <span class="ruby-string">'\1'</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">s</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- _pp_remove_error_div-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- _pp_remove_error_div-method -->
+
+    
+      <div id="method-i-_pp_select" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">_pp_select</span><span
+            class="method-args">(object, method, collection, priority_collection, options={}, html_options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="_pp_select-source">
+            <pre><span class="ruby-comment"># File lib/erubis/helpers/rails_form_helper.rb, line 121</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">_pp_select</span>(<span class="ruby-identifier">object</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">collection</span>, <span class="ruby-identifier">priority_collection</span>, <span class="ruby-identifier">options</span>={}, <span class="ruby-identifier">html_options</span>={})
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">pp_error_on</span>(<span class="ruby-identifier">object</span>, <span class="ruby-identifier">method</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">s</span> = <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-comment">## start tag</span>
+    <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;&lt;select id=\&quot;#{object}_#{method}\&quot; name=\&quot;#{object}[#{method}]\&quot;&quot;</span>
+    <span class="ruby-keyword">for</span> <span class="ruby-identifier">key</span>, <span class="ruby-identifier">val</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">html_options</span><span class="ruby-operator">:</span>
+        <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot; #{key}=\&quot;#{val}\&quot;&quot;</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;&gt;\n&quot;</span>
+    <span class="ruby-comment">## selected table</span>
+    <span class="ruby-identifier">key</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-value">:value</span>) <span class="ruby-operator">?</span> <span class="ruby-value">:value</span> <span class="ruby-operator">:</span> (<span class="ruby-identifier">options</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-string">'value'</span>) <span class="ruby-operator">?</span> <span class="ruby-string">'value'</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>)
+    <span class="ruby-keyword">if</span>    <span class="ruby-identifier">key</span>.<span class="ruby-identifier">nil?</span>                ;  <span class="ruby-identifier">selected</span> = <span class="ruby-node">&quot;@#{object}.#{method}&quot;</span>
+    <span class="ruby-keyword">elsif</span> (<span class="ruby-identifier">val</span>=<span class="ruby-identifier">options</span>[<span class="ruby-identifier">key</span>]).<span class="ruby-identifier">nil?</span> ;  <span class="ruby-identifier">selected</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">val</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r\A&lt;%=(.*)%&gt;\z/</span>  ;  <span class="ruby-identifier">selected</span> = <span class="ruby-node">$1</span>
+    <span class="ruby-keyword">else</span>                          ;  <span class="ruby-identifier">selected</span> = <span class="ruby-identifier">val</span>.<span class="ruby-identifier">inspect</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;&lt;% _table = {#{selected}=&gt;' selected=\&quot;selected\&quot;'} %&gt;\n&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">selected</span>
+    <span class="ruby-comment">## &lt;option&gt; tags</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:include_blank</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">options</span>[<span class="ruby-string">'include_blank'</span>]
+      <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;&lt;option value=\&quot;\&quot;&gt;&lt;/option&gt;\n&quot;</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">priority_collection</span>.<span class="ruby-identifier">blank?</span>
+      <span class="ruby-identifier">_pp_select_options</span>(<span class="ruby-identifier">s</span>, <span class="ruby-identifier">priority_collection</span>, <span class="ruby-identifier">selected</span>, <span class="ruby-string">'delete'</span>)
+      <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;&lt;option value=\&quot;\&quot;&gt;-------------&lt;/option&gt;\n&quot;</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">_pp_select_options</span>(<span class="ruby-identifier">s</span>, <span class="ruby-identifier">collection</span>, <span class="ruby-identifier">selected</span>, <span class="ruby-string">'[]'</span>)
+    <span class="ruby-comment">## end tag</span>
+    <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;&lt;/select&gt;&quot;</span>
+    <span class="ruby-identifier">s</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- _pp_select-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- _pp_select-method -->
+
+    
+      <div id="method-i-_pp_select_options" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">_pp_select_options</span><span
+            class="method-args">(s, collection, selected, operator)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="_pp_select_options-source">
+            <pre><span class="ruby-comment"># File lib/erubis/helpers/rails_form_helper.rb, line 153</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">_pp_select_options</span>(<span class="ruby-identifier">s</span>, <span class="ruby-identifier">collection</span>, <span class="ruby-identifier">selected</span>, <span class="ruby-identifier">operator</span>)
+  <span class="ruby-keyword">for</span> <span class="ruby-identifier">item</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">collection</span>
+    <span class="ruby-identifier">value</span>, <span class="ruby-identifier">text</span> = <span class="ruby-identifier">item</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">item</span> <span class="ruby-operator">:</span> [<span class="ruby-identifier">item</span>, <span class="ruby-identifier">item</span>]
+    <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">selected</span>
+      <span class="ruby-identifier">t</span> = <span class="ruby-string">''</span>
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">operator</span> <span class="ruby-operator">==</span> <span class="ruby-string">'delete'</span>
+      <span class="ruby-identifier">t</span> = <span class="ruby-node">&quot;&lt;%= _table.delete(#{value.inspect}) %&gt;&quot;</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">t</span> = <span class="ruby-node">&quot;&lt;%= _table[#{value.inspect}] %&gt;&quot;</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;&lt;option value=\&quot;#{h value}\&quot;#{t}&gt;#{h text}&lt;/option&gt;\n&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- _pp_select_options-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- _pp_select_options-method -->
+
+    
+      <div id="method-i-pp_check_box" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pp_check_box</span><span
+            class="method-args">(object_name, method, options={}, checked_value="1", unchecked_value="0")</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="pp_check_box-source">
+            <pre><span class="ruby-comment"># File lib/erubis/helpers/rails_form_helper.rb, line 99</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pp_check_box</span>(<span class="ruby-identifier">object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">options</span>={}, <span class="ruby-identifier">checked_value</span>=<span class="ruby-string">&quot;1&quot;</span>, <span class="ruby-identifier">unchecked_value</span>=<span class="ruby-string">&quot;0&quot;</span>)
+  <span class="ruby-identifier">s</span> = <span class="ruby-identifier">check_box</span>(<span class="ruby-identifier">object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">options</span>, <span class="ruby-identifier">checked_value</span>, <span class="ruby-identifier">unchecked_value</span>)
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-regexp">%r\schecked=\&quot;checked\&quot;/</span>, <span class="ruby-string">''</span>)
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-regexp">%rtype=&quot;checkbox&quot;/</span>, <span class="ruby-node">&quot;\\&amp;&lt;%= _pp_check_box_checked?(@#{object_name}.#{method}, #{checked_value.inspect}) ? ' checked=\&quot;checked\&quot;' : '' %&gt;&quot;</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">pp_error_on</span>(<span class="ruby-identifier">object_name</span>, <span class="ruby-identifier">method</span>) { <span class="ruby-identifier">_pp_remove_error_div</span>(<span class="ruby-identifier">s</span>) }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pp_check_box-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pp_check_box-method -->
+
+    
+      <div id="method-i-pp_collection_select" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pp_collection_select</span><span
+            class="method-args">(object, method, collection, value_method, text_method, options={}, html_options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="pp_collection_select-source">
+            <pre><span class="ruby-comment"># File lib/erubis/helpers/rails_form_helper.rb, line 171</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pp_collection_select</span>(<span class="ruby-identifier">object</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">collection</span>, <span class="ruby-identifier">value_method</span>, <span class="ruby-identifier">text_method</span>, <span class="ruby-identifier">options</span>={}, <span class="ruby-identifier">html_options</span>={})
+  <span class="ruby-identifier">collection2</span> = <span class="ruby-identifier">collection</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span>
+    [<span class="ruby-identifier">e</span>.<span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">value_method</span>), <span class="ruby-identifier">e</span>.<span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">text_method</span>)]
+  }
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">_pp_select</span>(<span class="ruby-identifier">object</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">collection2</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span>, <span class="ruby-identifier">html_options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pp_collection_select-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pp_collection_select-method -->
+
+    
+      <div id="method-i-pp_country_select" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pp_country_select</span><span
+            class="method-args">(object, method, priority_countries=nil, options={}, html_options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="pp_country_select-source">
+            <pre><span class="ruby-comment"># File lib/erubis/helpers/rails_form_helper.rb, line 178</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pp_country_select</span>(<span class="ruby-identifier">object</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">priority_countries</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span>={}, <span class="ruby-identifier">html_options</span>={})
+  <span class="ruby-identifier">collection</span> = <span class="ruby-constant">ActionView</span><span class="ruby-operator">::</span><span class="ruby-constant">Helpers</span><span class="ruby-operator">::</span><span class="ruby-constant">FormOptionsHelper</span><span class="ruby-operator">::</span><span class="ruby-constant">COUNTRIES</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">_pp_select</span>(<span class="ruby-identifier">object</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">collection</span>, <span class="ruby-identifier">priority_countries</span>, <span class="ruby-identifier">options</span>, <span class="ruby-identifier">html_options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pp_country_select-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pp_country_select-method -->
+
+    
+      <div id="method-i-pp_error_on" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pp_error_on</span><span
+            class="method-args">(object_name, method) { |object_name, method| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="pp_error_on-source">
+            <pre><span class="ruby-comment"># File lib/erubis/helpers/rails_form_helper.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pp_error_on</span>(<span class="ruby-identifier">object_name</span>, <span class="ruby-identifier">method</span>)
+  <span class="ruby-identifier">s</span> = <span class="ruby-string">''</span>
+  <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;&lt;% _stag, _etag = _pp_error_tags(@#{object_name}.errors.on('#{method}')) %&gt;&quot;</span>
+  <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;&lt;%= _stag %&gt;&quot;</span>
+  <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">yield</span>(<span class="ruby-identifier">object_name</span>, <span class="ruby-identifier">method</span>)
+  <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;&lt;%= _etag %&gt;&quot;</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">s</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pp_error_on-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pp_error_on-method -->
+
+    
+      <div id="method-i-pp_file_field" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pp_file_field</span><span
+            class="method-args">(object_name, method, options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="pp_file_field-source">
+            <pre><span class="ruby-comment"># File lib/erubis/helpers/rails_form_helper.rb, line 91</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pp_file_field</span>(<span class="ruby-identifier">object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">pp_tag_helper</span>(<span class="ruby-value">:file_field</span>, <span class="ruby-identifier">object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pp_file_field-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pp_file_field-method -->
+
+    
+      <div id="method-i-pp_form_tag" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pp_form_tag</span><span
+            class="method-args">(url_for_options={}, options={}, *parameters_for_url, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="pp_form_tag-source">
+            <pre><span class="ruby-comment"># File lib/erubis/helpers/rails_form_helper.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pp_form_tag</span>(<span class="ruby-identifier">url_for_options</span>={}, <span class="ruby-identifier">options</span>={}, *<span class="ruby-identifier">parameters_for_url</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">form_tag</span>(<span class="ruby-identifier">url_for_options</span>, <span class="ruby-identifier">options</span>, *<span class="ruby-identifier">parameters_for_url</span>, &amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pp_form_tag-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pp_form_tag-method -->
+
+    
+      <div id="method-i-pp_hidden_field" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pp_hidden_field</span><span
+            class="method-args">(object_name, method, options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="pp_hidden_field-source">
+            <pre><span class="ruby-comment"># File lib/erubis/helpers/rails_form_helper.rb, line 87</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pp_hidden_field</span>(<span class="ruby-identifier">object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">pp_tag_helper</span>(<span class="ruby-value">:hidden_field</span>, <span class="ruby-identifier">object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pp_hidden_field-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pp_hidden_field-method -->
+
+    
+      <div id="method-i-pp_image_submit_tag" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pp_image_submit_tag</span><span
+            class="method-args">(source, options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="pp_image_submit_tag-source">
+            <pre><span class="ruby-comment"># File lib/erubis/helpers/rails_form_helper.rb, line 193</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pp_image_submit_tag</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">image_submit_tag</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pp_image_submit_tag-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pp_image_submit_tag-method -->
+
+    
+      <div id="method-i-pp_password_field" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pp_password_field</span><span
+            class="method-args">(object_name, method, options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="pp_password_field-source">
+            <pre><span class="ruby-comment"># File lib/erubis/helpers/rails_form_helper.rb, line 83</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pp_password_field</span>(<span class="ruby-identifier">object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">pp_tag_helper</span>(<span class="ruby-value">:password_field</span>, <span class="ruby-identifier">object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pp_password_field-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pp_password_field-method -->
+
+    
+      <div id="method-i-pp_radio_button" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pp_radio_button</span><span
+            class="method-args">(object_name, method, tag_value, options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="pp_radio_button-source">
+            <pre><span class="ruby-comment"># File lib/erubis/helpers/rails_form_helper.rb, line 110</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pp_radio_button</span>(<span class="ruby-identifier">object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">tag_value</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-identifier">s</span> = <span class="ruby-identifier">radio_button</span>(<span class="ruby-identifier">object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">tag_value</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-regexp">%r\schecked=\&quot;checked\&quot;/</span>, <span class="ruby-string">''</span>)
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-regexp">%rtype=&quot;radio&quot;/</span>, <span class="ruby-node">&quot;\\&amp;&lt;%= _pp_radio_button_checked?(@#{object_name}.#{method}, #{tag_value.inspect}) ? ' checked=\&quot;checked\&quot;' : '' %&gt;&quot;</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">pp_error_on</span>(<span class="ruby-identifier">object_name</span>, <span class="ruby-identifier">method</span>) { <span class="ruby-identifier">_pp_remove_error_div</span>(<span class="ruby-identifier">s</span>) }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pp_radio_button-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pp_radio_button-method -->
+
+    
+      <div id="method-i-pp_render_partial" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pp_render_partial</span><span
+            class="method-args">(basename)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="pp_render_partial-source">
+            <pre><span class="ruby-comment"># File lib/erubis/helpers/rails_form_helper.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pp_render_partial</span>(<span class="ruby-identifier">basename</span>)
+  <span class="ruby-identifier">basename</span> = <span class="ruby-node">&quot;_#{basename}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">basename</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">==</span> <span class="ruby-value">__</span>
+  <span class="ruby-identifier">filename</span> = <span class="ruby-identifier">pp_template_filename</span>(<span class="ruby-identifier">basename</span>)
+  <span class="ruby-identifier">preprocessor</span> = <span class="ruby-identifier">_create_preprocessor</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">filename</span>))
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">preprocessor</span>.<span class="ruby-identifier">evaluate</span>(<span class="ruby-identifier">_preprocessing_context_object</span>())
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pp_render_partial-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pp_render_partial-method -->
+
+    
+      <div id="method-i-pp_select" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pp_select</span><span
+            class="method-args">(object, method, collection, options={}, html_options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="pp_select-source">
+            <pre><span class="ruby-comment"># File lib/erubis/helpers/rails_form_helper.rb, line 167</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pp_select</span>(<span class="ruby-identifier">object</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">collection</span>, <span class="ruby-identifier">options</span>={}, <span class="ruby-identifier">html_options</span>={})
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">_pp_select</span>(<span class="ruby-identifier">object</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">collection</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span>, <span class="ruby-identifier">html_options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pp_select-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pp_select-method -->
+
+    
+      <div id="method-i-pp_submit_tag" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pp_submit_tag</span><span
+            class="method-args">(value="Save changes", options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="pp_submit_tag-source">
+            <pre><span class="ruby-comment"># File lib/erubis/helpers/rails_form_helper.rb, line 189</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pp_submit_tag</span>(<span class="ruby-identifier">value</span>=<span class="ruby-string">&quot;Save changes&quot;</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">submit_tag</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pp_submit_tag-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pp_submit_tag-method -->
+
+    
+      <div id="method-i-pp_tag_helper" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pp_tag_helper</span><span
+            class="method-args">(helper, object_name, method, options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="pp_tag_helper-source">
+            <pre><span class="ruby-comment"># File lib/erubis/helpers/rails_form_helper.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pp_tag_helper</span>(<span class="ruby-identifier">helper</span>, <span class="ruby-identifier">object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">object_name</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">ActionView</span><span class="ruby-operator">::</span><span class="ruby-constant">Helpers</span><span class="ruby-operator">::</span><span class="ruby-constant">FormHelper</span>)
+    <span class="ruby-identifier">object_name</span> = <span class="ruby-identifier">object_name</span>.<span class="ruby-identifier">object_name</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-value">:value</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-string">'value'</span>)
+    <span class="ruby-identifier">options</span>[<span class="ruby-string">'value'</span>] = <span class="ruby-identifier">_?</span>(<span class="ruby-node">&quot;h @#{object_name}.#{method}&quot;</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment">#$stderr.puts &quot;*** debug: pp_tag_helper(): options=#{options.inspect}&quot;</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">pp_error_on</span>(<span class="ruby-identifier">object_name</span>, <span class="ruby-identifier">method</span>) {
+    <span class="ruby-identifier">s</span> = <span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">helper</span>, <span class="ruby-identifier">object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">options</span>)
+    <span class="ruby-identifier">_pp_remove_error_div</span>(<span class="ruby-identifier">s</span>)
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pp_tag_helper-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pp_tag_helper-method -->
+
+    
+      <div id="method-i-pp_template_filename" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pp_template_filename</span><span
+            class="method-args">(basename)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="pp_template_filename-source">
+            <pre><span class="ruby-comment"># File lib/erubis/helpers/rails_form_helper.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pp_template_filename</span>(<span class="ruby-identifier">basename</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-node">&quot;#{RAILS_ROOT}/app/views/#{controller.controller_name}/#{basename}.rhtml&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pp_template_filename-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pp_template_filename-method -->
+
+    
+      <div id="method-i-pp_text_area" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pp_text_area</span><span
+            class="method-args">(object_name, method, options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="pp_text_area-source">
+            <pre><span class="ruby-comment"># File lib/erubis/helpers/rails_form_helper.rb, line 95</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pp_text_area</span>(<span class="ruby-identifier">object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">pp_tag_helper</span>(<span class="ruby-value">:text_area</span>, <span class="ruby-identifier">object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pp_text_area-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pp_text_area-method -->
+
+    
+      <div id="method-i-pp_text_field" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pp_text_field</span><span
+            class="method-args">(object_name, method, options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="pp_text_field-source">
+            <pre><span class="ruby-comment"># File lib/erubis/helpers/rails_form_helper.rb, line 79</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pp_text_field</span>(<span class="ruby-identifier">object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">pp_tag_helper</span>(<span class="ruby-value">:text_field</span>, <span class="ruby-identifier">object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pp_text_field-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pp_text_field-method -->
+
+    
+      <div id="method-i-pp_time_zone_select" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pp_time_zone_select</span><span
+            class="method-args">(object, method, priority_zones=nil, options={}, html_options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="pp_time_zone_select-source">
+            <pre><span class="ruby-comment"># File lib/erubis/helpers/rails_form_helper.rb, line 183</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pp_time_zone_select</span>(<span class="ruby-identifier">object</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">priority_zones</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span>={}, <span class="ruby-identifier">html_options</span>={})
+  <span class="ruby-identifier">model</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:model</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">options</span>[<span class="ruby-string">'model'</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">TimeZone</span>
+  <span class="ruby-identifier">collection</span> = <span class="ruby-identifier">model</span>.<span class="ruby-identifier">all</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> [<span class="ruby-identifier">e</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">e</span>.<span class="ruby-identifier">to_s</span>] }
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">_pp_select</span>(<span class="ruby-identifier">object</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">collection</span>, <span class="ruby-identifier">priority_zones</span>, <span class="ruby-identifier">options</span>, <span class="ruby-identifier">html_options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pp_time_zone_select-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pp_time_zone_select-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

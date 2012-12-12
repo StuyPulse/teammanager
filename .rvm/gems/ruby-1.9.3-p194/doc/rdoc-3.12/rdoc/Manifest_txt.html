@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>Manifest - rdoc-3.12 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./DEVELOPERS_rdoc.html">DEVELOPERS</a>
+  
+    <li class="file"><a href="./History_rdoc.html">History</a>
+  
+    <li class="file"><a href="./LEGAL_rdoc.html">LEGAL</a>
+  
+    <li class="file"><a href="./LICENSE_rdoc.html">LICENSE</a>
+  
+    <li class="file"><a href="./Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+    <li class="file"><a href="./RI_rdoc.html">RI</a>
+  
+    <li class="file"><a href="./Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="./TODO_rdoc.html">TODO</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./RDoc.html">RDoc</a>
+  
+    <li><a href="./RDoc/Alias.html">RDoc::Alias</a>
+  
+    <li><a href="./RDoc/AnonClass.html">RDoc::AnonClass</a>
+  
+    <li><a href="./RDoc/AnyMethod.html">RDoc::AnyMethod</a>
+  
+    <li><a href="./RDoc/Attr.html">RDoc::Attr</a>
+  
+    <li><a href="./RDoc/ClassModule.html">RDoc::ClassModule</a>
+  
+    <li><a href="./RDoc/CodeObject.html">RDoc::CodeObject</a>
+  
+    <li><a href="./RDoc/Comment.html">RDoc::Comment</a>
+  
+    <li><a href="./RDoc/Constant.html">RDoc::Constant</a>
+  
+    <li><a href="./RDoc/Context.html">RDoc::Context</a>
+  
+    <li><a href="./RDoc/Context/Section.html">RDoc::Context::Section</a>
+  
+    <li><a href="./RDoc/CrossReference.html">RDoc::CrossReference</a>
+  
+    <li><a href="./RDoc/ERBIO.html">RDoc::ERBIO</a>
+  
+    <li><a href="./RDoc/Encoding.html">RDoc::Encoding</a>
+  
+    <li><a href="./RDoc/Error.html">RDoc::Error</a>
+  
+    <li><a href="./RDoc/Gauntlet.html">RDoc::Gauntlet</a>
+  
+    <li><a href="./RDoc/Generator.html">RDoc::Generator</a>
+  
+    <li><a href="./RDoc/Generator/Darkfish.html">RDoc::Generator::Darkfish</a>
+  
+    <li><a href="./RDoc/Generator/JsonIndex.html">RDoc::Generator::JsonIndex</a>
+  
+    <li><a href="./RDoc/Generator/Markup.html">RDoc::Generator::Markup</a>
+  
+    <li><a href="./RDoc/Generator/RI.html">RDoc::Generator::RI</a>
+  
+    <li><a href="./RDoc/GhostMethod.html">RDoc::GhostMethod</a>
+  
+    <li><a href="./RDoc/Include.html">RDoc::Include</a>
+  
+    <li><a href="./RDoc/Markup.html">RDoc::Markup</a>
+  
+    <li><a href="./RDoc/Markup/AttrChanger.html">RDoc::Markup::AttrChanger</a>
+  
+    <li><a href="./RDoc/Markup/AttrSpan.html">RDoc::Markup::AttrSpan</a>
+  
+    <li><a href="./RDoc/Markup/Attribute.html">RDoc::Markup::Attribute</a>
+  
+    <li><a href="./RDoc/Markup/AttributeManager.html">RDoc::Markup::AttributeManager</a>
+  
+    <li><a href="./RDoc/Markup/BlankLine.html">RDoc::Markup::BlankLine</a>
+  
+    <li><a href="./RDoc/Markup/Document.html">RDoc::Markup::Document</a>
+  
+    <li><a href="./RDoc/Markup/Formatter.html">RDoc::Markup::Formatter</a>
+  
+    <li><a href="./RDoc/Markup/FormatterTestCase.html">RDoc::Markup::FormatterTestCase</a>
+  
+    <li><a href="./RDoc/Markup/Heading.html">RDoc::Markup::Heading</a>
+  
+    <li><a href="./RDoc/Markup/Include.html">RDoc::Markup::Include</a>
+  
+    <li><a href="./RDoc/Markup/IndentedParagraph.html">RDoc::Markup::IndentedParagraph</a>
+  
+    <li><a href="./RDoc/Markup/List.html">RDoc::Markup::List</a>
+  
+    <li><a href="./RDoc/Markup/ListItem.html">RDoc::Markup::ListItem</a>
+  
+    <li><a href="./RDoc/Markup/Paragraph.html">RDoc::Markup::Paragraph</a>
+  
+    <li><a href="./RDoc/Markup/Parser.html">RDoc::Markup::Parser</a>
+  
+    <li><a href="./RDoc/Markup/Parser/Error.html">RDoc::Markup::Parser::Error</a>
+  
+    <li><a href="./RDoc/Markup/Parser/ParseError.html">RDoc::Markup::Parser::ParseError</a>
+  
+    <li><a href="./RDoc/Markup/PreProcess.html">RDoc::Markup::PreProcess</a>
+  
+    <li><a href="./RDoc/Markup/Raw.html">RDoc::Markup::Raw</a>
+  
+    <li><a href="./RDoc/Markup/Rule.html">RDoc::Markup::Rule</a>
+  
+    <li><a href="./RDoc/Markup/Special.html">RDoc::Markup::Special</a>
+  
+    <li><a href="./RDoc/Markup/TextFormatterTestCase.html">RDoc::Markup::TextFormatterTestCase</a>
+  
+    <li><a href="./RDoc/Markup/ToAnsi.html">RDoc::Markup::ToAnsi</a>
+  
+    <li><a href="./RDoc/Markup/ToBs.html">RDoc::Markup::ToBs</a>
+  
+    <li><a href="./RDoc/Markup/ToHtml.html">RDoc::Markup::ToHtml</a>
+  
+    <li><a href="./RDoc/Markup/ToHtmlCrossref.html">RDoc::Markup::ToHtmlCrossref</a>
+  
+    <li><a href="./RDoc/Markup/ToHtmlSnippet.html">RDoc::Markup::ToHtmlSnippet</a>
+  
+    <li><a href="./RDoc/Markup/ToLabel.html">RDoc::Markup::ToLabel</a>
+  
+    <li><a href="./RDoc/Markup/ToRdoc.html">RDoc::Markup::ToRdoc</a>
+  
+    <li><a href="./RDoc/Markup/ToTableOfContents.html">RDoc::Markup::ToTableOfContents</a>
+  
+    <li><a href="./RDoc/Markup/ToTest.html">RDoc::Markup::ToTest</a>
+  
+    <li><a href="./RDoc/Markup/ToTtOnly.html">RDoc::Markup::ToTtOnly</a>
+  
+    <li><a href="./RDoc/Markup/Verbatim.html">RDoc::Markup::Verbatim</a>
+  
+    <li><a href="./RDoc/MetaMethod.html">RDoc::MetaMethod</a>
+  
+    <li><a href="./RDoc/MethodAttr.html">RDoc::MethodAttr</a>
+  
+    <li><a href="./RDoc/NormalClass.html">RDoc::NormalClass</a>
+  
+    <li><a href="./RDoc/NormalModule.html">RDoc::NormalModule</a>
+  
+    <li><a href="./RDoc/Options.html">RDoc::Options</a>
+  
+    <li><a href="./RDoc/Parser.html">RDoc::Parser</a>
+  
+    <li><a href="./RDoc/Parser/C.html">RDoc::Parser::C</a>
+  
+    <li><a href="./RDoc/Parser/RD.html">RDoc::Parser::RD</a>
+  
+    <li><a href="./RDoc/Parser/Ruby.html">RDoc::Parser::Ruby</a>
+  
+    <li><a href="./RDoc/Parser/RubyTools.html">RDoc::Parser::RubyTools</a>
+  
+    <li><a href="./RDoc/Parser/Simple.html">RDoc::Parser::Simple</a>
+  
+    <li><a href="./RDoc/Parser/Text.html">RDoc::Parser::Text</a>
+  
+    <li><a href="./RDoc/RD.html">RDoc::RD</a>
+  
+    <li><a href="./RDoc/RD/Inline.html">RDoc::RD::Inline</a>
+  
+    <li><a href="./RDoc/RDoc.html">RDoc::RDoc</a>
+  
+    <li><a href="./RDoc/RI.html">RDoc::RI</a>
+  
+    <li><a href="./RDoc/RI/Driver.html">RDoc::RI::Driver</a>
+  
+    <li><a href="./RDoc/RI/Driver/Error.html">RDoc::RI::Driver::Error</a>
+  
+    <li><a href="./RDoc/RI/Driver/NotFoundError.html">RDoc::RI::Driver::NotFoundError</a>
+  
+    <li><a href="./RDoc/RI/Error.html">RDoc::RI::Error</a>
+  
+    <li><a href="./RDoc/RI/Paths.html">RDoc::RI::Paths</a>
+  
+    <li><a href="./RDoc/RI/Store.html">RDoc::RI::Store</a>
+  
+    <li><a href="./RDoc/Require.html">RDoc::Require</a>
+  
+    <li><a href="./RDoc/RubyLex.html">RDoc::RubyLex</a>
+  
+    <li><a href="./RDoc/RubyLex/Error.html">RDoc::RubyLex::Error</a>
+  
+    <li><a href="./RDoc/RubyToken.html">RDoc::RubyToken</a>
+  
+    <li><a href="./RDoc/RubygemsHook.html">RDoc::RubygemsHook</a>
+  
+    <li><a href="./RDoc/SingleClass.html">RDoc::SingleClass</a>
+  
+    <li><a href="./RDoc/Stats.html">RDoc::Stats</a>
+  
+    <li><a href="./RDoc/Stats/Normal.html">RDoc::Stats::Normal</a>
+  
+    <li><a href="./RDoc/Stats/Quiet.html">RDoc::Stats::Quiet</a>
+  
+    <li><a href="./RDoc/Stats/Verbose.html">RDoc::Stats::Verbose</a>
+  
+    <li><a href="./RDoc/Task.html">RDoc::Task</a>
+  
+    <li><a href="./RDoc/Task.html">RDoc::Task</a>
+  
+    <li><a href="./RDoc/TestCase.html">RDoc::TestCase</a>
+  
+    <li><a href="./RDoc/Text.html">RDoc::Text</a>
+  
+    <li><a href="./RDoc/TokenStream.html">RDoc::TokenStream</a>
+  
+    <li><a href="./RDoc/TomDoc.html">RDoc::TomDoc</a>
+  
+    <li><a href="./RDoc/TopLevel.html">RDoc::TopLevel</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<p>.autotest .document <a href="DEVELOPERS_rdoc.html">DEVELOPERS.rdoc</a>
+History.rdoc <a href="LEGAL_rdoc.html">LEGAL.rdoc</a> <a
+href="LICENSE_rdoc.html">LICENSE.rdoc</a> <a
+href="Manifest_txt.html">Manifest.txt</a> <a
+href="README_rdoc.html">README.rdoc</a> <a href="RI_rdoc.html">RI.rdoc</a>
+<a href="Rakefile.html">Rakefile</a> <a href="TODO_rdoc.html">TODO.rdoc</a>
+bin/rdoc bin/ri lib/gauntlet_rdoc.rb lib/rdoc.rb lib/rdoc/alias.rb
+lib/rdoc/anon_class.rb lib/rdoc/any_method.rb lib/rdoc/attr.rb
+lib/rdoc/class_module.rb lib/rdoc/code_object.rb lib/rdoc/code_objects.rb
+lib/rdoc/comment.rb lib/rdoc/constant.rb lib/rdoc/context.rb
+lib/rdoc/context/section.rb lib/rdoc/cross_reference.rb
+lib/rdoc/encoding.rb lib/rdoc/erbio.rb lib/rdoc/generator.rb
+lib/rdoc/generator/darkfish.rb lib/rdoc/generator/json_index.rb
+lib/rdoc/generator/markup.rb lib/rdoc/generator/ri.rb
+lib/rdoc/generator/template/darkfish/.document
+lib/rdoc/generator/template/darkfish/_footer.rhtml
+lib/rdoc/generator/template/darkfish/_head.rhtml
+lib/rdoc/generator/template/darkfish/_sidebar_VCS_info.rhtml
+lib/rdoc/generator/template/darkfish/_sidebar_classes.rhtml
+lib/rdoc/generator/template/darkfish/_sidebar_in_files.rhtml
+lib/rdoc/generator/template/darkfish/_sidebar_includes.rhtml
+lib/rdoc/generator/template/darkfish/_sidebar_methods.rhtml
+lib/rdoc/generator/template/darkfish/_sidebar_navigation.rhtml
+lib/rdoc/generator/template/darkfish/_sidebar_pages.rhtml
+lib/rdoc/generator/template/darkfish/_sidebar_parent.rhtml
+lib/rdoc/generator/template/darkfish/_sidebar_search.rhtml
+lib/rdoc/generator/template/darkfish/_sidebar_sections.rhtml
+lib/rdoc/generator/template/darkfish/class.rhtml
+lib/rdoc/generator/template/darkfish/images/add.png
+lib/rdoc/generator/template/darkfish/images/brick.png
+lib/rdoc/generator/template/darkfish/images/brick_link.png
+lib/rdoc/generator/template/darkfish/images/bug.png
+lib/rdoc/generator/template/darkfish/images/bullet_black.png
+lib/rdoc/generator/template/darkfish/images/bullet_toggle_minus.png
+lib/rdoc/generator/template/darkfish/images/bullet_toggle_plus.png
+lib/rdoc/generator/template/darkfish/images/date.png
+lib/rdoc/generator/template/darkfish/images/delete.png
+lib/rdoc/generator/template/darkfish/images/find.png
+lib/rdoc/generator/template/darkfish/images/loadingAnimation.gif
+lib/rdoc/generator/template/darkfish/images/macFFBgHack.png
+lib/rdoc/generator/template/darkfish/images/package.png
+lib/rdoc/generator/template/darkfish/images/page_green.png
+lib/rdoc/generator/template/darkfish/images/page_white_text.png
+lib/rdoc/generator/template/darkfish/images/page_white_width.png
+lib/rdoc/generator/template/darkfish/images/plugin.png
+lib/rdoc/generator/template/darkfish/images/ruby.png
+lib/rdoc/generator/template/darkfish/images/tag_blue.png
+lib/rdoc/generator/template/darkfish/images/tag_green.png
+lib/rdoc/generator/template/darkfish/images/transparent.png
+lib/rdoc/generator/template/darkfish/images/wrench.png
+lib/rdoc/generator/template/darkfish/images/wrench_orange.png
+lib/rdoc/generator/template/darkfish/images/zoom.png
+lib/rdoc/generator/template/darkfish/index.rhtml
+lib/rdoc/generator/template/darkfish/js/darkfish.js
+lib/rdoc/generator/template/darkfish/js/jquery.js
+lib/rdoc/generator/template/darkfish/js/search.js
+lib/rdoc/generator/template/darkfish/page.rhtml
+lib/rdoc/generator/template/darkfish/rdoc.css
+lib/rdoc/generator/template/darkfish/table_of_contents.rhtml
+lib/rdoc/generator/template/json_index/js/navigation.js
+lib/rdoc/generator/template/json_index/js/searcher.js
+lib/rdoc/ghost_method.rb lib/rdoc/include.rb lib/rdoc/known_classes.rb
+lib/rdoc/markup.rb lib/rdoc/markup/attr_changer.rb
+lib/rdoc/markup/attr_span.rb lib/rdoc/markup/attribute.rb
+lib/rdoc/markup/attribute_manager.rb lib/rdoc/markup/blank_line.rb
+lib/rdoc/markup/document.rb lib/rdoc/markup/formatter.rb
+lib/rdoc/markup/formatter_test_case.rb lib/rdoc/markup/heading.rb
+lib/rdoc/markup/include.rb lib/rdoc/markup/indented_paragraph.rb
+lib/rdoc/markup/inline.rb lib/rdoc/markup/list.rb
+lib/rdoc/markup/list_item.rb lib/rdoc/markup/paragraph.rb
+lib/rdoc/markup/parser.rb lib/rdoc/markup/pre_process.rb
+lib/rdoc/markup/raw.rb lib/rdoc/markup/rule.rb lib/rdoc/markup/special.rb
+lib/rdoc/markup/text_formatter_test_case.rb lib/rdoc/markup/to_ansi.rb
+lib/rdoc/markup/to_bs.rb lib/rdoc/markup/to_html.rb
+lib/rdoc/markup/to_html_crossref.rb lib/rdoc/markup/to_html_snippet.rb
+lib/rdoc/markup/to_label.rb lib/rdoc/markup/to_rdoc.rb
+lib/rdoc/markup/to_table_of_contents.rb lib/rdoc/markup/to_test.rb
+lib/rdoc/markup/to_tt_only.rb lib/rdoc/markup/verbatim.rb
+lib/rdoc/meta_method.rb lib/rdoc/method_attr.rb lib/rdoc/normal_class.rb
+lib/rdoc/normal_module.rb lib/rdoc/options.rb lib/rdoc/parser.rb
+lib/rdoc/parser/c.rb lib/rdoc/parser/rd.rb lib/rdoc/parser/ruby.rb
+lib/rdoc/parser/ruby_tools.rb lib/rdoc/parser/simple.rb
+lib/rdoc/parser/text.rb lib/rdoc/rd.rb lib/rdoc/rd/block_parser.ry
+lib/rdoc/rd/inline.rb lib/rdoc/rd/inline_parser.ry lib/rdoc/rdoc.rb
+lib/rdoc/require.rb lib/rdoc/ri.rb lib/rdoc/ri/driver.rb
+lib/rdoc/ri/formatter.rb lib/rdoc/ri/paths.rb lib/rdoc/ri/store.rb
+lib/rdoc/ruby_lex.rb lib/rdoc/ruby_token.rb lib/rdoc/rubygems_hook.rb
+lib/rdoc/single_class.rb lib/rdoc/stats.rb lib/rdoc/stats/normal.rb
+lib/rdoc/stats/quiet.rb lib/rdoc/stats/verbose.rb lib/rdoc/task.rb
+lib/rdoc/test_case.rb lib/rdoc/text.rb lib/rdoc/token_stream.rb
+lib/rdoc/tom_doc.rb lib/rdoc/top_level.rb test/README test/binary.dat
+test/hidden.zip.txt test/test.ja.large.rdoc test/test.ja.rdoc
+test/test.ja.txt test/test.txt test/test_attribute_manager.rb
+test/test_rdoc_alias.rb test/test_rdoc_any_method.rb test/test_rdoc_attr.rb
+test/test_rdoc_class_module.rb test/test_rdoc_code_object.rb
+test/test_rdoc_comment.rb test/test_rdoc_constant.rb
+test/test_rdoc_context.rb test/test_rdoc_context_section.rb
+test/test_rdoc_cross_reference.rb test/test_rdoc_encoding.rb
+test/test_rdoc_generator_darkfish.rb test/test_rdoc_generator_json_index.rb
+test/test_rdoc_generator_markup.rb test/test_rdoc_generator_ri.rb
+test/test_rdoc_include.rb test/test_rdoc_markup.rb
+test/test_rdoc_markup_attribute_manager.rb
+test/test_rdoc_markup_document.rb test/test_rdoc_markup_formatter.rb
+test/test_rdoc_markup_heading.rb test/test_rdoc_markup_include.rb
+test/test_rdoc_markup_indented_paragraph.rb
+test/test_rdoc_markup_paragraph.rb test/test_rdoc_markup_parser.rb
+test/test_rdoc_markup_pre_process.rb test/test_rdoc_markup_raw.rb
+test/test_rdoc_markup_to_ansi.rb test/test_rdoc_markup_to_bs.rb
+test/test_rdoc_markup_to_html.rb test/test_rdoc_markup_to_html_crossref.rb
+test/test_rdoc_markup_to_html_snippet.rb test/test_rdoc_markup_to_label.rb
+test/test_rdoc_markup_to_rdoc.rb
+test/test_rdoc_markup_to_table_of_contents.rb
+test/test_rdoc_markup_to_tt_only.rb test/test_rdoc_markup_verbatim.rb
+test/test_rdoc_method_attr.rb test/test_rdoc_normal_class.rb
+test/test_rdoc_normal_module.rb test/test_rdoc_options.rb
+test/test_rdoc_parser.rb test/test_rdoc_parser_c.rb
+test/test_rdoc_parser_rd.rb test/test_rdoc_parser_ruby.rb
+test/test_rdoc_parser_simple.rb test/test_rdoc_rd.rb
+test/test_rdoc_rd_block_parser.rb test/test_rdoc_rd_inline.rb
+test/test_rdoc_rd_inline_parser.rb test/test_rdoc_rdoc.rb
+test/test_rdoc_require.rb test/test_rdoc_ri_driver.rb
+test/test_rdoc_ri_paths.rb test/test_rdoc_ri_store.rb
+test/test_rdoc_ruby_lex.rb test/test_rdoc_rubygems_hook.rb
+test/test_rdoc_single_class.rb test/test_rdoc_stats.rb
+test/test_rdoc_task.rb test/test_rdoc_text.rb
+test/test_rdoc_token_stream.rb test/test_rdoc_tom_doc.rb
+test/test_rdoc_top_level.rb test/xref_data.rb test/xref_test_case.rb</p>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

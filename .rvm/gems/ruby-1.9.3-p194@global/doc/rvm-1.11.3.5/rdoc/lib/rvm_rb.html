@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>File: rvm.rb [rvm-1.11.3.5 Documentation]</title>
+
+  <link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet" />
+
+  <script src="../js/jquery.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="../js/darkfish.js" type="text/javascript"
+    charset="utf-8"></script>
+</head>
+
+<body class="file file-popup">
+  <div id="metadata">
+    <dl>
+      <dt class="modified-date">Last Modified</dt>
+      <dd class="modified-date">2012-09-11 20:20:01 -0400</dd>
+
+      
+      <dt class="requires">Requires</dt>
+      <dd class="requires">
+        <ul>
+        
+          <li>rvm/errors</li>
+        
+          <li>rvm/shell</li>
+        
+          <li>rvm/environment</li>
+        
+          <li>rvm/version</li>
+        
+        </ul>
+      </dd>
+      
+
+      
+    </dl>
+  </div>
+
+  <div id="documentation">
+    
+    <div class="description">
+      <h2>Description</h2>
+      
+<h2>Ruby Version Manager - Ruby API</h2>
+
+<p>Provides a wrapper around the command line api implemented as part of the
+api. If you’re not familiar with rvm, please read <a
+href="https://rvm.beginrescueend.com/">rvm.beginrescueend.com/</a> first.</p>
+
+<h2>Usage</h2>
+
+<p>When using the rvm ruby api, you gain access to most of the commands,
+including the set functionality. As a side node, the <a
+href="../RVM.html">RVM</a> module provides access to most of the api both
+via direct api wrappers (of the form <tt>&lt;tool&gt;_&lt;action&gt;</tt> -
+e.g. <tt>alias_create</tt>, <tt>gemset_use</tt> and <tt>wrapper</tt>).</p>
+
+<h2>The Environment Model</h2>
+
+<p>The <a href="../RVM.html">RVM</a> ruby api is implemented using an
+environment model. Each environment maps directly to some ruby string
+interpretable by rvm (e.g. <tt>ree</tt>, <tt>ruby-1.8.7-p174</tt>,
+<tt>system</tt>, +rbx@rails+ and so on) and is considered a sandboxed
+environment (for commands like use etc) in which you can deal with rvm.
+it’s worth noting that a single environment can have multiple environment
+instances and for the most part creating of these instances is best handled
+by the <a href="../RVM.html#method-c-environment">RVM.environment</a> and
+<a href="../RVM.html#method-c-environments">RVM.environments</a> methods.</p>
+
+<p>Each Environment (and instance of <a
+href="../RVM/Environment.html">RVM::Environment</a>) provides access to the
+rvm ruby api (in some cases, the api may not directly be related to the
+current ruby - but for simplicity / consistency purposes, they are still
+implemented as methods of <a
+href="../RVM/Environment.html">RVM::Environment</a>).</p>
+
+<p>When you perform an action with side effects (e.g. <a
+href="../RVM/Environment.html#method-i-gemset_use">RVM::Environment#gemset_use</a>
+or <a href="../RVM/Environment.html#method-i-use">RVM::Environment#use</a>)
+this will mutate the ruby string of the given environment (hence, an
+environment is considered mutable).</p>
+
+<p>Lastly, for the actual command line work, <a
+href="../RVM/Environment.html">RVM::Environment</a> works with an instance
+of <a
+href="../RVM/Shell/AbstractWrapper.html">RVM::Shell::AbstractWrapper</a>.
+This performs logic (such as correctly escaping strings, calling the
+environment and such) in a way that is both reusable and simplified.</p>
+
+<p>By default, method_missing is used on the <a href="../RVM.html">RVM</a>
+module to proxy method calls to <a
+href="../RVM.html#method-c-current">RVM.current</a> (itself calling <a
+href="../RVM/Environment.html#method-c-current">RVM::Environment.current</a>),
+meaning things like RVM.gemset_name, RVM.alias_create and the like work.
+This is considered the ‘global’ instance and should be avoided unless
+needed directly.</p>
+
+<p><a
+href="../RVM/Environment.html#method-c-current">RVM::Environment.current</a>
+will first attempt to use the current ruby string (determined by +<a
+href="http://'GEM_HOME'">ENV</a>+ but will fall back to using the rubies
+load path if that isn't available).</p>
+
+<p>In many cases, (e.g. <tt>alias</tt>, <tt>list</tt> and the like) there is a
+more ruby-like wrapper class, typically available via
+<tt>RVM::Environment#&lt;action&gt;</tt>.</p>
+
+<h2>Side Notes</h2>
+
+<p>In the cases this api differs, see the <a
+href="../RVM/Environment.html">RVM::Environment</a> class for more
+information.</p>
+
+<p>You can check the name of a given environment in two ways - <a
+href="../RVM/Environment.html#attribute-i-environment_name">RVM::Environment#environment_name</a>
+for the short version / the version set by <a
+href="../RVM/Environment.html#method-i-use">RVM::Environment#use</a>, <a
+href="../RVM/Environment.html#method-i-gemset_use">RVM::Environment#gemset_use</a>
+or <a href="../RVM.html#method-c-environment">RVM.environment</a>. If you
+wish to get the full, expanded string (which has things such as the actual
+version of the selected ruby), you instead with to use <a
+href="../RVM/Environment.html#method-i-expanded_name">RVM::Environment#expanded_name</a>.</p>
+
+<p>Lastly, If you do need to pass environment variables to a specific
+environment, please use <a
+href="../RVM/Environment.html#method-c-new">RVM::Environment.new</a>,
+versus <a href="../RVM.html#method-c-environment">RVM.environment</a></p>
+
+    </div>
+    
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,2111 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Rack::Request - rack-1.4.1 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/rack/request.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-GET">#GET</a>
+    
+    <li><a href="#method-i-POST">#POST</a>
+    
+    <li><a href="#method-i-5B-5D">#[]</a>
+    
+    <li><a href="#method-i-5B-5D-3D">#[]=</a>
+    
+    <li><a href="#method-i-accept_encoding">#accept_encoding</a>
+    
+    <li><a href="#method-i-base_url">#base_url</a>
+    
+    <li><a href="#method-i-body">#body</a>
+    
+    <li><a href="#method-i-content_charset">#content_charset</a>
+    
+    <li><a href="#method-i-content_length">#content_length</a>
+    
+    <li><a href="#method-i-content_type">#content_type</a>
+    
+    <li><a href="#method-i-cookies">#cookies</a>
+    
+    <li><a href="#method-i-delete-3F">#delete?</a>
+    
+    <li><a href="#method-i-form_data-3F">#form_data?</a>
+    
+    <li><a href="#method-i-fullpath">#fullpath</a>
+    
+    <li><a href="#method-i-get-3F">#get?</a>
+    
+    <li><a href="#method-i-head-3F">#head?</a>
+    
+    <li><a href="#method-i-host">#host</a>
+    
+    <li><a href="#method-i-host_with_port">#host_with_port</a>
+    
+    <li><a href="#method-i-ip">#ip</a>
+    
+    <li><a href="#method-i-logger">#logger</a>
+    
+    <li><a href="#method-i-media_type">#media_type</a>
+    
+    <li><a href="#method-i-media_type_params">#media_type_params</a>
+    
+    <li><a href="#method-i-options-3F">#options?</a>
+    
+    <li><a href="#method-i-params">#params</a>
+    
+    <li><a href="#method-i-parse_multipart">#parse_multipart</a>
+    
+    <li><a href="#method-i-parse_query">#parse_query</a>
+    
+    <li><a href="#method-i-parseable_data-3F">#parseable_data?</a>
+    
+    <li><a href="#method-i-patch-3F">#patch?</a>
+    
+    <li><a href="#method-i-path">#path</a>
+    
+    <li><a href="#method-i-path_info">#path_info</a>
+    
+    <li><a href="#method-i-path_info-3D">#path_info=</a>
+    
+    <li><a href="#method-i-port">#port</a>
+    
+    <li><a href="#method-i-post-3F">#post?</a>
+    
+    <li><a href="#method-i-put-3F">#put?</a>
+    
+    <li><a href="#method-i-query_string">#query_string</a>
+    
+    <li><a href="#method-i-referer">#referer</a>
+    
+    <li><a href="#method-i-referrer">#referrer</a>
+    
+    <li><a href="#method-i-request_method">#request_method</a>
+    
+    <li><a href="#method-i-scheme">#scheme</a>
+    
+    <li><a href="#method-i-script_name">#script_name</a>
+    
+    <li><a href="#method-i-script_name-3D">#script_name=</a>
+    
+    <li><a href="#method-i-session">#session</a>
+    
+    <li><a href="#method-i-session_options">#session_options</a>
+    
+    <li><a href="#method-i-ssl-3F">#ssl?</a>
+    
+    <li><a href="#method-i-trace-3F">#trace?</a>
+    
+    <li><a href="#method-i-trusted_proxy-3F">#trusted_proxy?</a>
+    
+    <li><a href="#method-i-url">#url</a>
+    
+    <li><a href="#method-i-user_agent">#user_agent</a>
+    
+    <li><a href="#method-i-values_at">#values_at</a>
+    
+    <li><a href="#method-i-xhr-3F">#xhr?</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../KNOWN-ISSUES.html">KNOWN-ISSUES</a>
+  
+    <li class="file"><a href="../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Rack.html">Rack</a>
+  
+    <li><a href="../Rack/Auth.html">Rack::Auth</a>
+  
+    <li><a href="../Rack/Auth/AbstractHandler.html">Rack::Auth::AbstractHandler</a>
+  
+    <li><a href="../Rack/Auth/AbstractRequest.html">Rack::Auth::AbstractRequest</a>
+  
+    <li><a href="../Rack/Auth/Basic.html">Rack::Auth::Basic</a>
+  
+    <li><a href="../Rack/Auth/Basic/Request.html">Rack::Auth::Basic::Request</a>
+  
+    <li><a href="../Rack/Auth/Digest.html">Rack::Auth::Digest</a>
+  
+    <li><a href="../Rack/Auth/Digest/MD5.html">Rack::Auth::Digest::MD5</a>
+  
+    <li><a href="../Rack/Auth/Digest/Nonce.html">Rack::Auth::Digest::Nonce</a>
+  
+    <li><a href="../Rack/Auth/Digest/Params.html">Rack::Auth::Digest::Params</a>
+  
+    <li><a href="../Rack/Auth/Digest/Request.html">Rack::Auth::Digest::Request</a>
+  
+    <li><a href="../Rack/BodyProxy.html">Rack::BodyProxy</a>
+  
+    <li><a href="../Rack/Builder.html">Rack::Builder</a>
+  
+    <li><a href="../Rack/Cascade.html">Rack::Cascade</a>
+  
+    <li><a href="../Rack/Chunked.html">Rack::Chunked</a>
+  
+    <li><a href="../Rack/Chunked/Body.html">Rack::Chunked::Body</a>
+  
+    <li><a href="../Rack/CommonLogger.html">Rack::CommonLogger</a>
+  
+    <li><a href="../Rack/ConditionalGet.html">Rack::ConditionalGet</a>
+  
+    <li><a href="../Rack/Config.html">Rack::Config</a>
+  
+    <li><a href="../Rack/ContentLength.html">Rack::ContentLength</a>
+  
+    <li><a href="../Rack/ContentType.html">Rack::ContentType</a>
+  
+    <li><a href="../Rack/Deflater.html">Rack::Deflater</a>
+  
+    <li><a href="../Rack/Deflater/DeflateStream.html">Rack::Deflater::DeflateStream</a>
+  
+    <li><a href="../Rack/Deflater/GzipStream.html">Rack::Deflater::GzipStream</a>
+  
+    <li><a href="../Rack/Directory.html">Rack::Directory</a>
+  
+    <li><a href="../Rack/ETag.html">Rack::ETag</a>
+  
+    <li><a href="../Rack/File.html">Rack::File</a>
+  
+    <li><a href="../Rack/ForwardRequest.html">Rack::ForwardRequest</a>
+  
+    <li><a href="../Rack/Handler.html">Rack::Handler</a>
+  
+    <li><a href="../Rack/Handler/CGI.html">Rack::Handler::CGI</a>
+  
+    <li><a href="../Rack/Handler/EventedMongrel.html">Rack::Handler::EventedMongrel</a>
+  
+    <li><a href="../Rack/Handler/FastCGI.html">Rack::Handler::FastCGI</a>
+  
+    <li><a href="../Rack/Handler/LSWS.html">Rack::Handler::LSWS</a>
+  
+    <li><a href="../Rack/Handler/Mongrel.html">Rack::Handler::Mongrel</a>
+  
+    <li><a href="../Rack/Handler/SCGI.html">Rack::Handler::SCGI</a>
+  
+    <li><a href="../Rack/Handler/SwiftipliedMongrel.html">Rack::Handler::SwiftipliedMongrel</a>
+  
+    <li><a href="../Rack/Handler/Thin.html">Rack::Handler::Thin</a>
+  
+    <li><a href="../Rack/Handler/WEBrick.html">Rack::Handler::WEBrick</a>
+  
+    <li><a href="../Rack/Head.html">Rack::Head</a>
+  
+    <li><a href="../Rack/Lint.html">Rack::Lint</a>
+  
+    <li><a href="../Rack/Lobster.html">Rack::Lobster</a>
+  
+    <li><a href="../Rack/Lock.html">Rack::Lock</a>
+  
+    <li><a href="../Rack/Logger.html">Rack::Logger</a>
+  
+    <li><a href="../Rack/MethodOverride.html">Rack::MethodOverride</a>
+  
+    <li><a href="../Rack/Mime.html">Rack::Mime</a>
+  
+    <li><a href="../Rack/MockRequest.html">Rack::MockRequest</a>
+  
+    <li><a href="../Rack/MockRequest/FatalWarner.html">Rack::MockRequest::FatalWarner</a>
+  
+    <li><a href="../Rack/MockRequest/FatalWarning.html">Rack::MockRequest::FatalWarning</a>
+  
+    <li><a href="../Rack/MockResponse.html">Rack::MockResponse</a>
+  
+    <li><a href="../Rack/Multipart.html">Rack::Multipart</a>
+  
+    <li><a href="../Rack/Multipart/Generator.html">Rack::Multipart::Generator</a>
+  
+    <li><a href="../Rack/Multipart/Parser.html">Rack::Multipart::Parser</a>
+  
+    <li><a href="../Rack/Multipart/UploadedFile.html">Rack::Multipart::UploadedFile</a>
+  
+    <li><a href="../Rack/NullLogger.html">Rack::NullLogger</a>
+  
+    <li><a href="../Rack/Recursive.html">Rack::Recursive</a>
+  
+    <li><a href="../Rack/Reloader.html">Rack::Reloader</a>
+  
+    <li><a href="../Rack/Reloader/Stat.html">Rack::Reloader::Stat</a>
+  
+    <li><a href="../Rack/Request.html">Rack::Request</a>
+  
+    <li><a href="../Rack/Response.html">Rack::Response</a>
+  
+    <li><a href="../Rack/Response/Helpers.html">Rack::Response::Helpers</a>
+  
+    <li><a href="../Rack/RewindableInput.html">Rack::RewindableInput</a>
+  
+    <li><a href="../Rack/RewindableInput/Tempfile.html">Rack::RewindableInput::Tempfile</a>
+  
+    <li><a href="../Rack/Runtime.html">Rack::Runtime</a>
+  
+    <li><a href="../Rack/Sendfile.html">Rack::Sendfile</a>
+  
+    <li><a href="../Rack/Server.html">Rack::Server</a>
+  
+    <li><a href="../Rack/Server/Options.html">Rack::Server::Options</a>
+  
+    <li><a href="../Rack/Session.html">Rack::Session</a>
+  
+    <li><a href="../Rack/Session/Abstract.html">Rack::Session::Abstract</a>
+  
+    <li><a href="../Rack/Session/Abstract/ID.html">Rack::Session::Abstract::ID</a>
+  
+    <li><a href="../Rack/Session/Abstract/SessionHash.html">Rack::Session::Abstract::SessionHash</a>
+  
+    <li><a href="../Rack/Session/Cookie.html">Rack::Session::Cookie</a>
+  
+    <li><a href="../Rack/Session/Cookie/Base64.html">Rack::Session::Cookie::Base64</a>
+  
+    <li><a href="../Rack/Session/Cookie/Base64/Marshal.html">Rack::Session::Cookie::Base64::Marshal</a>
+  
+    <li><a href="../Rack/Session/Cookie/Identity.html">Rack::Session::Cookie::Identity</a>
+  
+    <li><a href="../Rack/Session/Cookie/Reverse.html">Rack::Session::Cookie::Reverse</a>
+  
+    <li><a href="../Rack/Session/Memcache.html">Rack::Session::Memcache</a>
+  
+    <li><a href="../Rack/Session/Pool.html">Rack::Session::Pool</a>
+  
+    <li><a href="../Rack/ShowExceptions.html">Rack::ShowExceptions</a>
+  
+    <li><a href="../Rack/ShowStatus.html">Rack::ShowStatus</a>
+  
+    <li><a href="../Rack/Static.html">Rack::Static</a>
+  
+    <li><a href="../Rack/URLMap.html">Rack::URLMap</a>
+  
+    <li><a href="../Rack/Utils.html">Rack::Utils</a>
+  
+    <li><a href="../Rack/Utils/Context.html">Rack::Utils::Context</a>
+  
+    <li><a href="../Rack/Utils/HeaderHash.html">Rack::Utils::HeaderHash</a>
+  
+    <li><a href="../Rack/Utils/KeySpaceConstrainedParams.html">Rack::Utils::KeySpaceConstrainedParams</a>
+  
+    <li><a href="../FCGI.html">FCGI</a>
+  
+    <li><a href="../FCGI/Stream.html">FCGI::Stream</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Rack::Request</h1>
+
+  <div id="description" class="description">
+    
+<p><a href="Request.html">Rack::Request</a> provides a convenient interface to
+a <a href="../Rack.html">Rack</a> environment.  It is stateless, the
+environment <code>env</code> passed to the constructor will be directly
+modified.</p>
+
+<pre>req = Rack::Request.new(env)
+req.post?
+req.params[&quot;data&quot;]</pre>
+
+<p>The environment hash passed will store a reference to the <a
+href="Request.html">Request</a> object instantiated so that it will only
+instantiate if an instance of the <a href="Request.html">Request</a> object
+doesn’t already exist.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="FORM_DATA_MEDIA_TYPES">FORM_DATA_MEDIA_TYPES
+        
+        <dd class="description"><p>The set of form-data media-types. Requests that do not indicate one of the
+media types presents in this list will not be eligible for form-data /
+param parsing.</p>
+        
+      
+        <dt id="PARSEABLE_DATA_MEDIA_TYPES">PARSEABLE_DATA_MEDIA_TYPES
+        
+        <dd class="description"><p>The set of media-types. Requests that do not indicate one of the media
+types presents in this list will not be eligible for param parsing like
+soap attachments or generic multiparts</p>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-env" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">env</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>The environment of the request.</p>
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(env)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">env</span>)
+  <span class="ruby-ivar">@env</span> = <span class="ruby-identifier">env</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-GET" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">GET</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the data received in the query string.</p>
+          
+
+          
+          <div class="method-source-code" id="GET-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 181</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">GET</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@env</span>[<span class="ruby-string">&quot;rack.request.query_string&quot;</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">query_string</span>
+    <span class="ruby-ivar">@env</span>[<span class="ruby-string">&quot;rack.request.query_hash&quot;</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@env</span>[<span class="ruby-string">&quot;rack.request.query_string&quot;</span>] = <span class="ruby-identifier">query_string</span>
+    <span class="ruby-ivar">@env</span>[<span class="ruby-string">&quot;rack.request.query_hash&quot;</span>]   = <span class="ruby-identifier">parse_query</span>(<span class="ruby-identifier">query_string</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- GET-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- GET-method -->
+
+    
+      <div id="method-i-POST" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">POST</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the data received in the request body.</p>
+
+<p>This method support both application/x-www-form-urlencoded and
+multipart/form-data.</p>
+          
+
+          
+          <div class="method-source-code" id="POST-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 194</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-constant">POST</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-ivar">@env</span>[<span class="ruby-string">&quot;rack.input&quot;</span>].<span class="ruby-identifier">nil?</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;Missing rack.input&quot;</span>
+      <span class="ruby-keyword">elsif</span> <span class="ruby-ivar">@env</span>[<span class="ruby-string">&quot;rack.request.form_input&quot;</span>].<span class="ruby-identifier">eql?</span> <span class="ruby-ivar">@env</span>[<span class="ruby-string">&quot;rack.input&quot;</span>]
+        <span class="ruby-ivar">@env</span>[<span class="ruby-string">&quot;rack.request.form_hash&quot;</span>]
+      <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">form_data?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">parseable_data?</span>
+        <span class="ruby-ivar">@env</span>[<span class="ruby-string">&quot;rack.request.form_input&quot;</span>] = <span class="ruby-ivar">@env</span>[<span class="ruby-string">&quot;rack.input&quot;</span>]
+        <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@env</span>[<span class="ruby-string">&quot;rack.request.form_hash&quot;</span>] = <span class="ruby-identifier">parse_multipart</span>(<span class="ruby-identifier">env</span>)
+          <span class="ruby-identifier">form_vars</span> = <span class="ruby-ivar">@env</span>[<span class="ruby-string">&quot;rack.input&quot;</span>].<span class="ruby-identifier">read</span>
+
+          <span class="ruby-comment"># Fix for Safari Ajax postings that always append \0</span>
+          <span class="ruby-comment"># form_vars.sub!(/\0\z/, '') # performance replacement:</span>
+          <span class="ruby-identifier">form_vars</span>.<span class="ruby-identifier">slice!</span>(<span class="ruby-value">-1</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">form_vars</span>[<span class="ruby-value">-1</span>] <span class="ruby-operator">==</span> <span class="ruby-value">\00
+\</span>
+
+          <span class="ruby-ivar">@env</span>[<span class="ruby-string">&quot;rack.request.form_vars&quot;</span>] = <span class="ruby-identifier">form_vars</span>
+          <span class="ruby-ivar">@env</span>[<span class="ruby-string">&quot;rack.request.form_hash&quot;</span>] = <span class="ruby-identifier">parse_query</span>(<span class="ruby-identifier">form_vars</span>)
+
+          <span class="ruby-ivar">@env</span>[<span class="ruby-string">&quot;rack.input&quot;</span>].<span class="ruby-identifier">rewind</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-ivar">@env</span>[<span class="ruby-string">&quot;rack.request.form_hash&quot;</span>]
+      <span class="ruby-keyword">else</span>
+        {}
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span></pre>
+          </div><!-- POST-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- POST-method -->
+
+    
+      <div id="method-i-5B-5D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">[]</span><span
+            class="method-args">(key)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>shortcut for <a href="http://key">request.params</a></p>
+          
+
+          
+          <div class="method-source-code" id="5B-5D-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 227</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-identifier">params</span>[<span class="ruby-identifier">key</span>.<span class="ruby-identifier">to_s</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 5B-5D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 5B-5D-method -->
+
+    
+      <div id="method-i-5B-5D-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">[]=</span><span
+            class="method-args">(key, value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>shortcut for <a href="http://key">request.params</a> = value</p>
+          
+
+          
+          <div class="method-source-code" id="5B-5D-3D-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 232</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">[]=</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">params</span>[<span class="ruby-identifier">key</span>.<span class="ruby-identifier">to_s</span>] = <span class="ruby-identifier">value</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 5B-5D-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 5B-5D-3D-method -->
+
+    
+      <div id="method-i-accept_encoding" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">accept_encoding</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="accept_encoding-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 300</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">accept_encoding</span>
+  <span class="ruby-ivar">@env</span>[<span class="ruby-string">&quot;HTTP_ACCEPT_ENCODING&quot;</span>].<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">%r\s*,\s*/</span>).<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">part</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">encoding</span>, <span class="ruby-identifier">parameters</span> = <span class="ruby-identifier">part</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">%r\s*;\s*/</span>, <span class="ruby-value">2</span>)
+    <span class="ruby-identifier">quality</span> = <span class="ruby-value">1.0</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">parameters</span> <span class="ruby-keyword">and</span> <span class="ruby-regexp">%r\Aq=([\d.]+)/</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">parameters</span>
+      <span class="ruby-identifier">quality</span> = <span class="ruby-node">$1</span>.<span class="ruby-identifier">to_f</span>
+    <span class="ruby-keyword">end</span>
+    [<span class="ruby-identifier">encoding</span>, <span class="ruby-identifier">quality</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- accept_encoding-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- accept_encoding-method -->
+
+    
+      <div id="method-i-base_url" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">base_url</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="base_url-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 275</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">base_url</span>
+  <span class="ruby-identifier">url</span> = <span class="ruby-identifier">scheme</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;://&quot;</span>
+  <span class="ruby-identifier">url</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">host</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">scheme</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;https&quot;</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">port</span> <span class="ruby-operator">!=</span> <span class="ruby-value">443</span> <span class="ruby-operator">||</span>
+      <span class="ruby-identifier">scheme</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;http&quot;</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">port</span> <span class="ruby-operator">!=</span> <span class="ruby-value">80</span>
+    <span class="ruby-identifier">url</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;:#{port}&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">url</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- base_url-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- base_url-method -->
+
+    
+      <div id="method-i-body" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">body</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="body-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">body</span>;            <span class="ruby-ivar">@env</span>[<span class="ruby-string">&quot;rack.input&quot;</span>]                       <span class="ruby-keyword">end</span></pre>
+          </div><!-- body-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- body-method -->
+
+    
+      <div id="method-i-content_charset" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">content_charset</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The character set of the request body if a “charset” media type parameter
+was given, or nil if no “charset” was specified. Note that, per RFC2616,
+text/* media types that specify no explicit charset are to be considered
+ISO-8859-1.</p>
+          
+
+          
+          <div class="method-source-code" id="content_charset-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 66</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">content_charset</span>
+  <span class="ruby-identifier">media_type_params</span>[<span class="ruby-string">'charset'</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- content_charset-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- content_charset-method -->
+
+    
+      <div id="method-i-content_length" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">content_length</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="content_length-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">content_length</span>;  <span class="ruby-ivar">@env</span>[<span class="ruby-string">'CONTENT_LENGTH'</span>]                   <span class="ruby-keyword">end</span></pre>
+          </div><!-- content_length-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- content_length-method -->
+
+    
+      <div id="method-i-content_type" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">content_type</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="content_type-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">content_type</span>
+  <span class="ruby-identifier">content_type</span> = <span class="ruby-ivar">@env</span>[<span class="ruby-string">'CONTENT_TYPE'</span>]
+  <span class="ruby-identifier">content_type</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">content_type</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">content_type</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- content_type-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- content_type-method -->
+
+    
+      <div id="method-i-cookies" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cookies</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="cookies-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 251</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cookies</span>
+  <span class="ruby-identifier">hash</span>   = <span class="ruby-ivar">@env</span>[<span class="ruby-string">&quot;rack.request.cookie_hash&quot;</span>] <span class="ruby-operator">||=</span> {}
+  <span class="ruby-identifier">string</span> = <span class="ruby-ivar">@env</span>[<span class="ruby-string">&quot;HTTP_COOKIE&quot;</span>]
+
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">hash</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">string</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@env</span>[<span class="ruby-string">&quot;rack.request.cookie_string&quot;</span>]
+  <span class="ruby-identifier">hash</span>.<span class="ruby-identifier">clear</span>
+
+  <span class="ruby-comment"># According to RFC 2109:</span>
+  <span class="ruby-comment">#   If multiple cookies satisfy the criteria above, they are ordered in</span>
+  <span class="ruby-comment">#   the Cookie header such that those with more specific Path attributes</span>
+  <span class="ruby-comment">#   precede those with less specific.  Ordering with respect to other</span>
+  <span class="ruby-comment">#   attributes (e.g., Domain) is unspecified.</span>
+  <span class="ruby-constant">Utils</span>.<span class="ruby-identifier">parse_query</span>(<span class="ruby-identifier">string</span>, <span class="ruby-string">';,'</span>).<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-constant">Array</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">v</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">first</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">v</span> }
+  <span class="ruby-ivar">@env</span>[<span class="ruby-string">&quot;rack.request.cookie_string&quot;</span>] = <span class="ruby-identifier">string</span>
+  <span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">error</span>
+  <span class="ruby-identifier">error</span>.<span class="ruby-identifier">message</span>.<span class="ruby-identifier">replace</span> <span class="ruby-node">&quot;cannot parse Cookie header: #{error.message}&quot;</span>
+  <span class="ruby-identifier">raise</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cookies-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cookies-method -->
+
+    
+      <div id="method-i-delete-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Checks the HTTP request method (or verb) to see if it was of type DELETE</p>
+          
+
+          
+          <div class="method-source-code" id="delete-3F-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 120</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">delete?</span>;  <span class="ruby-identifier">request_method</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;DELETE&quot;</span>  <span class="ruby-keyword">end</span></pre>
+          </div><!-- delete-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- delete-3F-method -->
+
+    
+      <div id="method-i-form_data-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">form_data?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Determine whether the request body contains form-data by checking the
+request Content-Type for one of the media-types:
+“application/x-www-form-urlencoded” or “multipart/form-data”. The list of
+form-data media types can be modified through the
+<code>FORM_DATA_MEDIA_TYPES</code> array.</p>
+
+<p>A request body is also assumed to contain form-data when no Content-Type
+header is provided and the <a
+href="Request.html#method-i-request_method">#request_method</a> is <a
+href="Request.html#method-i-POST">#POST</a>.</p>
+          
+
+          
+          <div class="method-source-code" id="form_data-3F-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 168</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">form_data?</span>
+  <span class="ruby-identifier">type</span> = <span class="ruby-identifier">media_type</span>
+  <span class="ruby-identifier">meth</span> = <span class="ruby-identifier">env</span>[<span class="ruby-string">&quot;rack.methodoverride.original_method&quot;</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">env</span>[<span class="ruby-string">'REQUEST_METHOD'</span>]
+  (<span class="ruby-identifier">meth</span> <span class="ruby-operator">==</span> <span class="ruby-string">'POST'</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">type</span>.<span class="ruby-identifier">nil?</span>) <span class="ruby-operator">||</span> <span class="ruby-constant">FORM_DATA_MEDIA_TYPES</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">type</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- form_data-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- form_data-3F-method -->
+
+    
+      <div id="method-i-fullpath" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fullpath</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="fullpath-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 296</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">fullpath</span>
+  <span class="ruby-identifier">query_string</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">path</span> <span class="ruby-operator">:</span> <span class="ruby-node">&quot;#{path}?#{query_string}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- fullpath-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- fullpath-method -->
+
+    
+      <div id="method-i-get-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Checks the HTTP request method (or verb) to see if it was of type <a
+href="Request.html#method-i-GET">#GET</a></p>
+          
+
+          
+          <div class="method-source-code" id="get-3F-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 123</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get?</span>;     <span class="ruby-identifier">request_method</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;GET&quot;</span>     <span class="ruby-keyword">end</span></pre>
+          </div><!-- get-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get-3F-method -->
+
+    
+      <div id="method-i-head-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">head?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Checks the HTTP request method (or verb) to see if it was of type HEAD</p>
+          
+
+          
+          <div class="method-source-code" id="head-3F-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 126</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">head?</span>;    <span class="ruby-identifier">request_method</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;HEAD&quot;</span>    <span class="ruby-keyword">end</span></pre>
+          </div><!-- head-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- head-3F-method -->
+
+    
+      <div id="method-i-host" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">host</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="host-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 110</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">host</span>
+  <span class="ruby-comment"># Remove port number.</span>
+  <span class="ruby-identifier">host_with_port</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">%r:\d+\z/</span>, <span class="ruby-string">''</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- host-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- host-method -->
+
+    
+      <div id="method-i-host_with_port" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">host_with_port</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="host_with_port-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 88</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">host_with_port</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">forwarded</span> = <span class="ruby-ivar">@env</span>[<span class="ruby-string">&quot;HTTP_X_FORWARDED_HOST&quot;</span>]
+    <span class="ruby-identifier">forwarded</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">%r,\s?/</span>).<span class="ruby-identifier">last</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@env</span>[<span class="ruby-string">'HTTP_HOST'</span>] <span class="ruby-operator">||</span> <span class="ruby-node">&quot;#{@env['SERVER_NAME'] || @env['SERVER_ADDR']}:#{@env['SERVER_PORT']}&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- host_with_port-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- host_with_port-method -->
+
+    
+      <div id="method-i-ip" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ip</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="ip-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 315</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ip</span>
+  <span class="ruby-identifier">remote_addrs</span> = <span class="ruby-ivar">@env</span>[<span class="ruby-string">'REMOTE_ADDR'</span>] <span class="ruby-operator">?</span> <span class="ruby-ivar">@env</span>[<span class="ruby-string">'REMOTE_ADDR'</span>].<span class="ruby-identifier">split</span>(<span class="ruby-regexp">%r[,\s]+/</span>) <span class="ruby-operator">:</span> []
+  <span class="ruby-identifier">remote_addrs</span>.<span class="ruby-identifier">reject!</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">addr</span><span class="ruby-operator">|</span> <span class="ruby-identifier">trusted_proxy?</span>(<span class="ruby-identifier">addr</span>) }
+  
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">remote_addrs</span>.<span class="ruby-identifier">first</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">remote_addrs</span>.<span class="ruby-identifier">any?</span>
+
+  <span class="ruby-identifier">forwarded_ips</span> = <span class="ruby-ivar">@env</span>[<span class="ruby-string">'HTTP_X_FORWARDED_FOR'</span>] <span class="ruby-operator">?</span> <span class="ruby-ivar">@env</span>[<span class="ruby-string">'HTTP_X_FORWARDED_FOR'</span>].<span class="ruby-identifier">strip</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">%r[,\s]+/</span>) <span class="ruby-operator">:</span> []
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">client_ip</span> = <span class="ruby-ivar">@env</span>[<span class="ruby-string">'HTTP_CLIENT_IP'</span>]
+    <span class="ruby-comment"># If forwarded_ips doesn't include the client_ip, it might be an</span>
+    <span class="ruby-comment"># ip spoofing attempt, so we ignore HTTP_CLIENT_IP</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">client_ip</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">forwarded_ips</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">client_ip</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">forwarded_ips</span>.<span class="ruby-identifier">reject</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">ip</span><span class="ruby-operator">|</span> <span class="ruby-identifier">trusted_proxy?</span>(<span class="ruby-identifier">ip</span>) }.<span class="ruby-identifier">last</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@env</span>[<span class="ruby-string">&quot;REMOTE_ADDR&quot;</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- ip-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- ip-method -->
+
+    
+      <div id="method-i-logger" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">logger</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="logger-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">logger</span>;          <span class="ruby-ivar">@env</span>[<span class="ruby-string">'rack.logger'</span>]                      <span class="ruby-keyword">end</span></pre>
+          </div><!-- logger-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- logger-method -->
+
+    
+      <div id="method-i-media_type" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">media_type</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The media type (type/subtype) portion of the CONTENT_TYPE header without
+any media type parameters. e.g., when CONTENT_TYPE is
+“text/plain;charset=utf-8”, the media-type is “text/plain”.</p>
+
+<p>For more information on the use of media types in HTTP, see: <a
+href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.7">www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.7</a></p>
+          
+
+          
+          <div class="method-source-code" id="media_type-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">media_type</span>
+  <span class="ruby-identifier">content_type</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">content_type</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">%r\s*[;,]\s*/</span>, <span class="ruby-value">2</span>).<span class="ruby-identifier">first</span>.<span class="ruby-identifier">downcase</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- media_type-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- media_type-method -->
+
+    
+      <div id="method-i-media_type_params" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">media_type_params</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The media type parameters provided in CONTENT_TYPE as a Hash, or an empty
+Hash if no CONTENT_TYPE or media-type parameters were provided.  e.g., when
+the CONTENT_TYPE is “text/plain;charset=utf-8”, this method responds with
+the following Hash:</p>
+
+<pre class="ruby">{ <span class="ruby-string">'charset'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'utf-8'</span> }
+</pre>
+          
+
+          
+          <div class="method-source-code" id="media_type_params-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">media_type_params</span>
+  <span class="ruby-keyword">return</span> {} <span class="ruby-keyword">if</span> <span class="ruby-identifier">content_type</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-constant">Hash</span>[*<span class="ruby-identifier">content_type</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">%r\s*[;,]\s*/</span>)[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>].
+    <span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">'='</span>, <span class="ruby-value">2</span>) }.
+    <span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> [<span class="ruby-identifier">k</span>.<span class="ruby-identifier">downcase</span>, <span class="ruby-identifier">v</span>] }.<span class="ruby-identifier">flatten</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- media_type_params-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- media_type_params-method -->
+
+    
+      <div id="method-i-options-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">options?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Checks the HTTP request method (or verb) to see if it was of type OPTIONS</p>
+          
+
+          
+          <div class="method-source-code" id="options-3F-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 129</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">options?</span>; <span class="ruby-identifier">request_method</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;OPTIONS&quot;</span> <span class="ruby-keyword">end</span></pre>
+          </div><!-- options-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- options-3F-method -->
+
+    
+      <div id="method-i-params" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">params</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The union of <a href="Request.html#method-i-GET">#GET</a> and <a
+href="Request.html#method-i-POST">#POST</a> data.</p>
+          
+
+          
+          <div class="method-source-code" id="params-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 220</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">params</span>
+  <span class="ruby-ivar">@params</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">self</span>.<span class="ruby-constant">GET</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-keyword">self</span>.<span class="ruby-constant">POST</span>)
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">EOFError</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-constant">GET</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- params-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- params-method -->
+
+    
+      <div id="method-i-parseable_data-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parseable_data?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Determine whether the request body contains data by checking the request <a
+href="Request.html#method-i-media_type">#media_type</a> against registered
+parse-data media-types</p>
+          
+
+          
+          <div class="method-source-code" id="parseable_data-3F-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 176</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">parseable_data?</span>
+  <span class="ruby-constant">PARSEABLE_DATA_MEDIA_TYPES</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">media_type</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- parseable_data-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- parseable_data-3F-method -->
+
+    
+      <div id="method-i-patch-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">patch?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Checks the HTTP request method (or verb) to see if it was of type PATCH</p>
+          
+
+          
+          <div class="method-source-code" id="patch-3F-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 132</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">patch?</span>;   <span class="ruby-identifier">request_method</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;PATCH&quot;</span>   <span class="ruby-keyword">end</span></pre>
+          </div><!-- patch-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- patch-3F-method -->
+
+    
+      <div id="method-i-path" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">path</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="path-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 292</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">path</span>
+  <span class="ruby-identifier">script_name</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">path_info</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- path-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- path-method -->
+
+    
+      <div id="method-i-path_info" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">path_info</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="path_info-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">path_info</span>;       <span class="ruby-ivar">@env</span>[<span class="ruby-string">&quot;PATH_INFO&quot;</span>].<span class="ruby-identifier">to_s</span>                   <span class="ruby-keyword">end</span></pre>
+          </div><!-- path_info-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- path_info-method -->
+
+    
+      <div id="method-i-path_info-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">path_info=</span><span
+            class="method-args">(s)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="path_info-3D-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 116</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">path_info=</span>(<span class="ruby-identifier">s</span>);   <span class="ruby-ivar">@env</span>[<span class="ruby-string">&quot;PATH_INFO&quot;</span>] = <span class="ruby-identifier">s</span>.<span class="ruby-identifier">to_s</span>               <span class="ruby-keyword">end</span></pre>
+          </div><!-- path_info-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- path_info-3D-method -->
+
+    
+      <div id="method-i-port" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">port</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="port-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 96</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">port</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">port</span> = <span class="ruby-identifier">host_with_port</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">%r:/</span>)[<span class="ruby-value">1</span>]
+    <span class="ruby-identifier">port</span>.<span class="ruby-identifier">to_i</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">port</span> = <span class="ruby-ivar">@env</span>[<span class="ruby-string">'HTTP_X_FORWARDED_PORT'</span>]
+    <span class="ruby-identifier">port</span>.<span class="ruby-identifier">to_i</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">ssl?</span>
+    <span class="ruby-value">443</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-ivar">@env</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-string">&quot;HTTP_X_FORWARDED_HOST&quot;</span>)
+    <span class="ruby-value">80</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@env</span>[<span class="ruby-string">&quot;SERVER_PORT&quot;</span>].<span class="ruby-identifier">to_i</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- port-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- port-method -->
+
+    
+      <div id="method-i-post-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">post?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Checks the HTTP request method (or verb) to see if it was of type <a
+href="Request.html#method-i-POST">#POST</a></p>
+          
+
+          
+          <div class="method-source-code" id="post-3F-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 135</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">post?</span>;    <span class="ruby-identifier">request_method</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;POST&quot;</span>    <span class="ruby-keyword">end</span></pre>
+          </div><!-- post-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- post-3F-method -->
+
+    
+      <div id="method-i-put-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">put?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Checks the HTTP request method (or verb) to see if it was of type PUT</p>
+          
+
+          
+          <div class="method-source-code" id="put-3F-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 138</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">put?</span>;     <span class="ruby-identifier">request_method</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;PUT&quot;</span>     <span class="ruby-keyword">end</span></pre>
+          </div><!-- put-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- put-3F-method -->
+
+    
+      <div id="method-i-query_string" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">query_string</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="query_string-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">query_string</span>;    <span class="ruby-ivar">@env</span>[<span class="ruby-string">&quot;QUERY_STRING&quot;</span>].<span class="ruby-identifier">to_s</span>                <span class="ruby-keyword">end</span></pre>
+          </div><!-- query_string-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- query_string-method -->
+
+    
+      <div id="method-i-referer" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">referer</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>the referer of the client</p>
+          
+
+          
+          <div class="method-source-code" id="referer-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 242</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">referer</span>
+  <span class="ruby-ivar">@env</span>[<span class="ruby-string">'HTTP_REFERER'</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- referer-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Request.html#method-i-referrer">referrer</a>
+        </div>
+        
+
+        
+      </div><!-- referer-method -->
+
+    
+      <div id="method-i-referrer" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">referrer</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Request.html#method-i-referer">referer</a>
+        </div>
+        
+      </div><!-- referrer-method -->
+
+    
+      <div id="method-i-request_method" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">request_method</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="request_method-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">request_method</span>;  <span class="ruby-ivar">@env</span>[<span class="ruby-string">&quot;REQUEST_METHOD&quot;</span>]                   <span class="ruby-keyword">end</span></pre>
+          </div><!-- request_method-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- request_method-method -->
+
+    
+      <div id="method-i-scheme" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">scheme</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="scheme-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 70</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">scheme</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@env</span>[<span class="ruby-string">'HTTPS'</span>] <span class="ruby-operator">==</span> <span class="ruby-string">'on'</span>
+    <span class="ruby-string">'https'</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-ivar">@env</span>[<span class="ruby-string">'HTTP_X_FORWARDED_SSL'</span>] <span class="ruby-operator">==</span> <span class="ruby-string">'on'</span>
+    <span class="ruby-string">'https'</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-ivar">@env</span>[<span class="ruby-string">'HTTP_X_FORWARDED_SCHEME'</span>]
+    <span class="ruby-ivar">@env</span>[<span class="ruby-string">'HTTP_X_FORWARDED_SCHEME'</span>]
+  <span class="ruby-keyword">elsif</span> <span class="ruby-ivar">@env</span>[<span class="ruby-string">'HTTP_X_FORWARDED_PROTO'</span>]
+    <span class="ruby-ivar">@env</span>[<span class="ruby-string">'HTTP_X_FORWARDED_PROTO'</span>].<span class="ruby-identifier">split</span>(<span class="ruby-string">','</span>)[<span class="ruby-value">0</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@env</span>[<span class="ruby-string">&quot;rack.url_scheme&quot;</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- scheme-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- scheme-method -->
+
+    
+      <div id="method-i-script_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">script_name</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="script_name-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">script_name</span>;     <span class="ruby-ivar">@env</span>[<span class="ruby-string">&quot;SCRIPT_NAME&quot;</span>].<span class="ruby-identifier">to_s</span>                 <span class="ruby-keyword">end</span></pre>
+          </div><!-- script_name-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- script_name-method -->
+
+    
+      <div id="method-i-script_name-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">script_name=</span><span
+            class="method-args">(s)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="script_name-3D-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">script_name=</span>(<span class="ruby-identifier">s</span>); <span class="ruby-ivar">@env</span>[<span class="ruby-string">&quot;SCRIPT_NAME&quot;</span>] = <span class="ruby-identifier">s</span>.<span class="ruby-identifier">to_s</span>             <span class="ruby-keyword">end</span></pre>
+          </div><!-- script_name-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- script_name-3D-method -->
+
+    
+      <div id="method-i-session" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">session</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="session-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">session</span>;         <span class="ruby-ivar">@env</span>[<span class="ruby-string">'rack.session'</span>] <span class="ruby-operator">||=</span> {}              <span class="ruby-keyword">end</span></pre>
+          </div><!-- session-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- session-method -->
+
+    
+      <div id="method-i-session_options" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">session_options</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="session_options-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">session_options</span>; <span class="ruby-ivar">@env</span>[<span class="ruby-string">'rack.session.options'</span>] <span class="ruby-operator">||=</span> {}      <span class="ruby-keyword">end</span></pre>
+          </div><!-- session_options-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- session_options-method -->
+
+    
+      <div id="method-i-ssl-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ssl?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="ssl-3F-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 84</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ssl?</span>
+  <span class="ruby-identifier">scheme</span> <span class="ruby-operator">==</span> <span class="ruby-string">'https'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- ssl-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- ssl-3F-method -->
+
+    
+      <div id="method-i-trace-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">trace?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Checks the HTTP request method (or verb) to see if it was of type TRACE</p>
+          
+
+          
+          <div class="method-source-code" id="trace-3F-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 141</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">trace?</span>;   <span class="ruby-identifier">request_method</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;TRACE&quot;</span>   <span class="ruby-keyword">end</span></pre>
+          </div><!-- trace-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- trace-3F-method -->
+
+    
+      <div id="method-i-trusted_proxy-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">trusted_proxy?</span><span
+            class="method-args">(ip)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="trusted_proxy-3F-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 311</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">trusted_proxy?</span>(<span class="ruby-identifier">ip</span>)
+  <span class="ruby-identifier">ip</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r^127\.0\.0\.1$|^(10|172\.(1[6-9]|2[0-9]|30|31)|192\.168)\.|^::1$|^fd[0-9a-f]{2}:.+|^localhost$/</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- trusted_proxy-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- trusted_proxy-3F-method -->
+
+    
+      <div id="method-i-url" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">url</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Tries to return a remake of the original request URL as a string.</p>
+          
+
+          
+          <div class="method-source-code" id="url-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 288</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">url</span>
+  <span class="ruby-identifier">base_url</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">fullpath</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- url-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- url-method -->
+
+    
+      <div id="method-i-user_agent" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">user_agent</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="user_agent-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 247</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">user_agent</span>
+  <span class="ruby-ivar">@env</span>[<span class="ruby-string">'HTTP_USER_AGENT'</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- user_agent-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- user_agent-method -->
+
+    
+      <div id="method-i-values_at" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">values_at</span><span
+            class="method-args">(*keys)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>like Hash#values_at</p>
+          
+
+          
+          <div class="method-source-code" id="values_at-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 237</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">values_at</span>(*<span class="ruby-identifier">keys</span>)
+  <span class="ruby-identifier">keys</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span> <span class="ruby-identifier">params</span>[<span class="ruby-identifier">key</span>] }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- values_at-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- values_at-method -->
+
+    
+      <div id="method-i-xhr-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">xhr?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="xhr-3F-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 271</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">xhr?</span>
+  <span class="ruby-ivar">@env</span>[<span class="ruby-string">&quot;HTTP_X_REQUESTED_WITH&quot;</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;XMLHttpRequest&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- xhr-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- xhr-3F-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+     <section id="protected-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Protected Instance Methods</h3>
+
+    
+      <div id="method-i-parse_multipart" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parse_multipart</span><span
+            class="method-args">(env)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="parse_multipart-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 337</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">parse_multipart</span>(<span class="ruby-identifier">env</span>)
+  <span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">Multipart</span>.<span class="ruby-identifier">parse_multipart</span>(<span class="ruby-identifier">env</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- parse_multipart-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- parse_multipart-method -->
+
+    
+      <div id="method-i-parse_query" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parse_query</span><span
+            class="method-args">(qs)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="parse_query-source">
+            <pre><span class="ruby-comment"># File lib/rack/request.rb, line 333</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">parse_query</span>(<span class="ruby-identifier">qs</span>)
+  <span class="ruby-constant">Utils</span>.<span class="ruby-identifier">parse_nested_query</span>(<span class="ruby-identifier">qs</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- parse_query-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- parse_query-method -->
+
+    
+    </section><!-- protected-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

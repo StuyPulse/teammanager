@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"system:EFI"MIME::Type#system;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"IThe regexp for the operating system that this MIME::Type is specific;TI"to.;T:
+@fileI"lib/mime/types.rb;TF@

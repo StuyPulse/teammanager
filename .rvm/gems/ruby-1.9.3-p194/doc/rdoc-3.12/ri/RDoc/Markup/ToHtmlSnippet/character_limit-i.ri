@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"character_limit:EFI"0RDoc::Markup::ToHtmlSnippet#character_limit;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I":After this many characters the input will be cut off.;T:
+@fileI"'lib/rdoc/markup/to_html_snippet.rb;TF@

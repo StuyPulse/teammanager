@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"controller:EFI"4ActionDispatch::Integration::Session#controller;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"EA reference to the controller instance used by the last request.;T:
+@fileI"/lib/action_dispatch/testing/integration.rb;TF@

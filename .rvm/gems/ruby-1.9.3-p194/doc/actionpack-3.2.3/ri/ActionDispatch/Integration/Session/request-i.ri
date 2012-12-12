@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"request:EFI"1ActionDispatch::Integration::Session#request;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"BA reference to the request instance used by the last request.;T:
+@fileI"/lib/action_dispatch/testing/integration.rb;TF@

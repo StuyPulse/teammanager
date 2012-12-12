@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"offset:EFI""TZInfo::TimezonePeriod#offset;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I",The TimezoneOffsetInfo for this period.;T:
+@fileI""lib/tzinfo/timezone_period.rb;TF@

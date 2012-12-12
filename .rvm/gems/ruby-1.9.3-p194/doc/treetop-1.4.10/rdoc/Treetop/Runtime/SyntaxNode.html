@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Treetop::Runtime::SyntaxNode - treetop-1.4.10 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/treetop/runtime/syntax_node.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="../../Object.html">Object</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-3C-3D-3E">#&lt;=&gt;</a>
+    
+    <li><a href="#method-i-dot_id">#dot_id</a>
+    
+    <li><a href="#method-i-elements">#elements</a>
+    
+    <li><a href="#method-i-empty-3F">#empty?</a>
+    
+    <li><a href="#method-i-extension_modules">#extension_modules</a>
+    
+    <li><a href="#method-i-inspect">#inspect</a>
+    
+    <li><a href="#method-i-nonterminal-3F">#nonterminal?</a>
+    
+    <li><a href="#method-i-terminal-3F">#terminal?</a>
+    
+    <li><a href="#method-i-text_value">#text_value</a>
+    
+    <li><a href="#method-i-write_dot">#write_dot</a>
+    
+    <li><a href="#method-i-write_dot_file">#write_dot_file</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../LICENSE.html">LICENSE</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../Treetop.html">Treetop</a>
+  
+    <li><a href="../../Treetop/Compiler.html">Treetop::Compiler</a>
+  
+    <li><a href="../../Treetop/Compiler/AndPredicate.html">Treetop::Compiler::AndPredicate</a>
+  
+    <li><a href="../../Treetop/Compiler/AnythingSymbol.html">Treetop::Compiler::AnythingSymbol</a>
+  
+    <li><a href="../../Treetop/Compiler/AtomicExpression.html">Treetop::Compiler::AtomicExpression</a>
+  
+    <li><a href="../../Treetop/Compiler/CharacterClass.html">Treetop::Compiler::CharacterClass</a>
+  
+    <li><a href="../../Treetop/Compiler/Choice.html">Treetop::Compiler::Choice</a>
+  
+    <li><a href="../../Treetop/Compiler/DeclarationSequence.html">Treetop::Compiler::DeclarationSequence</a>
+  
+    <li><a href="../../Treetop/Compiler/Grammar.html">Treetop::Compiler::Grammar</a>
+  
+    <li><a href="../../Treetop/Compiler/GrammarCompiler.html">Treetop::Compiler::GrammarCompiler</a>
+  
+    <li><a href="../../Treetop/Compiler/InlineModule.html">Treetop::Compiler::InlineModule</a>
+  
+    <li><a href="../../Treetop/Compiler/InlineModuleMixin.html">Treetop::Compiler::InlineModuleMixin</a>
+  
+    <li><a href="../../Treetop/Compiler/LexicalAddressSpace.html">Treetop::Compiler::LexicalAddressSpace</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar.html">Treetop::Compiler::Metagrammar</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/CharacterClass0.html">Treetop::Compiler::Metagrammar::CharacterClass0</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/CharacterClass1.html">Treetop::Compiler::Metagrammar::CharacterClass1</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/CharacterClass2.html">Treetop::Compiler::Metagrammar::CharacterClass2</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/CharacterClass3.html">Treetop::Compiler::Metagrammar::CharacterClass3</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/CharacterClass4.html">Treetop::Compiler::Metagrammar::CharacterClass4</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/Choice0.html">Treetop::Compiler::Metagrammar::Choice0</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/Choice1.html">Treetop::Compiler::Metagrammar::Choice1</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/Choice2.html">Treetop::Compiler::Metagrammar::Choice2</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/CommentToEol0.html">Treetop::Compiler::Metagrammar::CommentToEol0</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/CommentToEol1.html">Treetop::Compiler::Metagrammar::CommentToEol1</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/DeclarationSequence0.html">Treetop::Compiler::Metagrammar::DeclarationSequence0</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/DeclarationSequence1.html">Treetop::Compiler::Metagrammar::DeclarationSequence1</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/DeclarationSequence2.html">Treetop::Compiler::Metagrammar::DeclarationSequence2</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/DeclarationSequence3.html">Treetop::Compiler::Metagrammar::DeclarationSequence3</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/DoubleQuotedString0.html">Treetop::Compiler::Metagrammar::DoubleQuotedString0</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/DoubleQuotedString1.html">Treetop::Compiler::Metagrammar::DoubleQuotedString1</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/Grammar0.html">Treetop::Compiler::Metagrammar::Grammar0</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/Grammar1.html">Treetop::Compiler::Metagrammar::Grammar1</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/GrammarName0.html">Treetop::Compiler::Metagrammar::GrammarName0</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/IncludeDeclaration0.html">Treetop::Compiler::Metagrammar::IncludeDeclaration0</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/IncludeDeclaration1.html">Treetop::Compiler::Metagrammar::IncludeDeclaration1</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/InlineModule0.html">Treetop::Compiler::Metagrammar::InlineModule0</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/InlineModule1.html">Treetop::Compiler::Metagrammar::InlineModule1</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/KeywordInsideGrammar0.html">Treetop::Compiler::Metagrammar::KeywordInsideGrammar0</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/Label0.html">Treetop::Compiler::Metagrammar::Label0</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/Label1.html">Treetop::Compiler::Metagrammar::Label1</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/Label2.html">Treetop::Compiler::Metagrammar::Label2</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/Label3.html">Treetop::Compiler::Metagrammar::Label3</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/LabeledSequencePrimary0.html">Treetop::Compiler::Metagrammar::LabeledSequencePrimary0</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/LabeledSequencePrimary1.html">Treetop::Compiler::Metagrammar::LabeledSequencePrimary1</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/ModuleDeclaration0.html">Treetop::Compiler::Metagrammar::ModuleDeclaration0</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/ModuleDeclaration1.html">Treetop::Compiler::Metagrammar::ModuleDeclaration1</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/ModuleDeclaration2.html">Treetop::Compiler::Metagrammar::ModuleDeclaration2</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/ModuleDeclaration3.html">Treetop::Compiler::Metagrammar::ModuleDeclaration3</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/ModuleDeclaration4.html">Treetop::Compiler::Metagrammar::ModuleDeclaration4</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/ModuleDeclaration5.html">Treetop::Compiler::Metagrammar::ModuleDeclaration5</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/NodeClassDeclarations0.html">Treetop::Compiler::Metagrammar::NodeClassDeclarations0</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/NodeClassDeclarations1.html">Treetop::Compiler::Metagrammar::NodeClassDeclarations1</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/NodeClassExpression0.html">Treetop::Compiler::Metagrammar::NodeClassExpression0</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/NodeClassExpression1.html">Treetop::Compiler::Metagrammar::NodeClassExpression1</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/NodeClassExpression2.html">Treetop::Compiler::Metagrammar::NodeClassExpression2</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/NodeClassExpression3.html">Treetop::Compiler::Metagrammar::NodeClassExpression3</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/NonSpaceChar0.html">Treetop::Compiler::Metagrammar::NonSpaceChar0</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/Nonterminal0.html">Treetop::Compiler::Metagrammar::Nonterminal0</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/Nonterminal1.html">Treetop::Compiler::Metagrammar::Nonterminal1</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/OccurrenceRange0.html">Treetop::Compiler::Metagrammar::OccurrenceRange0</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/ParenthesizedExpression0.html">Treetop::Compiler::Metagrammar::ParenthesizedExpression0</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/ParenthesizedExpression1.html">Treetop::Compiler::Metagrammar::ParenthesizedExpression1</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/ParsingRule0.html">Treetop::Compiler::Metagrammar::ParsingRule0</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/ParsingRule1.html">Treetop::Compiler::Metagrammar::ParsingRule1</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/PredicateBlock0.html">Treetop::Compiler::Metagrammar::PredicateBlock0</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/Primary0.html">Treetop::Compiler::Metagrammar::Primary0</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/Primary1.html">Treetop::Compiler::Metagrammar::Primary1</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/Primary2.html">Treetop::Compiler::Metagrammar::Primary2</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/Primary3.html">Treetop::Compiler::Metagrammar::Primary3</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/Primary4.html">Treetop::Compiler::Metagrammar::Primary4</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/Primary5.html">Treetop::Compiler::Metagrammar::Primary5</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/Primary6.html">Treetop::Compiler::Metagrammar::Primary6</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/Primary7.html">Treetop::Compiler::Metagrammar::Primary7</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/QuotedString0.html">Treetop::Compiler::Metagrammar::QuotedString0</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/RequireStatement0.html">Treetop::Compiler::Metagrammar::RequireStatement0</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/Sequence0.html">Treetop::Compiler::Metagrammar::Sequence0</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/Sequence1.html">Treetop::Compiler::Metagrammar::Sequence1</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/Sequence2.html">Treetop::Compiler::Metagrammar::Sequence2</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/SequencePrimary0.html">Treetop::Compiler::Metagrammar::SequencePrimary0</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/SequencePrimary1.html">Treetop::Compiler::Metagrammar::SequencePrimary1</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/SequencePrimary2.html">Treetop::Compiler::Metagrammar::SequencePrimary2</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/SequencePrimary3.html">Treetop::Compiler::Metagrammar::SequencePrimary3</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/SequencePrimary4.html">Treetop::Compiler::Metagrammar::SequencePrimary4</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/SequencePrimary5.html">Treetop::Compiler::Metagrammar::SequencePrimary5</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/SingleQuotedString0.html">Treetop::Compiler::Metagrammar::SingleQuotedString0</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/SingleQuotedString1.html">Treetop::Compiler::Metagrammar::SingleQuotedString1</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/TrailingInlineModule0.html">Treetop::Compiler::Metagrammar::TrailingInlineModule0</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/TrailingInlineModule1.html">Treetop::Compiler::Metagrammar::TrailingInlineModule1</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/TrailingInlineModule2.html">Treetop::Compiler::Metagrammar::TrailingInlineModule2</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/TreetopFile0.html">Treetop::Compiler::Metagrammar::TreetopFile0</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/TreetopFile1.html">Treetop::Compiler::Metagrammar::TreetopFile1</a>
+  
+    <li><a href="../../Treetop/Compiler/Metagrammar/TreetopFile2.html">Treetop::Compiler::Metagrammar::TreetopFile2</a>
+  
+    <li><a href="../../Treetop/Compiler/MetagrammarParser.html">Treetop::Compiler::MetagrammarParser</a>
+  
+    <li><a href="../../Treetop/Compiler/Nonterminal.html">Treetop::Compiler::Nonterminal</a>
+  
+    <li><a href="../../Treetop/Compiler/NotPredicate.html">Treetop::Compiler::NotPredicate</a>
+  
+    <li><a href="../../Treetop/Compiler/OccurrenceRange.html">Treetop::Compiler::OccurrenceRange</a>
+  
+    <li><a href="../../Treetop/Compiler/OneOrMore.html">Treetop::Compiler::OneOrMore</a>
+  
+    <li><a href="../../Treetop/Compiler/Optional.html">Treetop::Compiler::Optional</a>
+  
+    <li><a href="../../Treetop/Compiler/ParenthesizedExpression.html">Treetop::Compiler::ParenthesizedExpression</a>
+  
+    <li><a href="../../Treetop/Compiler/ParsingExpression.html">Treetop::Compiler::ParsingExpression</a>
+  
+    <li><a href="../../Treetop/Compiler/ParsingRule.html">Treetop::Compiler::ParsingRule</a>
+  
+    <li><a href="../../Treetop/Compiler/Predicate.html">Treetop::Compiler::Predicate</a>
+  
+    <li><a href="../../Treetop/Compiler/PredicateBlock.html">Treetop::Compiler::PredicateBlock</a>
+  
+    <li><a href="../../Treetop/Compiler/Repetition.html">Treetop::Compiler::Repetition</a>
+  
+    <li><a href="../../Treetop/Compiler/RubyBuilder.html">Treetop::Compiler::RubyBuilder</a>
+  
+    <li><a href="../../Treetop/Compiler/Sequence.html">Treetop::Compiler::Sequence</a>
+  
+    <li><a href="../../Treetop/Compiler/SequenceElementAccessorModule.html">Treetop::Compiler::SequenceElementAccessorModule</a>
+  
+    <li><a href="../../Treetop/Compiler/Terminal.html">Treetop::Compiler::Terminal</a>
+  
+    <li><a href="../../Treetop/Compiler/TransientPrefix.html">Treetop::Compiler::TransientPrefix</a>
+  
+    <li><a href="../../Treetop/Compiler/TreetopFile.html">Treetop::Compiler::TreetopFile</a>
+  
+    <li><a href="../../Treetop/Compiler/ZeroOrMore.html">Treetop::Compiler::ZeroOrMore</a>
+  
+    <li><a href="../../Treetop/Polyglot.html">Treetop::Polyglot</a>
+  
+    <li><a href="../../Treetop/Runtime.html">Treetop::Runtime</a>
+  
+    <li><a href="../../Treetop/Runtime/CompiledParser.html">Treetop::Runtime::CompiledParser</a>
+  
+    <li><a href="../../Treetop/Runtime/SyntaxNode.html">Treetop::Runtime::SyntaxNode</a>
+  
+    <li><a href="../../Treetop/Runtime/TerminalParseFailure.html">Treetop::Runtime::TerminalParseFailure</a>
+  
+    <li><a href="../../Treetop/Runtime/TerminalSyntaxNode.html">Treetop::Runtime::TerminalSyntaxNode</a>
+  
+    <li><a href="../../IntervalSkipList.html">IntervalSkipList</a>
+  
+    <li><a href="../../IntervalSkipList/HeadNode.html">IntervalSkipList::HeadNode</a>
+  
+    <li><a href="../../IntervalSkipList/Node.html">IntervalSkipList::Node</a>
+  
+    <li><a href="../../Object.html">Object</a>
+  
+    <li><a href="../../String.html">String</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Treetop::Runtime::SyntaxNode</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-input" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">input</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-interval" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">interval</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-parent" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">parent</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(input, interval, elements = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/treetop/runtime/syntax_node.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">input</span>, <span class="ruby-identifier">interval</span>, <span class="ruby-identifier">elements</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-ivar">@input</span> = <span class="ruby-identifier">input</span>
+  <span class="ruby-ivar">@interval</span> = <span class="ruby-identifier">interval</span>
+  <span class="ruby-ivar">@elements</span> = <span class="ruby-identifier">elements</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-3C-3D-3E" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">&lt;=&gt;</span><span
+            class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="3C-3D-3E-source">
+            <pre><span class="ruby-comment"># File lib/treetop/runtime/syntax_node.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">interval</span>.<span class="ruby-identifier">first</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">interval</span>.<span class="ruby-identifier">first</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 3C-3D-3E-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 3C-3D-3E-method -->
+
+    
+      <div id="method-i-dot_id" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">dot_id</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="dot_id-source">
+            <pre><span class="ruby-comment"># File lib/treetop/runtime/syntax_node.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">dot_id</span>
+  <span class="ruby-ivar">@dot_id</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">@@dot_id_counter</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- dot_id-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- dot_id-method -->
+
+    
+      <div id="method-i-elements" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">elements</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="elements-source">
+            <pre><span class="ruby-comment"># File lib/treetop/runtime/syntax_node.rb, line 13</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">elements</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@elements</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">terminal?</span>
+  <span class="ruby-comment"># replace the character class placeholders in the sequence (lazy instantiation)</span>
+  <span class="ruby-identifier">last_element</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@comprehensive_elements</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@elements</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">element</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">element</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>
+      <span class="ruby-identifier">index</span> = <span class="ruby-identifier">last_element</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">last_element</span>.<span class="ruby-identifier">interval</span>.<span class="ruby-identifier">last</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">interval</span>.<span class="ruby-identifier">first</span>
+      <span class="ruby-identifier">element</span> = <span class="ruby-constant">SyntaxNode</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">input</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">...</span>(<span class="ruby-identifier">index</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>))
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">element</span>.<span class="ruby-identifier">parent</span> = <span class="ruby-keyword">self</span>
+    <span class="ruby-identifier">last_element</span> = <span class="ruby-identifier">element</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-ivar">@comprehensive_elements</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- elements-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- elements-method -->
+
+    
+      <div id="method-i-empty-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">empty?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="empty-3F-source">
+            <pre><span class="ruby-comment"># File lib/treetop/runtime/syntax_node.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">interval</span>.<span class="ruby-identifier">first</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">interval</span>.<span class="ruby-identifier">last</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">interval</span>.<span class="ruby-identifier">exclude_end?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- empty-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- empty-3F-method -->
+
+    
+      <div id="method-i-extension_modules" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">extension_modules</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="extension_modules-source">
+            <pre><span class="ruby-comment"># File lib/treetop/runtime/syntax_node.rb, line 49</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">extension_modules</span>
+  <span class="ruby-identifier">local_extensions</span> =
+    <span class="ruby-keyword">class</span> <span class="ruby-operator">&lt;&lt;</span><span class="ruby-keyword">self</span>
+      <span class="ruby-identifier">included_modules</span><span class="ruby-operator">-</span><span class="ruby-constant">Object</span>.<span class="ruby-identifier">included_modules</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">local_extensions</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+    <span class="ruby-identifier">local_extensions</span>
+  <span class="ruby-keyword">else</span>
+    []    <span class="ruby-comment"># There weren't any; must be a literal node</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- extension_modules-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- extension_modules-method -->
+
+    
+      <div id="method-i-inspect" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inspect</span><span
+            class="method-args">(indent="")</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="inspect-source">
+            <pre><span class="ruby-comment"># File lib/treetop/runtime/syntax_node.rb, line 61</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">inspect</span>(<span class="ruby-identifier">indent</span>=<span class="ruby-string">&quot;&quot;</span>)
+  <span class="ruby-identifier">em</span> = <span class="ruby-identifier">extension_modules</span>
+  <span class="ruby-identifier">interesting_methods</span> = <span class="ruby-identifier">methods</span><span class="ruby-operator">-</span>[<span class="ruby-identifier">em</span>.<span class="ruby-identifier">last</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">em</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">methods</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>]<span class="ruby-operator">-</span><span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">instance_methods</span>
+  <span class="ruby-identifier">im</span> = <span class="ruby-identifier">interesting_methods</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span> <span class="ruby-operator">?</span> <span class="ruby-node">&quot; (#{interesting_methods.join(&quot;,&quot;)})&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-identifier">tv</span> = <span class="ruby-identifier">text_value</span>
+  <span class="ruby-identifier">tv</span> = <span class="ruby-node">&quot;...#{tv[-20..-1]}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">tv</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">20</span>
+
+  <span class="ruby-identifier">indent</span> <span class="ruby-operator">+</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">%r.*:/</span>,<span class="ruby-string">''</span>) <span class="ruby-operator">+</span>
+    <span class="ruby-identifier">em</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span> <span class="ruby-string">&quot;+&quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">m</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">%r.*:/</span>,<span class="ruby-string">''</span>)}*<span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span>
+    <span class="ruby-node">&quot; offset=#{interval.first}&quot;</span> <span class="ruby-operator">+</span>
+    <span class="ruby-node">&quot;, #{tv.inspect}&quot;</span> <span class="ruby-operator">+</span>
+    <span class="ruby-identifier">im</span> <span class="ruby-operator">+</span>
+    (<span class="ruby-identifier">elements</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">elements</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span> <span class="ruby-operator">?</span>
+      <span class="ruby-string">&quot;:&quot;</span> <span class="ruby-operator">+</span>
+        (<span class="ruby-identifier">elements</span><span class="ruby-operator">||</span>[]).<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-string">&quot;\n&quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">e</span>.<span class="ruby-identifier">inspect</span>(<span class="ruby-identifier">indent</span><span class="ruby-operator">+</span><span class="ruby-string">&quot;  &quot;</span>)
+    <span class="ruby-keyword">rescue</span>  <span class="ruby-comment"># Defend against inspect not taking a parameter</span>
+      <span class="ruby-string">&quot;\n&quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">indent</span><span class="ruby-operator">+</span><span class="ruby-string">&quot; &quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">e</span>.<span class="ruby-identifier">inspect</span>
+    <span class="ruby-keyword">end</span>
+        }.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;&quot;</span>) <span class="ruby-operator">:</span>
+      <span class="ruby-string">&quot;&quot;</span>
+    )
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- inspect-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- inspect-method -->
+
+    
+      <div id="method-i-nonterminal-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">nonterminal?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="nonterminal-3F-source">
+            <pre><span class="ruby-comment"># File lib/treetop/runtime/syntax_node.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">nonterminal?</span>
+  <span class="ruby-operator">!</span><span class="ruby-identifier">terminal?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- nonterminal-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- nonterminal-3F-method -->
+
+    
+      <div id="method-i-terminal-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">terminal?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="terminal-3F-source">
+            <pre><span class="ruby-comment"># File lib/treetop/runtime/syntax_node.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">terminal?</span>
+  <span class="ruby-ivar">@elements</span>.<span class="ruby-identifier">nil?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- terminal-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- terminal-3F-method -->
+
+    
+      <div id="method-i-text_value" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">text_value</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="text_value-source">
+            <pre><span class="ruby-comment"># File lib/treetop/runtime/syntax_node.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">text_value</span>
+  <span class="ruby-identifier">input</span>[<span class="ruby-identifier">interval</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- text_value-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- text_value-method -->
+
+    
+      <div id="method-i-write_dot" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">write_dot</span><span
+            class="method-args">(io)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="write_dot-source">
+            <pre><span class="ruby-comment"># File lib/treetop/runtime/syntax_node.rb, line 93</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">write_dot</span>(<span class="ruby-identifier">io</span>)
+  <span class="ruby-identifier">io</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;node#{dot_id} [label=\&quot;'#{text_value}'\&quot;];&quot;</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">nonterminal?</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">elements</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">io</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;node#{dot_id} -&gt; node#{x.dot_id};&quot;</span>
+      <span class="ruby-identifier">x</span>.<span class="ruby-identifier">write_dot</span>(<span class="ruby-identifier">io</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- write_dot-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- write_dot-method -->
+
+    
+      <div id="method-i-write_dot_file" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">write_dot_file</span><span
+            class="method-args">(fname)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="write_dot_file-source">
+            <pre><span class="ruby-comment"># File lib/treetop/runtime/syntax_node.rb, line 104</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">write_dot_file</span>(<span class="ruby-identifier">fname</span>)
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">fname</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;.dot&quot;</span>,<span class="ruby-string">&quot;w&quot;</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">file</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;digraph G {&quot;</span>
+    <span class="ruby-identifier">write_dot</span>(<span class="ruby-identifier">file</span>)
+    <span class="ruby-identifier">file</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;}&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- write_dot_file-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- write_dot_file-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

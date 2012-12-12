@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>application - mime-types-1.19 Documentation</title>
+
+<link type="text/css" media="screen" href="../../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../../index.html">Home</a>
+    <a href="../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../../History_rdoc.html">History</a>
+  
+    <li class="file"><a href="../../../Licence_rdoc.html">Licence</a>
+  
+    <li class="file"><a href="../../../Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="../../../README_rdoc.html">README</a>
+  
+    <li class="file"><a href="../../../lib/mime/types/application.html">application</a>
+  
+    <li class="file"><a href="../../../lib/mime/types/audio.html">audio</a>
+  
+    <li class="file"><a href="../../../lib/mime/types/image.html">image</a>
+  
+    <li class="file"><a href="../../../lib/mime/types/message.html">message</a>
+  
+    <li class="file"><a href="../../../lib/mime/types/model.html">model</a>
+  
+    <li class="file"><a href="../../../lib/mime/types/multipart.html">multipart</a>
+  
+    <li class="file"><a href="../../../lib/mime/types/text.html">text</a>
+  
+    <li class="file"><a href="../../../lib/mime/types/video.html">video</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../../MIME.html">MIME</a>
+  
+    <li><a href="../../../MIME/InvalidContentType.html">MIME::InvalidContentType</a>
+  
+    <li><a href="../../../MIME/Type.html">MIME::Type</a>
+  
+    <li><a href="../../../MIME/Types.html">MIME::Types</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<p>application/1d-interleaved-parityfec ‘IANA,RFC6015 application/3gpp-ims+xml
+’<a href="http://Meredith">IANA,</a> application/CSTAdata+xml ‘IANA,[Ecma
+International Helpdesk] application/EDI-Consent ’IANA,RFC1767
+application/EDI-X12 ‘IANA,RFC1767 application/EDIFACT ’IANA,RFC1767
+application/H224 ‘IANA,RFC4573 application/activemessage ’<a
+href="http://Shapiro">IANA,</a> application/andrew-inset ‘<a
+href="http://Borenstein">IANA,</a> application/applefile :base64 ’<a
+href="http://Faltstrom">IANA,</a> application/atom+xml @atom :8bit
+‘IANA,RFC4287,RFC5023 application/atomcat+xml :8bit ’IANA,RFC5023
+application/atomicmail ‘<a href="http://Borenstein">IANA,</a>
+application/atomsvc+xml :8bit ’IANA,RFC5023 application/auth-policy+xml
+:8bit ‘IANA,RFC4745 application/batch-SMTP ’IANA,RFC2442
+application/beep+xml ‘IANA,RFC3080 application/calendar+xml ’IANA,RFC6321
+application/cals-1840 ‘IANA,RFC1895 application/ccmp+xml
+’IANA,{RFC-ietf-xcon-ccmp-15.txt=<a
+href="http://http://tools.ietf.org/html/draft-ietf-xcon-ccmp">http://tools.ietf.org/html/draft-ietf-xcon-ccmp</a>}
+application/ccxml+xml ‘IANA,RFC4267 application/cdmi-capability
+’IANA,RFC6208 application/cdmi-container ‘IANA,RFC6208
+application/cdmi-domain ’IANA,RFC6208 application/cdmi-object ‘IANA,RFC6208
+application/cdmi-queue ’IANA,RFC6208 application/cea-2018+xml ‘<a
+href="http://Zimmermann">IANA,</a> application/cellml+xml ’IANA,RFC4708
+application/cfw ‘IANA,RFC6230 application/cnrp+xml ’IANA,RFC3367
+application/commonground ‘<a href="http://Glazer">IANA,</a>
+application/conference-info+xml ’IANA,RFC4575 application/cpl+xml
+‘IANA,RFC3880 application/csta+xml ’IANA,[Ecma International Helpdesk]
+application/cybercash ‘<a href="http://Eastlake">IANA,</a>
+application/davmount+xml ’IANA,RFC4709 application/dca-rft ‘<a
+href="http://Campbell">IANA,</a> application/dec-dx ’<a
+href="http://Campbell">IANA,</a> application/dialog-info+xml ‘IANA,RFC4235
+application/dicom @dcm ’IANA,RFC3240 application/dns ‘IANA,RFC4027
+application/dskpp+xml ’IANA,RFC6063 application/dssc+der ‘IANA,RFC5698
+application/dssc+xml ’IANA,RFC5698 application/dvcs ‘IANA,RFC3029
+application/ecmascript ’IANA,RFC4329 application/emma+xml ‘<a
+href="http://W3C">IANA,</a> application/epp+xml ’IANA,RFC5730
+application/eshop ‘<a href="http://Katz">IANA,</a> application/example
+’IANA,RFC4735 application/exi ‘<a href="http://W3C">IANA,</a>
+application/fastinfoset ’IANA,[ITU-T ASN.1 Rapporteur] application/fastsoap
+‘IANA,[ITU-T ASN.1 Rapporteur] application/fits ’IANA,RFC4047
+application/font-tdpfr @pfr ‘IANA,RFC3073 application/font-woff @woff
+:base64 ’W3C,{WOFF=<a
+href="http://www.w3.org/TR/WOFF/#appendix-b">www.w3.org/TR/WOFF/#appendix-b</a>}
+application/framework-attributes+xml ‘IANA,RFC6230 application/held+xml
+’IANA,RFC5985 application/http ‘IANA,RFC2616 application/hyperstudio @stk
+’<a href="http://Domino">IANA,</a> application/ibe-key-request+xml
+‘IANA,RFC5408 application/ibe-pkg-reply+xml ’IANA,RFC5408
+application/ibe-pp-data ‘IANA,RFC5408 application/iges ’<a
+href="http://Parks">IANA,</a> application/im-iscomposing+xml ‘IANA,RFC3994
+application/index ’IANA,RFC2652 application/index.cmd ‘IANA,RFC2652
+application/index.obj ’IANA,RFC2652 application/index.response
+‘IANA,RFC2652 application/index.vnd ’IANA,RFC2652 application/inkml+xml ‘<a
+href="http://Ashimura">IANA,</a> application/iotp ’IANA,RFC2935
+application/ipfix ‘IANA,RFC5655 application/ipp ’IANA,RFC2910
+application/isup ‘IANA,RFC3204 application/javascript @js :8bit
+’IANA,RFC4329 application/json @json :8bit ‘IANA,RFC4627
+application/kpml-request+xml ’IANA,RFC4730 application/kpml-response+xml
+‘IANA,RFC4730 application/lost+xml ’IANA,RFC5222 application/mac-binhex40
+@hqx :8bit ‘<a href="http://Faltstrom">IANA,</a> application/macwriteii ’<a
+href="http://Lindner">IANA,</a> application/mads+xml ‘IANA,RFC6207
+application/marc ’IANA,RFC2220 application/marcxml+xml ‘IANA,RFC6207
+application/mathematica ’<a href="http://Wolfram">IANA,</a>
+application/mathml+xml ‘<a href="http://W3C">IANA,</a>
+application/mathml-content+xml ’<a href="http://W3C">IANA,</a>
+application/mathml-presentation+xml ‘<a href="http://W3C">IANA,</a>
+application/mbms-associated-procedure-description+xml ’<a
+href="http://3GPP">IANA,</a> application/mbms-deregister+xml ‘<a
+href="http://3GPP">IANA,</a> application/mbms-envelope+xml ’<a
+href="http://3GPP">IANA,</a> application/mbms-msk+xml ‘<a
+href="http://3GPP">IANA,</a> application/mbms-msk-response+xml ’<a
+href="http://3GPP">IANA,</a> application/mbms-protection-description+xml
+‘<a href="http://3GPP">IANA,</a> application/mbms-reception-report+xml ’<a
+href="http://3GPP">IANA,</a> application/mbms-register+xml ‘<a
+href="http://3GPP">IANA,</a> application/mbms-register-response+xml ’<a
+href="http://3GPP">IANA,</a> application/mbms-user-service-description+xml
+‘<a href="http://3GPP">IANA,</a> application/mbox ’IANA,RFC4155
+application/media_control+xml ‘IANA,RFC5168
+application/mediaservercontrol+xml ’IANA,RFC5022 application/metalink4+xml
+‘IANA,RFC5854 application/mets+xml ’IANA,RFC6207 application/mikey
+‘IANA,RFC3830 application/mods+xml ’IANA,RFC6207 application/moss-keys
+‘IANA,RFC1848 application/moss-signature ’IANA,RFC1848
+application/mosskey-data ‘IANA,RFC1848 application/mosskey-request
+’IANA,RFC1848 application/mp21 ‘<a href="http://Singer">IANA,RFC6381,</a>
+application/mp4 @mp4,mpg4 ’IANA,RFC4337 application/mpeg4-generic
+‘IANA,RFC3640 application/mpeg4-iod ’IANA,RFC4337 application/mpeg4-iod-xmt
+‘IANA,RFC4337 application/msc-ivr+xml ’IANA,RFC6231
+application/msc-mixer+xml
+‘IANA,{RFC-ietf-mediactrl-mixer-control-package-14=<a
+href="http://tools.ietf.org/html/draft-ietf-mediactrl-mixer-control-package">tools.ietf.org/html/draft-ietf-mediactrl-mixer-control-package</a>}
+application/msword @doc,dot,wrd :base64 ’<a href="http://Lindner">IANA,</a>
+application/mxf @mxf ‘IANA,RFC4539 application/nasdata ’IANA,RFC4707
+application/news-checkgroups ‘IANA,RFC5537 application/news-groupinfo
+’IANA,RFC5537 application/news-transmission ‘<a
+href="http://Spencer">IANA,RFC5537,</a> application/nss ’<a
+href="http://Hammer">IANA,</a> application/ocsp-request ‘IANA,RFC2560
+application/ocsp-response ’IANA,RFC2560 application/octet-stream
+@bin,dms,lha,lzh,exe,class,ani,pgp,so,dll,dmg,dylib :base64
+‘IANA,RFC2045,RFC2046 application/oda @oda ’IANA,RFC2045,RFC2046
+application/oebps-package+xml ‘IANA,RFC4839 application/ogg @ogx
+’IANA,RFC5334 application/oxps ‘IANA,[Ecma International Helpdesk]
+application/parityfec ’IANA,RFC5109 application/patch-ops-error+xml
+‘IANA,RFC5261 application/pdf @pdf :base64 ’IANA,RFC3778
+application/pgp-encrypted :7bit ‘IANA,RFC3156 application/pgp-keys :7bit
+’IANA,RFC3156 application/pgp-signature @sig :base64 ‘IANA,RFC3156
+application/pidf+xml ’IANA,RFC3863 application/pidf-diff+xml ‘IANA,RFC5262
+application/pkcs10 @p10 ’IANA,RFC5967 application/pkcs7-mime @p7m,p7c
+‘IANA,RFC5751 application/pkcs7-signature @p7s ’IANA,RFC2311
+application/pkcs8 ‘IANA,RFC5958 application/pkix-attr-cert ’IANA,RFC5877
+application/pkix-cert @cer ‘IANA,RFC2585 application/pkix-crl @crl
+’IANA,RFC2585 application/pkix-pkipath @pkipath ‘IANA,RFC6066
+application/pkixcmp @pki ’IANA,RFC2510 application/pls+xml ‘IANA,RFC4267
+application/poc-settings+xml ’IANA,RFC4354 application/postscript
+@ai,eps,ps :8bit ‘IANA,RFC2045,RFC2046
+application/prs.alvestrand.titrax-sheet ’<a
+href="http://Alvestrand">IANA,</a> application/prs.cww @cw,cww ‘<a
+href="http://Rungchavalnont">IANA,</a> application/prs.nprend @rnd,rct ’<a
+href="http://Doggett">IANA,</a> application/prs.plucker ‘<a
+href="http://Janssen">IANA,</a> application/prs.rdf-xml-crypt ’<a
+href="http://Inkster">IANA,</a> application/prs.xsf+xml ‘<a
+href="http://Stührenberg=Stuhrenberg">IANA,</a> application/pskc+xml
+’IANA,RFC6030 application/qsig ‘IANA,RFC3204 application/rdf+xml @rdf :8bit
+’IANA,RFC3870 application/reginfo+xml ‘IANA,RFC3680
+application/relax-ng-compact-syntax ’IANA,{ISO/IEC 19757-2:2003/FDAM-1=<a
+href="http://www.jtc1sc34.org/repository/0661.pdf">www.jtc1sc34.org/repository/0661.pdf</a>}
+application/remote-printing ‘<a href="http://Rose">IANA,RFC1486,</a>
+application/resource-lists+xml ’IANA,RFC4826
+application/resource-lists-diff+xml ‘IANA,RFC5362 application/riscos ’<a
+href="http://Smith">IANA,</a> application/rlmi+xml ‘IANA,RFC4662
+application/rls-services+xml ’IANA,RFC4826 application/rpki-manifest
+‘IANA,{RFC-ietf-sidr-repos-struct-09.txt=<a
+href="http://tools.ietf.org/html/draft-ietf-sidr-repos-struct">tools.ietf.org/html/draft-ietf-sidr-repos-struct</a>}
+application/rpki-roa ’IANA,{RFC-ietf-sidr-repos-struct-09.txt=<a
+href="http://tools.ietf.org/html/draft-ietf-sidr-repos-struct">tools.ietf.org/html/draft-ietf-sidr-repos-struct</a>}
+application/rpki-updown
+‘IANA,{RFC-ietf-sidr-rescerts-provisioning-11.txt=<a
+href="http://tools.ietf.org/html/draft-ietf-sidr-rescerts-provisioning">tools.ietf.org/html/draft-ietf-sidr-rescerts-provisioning</a>}
+application/rtf @rtf ’<a href="http://Lindner">IANA,</a> application/rtx
+‘IANA,RFC4588 application/samlassertion+xml ’IANA,[OASIS Security Services
+Technical Committee (SSTC)] application/samlmetadata+xml ‘IANA,[OASIS
+Security Services Technical Committee (SSTC)] application/sbml+xml
+’IANA,RFC3823 application/scvp-cv-request ‘IANA,RFC5055
+application/scvp-cv-response ’IANA,RFC5055 application/scvp-vp-request
+‘IANA,RFC5055 application/scvp-vp-response ’IANA,RFC5055 application/sdp
+‘IANA,RFC4566 application/set-payment ’<a href="http://Korver">IANA,</a>
+application/set-payment-initiation ‘<a href="http://Korver">IANA,</a>
+application/set-registration ’<a href="http://Korver">IANA,</a>
+application/set-registration-initiation ‘<a href="http://Korver">IANA,</a>
+application/sgml @sgml ’IANA,RFC1874 application/sgml-open-catalog @soc ‘<a
+href="http://Grosso">IANA,</a> application/shf+xml ’IANA,RFC4194
+application/sieve @siv ‘IANA,RFC5228 application/simple-filter+xml
+’IANA,RFC4661 application/simple-message-summary ‘IANA,RFC3842
+application/simpleSymbolContainer ’<a href="http://3GPP">IANA,</a>
+application/slate ‘<a href="http://Crowley">IANA,</a> application/smil+xml
+@smi,smil :8bit ’IANA,RFC4536 application/soap+fastinfoset ‘IANA,[ITU-T
+ASN.1 Rapporteur] application/soap+xml ’IANA,RFC3902
+application/sparql-query ‘<a href="http://W3C">IANA,</a>
+application/sparql-results+xml ’<a href="http://W3C">IANA,</a>
+application/spirits-event+xml ‘IANA,RFC3910 application/srgs ’IANA,RFC4267
+application/srgs+xml ‘IANA,RFC4267 application/sru+xml ’IANA,RFC6207
+application/ssml+xml ‘IANA,RFC4267 application/tamp-apex-update
+’IANA,RFC5934 application/tamp-apex-update-confirm ‘IANA,RFC5934
+application/tamp-community-update ’IANA,RFC5934
+application/tamp-community-update-confirm ‘IANA,RFC5934
+application/tamp-error ’IANA,RFC5934 application/tamp-sequence-adjust
+‘IANA,RFC5934 application/tamp-sequence-adjust-confirm ’IANA,RFC5934
+application/tamp-status-query ‘IANA,RFC5934
+application/tamp-status-response ’IANA,RFC5934 application/tamp-update
+‘IANA,RFC5934 application/tamp-update-confirm ’IANA,RFC5934
+application/tei+xml ‘IANA,RFC6129 application/thraud+xml ’IANA,RFC5941
+application/timestamp-query ‘IANA,RFC3161 application/timestamp-reply
+’IANA,RFC3161 application/timestamped-data ‘IANA,RFC5955
+application/tve-trigger ’<a href="http://Welsh">IANA,</a>
+application/ulpfec ‘IANA,RFC5109 application/vcard+xml ’IANA,RFC6351
+application/vemmi ‘IANA,RFC2122 application/vnd.3M.Post-it-Notes ’<a
+href="http://O'Brien">IANA,</a> application/vnd.3gpp.bsf+xml ‘<a
+href="http://Meredith">IANA,</a> application/vnd.3gpp.pic-bw-large @plb ’<a
+href="http://Meredith">IANA,</a> application/vnd.3gpp.pic-bw-small @psb ‘<a
+href="http://Meredith">IANA,</a> application/vnd.3gpp.pic-bw-var @pvb ’<a
+href="http://Meredith">IANA,</a> application/vnd.3gpp.sms @sms ‘<a
+href="http://Meredith">IANA,</a> application/vnd.3gpp2.bcmcsinfo+xml ’<a
+href="http://Dryden">IANA,</a> application/vnd.3gpp2.sms ‘<a
+href="http://Mahendran">IANA,</a> application/vnd.3gpp2.tcap ’<a
+href="http://Mahendran">IANA,</a> application/vnd.FloGraphIt ‘<a
+href="http://Floersch">IANA,</a> application/vnd.HandHeld-Entertainment+xml
+’<a href="http://Hamilton">IANA,</a> application/vnd.Kinar @kne,knp,sdf ‘<a
+href="http://Thakkar">IANA,</a> application/vnd.MFER ’<a
+href="http://Hirai">IANA,</a> application/vnd.Mobius.DAF ‘<a
+href="http://Kabayama">IANA,</a> application/vnd.Mobius.DIS ’<a
+href="http://Kabayama">IANA,</a> application/vnd.Mobius.MBK ‘<a
+href="http://Devasia">IANA,</a> application/vnd.Mobius.MQY ’<a
+href="http://Devasia">IANA,</a> application/vnd.Mobius.MSL ‘<a
+href="http://Kabayama">IANA,</a> application/vnd.Mobius.PLC ’<a
+href="http://Kabayama">IANA,</a> application/vnd.Mobius.TXF ‘<a
+href="http://Kabayama">IANA,</a> application/vnd.Quark.QuarkXPress
+@qxd,qxt,qwd,qwt,qxl,qxb :8bit ’<a href="http://Scheidler">IANA,</a>
+application/vnd.RenLearn.rlprint ‘<a href="http://Wick">IANA,</a>
+application/vnd.SimTech-MindMapper ’<a href="http://Koh">IANA,</a>
+application/vnd.accpac.simply.aso ‘<a href="http://Leow">IANA,</a>
+application/vnd.accpac.simply.imp ’<a href="http://Leow">IANA,</a>
+application/vnd.acucobol ‘<a href="http://Lubin">IANA,</a>
+application/vnd.acucorp @atc,acutc :7bit ’<a href="http://Lubin">IANA,</a>
+application/vnd.adobe.air-application-installer-package+zip @air :base64
+application/vnd.adobe.fxp ‘<a href="http://Brambley">IANA,</a>,[Heintz]
+application/vnd.adobe.partial-upload ’<a href="http://Otala">IANA,</a>
+application/vnd.adobe.xdp+xml ‘<a href="http://Brinkman">IANA,</a>
+application/vnd.adobe.xfdf @xfdf ’<a href="http://Perelman">IANA,</a>
+application/vnd.aether.imp ‘<a href="http://Moskowitz">IANA,</a>
+application/vnd.ah-barcode ’<a href="http://Ichinose">IANA,</a>
+application/vnd.ahead.space ‘<a href="http://Kristensen">IANA,</a>
+application/vnd.airzip.filesecure.azf ’<a
+href="http://Mould">IANA,</a>,[Clueit]
+application/vnd.airzip.filesecure.azs ‘<a
+href="http://Mould">IANA,</a>,[Clueit] application/vnd.americandynamics.acc
+’<a href="http://Sands">IANA,</a> application/vnd.amiga.ami @ami ‘<a
+href="http://Blumberg">IANA,</a> application/vnd.amundsen.maze+xml ’<a
+href="http://Amundsen">IANA,</a> application/vnd.android.package-archive
+@apk application/vnd.anser-web-certificate-issue-initiation ‘<a
+href="http://Mori">IANA,</a> application/vnd.antix.game-component ’<a
+href="http://Shelton">IANA,</a> application/vnd.apple.installer+xml ‘<a
+href="http://Bierman">IANA,</a> application/vnd.apple.mpegurl ’<a
+href="http://Singer">IANA,</a>,[Pantos] application/vnd.aristanetworks.swi
+‘<a href="http://Fenner">IANA,</a> application/vnd.astraea-software.iota
+’<a href="http://Snazell">IANA,</a> application/vnd.audiograph ‘<a
+href="http://Slusanschi">IANA,</a> application/vnd.autopackage ’<a
+href="http://Hearn">IANA,</a> application/vnd.avistar+xml ‘<a
+href="http://Vysotsky">IANA,</a> application/vnd.blueice.multipass @mpm ’<a
+href="http://Holmstrom">IANA,</a> application/vnd.bluetooth.ep.oob ‘<a
+href="http://Foley">IANA,</a> application/vnd.bmi ’<a
+href="http://Gotoh">IANA,</a> application/vnd.businessobjects ‘<a
+href="http://Imoucha">IANA,</a> application/vnd.cab-jscript ’<a
+href="http://Falkenberg">IANA,</a> application/vnd.canon-cpdl ‘<a
+href="http://Muto">IANA,</a> application/vnd.canon-lips ’<a
+href="http://Muto">IANA,</a> application/vnd.cendio.thinlinc.clientconf ‘<a
+href="http://Åstrand=Astrand">IANA,</a> application/vnd.chemdraw+xml ’<a
+href="http://Howes">IANA,</a> application/vnd.chipnuts.karaoke-mmd ‘<a
+href="http://Xiong">IANA,</a> application/vnd.cinderella @cdy ’<a
+href="http://Kortenkamp">IANA,</a> application/vnd.cirpack.isdn-ext ‘<a
+href="http://Mayeux">IANA,</a> application/vnd.claymore ’<a
+href="http://Simpson">IANA,</a> application/vnd.cloanto.rp9 ‘<a
+href="http://Labatt">IANA,</a> application/vnd.clonk.c4group ’<a
+href="http://Brammer">IANA,</a>
+application/vnd.cluetrust.cartomobile-config ‘<a
+href="http://Paulsen">IANA,</a>
+application/vnd.cluetrust.cartomobile-config-pkg ’<a
+href="http://Paulsen">IANA,</a> application/vnd.collection+json ‘<a
+href="http://Amundsen">IANA,</a> application/vnd.commerce-battelle ’<a
+href="http://Applebaum">IANA,</a> application/vnd.commonspace ‘<a
+href="http://Chandhok">IANA,</a> application/vnd.contact.cmsg ’<a
+href="http://Patz">IANA,</a> application/vnd.cosmocaller @cmc ‘<a
+href="http://Dellutri">IANA,</a> application/vnd.crick.clicker ’<a
+href="http://Burt">IANA,</a> application/vnd.crick.clicker.keyboard ‘<a
+href="http://Burt">IANA,</a> application/vnd.crick.clicker.palette ’<a
+href="http://Burt">IANA,</a> application/vnd.crick.clicker.template ‘<a
+href="http://Burt">IANA,</a> application/vnd.crick.clicker.wordbank ’<a
+href="http://Burt">IANA,</a> application/vnd.criticaltools.wbs+xml @wbs ‘<a
+href="http://Spiller">IANA,</a> application/vnd.ctc-posml ’<a
+href="http://Kohlhepp">IANA,</a> application/vnd.ctct.ws+xml ‘<a
+href="http://Ancona">IANA,</a> application/vnd.cups-pdf ’<a
+href="http://Sweet">IANA,</a> application/vnd.cups-postscript ‘<a
+href="http://Sweet">IANA,</a> application/vnd.cups-ppd ’<a
+href="http://Sweet">IANA,</a> application/vnd.cups-raster ‘<a
+href="http://Sweet">IANA,</a> application/vnd.cups-raw ’<a
+href="http://Sweet">IANA,</a> application/vnd.curl @curl ‘<a
+href="http://Byrnes">IANA,</a> application/vnd.cybank ’<a
+href="http://Helmee">IANA,</a> application/vnd.data-vision.rdz @rdz ‘<a
+href="http://Fields">IANA,</a> application/vnd.dece.data ’<a
+href="http://Dolan">IANA,</a> application/vnd.dece.ttml+xml ‘<a
+href="http://Dolan">IANA,</a> application/vnd.dece.unspecified ’<a
+href="http://Dolan">IANA,</a> application/vnd.dece.zip ‘<a
+href="http://Dolan">IANA,</a> application/vnd.denovo.fcselayout-link ’<a
+href="http://Dixon">IANA,</a> application/vnd.dir-bi.plate-dl-nosuffix ‘<a
+href="http://Yamanaka">IANA,</a> application/vnd.dna ’<a
+href="http://Searcy">IANA,</a> application/vnd.dolby.mobile.1 ‘<a
+href="http://Hattersley">IANA,</a> application/vnd.dolby.mobile.2 ’<a
+href="http://Hattersley">IANA,</a> application/vnd.dpgraph ‘<a
+href="http://Parker">IANA,</a> application/vnd.dreamfactory @dfac ’<a
+href="http://Appleton">IANA,</a> application/vnd.dvb.ait ‘<a
+href="http://Siebert">IANA,</a>,[Lagally] application/vnd.dvb.dvbj ’<a
+href="http://Siebert">IANA,</a>,[Lagally] application/vnd.dvb.esgcontainer
+‘<a href="http://Heuer">IANA,</a> application/vnd.dvb.ipdcdftnotifaccess
+’<a href="http://Yue">IANA,</a> application/vnd.dvb.ipdcesgaccess ‘<a
+href="http://Heuer">IANA,</a> application/vnd.dvb.ipdcesgaccess2 ’<a
+href="http://Marcon">IANA,</a> application/vnd.dvb.ipdcesgpdd ‘<a
+href="http://Marcon">IANA,</a> application/vnd.dvb.ipdcroaming ’<a
+href="http://Xu">IANA,</a> application/vnd.dvb.iptv.alfec-base ‘<a
+href="http://Henry">IANA,</a> application/vnd.dvb.iptv.alfec-enhancement
+’<a href="http://Henry">IANA,</a>
+application/vnd.dvb.notif-aggregate-root+xml ‘<a
+href="http://Yue">IANA,</a> application/vnd.dvb.notif-container+xml ’<a
+href="http://Yue">IANA,</a> application/vnd.dvb.notif-generic+xml ‘<a
+href="http://Yue">IANA,</a> application/vnd.dvb.notif-ia-msglist+xml ’<a
+href="http://Yue">IANA,</a>
+application/vnd.dvb.notif-ia-registration-request+xml ‘<a
+href="http://Yue">IANA,</a>
+application/vnd.dvb.notif-ia-registration-response+xml ’<a
+href="http://Yue">IANA,</a> application/vnd.dvb.notif-init+xml ‘<a
+href="http://Yue">IANA,</a> application/vnd.dvb.pfr ’<a
+href="http://Siebert">IANA,</a>,[Lagally] application/vnd.dvb.service ‘<a
+href="http://Siebert">IANA,</a>,[Lagally] application/vnd.dxr ’<a
+href="http://Duffy">IANA,</a> application/vnd.dynageo ‘<a
+href="http://Mechling">IANA,</a> application/vnd.easykaraoke.cdgdownload
+’<a href="http://Downs">IANA,</a> application/vnd.ecdis-update ‘<a
+href="http://Buettgenbach">IANA,</a> application/vnd.ecowin.chart ’<a
+href="http://Olsson">IANA,</a> application/vnd.ecowin.filerequest ‘<a
+href="http://Olsson">IANA,</a> application/vnd.ecowin.fileupdate ’<a
+href="http://Olsson">IANA,</a> application/vnd.ecowin.series ‘<a
+href="http://Olsson">IANA,</a> application/vnd.ecowin.seriesrequest ’<a
+href="http://Olsson">IANA,</a> application/vnd.ecowin.seriesupdate ‘<a
+href="http://Olsson">IANA,</a> application/vnd.emclient.accessrequest+xml
+’<a href="http://Navara">IANA,</a> application/vnd.enliven ‘<a
+href="http://Santinelli">IANA,</a> application/vnd.eprints.data+xml ’<a
+href="http://Brody">IANA,</a> application/vnd.epson.esf ‘<a
+href="http://Hoshina">IANA,</a> application/vnd.epson.msf ’<a
+href="http://Hoshina">IANA,</a> application/vnd.epson.quickanime ‘<a
+href="http://Gu">IANA,</a> application/vnd.epson.salt ’<a
+href="http://Nagatomo">IANA,</a> application/vnd.epson.ssf ‘<a
+href="http://Hoshina">IANA,</a> application/vnd.ericsson.quickcall ’<a
+href="http://Tidwell">IANA,</a> application/vnd.eszigno3+xml ‘<a
+href="http://Tóth=Toth">IANA,</a> application/vnd.etsi.aoc+xml ’<a
+href="http://Hu">IANA,</a> application/vnd.etsi.cug+xml ‘<a
+href="http://Hu">IANA,</a> application/vnd.etsi.iptvcommand+xml ’<a
+href="http://Hu">IANA,</a> application/vnd.etsi.iptvdiscovery+xml ‘<a
+href="http://Hu">IANA,</a> application/vnd.etsi.iptvprofile+xml ’<a
+href="http://Hu">IANA,</a> application/vnd.etsi.iptvsad-bc+xml ‘<a
+href="http://Hu">IANA,</a> application/vnd.etsi.iptvsad-cod+xml ’<a
+href="http://Hu">IANA,</a> application/vnd.etsi.iptvsad-npvr+xml ‘<a
+href="http://Hu">IANA,</a> application/vnd.etsi.iptvservice+xml ’<a
+href="http://Ortega">IANA,</a> application/vnd.etsi.iptvsync+xml ‘<a
+href="http://Ortega">IANA,</a> application/vnd.etsi.iptvueprofile+xml ’<a
+href="http://Hu">IANA,</a> application/vnd.etsi.mcid+xml ‘<a
+href="http://Hu">IANA,</a>
+application/vnd.etsi.overload-control-policy-dataset+xml ’<a
+href="http://Ortega">IANA,</a> application/vnd.etsi.sci+xml ‘<a
+href="http://Hu">IANA,</a> application/vnd.etsi.simservs+xml ’<a
+href="http://Hu">IANA,</a> application/vnd.etsi.tsl+xml ‘<a
+href="http://Hu">IANA,</a> application/vnd.etsi.tsl.der ’<a
+href="http://Hu">IANA,</a> application/vnd.eudora.data ‘<a
+href="http://Resnick">IANA,</a> application/vnd.ezpix-album
+’IANA,[Electronic Zombie, Corp.=ElectronicZombieCorp]
+application/vnd.ezpix-package ‘IANA,[Electronic Zombie,
+Corp.=ElectronicZombieCorp] application/vnd.f-secure.mobile ’<a
+href="http://Sarivaara">IANA,</a> application/vnd.fdf ‘<a
+href="http://Zilles">IANA,</a> application/vnd.fdsn.mseed ’<a
+href="http://Trabant">IANA,</a> application/vnd.fdsn.seed ‘<a
+href="http://Trabant">IANA,</a> application/vnd.ffsns ’<a
+href="http://Holstage">IANA,</a> application/vnd.fints ‘<a
+href="http://Hammann">IANA,</a> application/vnd.fluxtime.clip ’<a
+href="http://Winter">IANA,</a> application/vnd.font-fontforge-sfd ‘<a
+href="http://Williams">IANA,</a> application/vnd.framemaker
+@frm,maker,frame,fm,fb,book,fbdoc ’<a href="http://Wexler">IANA,</a>
+application/vnd.frogans.fnc ‘<a href="http://Tamas">IANA,</a>
+application/vnd.frogans.ltf ’<a href="http://Tamas">IANA,</a>
+application/vnd.fsc.weblaunch @fsc :7bit ‘<a
+href="http://D.Smith">IANA,</a> application/vnd.fujitsu.oasys ’<a
+href="http://Togashi">IANA,</a> application/vnd.fujitsu.oasys2 ‘<a
+href="http://Togashi">IANA,</a> application/vnd.fujitsu.oasys3 ’<a
+href="http://Okudaira">IANA,</a> application/vnd.fujitsu.oasysgp ‘<a
+href="http://Sugimoto">IANA,</a> application/vnd.fujitsu.oasysprs ’<a
+href="http://Ogita">IANA,</a> application/vnd.fujixerox.ART-EX ‘<a
+href="http://Tanabe">IANA,</a> application/vnd.fujixerox.ART4 ’<a
+href="http://Tanabe">IANA,</a> application/vnd.fujixerox.HBPL ‘<a
+href="http://Tanabe">IANA,</a> application/vnd.fujixerox.ddd ’<a
+href="http://Onda">IANA,</a> application/vnd.fujixerox.docuworks ‘<a
+href="http://Taguchi">IANA,</a> application/vnd.fujixerox.docuworks.binder
+’<a href="http://Matsumoto">IANA,</a> application/vnd.fut-misnet ‘<a
+href="http://Pruulmann">IANA,</a> application/vnd.fuzzysheet ’<a
+href="http://Birtwistle">IANA,</a> application/vnd.genomatix.tuxedo @txd
+‘<a href="http://Frey">IANA,</a> application/vnd.geocube+xml ’<a
+href="http://Pirsch">IANA,</a> application/vnd.geogebra.file ‘<a
+href="http://GeoGebra">IANA,</a>,[Kreis] application/vnd.geogebra.tool ’<a
+href="http://GeoGebra">IANA,</a>,[Kreis] application/vnd.geometry-explorer
+‘<a href="http://Hvidsten">IANA,</a> application/vnd.geonext ’<a
+href="http://Ehmann">IANA,</a> application/vnd.geoplan ‘<a
+href="http://Mercat">IANA,</a> application/vnd.geospace ’<a
+href="http://Mercat">IANA,</a>
+application/vnd.globalplatform.card-content-mgt ‘<a
+href="http://Bernabeu">IANA,</a>
+application/vnd.globalplatform.card-content-mgt-response ’<a
+href="http://Bernabeu">IANA,</a> application/vnd.google-earth.kml+xml @kml
+:8bit ‘<a href="http://Ashbridge">IANA,</a>
+application/vnd.google-earth.kmz @kmz :8bit ’<a
+href="http://Ashbridge">IANA,</a> application/vnd.grafeq ‘<a
+href="http://Tupper">IANA,</a> application/vnd.gridmp ’<a
+href="http://Lawson">IANA,</a> application/vnd.groove-account ‘<a
+href="http://Joseph">IANA,</a> application/vnd.groove-help ’<a
+href="http://Joseph">IANA,</a> application/vnd.groove-identity-message ‘<a
+href="http://Joseph">IANA,</a> application/vnd.groove-injector ’<a
+href="http://Joseph">IANA,</a> application/vnd.groove-tool-message ‘<a
+href="http://Joseph">IANA,</a> application/vnd.groove-tool-template ’<a
+href="http://Joseph">IANA,</a> application/vnd.groove-vcard ‘<a
+href="http://Joseph">IANA,</a> application/vnd.hal+json ’<a
+href="http://Kelly">IANA,</a> application/vnd.hal+xml ‘<a
+href="http://Kelly">IANA,</a> application/vnd.hbci
+@hbci,hbc,kom,upa,pkd,bpd ’<a href="http://Hammann">IANA,</a>
+application/vnd.hcl-bireports ‘<a href="http://Serres">IANA,</a>
+application/vnd.hhe.lesson-player @les ’<a href="http://Jones">IANA,</a>
+application/vnd.hp-HPGL @plt,hpgl ‘<a href="http://Pentecost">IANA,</a>
+application/vnd.hp-PCL ’<a href="http://Pentecost">IANA,</a>
+application/vnd.hp-PCLXL ‘<a href="http://Pentecost">IANA,</a>
+application/vnd.hp-hpid ’<a href="http://Gupta">IANA,</a>
+application/vnd.hp-hps ‘<a href="http://Aubrey">IANA,</a>
+application/vnd.hp-jlyt ’<a href="http://Gaash">IANA,</a>
+application/vnd.httphone ‘<a href="http://Lefevre">IANA,</a>
+application/vnd.hydrostatix.sof-data ’<a href="http://Gillam">IANA,</a>
+application/vnd.hzn-3d-crossword ‘<a href="http://Minnis">IANA,</a>
+application/vnd.ibm.MiniPay ’<a href="http://Herzberg">IANA,</a>
+application/vnd.ibm.afplinedata ‘<a href="http://Buis">IANA,</a>
+application/vnd.ibm.electronic-media @emm ’<a
+href="http://Tantlinger">IANA,</a> application/vnd.ibm.modcap ‘<a
+href="http://Hohensee">IANA,</a> application/vnd.ibm.rights-management @irm
+’<a href="http://Tantlinger">IANA,</a> application/vnd.ibm.secure-container
+@sc ‘<a href="http://Tantlinger">IANA,</a> application/vnd.iccprofile ’<a
+href="http://Green">IANA,</a> application/vnd.igloader ‘<a
+href="http://Fisher">IANA,</a> application/vnd.immervision-ivp ’<a
+href="http://Villegas">IANA,</a> application/vnd.immervision-ivu ‘<a
+href="http://Villegas">IANA,</a> application/vnd.informedcontrol.rms+xml
+’<a href="http://Wahl">IANA,</a> application/vnd.informix-visionary ‘<a
+href="http://Gales">IANA,</a> application/vnd.infotech.project ’<a
+href="http://Engelke">IANA,</a> application/vnd.infotech.project+xml ‘<a
+href="http://Engelke">IANA,</a> application/vnd.insors.igm ’<a
+href="http://Swanson">IANA,</a> application/vnd.intercon.formnet ‘<a
+href="http://Gurak">IANA,</a> application/vnd.intergeo ’<a
+href="http://Kreis=Kreis2">IANA,</a> application/vnd.intertrust.digibox ‘<a
+href="http://Tomasello">IANA,</a> application/vnd.intertrust.nncp ’<a
+href="http://Tomasello">IANA,</a> application/vnd.intu.qbo ‘<a
+href="http://Scratchley">IANA,</a> application/vnd.intu.qfx ’<a
+href="http://Scratchley">IANA,</a> application/vnd.iptc.g2.conceptitem+xml
+‘<a href="http://Steidl">IANA,</a>
+application/vnd.iptc.g2.knowledgeitem+xml ’<a
+href="http://Steidl">IANA,</a> application/vnd.iptc.g2.newsitem+xml ‘<a
+href="http://Steidl">IANA,</a> application/vnd.iptc.g2.packageitem+xml ’<a
+href="http://Steidl">IANA,</a> application/vnd.ipunplugged.rcprofile
+@rcprofile ‘<a href="http://Ersson">IANA,</a>
+application/vnd.irepository.package+xml @irp ’<a
+href="http://Knowles">IANA,</a> application/vnd.is-xpr ‘<a
+href="http://Natarajan">IANA,</a> application/vnd.isac.fcs ’<a
+href="http://RBrinkman">IANA,</a> application/vnd.jam ‘<a
+href="http://B.Kumar">IANA,</a> application/vnd.japannet-directory-service
+’<a href="http://Fujii">IANA,</a> application/vnd.japannet-jpnstore-wakeup
+‘<a href="http://Yoshitake">IANA,</a>
+application/vnd.japannet-payment-wakeup ’<a href="http://Fujii">IANA,</a>
+application/vnd.japannet-registration ‘<a href="http://Yoshitake">IANA,</a>
+application/vnd.japannet-registration-wakeup ’<a
+href="http://Fujii">IANA,</a> application/vnd.japannet-setstore-wakeup ‘<a
+href="http://Yoshitake">IANA,</a> application/vnd.japannet-verification ’<a
+href="http://Yoshitake">IANA,</a>
+application/vnd.japannet-verification-wakeup ‘<a
+href="http://Fujii">IANA,</a> application/vnd.jcp.javame.midlet-rms ’<a
+href="http://Gorshenev">IANA,</a> application/vnd.jisp @jisp ‘<a
+href="http://Deckers">IANA,</a> application/vnd.joost.joda-archive ’<a
+href="http://Joost">IANA,</a> application/vnd.kahootz ‘<a
+href="http://Macdonald">IANA,</a> application/vnd.kde.karbon @karbon ’<a
+href="http://Faure">IANA,</a> application/vnd.kde.kchart @chrt ‘<a
+href="http://Faure">IANA,</a> application/vnd.kde.kformula @kfo ’<a
+href="http://Faure">IANA,</a> application/vnd.kde.kivio @flw ‘<a
+href="http://Faure">IANA,</a> application/vnd.kde.kontour @kon ’<a
+href="http://Faure">IANA,</a> application/vnd.kde.kpresenter @kpr,kpt ‘<a
+href="http://Faure">IANA,</a> application/vnd.kde.kspread @ksp ’<a
+href="http://Faure">IANA,</a> application/vnd.kde.kword @kwd,kwt ‘<a
+href="http://Faure">IANA,</a> application/vnd.kenameaapp @htke ’<a
+href="http://DiGiorgio-Haag">IANA,</a> application/vnd.kidspiration @kia
+‘<a href="http://Bennett">IANA,</a> application/vnd.koan ’<a
+href="http://Cole">IANA,</a> application/vnd.kodak-descriptor ‘<a
+href="http://Donahue">IANA,</a> application/vnd.las.las+xml ’<a
+href="http://Bailey=RBailey">IANA,</a> application/vnd.liberty-request+xml
+‘<a href="http://McDowell">IANA,</a>
+application/vnd.llamagraphics.life-balance.desktop @lbd ’<a
+href="http://White">IANA,</a>
+application/vnd.llamagraphics.life-balance.exchange+xml @lbe ‘<a
+href="http://White">IANA,</a> application/vnd.lotus-1-2-3 @wks,123 ’<a
+href="http://Wattenberger">IANA,</a> application/vnd.lotus-approach ‘<a
+href="http://Wattenberger">IANA,</a> application/vnd.lotus-freelance ’<a
+href="http://Wattenberger">IANA,</a> application/vnd.lotus-notes ‘<a
+href="http://Laramie">IANA,</a> application/vnd.lotus-organizer ’<a
+href="http://Wattenberger">IANA,</a> application/vnd.lotus-screencam ‘<a
+href="http://Wattenberger">IANA,</a> application/vnd.lotus-wordpro ’<a
+href="http://Wattenberger">IANA,</a> application/vnd.macports.portpkg ‘<a
+href="http://Berry">IANA,</a> application/vnd.marlin.drm.actiontoken+xml
+’<a href="http://Ellison">IANA,</a>
+application/vnd.marlin.drm.conftoken+xml ‘<a
+href="http://Ellison">IANA,</a> application/vnd.marlin.drm.license+xml ’<a
+href="http://Ellison">IANA,</a> application/vnd.marlin.drm.mdcf ‘<a
+href="http://Ellison">IANA,</a> application/vnd.mcd @mcd ’<a
+href="http://Gotoh">IANA,</a> application/vnd.medcalcdata ‘<a
+href="http://Schoonjans">IANA,</a> application/vnd.mediastation.cdkey ’<a
+href="http://Flurry">IANA,</a> application/vnd.meridian-slingshot ‘<a
+href="http://Wedel">IANA,</a> application/vnd.mfmp @mfm ’<a
+href="http://Ikeda">IANA,</a> application/vnd.micrografx.flo @flo ‘<a
+href="http://Prevo">IANA,</a> application/vnd.micrografx.igx @igx ’<a
+href="http://Prevo">IANA,</a> application/vnd.mif @mif ‘<a
+href="http://Wexler">IANA,</a> application/vnd.minisoft-hp3000-save ’<a
+href="http://Bartram">IANA,</a>
+application/vnd.mitsubishi.misty-guard.trustweb ‘<a
+href="http://Tanaka">IANA,</a> application/vnd.mophun.application @mpn ’<a
+href="http://Wennerstrom">IANA,</a> application/vnd.mophun.certificate @mpc
+‘<a href="http://Wennerstrom">IANA,</a> application/vnd.motorola.flexsuite
+’<a href="http://Patton">IANA,</a> application/vnd.motorola.flexsuite.adsi
+‘<a href="http://Patton">IANA,</a> application/vnd.motorola.flexsuite.fis
+’<a href="http://Patton">IANA,</a> application/vnd.motorola.flexsuite.gotap
+‘<a href="http://Patton">IANA,</a> application/vnd.motorola.flexsuite.kmr
+’<a href="http://Patton">IANA,</a> application/vnd.motorola.flexsuite.ttc
+‘<a href="http://Patton">IANA,</a> application/vnd.motorola.flexsuite.wem
+’<a href="http://Patton">IANA,</a> application/vnd.motorola.iprm ‘<a
+href="http://Shamsaasef">IANA,</a> application/vnd.mozilla.xul+xml @xul ’<a
+href="http://McDaniel">IANA,</a> application/vnd.ms-artgalry @cil ‘<a
+href="http://Slawson">IANA,</a> application/vnd.ms-asf @asf ’<a
+href="http://Fleischman">IANA,</a> application/vnd.ms-cab-compressed @cab
+‘<a href="http://Scarborough">IANA,</a> application/vnd.ms-excel @xls,xlt
+:base64 ’<a href="http://Gill">IANA,</a>
+application/vnd.ms-excel.addin.macroEnabled.12 ‘<a
+href="http://Rae">IANA,</a>
+application/vnd.ms-excel.sheet.binary.macroEnabled.12 @xslb ’<a
+href="http://Rae">IANA,</a> application/vnd.ms-excel.sheet.macroEnabled.12
+@xslm ‘<a href="http://Rae">IANA,</a>
+application/vnd.ms-excel.template.macroEnabled.12 ’<a
+href="http://Rae">IANA,</a> application/vnd.ms-fontobject ‘<a
+href="http://Scarborough">IANA,</a> application/vnd.ms-htmlhelp ’<a
+href="http://Techtonik">IANA,</a> application/vnd.ms-ims ‘<a
+href="http://Ledoux">IANA,</a> application/vnd.ms-lrm @lrm ’<a
+href="http://Ledoux">IANA,</a> application/vnd.ms-office.activeX+xml ‘<a
+href="http://Rae">IANA,</a> application/vnd.ms-officetheme ’<a
+href="http://Rae">IANA,</a> application/vnd.ms-playready.initiator+xml ‘<a
+href="http://Schneider">IANA,</a> application/vnd.ms-powerpoint
+@ppt,pps,pot :base64 ’<a href="http://Gill">IANA,</a>
+application/vnd.ms-powerpoint.slide.macroEnabled.12 @pptm ‘<a
+href="http://Rae">IANA,</a>
+application/vnd.ms-powerpoint.slideshow.macroEnabled.12 ’<a
+href="http://Rae">IANA,</a>
+application/vnd.ms-powerpoint.template.macroEnabled.12 @potm ‘<a
+href="http://Rae">IANA,</a> application/vnd.ms-project @mpp :base64 ’<a
+href="http://Gill">IANA,</a> application/vnd.ms-tnef :base64 ‘<a
+href="http://Gill">IANA,</a> application/vnd.ms-wmdrm.lic-chlg-req ’<a
+href="http://Lau">IANA,</a> application/vnd.ms-wmdrm.lic-resp ‘<a
+href="http://Lau">IANA,</a> application/vnd.ms-wmdrm.meter-chlg-req ’<a
+href="http://Lau">IANA,</a> application/vnd.ms-wmdrm.meter-resp ‘<a
+href="http://Lau">IANA,</a> application/vnd.ms-works :base64 ’<a
+href="http://Gill">IANA,</a> application/vnd.ms-wpl @wpl :base64 ‘<a
+href="http://Plastina">IANA,</a> application/vnd.ms-xpsdocument @xps :8bit
+’<a href="http://McGatha">IANA,</a> application/vnd.mseq @mseq ‘IANA,[Le
+Bodic] application/vnd.msign ’<a href="http://Borcherding">IANA,</a>
+application/vnd.multiad.creator ‘<a href="http://Mills">IANA,</a>
+application/vnd.multiad.creator.cif ’<a href="http://Mills">IANA,</a>
+application/vnd.music-niff ‘<a href="http://Butler">IANA,</a>
+application/vnd.musician ’<a href="http://Adams">IANA,</a>
+application/vnd.muvee.style ‘<a href="http://Anantharamu">IANA,</a>
+application/vnd.mynfc ’<a href="http://Lefevre">IANA,</a>
+application/vnd.ncd.control ‘<a href="http://Tarkkala">IANA,</a>
+application/vnd.ncd.reference ’<a href="http://Tarkkala">IANA,</a>
+application/vnd.nervana @ent,entity,req,request,bkm,kcm ‘<a
+href="http://Judkins">IANA,</a> application/vnd.netfpx ’<a
+href="http://Mutz">IANA,</a> application/vnd.neurolanguage.nlu ‘<a
+href="http://DuFeu">IANA,</a> application/vnd.noblenet-directory ’<a
+href="http://Solomon">IANA,</a> application/vnd.noblenet-sealer ‘<a
+href="http://Solomon">IANA,</a> application/vnd.noblenet-web ’<a
+href="http://Solomon">IANA,</a> application/vnd.nokia.catalogs ‘<a
+href="http://Nokia">IANA,</a> application/vnd.nokia.conml+wbxml ’<a
+href="http://Nokia">IANA,</a> application/vnd.nokia.conml+xml ‘<a
+href="http://Nokia">IANA,</a> application/vnd.nokia.iSDS-radio-presets ’<a
+href="http://Nokia">IANA,</a> application/vnd.nokia.iptv.config+xml ‘<a
+href="http://Nokia">IANA,</a> application/vnd.nokia.landmark+wbxml ’<a
+href="http://Nokia">IANA,</a> application/vnd.nokia.landmark+xml ‘<a
+href="http://Nokia">IANA,</a> application/vnd.nokia.landmarkcollection+xml
+’<a href="http://Nokia">IANA,</a> application/vnd.nokia.n-gage.ac+xml ‘<a
+href="http://Nokia">IANA,</a> application/vnd.nokia.n-gage.data ’<a
+href="http://Nokia">IANA,</a> application/vnd.nokia.n-gage.symbian.install
+‘<a href="http://Nokia">IANA,</a> application/vnd.nokia.ncd ’<a
+href="http://Nokia">IANA,</a> application/vnd.nokia.pcd+wbxml ‘<a
+href="http://Nokia">IANA,</a> application/vnd.nokia.pcd+xml ’<a
+href="http://Nokia">IANA,</a> application/vnd.nokia.radio-preset @rpst ‘<a
+href="http://Nokia">IANA,</a> application/vnd.nokia.radio-presets @rpss ’<a
+href="http://Nokia">IANA,</a> application/vnd.novadigm.EDM ‘<a
+href="http://Swenson">IANA,</a> application/vnd.novadigm.EDX ’<a
+href="http://Swenson">IANA,</a> application/vnd.novadigm.EXT ‘<a
+href="http://Swenson">IANA,</a> application/vnd.oasis.opendocument.chart
+@odc ’<a href="http://Oppermann">IANA,</a>
+application/vnd.oasis.opendocument.chart-template @odc ‘<a
+href="http://Oppermann">IANA,</a>
+application/vnd.oasis.opendocument.database @odb ’<a
+href="http://Schubert">IANA,</a>,[Oasis OpenDocument TC=OASIS
+OpenDocumentTC] application/vnd.oasis.opendocument.formula @odf ‘<a
+href="http://Oppermann">IANA,</a>
+application/vnd.oasis.opendocument.formula-template @odf ’<a
+href="http://Oppermann">IANA,</a>
+application/vnd.oasis.opendocument.graphics @odg ‘<a
+href="http://Oppermann">IANA,</a>
+application/vnd.oasis.opendocument.graphics-template @otg ’<a
+href="http://Oppermann">IANA,</a> application/vnd.oasis.opendocument.image
+@odi ‘<a href="http://Oppermann">IANA,</a>
+application/vnd.oasis.opendocument.image-template @odi ’<a
+href="http://Oppermann">IANA,</a>
+application/vnd.oasis.opendocument.presentation @odp ‘<a
+href="http://Oppermann">IANA,</a>
+application/vnd.oasis.opendocument.presentation-template @otp ’<a
+href="http://Oppermann">IANA,</a>
+application/vnd.oasis.opendocument.spreadsheet @ods ‘<a
+href="http://Oppermann">IANA,</a>
+application/vnd.oasis.opendocument.spreadsheet-template @ots ’<a
+href="http://Oppermann">IANA,</a> application/vnd.oasis.opendocument.text
+@odt ‘<a href="http://Oppermann">IANA,</a>
+application/vnd.oasis.opendocument.text-master @odm ’<a
+href="http://Schubert">IANA,</a>,[OASIS]
+application/vnd.oasis.opendocument.text-template @ott ‘<a
+href="http://Schubert">IANA,</a>,[OASIS]
+application/vnd.oasis.opendocument.text-web @oth ’<a
+href="http://Schubert">IANA,</a>,[OASIS] application/vnd.obn ‘<a
+href="http://Hessling">IANA,</a> application/vnd.oftn.l10n+json ’<a
+href="http://Grey">IANA,</a> application/vnd.oipf.contentaccessdownload+xml
+‘<a href="http://D'Esclercs=DEsclercs">IANA,</a>
+application/vnd.oipf.contentaccessstreaming+xml ’<a
+href="http://D'Esclercs=DEsclercs">IANA,</a>
+application/vnd.oipf.cspg-hexbinary ‘<a
+href="http://D'Esclercs=DEsclercs">IANA,</a>
+application/vnd.oipf.dae.svg+xml ’<a
+href="http://D'Esclercs=DEsclercs">IANA,</a>
+application/vnd.oipf.dae.xhtml+xml ‘<a
+href="http://D'Esclercs=DEsclercs">IANA,</a>
+application/vnd.oipf.mippvcontrolmessage+xml ’<a
+href="http://D'Esclercs=DEsclercs">IANA,</a> application/vnd.oipf.pae.gem
+‘<a href="http://D'Esclercs=DEsclercs">IANA,</a>
+application/vnd.oipf.spdiscovery+xml ’<a
+href="http://D'Esclercs=DEsclercs">IANA,</a>
+application/vnd.oipf.spdlist+xml ‘<a
+href="http://D'Esclercs=DEsclercs">IANA,</a>
+application/vnd.oipf.ueprofile+xml ’<a
+href="http://D'Esclercs=DEsclercs">IANA,</a>
+application/vnd.oipf.userprofile+xml ‘<a
+href="http://D'Esclercs=DEsclercs">IANA,</a> application/vnd.olpc-sugar ’<a
+href="http://Palmieri">IANA,</a> application/vnd.oma-scws-config ‘<a
+href="http://Mahalal">IANA,</a> application/vnd.oma-scws-http-request ’<a
+href="http://Mahalal">IANA,</a> application/vnd.oma-scws-http-response ‘<a
+href="http://Mahalal">IANA,</a>
+application/vnd.oma.bcast.associated-procedure-parameter+xml ’<a
+href="http://Rauschenbach">IANA,</a>,[OMNA - Open Mobile Naming
+Authority=OMNA-OpenMobileNamingAuthority]
+application/vnd.oma.bcast.drm-trigger+xml ‘<a
+href="http://Rauschenbach">IANA,</a>,[OMNA - Open Mobile Naming
+Authority=OMNA-OpenMobileNamingAuthority] application/vnd.oma.bcast.imd+xml
+’<a href="http://Rauschenbach">IANA,</a>,[OMNA - Open Mobile Naming
+Authority=OMNA-OpenMobileNamingAuthority] application/vnd.oma.bcast.ltkm
+‘<a href="http://Rauschenbach">IANA,</a>,[OMNA - Open Mobile Naming
+Authority=OMNA-OpenMobileNamingAuthority]
+application/vnd.oma.bcast.notification+xml ’<a
+href="http://Rauschenbach">IANA,</a>,[OMNA - Open Mobile Naming
+Authority=OMNA-OpenMobileNamingAuthority]
+application/vnd.oma.bcast.provisioningtrigger ‘<a
+href="http://Rauschenbach">IANA,</a>,[OMNA - Open Mobile Naming
+Authority=OMNA-OpenMobileNamingAuthority] application/vnd.oma.bcast.sgboot
+’<a href="http://Rauschenbach">IANA,</a>,[OMNA - Open Mobile Naming
+Authority=OMNA-OpenMobileNamingAuthority]
+application/vnd.oma.bcast.sgdd+xml ‘<a
+href="http://Rauschenbach">IANA,</a>,[OMNA - Open Mobile Naming
+Authority=OMNA-OpenMobileNamingAuthority] application/vnd.oma.bcast.sgdu
+’<a href="http://Rauschenbach">IANA,</a>,[OMNA - Open Mobile Naming
+Authority=OMNA-OpenMobileNamingAuthority]
+application/vnd.oma.bcast.simple-symbol-container ‘<a
+href="http://Rauschenbach">IANA,</a>,[OMNA - Open Mobile Naming
+Authority=OMNA-OpenMobileNamingAuthority]
+application/vnd.oma.bcast.smartcard-trigger+xml ’<a
+href="http://Rauschenbach">IANA,</a>,[OMNA - Open Mobile Naming
+Authority=OMNA-OpenMobileNamingAuthority]
+application/vnd.oma.bcast.sprov+xml ‘<a
+href="http://Rauschenbach">IANA,</a>,[OMNA - Open Mobile Naming
+Authority=OMNA-OpenMobileNamingAuthority] application/vnd.oma.bcast.stkm
+’<a href="http://Rauschenbach">IANA,</a>,[OMNA - Open Mobile Naming
+Authority=OMNA-OpenMobileNamingAuthority]
+application/vnd.oma.cab-address-book+xml ‘<a
+href="http://Wang">IANA,</a>,[OMA] application/vnd.oma.cab-pcc+xml ’<a
+href="http://Wang">IANA,</a>,[OMA] application/vnd.oma.dcd ‘<a
+href="http://Primo">IANA,</a>,[OMNA - Open Mobile Naming
+Authority=OMNA-OpenMobileNamingAuthority] application/vnd.oma.dcdc ’<a
+href="http://Primo">IANA,</a>,[OMNA - Open Mobile Naming
+Authority=OMNA-OpenMobileNamingAuthority] application/vnd.oma.dd2+xml ‘<a
+href="http://Sato">IANA,</a>,[Open Mobile Alliance’s BAC DLDRM Working
+Group] application/vnd.oma.drm.risd+xml ‘<a
+href="http://Rauschenbach">IANA,</a>,[OMNA - Open Mobile Naming
+Authority=OMNA-OpenMobileNamingAuthority]
+application/vnd.oma.group-usage-list+xml ’<a
+href="http://Kelley">IANA,</a>,[OMA Presence and Availability (PAG) Working
+Group] application/vnd.oma.pal+xml ‘<a
+href="http://McColgan">IANA,</a>,[OMNA - Open Mobile Naming
+Authority=OMNA-OpenMobileNamingAuthority]
+application/vnd.oma.poc.detailed-progress-report+xml ’IANA,[OMA Push to
+Talk over Cellular (POC) Working Group]
+application/vnd.oma.poc.final-report+xml ‘IANA,[OMA Push to Talk over
+Cellular (POC) Working Group] application/vnd.oma.poc.groups+xml ’<a
+href="http://Kelley">IANA,</a>,[OMA Push to Talk over Cellular (POC)
+Working Group] application/vnd.oma.poc.invocation-descriptor+xml ‘IANA,[OMA
+Push to Talk over Cellular (POC) Working Group]
+application/vnd.oma.poc.optimized-progress-report+xml ’IANA,[OMA Push to
+Talk over Cellular (POC) Working Group] application/vnd.oma.push ‘<a
+href="http://Sullivan">IANA,</a>,[OMA]
+application/vnd.oma.scidm.messages+xml ’<a
+href="http://Zeng">IANA,</a>,[OMNA - Open Mobile Naming
+Authority=OMNA-OpenMobileNamingAuthority]
+application/vnd.oma.xcap-directory+xml ‘<a
+href="http://Kelley">IANA,</a>,[OMA Presence and Availability (PAG) Working
+Group] application/vnd.omads-email+xml ’IANA,[OMA Data Synchronization
+Working Group] application/vnd.omads-file+xml ‘IANA,[OMA Data
+Synchronization Working Group] application/vnd.omads-folder+xml ’IANA,[OMA
+Data Synchronization Working Group] application/vnd.omaloc-supl-init ‘<a
+href="http://Grange">IANA,</a> application/vnd.openofficeorg.extension ’<a
+href="http://Lingner">IANA,</a>
+application/vnd.openxmlformats-officedocument.custom-properties+xml ‘<a
+href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.customXmlProperties+xml ’<a
+href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.drawing+xml ‘<a
+href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.drawingml.chart+xml ’<a
+href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.drawingml.chartshapes+xml ‘<a
+href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.drawingml.diagramColors+xml
+’<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.drawingml.diagramData+xml ‘<a
+href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.drawingml.diagramLayout+xml
+’<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.drawingml.diagramStyle+xml
+‘<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.extended-properties+xml ’<a
+href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.presentationml.commentAuthors+xml
+‘<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.presentationml.comments+xml
+’<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.presentationml.handoutMaster+xml
+‘<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.presentationml.notesMaster+xml
+’<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.presentationml.notesSlide+xml
+‘<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.presentationml.presProps+xml
+’<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.presentationml.presentation
+@pptx ‘<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.presentationml.presentation.main+xml
+’<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.presentationml.slide ‘<a
+href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.presentationml.slide+xml ’<a
+href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.presentationml.slideLayout+xml
+‘<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.presentationml.slideMaster+xml
+’<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.presentationml.slideUpdateInfo+xml
+‘<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.presentationml.slideshow
+@ppsx ’<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.presentationml.slideshow.main+xml
+‘<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.presentationml.tableStyles+xml
+’<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.presentationml.tags+xml ‘<a
+href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.presentationml.template @potx
+’<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.presentationml.template.main+xml
+‘<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.presentationml.viewProps+xml
+’<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.spreadsheetml.calcChain+xml
+‘<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.spreadsheetml.chartsheet+xml
+’<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.spreadsheetml.comments+xml
+‘<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.spreadsheetml.connections+xml
+’<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.spreadsheetml.dialogsheet+xml
+‘<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.spreadsheetml.externalLink+xml
+’<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.spreadsheetml.pivotCacheDefinition+xml
+‘<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.spreadsheetml.pivotCacheRecords+xml
+’<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.spreadsheetml.pivotTable+xml
+‘<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.spreadsheetml.queryTable+xml
+’<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.spreadsheetml.revisionHeaders+xml
+‘<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.spreadsheetml.revisionLog+xml
+’<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.spreadsheetml.sharedStrings+xml
+‘<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet @xlsx ’<a
+href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml
+‘<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheetMetadata+xml
+’<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml ‘<a
+href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.spreadsheetml.table+xml ’<a
+href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.spreadsheetml.tableSingleCells+xml
+‘<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.spreadsheetml.template ’<a
+href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.spreadsheetml.template.main+xml
+‘<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.spreadsheetml.userNames+xml
+’<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.spreadsheetml.volatileDependencies+xml
+‘<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml
+’<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.theme+xml ‘<a
+href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.themeOverride+xml ’<a
+href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.vmlDrawing ‘<a
+href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.wordprocessingml.comments+xml
+’<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.wordprocessingml.document
+@docx ‘<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.wordprocessingml.document.glossary+xml
+’<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml
+‘<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.wordprocessingml.endnotes+xml
+’<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.wordprocessingml.fontTable+xml
+‘<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.wordprocessingml.footer+xml
+’<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.wordprocessingml.footnotes+xml
+‘<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.wordprocessingml.numbering+xml
+’<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.wordprocessingml.settings+xml
+‘<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml
+’<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.wordprocessingml.template
+@dotx ‘<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.wordprocessingml.template.main+xml
+’<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-officedocument.wordprocessingml.webSettings+xml
+‘<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-package.core-properties+xml ’<a
+href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-package.digital-signature-xmlsignature+xml
+‘<a href="http://Murata">IANA,</a>
+application/vnd.openxmlformats-package.relationships+xml ’<a
+href="http://Murata">IANA,</a> application/vnd.osa.netdeploy ‘<a
+href="http://Klos">IANA,</a> application/vnd.osgeo.mapguide.package ’<a
+href="http://Birch">IANA,</a> application/vnd.osgi.bundle ‘<a
+href="http://Kriens">IANA,</a> application/vnd.osgi.dp ’<a
+href="http://Kriens">IANA,</a> application/vnd.otps.ct-kip+xml ‘<a
+href="http://Nyström=Nystrom">IANA,</a> application/vnd.palm
+@prc,pdb,pqa,oprc :base64 ’<a href="http://Peacock">IANA,</a>
+application/vnd.paos.xml ‘<a href="http://Kemp">IANA,</a>
+application/vnd.pawaafile ’<a href="http://Baskaran">IANA,</a>
+application/vnd.pg.format ‘<a href="http://Gandert">IANA,</a>
+application/vnd.pg.osasli ’<a href="http://Gandert">IANA,</a>
+application/vnd.piaccess.application-licence ‘<a
+href="http://Maneos">IANA,</a> application/vnd.picsel @efif ’<a
+href="http://Naccarato">IANA,</a> application/vnd.pmi.widget ‘<a
+href="http://Lewis">IANA,</a> application/vnd.poc.group-advertisement+xml
+’<a href="http://Kelley">IANA,</a>,[OMA Push to Talk over Cellular (POC)
+Working Group] application/vnd.pocketlearn ‘<a
+href="http://Pando">IANA,</a> application/vnd.powerbuilder6 ’<a
+href="http://Guy">IANA,</a> application/vnd.powerbuilder6-s ‘<a
+href="http://Guy">IANA,</a> application/vnd.powerbuilder7 ’<a
+href="http://Shilts">IANA,</a> application/vnd.powerbuilder7-s ‘<a
+href="http://Shilts">IANA,</a> application/vnd.powerbuilder75 ’<a
+href="http://Shilts">IANA,</a> application/vnd.powerbuilder75-s ‘<a
+href="http://Shilts">IANA,</a> application/vnd.preminet ’<a
+href="http://Tenhunen">IANA,</a> application/vnd.previewsystems.box ‘<a
+href="http://Smolgovsky">IANA,</a> application/vnd.proteus.magazine ’<a
+href="http://Hoch">IANA,</a> application/vnd.publishare-delta-tree ‘<a
+href="http://Ben-Kiki">IANA,</a> application/vnd.pvi.ptid1 @pti,ptid ’<a
+href="http://Lamb">IANA,</a> application/vnd.pwg-multiplexed ‘IANA,RFC3391
+application/vnd.pwg-xhtml-print+xml ’<a href="http://Wright">IANA,</a>
+application/vnd.qualcomm.brew-app-res ‘<a href="http://Forrester">IANA,</a>
+application/vnd.quobject-quoxdocument ’<a href="http://Ludwig">IANA,</a>
+application/vnd.radisys.moml+xml ‘IANA,RFC5707
+application/vnd.radisys.msml+xml ’IANA,RFC5707
+application/vnd.radisys.msml-audit+xml ‘IANA,RFC5707
+application/vnd.radisys.msml-audit-conf+xml ’IANA,RFC5707
+application/vnd.radisys.msml-audit-conn+xml ‘IANA,RFC5707
+application/vnd.radisys.msml-audit-dialog+xml ’IANA,RFC5707
+application/vnd.radisys.msml-audit-stream+xml ‘IANA,RFC5707
+application/vnd.radisys.msml-conf+xml ’IANA,RFC5707
+application/vnd.radisys.msml-dialog+xml ‘IANA,RFC5707
+application/vnd.radisys.msml-dialog-base+xml ’IANA,RFC5707
+application/vnd.radisys.msml-dialog-fax-detect+xml ‘IANA,RFC5707
+application/vnd.radisys.msml-dialog-fax-sendrecv+xml ’IANA,RFC5707
+application/vnd.radisys.msml-dialog-group+xml ‘IANA,RFC5707
+application/vnd.radisys.msml-dialog-speech+xml ’IANA,RFC5707
+application/vnd.radisys.msml-dialog-transform+xml ‘IANA,RFC5707
+application/vnd.rainstor.data ’<a href="http://Crook">IANA,</a>
+application/vnd.rapid ‘<a href="http://Szekely">IANA,</a>
+application/vnd.realvnc.bed ’<a href="http://Reeves">IANA,</a>
+application/vnd.recordare.musicxml ‘<a href="http://Good">IANA,</a>
+application/vnd.recordare.musicxml+xml ’<a href="http://Good">IANA,</a>
+application/vnd.rig.cryptonote ‘<a href="http://Jibiki">IANA,</a>
+application/vnd.route66.link66+xml ’<a href="http://Kikstra">IANA,</a>
+application/vnd.ruckus.download ‘<a href="http://Harris">IANA,</a>
+application/vnd.s3sms ’<a href="http://Tarkkala">IANA,</a>
+application/vnd.sailingtracker.track ‘<a href="http://Vesalainen">IANA,</a>
+application/vnd.sbm.cid ’<a href="http://Kusakari">IANA,</a>
+application/vnd.sbm.mid2 ‘<a href="http://Murai">IANA,</a>
+application/vnd.scribus ’<a href="http://Bradney">IANA,</a>
+application/vnd.sealed.3df ‘<a href="http://Kwan">IANA,</a>
+application/vnd.sealed.csf ’<a href="http://Kwan">IANA,</a>
+application/vnd.sealed.doc @sdoc,sdo,s1w ‘<a
+href="http://Petersen">IANA,</a> application/vnd.sealed.eml @seml,sem ’<a
+href="http://Petersen">IANA,</a> application/vnd.sealed.mht @smht,smh ‘<a
+href="http://Petersen">IANA,</a> application/vnd.sealed.net ’<a
+href="http://Lambert">IANA,</a> application/vnd.sealed.ppt @sppt,spp,s1p
+‘<a href="http://Petersen">IANA,</a> application/vnd.sealed.tiff ’<a
+href="http://Kwan">IANA,</a>,[Lambert] application/vnd.sealed.xls
+@sxls,sxl,s1e ‘<a href="http://Petersen">IANA,</a>
+application/vnd.sealedmedia.softseal.html @stml,stm,s1h ’<a
+href="http://Petersen">IANA,</a> application/vnd.sealedmedia.softseal.pdf
+@spdf,spd,s1a ‘<a href="http://Petersen">IANA,</a> application/vnd.seemail
+@see ’<a href="http://Webb">IANA,</a> application/vnd.sema ‘<a
+href="http://Hansson">IANA,</a> application/vnd.semd ’<a
+href="http://Hansson">IANA,</a> application/vnd.semf ‘<a
+href="http://Hansson">IANA,</a> application/vnd.shana.informed.formdata ’<a
+href="http://Selzler">IANA,</a> application/vnd.shana.informed.formtemplate
+‘<a href="http://Selzler">IANA,</a>
+application/vnd.shana.informed.interchange ’<a
+href="http://Selzler">IANA,</a> application/vnd.shana.informed.package ‘<a
+href="http://Selzler">IANA,</a> application/vnd.smaf @mmf ’<a
+href="http://Takahashi">IANA,</a> application/vnd.smart.notebook ‘<a
+href="http://Neitz">IANA,</a> application/vnd.smart.teacher ’<a
+href="http://Boyle">IANA,</a> application/vnd.software602.filler.form+xml
+‘<a href="http://Hytka">IANA,</a>,[Vondrous]
+application/vnd.software602.filler.form-xml-zip ’<a
+href="http://Hytka">IANA,</a>,[Vondrous] application/vnd.solent.sdkm+xml
+‘<a href="http://Gauntlett">IANA,</a> application/vnd.spotfire.dxp ’<a
+href="http://Jernberg">IANA,</a> application/vnd.spotfire.sfs ‘<a
+href="http://Jernberg">IANA,</a> application/vnd.sss-cod ’<a
+href="http://Dani">IANA,</a> application/vnd.sss-dtf ‘<a
+href="http://Bruno">IANA,</a> application/vnd.sss-ntf ’<a
+href="http://Bruno">IANA,</a> application/vnd.stepmania.package ‘<a
+href="http://Andersson">IANA,</a> application/vnd.stepmania.stepchart ’<a
+href="http://Andersson">IANA,</a> application/vnd.street-stream ‘<a
+href="http://Levitt">IANA,</a> application/vnd.sun.wadl+xml ’<a
+href="http://Hadley">IANA,</a> application/vnd.sus-calendar @sus,susp ‘<a
+href="http://Niedfeldt">IANA,</a> application/vnd.svd ’<a
+href="http://Becker">IANA,</a> application/vnd.swiftview-ics ‘<a
+href="http://Widener">IANA,</a> application/vnd.syncml+xml ’IANA,[OMA Data
+Synchronization Working Group] application/vnd.syncml.dm+wbxml
+‘IANA,[OMA-DM Work Group] application/vnd.syncml.dm+xml ’<a
+href="http://Rao">IANA,</a>,[OMA-DM Work Group]
+application/vnd.syncml.dm.notification ‘<a
+href="http://Thompson">IANA,</a>,[OMA-DM Work Group]
+application/vnd.syncml.ds.notification ’IANA,[OMA Data Synchronization
+Working Group] application/vnd.tao.intent-module-archive ‘<a
+href="http://Shelton">IANA,</a> application/vnd.tmobile-livetv ’<a
+href="http://Helin">IANA,</a> application/vnd.trid.tpt ‘<a
+href="http://Cusack">IANA,</a> application/vnd.triscape.mxs ’<a
+href="http://Simonoff">IANA,</a> application/vnd.trueapp ‘<a
+href="http://Hepler">IANA,</a> application/vnd.truedoc ’<a
+href="http://Chase">IANA,</a> application/vnd.ubisoft.webplayer ‘<a
+href="http://Talbot">IANA,</a> application/vnd.ufdl ’<a
+href="http://Manning">IANA,</a> application/vnd.uiq.theme ‘<a
+href="http://Ocock">IANA,</a> application/vnd.umajin ’<a
+href="http://Riden">IANA,</a> application/vnd.unity ‘<a
+href="http://Unity3d">IANA,</a> application/vnd.uoml+xml ’<a
+href="http://Gerdes">IANA,</a> application/vnd.uplanet.alert ‘<a
+href="http://Martin">IANA,</a> application/vnd.uplanet.alert-wbxml ’<a
+href="http://Martin">IANA,</a> application/vnd.uplanet.bearer-choice ‘<a
+href="http://Martin">IANA,</a> application/vnd.uplanet.bearer-choice-wbxml
+’<a href="http://Martin">IANA,</a> application/vnd.uplanet.cacheop ‘<a
+href="http://Martin">IANA,</a> application/vnd.uplanet.cacheop-wbxml ’<a
+href="http://Martin">IANA,</a> application/vnd.uplanet.channel ‘<a
+href="http://Martin">IANA,</a> application/vnd.uplanet.channel-wbxml ’<a
+href="http://Martin">IANA,</a> application/vnd.uplanet.list ‘<a
+href="http://Martin">IANA,</a> application/vnd.uplanet.list-wbxml ’<a
+href="http://Martin">IANA,</a> application/vnd.uplanet.listcmd ‘<a
+href="http://Martin">IANA,</a> application/vnd.uplanet.listcmd-wbxml ’<a
+href="http://Martin">IANA,</a> application/vnd.uplanet.signal ‘<a
+href="http://Martin">IANA,</a> application/vnd.vcx ’<a
+href="http://T.Sugimoto">IANA,</a> application/vnd.vd-study ‘<a
+href="http://Rogge">IANA,</a> application/vnd.vectorworks ’<a
+href="http://Ferguson">IANA,</a>,[Sarkar] application/vnd.verimatrix.vcas
+‘<a href="http://Peterka">IANA,</a> application/vnd.vidsoft.vidconference
+@vsc :8bit ’<a href="http://Hess">IANA,</a> application/vnd.visio
+@vsd,vst,vsw,vss ‘<a href="http://Sandal">IANA,</a>
+application/vnd.visionary @vis ’<a href="http://Aravindakumar">IANA,</a>
+application/vnd.vividence.scriptfile ‘<a href="http://Risher">IANA,</a>
+application/vnd.vsf ’<a href="http://Rowe">IANA,</a>
+application/vnd.wap.sic @sic ‘<a href="http://WAP-Forum">IANA,</a>
+application/vnd.wap.slc @slc ’<a href="http://WAP-Forum">IANA,</a>
+application/vnd.wap.wbxml @wbxml ‘<a href="http://Stark">IANA,</a>
+application/vnd.wap.wmlc @wmlc ’<a href="http://Stark">IANA,</a>
+application/vnd.wap.wmlscriptc @wmlsc ‘<a href="http://Stark">IANA,</a>
+application/vnd.webturbo @wtb ’<a href="http://Rehem">IANA,</a>
+application/vnd.wfa.wsc ‘IANA,[Wi-Fi Alliance] application/vnd.wmc ’<a
+href="http://Kjørnes=Kjornes">IANA,</a> application/vnd.wmf.bootstrap ‘<a
+href="http://Nguyenphu">IANA,</a>,[Iyer]
+application/vnd.wolfram.mathematica ’<a href="http://Wolfram">IANA,</a>
+application/vnd.wolfram.mathematica.package ‘<a
+href="http://Wolfram">IANA,</a> application/vnd.wolfram.player ’<a
+href="http://Wolfram">IANA,</a> application/vnd.wordperfect @wpd ‘<a
+href="http://Scarborough">IANA,</a> application/vnd.wqd @wqd ’<a
+href="http://Bostrom">IANA,</a> application/vnd.wrq-hp3000-labelled ‘<a
+href="http://Bartram">IANA,</a> application/vnd.wt.stf ’<a
+href="http://Wohler">IANA,</a> application/vnd.wv.csp+wbxml @wv ‘<a
+href="http://Salmi">IANA,</a> application/vnd.wv.csp+xml :8bit ’<a
+href="http://Ingimundarson">IANA,</a> application/vnd.wv.ssp+xml :8bit ‘<a
+href="http://Ingimundarson">IANA,</a> application/vnd.xara ’<a
+href="http://Matthewman">IANA,</a> application/vnd.xfdl ‘<a
+href="http://Manning">IANA,</a> application/vnd.xfdl.webform ’<a
+href="http://Mansell">IANA,</a> application/vnd.xmi+xml ‘<a
+href="http://Waskiewicz">IANA,</a> application/vnd.xmpie.cpkg ’<a
+href="http://Sherwin">IANA,</a> application/vnd.xmpie.dpkg ‘<a
+href="http://Sherwin">IANA,</a> application/vnd.xmpie.plan ’<a
+href="http://Sherwin">IANA,</a> application/vnd.xmpie.ppkg ‘<a
+href="http://Sherwin">IANA,</a> application/vnd.xmpie.xlim ’<a
+href="http://Sherwin">IANA,</a> application/vnd.yamaha.hv-dic @hvd ‘<a
+href="http://Yamamoto">IANA,</a> application/vnd.yamaha.hv-script @hvs ’<a
+href="http://Yamamoto">IANA,</a> application/vnd.yamaha.hv-voice @hvp ‘<a
+href="http://Yamamoto">IANA,</a> application/vnd.yamaha.openscoreformat ’<a
+href="http://Olleson">IANA,</a>
+application/vnd.yamaha.openscoreformat.osfpvg+xml ‘<a
+href="http://Olleson">IANA,</a> application/vnd.yamaha.remote-setup ’<a
+href="http://Sukizaki">IANA,</a> application/vnd.yamaha.smaf-audio @saf ‘<a
+href="http://Shinoda">IANA,</a> application/vnd.yamaha.smaf-phrase @spf ’<a
+href="http://Shinoda">IANA,</a> application/vnd.yamaha.through-ngn ‘<a
+href="http://Sukizaki">IANA,</a> application/vnd.yamaha.tunnel-udpencap ’<a
+href="http://Sukizaki">IANA,</a> application/vnd.yellowriver-custom-menu
+‘<a href="http://Yellow">IANA,</a> application/vnd.zul ’<a
+href="http://Grothmann">IANA,</a> application/vnd.zzazz.deck+xml ‘<a
+href="http://Hewett">IANA,</a> application/voicexml+xml ’IANA,RFC4267
+application/vq-rtcpxr ‘IANA,RFC6035 application/watcherinfo+xml @wif
+’IANA,RFC3858 application/whoispp-query ‘IANA,RFC2957
+application/whoispp-response ’IANA,RFC2958 application/widget ‘<a
+href="http://W3C">IANA,</a>,[Pemberton] application/wita ’<a
+href="http://Campbell">IANA,</a> application/wordperfect5.1 @wp5,wp ‘<a
+href="http://Lindner">IANA,</a> application/wsdl+xml ’<a
+href="http://W3C">IANA,</a> application/wspolicy+xml ‘<a
+href="http://W3C">IANA,</a> application/x400-bp ’IANA,RFC1494
+application/xcap-att+xml ‘IANA,RFC4825 application/xcap-caps+xml
+’IANA,RFC4825 application/xcap-diff+xml ‘IANA,RFC5874
+application/xcap-el+xml ’IANA,RFC4825 application/xcap-error+xml
+‘IANA,RFC4825 application/xcap-ns+xml ’IANA,RFC4825
+application/xcon-conference-info+xml
+‘IANA,{RFC-ietf-xcon-event-package-01.txt=<a
+href="http://tools.ietf.org/html/draft-ietf-xcon-event-package">tools.ietf.org/html/draft-ietf-xcon-event-package</a>}
+application/xcon-conference-info-diff+xml
+’IANA,{RFC-ietf-xcon-event-package-01.txt=<a
+href="http://tools.ietf.org/html/draft-ietf-xcon-event-package">tools.ietf.org/html/draft-ietf-xcon-event-package</a>}
+application/xenc+xml ‘<a href="http://Reagle">IANA,</a>,[XENC Working
+Group] application/xhtml+xml @xhtml :8bit ’IANA,RFC3236 application/xml
+@xml,xsl :8bit ‘IANA,RFC3023 application/xml-dtd @dtd :8bit ’IANA,RFC3023
+application/xml-external-parsed-entity ‘IANA,RFC3023 application/xmpp+xml
+’IANA,RFC3923 application/xop+xml ‘<a href="http://Nottingham">IANA,</a>
+application/xslt+xml @xslt ’<a href="http://W3C">IANA,</a>
+application/xv+xml ‘IANA,RFC4374 application/yang ’IANA,RFC6020
+application/yin+xml ‘IANA,RFC6020 application/zip @zip :base64 ’<a
+href="http://Lindner">IANA,</a></p>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

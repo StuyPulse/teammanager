@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module Arel::Predications - arel-3.0.2 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/arel/predications.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-does_not_match">#does_not_match</a>
+    
+    <li><a href="#method-i-does_not_match_all">#does_not_match_all</a>
+    
+    <li><a href="#method-i-does_not_match_any">#does_not_match_any</a>
+    
+    <li><a href="#method-i-eq">#eq</a>
+    
+    <li><a href="#method-i-eq_all">#eq_all</a>
+    
+    <li><a href="#method-i-eq_any">#eq_any</a>
+    
+    <li><a href="#method-i-gt">#gt</a>
+    
+    <li><a href="#method-i-gt_all">#gt_all</a>
+    
+    <li><a href="#method-i-gt_any">#gt_any</a>
+    
+    <li><a href="#method-i-gteq">#gteq</a>
+    
+    <li><a href="#method-i-gteq_all">#gteq_all</a>
+    
+    <li><a href="#method-i-gteq_any">#gteq_any</a>
+    
+    <li><a href="#method-i-in">#in</a>
+    
+    <li><a href="#method-i-in_all">#in_all</a>
+    
+    <li><a href="#method-i-in_any">#in_any</a>
+    
+    <li><a href="#method-i-lt">#lt</a>
+    
+    <li><a href="#method-i-lt_all">#lt_all</a>
+    
+    <li><a href="#method-i-lt_any">#lt_any</a>
+    
+    <li><a href="#method-i-lteq">#lteq</a>
+    
+    <li><a href="#method-i-lteq_all">#lteq_all</a>
+    
+    <li><a href="#method-i-lteq_any">#lteq_any</a>
+    
+    <li><a href="#method-i-matches">#matches</a>
+    
+    <li><a href="#method-i-matches_all">#matches_all</a>
+    
+    <li><a href="#method-i-matches_any">#matches_any</a>
+    
+    <li><a href="#method-i-not_eq">#not_eq</a>
+    
+    <li><a href="#method-i-not_eq_all">#not_eq_all</a>
+    
+    <li><a href="#method-i-not_eq_any">#not_eq_any</a>
+    
+    <li><a href="#method-i-not_in">#not_in</a>
+    
+    <li><a href="#method-i-not_in_all">#not_in_all</a>
+    
+    <li><a href="#method-i-not_in_any">#not_in_any</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../History_txt.html">History</a>
+  
+    <li class="file"><a href="../MIT-LICENSE_txt.html">MIT-LICENSE</a>
+  
+    <li class="file"><a href="../Manifest_txt.html">Manifest</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Arel.html">Arel</a>
+  
+    <li><a href="../Arel/AliasPredication.html">Arel::AliasPredication</a>
+  
+    <li><a href="../Arel/Attributes.html">Arel::Attributes</a>
+  
+    <li><a href="../Arel/Attributes/Attribute.html">Arel::Attributes::Attribute</a>
+  
+    <li><a href="../Arel/Attributes/Boolean.html">Arel::Attributes::Boolean</a>
+  
+    <li><a href="../Arel/Attributes/Decimal.html">Arel::Attributes::Decimal</a>
+  
+    <li><a href="../Arel/Attributes/Float.html">Arel::Attributes::Float</a>
+  
+    <li><a href="../Arel/Attributes/Integer.html">Arel::Attributes::Integer</a>
+  
+    <li><a href="../Arel/Attributes/String.html">Arel::Attributes::String</a>
+  
+    <li><a href="../Arel/Attributes/Time.html">Arel::Attributes::Time</a>
+  
+    <li><a href="../Arel/Attributes/Undefined.html">Arel::Attributes::Undefined</a>
+  
+    <li><a href="../Arel/Crud.html">Arel::Crud</a>
+  
+    <li><a href="../Arel/DeleteManager.html">Arel::DeleteManager</a>
+  
+    <li><a href="../Arel/Expression.html">Arel::Expression</a>
+  
+    <li><a href="../Arel/Expressions.html">Arel::Expressions</a>
+  
+    <li><a href="../Arel/FactoryMethods.html">Arel::FactoryMethods</a>
+  
+    <li><a href="../Arel/InsertManager.html">Arel::InsertManager</a>
+  
+    <li><a href="../Arel/Math.html">Arel::Math</a>
+  
+    <li><a href="../Arel/Nodes.html">Arel::Nodes</a>
+  
+    <li><a href="../Arel/Nodes/Addition.html">Arel::Nodes::Addition</a>
+  
+    <li><a href="../Arel/Nodes/And.html">Arel::Nodes::And</a>
+  
+    <li><a href="../Arel/Nodes/Ascending.html">Arel::Nodes::Ascending</a>
+  
+    <li><a href="../Arel/Nodes/Binary.html">Arel::Nodes::Binary</a>
+  
+    <li><a href="../Arel/Nodes/BindParam.html">Arel::Nodes::BindParam</a>
+  
+    <li><a href="../Arel/Nodes/Count.html">Arel::Nodes::Count</a>
+  
+    <li><a href="../Arel/Nodes/DeleteStatement.html">Arel::Nodes::DeleteStatement</a>
+  
+    <li><a href="../Arel/Nodes/Descending.html">Arel::Nodes::Descending</a>
+  
+    <li><a href="../Arel/Nodes/Distinct.html">Arel::Nodes::Distinct</a>
+  
+    <li><a href="../Arel/Nodes/Division.html">Arel::Nodes::Division</a>
+  
+    <li><a href="../Arel/Nodes/Equality.html">Arel::Nodes::Equality</a>
+  
+    <li><a href="../Arel/Nodes/False.html">Arel::Nodes::False</a>
+  
+    <li><a href="../Arel/Nodes/Function.html">Arel::Nodes::Function</a>
+  
+    <li><a href="../Arel/Nodes/In.html">Arel::Nodes::In</a>
+  
+    <li><a href="../Arel/Nodes/InfixOperation.html">Arel::Nodes::InfixOperation</a>
+  
+    <li><a href="../Arel/Nodes/InnerJoin.html">Arel::Nodes::InnerJoin</a>
+  
+    <li><a href="../Arel/Nodes/InsertStatement.html">Arel::Nodes::InsertStatement</a>
+  
+    <li><a href="../Arel/Nodes/JoinSource.html">Arel::Nodes::JoinSource</a>
+  
+    <li><a href="../Arel/Nodes/Multiplication.html">Arel::Nodes::Multiplication</a>
+  
+    <li><a href="../Arel/Nodes/NamedFunction.html">Arel::Nodes::NamedFunction</a>
+  
+    <li><a href="../Arel/Nodes/Node.html">Arel::Nodes::Node</a>
+  
+    <li><a href="../Arel/Nodes/Ordering.html">Arel::Nodes::Ordering</a>
+  
+    <li><a href="../Arel/Nodes/OuterJoin.html">Arel::Nodes::OuterJoin</a>
+  
+    <li><a href="../Arel/Nodes/SelectCore.html">Arel::Nodes::SelectCore</a>
+  
+    <li><a href="../Arel/Nodes/SelectStatement.html">Arel::Nodes::SelectStatement</a>
+  
+    <li><a href="../Arel/Nodes/SqlLiteral.html">Arel::Nodes::SqlLiteral</a>
+  
+    <li><a href="../Arel/Nodes/StringJoin.html">Arel::Nodes::StringJoin</a>
+  
+    <li><a href="../Arel/Nodes/Subtraction.html">Arel::Nodes::Subtraction</a>
+  
+    <li><a href="../Arel/Nodes/TableAlias.html">Arel::Nodes::TableAlias</a>
+  
+    <li><a href="../Arel/Nodes/True.html">Arel::Nodes::True</a>
+  
+    <li><a href="../Arel/Nodes/Unary.html">Arel::Nodes::Unary</a>
+  
+    <li><a href="../Arel/Nodes/UnqualifiedColumn.html">Arel::Nodes::UnqualifiedColumn</a>
+  
+    <li><a href="../Arel/Nodes/UpdateStatement.html">Arel::Nodes::UpdateStatement</a>
+  
+    <li><a href="../Arel/Nodes/Values.html">Arel::Nodes::Values</a>
+  
+    <li><a href="../Arel/Nodes/With.html">Arel::Nodes::With</a>
+  
+    <li><a href="../Arel/Nodes/WithRecursive.html">Arel::Nodes::WithRecursive</a>
+  
+    <li><a href="../Arel/OrderPredications.html">Arel::OrderPredications</a>
+  
+    <li><a href="../Arel/Predications.html">Arel::Predications</a>
+  
+    <li><a href="../Arel/Relation.html">Arel::Relation</a>
+  
+    <li><a href="../Arel/SelectManager.html">Arel::SelectManager</a>
+  
+    <li><a href="../Arel/Sql.html">Arel::Sql</a>
+  
+    <li><a href="../Arel/Sql/Engine.html">Arel::Sql::Engine</a>
+  
+    <li><a href="../Arel/SqlLiteral.html">Arel::SqlLiteral</a>
+  
+    <li><a href="../Arel/Table.html">Arel::Table</a>
+  
+    <li><a href="../Arel/TreeManager.html">Arel::TreeManager</a>
+  
+    <li><a href="../Arel/UpdateManager.html">Arel::UpdateManager</a>
+  
+    <li><a href="../Arel/Visitors.html">Arel::Visitors</a>
+  
+    <li><a href="../Arel/Visitors/BindVisitor.html">Arel::Visitors::BindVisitor</a>
+  
+    <li><a href="../Arel/Visitors/DepthFirst.html">Arel::Visitors::DepthFirst</a>
+  
+    <li><a href="../Arel/Visitors/Dot.html">Arel::Visitors::Dot</a>
+  
+    <li><a href="../Arel/Visitors/IBM_DB.html">Arel::Visitors::IBM_DB</a>
+  
+    <li><a href="../Arel/Visitors/Informix.html">Arel::Visitors::Informix</a>
+  
+    <li><a href="../Arel/Visitors/JoinSql.html">Arel::Visitors::JoinSql</a>
+  
+    <li><a href="../Arel/Visitors/MSSQL.html">Arel::Visitors::MSSQL</a>
+  
+    <li><a href="../Arel/Visitors/MySQL.html">Arel::Visitors::MySQL</a>
+  
+    <li><a href="../Arel/Visitors/Oracle.html">Arel::Visitors::Oracle</a>
+  
+    <li><a href="../Arel/Visitors/OrderClauses.html">Arel::Visitors::OrderClauses</a>
+  
+    <li><a href="../Arel/Visitors/PostgreSQL.html">Arel::Visitors::PostgreSQL</a>
+  
+    <li><a href="../Arel/Visitors/SQLite.html">Arel::Visitors::SQLite</a>
+  
+    <li><a href="../Arel/Visitors/ToSql.html">Arel::Visitors::ToSql</a>
+  
+    <li><a href="../Arel/Visitors/Visitor.html">Arel::Visitors::Visitor</a>
+  
+    <li><a href="../Arel/Visitors/WhereSql.html">Arel::Visitors::WhereSql</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Arel::Predications</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-does_not_match" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">does_not_match</span><span
+            class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="does_not_match-source">
+            <pre><span class="ruby-comment"># File lib/arel/predications.rb, line 91</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">does_not_match</span> <span class="ruby-identifier">other</span>
+  <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">DoesNotMatch</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">self</span>, <span class="ruby-identifier">other</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- does_not_match-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- does_not_match-method -->
+
+    
+      <div id="method-i-does_not_match_all" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">does_not_match_all</span><span
+            class="method-args">(others)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="does_not_match_all-source">
+            <pre><span class="ruby-comment"># File lib/arel/predications.rb, line 99</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">does_not_match_all</span> <span class="ruby-identifier">others</span>
+  <span class="ruby-identifier">grouping_all</span> <span class="ruby-value">:does_not_match</span>, <span class="ruby-identifier">others</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- does_not_match_all-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- does_not_match_all-method -->
+
+    
+      <div id="method-i-does_not_match_any" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">does_not_match_any</span><span
+            class="method-args">(others)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="does_not_match_any-source">
+            <pre><span class="ruby-comment"># File lib/arel/predications.rb, line 95</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">does_not_match_any</span> <span class="ruby-identifier">others</span>
+  <span class="ruby-identifier">grouping_any</span> <span class="ruby-value">:does_not_match</span>, <span class="ruby-identifier">others</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- does_not_match_any-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- does_not_match_any-method -->
+
+    
+      <div id="method-i-eq" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">eq</span><span
+            class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="eq-source">
+            <pre><span class="ruby-comment"># File lib/arel/predications.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">eq</span> <span class="ruby-identifier">other</span>
+  <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">Equality</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">self</span>, <span class="ruby-identifier">other</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- eq-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- eq-method -->
+
+    
+      <div id="method-i-eq_all" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">eq_all</span><span
+            class="method-args">(others)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="eq_all-source">
+            <pre><span class="ruby-comment"># File lib/arel/predications.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">eq_all</span> <span class="ruby-identifier">others</span>
+  <span class="ruby-identifier">grouping_all</span> <span class="ruby-value">:eq</span>, <span class="ruby-identifier">others</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- eq_all-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- eq_all-method -->
+
+    
+      <div id="method-i-eq_any" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">eq_any</span><span
+            class="method-args">(others)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="eq_any-source">
+            <pre><span class="ruby-comment"># File lib/arel/predications.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">eq_any</span> <span class="ruby-identifier">others</span>
+  <span class="ruby-identifier">grouping_any</span> <span class="ruby-value">:eq</span>, <span class="ruby-identifier">others</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- eq_any-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- eq_any-method -->
+
+    
+      <div id="method-i-gt" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">gt</span><span
+            class="method-args">(right)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="gt-source">
+            <pre><span class="ruby-comment"># File lib/arel/predications.rb, line 115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">gt</span> <span class="ruby-identifier">right</span>
+  <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">GreaterThan</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">self</span>, <span class="ruby-identifier">right</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- gt-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- gt-method -->
+
+    
+      <div id="method-i-gt_all" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">gt_all</span><span
+            class="method-args">(others)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="gt_all-source">
+            <pre><span class="ruby-comment"># File lib/arel/predications.rb, line 123</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">gt_all</span> <span class="ruby-identifier">others</span>
+  <span class="ruby-identifier">grouping_all</span> <span class="ruby-value">:gt</span>, <span class="ruby-identifier">others</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- gt_all-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- gt_all-method -->
+
+    
+      <div id="method-i-gt_any" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">gt_any</span><span
+            class="method-args">(others)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="gt_any-source">
+            <pre><span class="ruby-comment"># File lib/arel/predications.rb, line 119</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">gt_any</span> <span class="ruby-identifier">others</span>
+  <span class="ruby-identifier">grouping_any</span> <span class="ruby-value">:gt</span>, <span class="ruby-identifier">others</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- gt_any-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- gt_any-method -->
+
+    
+      <div id="method-i-gteq" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">gteq</span><span
+            class="method-args">(right)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="gteq-source">
+            <pre><span class="ruby-comment"># File lib/arel/predications.rb, line 103</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">gteq</span> <span class="ruby-identifier">right</span>
+  <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">GreaterThanOrEqual</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">self</span>, <span class="ruby-identifier">right</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- gteq-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- gteq-method -->
+
+    
+      <div id="method-i-gteq_all" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">gteq_all</span><span
+            class="method-args">(others)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="gteq_all-source">
+            <pre><span class="ruby-comment"># File lib/arel/predications.rb, line 111</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">gteq_all</span> <span class="ruby-identifier">others</span>
+  <span class="ruby-identifier">grouping_all</span> <span class="ruby-value">:gteq</span>, <span class="ruby-identifier">others</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- gteq_all-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- gteq_all-method -->
+
+    
+      <div id="method-i-gteq_any" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">gteq_any</span><span
+            class="method-args">(others)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="gteq_any-source">
+            <pre><span class="ruby-comment"># File lib/arel/predications.rb, line 107</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">gteq_any</span> <span class="ruby-identifier">others</span>
+  <span class="ruby-identifier">grouping_any</span> <span class="ruby-value">:gteq</span>, <span class="ruby-identifier">others</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- gteq_any-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- gteq_any-method -->
+
+    
+      <div id="method-i-in" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">in</span><span
+            class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="in-source">
+            <pre><span class="ruby-comment"># File lib/arel/predications.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">other</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">other</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Arel</span><span class="ruby-operator">::</span><span class="ruby-constant">SelectManager</span>
+    <span class="ruby-constant">Arel</span><span class="ruby-operator">::</span><span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">In</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">ast</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Range</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">exclude_end?</span>
+      <span class="ruby-identifier">left</span>  = <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">GreaterThanOrEqual</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">begin</span>)
+      <span class="ruby-identifier">right</span> = <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">LessThan</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">end</span>)
+      <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">And</span>.<span class="ruby-identifier">new</span> [<span class="ruby-identifier">left</span>, <span class="ruby-identifier">right</span>]
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">Between</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">And</span>.<span class="ruby-identifier">new</span>([<span class="ruby-identifier">other</span>.<span class="ruby-identifier">begin</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">end</span>]))
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">In</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">self</span>, <span class="ruby-identifier">other</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- in-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- in-method -->
+
+    
+      <div id="method-i-in_all" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">in_all</span><span
+            class="method-args">(others)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="in_all-source">
+            <pre><span class="ruby-comment"># File lib/arel/predications.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">in_all</span> <span class="ruby-identifier">others</span>
+  <span class="ruby-identifier">grouping_all</span> <span class="ruby-value">:in</span>, <span class="ruby-identifier">others</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- in_all-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- in_all-method -->
+
+    
+      <div id="method-i-in_any" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">in_any</span><span
+            class="method-args">(others)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="in_any-source">
+            <pre><span class="ruby-comment"># File lib/arel/predications.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">in_any</span> <span class="ruby-identifier">others</span>
+  <span class="ruby-identifier">grouping_any</span> <span class="ruby-value">:in</span>, <span class="ruby-identifier">others</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- in_any-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- in_any-method -->
+
+    
+      <div id="method-i-lt" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">lt</span><span
+            class="method-args">(right)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="lt-source">
+            <pre><span class="ruby-comment"># File lib/arel/predications.rb, line 127</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">lt</span> <span class="ruby-identifier">right</span>
+  <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">LessThan</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">self</span>, <span class="ruby-identifier">right</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- lt-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- lt-method -->
+
+    
+      <div id="method-i-lt_all" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">lt_all</span><span
+            class="method-args">(others)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="lt_all-source">
+            <pre><span class="ruby-comment"># File lib/arel/predications.rb, line 135</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">lt_all</span> <span class="ruby-identifier">others</span>
+  <span class="ruby-identifier">grouping_all</span> <span class="ruby-value">:lt</span>, <span class="ruby-identifier">others</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- lt_all-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- lt_all-method -->
+
+    
+      <div id="method-i-lt_any" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">lt_any</span><span
+            class="method-args">(others)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="lt_any-source">
+            <pre><span class="ruby-comment"># File lib/arel/predications.rb, line 131</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">lt_any</span> <span class="ruby-identifier">others</span>
+  <span class="ruby-identifier">grouping_any</span> <span class="ruby-value">:lt</span>, <span class="ruby-identifier">others</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- lt_any-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- lt_any-method -->
+
+    
+      <div id="method-i-lteq" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">lteq</span><span
+            class="method-args">(right)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="lteq-source">
+            <pre><span class="ruby-comment"># File lib/arel/predications.rb, line 139</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">lteq</span> <span class="ruby-identifier">right</span>
+  <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">LessThanOrEqual</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">self</span>, <span class="ruby-identifier">right</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- lteq-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- lteq-method -->
+
+    
+      <div id="method-i-lteq_all" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">lteq_all</span><span
+            class="method-args">(others)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="lteq_all-source">
+            <pre><span class="ruby-comment"># File lib/arel/predications.rb, line 147</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">lteq_all</span> <span class="ruby-identifier">others</span>
+  <span class="ruby-identifier">grouping_all</span> <span class="ruby-value">:lteq</span>, <span class="ruby-identifier">others</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- lteq_all-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- lteq_all-method -->
+
+    
+      <div id="method-i-lteq_any" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">lteq_any</span><span
+            class="method-args">(others)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="lteq_any-source">
+            <pre><span class="ruby-comment"># File lib/arel/predications.rb, line 143</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">lteq_any</span> <span class="ruby-identifier">others</span>
+  <span class="ruby-identifier">grouping_any</span> <span class="ruby-value">:lteq</span>, <span class="ruby-identifier">others</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- lteq_any-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- lteq_any-method -->
+
+    
+      <div id="method-i-matches" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">matches</span><span
+            class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="matches-source">
+            <pre><span class="ruby-comment"># File lib/arel/predications.rb, line 79</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">matches</span> <span class="ruby-identifier">other</span>
+  <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">Matches</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">self</span>, <span class="ruby-identifier">other</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- matches-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- matches-method -->
+
+    
+      <div id="method-i-matches_all" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">matches_all</span><span
+            class="method-args">(others)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="matches_all-source">
+            <pre><span class="ruby-comment"># File lib/arel/predications.rb, line 87</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">matches_all</span> <span class="ruby-identifier">others</span>
+  <span class="ruby-identifier">grouping_all</span> <span class="ruby-value">:matches</span>, <span class="ruby-identifier">others</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- matches_all-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- matches_all-method -->
+
+    
+      <div id="method-i-matches_any" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">matches_any</span><span
+            class="method-args">(others)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="matches_any-source">
+            <pre><span class="ruby-comment"># File lib/arel/predications.rb, line 83</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">matches_any</span> <span class="ruby-identifier">others</span>
+  <span class="ruby-identifier">grouping_any</span> <span class="ruby-value">:matches</span>, <span class="ruby-identifier">others</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- matches_any-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- matches_any-method -->
+
+    
+      <div id="method-i-not_eq" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">not_eq</span><span
+            class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="not_eq-source">
+            <pre><span class="ruby-comment"># File lib/arel/predications.rb, line 3</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">not_eq</span> <span class="ruby-identifier">other</span>
+  <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">NotEqual</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">self</span>, <span class="ruby-identifier">other</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- not_eq-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- not_eq-method -->
+
+    
+      <div id="method-i-not_eq_all" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">not_eq_all</span><span
+            class="method-args">(others)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="not_eq_all-source">
+            <pre><span class="ruby-comment"># File lib/arel/predications.rb, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">not_eq_all</span> <span class="ruby-identifier">others</span>
+  <span class="ruby-identifier">grouping_all</span> <span class="ruby-value">:not_eq</span>, <span class="ruby-identifier">others</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- not_eq_all-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- not_eq_all-method -->
+
+    
+      <div id="method-i-not_eq_any" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">not_eq_any</span><span
+            class="method-args">(others)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="not_eq_any-source">
+            <pre><span class="ruby-comment"># File lib/arel/predications.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">not_eq_any</span> <span class="ruby-identifier">others</span>
+  <span class="ruby-identifier">grouping_any</span> <span class="ruby-value">:not_eq</span>, <span class="ruby-identifier">others</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- not_eq_any-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- not_eq_any-method -->
+
+    
+      <div id="method-i-not_in" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">not_in</span><span
+            class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="not_in-source">
+            <pre><span class="ruby-comment"># File lib/arel/predications.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">not_in</span> <span class="ruby-identifier">other</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">other</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Arel</span><span class="ruby-operator">::</span><span class="ruby-constant">SelectManager</span>
+    <span class="ruby-constant">Arel</span><span class="ruby-operator">::</span><span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">NotIn</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">ast</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Range</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">exclude_end?</span>
+      <span class="ruby-identifier">left</span>  = <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">LessThan</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">begin</span>)
+      <span class="ruby-identifier">right</span> = <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">GreaterThanOrEqual</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">end</span>)
+      <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">Or</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">left</span>, <span class="ruby-identifier">right</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">left</span>  = <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">LessThan</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">begin</span>)
+      <span class="ruby-identifier">right</span> = <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">GreaterThan</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">end</span>)
+      <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">Or</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">left</span>, <span class="ruby-identifier">right</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">NotIn</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">self</span>, <span class="ruby-identifier">other</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- not_in-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- not_in-method -->
+
+    
+      <div id="method-i-not_in_all" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">not_in_all</span><span
+            class="method-args">(others)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="not_in_all-source">
+            <pre><span class="ruby-comment"># File lib/arel/predications.rb, line 75</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">not_in_all</span> <span class="ruby-identifier">others</span>
+  <span class="ruby-identifier">grouping_all</span> <span class="ruby-value">:not_in</span>, <span class="ruby-identifier">others</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- not_in_all-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- not_in_all-method -->
+
+    
+      <div id="method-i-not_in_any" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">not_in_any</span><span
+            class="method-args">(others)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="not_in_any-source">
+            <pre><span class="ruby-comment"># File lib/arel/predications.rb, line 71</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">not_in_any</span> <span class="ruby-identifier">others</span>
+  <span class="ruby-identifier">grouping_any</span> <span class="ruby-value">:not_in</span>, <span class="ruby-identifier">others</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- not_in_any-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- not_in_any-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

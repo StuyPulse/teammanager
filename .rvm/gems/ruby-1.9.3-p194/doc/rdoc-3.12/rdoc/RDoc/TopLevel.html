@@ -1,0 +1,2274 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class RDoc::TopLevel - rdoc-3.12 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/rdoc/generator/markup.rb
+    <li>lib/rdoc/top_level.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="Context.html">RDoc::Context</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-all_classes">::all_classes</a>
+    
+    <li><a href="#method-c-all_classes_and_modules">::all_classes_and_modules</a>
+    
+    <li><a href="#method-c-all_classes_hash">::all_classes_hash</a>
+    
+    <li><a href="#method-c-all_files">::all_files</a>
+    
+    <li><a href="#method-c-all_files_hash">::all_files_hash</a>
+    
+    <li><a href="#method-c-all_modules">::all_modules</a>
+    
+    <li><a href="#method-c-all_modules_hash">::all_modules_hash</a>
+    
+    <li><a href="#method-c-classes">::classes</a>
+    
+    <li><a href="#method-c-classes_hash">::classes_hash</a>
+    
+    <li><a href="#method-c-complete">::complete</a>
+    
+    <li><a href="#method-c-files">::files</a>
+    
+    <li><a href="#method-c-files_hash">::files_hash</a>
+    
+    <li><a href="#method-c-find_class_named">::find_class_named</a>
+    
+    <li><a href="#method-c-find_class_named_from">::find_class_named_from</a>
+    
+    <li><a href="#method-c-find_class_or_module">::find_class_or_module</a>
+    
+    <li><a href="#method-c-find_file_named">::find_file_named</a>
+    
+    <li><a href="#method-c-find_module_named">::find_module_named</a>
+    
+    <li><a href="#method-c-find_unique">::find_unique</a>
+    
+    <li><a href="#method-c-fix_basic_object_inheritance">::fix_basic_object_inheritance</a>
+    
+    <li><a href="#method-c-modules">::modules</a>
+    
+    <li><a href="#method-c-modules_hash">::modules_hash</a>
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-c-page">::page</a>
+    
+    <li><a href="#method-c-remove_nodoc">::remove_nodoc</a>
+    
+    <li><a href="#method-c-reset">::reset</a>
+    
+    <li><a href="#method-c-unique_classes">::unique_classes</a>
+    
+    <li><a href="#method-c-unique_classes_and_modules">::unique_classes_and_modules</a>
+    
+    <li><a href="#method-c-unique_modules">::unique_modules</a>
+    
+    <li><a href="#method-i-3D-3D">#==</a>
+    
+    <li><a href="#method-i-add_alias">#add_alias</a>
+    
+    <li><a href="#method-i-add_constant">#add_constant</a>
+    
+    <li><a href="#method-i-add_include">#add_include</a>
+    
+    <li><a href="#method-i-add_method">#add_method</a>
+    
+    <li><a href="#method-i-add_to_classes_or_modules">#add_to_classes_or_modules</a>
+    
+    <li><a href="#method-i-base_name">#base_name</a>
+    
+    <li><a href="#method-i-cvs_url">#cvs_url</a>
+    
+    <li><a href="#method-i-display-3F">#display?</a>
+    
+    <li><a href="#method-i-eql-3F">#eql?</a>
+    
+    <li><a href="#method-i-find_class_or_module">#find_class_or_module</a>
+    
+    <li><a href="#method-i-find_local_symbol">#find_local_symbol</a>
+    
+    <li><a href="#method-i-find_module_named">#find_module_named</a>
+    
+    <li><a href="#method-i-full_name">#full_name</a>
+    
+    <li><a href="#method-i-hash">#hash</a>
+    
+    <li><a href="#method-i-http_url">#http_url</a>
+    
+    <li><a href="#method-i-last_modified">#last_modified</a>
+    
+    <li><a href="#method-i-name">#name</a>
+    
+    <li><a href="#method-i-object_class">#object_class</a>
+    
+    <li><a href="#method-i-page_name">#page_name</a>
+    
+    <li><a href="#method-i-path">#path</a>
+    
+    <li><a href="#method-i-search_record">#search_record</a>
+    
+    <li><a href="#method-i-text-3F">#text?</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../DEVELOPERS_rdoc.html">DEVELOPERS</a>
+  
+    <li class="file"><a href="../History_rdoc.html">History</a>
+  
+    <li class="file"><a href="../LEGAL_rdoc.html">LEGAL</a>
+  
+    <li class="file"><a href="../LICENSE_rdoc.html">LICENSE</a>
+  
+    <li class="file"><a href="../Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="../README_rdoc.html">README</a>
+  
+    <li class="file"><a href="../RI_rdoc.html">RI</a>
+  
+    <li class="file"><a href="../Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="../TODO_rdoc.html">TODO</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../RDoc.html">RDoc</a>
+  
+    <li><a href="../RDoc/Alias.html">RDoc::Alias</a>
+  
+    <li><a href="../RDoc/AnonClass.html">RDoc::AnonClass</a>
+  
+    <li><a href="../RDoc/AnyMethod.html">RDoc::AnyMethod</a>
+  
+    <li><a href="../RDoc/Attr.html">RDoc::Attr</a>
+  
+    <li><a href="../RDoc/ClassModule.html">RDoc::ClassModule</a>
+  
+    <li><a href="../RDoc/CodeObject.html">RDoc::CodeObject</a>
+  
+    <li><a href="../RDoc/Comment.html">RDoc::Comment</a>
+  
+    <li><a href="../RDoc/Constant.html">RDoc::Constant</a>
+  
+    <li><a href="../RDoc/Context.html">RDoc::Context</a>
+  
+    <li><a href="../RDoc/Context/Section.html">RDoc::Context::Section</a>
+  
+    <li><a href="../RDoc/CrossReference.html">RDoc::CrossReference</a>
+  
+    <li><a href="../RDoc/ERBIO.html">RDoc::ERBIO</a>
+  
+    <li><a href="../RDoc/Encoding.html">RDoc::Encoding</a>
+  
+    <li><a href="../RDoc/Error.html">RDoc::Error</a>
+  
+    <li><a href="../RDoc/Gauntlet.html">RDoc::Gauntlet</a>
+  
+    <li><a href="../RDoc/Generator.html">RDoc::Generator</a>
+  
+    <li><a href="../RDoc/Generator/Darkfish.html">RDoc::Generator::Darkfish</a>
+  
+    <li><a href="../RDoc/Generator/JsonIndex.html">RDoc::Generator::JsonIndex</a>
+  
+    <li><a href="../RDoc/Generator/Markup.html">RDoc::Generator::Markup</a>
+  
+    <li><a href="../RDoc/Generator/RI.html">RDoc::Generator::RI</a>
+  
+    <li><a href="../RDoc/GhostMethod.html">RDoc::GhostMethod</a>
+  
+    <li><a href="../RDoc/Include.html">RDoc::Include</a>
+  
+    <li><a href="../RDoc/Markup.html">RDoc::Markup</a>
+  
+    <li><a href="../RDoc/Markup/AttrChanger.html">RDoc::Markup::AttrChanger</a>
+  
+    <li><a href="../RDoc/Markup/AttrSpan.html">RDoc::Markup::AttrSpan</a>
+  
+    <li><a href="../RDoc/Markup/Attribute.html">RDoc::Markup::Attribute</a>
+  
+    <li><a href="../RDoc/Markup/AttributeManager.html">RDoc::Markup::AttributeManager</a>
+  
+    <li><a href="../RDoc/Markup/BlankLine.html">RDoc::Markup::BlankLine</a>
+  
+    <li><a href="../RDoc/Markup/Document.html">RDoc::Markup::Document</a>
+  
+    <li><a href="../RDoc/Markup/Formatter.html">RDoc::Markup::Formatter</a>
+  
+    <li><a href="../RDoc/Markup/FormatterTestCase.html">RDoc::Markup::FormatterTestCase</a>
+  
+    <li><a href="../RDoc/Markup/Heading.html">RDoc::Markup::Heading</a>
+  
+    <li><a href="../RDoc/Markup/Include.html">RDoc::Markup::Include</a>
+  
+    <li><a href="../RDoc/Markup/IndentedParagraph.html">RDoc::Markup::IndentedParagraph</a>
+  
+    <li><a href="../RDoc/Markup/List.html">RDoc::Markup::List</a>
+  
+    <li><a href="../RDoc/Markup/ListItem.html">RDoc::Markup::ListItem</a>
+  
+    <li><a href="../RDoc/Markup/Paragraph.html">RDoc::Markup::Paragraph</a>
+  
+    <li><a href="../RDoc/Markup/Parser.html">RDoc::Markup::Parser</a>
+  
+    <li><a href="../RDoc/Markup/Parser/Error.html">RDoc::Markup::Parser::Error</a>
+  
+    <li><a href="../RDoc/Markup/Parser/ParseError.html">RDoc::Markup::Parser::ParseError</a>
+  
+    <li><a href="../RDoc/Markup/PreProcess.html">RDoc::Markup::PreProcess</a>
+  
+    <li><a href="../RDoc/Markup/Raw.html">RDoc::Markup::Raw</a>
+  
+    <li><a href="../RDoc/Markup/Rule.html">RDoc::Markup::Rule</a>
+  
+    <li><a href="../RDoc/Markup/Special.html">RDoc::Markup::Special</a>
+  
+    <li><a href="../RDoc/Markup/TextFormatterTestCase.html">RDoc::Markup::TextFormatterTestCase</a>
+  
+    <li><a href="../RDoc/Markup/ToAnsi.html">RDoc::Markup::ToAnsi</a>
+  
+    <li><a href="../RDoc/Markup/ToBs.html">RDoc::Markup::ToBs</a>
+  
+    <li><a href="../RDoc/Markup/ToHtml.html">RDoc::Markup::ToHtml</a>
+  
+    <li><a href="../RDoc/Markup/ToHtmlCrossref.html">RDoc::Markup::ToHtmlCrossref</a>
+  
+    <li><a href="../RDoc/Markup/ToHtmlSnippet.html">RDoc::Markup::ToHtmlSnippet</a>
+  
+    <li><a href="../RDoc/Markup/ToLabel.html">RDoc::Markup::ToLabel</a>
+  
+    <li><a href="../RDoc/Markup/ToRdoc.html">RDoc::Markup::ToRdoc</a>
+  
+    <li><a href="../RDoc/Markup/ToTableOfContents.html">RDoc::Markup::ToTableOfContents</a>
+  
+    <li><a href="../RDoc/Markup/ToTest.html">RDoc::Markup::ToTest</a>
+  
+    <li><a href="../RDoc/Markup/ToTtOnly.html">RDoc::Markup::ToTtOnly</a>
+  
+    <li><a href="../RDoc/Markup/Verbatim.html">RDoc::Markup::Verbatim</a>
+  
+    <li><a href="../RDoc/MetaMethod.html">RDoc::MetaMethod</a>
+  
+    <li><a href="../RDoc/MethodAttr.html">RDoc::MethodAttr</a>
+  
+    <li><a href="../RDoc/NormalClass.html">RDoc::NormalClass</a>
+  
+    <li><a href="../RDoc/NormalModule.html">RDoc::NormalModule</a>
+  
+    <li><a href="../RDoc/Options.html">RDoc::Options</a>
+  
+    <li><a href="../RDoc/Parser.html">RDoc::Parser</a>
+  
+    <li><a href="../RDoc/Parser/C.html">RDoc::Parser::C</a>
+  
+    <li><a href="../RDoc/Parser/RD.html">RDoc::Parser::RD</a>
+  
+    <li><a href="../RDoc/Parser/Ruby.html">RDoc::Parser::Ruby</a>
+  
+    <li><a href="../RDoc/Parser/RubyTools.html">RDoc::Parser::RubyTools</a>
+  
+    <li><a href="../RDoc/Parser/Simple.html">RDoc::Parser::Simple</a>
+  
+    <li><a href="../RDoc/Parser/Text.html">RDoc::Parser::Text</a>
+  
+    <li><a href="../RDoc/RD.html">RDoc::RD</a>
+  
+    <li><a href="../RDoc/RD/Inline.html">RDoc::RD::Inline</a>
+  
+    <li><a href="../RDoc/RDoc.html">RDoc::RDoc</a>
+  
+    <li><a href="../RDoc/RI.html">RDoc::RI</a>
+  
+    <li><a href="../RDoc/RI/Driver.html">RDoc::RI::Driver</a>
+  
+    <li><a href="../RDoc/RI/Driver/Error.html">RDoc::RI::Driver::Error</a>
+  
+    <li><a href="../RDoc/RI/Driver/NotFoundError.html">RDoc::RI::Driver::NotFoundError</a>
+  
+    <li><a href="../RDoc/RI/Error.html">RDoc::RI::Error</a>
+  
+    <li><a href="../RDoc/RI/Paths.html">RDoc::RI::Paths</a>
+  
+    <li><a href="../RDoc/RI/Store.html">RDoc::RI::Store</a>
+  
+    <li><a href="../RDoc/Require.html">RDoc::Require</a>
+  
+    <li><a href="../RDoc/RubyLex.html">RDoc::RubyLex</a>
+  
+    <li><a href="../RDoc/RubyLex/Error.html">RDoc::RubyLex::Error</a>
+  
+    <li><a href="../RDoc/RubyToken.html">RDoc::RubyToken</a>
+  
+    <li><a href="../RDoc/RubygemsHook.html">RDoc::RubygemsHook</a>
+  
+    <li><a href="../RDoc/SingleClass.html">RDoc::SingleClass</a>
+  
+    <li><a href="../RDoc/Stats.html">RDoc::Stats</a>
+  
+    <li><a href="../RDoc/Stats/Normal.html">RDoc::Stats::Normal</a>
+  
+    <li><a href="../RDoc/Stats/Quiet.html">RDoc::Stats::Quiet</a>
+  
+    <li><a href="../RDoc/Stats/Verbose.html">RDoc::Stats::Verbose</a>
+  
+    <li><a href="../RDoc/Task.html">RDoc::Task</a>
+  
+    <li><a href="../RDoc/Task.html">RDoc::Task</a>
+  
+    <li><a href="../RDoc/TestCase.html">RDoc::TestCase</a>
+  
+    <li><a href="../RDoc/Text.html">RDoc::Text</a>
+  
+    <li><a href="../RDoc/TokenStream.html">RDoc::TokenStream</a>
+  
+    <li><a href="../RDoc/TomDoc.html">RDoc::TomDoc</a>
+  
+    <li><a href="../RDoc/TopLevel.html">RDoc::TopLevel</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class RDoc::TopLevel</h1>
+
+  <div id="description" class="description">
+    
+<p>A <a href="TopLevel.html">TopLevel</a> context is a representation of the
+contents of a single file</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-absolute_name" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">absolute_name</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Absolute name of this file</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-classes_or_modules" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">classes_or_modules</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>All the classes or modules that were declared in this file. These are
+assigned to either <code>#classes_hash</code> or <code>#modules_hash</code>
+once we know what they really are.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-file_stat" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">file_stat</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>This TopLevel’s File::Stat struct</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-parser" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">parser</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>The parser that processed this file</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-relative_name" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">relative_name</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Relative name of this file</p>
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-all_classes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">all_classes</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns all classes discovered by <a href="RDoc.html">RDoc</a></p>
+          
+
+          
+          <div class="method-source-code" id="all_classes-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">all_classes</span>
+  <span class="ruby-ivar">@all_classes_hash</span>.<span class="ruby-identifier">values</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- all_classes-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="TopLevel.html#method-c-classes">classes</a>
+        </div>
+        
+
+        
+      </div><!-- all_classes-method -->
+
+    
+      <div id="method-c-all_classes_and_modules" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">all_classes_and_modules</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns all classes and modules discovered by <a href="RDoc.html">RDoc</a></p>
+          
+
+          
+          <div class="method-source-code" id="all_classes_and_modules-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">all_classes_and_modules</span>
+  <span class="ruby-ivar">@all_classes_hash</span>.<span class="ruby-identifier">values</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@all_modules_hash</span>.<span class="ruby-identifier">values</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- all_classes_and_modules-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- all_classes_and_modules-method -->
+
+    
+      <div id="method-c-all_classes_hash" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">all_classes_hash</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Hash of all classes known to <a href="RDoc.html">RDoc</a></p>
+          
+
+          
+          <div class="method-source-code" id="all_classes_hash-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">all_classes_hash</span>
+  <span class="ruby-ivar">@all_classes_hash</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- all_classes_hash-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="TopLevel.html#method-c-classes_hash">classes_hash</a>
+        </div>
+        
+
+        
+      </div><!-- all_classes_hash-method -->
+
+    
+      <div id="method-c-all_files" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">all_files</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>All TopLevels known to <a href="RDoc.html">RDoc</a></p>
+          
+
+          
+          <div class="method-source-code" id="all_files-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 59</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">all_files</span>
+  <span class="ruby-ivar">@all_files_hash</span>.<span class="ruby-identifier">values</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- all_files-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="TopLevel.html#method-c-files">files</a>
+        </div>
+        
+
+        
+      </div><!-- all_files-method -->
+
+    
+      <div id="method-c-all_files_hash" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">all_files_hash</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Hash of all files known to <a href="RDoc.html">RDoc</a></p>
+          
+
+          
+          <div class="method-source-code" id="all_files_hash-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 66</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">all_files_hash</span>
+  <span class="ruby-ivar">@all_files_hash</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- all_files_hash-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="TopLevel.html#method-c-files_hash">files_hash</a>
+        </div>
+        
+
+        
+      </div><!-- all_files_hash-method -->
+
+    
+      <div id="method-c-all_modules" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">all_modules</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns all modules discovered by <a href="RDoc.html">RDoc</a></p>
+          
+
+          
+          <div class="method-source-code" id="all_modules-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">all_modules</span>
+  <span class="ruby-identifier">all_modules_hash</span>.<span class="ruby-identifier">values</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- all_modules-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="TopLevel.html#method-c-modules">modules</a>
+        </div>
+        
+
+        
+      </div><!-- all_modules-method -->
+
+    
+      <div id="method-c-all_modules_hash" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">all_modules_hash</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Hash of all modules known to <a href="RDoc.html">RDoc</a></p>
+          
+
+          
+          <div class="method-source-code" id="all_modules_hash-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 80</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">all_modules_hash</span>
+  <span class="ruby-ivar">@all_modules_hash</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- all_modules_hash-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="TopLevel.html#method-c-modules_hash">modules_hash</a>
+        </div>
+        
+
+        
+      </div><!-- all_modules_hash-method -->
+
+    
+      <div id="method-c-classes" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">classes</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="TopLevel.html#method-c-all_classes">all_classes</a>
+        </div>
+        
+      </div><!-- classes-method -->
+
+    
+      <div id="method-c-classes_hash" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">classes_hash</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="TopLevel.html#method-c-all_classes_hash">all_classes_hash</a>
+        </div>
+        
+      </div><!-- classes_hash-method -->
+
+    
+      <div id="method-c-complete" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">complete</span><span
+            class="method-args">(min_visibility)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Prepares the <a href="RDoc.html">RDoc</a> code object tree for use by a
+generator.</p>
+
+<p>It finds unique classes/modules defined, and replaces classes/modules that
+are aliases for another one by a copy with <a
+href="ClassModule.html#attribute-i-is_alias_for">RDoc::ClassModule#is_alias_for</a>
+set.</p>
+
+<p>It updates the <a
+href="ClassModule.html#attribute-i-constant_aliases">RDoc::ClassModule#constant_aliases</a>
+attribute of “real” classes or modules.</p>
+
+<p>It also completely removes the classes and modules that should be removed
+from the documentation and the methods that have a visibility below
+<code>min_visibility</code>, which is the <code>--visibility</code> option.</p>
+
+<p>See also <a
+href="Context.html#method-i-remove_from_documentation-3F">RDoc::Context#remove_from_documentation?</a></p>
+          
+
+          
+          <div class="method-source-code" id="complete-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 100</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">complete</span> <span class="ruby-identifier">min_visibility</span>
+  <span class="ruby-identifier">fix_basic_object_inheritance</span>
+
+  <span class="ruby-comment"># cache included modules before they are removed from the documentation</span>
+  <span class="ruby-identifier">all_classes_and_modules</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">cm</span><span class="ruby-operator">|</span> <span class="ruby-identifier">cm</span>.<span class="ruby-identifier">ancestors</span> }
+
+  <span class="ruby-identifier">remove_nodoc</span> <span class="ruby-ivar">@all_classes_hash</span>
+  <span class="ruby-identifier">remove_nodoc</span> <span class="ruby-ivar">@all_modules_hash</span>
+
+  <span class="ruby-ivar">@unique_classes</span> = <span class="ruby-identifier">find_unique</span> <span class="ruby-ivar">@all_classes_hash</span>
+  <span class="ruby-ivar">@unique_modules</span> = <span class="ruby-identifier">find_unique</span> <span class="ruby-ivar">@all_modules_hash</span>
+
+  <span class="ruby-identifier">unique_classes_and_modules</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">cm</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">cm</span>.<span class="ruby-identifier">complete</span> <span class="ruby-identifier">min_visibility</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-ivar">@all_files_hash</span>.<span class="ruby-identifier">each_key</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file_name</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">tl</span> = <span class="ruby-ivar">@all_files_hash</span>[<span class="ruby-identifier">file_name</span>]
+
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">tl</span>.<span class="ruby-identifier">text?</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">tl</span>.<span class="ruby-identifier">modules_hash</span>.<span class="ruby-identifier">clear</span>
+      <span class="ruby-identifier">tl</span>.<span class="ruby-identifier">classes_hash</span>.<span class="ruby-identifier">clear</span>
+
+      <span class="ruby-identifier">tl</span>.<span class="ruby-identifier">classes_or_modules</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">cm</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">name</span> = <span class="ruby-identifier">cm</span>.<span class="ruby-identifier">full_name</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">cm</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-string">'class'</span> <span class="ruby-keyword">then</span>
+          <span class="ruby-identifier">tl</span>.<span class="ruby-identifier">classes_hash</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">cm</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@all_classes_hash</span>[<span class="ruby-identifier">name</span>]
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">tl</span>.<span class="ruby-identifier">modules_hash</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">cm</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@all_modules_hash</span>[<span class="ruby-identifier">name</span>]
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- complete-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- complete-method -->
+
+    
+      <div id="method-c-files" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">files</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="TopLevel.html#method-c-all_files">all_files</a>
+        </div>
+        
+      </div><!-- files-method -->
+
+    
+      <div id="method-c-files_hash" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">files_hash</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="TopLevel.html#method-c-all_files_hash">all_files_hash</a>
+        </div>
+        
+      </div><!-- files_hash-method -->
+
+    
+      <div id="method-c-find_class_named" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_class_named</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Finds the class with <code>name</code> in all discovered classes</p>
+          
+
+          
+          <div class="method-source-code" id="find_class_named-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 138</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">find_class_named</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-ivar">@all_classes_hash</span>[<span class="ruby-identifier">name</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find_class_named-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find_class_named-method -->
+
+    
+      <div id="method-c-find_class_named_from" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_class_named_from</span><span
+            class="method-args">(name, from)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Finds the class with <code>name</code> starting in namespace
+<code>from</code></p>
+          
+
+          
+          <div class="method-source-code" id="find_class_named_from-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 145</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">find_class_named_from</span> <span class="ruby-identifier">name</span>, <span class="ruby-identifier">from</span>
+  <span class="ruby-identifier">from</span> = <span class="ruby-identifier">find_class_named</span> <span class="ruby-identifier">from</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Context</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">from</span>
+
+  <span class="ruby-keyword">until</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">TopLevel</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">from</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">from</span>
+
+    <span class="ruby-identifier">klass</span> = <span class="ruby-identifier">from</span>.<span class="ruby-identifier">find_class_named</span> <span class="ruby-identifier">name</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">klass</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">klass</span>
+
+    <span class="ruby-identifier">from</span> = <span class="ruby-identifier">from</span>.<span class="ruby-identifier">parent</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">find_class_named</span> <span class="ruby-identifier">name</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find_class_named_from-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find_class_named_from-method -->
+
+    
+      <div id="method-c-find_class_or_module" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_class_or_module</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Finds the class or module with <code>name</code></p>
+          
+
+          
+          <div class="method-source-code" id="find_class_or_module-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 163</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">find_class_or_module</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">name</span> = <span class="ruby-node">$'</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r^::/</span>
+  <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">TopLevel</span>.<span class="ruby-identifier">classes_hash</span>[<span class="ruby-identifier">name</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">TopLevel</span>.<span class="ruby-identifier">modules_hash</span>[<span class="ruby-identifier">name</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find_class_or_module-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find_class_or_module-method -->
+
+    
+      <div id="method-c-find_file_named" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_file_named</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Finds the file with <code>name</code> in all discovered files</p>
+          
+
+          
+          <div class="method-source-code" id="find_file_named-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 171</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">find_file_named</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-ivar">@all_files_hash</span>[<span class="ruby-identifier">name</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find_file_named-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find_file_named-method -->
+
+    
+      <div id="method-c-find_module_named" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_module_named</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Finds the module with <code>name</code> in all discovered modules</p>
+          
+
+          
+          <div class="method-source-code" id="find_module_named-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 178</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">find_module_named</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">modules_hash</span>[<span class="ruby-identifier">name</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find_module_named-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find_module_named-method -->
+
+    
+      <div id="method-c-find_unique" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_unique</span><span
+            class="method-args">(all_hash)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Finds unique classes/modules defined in <code>all_hash</code>, and returns
+them as an array. Performs the alias updates in <code>all_hash</code>: see
+<a href="TopLevel.html#method-c-complete">::complete</a>.</p>
+          
+
+          
+          <div class="method-source-code" id="find_unique-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 189</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">find_unique</span>(<span class="ruby-identifier">all_hash</span>)
+  <span class="ruby-identifier">unique</span> = []
+
+  <span class="ruby-identifier">all_hash</span>.<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">full_name</span>, <span class="ruby-identifier">cm</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">unique</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">cm</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">full_name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">cm</span>.<span class="ruby-identifier">full_name</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">unique</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find_unique-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find_unique-method -->
+
+    
+      <div id="method-c-fix_basic_object_inheritance" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fix_basic_object_inheritance</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Fixes the erroneous <code>BasicObject &lt; Object</code> in 1.9.</p>
+
+<p>Because we assumed all classes without a stated superclass inherit from
+Object, we have the above wrong inheritance.</p>
+
+<p>We fix BasicObject right away if we are running in a Ruby version &gt;=
+1.9. If not, we may be documenting 1.9 source while running under 1.8: we
+search the files of BasicObject for “object.c”, and fix the inheritance if
+we find it.</p>
+          
+
+          
+          <div class="method-source-code" id="fix_basic_object_inheritance-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 210</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">fix_basic_object_inheritance</span>
+  <span class="ruby-identifier">basic</span> = <span class="ruby-identifier">all_classes_hash</span>[<span class="ruby-string">'BasicObject'</span>]
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">basic</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">RUBY_VERSION</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-string">'1.9'</span>
+    <span class="ruby-identifier">basic</span>.<span class="ruby-identifier">superclass</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">basic</span>.<span class="ruby-identifier">in_files</span>.<span class="ruby-identifier">any?</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">f</span>.<span class="ruby-identifier">full_name</span>) <span class="ruby-operator">==</span> <span class="ruby-string">'object.c'</span> }
+    <span class="ruby-identifier">basic</span>.<span class="ruby-identifier">superclass</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- fix_basic_object_inheritance-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- fix_basic_object_inheritance-method -->
+
+    
+      <div id="method-c-modules" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">modules</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="TopLevel.html#method-c-all_modules">all_modules</a>
+        </div>
+        
+      </div><!-- modules-method -->
+
+    
+      <div id="method-c-modules_hash" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">modules_hash</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="TopLevel.html#method-c-all_modules_hash">all_modules_hash</a>
+        </div>
+        
+      </div><!-- modules_hash-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(file_name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Creates a new <a href="TopLevel.html">RDoc::TopLevel</a> with
+<code>file_name</code> only if one with the same name does not exist in
+all_files.</p>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 224</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">file_name</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">top_level</span> = <span class="ruby-ivar">@all_files_hash</span>[<span class="ruby-identifier">file_name</span>] <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">top_level</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">top_level</span> = <span class="ruby-keyword">super</span>
+    <span class="ruby-ivar">@all_files_hash</span>[<span class="ruby-identifier">file_name</span>] = <span class="ruby-identifier">top_level</span>
+    <span class="ruby-identifier">top_level</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(file_name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Creates a new <a href="TopLevel.html">TopLevel</a> for
+<code>file_name</code></p>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 305</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">file_name</span>)
+  <span class="ruby-keyword">super</span>()
+  <span class="ruby-ivar">@name</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@relative_name</span> = <span class="ruby-identifier">file_name</span>
+  <span class="ruby-ivar">@absolute_name</span> = <span class="ruby-identifier">file_name</span>
+  <span class="ruby-ivar">@file_stat</span>     = <span class="ruby-constant">File</span>.<span class="ruby-identifier">stat</span>(<span class="ruby-identifier">file_name</span>) <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span> <span class="ruby-comment"># HACK for testing</span>
+  <span class="ruby-ivar">@diagram</span>       = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@parser</span>        = <span class="ruby-keyword">nil</span>
+
+  <span class="ruby-ivar">@classes_or_modules</span> = []
+
+  <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">TopLevel</span>.<span class="ruby-identifier">files_hash</span>[<span class="ruby-identifier">file_name</span>] = <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+      <div id="method-c-page" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">page</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the <a href="TopLevel.html">RDoc::TopLevel</a> that has the given
+<code>name</code></p>
+          
+
+          
+          <div class="method-source-code" id="page-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 237</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">page</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-ivar">@all_files_hash</span>.<span class="ruby-identifier">each_value</span>.<span class="ruby-identifier">find</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">file</span>.<span class="ruby-identifier">text?</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">file</span>.<span class="ruby-identifier">page_name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- page-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- page-method -->
+
+    
+      <div id="method-c-remove_nodoc" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">remove_nodoc</span><span
+            class="method-args">(all_hash)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Removes from <code>all_hash</code> the contexts that are nodoc or have no
+content.</p>
+
+<p>See <a
+href="Context.html#method-i-remove_from_documentation-3F">RDoc::Context#remove_from_documentation?</a></p>
+          
+
+          
+          <div class="method-source-code" id="remove_nodoc-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 248</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">remove_nodoc</span>(<span class="ruby-identifier">all_hash</span>)
+  <span class="ruby-identifier">all_hash</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">context</span> = <span class="ruby-identifier">all_hash</span>[<span class="ruby-identifier">name</span>]
+    <span class="ruby-identifier">all_hash</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">name</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">context</span>.<span class="ruby-identifier">remove_from_documentation?</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- remove_nodoc-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- remove_nodoc-method -->
+
+    
+      <div id="method-c-reset" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">reset</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Empties <a href="RDoc.html">RDoc</a> of stored class, module and file
+information</p>
+          
+
+          
+          <div class="method-source-code" id="reset-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 258</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">reset</span>
+  <span class="ruby-ivar">@all_classes_hash</span> = {}
+  <span class="ruby-ivar">@all_modules_hash</span> = {}
+  <span class="ruby-ivar">@all_files_hash</span>   = {}
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- reset-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- reset-method -->
+
+    
+      <div id="method-c-unique_classes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unique_classes</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the unique classes discovered by <a href="RDoc.html">RDoc</a>.</p>
+
+<p><a href="TopLevel.html#method-c-complete">::complete</a> must have been
+called prior to using this method.</p>
+          
+
+          
+          <div class="method-source-code" id="unique_classes-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 269</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">unique_classes</span>
+  <span class="ruby-ivar">@unique_classes</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- unique_classes-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- unique_classes-method -->
+
+    
+      <div id="method-c-unique_classes_and_modules" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unique_classes_and_modules</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the unique classes and modules discovered by <a
+href="RDoc.html">RDoc</a>. <a
+href="TopLevel.html#method-c-complete">::complete</a> must have been called
+prior to using this method.</p>
+          
+
+          
+          <div class="method-source-code" id="unique_classes_and_modules-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 277</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">unique_classes_and_modules</span>
+  <span class="ruby-ivar">@unique_classes</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@unique_modules</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- unique_classes_and_modules-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- unique_classes_and_modules-method -->
+
+    
+      <div id="method-c-unique_modules" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unique_modules</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the unique modules discovered by <a href="RDoc.html">RDoc</a>. <a
+href="TopLevel.html#method-c-complete">::complete</a> must have been called
+prior to using this method.</p>
+          
+
+          
+          <div class="method-source-code" id="unique_modules-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 285</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">unique_modules</span>
+  <span class="ruby-ivar">@unique_modules</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- unique_modules-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- unique_modules-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-3D-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">==</span><span
+            class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>An <a href="TopLevel.html">RDoc::TopLevel</a> is equal to another with the
+same <a href="TopLevel.html#attribute-i-absolute_name">#absolute_name</a></p>
+          
+
+          
+          <div class="method-source-code" id="3D-3D-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 322</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">other</span> <span class="ruby-keyword">and</span> <span class="ruby-ivar">@absolute_name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">absolute_name</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 3D-3D-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="TopLevel.html#method-i-eql-3F">eql?</a>
+        </div>
+        
+
+        
+      </div><!-- 3D-3D-method -->
+
+    
+      <div id="method-i-add_alias" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_alias</span><span
+            class="method-args">(an_alias)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Adds <code>an_alias</code> to <code>Object</code> instead of
+<code>self</code>.</p>
+          
+
+          
+          <div class="method-source-code" id="add_alias-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 331</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_alias</span>(<span class="ruby-identifier">an_alias</span>)
+  <span class="ruby-identifier">object_class</span>.<span class="ruby-identifier">record_location</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">an_alias</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@document_self</span>
+  <span class="ruby-identifier">object_class</span>.<span class="ruby-identifier">add_alias</span> <span class="ruby-identifier">an_alias</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_alias-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_alias-method -->
+
+    
+      <div id="method-i-add_constant" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_constant</span><span
+            class="method-args">(constant)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Adds <code>constant</code> to <code>Object</code> instead of
+<code>self</code>.</p>
+          
+
+          
+          <div class="method-source-code" id="add_constant-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 340</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_constant</span> <span class="ruby-identifier">constant</span>
+  <span class="ruby-identifier">object_class</span>.<span class="ruby-identifier">record_location</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">constant</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@document_self</span>
+  <span class="ruby-identifier">object_class</span>.<span class="ruby-identifier">add_constant</span> <span class="ruby-identifier">constant</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_constant-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_constant-method -->
+
+    
+      <div id="method-i-add_include" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_include</span><span
+            class="method-args">(include)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Adds <code>include</code> to <code>Object</code> instead of
+<code>self</code>.</p>
+          
+
+          
+          <div class="method-source-code" id="add_include-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 349</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_include</span>(<span class="ruby-identifier">include</span>)
+  <span class="ruby-identifier">object_class</span>.<span class="ruby-identifier">record_location</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">include</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@document_self</span>
+  <span class="ruby-identifier">object_class</span>.<span class="ruby-identifier">add_include</span> <span class="ruby-identifier">include</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_include-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_include-method -->
+
+    
+      <div id="method-i-add_method" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_method</span><span
+            class="method-args">(method)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Adds <code>method</code> to <code>Object</code> instead of
+<code>self</code>.</p>
+          
+
+          
+          <div class="method-source-code" id="add_method-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 358</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_method</span>(<span class="ruby-identifier">method</span>)
+  <span class="ruby-identifier">object_class</span>.<span class="ruby-identifier">record_location</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">method</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@document_self</span>
+  <span class="ruby-identifier">object_class</span>.<span class="ruby-identifier">add_method</span> <span class="ruby-identifier">method</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_method-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_method-method -->
+
+    
+      <div id="method-i-add_to_classes_or_modules" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_to_classes_or_modules</span><span
+            class="method-args">(mod)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Adds class or module <code>mod</code>. Used in the building phase by the
+ruby parser.</p>
+          
+
+          
+          <div class="method-source-code" id="add_to_classes_or_modules-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 368</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_to_classes_or_modules</span> <span class="ruby-identifier">mod</span>
+  <span class="ruby-ivar">@classes_or_modules</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">mod</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_to_classes_or_modules-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_to_classes_or_modules-method -->
+
+    
+      <div id="method-i-base_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">base_name</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Base name of this file</p>
+          
+
+          
+          <div class="method-source-code" id="base_name-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 375</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">base_name</span>
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span> <span class="ruby-ivar">@absolute_name</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- base_name-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="TopLevel.html#method-i-name">name</a>
+        </div>
+        
+
+        
+      </div><!-- base_name-method -->
+
+    
+      <div id="method-i-cvs_url" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cvs_url</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a URL for this source file on some web repository.  Use the -W
+command line option to set.</p>
+          
+
+          
+          <div class="method-source-code" id="cvs_url-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/generator/markup.rb, line 160</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cvs_url</span>
+  <span class="ruby-identifier">url</span> = <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">RDoc</span>.<span class="ruby-identifier">current</span>.<span class="ruby-identifier">options</span>.<span class="ruby-identifier">webcvs</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-regexp">%r%s/</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">url</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">url</span> <span class="ruby-operator">%</span> <span class="ruby-ivar">@absolute_name</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">url</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@absolute_name</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cvs_url-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cvs_url-method -->
+
+    
+      <div id="method-i-display-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">display?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Only a <a href="TopLevel.html">TopLevel</a> that contains text file) will
+be displayed.  See also <a
+href="CodeObject.html#method-i-display-3F">RDoc::CodeObject#display?</a></p>
+          
+
+          
+          <div class="method-source-code" id="display-3F-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 385</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">display?</span>
+  <span class="ruby-identifier">text?</span> <span class="ruby-keyword">and</span> <span class="ruby-keyword">super</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- display-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- display-3F-method -->
+
+    
+      <div id="method-i-eql-3F" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">eql?</span><span
+            class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="TopLevel.html#method-i-3D-3D">==</a>
+        </div>
+        
+      </div><!-- eql-3F-method -->
+
+    
+      <div id="method-i-find_class_or_module" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_class_or_module</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>See <a
+href="TopLevel.html#method-c-find_class_or_module">::find_class_or_module</a></p>
+          
+
+          
+          <div class="method-source-code" id="find_class_or_module-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 395</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">find_class_or_module</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">TopLevel</span>.<span class="ruby-identifier">find_class_or_module</span> <span class="ruby-identifier">name</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find_class_or_module-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find_class_or_module-method -->
+
+    
+      <div id="method-i-find_local_symbol" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_local_symbol</span><span
+            class="method-args">(symbol)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Finds a class or module named <code>symbol</code></p>
+          
+
+          
+          <div class="method-source-code" id="find_local_symbol-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 402</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">find_local_symbol</span>(<span class="ruby-identifier">symbol</span>)
+  <span class="ruby-identifier">find_class_or_module</span>(<span class="ruby-identifier">symbol</span>) <span class="ruby-operator">||</span> <span class="ruby-keyword">super</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find_local_symbol-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find_local_symbol-method -->
+
+    
+      <div id="method-i-find_module_named" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_module_named</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Finds a module or class with <code>name</code></p>
+          
+
+          
+          <div class="method-source-code" id="find_module_named-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 409</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">find_module_named</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">find_class_or_module</span>(<span class="ruby-identifier">name</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find_module_named-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find_module_named-method -->
+
+    
+      <div id="method-i-full_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">full_name</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the relative name of this file</p>
+          
+
+          
+          <div class="method-source-code" id="full_name-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 416</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">full_name</span>
+  <span class="ruby-ivar">@relative_name</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- full_name-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- full_name-method -->
+
+    
+      <div id="method-i-hash" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">hash</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>An <a href="TopLevel.html">RDoc::TopLevel</a> has the same hash as another
+with the same <a
+href="TopLevel.html#attribute-i-absolute_name">#absolute_name</a></p>
+          
+
+          
+          <div class="method-source-code" id="hash-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 424</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">hash</span>
+  <span class="ruby-ivar">@absolute_name</span>.<span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- hash-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- hash-method -->
+
+    
+      <div id="method-i-http_url" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">http_url</span><span
+            class="method-args">(prefix)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>URL for this with a <code>prefix</code></p>
+          
+
+          
+          <div class="method-source-code" id="http_url-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 431</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">http_url</span>(<span class="ruby-identifier">prefix</span>)
+  <span class="ruby-identifier">path</span> = [<span class="ruby-identifier">prefix</span>, <span class="ruby-ivar">@relative_name</span>.<span class="ruby-identifier">tr</span>(<span class="ruby-string">'.'</span>, <span class="ruby-string">'_'</span>)]
+
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(*<span class="ruby-identifier">path</span>.<span class="ruby-identifier">compact</span>) <span class="ruby-operator">+</span> <span class="ruby-string">'.html'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- http_url-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- http_url-method -->
+
+    
+      <div id="method-i-last_modified" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">last_modified</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Time this file was last modified, if known</p>
+          
+
+          
+          <div class="method-source-code" id="last_modified-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 449</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">last_modified</span>
+  <span class="ruby-ivar">@file_stat</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">file_stat</span>.<span class="ruby-identifier">mtime</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- last_modified-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- last_modified-method -->
+
+    
+      <div id="method-i-name" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">name</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="TopLevel.html#method-i-base_name">base_name</a>
+        </div>
+        
+      </div><!-- name-method -->
+
+    
+      <div id="method-i-object_class" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">object_class</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the <a href="NormalClass.html">NormalClass</a> “Object”, creating
+it if not found.</p>
+
+<p>Records <code>self</code> as a location in “Object”.</p>
+          
+
+          
+          <div class="method-source-code" id="object_class-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 458</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">object_class</span>
+  <span class="ruby-ivar">@object_class</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">oc</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">find_class_named</span>(<span class="ruby-string">'Object'</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">add_class</span>(<span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">NormalClass</span>, <span class="ruby-string">'Object'</span>)
+    <span class="ruby-identifier">oc</span>.<span class="ruby-identifier">record_location</span> <span class="ruby-keyword">self</span>
+    <span class="ruby-identifier">oc</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- object_class-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- object_class-method -->
+
+    
+      <div id="method-i-page_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">page_name</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Base name of this file without the extension</p>
+          
+
+          
+          <div class="method-source-code" id="page_name-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 469</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">page_name</span>
+  <span class="ruby-identifier">basename</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span> <span class="ruby-ivar">@absolute_name</span>
+  <span class="ruby-identifier">basename</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r\.[^.]*$/</span>
+
+  <span class="ruby-node">$`</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">basename</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- page_name-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- page_name-method -->
+
+    
+      <div id="method-i-path" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">path</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Path to this file</p>
+          
+
+          
+          <div class="method-source-code" id="path-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 479</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">path</span>
+  <span class="ruby-identifier">http_url</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">RDoc</span>.<span class="ruby-identifier">current</span>.<span class="ruby-identifier">generator</span>.<span class="ruby-identifier">file_dir</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- path-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- path-method -->
+
+    
+      <div id="method-i-search_record" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">search_record</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Search record used by <a
+href="Generator/JsonIndex.html">RDoc::Generator::JsonIndex</a></p>
+          
+
+          
+          <div class="method-source-code" id="search_record-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 497</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">search_record</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@parser</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Parser</span><span class="ruby-operator">::</span><span class="ruby-constant">Text</span>
+
+  [
+    <span class="ruby-identifier">page_name</span>,
+    <span class="ruby-string">''</span>,
+    <span class="ruby-identifier">page_name</span>,
+    <span class="ruby-string">''</span>,
+    <span class="ruby-identifier">path</span>,
+    <span class="ruby-string">''</span>,
+    <span class="ruby-identifier">snippet</span>(<span class="ruby-ivar">@comment</span>),
+  ]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- search_record-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- search_record-method -->
+
+    
+      <div id="method-i-text-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">text?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Is this <a href="TopLevel.html">TopLevel</a> from a text file instead of a
+source code file?</p>
+          
+
+          
+          <div class="method-source-code" id="text-3F-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/top_level.rb, line 514</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">text?</span>
+  <span class="ruby-ivar">@parser</span> <span class="ruby-keyword">and</span> <span class="ruby-ivar">@parser</span>.<span class="ruby-identifier">ancestors</span>.<span class="ruby-identifier">include?</span> <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">Parser</span><span class="ruby-operator">::</span><span class="ruby-constant">Text</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- text-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- text-3F-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

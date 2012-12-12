@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"backend:EFI"!Rack::Cache::Context#backend;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"8The Rack application object immediately downstream.;T:
+@fileI"lib/rack/cache/context.rb;TF@

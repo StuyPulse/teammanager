@@ -1,0 +1,16 @@
+[2012-09-11 20:19:19] GEM_PATH="/home/stuy/.rvm/gems/ruby-1.9.3-p194:/home/stuy/.rvm/gems/ruby-1.9.3-p194@global:/home/stuy/.rvm/gems/ruby-1.9.3-p194:/home/stuy/.rvm/gems/ruby-1.9.3-p194@global" GEM_HOME="/home/stuy/.rvm/gems/ruby-1.9.3-p194" "/home/stuy/.rvm/rubies/ruby-1.9.3-p194/bin/ruby" "/home/stuy/.rvm/src/rubygems-1.8.24/setup.rb"
+RubyGems 1.8.24 installed
+
+== 1.8.24 / 2012-04-27
+
+* 1 bug fix:
+
+  * Install the .pem files properly. Fixes #320
+  * Remove OpenSSL dependency from the http code path
+
+
+------------------------------------------------------------------------------
+
+RubyGems installed the following executables:
+	/home/stuy/.rvm/rubies/ruby-1.9.3-p194/bin/gem
+

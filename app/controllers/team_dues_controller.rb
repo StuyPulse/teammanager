@@ -6,8 +6,8 @@ class TeamDuesController < ApplicationController
   def create
     @team_due = Student.find(params[:student_id]).team_dues.new params[:team_due]
     if @team_due.save
-      flash[:notice] = "Team Due added successfully."
-      redirect_to_controller: "students", action: "show", id: params[:student_id]
+      flash[:notice] = 'Team Due added successfully.'
+      redirect_to controller: 'students', action: "show", id: params[:student_id]
     else
       flash.now[:alert] = @team_dues.errors.full_messages.join('<br>').html_safe
       render action: "new"
@@ -19,6 +19,6 @@ class TeamDuesController < ApplicationController
     student_id = due.student_id
     due.destroy
     flash[:notice] = "Team due deleted successfully."
-    redirect_to_controller: "students", action: "show", id: student_id
+    redirect_to controller: "students", action: "show", id: student_id
   end
 end

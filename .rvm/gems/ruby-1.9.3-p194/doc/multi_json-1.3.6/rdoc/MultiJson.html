@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module MultiJson - multi_json-1.3.6 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/multi_json/vendor/okjson.rb
+    <li>lib/multi_json/version.rb
+    <li>lib/multi_json/adapters/oj.rb
+    <li>lib/multi_json/adapters/ok_json.rb
+    <li>lib/multi_json/adapters/yajl.rb
+    <li>lib/multi_json/adapters/json_pure.rb
+    <li>lib/multi_json/adapters/nsjsonserialization.rb
+    <li>lib/multi_json/adapters/json_gem.rb
+    <li>lib/multi_json/adapters/json_common.rb
+    <li>lib/multi_json.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-default_adapter">::default_adapter</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./MultiJson.html">MultiJson</a>
+  
+    <li><a href="./MultiJson/Adapters.html">MultiJson::Adapters</a>
+  
+    <li><a href="./MultiJson/Adapters/JsonCommon.html">MultiJson::Adapters::JsonCommon</a>
+  
+    <li><a href="./MultiJson/Adapters/JsonGem.html">MultiJson::Adapters::JsonGem</a>
+  
+    <li><a href="./MultiJson/Adapters/JsonPure.html">MultiJson::Adapters::JsonPure</a>
+  
+    <li><a href="./MultiJson/Adapters/Nsjsonserialization.html">MultiJson::Adapters::Nsjsonserialization</a>
+  
+    <li><a href="./MultiJson/OkJson/Error.html">MultiJson::Adapters::Nsjsonserialization::ParseError</a>
+  
+    <li><a href="./MultiJson/Adapters/Oj.html">MultiJson::Adapters::Oj</a>
+  
+    <li><a href="./MultiJson/Adapters/OkJson.html">MultiJson::Adapters::OkJson</a>
+  
+    <li><a href="./MultiJson/OkJson/Error.html">MultiJson::Adapters::OkJson::ParseError</a>
+  
+    <li><a href="./MultiJson/Adapters/Yajl.html">MultiJson::Adapters::Yajl</a>
+  
+    <li><a href="./MultiJson/DecodeError.html">MultiJson::DecodeError</a>
+  
+    <li><a href="./MultiJson/OkJson.html">MultiJson::OkJson</a>
+  
+    <li><a href="./MultiJson/OkJson/Error.html">MultiJson::OkJson::Error</a>
+  
+    <li><a href="./MultiJson/OkJson/Utf8Error.html">MultiJson::OkJson::Utf8Error</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module MultiJson</h1>
+
+  <div id="description" class="description">
+    
+<p>Some parts adapted from <a
+href="http://golang.org/src/pkg/json/decode.go">golang.org/src/pkg/json/decode.go</a>
+and <a
+href="http://golang.org/src/pkg/utf8/utf8.go">golang.org/src/pkg/utf8/utf8.go</a></p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="REQUIREMENT_MAP">REQUIREMENT_MAP
+        
+        <dd class="description">
+        
+      
+        <dt id="VERSION">VERSION
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-default_adapter" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">default_adapter</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The default adapter based on what you currently have loaded and installed.
+First checks to see if any adapters are already loaded, then checks to see
+which are installed if none are loaded.</p>
+          
+
+          
+          <div class="method-source-code" id="default_adapter-source">
+            <pre><span class="ruby-comment"># File lib/multi_json.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">default_adapter</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-value">:oj</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-operator">::</span><span class="ruby-constant">Oj</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-value">:yajl</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-operator">::</span><span class="ruby-constant">Yajl</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-value">:json_gem</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-operator">::</span><span class="ruby-constant">JSON</span>)
+
+  <span class="ruby-constant">REQUIREMENT_MAP</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span>(<span class="ruby-identifier">library</span>, <span class="ruby-identifier">adapter</span>)<span class="ruby-operator">|</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-identifier">require</span> <span class="ruby-identifier">library</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-identifier">adapter</span>
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">LoadError</span>
+      <span class="ruby-keyword">next</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-constant">Kernel</span>.<span class="ruby-identifier">warn</span> <span class="ruby-string">&quot;[WARNING] MultiJson is using the default adapter (ok_json). We recommend loading a different JSON library to improve performance.&quot;</span>
+  <span class="ruby-value">:ok_json</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- default_adapter-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- default_adapter-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

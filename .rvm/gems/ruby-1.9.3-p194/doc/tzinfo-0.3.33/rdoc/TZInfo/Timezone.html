@@ -1,0 +1,1615 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class TZInfo::Timezone - tzinfo-0.3.33 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/tzinfo/timezone.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">Comparable</span>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-_load">::_load</a>
+    
+    <li><a href="#method-c-all">::all</a>
+    
+    <li><a href="#method-c-all_country_zone_identifiers">::all_country_zone_identifiers</a>
+    
+    <li><a href="#method-c-all_country_zones">::all_country_zones</a>
+    
+    <li><a href="#method-c-all_data_zone_identifiers">::all_data_zone_identifiers</a>
+    
+    <li><a href="#method-c-all_data_zones">::all_data_zones</a>
+    
+    <li><a href="#method-c-all_identifiers">::all_identifiers</a>
+    
+    <li><a href="#method-c-all_linked_zone_identifiers">::all_linked_zone_identifiers</a>
+    
+    <li><a href="#method-c-all_linked_zones">::all_linked_zones</a>
+    
+    <li><a href="#method-c-default_dst">::default_dst</a>
+    
+    <li><a href="#method-c-default_dst-3D">::default_dst=</a>
+    
+    <li><a href="#method-c-get">::get</a>
+    
+    <li><a href="#method-c-get_proxy">::get_proxy</a>
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-c-us_zone_identifiers">::us_zone_identifiers</a>
+    
+    <li><a href="#method-c-us_zones">::us_zones</a>
+    
+    <li><a href="#method-i-3C-3D-3E">#&lt;=&gt;</a>
+    
+    <li><a href="#method-i-_dump">#_dump</a>
+    
+    <li><a href="#method-i-current_period">#current_period</a>
+    
+    <li><a href="#method-i-current_period_and_time">#current_period_and_time</a>
+    
+    <li><a href="#method-i-current_time_and_period">#current_time_and_period</a>
+    
+    <li><a href="#method-i-eql-3F">#eql?</a>
+    
+    <li><a href="#method-i-friendly_identifier">#friendly_identifier</a>
+    
+    <li><a href="#method-i-hash">#hash</a>
+    
+    <li><a href="#method-i-identifier">#identifier</a>
+    
+    <li><a href="#method-i-inspect">#inspect</a>
+    
+    <li><a href="#method-i-local_to_utc">#local_to_utc</a>
+    
+    <li><a href="#method-i-name">#name</a>
+    
+    <li><a href="#method-i-now">#now</a>
+    
+    <li><a href="#method-i-period_for_local">#period_for_local</a>
+    
+    <li><a href="#method-i-period_for_utc">#period_for_utc</a>
+    
+    <li><a href="#method-i-periods_for_local">#periods_for_local</a>
+    
+    <li><a href="#method-i-strftime">#strftime</a>
+    
+    <li><a href="#method-i-to_s">#to_s</a>
+    
+    <li><a href="#method-i-utc_to_local">#utc_to_local</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../CHANGES.html">CHANGES</a>
+  
+    <li class="file"><a href="../README.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../TZInfo.html">TZInfo</a>
+  
+    <li><a href="../TZInfo/AmbiguousTime.html">TZInfo::AmbiguousTime</a>
+  
+    <li><a href="../TZInfo/Country.html">TZInfo::Country</a>
+  
+    <li><a href="../TZInfo/CountryTimezone.html">TZInfo::CountryTimezone</a>
+  
+    <li><a href="../TZInfo/InvalidCountryCode.html">TZInfo::InvalidCountryCode</a>
+  
+    <li><a href="../TZInfo/InvalidTimezoneIdentifier.html">TZInfo::InvalidTimezoneIdentifier</a>
+  
+    <li><a href="../TZInfo/NoOffsetsDefined.html">TZInfo::NoOffsetsDefined</a>
+  
+    <li><a href="../TZInfo/PeriodNotFound.html">TZInfo::PeriodNotFound</a>
+  
+    <li><a href="../TZInfo/TZDataParser.html">TZInfo::TZDataParser</a>
+  
+    <li><a href="../TZInfo/Timezone.html">TZInfo::Timezone</a>
+  
+    <li><a href="../TZInfo/TimezonePeriod.html">TZInfo::TimezonePeriod</a>
+  
+    <li><a href="../TZInfo/TimezoneProxy.html">TZInfo::TimezoneProxy</a>
+  
+    <li><a href="../TZInfo/UnknownTimezone.html">TZInfo::UnknownTimezone</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class TZInfo::Timezone</h1>
+
+  <div id="description" class="description">
+    
+<p><a href="Timezone.html">Timezone</a> is the base class of all timezones. It
+provides a factory method get to access timezones by identifier. Once a
+specific <a href="Timezone.html">Timezone</a> has been retrieved,
+DateTimes, Times and timestamps can be converted between the UTC  and the
+local time for the zone. For example:</p>
+
+<pre>tz = TZInfo::Timezone.get('America/New_York')
+puts tz.utc_to_local(DateTime.new(2005,8,29,15,35,0)).to_s
+puts tz.local_to_utc(Time.utc(2005,8,29,11,35,0)).to_s
+puts tz.utc_to_local(1125315300).to_s</pre>
+
+<p>Each time conversion method returns an object of the same type it was 
+passed.</p>
+
+<p>The timezone information all comes from the tz database (see <a
+href="http://www.twinsun.com/tz/tz-link.htm">www.twinsun.com/tz/tz-link.htm</a>)</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-_load" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">_load</span><span
+            class="method-args">(data)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Loads a marshalled <a href="Timezone.html">Timezone</a>.</p>
+          
+
+          
+          <div class="method-source-code" id="_load-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timezone.rb, line 516</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">_load</span>(<span class="ruby-identifier">data</span>)
+  <span class="ruby-constant">Timezone</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">data</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- _load-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- _load-method -->
+
+    
+      <div id="method-c-all" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">all</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns an array containing all the available Timezones.</p>
+
+<p>Returns <a href="TimezoneProxy.html">TimezoneProxy</a> objects to avoid the
+overhead of loading <a href="Timezone.html">Timezone</a> definitions until
+a conversion is actually required.</p>
+          
+
+          
+          <div class="method-source-code" id="all-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timezone.rb, line 155</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-identifier">get_proxies</span>(<span class="ruby-identifier">all_identifiers</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- all-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- all-method -->
+
+    
+      <div id="method-c-all_country_zone_identifiers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">all_country_zone_identifiers</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns all the zone identifiers defined for all Countries. This is not the
+complete set of zone identifiers as some are not country specific (e.g. 
+‘Etc/GMT’). You can obtain a <a href="Timezone.html">Timezone</a> instance
+for a given identifier with the get method.</p>
+          
+
+          
+          <div class="method-source-code" id="all_country_zone_identifiers-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timezone.rb, line 214</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">all_country_zone_identifiers</span>
+  <span class="ruby-constant">Country</span>.<span class="ruby-identifier">all_codes</span>.<span class="ruby-identifier">inject</span>([]) {<span class="ruby-operator">|</span><span class="ruby-identifier">zones</span>,<span class="ruby-identifier">country</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">zones</span> <span class="ruby-operator">+=</span> <span class="ruby-constant">Country</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">country</span>).<span class="ruby-identifier">zone_identifiers</span>
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- all_country_zone_identifiers-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- all_country_zone_identifiers-method -->
+
+    
+      <div id="method-c-all_country_zones" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">all_country_zones</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns all the Timezones defined for all Countries. This is not the
+complete set of Timezones as some are not country specific (e.g. 
+‘Etc/GMT’).</p>
+
+<p>Returns <a href="TimezoneProxy.html">TimezoneProxy</a> objects to avoid the
+overhead of loading <a href="Timezone.html">Timezone</a> definitions until
+a conversion is actually required.</p>
+          
+
+          
+          <div class="method-source-code" id="all_country_zones-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timezone.rb, line 204</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">all_country_zones</span>
+  <span class="ruby-constant">Country</span>.<span class="ruby-identifier">all_codes</span>.<span class="ruby-identifier">inject</span>([]) {<span class="ruby-operator">|</span><span class="ruby-identifier">zones</span>,<span class="ruby-identifier">country</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">zones</span> <span class="ruby-operator">+=</span> <span class="ruby-constant">Country</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">country</span>).<span class="ruby-identifier">zones</span>
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- all_country_zones-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- all_country_zones-method -->
+
+    
+      <div id="method-c-all_data_zone_identifiers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">all_data_zone_identifiers</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns an array containing the identifiers of all the available  Timezones
+that are based on data (are not links to other Timezones)..</p>
+          
+
+          
+          <div class="method-source-code" id="all_data_zone_identifiers-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timezone.rb, line 177</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">all_data_zone_identifiers</span>
+  <span class="ruby-identifier">load_index</span>
+  <span class="ruby-constant">Indexes</span><span class="ruby-operator">::</span><span class="ruby-constant">Timezones</span>.<span class="ruby-identifier">data_timezones</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- all_data_zone_identifiers-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- all_data_zone_identifiers-method -->
+
+    
+      <div id="method-c-all_data_zones" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">all_data_zones</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns an array containing all the available Timezones that are based on
+data (are not links to other Timezones).</p>
+
+<p>Returns <a href="TimezoneProxy.html">TimezoneProxy</a> objects to avoid the
+overhead of loading <a href="Timezone.html">Timezone</a> definitions until
+a conversion is actually required.</p>
+          
+
+          
+          <div class="method-source-code" id="all_data_zones-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timezone.rb, line 171</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">all_data_zones</span>
+  <span class="ruby-identifier">get_proxies</span>(<span class="ruby-identifier">all_data_zone_identifiers</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- all_data_zones-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- all_data_zones-method -->
+
+    
+      <div id="method-c-all_identifiers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">all_identifiers</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns an array containing the identifiers of all the available 
+Timezones.</p>
+          
+
+          
+          <div class="method-source-code" id="all_identifiers-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timezone.rb, line 161</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">all_identifiers</span>
+  <span class="ruby-identifier">load_index</span>
+  <span class="ruby-constant">Indexes</span><span class="ruby-operator">::</span><span class="ruby-constant">Timezones</span>.<span class="ruby-identifier">timezones</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- all_identifiers-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- all_identifiers-method -->
+
+    
+      <div id="method-c-all_linked_zone_identifiers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">all_linked_zone_identifiers</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns an array containing the identifiers of all the available  Timezones
+that are links to other Timezones.</p>
+          
+
+          
+          <div class="method-source-code" id="all_linked_zone_identifiers-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timezone.rb, line 193</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">all_linked_zone_identifiers</span>
+  <span class="ruby-identifier">load_index</span>
+  <span class="ruby-constant">Indexes</span><span class="ruby-operator">::</span><span class="ruby-constant">Timezones</span>.<span class="ruby-identifier">linked_timezones</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- all_linked_zone_identifiers-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- all_linked_zone_identifiers-method -->
+
+    
+      <div id="method-c-all_linked_zones" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">all_linked_zones</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns an array containing all the available Timezones that are links to
+other Timezones.</p>
+
+<p>Returns <a href="TimezoneProxy.html">TimezoneProxy</a> objects to avoid the
+overhead of loading <a href="Timezone.html">Timezone</a> definitions until
+a conversion is actually required.</p>
+          
+
+          
+          <div class="method-source-code" id="all_linked_zones-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timezone.rb, line 187</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">all_linked_zones</span>
+  <span class="ruby-identifier">get_proxies</span>(<span class="ruby-identifier">all_linked_zone_identifiers</span>)      
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- all_linked_zones-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- all_linked_zones-method -->
+
+    
+      <div id="method-c-default_dst" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">default_dst</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Gets the default value of the optional dst parameter of the  <a
+href="Timezone.html#method-i-local_to_utc">#local_to_utc</a> and <a
+href="Timezone.html#method-i-period_for_local">#period_for_local</a>
+methods. Can be set to nil, true or  false.</p>
+          
+
+          
+          <div class="method-source-code" id="default_dst-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timezone.rb, line 87</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">default_dst</span>
+  <span class="ruby-identifier">@@default_dst</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- default_dst-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- default_dst-method -->
+
+    
+      <div id="method-c-default_dst-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">default_dst=</span><span
+            class="method-args">(value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sets the default value of the optional dst parameter of the  <a
+href="Timezone.html#method-i-local_to_utc">#local_to_utc</a> and <a
+href="Timezone.html#method-i-period_for_local">#period_for_local</a>
+methods. Can be set to nil, true or  false.</p>
+
+<p>The value of <a href="Timezone.html#method-c-default_dst">::default_dst</a>
+defaults to nil if unset.</p>
+          
+
+          
+          <div class="method-source-code" id="default_dst-3D-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timezone.rb, line 80</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">default_dst=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">@@default_dst</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">:</span> <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-identifier">value</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- default_dst-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- default_dst-3D-method -->
+
+    
+      <div id="method-c-get" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get</span><span
+            class="method-args">(identifier)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a timezone by its identifier (e.g. “Europe/London”, 
+“America/Chicago” or “UTC”).</p>
+
+<p>Raises <a
+href="InvalidTimezoneIdentifier.html">InvalidTimezoneIdentifier</a> if the
+timezone couldn’t be found.</p>
+          
+
+          
+          <div class="method-source-code" id="get-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timezone.rb, line 95</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">identifier</span>)
+  <span class="ruby-identifier">instance</span> = <span class="ruby-identifier">@@loaded_zones</span>[<span class="ruby-identifier">identifier</span>]
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">instance</span>  
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">InvalidTimezoneIdentifier</span>, <span class="ruby-string">'Invalid identifier'</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">identifier</span> <span class="ruby-operator">!~</span> <span class="ruby-regexp">%r^[A-Za-z0-9\+\-_]+(\/[A-Za-z0-9\+\-_]+)*$/</span>
+    <span class="ruby-identifier">identifier</span> = <span class="ruby-identifier">identifier</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">%r-/</span>, <span class="ruby-string">'__m__'</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">%r\+/</span>, <span class="ruby-string">'__p__'</span>)
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-comment"># Use a temporary variable to avoid an rdoc warning</span>
+      <span class="ruby-identifier">file</span> = <span class="ruby-node">&quot;tzinfo/definitions/#{identifier}&quot;</span>.<span class="ruby-identifier">untaint</span>
+      <span class="ruby-identifier">require</span> <span class="ruby-identifier">file</span>
+      
+      <span class="ruby-identifier">m</span> = <span class="ruby-constant">Definitions</span>
+      <span class="ruby-identifier">identifier</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">%r\//</span>).<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">part</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">m</span> = <span class="ruby-identifier">m</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-identifier">part</span>)
+      }
+      
+      <span class="ruby-identifier">info</span> = <span class="ruby-identifier">m</span>.<span class="ruby-identifier">get</span>
+      
+      <span class="ruby-comment"># Could make Timezone subclasses register an interest in an info</span>
+      <span class="ruby-comment"># type. Since there are currently only two however, there isn't</span>
+      <span class="ruby-comment"># much point.</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">info</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">DataTimezoneInfo</span>)
+        <span class="ruby-identifier">instance</span> = <span class="ruby-constant">DataTimezone</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">info</span>)
+      <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">info</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">LinkedTimezoneInfo</span>)
+        <span class="ruby-identifier">instance</span> = <span class="ruby-constant">LinkedTimezone</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">info</span>)
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">InvalidTimezoneIdentifier</span>, <span class="ruby-node">&quot;No handler for info type #{info.class}&quot;</span>
+      <span class="ruby-keyword">end</span>
+      
+      <span class="ruby-identifier">@@loaded_zones</span>[<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">identifier</span>] = <span class="ruby-identifier">instance</span>         
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">LoadError</span>, <span class="ruby-constant">NameError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">InvalidTimezoneIdentifier</span>, <span class="ruby-identifier">e</span>.<span class="ruby-identifier">message</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-identifier">instance</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get-method -->
+
+    
+      <div id="method-c-get_proxy" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_proxy</span><span
+            class="method-args">(identifier)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a proxy for the <a href="Timezone.html">Timezone</a> with the given
+identifier. The proxy will cause the real timezone to be loaded when an
+attempt is made to  find a period or convert a time. <a
+href="Timezone.html#method-c-get_proxy">::get_proxy</a> will not validate
+the  identifier. If an invalid identifier is specified, no exception will
+be  raised until the proxy is used.</p>
+          
+
+          
+          <div class="method-source-code" id="get_proxy-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timezone.rb, line 137</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">get_proxy</span>(<span class="ruby-identifier">identifier</span>)
+  <span class="ruby-constant">TimezoneProxy</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">identifier</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_proxy-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_proxy-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(identifier = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>If identifier is nil calls super(), otherwise calls get. An identfier 
+should always be passed in when called externally.</p>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timezone.rb, line 143</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">identifier</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">identifier</span>        
+    <span class="ruby-identifier">get</span>(<span class="ruby-identifier">identifier</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">super</span>()
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+      <div id="method-c-us_zone_identifiers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">us_zone_identifiers</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns all US zone identifiers. A shortcut for  <a
+href="Country.html#method-c-get">TZInfo::Country.get</a>(‘US’).zone_identifiers.</p>
+          
+
+          
+          <div class="method-source-code" id="us_zone_identifiers-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timezone.rb, line 231</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">us_zone_identifiers</span>
+  <span class="ruby-constant">Country</span>.<span class="ruby-identifier">get</span>(<span class="ruby-string">'US'</span>).<span class="ruby-identifier">zone_identifiers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- us_zone_identifiers-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- us_zone_identifiers-method -->
+
+    
+      <div id="method-c-us_zones" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">us_zones</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns all US <a href="Timezone.html">Timezone</a> instances. A shortcut
+for  <a
+href="Country.html#method-c-get">TZInfo::Country.get</a>(‘US’).zones.</p>
+
+<p>Returns <a href="TimezoneProxy.html">TimezoneProxy</a> objects to avoid the
+overhead of loading <a href="Timezone.html">Timezone</a> definitions until
+a conversion is actually required.</p>
+          
+
+          
+          <div class="method-source-code" id="us_zones-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timezone.rb, line 225</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">us_zones</span>
+  <span class="ruby-constant">Country</span>.<span class="ruby-identifier">get</span>(<span class="ruby-string">'US'</span>).<span class="ruby-identifier">zones</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- us_zones-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- us_zones-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-3C-3D-3E" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">&lt;=&gt;</span><span
+            class="method-args">(tz)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Compares two Timezones based on their identifier. Returns -1 if tz is less
+than self, 0 if tz is equal to self and +1 if tz is greater than self.</p>
+          
+
+          
+          <div class="method-source-code" id="3C-3D-3E-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timezone.rb, line 495</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">&lt;=&gt;</span>(<span class="ruby-identifier">tz</span>)
+  <span class="ruby-identifier">identifier</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">tz</span>.<span class="ruby-identifier">identifier</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 3C-3D-3E-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 3C-3D-3E-method -->
+
+    
+      <div id="method-i-_dump" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">_dump</span><span
+            class="method-args">(limit)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Dumps this <a href="Timezone.html">Timezone</a> for marshalling.</p>
+          
+
+          
+          <div class="method-source-code" id="_dump-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timezone.rb, line 511</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">_dump</span>(<span class="ruby-identifier">limit</span>)
+  <span class="ruby-identifier">identifier</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- _dump-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- _dump-method -->
+
+    
+      <div id="method-i-current_period" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">current_period</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the <a href="TimezonePeriod.html">TimezonePeriod</a> for the
+current time.</p>
+          
+
+          
+          <div class="method-source-code" id="current_period-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timezone.rb, line 457</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">current_period</span>
+  <span class="ruby-identifier">period_for_utc</span>(<span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">utc</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- current_period-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- current_period-method -->
+
+    
+      <div id="method-i-current_period_and_time" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">current_period_and_time</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the current Time and <a
+href="TimezonePeriod.html">TimezonePeriod</a> as an array. The first
+element is the time, the second element is the period.</p>
+          
+
+          
+          <div class="method-source-code" id="current_period_and_time-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timezone.rb, line 463</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">current_period_and_time</span>
+  <span class="ruby-identifier">utc</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">utc</span>
+  <span class="ruby-identifier">period</span> = <span class="ruby-identifier">period_for_utc</span>(<span class="ruby-identifier">utc</span>)
+  [<span class="ruby-identifier">period</span>.<span class="ruby-identifier">to_local</span>(<span class="ruby-identifier">utc</span>), <span class="ruby-identifier">period</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- current_period_and_time-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Timezone.html#method-i-current_time_and_period">current_time_and_period</a>
+        </div>
+        
+
+        
+      </div><!-- current_period_and_time-method -->
+
+    
+      <div id="method-i-current_time_and_period" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">current_time_and_period</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Timezone.html#method-i-current_period_and_time">current_period_and_time</a>
+        </div>
+        
+      </div><!-- current_time_and_period-method -->
+
+    
+      <div id="method-i-eql-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">eql?</span><span
+            class="method-args">(tz)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns true if and only if the identifier of tz is equal to the 
+identifier of this <a href="Timezone.html">Timezone</a>.</p>
+          
+
+          
+          <div class="method-source-code" id="eql-3F-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timezone.rb, line 501</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">eql?</span>(<span class="ruby-identifier">tz</span>)
+  <span class="ruby-keyword">self</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">tz</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- eql-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- eql-3F-method -->
+
+    
+      <div id="method-i-friendly_identifier" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">friendly_identifier</span><span
+            class="method-args">(skip_first_part = false)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a friendlier version of the identifier. Set skip_first_part to 
+omit the first part of the identifier (typically a region name) where there
+is more than one part.</p>
+
+<p>For example:</p>
+
+<pre class="ruby"><span class="ruby-constant">Timezone</span>.<span class="ruby-identifier">get</span>(<span class="ruby-string">'Europe/Paris'</span>).<span class="ruby-identifier">friendly_identifier</span>(<span class="ruby-keyword">false</span>)          <span class="ruby-comment">#=&gt; &quot;Europe - Paris&quot;</span>
+<span class="ruby-constant">Timezone</span>.<span class="ruby-identifier">get</span>(<span class="ruby-string">'Europe/Paris'</span>).<span class="ruby-identifier">friendly_identifier</span>(<span class="ruby-keyword">true</span>)           <span class="ruby-comment">#=&gt; &quot;Paris&quot;</span>
+<span class="ruby-constant">Timezone</span>.<span class="ruby-identifier">get</span>(<span class="ruby-string">'America/Indiana/Knox'</span>).<span class="ruby-identifier">friendly_identifier</span>(<span class="ruby-keyword">false</span>)  <span class="ruby-comment">#=&gt; &quot;America - Knox, Indiana&quot;</span>
+<span class="ruby-constant">Timezone</span>.<span class="ruby-identifier">get</span>(<span class="ruby-string">'America/Indiana/Knox'</span>).<span class="ruby-identifier">friendly_identifier</span>(<span class="ruby-keyword">true</span>)   <span class="ruby-comment">#=&gt; &quot;Knox, Indiana&quot;</span>
+</pre>
+          
+
+          
+          <div class="method-source-code" id="friendly_identifier-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timezone.rb, line 266</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">friendly_identifier</span>(<span class="ruby-identifier">skip_first_part</span> = <span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">parts</span> = <span class="ruby-identifier">identifier</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">'/'</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-comment"># shouldn't happen</span>
+    <span class="ruby-identifier">identifier</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>        
+    <span class="ruby-identifier">parts</span>[<span class="ruby-value">0</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">skip_first_part</span>
+      <span class="ruby-identifier">result</span> = <span class="ruby-string">''</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">result</span> = <span class="ruby-identifier">parts</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">+</span> <span class="ruby-string">' - '</span>
+    <span class="ruby-keyword">end</span>
+    
+    <span class="ruby-identifier">parts</span>[<span class="ruby-value">1</span>, <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>].<span class="ruby-identifier">reverse_each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">part</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">part</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">%r_/</span>, <span class="ruby-string">' '</span>)
+      
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">part</span>.<span class="ruby-identifier">index</span>(<span class="ruby-regexp">%r[a-z]/</span>)
+        <span class="ruby-comment"># Missing a space if a lower case followed by an upper case and the</span>
+        <span class="ruby-comment"># name isn't McXxxx.</span>
+        <span class="ruby-identifier">part</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">%r([^M][a-z])([A-Z])/</span>, <span class="ruby-string">'\1 \2'</span>)
+        <span class="ruby-identifier">part</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">%r([M][a-bd-z])([A-Z])/</span>, <span class="ruby-string">'\1 \2'</span>)
+        
+        <span class="ruby-comment"># Missing an apostrophe if two consecutive upper case characters.</span>
+        <span class="ruby-identifier">part</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">%r([A-Z])([A-Z])/</span>, <span class="ruby-string">'\1\\2'</span>)
+      <span class="ruby-keyword">end</span>
+      
+      <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">part</span>
+      <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">', '</span>
+    }
+    
+    <span class="ruby-identifier">result</span>.<span class="ruby-identifier">slice!</span>(<span class="ruby-identifier">result</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">-</span> <span class="ruby-value">2</span>, <span class="ruby-value">2</span>)
+    <span class="ruby-identifier">result</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- friendly_identifier-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- friendly_identifier-method -->
+
+    
+      <div id="method-i-hash" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">hash</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a hash of this <a href="Timezone.html">Timezone</a>.</p>
+          
+
+          
+          <div class="method-source-code" id="hash-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timezone.rb, line 506</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">hash</span>
+  <span class="ruby-identifier">identifier</span>.<span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- hash-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- hash-method -->
+
+    
+      <div id="method-i-identifier" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">identifier</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The identifier of the timezone, e.g. “Europe/Paris”.</p>
+          
+
+          
+          <div class="method-source-code" id="identifier-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timezone.rb, line 236</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">identifier</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">UnknownTimezone</span>, <span class="ruby-string">'TZInfo::Timezone constructed directly'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- identifier-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- identifier-method -->
+
+    
+      <div id="method-i-inspect" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inspect</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns internal object state as a programmer-readable string.</p>
+          
+
+          
+          <div class="method-source-code" id="inspect-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timezone.rb, line 252</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">inspect</span>
+  <span class="ruby-node">&quot;#&lt;#{self.class}: #{identifier}&gt;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- inspect-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- inspect-method -->
+
+    
+      <div id="method-i-local_to_utc" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">local_to_utc</span><span
+            class="method-args">(local, dst = Timezone.default_dst) { |periods| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Converts a time in the local timezone to UTC. local can either be a
+DateTime, Time or timestamp (Time.to_i). The returned time has the same
+type as local. Any timezone information in local is ignored (it is treated
+as a local time).</p>
+
+<p>Warning: There are local times that have no equivalent UTC times (e.g. in
+the transition from standard time to daylight savings time). There are also
+local times that have more than one UTC equivalent (e.g. in the transition
+from daylight savings time to standard time).</p>
+
+<p>In the first case (no equivalent UTC time), a <a
+href="PeriodNotFound.html">PeriodNotFound</a> exception will be raised.</p>
+
+<p>In the second case (more than one equivalent UTC time), an <a
+href="AmbiguousTime.html">AmbiguousTime</a> exception will be raised unless
+the optional dst parameter or block handles the ambiguity.</p>
+
+<p>If the ambiguity is due to a transition from daylight savings time to
+standard time, the dst parameter can be used to select whether the 
+daylight savings time or local time is used. For example,</p>
+
+<pre>Timezone.get('America/New_York').local_to_utc(DateTime.new(2004,10,31,1,30,0))</pre>
+
+<p>would raise an <a href="AmbiguousTime.html">AmbiguousTime</a> exception.</p>
+
+<p>Specifying dst=true would return 2004-10-31 5:30:00. Specifying dst=false
+would return 2004-10-31 6:30:00.</p>
+
+<p>If the dst parameter does not resolve the ambiguity, and a block is 
+specified, it is called. The block must take a single parameter - an array
+of the periods that need to be resolved. The block can return a single
+period to use to convert the time or return nil or an empty array to cause
+an <a href="AmbiguousTime.html">AmbiguousTime</a> exception to be raised.</p>
+
+<p>The default value of the dst parameter can be specified by setting <a
+href="Timezone.html#method-c-default_dst">::default_dst</a>. If <a
+href="Timezone.html#method-c-default_dst">::default_dst</a> is not set, or
+is set to nil, then an <a href="AmbiguousTime.html">AmbiguousTime</a>
+exception will be raised in ambiguous situations unless a block is given to
+resolve the ambiguity.</p>
+          
+
+          
+          <div class="method-source-code" id="local_to_utc-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timezone.rb, line 439</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">local_to_utc</span>(<span class="ruby-identifier">local</span>, <span class="ruby-identifier">dst</span> = <span class="ruby-constant">Timezone</span>.<span class="ruby-identifier">default_dst</span>)
+  <span class="ruby-constant">TimeOrDateTime</span>.<span class="ruby-identifier">wrap</span>(<span class="ruby-identifier">local</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">wrapped</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+      <span class="ruby-identifier">period</span> = <span class="ruby-identifier">period_for_local</span>(<span class="ruby-identifier">wrapped</span>, <span class="ruby-identifier">dst</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">periods</span><span class="ruby-operator">|</span> <span class="ruby-keyword">yield</span> <span class="ruby-identifier">periods</span> }
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">period</span> = <span class="ruby-identifier">period_for_local</span>(<span class="ruby-identifier">wrapped</span>, <span class="ruby-identifier">dst</span>)
+    <span class="ruby-keyword">end</span>
+    
+    <span class="ruby-identifier">period</span>.<span class="ruby-identifier">to_utc</span>(<span class="ruby-identifier">wrapped</span>)
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- local_to_utc-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- local_to_utc-method -->
+
+    
+      <div id="method-i-name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">name</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>An alias for identifier.</p>
+          
+
+          
+          <div class="method-source-code" id="name-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timezone.rb, line 241</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-comment"># Don't use alias, as identifier gets overridden.</span>
+  <span class="ruby-identifier">identifier</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- name-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- name-method -->
+
+    
+      <div id="method-i-now" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">now</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the current time in the timezone as a Time.</p>
+          
+
+          
+          <div class="method-source-code" id="now-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timezone.rb, line 452</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">now</span>
+  <span class="ruby-identifier">utc_to_local</span>(<span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">utc</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- now-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- now-method -->
+
+    
+      <div id="method-i-period_for_local" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">period_for_local</span><span
+            class="method-args">(local, dst = Timezone.default_dst) { |results| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the <a href="TimezonePeriod.html">TimezonePeriod</a> for the given
+local time. local can either be a DateTime, Time or integer timestamp
+(Time.to_i). Any timezone  information in local is ignored (it is treated
+as a time in the current  timezone).</p>
+
+<p>Warning: There are local times that have no equivalent UTC times (e.g. in
+the transition from standard time to daylight savings time). There are also
+local times that have more than one UTC equivalent (e.g. in the transition
+from daylight savings time to standard time).</p>
+
+<p>In the first case (no equivalent UTC time), a <a
+href="PeriodNotFound.html">PeriodNotFound</a> exception will be raised.</p>
+
+<p>In the second case (more than one equivalent UTC time), an <a
+href="AmbiguousTime.html">AmbiguousTime</a> exception will be raised unless
+the optional dst parameter or block handles the ambiguity.</p>
+
+<p>If the ambiguity is due to a transition from daylight savings time to
+standard time, the dst parameter can be used to select whether the 
+daylight savings time or local time is used. For example,</p>
+
+<pre>Timezone.get('America/New_York').period_for_local(DateTime.new(2004,10,31,1,30,0))</pre>
+
+<p>would raise an <a href="AmbiguousTime.html">AmbiguousTime</a> exception.</p>
+
+<p>Specifying dst=true would the daylight savings period from April to 
+October 2004. Specifying dst=false would return the standard period from
+October 2004 to April 2005.</p>
+
+<p>If the dst parameter does not resolve the ambiguity, and a block is 
+specified, it is called. The block must take a single parameter - an array
+of the periods that need to be resolved. The block can select and return a
+single period or return nil or an empty array to cause an <a
+href="AmbiguousTime.html">AmbiguousTime</a> exception to be raised.</p>
+
+<p>The default value of the dst parameter can be specified by setting <a
+href="Timezone.html#method-c-default_dst">::default_dst</a>. If <a
+href="Timezone.html#method-c-default_dst">::default_dst</a> is not set, or
+is set to nil, then an <a href="AmbiguousTime.html">AmbiguousTime</a>
+exception will be raised in ambiguous situations unless a block is given to
+resolve the ambiguity.</p>
+          
+
+          
+          <div class="method-source-code" id="period_for_local-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timezone.rb, line 356</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">period_for_local</span>(<span class="ruby-identifier">local</span>, <span class="ruby-identifier">dst</span> = <span class="ruby-constant">Timezone</span>.<span class="ruby-identifier">default_dst</span>)
+  <span class="ruby-identifier">results</span> = <span class="ruby-identifier">periods_for_local</span>(<span class="ruby-identifier">local</span>)
+  
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">results</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">PeriodNotFound</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">results</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">2</span>
+    <span class="ruby-identifier">results</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-comment"># ambiguous result try to resolve</span>
+    
+    <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">dst</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">matches</span> = <span class="ruby-identifier">results</span>.<span class="ruby-identifier">find_all</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">period</span><span class="ruby-operator">|</span> <span class="ruby-identifier">period</span>.<span class="ruby-identifier">dst?</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">dst</span>}
+      <span class="ruby-identifier">results</span> = <span class="ruby-identifier">matches</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">matches</span>.<span class="ruby-identifier">empty?</span>            
+    <span class="ruby-keyword">end</span>
+    
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">results</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">2</span>
+      <span class="ruby-identifier">results</span>.<span class="ruby-identifier">first</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-comment"># still ambiguous, try the block</span>
+                
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+        <span class="ruby-identifier">results</span> = <span class="ruby-keyword">yield</span> <span class="ruby-identifier">results</span>
+      <span class="ruby-keyword">end</span>
+      
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">results</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">TimezonePeriod</span>)
+        <span class="ruby-identifier">results</span>
+      <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">results</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">results</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+        <span class="ruby-identifier">results</span>.<span class="ruby-identifier">first</span>
+      <span class="ruby-keyword">else</span>          
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">AmbiguousTime</span>, <span class="ruby-node">&quot;#{local} is an ambiguous local time.&quot;</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>      
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- period_for_local-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- period_for_local-method -->
+
+    
+      <div id="method-i-period_for_utc" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">period_for_utc</span><span
+            class="method-args">(utc)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the <a href="TimezonePeriod.html">TimezonePeriod</a> for the given
+UTC time. utc can either be a DateTime, Time or integer timestamp
+(Time.to_i). Any timezone  information in utc is ignored (it is treated as
+a UTC time).</p>
+          
+
+          
+          <div class="method-source-code" id="period_for_utc-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timezone.rb, line 305</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">period_for_utc</span>(<span class="ruby-identifier">utc</span>)            
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">UnknownTimezone</span>, <span class="ruby-string">'TZInfo::Timezone constructed directly'</span>      
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- period_for_utc-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- period_for_utc-method -->
+
+    
+      <div id="method-i-periods_for_local" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">periods_for_local</span><span
+            class="method-args">(local)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the set of <a href="TimezonePeriod.html">TimezonePeriod</a>
+instances that are valid for the given local time as an array. If you just
+want a single period, use  <a
+href="Timezone.html#method-i-period_for_local">#period_for_local</a>
+instead and specify how ambiguities should be resolved. Returns an empty
+array if no periods are found for the given time.</p>
+          
+
+          
+          <div class="method-source-code" id="periods_for_local-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timezone.rb, line 313</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">periods_for_local</span>(<span class="ruby-identifier">local</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">UnknownTimezone</span>, <span class="ruby-string">'TZInfo::Timezone constructed directly'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- periods_for_local-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- periods_for_local-method -->
+
+    
+      <div id="method-i-strftime" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">strftime</span><span
+            class="method-args">(format, utc = Time.now.utc)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Converts a time in UTC to local time and returns it as a string  according
+to the given format. The formatting is identical to  Time.strftime and
+DateTime.strftime, except %Z is replaced with the timezone abbreviation for
+the specified time (for example, EST or EDT).</p>
+          
+
+          
+          <div class="method-source-code" id="strftime-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timezone.rb, line 475</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">strftime</span>(<span class="ruby-identifier">format</span>, <span class="ruby-identifier">utc</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">utc</span>)      
+  <span class="ruby-identifier">period</span> = <span class="ruby-identifier">period_for_utc</span>(<span class="ruby-identifier">utc</span>)
+  <span class="ruby-identifier">local</span> = <span class="ruby-identifier">period</span>.<span class="ruby-identifier">to_local</span>(<span class="ruby-identifier">utc</span>)      
+  <span class="ruby-identifier">local</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">at</span>(<span class="ruby-identifier">local</span>).<span class="ruby-identifier">utc</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">local</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Time</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">local</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">DateTime</span>)
+  <span class="ruby-identifier">abbreviation</span> = <span class="ruby-identifier">period</span>.<span class="ruby-identifier">abbreviation</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">%r%/</span>, <span class="ruby-string">'%%'</span>)
+  
+  <span class="ruby-identifier">format</span> = <span class="ruby-identifier">format</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">%r(.?)%Z/</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-node">$1</span> <span class="ruby-operator">==</span> <span class="ruby-string">'%'</span>
+      <span class="ruby-comment"># return %%Z so the real strftime treats it as a literal %Z too</span>
+      <span class="ruby-string">'%%Z'</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-node">&quot;#$1#{abbreviation}&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-identifier">local</span>.<span class="ruby-identifier">strftime</span>(<span class="ruby-identifier">format</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- strftime-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- strftime-method -->
+
+    
+      <div id="method-i-to_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a friendlier version of the identifier.</p>
+          
+
+          
+          <div class="method-source-code" id="to_s-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timezone.rb, line 247</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
+  <span class="ruby-identifier">friendly_identifier</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_s-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_s-method -->
+
+    
+      <div id="method-i-utc_to_local" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">utc_to_local</span><span
+            class="method-args">(utc)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Converts a time in UTC to the local timezone. utc can either be a DateTime,
+Time or timestamp (Time.to_i). The returned time has the same type as utc.
+Any timezone information in utc is ignored (it is treated as  a UTC time).</p>
+          
+
+          
+          <div class="method-source-code" id="utc_to_local-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timezone.rb, line 395</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">utc_to_local</span>(<span class="ruby-identifier">utc</span>)
+  <span class="ruby-constant">TimeOrDateTime</span>.<span class="ruby-identifier">wrap</span>(<span class="ruby-identifier">utc</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">wrapped</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">period_for_utc</span>(<span class="ruby-identifier">wrapped</span>).<span class="ruby-identifier">to_local</span>(<span class="ruby-identifier">wrapped</span>)
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- utc_to_local-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- utc_to_local-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

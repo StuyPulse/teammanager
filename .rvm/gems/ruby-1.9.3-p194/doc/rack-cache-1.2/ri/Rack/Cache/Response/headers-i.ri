@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"headers:EFI""Rack::Cache::Response#headers;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"#Rack response tuple accessors.;T:
+@fileI"lib/rack/cache/response.rb;TF@

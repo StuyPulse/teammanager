@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"accept:EFI"0ActionDispatch::Integration::Session#accept;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"The Accept header to send.;T:
+@fileI"/lib/action_dispatch/testing/integration.rb;TF@

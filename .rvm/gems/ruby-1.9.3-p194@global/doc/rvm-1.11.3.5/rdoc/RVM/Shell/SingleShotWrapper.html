@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>Class: RVM::Shell::SingleShotWrapper</title>
+
+  <link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="class">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../../lib/rvm/shell/single_shot_wrapper_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/rvm/shell/single_shot_wrapper.rb">lib/rvm/shell/single_shot_wrapper.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link"><a href="AbstractWrapper.html">RVM::Shell::AbstractWrapper</a></p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-i-run_command">#run_command</a></li>
+          
+          <li><a href="#method-i-run_command_silently">#run_command_silently</a></li>
+          
+          <li><a href="#method-i-stderr">#stderr</a></li>
+          
+          <li><a href="#method-i-stdin">#stdin</a></li>
+          
+          <li><a href="#method-i-stdout">#stdout</a></li>
+          
+          <li><a href="#method-i-with_shell_instance">#with_shell_instance</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../../RVM.html">RVM</a></li>
+        
+          <li><a href="../../RVM/Environment.html">RVM::Environment</a></li>
+        
+          <li><a href="../../RVM/Environment/AliasWrapper.html">RVM::Environment::AliasWrapper</a></li>
+        
+          <li><a href="../../RVM/Environment/CleanupWrapper.html">RVM::Environment::CleanupWrapper</a></li>
+        
+          <li><a href="../../RVM/Environment/ConfigMixin.html">RVM::Environment::ConfigMixin</a></li>
+        
+          <li><a href="../../RVM/Environment/EnvWrapper.html">RVM::Environment::EnvWrapper</a></li>
+        
+          <li><a href="../../RVM/Environment/GemsetWrapper.html">RVM::Environment::GemsetWrapper</a></li>
+        
+          <li><a href="../../RVM/Environment/GemsetWrapper/GlobalCacheHelper.html">RVM::Environment::GemsetWrapper::GlobalCacheHelper</a></li>
+        
+          <li><a href="../../RVM/Environment/ListWrapper.html">RVM::Environment::ListWrapper</a></li>
+        
+          <li><a href="../../RVM/Environment/ToolsWrapper.html">RVM::Environment::ToolsWrapper</a></li>
+        
+          <li><a href="../../RVM/Error.html">RVM::Error</a></li>
+        
+          <li><a href="../../RVM/ErrorLoadingRVMRC.html">RVM::ErrorLoadingRVMRC</a></li>
+        
+          <li><a href="../../RVM/ErrorWithResult.html">RVM::ErrorWithResult</a></li>
+        
+          <li><a href="../../RVM/IncompatibleRubyError.html">RVM::IncompatibleRubyError</a></li>
+        
+          <li><a href="../../RVM/IncompleteCommandError.html">RVM::IncompleteCommandError</a></li>
+        
+          <li><a href="../../RVM/Shell.html">RVM::Shell</a></li>
+        
+          <li><a href="../../RVM/Shell/AbstractWrapper.html">RVM::Shell::AbstractWrapper</a></li>
+        
+          <li><a href="../../RVM/Shell/Result.html">RVM::Shell::Result</a></li>
+        
+          <li><a href="../../RVM/Shell/SingleShotWrapper.html">RVM::Shell::SingleShotWrapper</a></li>
+        
+          <li><a href="../../RVM/Shell/Utility.html">RVM::Shell::Utility</a></li>
+        
+          <li><a href="../../Object.html">Object</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="class">RVM::Shell::SingleShotWrapper</h1>
+
+    <div id="description" class="description">
+      
+<p>Implementation of the abstract wrapper class that opens a new instance of
+bash when a command is run, only keeping it around for the lifetime of the
+command. Possibly inefficient but for the moment simplest and hence default
+implementation.</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+      <!-- Attributes -->
+      <div id="attribute-method-details" class="method-section section">
+        <h3 class="section-header">Attributes</h3>
+
+        
+        <div id="current-attribute-method" class="method-detail">
+          <a name="current"></a>
+          
+          <a name="current="></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">current</span><span
+              class="attribute-access-type">[RW]</span>
+          </div>
+
+          <div class="method-description">
+          
+          
+          
+          </div>
+        </div>
+        
+      </div><!-- attribute-method-details -->
+      
+
+      <!-- Methods -->
+      
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="run_command-method" class="method-detail ">
+          <a name="method-i-run_command"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">run_command</span><span
+              class="method-args">(command)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Runs a given command in the current shell. Defaults the command to true if
+empty.</p>
+            
+
+            
+            <div class="method-source-code" id="run_command-source">
+<pre>
+<span class="ruby-comment"># File lib/rvm/shell/single_shot_wrapper.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">run_command</span>(<span class="ruby-identifier">command</span>)
+  <span class="ruby-identifier">command</span> = <span class="ruby-string">&quot;true&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">command</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">strip</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">with_shell_instance</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">stdin</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">wrapped_command</span>(<span class="ruby-identifier">command</span>)
+    <span class="ruby-identifier">stdin</span>.<span class="ruby-identifier">close</span>
+    <span class="ruby-identifier">out</span>, <span class="ruby-identifier">err</span> = <span class="ruby-identifier">stdout</span>.<span class="ruby-identifier">read</span>, <span class="ruby-identifier">stderr</span>.<span class="ruby-identifier">read</span>
+    <span class="ruby-identifier">out</span>, <span class="ruby-identifier">status</span>, <span class="ruby-identifier">_</span> = <span class="ruby-identifier">raw_stdout_to_parts</span>(<span class="ruby-identifier">out</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">status</span>, <span class="ruby-identifier">out</span>, <span class="ruby-identifier">err</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- run_command-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- run_command-method -->
+
+      
+        <div id="run_command_silently-method" class="method-detail ">
+          <a name="method-i-run_command_silently"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">run_command_silently</span><span
+              class="method-args">(command)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Runs a command, ensuring no output is collected.</p>
+            
+
+            
+            <div class="method-source-code" id="run_command_silently-source">
+<pre>
+<span class="ruby-comment"># File lib/rvm/shell/single_shot_wrapper.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">run_command_silently</span>(<span class="ruby-identifier">command</span>)
+  <span class="ruby-identifier">with_shell_instance</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">stdin</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">silent_command</span>(<span class="ruby-identifier">command</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- run_command_silently-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- run_command_silently-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+      <div id="protected-instance-method-details" class="method-section section">
+        <h3 class="section-header">Protected Instance Methods</h3>
+
+      
+        <div id="stderr-method" class="method-detail ">
+          <a name="method-i-stderr"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">stderr</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="stderr-source">
+<pre>
+<span class="ruby-comment"># File lib/rvm/shell/single_shot_wrapper.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">stderr</span>; <span class="ruby-ivar">@current</span>[<span class="ruby-value">2</span>]; <span class="ruby-keyword">end</span></pre>
+            </div><!-- stderr-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- stderr-method -->
+
+      
+        <div id="stdin-method" class="method-detail ">
+          <a name="method-i-stdin"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">stdin</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Direct access to each of the named descriptors</p>
+            
+
+            
+            <div class="method-source-code" id="stdin-source">
+<pre>
+<span class="ruby-comment"># File lib/rvm/shell/single_shot_wrapper.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">stdin</span>;  <span class="ruby-ivar">@current</span>[<span class="ruby-value">0</span>]; <span class="ruby-keyword">end</span></pre>
+            </div><!-- stdin-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- stdin-method -->
+
+      
+        <div id="stdout-method" class="method-detail ">
+          <a name="method-i-stdout"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">stdout</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="stdout-source">
+<pre>
+<span class="ruby-comment"># File lib/rvm/shell/single_shot_wrapper.rb, line 51</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">stdout</span>; <span class="ruby-ivar">@current</span>[<span class="ruby-value">1</span>]; <span class="ruby-keyword">end</span></pre>
+            </div><!-- stdout-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- stdout-method -->
+
+      
+        <div id="with_shell_instance-method" class="method-detail ">
+          <a name="method-i-with_shell_instance"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">with_shell_instance</span><span
+              class="method-args">(&blk)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>yields stdio, stderr and stdin for a shell instance. If there isn’t a
+current shell instance, it will create a new one. In said scenario, it will
+also cleanup once it is done.</p>
+            
+
+            
+            <div class="method-source-code" id="with_shell_instance-source">
+<pre>
+<span class="ruby-comment"># File lib/rvm/shell/single_shot_wrapper.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">with_shell_instance</span>(&amp;<span class="ruby-identifier">blk</span>)
+  <span class="ruby-identifier">no_current</span> = <span class="ruby-ivar">@current</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">no_current</span>
+    <span class="ruby-ivar">@current</span> = <span class="ruby-constant">Open3</span>.<span class="ruby-identifier">popen3</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">shell_executable</span>)
+    <span class="ruby-identifier">invoke_setup!</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">yield</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-ivar">@current</span> = <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">no_current</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- with_shell_instance-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- with_shell_instance-method -->
+
+      
+      </div><!-- protected-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

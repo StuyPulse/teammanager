@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Mysql::Stmt - activerecord-3.2.3 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/active_record/connection_adapters/mysql_adapter.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">Enumerable</span>
+  
+  
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../ActiveRecord.html">ActiveRecord</a>
+  
+    <li><a href="../ActiveRecord/ActiveRecordError.html">ActiveRecord::ActiveRecordError</a>
+  
+    <li><a href="../ActiveRecord/AdapterNotFound.html">ActiveRecord::AdapterNotFound</a>
+  
+    <li><a href="../ActiveRecord/AdapterNotSpecified.html">ActiveRecord::AdapterNotSpecified</a>
+  
+    <li><a href="../ActiveRecord/Aggregations.html">ActiveRecord::Aggregations</a>
+  
+    <li><a href="../ActiveRecord/Aggregations/ClassMethods.html">ActiveRecord::Aggregations::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/AssociationTypeMismatch.html">ActiveRecord::AssociationTypeMismatch</a>
+  
+    <li><a href="../ActiveRecord/Associations.html">ActiveRecord::Associations</a>
+  
+    <li><a href="../ActiveRecord/Associations/ClassMethods.html">ActiveRecord::Associations::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/AttributeAssignment.html">ActiveRecord::AttributeAssignment</a>
+  
+    <li><a href="../ActiveRecord/AttributeAssignment/ClassMethods.html">ActiveRecord::AttributeAssignment::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/AttributeAssignmentError.html">ActiveRecord::AttributeAssignmentError</a>
+  
+    <li><a href="../ActiveRecord/AttributeMethods.html">ActiveRecord::AttributeMethods</a>
+  
+    <li><a href="../ActiveRecord/AttributeMethods/BeforeTypeCast.html">ActiveRecord::AttributeMethods::BeforeTypeCast</a>
+  
+    <li><a href="../ActiveRecord/AttributeMethods/ClassMethods.html">ActiveRecord::AttributeMethods::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/AttributeMethods/DeprecatedUnderscoreRead.html">ActiveRecord::AttributeMethods::DeprecatedUnderscoreRead</a>
+  
+    <li><a href="../ActiveRecord/AttributeMethods/DeprecatedUnderscoreRead/ClassMethods.html">ActiveRecord::AttributeMethods::DeprecatedUnderscoreRead::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/AttributeMethods/Dirty.html">ActiveRecord::AttributeMethods::Dirty</a>
+  
+    <li><a href="../ActiveRecord/AttributeMethods/PrimaryKey.html">ActiveRecord::AttributeMethods::PrimaryKey</a>
+  
+    <li><a href="../ActiveRecord/AttributeMethods/PrimaryKey/ClassMethods.html">ActiveRecord::AttributeMethods::PrimaryKey::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/AttributeMethods/Query.html">ActiveRecord::AttributeMethods::Query</a>
+  
+    <li><a href="../ActiveRecord/AttributeMethods/Read.html">ActiveRecord::AttributeMethods::Read</a>
+  
+    <li><a href="../ActiveRecord/AttributeMethods/Read/ClassMethods.html">ActiveRecord::AttributeMethods::Read::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/AttributeMethods/Serialization.html">ActiveRecord::AttributeMethods::Serialization</a>
+  
+    <li><a href="../ActiveRecord/AttributeMethods/Serialization/Attribute.html">ActiveRecord::AttributeMethods::Serialization::Attribute</a>
+  
+    <li><a href="../ActiveRecord/AttributeMethods/Serialization/ClassMethods.html">ActiveRecord::AttributeMethods::Serialization::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/AttributeMethods/TimeZoneConversion.html">ActiveRecord::AttributeMethods::TimeZoneConversion</a>
+  
+    <li><a href="../ActiveRecord/AttributeMethods/TimeZoneConversion/ClassMethods.html">ActiveRecord::AttributeMethods::TimeZoneConversion::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/AttributeMethods/Write.html">ActiveRecord::AttributeMethods::Write</a>
+  
+    <li><a href="../ActiveRecord/AttributeMethods/Write/ClassMethods.html">ActiveRecord::AttributeMethods::Write::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/AutosaveAssociation.html">ActiveRecord::AutosaveAssociation</a>
+  
+    <li><a href="../ActiveRecord/AutosaveAssociation/ClassMethods.html">ActiveRecord::AutosaveAssociation::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/Base.html">ActiveRecord::Base</a>
+  
+    <li><a href="../ActiveRecord/Batches.html">ActiveRecord::Batches</a>
+  
+    <li><a href="../ActiveRecord/Calculations.html">ActiveRecord::Calculations</a>
+  
+    <li><a href="../ActiveRecord/Callbacks.html">ActiveRecord::Callbacks</a>
+  
+    <li><a href="../ActiveRecord/ConfigurationError.html">ActiveRecord::ConfigurationError</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/AbstractAdapter.html">ActiveRecord::ConnectionAdapters::AbstractAdapter</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/AbstractMysqlAdapter.html">ActiveRecord::ConnectionAdapters::AbstractMysqlAdapter</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/ConnectionHandler.html">ActiveRecord::ConnectionAdapters::ConnectionHandler</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/ConnectionManagement.html">ActiveRecord::ConnectionAdapters::ConnectionManagement</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/ConnectionPool.html">ActiveRecord::ConnectionAdapters::ConnectionPool</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/DatabaseLimits.html">ActiveRecord::ConnectionAdapters::DatabaseLimits</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/DatabaseStatements.html">ActiveRecord::ConnectionAdapters::DatabaseStatements</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/Mysql2Adapter.html">ActiveRecord::ConnectionAdapters::Mysql2Adapter</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/MysqlAdapter.html">ActiveRecord::ConnectionAdapters::MysqlAdapter</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/MysqlAdapter/StatementPool.html">ActiveRecord::ConnectionAdapters::MysqlAdapter::StatementPool</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/StatementPool.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::StatementPool</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/TableDefinition.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::TableDefinition</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/Utils.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::Utils</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLColumn.html">ActiveRecord::ConnectionAdapters::PostgreSQLColumn</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/QueryCache.html">ActiveRecord::ConnectionAdapters::QueryCache</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/Quoting.html">ActiveRecord::ConnectionAdapters::Quoting</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/SQLiteAdapter.html">ActiveRecord::ConnectionAdapters::SQLiteAdapter</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/SQLiteAdapter/ExplainPrettyPrinter.html">ActiveRecord::ConnectionAdapters::SQLiteAdapter::ExplainPrettyPrinter</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/SQLiteAdapter/StatementPool.html">ActiveRecord::ConnectionAdapters::SQLiteAdapter::StatementPool</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/SQLiteAdapter/Version.html">ActiveRecord::ConnectionAdapters::SQLiteAdapter::Version</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/SchemaCache.html">ActiveRecord::ConnectionAdapters::SchemaCache</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/SchemaStatements.html">ActiveRecord::ConnectionAdapters::SchemaStatements</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/StatementPool.html">ActiveRecord::ConnectionAdapters::StatementPool</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/Table.html">ActiveRecord::ConnectionAdapters::Table</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/TableDefinition.html">ActiveRecord::ConnectionAdapters::TableDefinition</a>
+  
+    <li><a href="../ActiveRecord/ConnectionNotEstablished.html">ActiveRecord::ConnectionNotEstablished</a>
+  
+    <li><a href="../ActiveRecord/ConnectionTimeoutError.html">ActiveRecord::ConnectionTimeoutError</a>
+  
+    <li><a href="../ActiveRecord/CounterCache.html">ActiveRecord::CounterCache</a>
+  
+    <li><a href="../ActiveRecord/DangerousAttributeError.html">ActiveRecord::DangerousAttributeError</a>
+  
+    <li><a href="../ActiveRecord/Delegation.html">ActiveRecord::Delegation</a>
+  
+    <li><a href="../ActiveRecord/DynamicFinderMatch.html">ActiveRecord::DynamicFinderMatch</a>
+  
+    <li><a href="../ActiveRecord/DynamicMatchers.html">ActiveRecord::DynamicMatchers</a>
+  
+    <li><a href="../ActiveRecord/DynamicScopeMatch.html">ActiveRecord::DynamicScopeMatch</a>
+  
+    <li><a href="../ActiveRecord/Explain.html">ActiveRecord::Explain</a>
+  
+    <li><a href="../ActiveRecord/FinderMethods.html">ActiveRecord::FinderMethods</a>
+  
+    <li><a href="../ActiveRecord/Fixtures.html">ActiveRecord::Fixtures</a>
+  
+    <li><a href="../ActiveRecord/Fixtures/File.html">ActiveRecord::Fixtures::File</a>
+  
+    <li><a href="../ActiveRecord/Generators.html">ActiveRecord::Generators</a>
+  
+    <li><a href="../ActiveRecord/Generators/Migration.html">ActiveRecord::Generators::Migration</a>
+  
+    <li><a href="../ActiveRecord/Generators/MigrationGenerator.html">ActiveRecord::Generators::MigrationGenerator</a>
+  
+    <li><a href="../ActiveRecord/Generators/ModelGenerator.html">ActiveRecord::Generators::ModelGenerator</a>
+  
+    <li><a href="../ActiveRecord/Generators/ObserverGenerator.html">ActiveRecord::Generators::ObserverGenerator</a>
+  
+    <li><a href="../ActiveRecord/Generators/SessionMigrationGenerator.html">ActiveRecord::Generators::SessionMigrationGenerator</a>
+  
+    <li><a href="../ActiveRecord/IdentityMap.html">ActiveRecord::IdentityMap</a>
+  
+    <li><a href="../ActiveRecord/IdentityMap/Middleware.html">ActiveRecord::IdentityMap::Middleware</a>
+  
+    <li><a href="../ActiveRecord/Inheritance.html">ActiveRecord::Inheritance</a>
+  
+    <li><a href="../ActiveRecord/Inheritance/ClassMethods.html">ActiveRecord::Inheritance::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/Integration.html">ActiveRecord::Integration</a>
+  
+    <li><a href="../ActiveRecord/InvalidForeignKey.html">ActiveRecord::InvalidForeignKey</a>
+  
+    <li><a href="../ActiveRecord/IrreversibleMigration.html">ActiveRecord::IrreversibleMigration</a>
+  
+    <li><a href="../ActiveRecord/Locking.html">ActiveRecord::Locking</a>
+  
+    <li><a href="../ActiveRecord/Locking/Optimistic.html">ActiveRecord::Locking::Optimistic</a>
+  
+    <li><a href="../ActiveRecord/Locking/Optimistic/ClassMethods.html">ActiveRecord::Locking::Optimistic::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/Locking/Pessimistic.html">ActiveRecord::Locking::Pessimistic</a>
+  
+    <li><a href="../ActiveRecord/LogSubscriber.html">ActiveRecord::LogSubscriber</a>
+  
+    <li><a href="../ActiveRecord/Migration.html">ActiveRecord::Migration</a>
+  
+    <li><a href="../ActiveRecord/Migration/CommandRecorder.html">ActiveRecord::Migration::CommandRecorder</a>
+  
+    <li><a href="../ActiveRecord/MigrationProxy.html">ActiveRecord::MigrationProxy</a>
+  
+    <li><a href="../ActiveRecord/ModelSchema.html">ActiveRecord::ModelSchema</a>
+  
+    <li><a href="../ActiveRecord/ModelSchema/ClassMethods.html">ActiveRecord::ModelSchema::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/MultiparameterAssignmentErrors.html">ActiveRecord::MultiparameterAssignmentErrors</a>
+  
+    <li><a href="../ActiveRecord/NestedAttributes.html">ActiveRecord::NestedAttributes</a>
+  
+    <li><a href="../ActiveRecord/NestedAttributes/ClassMethods.html">ActiveRecord::NestedAttributes::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/NestedAttributes/TooManyRecords.html">ActiveRecord::NestedAttributes::TooManyRecords</a>
+  
+    <li><a href="../ActiveRecord/Observer.html">ActiveRecord::Observer</a>
+  
+    <li><a href="../ActiveRecord/Persistence.html">ActiveRecord::Persistence</a>
+  
+    <li><a href="../ActiveRecord/Persistence/ClassMethods.html">ActiveRecord::Persistence::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/PreparedStatementInvalid.html">ActiveRecord::PreparedStatementInvalid</a>
+  
+    <li><a href="../ActiveRecord/QueryCache.html">ActiveRecord::QueryCache</a>
+  
+    <li><a href="../ActiveRecord/QueryCache/ClassMethods.html">ActiveRecord::QueryCache::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/QueryMethods.html">ActiveRecord::QueryMethods</a>
+  
+    <li><a href="../ActiveRecord/Querying.html">ActiveRecord::Querying</a>
+  
+    <li><a href="../ActiveRecord/Railtie.html">ActiveRecord::Railtie</a>
+  
+    <li><a href="../ActiveRecord/Railties.html">ActiveRecord::Railties</a>
+  
+    <li><a href="../ActiveRecord/Railties/ControllerRuntime.html">ActiveRecord::Railties::ControllerRuntime</a>
+  
+    <li><a href="../ActiveRecord/Railties/ControllerRuntime/ClassMethods.html">ActiveRecord::Railties::ControllerRuntime::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/ReadOnlyRecord.html">ActiveRecord::ReadOnlyRecord</a>
+  
+    <li><a href="../ActiveRecord/ReadonlyAttributes.html">ActiveRecord::ReadonlyAttributes</a>
+  
+    <li><a href="../ActiveRecord/ReadonlyAttributes/ClassMethods.html">ActiveRecord::ReadonlyAttributes::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/RecordInvalid.html">ActiveRecord::RecordInvalid</a>
+  
+    <li><a href="../ActiveRecord/RecordNotFound.html">ActiveRecord::RecordNotFound</a>
+  
+    <li><a href="../ActiveRecord/RecordNotSaved.html">ActiveRecord::RecordNotSaved</a>
+  
+    <li><a href="../ActiveRecord/RecordNotUnique.html">ActiveRecord::RecordNotUnique</a>
+  
+    <li><a href="../ActiveRecord/Reflection.html">ActiveRecord::Reflection</a>
+  
+    <li><a href="../ActiveRecord/Reflection/ClassMethods.html">ActiveRecord::Reflection::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/Reflection/MacroReflection.html">ActiveRecord::Reflection::MacroReflection</a>
+  
+    <li><a href="../ActiveRecord/Relation.html">ActiveRecord::Relation</a>
+  
+    <li><a href="../ActiveRecord/Result.html">ActiveRecord::Result</a>
+  
+    <li><a href="../ActiveRecord/Rollback.html">ActiveRecord::Rollback</a>
+  
+    <li><a href="../ActiveRecord/Sanitization.html">ActiveRecord::Sanitization</a>
+  
+    <li><a href="../ActiveRecord/Sanitization/ClassMethods.html">ActiveRecord::Sanitization::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/Schema.html">ActiveRecord::Schema</a>
+  
+    <li><a href="../ActiveRecord/Scoping.html">ActiveRecord::Scoping</a>
+  
+    <li><a href="../ActiveRecord/Scoping/ClassMethods.html">ActiveRecord::Scoping::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/Scoping/Default.html">ActiveRecord::Scoping::Default</a>
+  
+    <li><a href="../ActiveRecord/Scoping/Default/ClassMethods.html">ActiveRecord::Scoping::Default::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/Scoping/Named.html">ActiveRecord::Scoping::Named</a>
+  
+    <li><a href="../ActiveRecord/Scoping/Named/ClassMethods.html">ActiveRecord::Scoping::Named::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/Serialization.html">ActiveRecord::Serialization</a>
+  
+    <li><a href="../ActiveRecord/SerializationTypeMismatch.html">ActiveRecord::SerializationTypeMismatch</a>
+  
+    <li><a href="../ActiveRecord/SessionStore.html">ActiveRecord::SessionStore</a>
+  
+    <li><a href="../ActiveRecord/SessionStore/Session.html">ActiveRecord::SessionStore::Session</a>
+  
+    <li><a href="../ActiveRecord/SessionStore/SqlBypass.html">ActiveRecord::SessionStore::SqlBypass</a>
+  
+    <li><a href="../ActiveRecord/SpawnMethods.html">ActiveRecord::SpawnMethods</a>
+  
+    <li><a href="../ActiveRecord/StaleObjectError.html">ActiveRecord::StaleObjectError</a>
+  
+    <li><a href="../ActiveRecord/StatementInvalid.html">ActiveRecord::StatementInvalid</a>
+  
+    <li><a href="../ActiveRecord/Store.html">ActiveRecord::Store</a>
+  
+    <li><a href="../ActiveRecord/Store/ClassMethods.html">ActiveRecord::Store::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/TestFixtures.html">ActiveRecord::TestFixtures</a>
+  
+    <li><a href="../ActiveRecord/TestFixtures/ClassMethods.html">ActiveRecord::TestFixtures::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/ThrowResult.html">ActiveRecord::ThrowResult</a>
+  
+    <li><a href="../ActiveRecord/Timestamp.html">ActiveRecord::Timestamp</a>
+  
+    <li><a href="../ActiveRecord/Transactions.html">ActiveRecord::Transactions</a>
+  
+    <li><a href="../ActiveRecord/Transactions/ClassMethods.html">ActiveRecord::Transactions::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/Translation.html">ActiveRecord::Translation</a>
+  
+    <li><a href="../ActiveRecord/UnknownAttributeError.html">ActiveRecord::UnknownAttributeError</a>
+  
+    <li><a href="../ActiveRecord/UnknownPrimaryKey.html">ActiveRecord::UnknownPrimaryKey</a>
+  
+    <li><a href="../ActiveRecord/Validations.html">ActiveRecord::Validations</a>
+  
+    <li><a href="../ActiveRecord/Validations/AssociatedValidator.html">ActiveRecord::Validations::AssociatedValidator</a>
+  
+    <li><a href="../ActiveRecord/Validations/ClassMethods.html">ActiveRecord::Validations::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/Validations/UniquenessValidator.html">ActiveRecord::Validations::UniquenessValidator</a>
+  
+    <li><a href="../ActiveRecord/WrappedDatabaseException.html">ActiveRecord::WrappedDatabaseException</a>
+  
+    <li><a href="../Mysql.html">Mysql</a>
+  
+    <li><a href="../Mysql/Result.html">Mysql::Result</a>
+  
+    <li><a href="../Mysql/Stmt.html">Mysql::Stmt</a>
+  
+    <li><a href="../Mysql/Time.html">Mysql::Time</a>
+  
+    <li><a href="../ArJdbcMySQL.html">ArJdbcMySQL</a>
+  
+    <li><a href="../ArJdbcMySQL/Error.html">ArJdbcMySQL::Error</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Mysql::Stmt</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

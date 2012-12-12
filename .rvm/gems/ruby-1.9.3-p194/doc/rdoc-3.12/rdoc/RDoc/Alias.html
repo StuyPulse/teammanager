@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class RDoc::Alias - rdoc-3.12 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/rdoc/alias.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="CodeObject.html">RDoc::CodeObject</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-3C-3D-3E">#&lt;=&gt;</a>
+    
+    <li><a href="#method-i-aref">#aref</a>
+    
+    <li><a href="#method-i-full_old_name">#full_old_name</a>
+    
+    <li><a href="#method-i-html_name">#html_name</a>
+    
+    <li><a href="#method-i-name_prefix">#name_prefix</a>
+    
+    <li><a href="#method-i-pretty_name">#pretty_name</a>
+    
+    <li><a href="#method-i-pretty_new_name">#pretty_new_name</a>
+    
+    <li><a href="#method-i-pretty_old_name">#pretty_old_name</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../DEVELOPERS_rdoc.html">DEVELOPERS</a>
+  
+    <li class="file"><a href="../History_rdoc.html">History</a>
+  
+    <li class="file"><a href="../LEGAL_rdoc.html">LEGAL</a>
+  
+    <li class="file"><a href="../LICENSE_rdoc.html">LICENSE</a>
+  
+    <li class="file"><a href="../Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="../README_rdoc.html">README</a>
+  
+    <li class="file"><a href="../RI_rdoc.html">RI</a>
+  
+    <li class="file"><a href="../Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="../TODO_rdoc.html">TODO</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../RDoc.html">RDoc</a>
+  
+    <li><a href="../RDoc/Alias.html">RDoc::Alias</a>
+  
+    <li><a href="../RDoc/AnonClass.html">RDoc::AnonClass</a>
+  
+    <li><a href="../RDoc/AnyMethod.html">RDoc::AnyMethod</a>
+  
+    <li><a href="../RDoc/Attr.html">RDoc::Attr</a>
+  
+    <li><a href="../RDoc/ClassModule.html">RDoc::ClassModule</a>
+  
+    <li><a href="../RDoc/CodeObject.html">RDoc::CodeObject</a>
+  
+    <li><a href="../RDoc/Comment.html">RDoc::Comment</a>
+  
+    <li><a href="../RDoc/Constant.html">RDoc::Constant</a>
+  
+    <li><a href="../RDoc/Context.html">RDoc::Context</a>
+  
+    <li><a href="../RDoc/Context/Section.html">RDoc::Context::Section</a>
+  
+    <li><a href="../RDoc/CrossReference.html">RDoc::CrossReference</a>
+  
+    <li><a href="../RDoc/ERBIO.html">RDoc::ERBIO</a>
+  
+    <li><a href="../RDoc/Encoding.html">RDoc::Encoding</a>
+  
+    <li><a href="../RDoc/Error.html">RDoc::Error</a>
+  
+    <li><a href="../RDoc/Gauntlet.html">RDoc::Gauntlet</a>
+  
+    <li><a href="../RDoc/Generator.html">RDoc::Generator</a>
+  
+    <li><a href="../RDoc/Generator/Darkfish.html">RDoc::Generator::Darkfish</a>
+  
+    <li><a href="../RDoc/Generator/JsonIndex.html">RDoc::Generator::JsonIndex</a>
+  
+    <li><a href="../RDoc/Generator/Markup.html">RDoc::Generator::Markup</a>
+  
+    <li><a href="../RDoc/Generator/RI.html">RDoc::Generator::RI</a>
+  
+    <li><a href="../RDoc/GhostMethod.html">RDoc::GhostMethod</a>
+  
+    <li><a href="../RDoc/Include.html">RDoc::Include</a>
+  
+    <li><a href="../RDoc/Markup.html">RDoc::Markup</a>
+  
+    <li><a href="../RDoc/Markup/AttrChanger.html">RDoc::Markup::AttrChanger</a>
+  
+    <li><a href="../RDoc/Markup/AttrSpan.html">RDoc::Markup::AttrSpan</a>
+  
+    <li><a href="../RDoc/Markup/Attribute.html">RDoc::Markup::Attribute</a>
+  
+    <li><a href="../RDoc/Markup/AttributeManager.html">RDoc::Markup::AttributeManager</a>
+  
+    <li><a href="../RDoc/Markup/BlankLine.html">RDoc::Markup::BlankLine</a>
+  
+    <li><a href="../RDoc/Markup/Document.html">RDoc::Markup::Document</a>
+  
+    <li><a href="../RDoc/Markup/Formatter.html">RDoc::Markup::Formatter</a>
+  
+    <li><a href="../RDoc/Markup/FormatterTestCase.html">RDoc::Markup::FormatterTestCase</a>
+  
+    <li><a href="../RDoc/Markup/Heading.html">RDoc::Markup::Heading</a>
+  
+    <li><a href="../RDoc/Markup/Include.html">RDoc::Markup::Include</a>
+  
+    <li><a href="../RDoc/Markup/IndentedParagraph.html">RDoc::Markup::IndentedParagraph</a>
+  
+    <li><a href="../RDoc/Markup/List.html">RDoc::Markup::List</a>
+  
+    <li><a href="../RDoc/Markup/ListItem.html">RDoc::Markup::ListItem</a>
+  
+    <li><a href="../RDoc/Markup/Paragraph.html">RDoc::Markup::Paragraph</a>
+  
+    <li><a href="../RDoc/Markup/Parser.html">RDoc::Markup::Parser</a>
+  
+    <li><a href="../RDoc/Markup/Parser/Error.html">RDoc::Markup::Parser::Error</a>
+  
+    <li><a href="../RDoc/Markup/Parser/ParseError.html">RDoc::Markup::Parser::ParseError</a>
+  
+    <li><a href="../RDoc/Markup/PreProcess.html">RDoc::Markup::PreProcess</a>
+  
+    <li><a href="../RDoc/Markup/Raw.html">RDoc::Markup::Raw</a>
+  
+    <li><a href="../RDoc/Markup/Rule.html">RDoc::Markup::Rule</a>
+  
+    <li><a href="../RDoc/Markup/Special.html">RDoc::Markup::Special</a>
+  
+    <li><a href="../RDoc/Markup/TextFormatterTestCase.html">RDoc::Markup::TextFormatterTestCase</a>
+  
+    <li><a href="../RDoc/Markup/ToAnsi.html">RDoc::Markup::ToAnsi</a>
+  
+    <li><a href="../RDoc/Markup/ToBs.html">RDoc::Markup::ToBs</a>
+  
+    <li><a href="../RDoc/Markup/ToHtml.html">RDoc::Markup::ToHtml</a>
+  
+    <li><a href="../RDoc/Markup/ToHtmlCrossref.html">RDoc::Markup::ToHtmlCrossref</a>
+  
+    <li><a href="../RDoc/Markup/ToHtmlSnippet.html">RDoc::Markup::ToHtmlSnippet</a>
+  
+    <li><a href="../RDoc/Markup/ToLabel.html">RDoc::Markup::ToLabel</a>
+  
+    <li><a href="../RDoc/Markup/ToRdoc.html">RDoc::Markup::ToRdoc</a>
+  
+    <li><a href="../RDoc/Markup/ToTableOfContents.html">RDoc::Markup::ToTableOfContents</a>
+  
+    <li><a href="../RDoc/Markup/ToTest.html">RDoc::Markup::ToTest</a>
+  
+    <li><a href="../RDoc/Markup/ToTtOnly.html">RDoc::Markup::ToTtOnly</a>
+  
+    <li><a href="../RDoc/Markup/Verbatim.html">RDoc::Markup::Verbatim</a>
+  
+    <li><a href="../RDoc/MetaMethod.html">RDoc::MetaMethod</a>
+  
+    <li><a href="../RDoc/MethodAttr.html">RDoc::MethodAttr</a>
+  
+    <li><a href="../RDoc/NormalClass.html">RDoc::NormalClass</a>
+  
+    <li><a href="../RDoc/NormalModule.html">RDoc::NormalModule</a>
+  
+    <li><a href="../RDoc/Options.html">RDoc::Options</a>
+  
+    <li><a href="../RDoc/Parser.html">RDoc::Parser</a>
+  
+    <li><a href="../RDoc/Parser/C.html">RDoc::Parser::C</a>
+  
+    <li><a href="../RDoc/Parser/RD.html">RDoc::Parser::RD</a>
+  
+    <li><a href="../RDoc/Parser/Ruby.html">RDoc::Parser::Ruby</a>
+  
+    <li><a href="../RDoc/Parser/RubyTools.html">RDoc::Parser::RubyTools</a>
+  
+    <li><a href="../RDoc/Parser/Simple.html">RDoc::Parser::Simple</a>
+  
+    <li><a href="../RDoc/Parser/Text.html">RDoc::Parser::Text</a>
+  
+    <li><a href="../RDoc/RD.html">RDoc::RD</a>
+  
+    <li><a href="../RDoc/RD/Inline.html">RDoc::RD::Inline</a>
+  
+    <li><a href="../RDoc/RDoc.html">RDoc::RDoc</a>
+  
+    <li><a href="../RDoc/RI.html">RDoc::RI</a>
+  
+    <li><a href="../RDoc/RI/Driver.html">RDoc::RI::Driver</a>
+  
+    <li><a href="../RDoc/RI/Driver/Error.html">RDoc::RI::Driver::Error</a>
+  
+    <li><a href="../RDoc/RI/Driver/NotFoundError.html">RDoc::RI::Driver::NotFoundError</a>
+  
+    <li><a href="../RDoc/RI/Error.html">RDoc::RI::Error</a>
+  
+    <li><a href="../RDoc/RI/Paths.html">RDoc::RI::Paths</a>
+  
+    <li><a href="../RDoc/RI/Store.html">RDoc::RI::Store</a>
+  
+    <li><a href="../RDoc/Require.html">RDoc::Require</a>
+  
+    <li><a href="../RDoc/RubyLex.html">RDoc::RubyLex</a>
+  
+    <li><a href="../RDoc/RubyLex/Error.html">RDoc::RubyLex::Error</a>
+  
+    <li><a href="../RDoc/RubyToken.html">RDoc::RubyToken</a>
+  
+    <li><a href="../RDoc/RubygemsHook.html">RDoc::RubygemsHook</a>
+  
+    <li><a href="../RDoc/SingleClass.html">RDoc::SingleClass</a>
+  
+    <li><a href="../RDoc/Stats.html">RDoc::Stats</a>
+  
+    <li><a href="../RDoc/Stats/Normal.html">RDoc::Stats::Normal</a>
+  
+    <li><a href="../RDoc/Stats/Quiet.html">RDoc::Stats::Quiet</a>
+  
+    <li><a href="../RDoc/Stats/Verbose.html">RDoc::Stats::Verbose</a>
+  
+    <li><a href="../RDoc/Task.html">RDoc::Task</a>
+  
+    <li><a href="../RDoc/Task.html">RDoc::Task</a>
+  
+    <li><a href="../RDoc/TestCase.html">RDoc::TestCase</a>
+  
+    <li><a href="../RDoc/Text.html">RDoc::Text</a>
+  
+    <li><a href="../RDoc/TokenStream.html">RDoc::TokenStream</a>
+  
+    <li><a href="../RDoc/TomDoc.html">RDoc::TomDoc</a>
+  
+    <li><a href="../RDoc/TopLevel.html">RDoc::TopLevel</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class RDoc::Alias</h1>
+
+  <div id="description" class="description">
+    
+<p>Represent an alias, which is an old_name/new_name pair associated with a
+particular context</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-name" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">name</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Aliased method’s name</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-new_name" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">new_name</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Aliased method’s name</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-old_name" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">old_name</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Aliasee method’s name</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-singleton" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">singleton</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Is this an alias declared in a singleton context?</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-text" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">text</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Source file token stream</p>
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(text, old_name, new_name, comment, singleton = false)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Creates a new <a href="Alias.html">Alias</a> with a token stream of
+<code>text</code> that aliases <code>old_name</code> to
+<code>new_name</code>, has <code>comment</code> and is a
+<code>singleton</code> context.</p>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/alias.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">text</span>, <span class="ruby-identifier">old_name</span>, <span class="ruby-identifier">new_name</span>, <span class="ruby-identifier">comment</span>, <span class="ruby-identifier">singleton</span> = <span class="ruby-keyword">false</span>)
+  <span class="ruby-keyword">super</span>()
+
+  <span class="ruby-ivar">@text</span> = <span class="ruby-identifier">text</span>
+  <span class="ruby-ivar">@singleton</span> = <span class="ruby-identifier">singleton</span>
+  <span class="ruby-ivar">@old_name</span> = <span class="ruby-identifier">old_name</span>
+  <span class="ruby-ivar">@new_name</span> = <span class="ruby-identifier">new_name</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">comment</span> = <span class="ruby-identifier">comment</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-3C-3D-3E" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">&lt;=&gt;</span><span
+            class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Order by <a href="Alias.html#attribute-i-singleton">singleton</a> then <a
+href="Alias.html#attribute-i-new_name">new_name</a></p>
+          
+
+          
+          <div class="method-source-code" id="3C-3D-3E-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/alias.rb, line 49</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>)
+  [<span class="ruby-ivar">@singleton</span> <span class="ruby-operator">?</span> <span class="ruby-value">0</span> <span class="ruby-operator">:</span> <span class="ruby-value">1</span>, <span class="ruby-identifier">new_name</span>] <span class="ruby-operator">&lt;=&gt;</span> [<span class="ruby-identifier">other</span>.<span class="ruby-identifier">singleton</span> <span class="ruby-operator">?</span> <span class="ruby-value">0</span> <span class="ruby-operator">:</span> <span class="ruby-value">1</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">new_name</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 3C-3D-3E-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 3C-3D-3E-method -->
+
+    
+      <div id="method-i-aref" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">aref</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>HTML fragment reference for this alias</p>
+          
+
+          
+          <div class="method-source-code" id="aref-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/alias.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">aref</span>
+  <span class="ruby-identifier">type</span> = <span class="ruby-identifier">singleton</span> <span class="ruby-operator">?</span> <span class="ruby-string">'c'</span> <span class="ruby-operator">:</span> <span class="ruby-string">'i'</span>
+  <span class="ruby-node">&quot;#alias-#{type}-#{html_name}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- aref-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- aref-method -->
+
+    
+      <div id="method-i-full_old_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">full_old_name</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Full old name including namespace</p>
+          
+
+          
+          <div class="method-source-code" id="full_old_name-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/alias.rb, line 64</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">full_old_name</span>
+  <span class="ruby-ivar">@full_name</span> <span class="ruby-operator">||</span> <span class="ruby-node">&quot;#{parent.name}#{pretty_old_name}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- full_old_name-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- full_old_name-method -->
+
+    
+      <div id="method-i-html_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">html_name</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>HTML id-friendly version of <code>#new_name</code>.</p>
+          
+
+          
+          <div class="method-source-code" id="html_name-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/alias.rb, line 71</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">html_name</span>
+  <span class="ruby-constant">CGI</span>.<span class="ruby-identifier">escape</span>(<span class="ruby-ivar">@new_name</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-string">'-'</span>, <span class="ruby-string">'-2D'</span>)).<span class="ruby-identifier">gsub</span>(<span class="ruby-string">'%'</span>,<span class="ruby-string">'-'</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">%r^-/</span>, <span class="ruby-string">''</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- html_name-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- html_name-method -->
+
+    
+      <div id="method-i-name_prefix" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">name_prefix</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>‘::’ for the alias of a singleton method/attribute, ‘#’ for instance-level.</p>
+          
+
+          
+          <div class="method-source-code" id="name_prefix-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/alias.rb, line 86</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">name_prefix</span>
+  <span class="ruby-identifier">singleton</span> <span class="ruby-operator">?</span> <span class="ruby-string">'::'</span> <span class="ruby-operator">:</span> <span class="ruby-string">'#'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- name_prefix-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- name_prefix-method -->
+
+    
+      <div id="method-i-pretty_name" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">pretty_name</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Alias.html#method-i-pretty_new_name">pretty_new_name</a>
+        </div>
+        
+      </div><!-- pretty_name-method -->
+
+    
+      <div id="method-i-pretty_new_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pretty_new_name</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>New name with prefix ‘::’ or ‘#’.</p>
+          
+
+          
+          <div class="method-source-code" id="pretty_new_name-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/alias.rb, line 100</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pretty_new_name</span>
+  <span class="ruby-node">&quot;#{singleton ? '::' : '#'}#{@new_name}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pretty_new_name-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Alias.html#method-i-pretty_name">pretty_name</a>
+        </div>
+        
+
+        
+      </div><!-- pretty_new_name-method -->
+
+    
+      <div id="method-i-pretty_old_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pretty_old_name</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Old name with prefix ‘::’ or ‘#’.</p>
+          
+
+          
+          <div class="method-source-code" id="pretty_old_name-source">
+            <pre><span class="ruby-comment"># File lib/rdoc/alias.rb, line 93</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pretty_old_name</span>
+  <span class="ruby-node">&quot;#{singleton ? '::' : '#'}#{@old_name}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pretty_old_name-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pretty_old_name-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

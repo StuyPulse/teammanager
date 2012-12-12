@@ -1,0 +1,9 @@
+[2012-09-11 20:10:57] autoreconf -is --force
+libtoolize: putting auxiliary files in AC_CONFIG_AUX_DIR, `config'.
+libtoolize: linking file `config/config.guess'
+libtoolize: linking file `config/config.sub'
+libtoolize: linking file `config/install-sh'
+libtoolize: linking file `config/ltmain.sh'
+libtoolize: Consider adding `AC_CONFIG_MACRO_DIR([m4])' to configure.ac and
+libtoolize: rerunning libtoolize, to keep the correct libtool macros in-tree.
+libtoolize: Consider adding `-I m4' to ACLOCAL_AMFLAGS in Makefile.am.

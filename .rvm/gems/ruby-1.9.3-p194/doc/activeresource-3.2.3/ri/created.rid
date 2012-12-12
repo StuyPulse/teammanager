@@ -1,0 +1,17 @@
+Thu, 13 Sep 2012 22:01:54 -0400
+lib/active_resource.rb	Thu, 13 Sep 2012 22:00:45 -0400
+lib/active_resource/exceptions.rb	Thu, 13 Sep 2012 22:00:45 -0400
+lib/active_resource/log_subscriber.rb	Thu, 13 Sep 2012 22:00:45 -0400
+lib/active_resource/schema.rb	Thu, 13 Sep 2012 22:00:45 -0400
+lib/active_resource/validations.rb	Thu, 13 Sep 2012 22:00:45 -0400
+lib/active_resource/formats/xml_format.rb	Thu, 13 Sep 2012 22:00:45 -0400
+lib/active_resource/formats/json_format.rb	Thu, 13 Sep 2012 22:00:45 -0400
+lib/active_resource/connection.rb	Thu, 13 Sep 2012 22:00:45 -0400
+lib/active_resource/base.rb	Thu, 13 Sep 2012 22:00:45 -0400
+lib/active_resource/railtie.rb	Thu, 13 Sep 2012 22:00:45 -0400
+lib/active_resource/formats.rb	Thu, 13 Sep 2012 22:00:45 -0400
+lib/active_resource/version.rb	Thu, 13 Sep 2012 22:00:45 -0400
+lib/active_resource/observing.rb	Thu, 13 Sep 2012 22:00:45 -0400
+lib/active_resource/http_mock.rb	Thu, 13 Sep 2012 22:00:45 -0400
+lib/active_resource/custom_methods.rb	Thu, 13 Sep 2012 22:00:45 -0400
+README.rdoc	Thu, 13 Sep 2012 22:00:45 -0400

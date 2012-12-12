@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module Sprockets::Engines - sprockets-2.1.3 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/sprockets/engines.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-engine_extensions">#engine_extensions</a>
+    
+    <li><a href="#method-i-engines">#engines</a>
+    
+    <li><a href="#method-i-register_engine">#register_engine</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Sprockets.html">Sprockets</a>
+  
+    <li><a href="../Sprockets/ArgumentError.html">Sprockets::ArgumentError</a>
+  
+    <li><a href="../Sprockets/Asset.html">Sprockets::Asset</a>
+  
+    <li><a href="../Sprockets/AssetAttributes.html">Sprockets::AssetAttributes</a>
+  
+    <li><a href="../Sprockets/Base.html">Sprockets::Base</a>
+  
+    <li><a href="../Sprockets/BundledAsset.html">Sprockets::BundledAsset</a>
+  
+    <li><a href="../Sprockets/Cache.html">Sprockets::Cache</a>
+  
+    <li><a href="../Sprockets/Cache/FileStore.html">Sprockets::Cache::FileStore</a>
+  
+    <li><a href="../Sprockets/Caching.html">Sprockets::Caching</a>
+  
+    <li><a href="../Sprockets/CharsetNormalizer.html">Sprockets::CharsetNormalizer</a>
+  
+    <li><a href="../Sprockets/CircularDependencyError.html">Sprockets::CircularDependencyError</a>
+  
+    <li><a href="../Sprockets/ContentTypeMismatch.html">Sprockets::ContentTypeMismatch</a>
+  
+    <li><a href="../Sprockets/Context.html">Sprockets::Context</a>
+  
+    <li><a href="../Sprockets/DirectiveProcessor.html">Sprockets::DirectiveProcessor</a>
+  
+    <li><a href="../Sprockets/EcoTemplate.html">Sprockets::EcoTemplate</a>
+  
+    <li><a href="../Sprockets/EjsTemplate.html">Sprockets::EjsTemplate</a>
+  
+    <li><a href="../Sprockets/EncodingError.html">Sprockets::EncodingError</a>
+  
+    <li><a href="../Sprockets/EngineError.html">Sprockets::EngineError</a>
+  
+    <li><a href="../Sprockets/Engines.html">Sprockets::Engines</a>
+  
+    <li><a href="../Sprockets/Environment.html">Sprockets::Environment</a>
+  
+    <li><a href="../Sprockets/Error.html">Sprockets::Error</a>
+  
+    <li><a href="../Sprockets/FileNotFound.html">Sprockets::FileNotFound</a>
+  
+    <li><a href="../Sprockets/FileOutsidePaths.html">Sprockets::FileOutsidePaths</a>
+  
+    <li><a href="../Sprockets/Index.html">Sprockets::Index</a>
+  
+    <li><a href="../Sprockets/JstProcessor.html">Sprockets::JstProcessor</a>
+  
+    <li><a href="../Sprockets/Mime.html">Sprockets::Mime</a>
+  
+    <li><a href="../Sprockets/ProcessedAsset.html">Sprockets::ProcessedAsset</a>
+  
+    <li><a href="../Sprockets/ProcessedAsset/DependencyFile.html">Sprockets::ProcessedAsset::DependencyFile</a>
+  
+    <li><a href="../Sprockets/Processing.html">Sprockets::Processing</a>
+  
+    <li><a href="../Sprockets/Processor.html">Sprockets::Processor</a>
+  
+    <li><a href="../Sprockets/SafetyColons.html">Sprockets::SafetyColons</a>
+  
+    <li><a href="../Sprockets/Server.html">Sprockets::Server</a>
+  
+    <li><a href="../Sprockets/StaticAsset.html">Sprockets::StaticAsset</a>
+  
+    <li><a href="../Sprockets/Trail.html">Sprockets::Trail</a>
+  
+    <li><a href="../Sprockets/UnserializeError.html">Sprockets::UnserializeError</a>
+  
+    <li><a href="../Sprockets/Utils.html">Sprockets::Utils</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Sprockets::Engines</h1>
+
+  <div id="description" class="description">
+    
+<p>`Engines` provides a global and `Environment` instance registry.</p>
+
+<p>An engine is a type of processor that is bound to an filename extension.
+`application.js.coffee` indicates that the `CoffeeScriptTemplate` engine
+will be ran on the file.</p>
+
+<p>Extensions can be stacked and will be evaulated from right to left.
+`application.js.coffee.erb` will first run `ERBTemplate` then
+`CoffeeScriptTemplate`.</p>
+
+<p>All `Engine`s must follow the `Tilt::Template` interface. It is recommended
+to subclass `Tilt::Template`.</p>
+
+<p>Its recommended that you register engine changes on your local
+`Environment` instance.</p>
+
+<pre>environment.register_engine '.foo', FooProcessor</pre>
+
+<p>The global registry is exposed for plugins to register themselves.</p>
+
+<pre>Sprockets.register_engine '.sass', SassTemplate</pre>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-engine_extensions" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">engine_extensions</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns an `Array` of engine extension `String`s.</p>
+
+<pre class="ruby"><span class="ruby-identifier">environment</span>.<span class="ruby-identifier">engine_extensions</span>
+<span class="ruby-comment"># =&gt; ['.coffee', '.sass', ...]</span>
+</pre>
+          
+
+          
+          <div class="method-source-code" id="engine_extensions-source">
+            <pre><span class="ruby-comment"># File lib/sprockets/engines.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">engine_extensions</span>
+  <span class="ruby-ivar">@engines</span>.<span class="ruby-identifier">keys</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- engine_extensions-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- engine_extensions-method -->
+
+    
+      <div id="method-i-engines" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">engines</span><span
+            class="method-args">(ext = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns an `Array` of `Engine`s registered on the `Environment`. If an
+`ext` argument is supplied, the `Engine` register under that extension will
+be returned.</p>
+
+<pre class="ruby"><span class="ruby-identifier">environment</span>.<span class="ruby-identifier">engines</span>
+<span class="ruby-comment"># =&gt; [CoffeeScriptTemplate, SassTemplate, ...]</span>
+
+<span class="ruby-identifier">environment</span>.<span class="ruby-identifier">engines</span>(<span class="ruby-string">'.coffee'</span>)
+<span class="ruby-comment"># =&gt; CoffeeScriptTemplate</span>
+</pre>
+          
+
+          
+          <div class="method-source-code" id="engines-source">
+            <pre><span class="ruby-comment"># File lib/sprockets/engines.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">engines</span>(<span class="ruby-identifier">ext</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">ext</span>
+    <span class="ruby-identifier">ext</span> = <span class="ruby-constant">Sprockets</span><span class="ruby-operator">::</span><span class="ruby-constant">Utils</span>.<span class="ruby-identifier">normalize_extension</span>(<span class="ruby-identifier">ext</span>)
+    <span class="ruby-ivar">@engines</span>[<span class="ruby-identifier">ext</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@engines</span>.<span class="ruby-identifier">dup</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- engines-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- engines-method -->
+
+    
+      <div id="method-i-register_engine" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">register_engine</span><span
+            class="method-args">(ext, klass)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Registers a new Engine `klass` for `ext`. If the `ext` already has an
+engine registered, it will be overridden.</p>
+
+<pre>environment.register_engine '.coffee', CoffeeScriptTemplate</pre>
+          
+
+          
+          <div class="method-source-code" id="register_engine-source">
+            <pre><span class="ruby-comment"># File lib/sprockets/engines.rb, line 63</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">register_engine</span>(<span class="ruby-identifier">ext</span>, <span class="ruby-identifier">klass</span>)
+  <span class="ruby-identifier">ext</span> = <span class="ruby-constant">Sprockets</span><span class="ruby-operator">::</span><span class="ruby-constant">Utils</span>.<span class="ruby-identifier">normalize_extension</span>(<span class="ruby-identifier">ext</span>)
+  <span class="ruby-ivar">@engines</span>[<span class="ruby-identifier">ext</span>] = <span class="ruby-identifier">klass</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- register_engine-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- register_engine-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

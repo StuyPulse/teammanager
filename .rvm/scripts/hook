@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+# need additional step to not redefine variables value if already set
+typeset old_rvm_verbose_flag old_rvm_debug_flag >/dev/null 2>/dev/null
+old_rvm_verbose_flag=${rvm_verbose_flag:-0}
+old_rvm_debug_flag=${rvm_debug_flag:-0}
+
+# silence ZSH redefinitions
+typeset rvm_verbose_flag rvm_debug_flag hooks >/dev/null 2>/dev/null
+
+true rvm_verbose_flag:${rvm_verbose_flag:=${old_rvm_verbose_flag}} \
+  rvm_debug_flag:${rvm_debug_flag:=${old_rvm_debug_flag}} rvm_hook:${rvm_hook:=}
+
+if [[ -n "$rvm_hook" ]]
+then
+  if [[ "$PWD/.rvm/hooks/$rvm_hook" == "$rvm_hooks_path/$rvm_hook" ]]
+  then
+    hooks=( "$rvm_hooks_path/$rvm_hook")
+  else
+    hooks=("$PWD/.rvm/hooks/$rvm_hook" "$rvm_hooks_path/$rvm_hook")
+  fi
+
+  for hook in "${hooks[@]}"
+  do
+    if [[ -s "$hook" ]]
+    then
+      if (( rvm_verbose_flag > 0 )) || (( rvm_debug_flag > 0 ))
+      then
+        rvm_log "Running $hook"
+      fi
+
+      source "$hook"
+    else
+      continue
+    fi
+
+  done
+fi
+
+unset rvm_hook hooks

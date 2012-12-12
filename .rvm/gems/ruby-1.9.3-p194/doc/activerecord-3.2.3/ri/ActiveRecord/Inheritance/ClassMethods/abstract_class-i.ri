@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"abstract_class:EFI";ActiveRecord::Inheritance::ClassMethods#abstract_class;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"RSet this to true if this is an abstract class (see <tt>abstract_class?</tt>).;T:
+@fileI"%lib/active_record/inheritance.rb;TF@

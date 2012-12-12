@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module Rack::Mime - rack-1.4.1 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/rack/mime.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-mime_type">::mime_type</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../KNOWN-ISSUES.html">KNOWN-ISSUES</a>
+  
+    <li class="file"><a href="../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Rack.html">Rack</a>
+  
+    <li><a href="../Rack/Auth.html">Rack::Auth</a>
+  
+    <li><a href="../Rack/Auth/AbstractHandler.html">Rack::Auth::AbstractHandler</a>
+  
+    <li><a href="../Rack/Auth/AbstractRequest.html">Rack::Auth::AbstractRequest</a>
+  
+    <li><a href="../Rack/Auth/Basic.html">Rack::Auth::Basic</a>
+  
+    <li><a href="../Rack/Auth/Basic/Request.html">Rack::Auth::Basic::Request</a>
+  
+    <li><a href="../Rack/Auth/Digest.html">Rack::Auth::Digest</a>
+  
+    <li><a href="../Rack/Auth/Digest/MD5.html">Rack::Auth::Digest::MD5</a>
+  
+    <li><a href="../Rack/Auth/Digest/Nonce.html">Rack::Auth::Digest::Nonce</a>
+  
+    <li><a href="../Rack/Auth/Digest/Params.html">Rack::Auth::Digest::Params</a>
+  
+    <li><a href="../Rack/Auth/Digest/Request.html">Rack::Auth::Digest::Request</a>
+  
+    <li><a href="../Rack/BodyProxy.html">Rack::BodyProxy</a>
+  
+    <li><a href="../Rack/Builder.html">Rack::Builder</a>
+  
+    <li><a href="../Rack/Cascade.html">Rack::Cascade</a>
+  
+    <li><a href="../Rack/Chunked.html">Rack::Chunked</a>
+  
+    <li><a href="../Rack/Chunked/Body.html">Rack::Chunked::Body</a>
+  
+    <li><a href="../Rack/CommonLogger.html">Rack::CommonLogger</a>
+  
+    <li><a href="../Rack/ConditionalGet.html">Rack::ConditionalGet</a>
+  
+    <li><a href="../Rack/Config.html">Rack::Config</a>
+  
+    <li><a href="../Rack/ContentLength.html">Rack::ContentLength</a>
+  
+    <li><a href="../Rack/ContentType.html">Rack::ContentType</a>
+  
+    <li><a href="../Rack/Deflater.html">Rack::Deflater</a>
+  
+    <li><a href="../Rack/Deflater/DeflateStream.html">Rack::Deflater::DeflateStream</a>
+  
+    <li><a href="../Rack/Deflater/GzipStream.html">Rack::Deflater::GzipStream</a>
+  
+    <li><a href="../Rack/Directory.html">Rack::Directory</a>
+  
+    <li><a href="../Rack/ETag.html">Rack::ETag</a>
+  
+    <li><a href="../Rack/File.html">Rack::File</a>
+  
+    <li><a href="../Rack/ForwardRequest.html">Rack::ForwardRequest</a>
+  
+    <li><a href="../Rack/Handler.html">Rack::Handler</a>
+  
+    <li><a href="../Rack/Handler/CGI.html">Rack::Handler::CGI</a>
+  
+    <li><a href="../Rack/Handler/EventedMongrel.html">Rack::Handler::EventedMongrel</a>
+  
+    <li><a href="../Rack/Handler/FastCGI.html">Rack::Handler::FastCGI</a>
+  
+    <li><a href="../Rack/Handler/LSWS.html">Rack::Handler::LSWS</a>
+  
+    <li><a href="../Rack/Handler/Mongrel.html">Rack::Handler::Mongrel</a>
+  
+    <li><a href="../Rack/Handler/SCGI.html">Rack::Handler::SCGI</a>
+  
+    <li><a href="../Rack/Handler/SwiftipliedMongrel.html">Rack::Handler::SwiftipliedMongrel</a>
+  
+    <li><a href="../Rack/Handler/Thin.html">Rack::Handler::Thin</a>
+  
+    <li><a href="../Rack/Handler/WEBrick.html">Rack::Handler::WEBrick</a>
+  
+    <li><a href="../Rack/Head.html">Rack::Head</a>
+  
+    <li><a href="../Rack/Lint.html">Rack::Lint</a>
+  
+    <li><a href="../Rack/Lobster.html">Rack::Lobster</a>
+  
+    <li><a href="../Rack/Lock.html">Rack::Lock</a>
+  
+    <li><a href="../Rack/Logger.html">Rack::Logger</a>
+  
+    <li><a href="../Rack/MethodOverride.html">Rack::MethodOverride</a>
+  
+    <li><a href="../Rack/Mime.html">Rack::Mime</a>
+  
+    <li><a href="../Rack/MockRequest.html">Rack::MockRequest</a>
+  
+    <li><a href="../Rack/MockRequest/FatalWarner.html">Rack::MockRequest::FatalWarner</a>
+  
+    <li><a href="../Rack/MockRequest/FatalWarning.html">Rack::MockRequest::FatalWarning</a>
+  
+    <li><a href="../Rack/MockResponse.html">Rack::MockResponse</a>
+  
+    <li><a href="../Rack/Multipart.html">Rack::Multipart</a>
+  
+    <li><a href="../Rack/Multipart/Generator.html">Rack::Multipart::Generator</a>
+  
+    <li><a href="../Rack/Multipart/Parser.html">Rack::Multipart::Parser</a>
+  
+    <li><a href="../Rack/Multipart/UploadedFile.html">Rack::Multipart::UploadedFile</a>
+  
+    <li><a href="../Rack/NullLogger.html">Rack::NullLogger</a>
+  
+    <li><a href="../Rack/Recursive.html">Rack::Recursive</a>
+  
+    <li><a href="../Rack/Reloader.html">Rack::Reloader</a>
+  
+    <li><a href="../Rack/Reloader/Stat.html">Rack::Reloader::Stat</a>
+  
+    <li><a href="../Rack/Request.html">Rack::Request</a>
+  
+    <li><a href="../Rack/Response.html">Rack::Response</a>
+  
+    <li><a href="../Rack/Response/Helpers.html">Rack::Response::Helpers</a>
+  
+    <li><a href="../Rack/RewindableInput.html">Rack::RewindableInput</a>
+  
+    <li><a href="../Rack/RewindableInput/Tempfile.html">Rack::RewindableInput::Tempfile</a>
+  
+    <li><a href="../Rack/Runtime.html">Rack::Runtime</a>
+  
+    <li><a href="../Rack/Sendfile.html">Rack::Sendfile</a>
+  
+    <li><a href="../Rack/Server.html">Rack::Server</a>
+  
+    <li><a href="../Rack/Server/Options.html">Rack::Server::Options</a>
+  
+    <li><a href="../Rack/Session.html">Rack::Session</a>
+  
+    <li><a href="../Rack/Session/Abstract.html">Rack::Session::Abstract</a>
+  
+    <li><a href="../Rack/Session/Abstract/ID.html">Rack::Session::Abstract::ID</a>
+  
+    <li><a href="../Rack/Session/Abstract/SessionHash.html">Rack::Session::Abstract::SessionHash</a>
+  
+    <li><a href="../Rack/Session/Cookie.html">Rack::Session::Cookie</a>
+  
+    <li><a href="../Rack/Session/Cookie/Base64.html">Rack::Session::Cookie::Base64</a>
+  
+    <li><a href="../Rack/Session/Cookie/Base64/Marshal.html">Rack::Session::Cookie::Base64::Marshal</a>
+  
+    <li><a href="../Rack/Session/Cookie/Identity.html">Rack::Session::Cookie::Identity</a>
+  
+    <li><a href="../Rack/Session/Cookie/Reverse.html">Rack::Session::Cookie::Reverse</a>
+  
+    <li><a href="../Rack/Session/Memcache.html">Rack::Session::Memcache</a>
+  
+    <li><a href="../Rack/Session/Pool.html">Rack::Session::Pool</a>
+  
+    <li><a href="../Rack/ShowExceptions.html">Rack::ShowExceptions</a>
+  
+    <li><a href="../Rack/ShowStatus.html">Rack::ShowStatus</a>
+  
+    <li><a href="../Rack/Static.html">Rack::Static</a>
+  
+    <li><a href="../Rack/URLMap.html">Rack::URLMap</a>
+  
+    <li><a href="../Rack/Utils.html">Rack::Utils</a>
+  
+    <li><a href="../Rack/Utils/Context.html">Rack::Utils::Context</a>
+  
+    <li><a href="../Rack/Utils/HeaderHash.html">Rack::Utils::HeaderHash</a>
+  
+    <li><a href="../Rack/Utils/KeySpaceConstrainedParams.html">Rack::Utils::KeySpaceConstrainedParams</a>
+  
+    <li><a href="../FCGI.html">FCGI</a>
+  
+    <li><a href="../FCGI/Stream.html">FCGI::Stream</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Rack::Mime</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="MIME_TYPES">MIME_TYPES
+        
+        <dd class="description"><p>List of most common mime-types, selected various sources according to their
+usefulness in a webserving scope for Ruby users.</p>
+
+<p>To amend this list with your local mime.types list you can use:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'webrick/httputils'</span>
+<span class="ruby-identifier">list</span> = <span class="ruby-constant">WEBrick</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTPUtils</span>.<span class="ruby-identifier">load_mime_types</span>(<span class="ruby-string">'/etc/mime.types'</span>)
+<span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">Mime</span><span class="ruby-operator">::</span><span class="ruby-constant">MIME_TYPES</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">list</span>)
+</pre>
+
+<p>N.B. On Ubuntu the mime.types file does not include the leading period, so
+users may need to modify the data before merging into the hash.</p>
+
+<p>To add the list mongrel provides, use:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'mongrel/handlers'</span>
+<span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">Mime</span><span class="ruby-operator">::</span><span class="ruby-constant">MIME_TYPES</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-constant">Mongrel</span><span class="ruby-operator">::</span><span class="ruby-constant">DirHandler</span><span class="ruby-operator">::</span><span class="ruby-constant">MIME_TYPES</span>)
+</pre>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-mime_type" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mime_type</span><span
+            class="method-args">(ext, fallback='application/octet-stream')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns String with mime type if found, otherwise use
+<code>fallback</code>. <code>ext</code> should be filename extension in the
+‘.ext’ format that</p>
+
+<pre>File.extname(file) returns.</pre>
+
+<p><code>fallback</code> may be any object</p>
+
+<p>Also see the documentation for <a
+href="Mime.html#MIME_TYPES">MIME_TYPES</a></p>
+
+<p>Usage:</p>
+
+<pre>Rack::Mime.mime_type('.foo')</pre>
+
+<p>This is a shortcut for:</p>
+
+<pre>Rack::Mime::MIME_TYPES.fetch('.foo', 'application/octet-stream')</pre>
+          
+
+          
+          <div class="method-source-code" id="mime_type-source">
+            <pre><span class="ruby-comment"># File lib/rack/mime.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mime_type</span>(<span class="ruby-identifier">ext</span>, <span class="ruby-identifier">fallback</span>=<span class="ruby-string">'application/octet-stream'</span>)
+  <span class="ruby-constant">MIME_TYPES</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">ext</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">downcase</span>, <span class="ruby-identifier">fallback</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- mime_type-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- mime_type-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

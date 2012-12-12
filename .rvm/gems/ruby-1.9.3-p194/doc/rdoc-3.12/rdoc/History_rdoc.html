@@ -1,0 +1,1957 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>History - rdoc-3.12 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./DEVELOPERS_rdoc.html">DEVELOPERS</a>
+  
+    <li class="file"><a href="./History_rdoc.html">History</a>
+  
+    <li class="file"><a href="./LEGAL_rdoc.html">LEGAL</a>
+  
+    <li class="file"><a href="./LICENSE_rdoc.html">LICENSE</a>
+  
+    <li class="file"><a href="./Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+    <li class="file"><a href="./RI_rdoc.html">RI</a>
+  
+    <li class="file"><a href="./Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="./TODO_rdoc.html">TODO</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./RDoc.html">RDoc</a>
+  
+    <li><a href="./RDoc/Alias.html">RDoc::Alias</a>
+  
+    <li><a href="./RDoc/AnonClass.html">RDoc::AnonClass</a>
+  
+    <li><a href="./RDoc/AnyMethod.html">RDoc::AnyMethod</a>
+  
+    <li><a href="./RDoc/Attr.html">RDoc::Attr</a>
+  
+    <li><a href="./RDoc/ClassModule.html">RDoc::ClassModule</a>
+  
+    <li><a href="./RDoc/CodeObject.html">RDoc::CodeObject</a>
+  
+    <li><a href="./RDoc/Comment.html">RDoc::Comment</a>
+  
+    <li><a href="./RDoc/Constant.html">RDoc::Constant</a>
+  
+    <li><a href="./RDoc/Context.html">RDoc::Context</a>
+  
+    <li><a href="./RDoc/Context/Section.html">RDoc::Context::Section</a>
+  
+    <li><a href="./RDoc/CrossReference.html">RDoc::CrossReference</a>
+  
+    <li><a href="./RDoc/ERBIO.html">RDoc::ERBIO</a>
+  
+    <li><a href="./RDoc/Encoding.html">RDoc::Encoding</a>
+  
+    <li><a href="./RDoc/Error.html">RDoc::Error</a>
+  
+    <li><a href="./RDoc/Gauntlet.html">RDoc::Gauntlet</a>
+  
+    <li><a href="./RDoc/Generator.html">RDoc::Generator</a>
+  
+    <li><a href="./RDoc/Generator/Darkfish.html">RDoc::Generator::Darkfish</a>
+  
+    <li><a href="./RDoc/Generator/JsonIndex.html">RDoc::Generator::JsonIndex</a>
+  
+    <li><a href="./RDoc/Generator/Markup.html">RDoc::Generator::Markup</a>
+  
+    <li><a href="./RDoc/Generator/RI.html">RDoc::Generator::RI</a>
+  
+    <li><a href="./RDoc/GhostMethod.html">RDoc::GhostMethod</a>
+  
+    <li><a href="./RDoc/Include.html">RDoc::Include</a>
+  
+    <li><a href="./RDoc/Markup.html">RDoc::Markup</a>
+  
+    <li><a href="./RDoc/Markup/AttrChanger.html">RDoc::Markup::AttrChanger</a>
+  
+    <li><a href="./RDoc/Markup/AttrSpan.html">RDoc::Markup::AttrSpan</a>
+  
+    <li><a href="./RDoc/Markup/Attribute.html">RDoc::Markup::Attribute</a>
+  
+    <li><a href="./RDoc/Markup/AttributeManager.html">RDoc::Markup::AttributeManager</a>
+  
+    <li><a href="./RDoc/Markup/BlankLine.html">RDoc::Markup::BlankLine</a>
+  
+    <li><a href="./RDoc/Markup/Document.html">RDoc::Markup::Document</a>
+  
+    <li><a href="./RDoc/Markup/Formatter.html">RDoc::Markup::Formatter</a>
+  
+    <li><a href="./RDoc/Markup/FormatterTestCase.html">RDoc::Markup::FormatterTestCase</a>
+  
+    <li><a href="./RDoc/Markup/Heading.html">RDoc::Markup::Heading</a>
+  
+    <li><a href="./RDoc/Markup/Include.html">RDoc::Markup::Include</a>
+  
+    <li><a href="./RDoc/Markup/IndentedParagraph.html">RDoc::Markup::IndentedParagraph</a>
+  
+    <li><a href="./RDoc/Markup/List.html">RDoc::Markup::List</a>
+  
+    <li><a href="./RDoc/Markup/ListItem.html">RDoc::Markup::ListItem</a>
+  
+    <li><a href="./RDoc/Markup/Paragraph.html">RDoc::Markup::Paragraph</a>
+  
+    <li><a href="./RDoc/Markup/Parser.html">RDoc::Markup::Parser</a>
+  
+    <li><a href="./RDoc/Markup/Parser/Error.html">RDoc::Markup::Parser::Error</a>
+  
+    <li><a href="./RDoc/Markup/Parser/ParseError.html">RDoc::Markup::Parser::ParseError</a>
+  
+    <li><a href="./RDoc/Markup/PreProcess.html">RDoc::Markup::PreProcess</a>
+  
+    <li><a href="./RDoc/Markup/Raw.html">RDoc::Markup::Raw</a>
+  
+    <li><a href="./RDoc/Markup/Rule.html">RDoc::Markup::Rule</a>
+  
+    <li><a href="./RDoc/Markup/Special.html">RDoc::Markup::Special</a>
+  
+    <li><a href="./RDoc/Markup/TextFormatterTestCase.html">RDoc::Markup::TextFormatterTestCase</a>
+  
+    <li><a href="./RDoc/Markup/ToAnsi.html">RDoc::Markup::ToAnsi</a>
+  
+    <li><a href="./RDoc/Markup/ToBs.html">RDoc::Markup::ToBs</a>
+  
+    <li><a href="./RDoc/Markup/ToHtml.html">RDoc::Markup::ToHtml</a>
+  
+    <li><a href="./RDoc/Markup/ToHtmlCrossref.html">RDoc::Markup::ToHtmlCrossref</a>
+  
+    <li><a href="./RDoc/Markup/ToHtmlSnippet.html">RDoc::Markup::ToHtmlSnippet</a>
+  
+    <li><a href="./RDoc/Markup/ToLabel.html">RDoc::Markup::ToLabel</a>
+  
+    <li><a href="./RDoc/Markup/ToRdoc.html">RDoc::Markup::ToRdoc</a>
+  
+    <li><a href="./RDoc/Markup/ToTableOfContents.html">RDoc::Markup::ToTableOfContents</a>
+  
+    <li><a href="./RDoc/Markup/ToTest.html">RDoc::Markup::ToTest</a>
+  
+    <li><a href="./RDoc/Markup/ToTtOnly.html">RDoc::Markup::ToTtOnly</a>
+  
+    <li><a href="./RDoc/Markup/Verbatim.html">RDoc::Markup::Verbatim</a>
+  
+    <li><a href="./RDoc/MetaMethod.html">RDoc::MetaMethod</a>
+  
+    <li><a href="./RDoc/MethodAttr.html">RDoc::MethodAttr</a>
+  
+    <li><a href="./RDoc/NormalClass.html">RDoc::NormalClass</a>
+  
+    <li><a href="./RDoc/NormalModule.html">RDoc::NormalModule</a>
+  
+    <li><a href="./RDoc/Options.html">RDoc::Options</a>
+  
+    <li><a href="./RDoc/Parser.html">RDoc::Parser</a>
+  
+    <li><a href="./RDoc/Parser/C.html">RDoc::Parser::C</a>
+  
+    <li><a href="./RDoc/Parser/RD.html">RDoc::Parser::RD</a>
+  
+    <li><a href="./RDoc/Parser/Ruby.html">RDoc::Parser::Ruby</a>
+  
+    <li><a href="./RDoc/Parser/RubyTools.html">RDoc::Parser::RubyTools</a>
+  
+    <li><a href="./RDoc/Parser/Simple.html">RDoc::Parser::Simple</a>
+  
+    <li><a href="./RDoc/Parser/Text.html">RDoc::Parser::Text</a>
+  
+    <li><a href="./RDoc/RD.html">RDoc::RD</a>
+  
+    <li><a href="./RDoc/RD/Inline.html">RDoc::RD::Inline</a>
+  
+    <li><a href="./RDoc/RDoc.html">RDoc::RDoc</a>
+  
+    <li><a href="./RDoc/RI.html">RDoc::RI</a>
+  
+    <li><a href="./RDoc/RI/Driver.html">RDoc::RI::Driver</a>
+  
+    <li><a href="./RDoc/RI/Driver/Error.html">RDoc::RI::Driver::Error</a>
+  
+    <li><a href="./RDoc/RI/Driver/NotFoundError.html">RDoc::RI::Driver::NotFoundError</a>
+  
+    <li><a href="./RDoc/RI/Error.html">RDoc::RI::Error</a>
+  
+    <li><a href="./RDoc/RI/Paths.html">RDoc::RI::Paths</a>
+  
+    <li><a href="./RDoc/RI/Store.html">RDoc::RI::Store</a>
+  
+    <li><a href="./RDoc/Require.html">RDoc::Require</a>
+  
+    <li><a href="./RDoc/RubyLex.html">RDoc::RubyLex</a>
+  
+    <li><a href="./RDoc/RubyLex/Error.html">RDoc::RubyLex::Error</a>
+  
+    <li><a href="./RDoc/RubyToken.html">RDoc::RubyToken</a>
+  
+    <li><a href="./RDoc/RubygemsHook.html">RDoc::RubygemsHook</a>
+  
+    <li><a href="./RDoc/SingleClass.html">RDoc::SingleClass</a>
+  
+    <li><a href="./RDoc/Stats.html">RDoc::Stats</a>
+  
+    <li><a href="./RDoc/Stats/Normal.html">RDoc::Stats::Normal</a>
+  
+    <li><a href="./RDoc/Stats/Quiet.html">RDoc::Stats::Quiet</a>
+  
+    <li><a href="./RDoc/Stats/Verbose.html">RDoc::Stats::Verbose</a>
+  
+    <li><a href="./RDoc/Task.html">RDoc::Task</a>
+  
+    <li><a href="./RDoc/Task.html">RDoc::Task</a>
+  
+    <li><a href="./RDoc/TestCase.html">RDoc::TestCase</a>
+  
+    <li><a href="./RDoc/Text.html">RDoc::Text</a>
+  
+    <li><a href="./RDoc/TokenStream.html">RDoc::TokenStream</a>
+  
+    <li><a href="./RDoc/TomDoc.html">RDoc::TomDoc</a>
+  
+    <li><a href="./RDoc/TopLevel.html">RDoc::TopLevel</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<h3 id="label-3.12+%2F+2011-12-15">3.12 / 2011-12-15</h3>
+<ul><li>
+<p>Minor enhancements</p>
+<ul><li>
+<p>Added <a href="DEVELOPERS_rdoc.html">DEVELOPERS</a> document which contains
+an overview of how <a href="RDoc.html">RDoc</a> works and how to add new
+features to <a href="RDoc.html">RDoc</a>.</p>
+</li><li>
+<p>Improved title for HTML output to include <code>--title</code> in the title
+element.</p>
+</li><li>
+<p><code>rdoc --pipe</code> now understands <code>--markup</code>.</p>
+</li><li>
+<p><a href="RDoc.html">RDoc</a> now supports irc-scheme hyperlinks.  Issue #83
+by trans.</p>
+</li></ul>
+</li><li>
+<p>Bug fixes</p>
+<ul><li>
+<p>Fix title on HTML output for pages.</p>
+</li><li>
+<p>Fixed parsing of non-indented HEREDOC.</p>
+</li><li>
+<p>Fixed parsing of <code>%w[]</code> and other % literals.  Issue #84 by Erik
+Hollensbe</p>
+</li><li>
+<p>Fixed arrow replacement in HTML output munging the spaceship operator.
+Issue #85 by eclectic923.</p>
+</li><li>
+<p>Verbatim sections with ERB that match the ruby code whitelist are no longer
+syntax-highlighted.  Issue #86 by eclectic923</p>
+</li><li>
+<p>Line endings on windows are normalized immediately after reading with
+binmode.  Issue #87 by Usa Nakamura</p>
+</li><li>
+<p><a href="RDoc.html">RDoc</a> better understands directives for comments. 
+Comment directives can now be found anywhere in multi-line comments.  Issue
+#90 by Ryan Davis</p>
+</li><li>
+<p>Tidy links to methods show the label again.  Issue #88 by Simon Chiang</p>
+</li><li>
+<p><a href="RDoc/Parser/C.html">RDoc::Parser::C</a> can now find comments
+directly above <code>rb_define_class_under</code>.  Issue #89 by Enrico</p>
+</li><li>
+<p>In rdoc, backspace and ansi formatters, labels and notes without bodies are
+now shown.</p>
+</li><li>
+<p>In rdoc, backspace and ansi formatters, whitespace between label or note
+and the colon is now stripped.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.11+%2F+2011-10-17">3.11 / 2011-10-17</h3>
+<ul><li>
+<p>Bug fixes</p>
+<ul><li>
+<p>Avoid parsing TAGS files included in gems.  Issue #81 by Santiago
+Pastorino.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.10+%2F+2011-10-08">3.10 / 2011-10-08</h3>
+<ul><li>
+<p>Major enhancements</p>
+<ul><li>
+<p><a href="RDoc.html">RDoc</a> HTML output has been improved:</p>
+<ul><li>
+<p>The search from Володя Колесников‘s (Vladimir Kolesnikov) Sdoc has been
+integrated.</p>
+
+<p>The search index generation is a reusable component through <a
+href="RDoc/Generator/JsonIndex.html">RDoc::Generator::JsonIndex</a></p>
+</li><li>
+<p>The table of contents is now a separate page and now shows links to
+headings and sections inside a page or class.</p>
+</li><li>
+<p>Class pages no longer show the namespace and no longer have file info
+pages.</p>
+</li><li>
+<p>HTML output is HTML 5.</p>
+</li><li>
+<p>Static files can be copied into <a href="RDoc.html">RDoc</a> using
+–copy-files</p>
+</li></ul>
+</li><li>
+<p><a href="RDoc.html">RDoc</a> supports additional documentation formats:</p>
+<ul><li>
+<p>TomDoc 1.0.0-rc1</p>
+</li><li>
+<p>RD format</p>
+</li></ul>
+
+<p>The default markup can be set via the <code>--markup</code> option.</p>
+
+<p>The format of documentation in a particular file can be specified by the
+<code>:markup:</code> directive.  If the <code>:markup:</code> directive is
+in the first comment it is used as the default for the entire file.  For
+other comments it overrides the default markup format.</p>
+
+<p>The markup format can be set for rake tasks using <a
+href="RDoc/Task.html#attribute-i-markup">RDoc::Task#markup</a></p>
+</li><li>
+<p><a href="RDoc.html">RDoc</a> can save and load an options file.</p>
+
+<p>To create an options file that defaults to using TomDoc markup run:</p>
+
+<pre>rdoc --markup tomdoc --write-options</pre>
+
+<p>This will create a .rdoc_options file.  Check it in to your VCS and package
+it with your gem.  <a href="RDoc.html">RDoc</a> will automatically load
+this file and combine it with the user’s options.</p>
+
+<p>Some options are not saved.  See <a
+href="RDoc/Options.html#label-Saved+Options">Saved Options at
+RDoc::Options</a> for full details.</p>
+</li></ul>
+</li><li>
+<p>Minor enhancements</p>
+<ul><li>
+<p><a href="RDoc.html">RDoc</a> autoloads everything.  You only need to
+require 'rdoc' now.</p>
+</li><li>
+<p>HTML headings now have ids matching their titles.</p>
+
+<pre>= Hello!</pre>
+
+<p>Is rendered as</p>
+
+<pre>&lt;h1 id=&quot;label-Hello%21&quot;&gt;Hello!&lt;/h1&gt;</pre>
+</li><li>
+<p>Labels for classes or methods can be linked-to by adding an <code>@</code>
+following the class or method reference.  For example,
+<code>RDoc::Markup@Links</code></p>
+
+<p>See <a href="RDoc/Markup.html#label-Links">Links at RDoc::Markup</a> for
+further details.</p>
+</li><li>
+<p>For HTML output <a href="RDoc.html">RDoc</a> uses
+<code>SomeClass.method_name</code> and +SomeClass#method_name+ for remote
+methods and attributes and +::method_name+ and <code>#method_name</code>
+for local methods.</p>
+</li><li>
+<p><a href="RDoc.html">RDoc</a> makes an effort to syntax-highlight ruby code
+in verbatim sections. See <a
+href="RDoc/Markup.html#label-Paragraphs+and+Verbatim">Paragraphs and
+Verbatim at RDoc::Markup</a></p>
+</li><li>
+<p>Added <a
+href="RDoc/TopLevel.html#method-i-text-3F">RDoc::TopLevel#text?</a> and <a
+href="RDoc/Parser/Text.html">RDoc::Parser::Text</a> to indicate a parsed
+file contains no ruby constructs.</p>
+</li><li>
+<p>Added <code>rdoc-label</code> link scheme which allows bidirectional links.
+See <a href="RDoc/Markup.html">RDoc::Markup</a> for details.</p>
+</li><li>
+<p>Image paths at HTTPS URLs will now be turned into +&lt;img&gt;+ tags.  Pull
+Request #60 by James Mead</p>
+</li><li>
+<p>Added <a href="RDoc/Comment.html">RDoc::Comment</a> which encapsulates
+comment-handling functionality.</p>
+</li><li>
+<p>Added <a
+href="RDoc/Markup/PreProcess.html#method-c-post_process">RDoc::Markup::PreProcess.post_process</a>
+to allow arbitrary comment munging.</p>
+</li><li>
+<p><a href="RDoc/RDoc.html#method-c-current">RDoc::RDoc.current</a> is set for
+the entire <a href="RDoc.html">RDoc</a> run.</p>
+</li><li>
+<p>Split rdoc/markup/inline into individual files for its component classes.</p>
+</li><li>
+<p>Moved token stream HTML markup out of <a
+href="RDoc/AnyMethod.html#method-i-markup_code">RDoc::AnyMethod#markup_code</a>
+into <a
+href="RDoc/TokenStream.html#method-c-to_html">RDoc::TokenStream.to_html</a></p>
+</li><li>
+<p>“Top” link in section headers is no longer inside the heading element.</p>
+</li><li>
+<p><a href="RDoc.html">RDoc</a> avoids printing some warnings unless run with
+`rdoc --verbose`.  For Rails issue #1646.</p>
+</li><li>
+<p>Finishing a paragraph with two or more spaces will result in a line break.
+This feature is experimental and may be modified or removed.</p>
+</li></ul>
+</li><li>
+<p>Bug fixes</p>
+<ul><li>
+<p>Markup defined by <a
+href="RDoc/Markup.html#method-i-add_special">RDoc::Markup#add_special</a>
+inside a <code>&lt;tt&gt;</code> is no longer converted.</p>
+</li><li>
+<p>Performance of <a href="RDoc/RubyLex.html">RDoc::RubyLex</a> has been
+improved.  Ruby Bug #5202 by Ryan Melton.</p>
+</li><li>
+<p>Add US-ASCII magic comments to work with <code>ruby -Ku</code>.  Issue #63
+by Travis D. Warlick, Jr.</p>
+</li><li>
+<p>Clicking a link in the method description now works.  Issue #61 by Alan
+Hogan.</p>
+</li><li>
+<p>Fixed <a href="RDoc/Markup/Parser.html">RDoc::Markup::Parser</a> for CRLF
+line endings.  Issue #67 by Marvin Gülker.</p>
+</li><li>
+<p>Fixed lexing of percent strings like %r{#}.  Issue #68 by eclectic923.</p>
+</li><li>
+<p>The C parser now understands classes defined with
+<code>rb_struct_define_without_accessor</code> (like Range).  Pull Request
+#73 by Dan Bernier</p>
+</li><li>
+<p>Fixed lexing of <code>a b &lt;&lt;-HEREDOC</code>.  Issue #75 by John Mair.</p>
+</li><li>
+<p>Added <a href="LEGAL_rdoc.html">LEGAL.rdoc</a> with references to licenses
+in other files.  Issue #78 by Dmitry Jemerov.</p>
+</li><li>
+<p>Block parameters are displayed in Darkfish output again.  Issue #76 by
+Andrea Singh.</p>
+</li><li>
+<p>The method parameter coverage report no longer includes parameter default
+values.  Issue #77 by Jake Goulding.</p>
+</li><li>
+<p>The module for an include is not looked up until parsed all the files are
+parsed.  Unless your project includes nonexistent modules this avoids
+worst-case behavior (<code>O(n!)</code>) of <a
+href="RDoc/Include.html#method-i-module">RDoc::Include#module</a>.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.9.2+%2F+2011-08-11">3.9.2 / 2011-08-11</h3>
+<ul><li>
+<p>Bug fix</p>
+<ul><li>
+<p>Loosened TIDYLINK regexp to allow any content in the link section like:
+<code>{foo}[rdoc-ref:SomeClass]</code></p>
+</li><li>
+<p>In HTML output headings are capped at <code>&lt;h6&gt;</code> again</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.9.1+%2F+2011-07-31">3.9.1 / 2011-07-31</h3>
+<ul><li>
+<p>Bug fixes</p>
+<ul><li>
+<p>Fix <a href="RDoc/Markup.html">RDoc::Markup</a> parser for a header
+followed by a non-text token.  Issue #56 by Adam Tait</p>
+</li><li>
+<p>Fix <a
+href="RDoc/Markup/ToHtmlCrossref.html#method-i-gen_url">RDoc::Markup::ToHtmlCrossref#gen_url</a>
+for non-<code>rdoc-ref</code> links.</p>
+</li><li>
+<p>Fix bug report URL when rdoc crashes.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.9+%2F+2011-07-30">3.9 / 2011-07-30</h3>
+<ul><li>
+<p>Minor enhancements</p>
+<ul><li>
+<p><a href="RDoc/Parser/C.html">RDoc::Parser::C</a> now supports :doc: and
+:nodoc: for class comments</p>
+</li><li>
+<p>Added the <code>rdoc-ref:</code> link scheme which links to a named
+reference. <code>rdoc-ref:</code> can resolve references to classes,
+modules, methods, files, etc.  This can be used to create cross-generator
+named links unlike the <code>link:</code> scheme which is dependent upon
+the exact file name. Issue #53 by Simon Chiang</p>
+</li><li>
+<p>Pulled <a href="RDoc/CrossReference.html">RDoc::CrossReference</a> out of
+<a href="RDoc/Markup/ToHtmlCrossref.html">RDoc::Markup::ToHtmlCrossref</a>.
+Cross-references can now be created easily for non-HTML formatters.</p>
+</li></ul>
+</li><li>
+<p>Bug fixes</p>
+<ul><li>
+<p>`ri []` and other special methods now work properly.  Issue #52 by
+ddebernardy.</p>
+</li><li>
+<p>`ri` now has space between class comments from multiple files.</p>
+</li></ul>
+</li></ul>
+
+<p>* *</p>
+
+<pre>* Remove tokenizer restriction on header lengths for verbatim sections.
+  Issue #49 by trans</pre>
+
+<h3 id="label-3.8+%2F+2011-06-29">3.8 / 2011-06-29</h3>
+<ul><li>
+<p>Minor enhancements</p>
+<ul><li>
+<p><a href="RDoc/Parser/C.html">RDoc::Parser::C</a> can now discover methods
+on ENV and ARGF.</p>
+</li><li>
+<p><a href="RDoc/Parser/C.html">RDoc::Parser::C</a> now knows about rb_cSocket
+and rb_mDL.</p>
+</li></ul>
+</li><li>
+<p>Bug fixes</p>
+<ul><li>
+<p>Updating Object in an ri data store with new data now removes methods,
+includes, constants and aliases.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.7+%2F+2011-06-27">3.7 / 2011-06-27</h3>
+<ul><li>
+<p>Minor enhancements</p>
+<ul><li>
+<p>New directive :category: which allows methods to be grouped into sections
+more cleanly.  See <a href="RDoc/Markup.html">RDoc::Markup</a> for details.</p>
+</li><li>
+<p>Document-class for <a href="RDoc/Parser/C.html">RDoc::Parser::C</a> now
+supports Foo::CONST as well as CONST.</p>
+</li><li>
+<p>ri method output is now a comma-separated list when displayed
+interactively.  Pull Request #39 by Benoit Daloze.</p>
+</li><li>
+<p><a href="RDoc/ClassModule.html#method-i-merge">RDoc::ClassModule#merge</a>
+now prefers the argument's information over the receiver's (it now behaves
+like Hash#merge! instead of a backwards Hash#merge!).</p>
+</li><li>
+<p><a href="RDoc/Markup.html#method-i-convert">RDoc::Markup#convert</a> now
+accepts an <a href="RDoc/Markup/Document.html">RDoc::Markup::Document</a>
+instance</p>
+</li><li>
+<p><a href="RDoc.html">RDoc</a> now owns the code for generating <a
+href="RDoc.html">RDoc</a> and ri data when gems install</p>
+</li><li>
+<p>Added <a href="RDoc/RDoc.html#method-c-reset">RDoc::RDoc.reset</a></p>
+</li><li>
+<p>Added <a
+href="RDoc/CodeObject.html#method-i-file_name">RDoc::CodeObject#file_name</a></p>
+</li></ul>
+</li><li>
+<p>Bug fixes</p>
+<ul><li>
+<p>ri no longer crashes when attempting to complete a plain [.</p>
+</li><li>
+<p>ri data now tracks which file information came from so it can process
+removals and changes to:</p>
+<ul><li>
+<p>Classes and Modules</p>
+</li><li>
+<p>Methods</p>
+</li><li>
+<p>Attributes</p>
+</li><li>
+<p>Includes</p>
+</li><li>
+<p>Constants</p>
+</li></ul>
+
+<p>You will need to rebuild your ri data for it to update properly.  Issue #21
+by Sven Riedel</p>
+</li><li>
+<p>Signal and SignalException no longer clobber each other</p>
+</li><li>
+<p><a href="RDoc/Parser/C.html">RDoc::Parser::C</a> no longer creates classes
+when processing aliases.</p>
+</li><li>
+<p><a href="RDoc/Text.html#method-i-strip_stars">RDoc::Text#strip_stars</a>
+handles Document-method for methods with =, ! and ? now.</p>
+</li><li>
+<p><a href="RDoc/Parser/C.html">RDoc::Parser::C</a> now allows .cpp files to
+be used with the "in" comment on rb_define_method.  Bug #35 by Hanmac.</p>
+</li><li>
+<p><a href="RDoc/Parser/Ruby.html">RDoc::Parser::Ruby</a> no longer eats
+content when =begin/=end documentation blocks are followed by a
+documentable item.  Issue #41 by mfn.</p>
+</li><li>
+<p><a href="RDoc/Markup/Formatter.html">RDoc::Markup::Formatter</a> and
+subclasses now allow an optional <code>markup</code> parameter for adding
+custom markup.  The example in <a
+href="RDoc/Markup/Formatter.html">RDoc::Markup::Formatter</a> will now
+work.  Issue #38 by tsilen.</p>
+</li><li>
+<p><a href="RDoc/Parser/C.html">RDoc::Parser::C</a> can now distinguish
+between class methods and instance methods in Document-method.  Issue #36
+by Vincent Batts.</p>
+</li><li>
+<p><a href="RDoc.html">RDoc</a> now encodes file names in the output encoding.
+Issue #33 by Perry Smith.</p>
+</li><li>
+<p>ri data generation for method aliases no longer duplicates the class in
+full_name</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.6.1+%2F+2011-05-15">3.6.1 / 2011-05-15</h3>
+<ul><li>
+<p>Bug fixes</p>
+<ul><li>
+<p>Fix infinite loop created when re-encountering BasicObject.</p>
+</li><li>
+<p>RDoc::Context#each_ancestor is now provided for duck-typing.</p>
+</li><li>
+<p>rb_path2class() can now be used to discover the parent class in
+rb_define_class_under.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.6+%2F+2011-05-13">3.6 / 2011-05-13</h3>
+<ul><li>
+<p>Major Enhancements</p>
+<ul><li>
+<p>Interactive ri is now the default when no names are given.</p>
+</li></ul>
+</li><li>
+<p>Minor Enhancements</p>
+<ul><li>
+<p><a href="RDoc/RDoc.html#method-i-generate">RDoc::RDoc#generate</a> was
+added to allow multiple generators to be used with a set of parsed file
+info.</p>
+</li><li>
+<p><a href="RDoc/Options.html#method-i-finish">RDoc::Options#finish</a> can be
+called multiple times now.</p>
+</li><li>
+<p>`ri -i` only shows one level of namespace when completing class names.</p>
+</li><li>
+<p>Added `ri –list` for explicit listing.  `ri -l F G` will list all classes
+or modules starting with F or G</p>
+</li></ul>
+</li><li>
+<p>Bug fixes</p>
+<ul><li>
+<p>Remove windows-specific test for test_check_files, it is too hard to do.
+Ruby commit r30811 by Usaku Nakamura.</p>
+</li><li>
+<p>Remove unnecessary (and wrong) platform-dependent hacks.  Ruby commit
+r30829 by Usaku Nakamura.</p>
+</li><li>
+<p>Completing via Array#[ in `ri -i` no longer crashes.  Ruby Bug #3167</p>
+</li><li>
+<p>Completing IO::o in `ri -i` now returns results.  Ruby Bug #3167</p>
+</li><li>
+<p><a href="RDoc/Parser/C.html">RDoc::Parser::C</a> ignores prototypes better.
+Pull Request #34 by Pete Higgins.</p>
+</li><li>
+<p>private_class_method and public_class_method are now parsed correctly for
+inherited methods.  Issue #16 by gitsucks.</p>
+</li><li>
+<p>The doc directive now forces documentation even when the method is marked
+private or protected.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.5.3+%2F+2010-02-06">3.5.3 / 2010-02-06</h3>
+<ul><li>
+<p>Bug fixes</p>
+<ul><li>
+<p>When including a file lossily force-transcode it to the output encoding
+instead of crashing to preserve as much content as possible.  Ruby Bug
+#4376 by Yui NARUSE.</p>
+</li><li>
+<p>Work around inconsistent encoding result from String#sub!, String#gsub!.
+Related to Ruby Bug #4376.</p>
+</li><li>
+<p>Work around inconsistent encoding result from String#[]=.  Related to Ruby
+Bug #4376.</p>
+</li><li>
+<p>When Darkfish fails the file being generated is now reported.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.5.2+%2F+2010-02-04">3.5.2 / 2010-02-04</h3>
+<ul><li>
+<p>Deprecations</p>
+<ul><li>
+<p><a
+href="RDoc/Context/Section.html#method-i-sequence">RDoc::Context::Section#sequence</a>
+is now deprecated.  Use <a
+href="RDoc/Context/Section.html#method-i-aref">RDoc::Context::Section#aref</a>
+instead.</p>
+</li></ul>
+</li><li>
+<p>Bug fixes</p>
+<ul><li>
+<p>Fixed syntax highlighting CSS class generation.  Reported by Daniel Bretoi.</p>
+</li><li>
+<p>Fixed ri for methods with aliases.  Pull Request #15 by Sven Riedel.</p>
+</li><li>
+<p>Added windows-specific test for test_check_files.</p>
+</li><li>
+<p>Darkfish now supports sections.  Template and generator author see <a
+href="RDoc/Context.html#method-i-each_section">RDoc::Context#each_section</a>
+to add section support.  RubyForge Bug #26883 by Jeff Hodges.</p>
+</li><li>
+<p>Fixed post-install message for Ruby 1.9.2 users.</p>
+</li><li>
+<p>Set required ruby version to &gt;= 1.8.7.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.5.1+%2F+2010-01-30">3.5.1 / 2010-01-30</h3>
+<ul><li>
+<p>Bug fixes</p>
+<ul><li>
+<p>Fixed some typos.  Pull request #13 by R.T. Lechow.</p>
+</li><li>
+<p>Ensure an <a href="RDoc/Stats.html">RDoc::Stats</a> is created in
+parse_files.  Fixes documentation for railties which has no files. 
+Reported by Aaron Patterson</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.5+%2F+2010-01-29">3.5 / 2010-01-29</h3>
+<ul><li>
+<p>Minor enhancements</p>
+<ul><li>
+<p><a href="RDoc/Parser/C.html">RDoc::Parser::C</a> looks for rb_scan_args and
+fills in <a
+href="RDoc/AnyMethod.html#attribute-i-params">RDoc::AnyMethod#params</a>
+appropriately.  This may provide useful information if the author did not
+provide a call-seq.</p>
+</li><li>
+<p><a href="RDoc/Parser/C.html">RDoc::Parser::C</a> now records the function
+name for methods implemented in C.</p>
+</li><li>
+<p><a href="RDoc.html">RDoc</a> now records file and byte offset information
+for methods.</p>
+</li></ul>
+</li><li>
+<p>Bug fixes</p>
+<ul><li>
+<p>Locations of module aliases are now recorded.</p>
+</li><li>
+<p><a href="RDoc/Parser/C.html">RDoc::Parser::C</a> finds method bodies better
+now.</p>
+</li><li>
+<p>Fixed further locations where output encoding was not preserved.  Bug #11
+by Vít Ondruch, RubyForge bug #28791 by Dzmitry Prakapenka.</p>
+</li><li>
+<p>Fixed display of numeric lists on the index page and file pages.  Bug #12
+by tobijk.</p>
+</li><li>
+<p>Skip TestRDocOptions#test_check_files on windows until a windows-specific
+test can be created.  RubyForge bug #28821 by Usaku Nakamura.</p>
+</li><li>
+<p>Fixed line-height of headings in method and alias descriptions.  RubyForge
+Bug #2770 by Adam Avilla</p>
+</li><li>
+<p>Relaxed <a
+href="RDoc/Parser/Ruby.html#method-i-remove_private_comments">RDoc::Parser::Ruby#remove_private_comments</a>
+to consume more dashes as older versions once did.  Bug #7 by Claus Folke
+Brobak.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.4+%2F+2010-01-06">3.4 / 2010-01-06</h3>
+<ul><li>
+<p>Minor enhancements</p>
+<ul><li>
+<p><a href="RDoc/RDoc.html#method-i-document">RDoc::RDoc#document</a> may now
+be called with an <a href="RDoc/Options.html">RDoc::Options</a> instance.</p>
+</li></ul>
+</li><li>
+<p>Bug fixes</p>
+<ul><li>
+<p>Added skips to Encoding tests running on 1.8.</p>
+</li><li>
+<p>Fixed warnings</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.3+%2F+2010-01-03">3.3 / 2010-01-03</h3>
+<ul><li>
+<p>Minor enhancements</p>
+<ul><li>
+<p>The coverage report can now report undocumented method parameters including
+methods defined in C.</p>
+
+<p>&lt;kbd&gt;rdoc -C&lt;/kbd&gt; gives a standard report, &lt;kbd&gt;rdoc
+-C1&lt;/kbd&gt; includes method parameters.  Method parameters are
+considered documented if they’re marked-up with <code>+</code>,
+<code>&lt;code&gt;</code> or <code>&lt;tt&gt;</code>.</p>
+</li><li>
+<p>The C parser now uses <code>*args</code> instead of <code>...</code> if no
+<code>call-seq</code> was provided to give names to the arguments.</p>
+</li></ul>
+</li><li>
+<p>Bug fixes</p>
+<ul><li>
+<p>The C parser now records the file location of aliases, attributes,
+constants and methods allowing -C to work on C files.</p>
+</li><li>
+<p>Darkfish now handles dots in call-seq allowing <code>ary.insert(index,
+obj...)</code> to display correctly.  Patch #6 by KUBO Takehiro.</p>
+</li><li>
+<p>Improved processing of meta-programmed methods when followed by unparseable
+syntax.  RubyForge patch #28653 by Aidan Cully.</p>
+</li><li>
+<p>rdoc now touches the flag file when it create the output directory.
+Prevents the “isn’t an <a href="RDoc.html">RDoc</a> directory” error if
+rdoc crashes.</p>
+</li><li>
+<p><a href="RDoc.html">RDoc</a> now properly converts to the expected output
+encoding.  RubyForge bug #28791 by Dzmitry Prakapenka.</p>
+</li><li>
+<p>Restored parsing of block comments.  RubyForge bug #28668 by Stefano
+Crocco.</p>
+</li><li>
+<p>Metaprogrammed methods defined with blocks no longer confuse the ruby
+parser.  RubyForge bug #28370 by Erik Hollensbe.</p>
+</li><li>
+<p>ri no longer displays all methods in the inheritance chain.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.2+%2F+2010-12-29">3.2 / 2010-12-29</h3>
+<ul><li>
+<p>Minor enhancements</p>
+<ul><li>
+<p><a href="RDoc.html">RDoc</a> generator authors may now suppress updating
+the output dir (creating a created.rid file) by setting <a
+href="RDoc/Options.html#attribute-i-update_output_dir">RDoc::Options#update_output_dir</a>
+to false.</p>
+</li><li>
+<p><a href="RDoc/Task.html">RDoc::Task</a> has been refactored to ease
+creating subclasses.</p>
+</li></ul>
+</li><li>
+<p>Bug fixes</p>
+<ul><li>
+<p>RDoc’s gitignore now ignores .DS_Store files.  Pull Request #3 by Shane
+Becker.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.1+%2F+2010-12-28">3.1 / 2010-12-28</h3>
+
+<p><a href="RDoc.html">RDoc</a> has moved to github.  Releases after 3.1
+reference github unless otherwise noted.</p>
+<ul><li>
+<p>Minor enhancements</p>
+<ul><li>
+<p><a href="RDoc/Task.html">RDoc::Task</a> now features a generator option to
+choose an alternate generator.  Pull Request #2 by Erik Hollensbe.</p>
+</li><li>
+<p>Enhanced test for <a
+href="RDoc/Parser.html#method-c-binary-3F">RDoc::Parser.binary?</a> 
+RubyForge patch #28538 by Eito Katagiri.</p>
+</li><li>
+<p>Generator list in –help is no longer static.  Generator description comes
+from the generator’s DESCRIPTION constant.</p>
+</li><li>
+<p>Documentation summary is now displayed with dynamic width.</p>
+</li></ul>
+</li><li>
+<p>Bug fixes</p>
+<ul><li>
+<p>Strip encoding comment from input to avoid overriding file comment.
+RubyForge Bug #22113 by James Gray.</p>
+</li><li>
+<p>Restore call-seq parsing behavior when the call-seq is the only comment.
+RubyForge Bug #26290 by Sylvain Joyeux.</p>
+</li><li>
+<p>Coverage report no longer crashes for constant aliases.  Pull Request #1 by
+Andy Lindeman.</p>
+</li><li>
+<p><a href="RDoc.html">RDoc</a> no longer loses ghost methods when followed by
+certain tokens. RubyForge bug #27793 by Aaron Patterson.</p>
+</li><li>
+<p><a href="RDoc.html">RDoc</a> no longer crashes in ri if HOME is not set. 
+Ruby Bug #4202 by Shyouhei Urabe.</p>
+</li><li>
+<p>ri no longer crashes with HTML format output.  RubyForge bug #28675 by
+7rans.</p>
+</li><li>
+<p><a
+href="RDoc/Markup/ToHtml.html#method-i-gen_url">RDoc::Markup::ToHtml#gen_url</a>
+now initializes from_path to ". Additionally, from_path is now settable. 
+RubyForge bug #27838 by Claus Folke Brobak.</p>
+</li><li>
+<p>Comments in the C parser are now normalized before being combined.
+RubyForge patch #28646 by Sven Herzberg.</p>
+</li><li>
+<p><a href="RDoc/Parser/C.html">RDoc::Parser::C</a> no longer requires a
+comment and finds more method bodies. RubyForge patch #28643 by Sven
+Herzberg.</p>
+</li><li>
+<p>Darkfish now has a “Class/Module Index” instead of a “Class Index”.
+RubyForge patch #28364 by James Tucker.</p>
+</li><li>
+<p><a href="RDoc/Parser/Ruby.html">RDoc::Parser::Ruby</a> now parses negative
+numbers correctly.  RubyForge patch #28544 by Eito Katagiri.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.0.1+%2F+2010-12-19">3.0.1 / 2010-12-19</h3>
+<ul><li>
+<p>Bug fix</p>
+<ul><li>
+<p><a href="RDoc.html">RDoc</a> no longer has a Perl parser.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.0+%2F+2010-12-19">3.0 / 2010-12-19</h3>
+
+<p>Special thanks to Thierry Lambert for massive improvements to <a
+href="RDoc.html">RDoc</a>.</p>
+<ul><li>
+<p>Major enhancements</p>
+<ul><li>
+<p>Ruby 1.8.6 is no longer supported by <a href="RDoc.html">RDoc</a>.</p>
+</li><li>
+<p><a href="RDoc.html">RDoc</a> now converts input files to a single encoding
+specified by <code>--encoding</code>.  See <a
+href="RDoc/RDoc.html">RDoc::RDoc</a> and <a
+href="RDoc/Options.html#attribute-i-encoding">RDoc::Options#encoding</a>.
+<code>--encoding</code> is now preferred over <code>--charset</code></p>
+</li><li>
+<p><a href="RDoc.html">RDoc</a> now supports a <code>--coverage-report</code>
+flag (also <code>-C</code> and <code>--dcov</code>) that outputs a report
+on items lacking documentation.</p>
+</li><li>
+<p>Templates (<code>rdoc -T</code>) are now checked for existence in <a
+href="RDoc/Options.html">RDoc::Options</a>.  Generator authors can now use
+<a
+href="RDoc/Options.html#attribute-i-template_dir">RDoc::Options#template_dir</a>
+which is the full path to the template directory.</p>
+</li><li>
+<p>Added support for class aliases.  Patch by Thierry Lambert.</p>
+</li><li>
+<p>Improved merging of classes and modules across multiple files including
+more accurate documentation statistics.  Patch by Thierry Lambert.</p>
+</li><li>
+<p>Improved handling of method aliases.  Patch by Thierry Lambert.</p>
+</li><li>
+<p>Improved handling of visibility of <a href="RDoc.html">RDoc</a> code
+objects.  Patch by Thierry Lambert.</p>
+</li><li>
+<p><a href="RDoc/MethodAttr.html#method-i-type">RDoc::MethodAttr#type</a> is
+now <a href="RDoc/Attr.html#method-i-definition">RDoc::Attr#definition</a>.
+Patch by Thierry Lambert.</p>
+</li><li>
+<p>Removed TimeConstantMethods</p>
+</li><li>
+<p><a href="RDoc.html">RDoc</a> now calls ::new instead of ::for on
+generators.</p>
+</li></ul>
+</li><li>
+<p>Minor enhancements</p>
+<ul><li>
+<p>Added rdoc arguments <code>--dry-run</code>, <code>--all</code>,
+<code>--visibility</code>, <code>--force-output</code>,
+<code>--hyperlink-all</code>. Patch by Thierry Lambert.</p>
+</li><li>
+<p><a
+href="RDoc/Markup/FormatterTestCase.html">RDoc::Markup::FormatterTestCase</a>
+has been expanded.  Patch by Thierry Lambert.</p>
+</li><li>
+<p><a
+href="RDoc/Markup/TextFormatterTestCase.html">RDoc::Markup::TextFormatterTestCase</a>
+has been extracted from <a href="RDoc.html">RDoc</a> tests. Patch by
+Thierry Lambert.</p>
+</li><li>
+<p>Various <a href="RDoc/Parser/Ruby.html">RDoc::Parser::Ruby</a>
+enhancements.  Patch by Thierry Lambert.</p>
+</li><li>
+<p>Various <a href="RDoc/Markup/Parser.html">RDoc::Markup::Parser</a>
+enhancements.  Patch by Thierry Lambert.</p>
+</li><li>
+<p><a href="RDoc/Parser.html#method-c-binary-3F">RDoc::Parser.binary?</a> is
+more robust now that it uses Encoding.</p>
+</li><li>
+<p>Deprecated rdoc arguments are now explicitly mentioned in rdoc command
+output.  Patch by Thierry Lambert.</p>
+</li><li>
+<p>Constant values are formatted more accurately.  Patch by Thierry Lambert.</p>
+</li><li>
+<p>Enhanced call-seq parsing in <a
+href="RDoc/Parser/C.html">RDoc::Parser::C</a>.  Patch by Thierry Lambert.</p>
+</li><li>
+<p><a href="RDoc.html">RDoc</a> no longer uses kw, cmt, re or str classes for
+embedded source code snippets.  Patch by Thierry Lambert.</p>
+</li><li>
+<p><a href="RDoc.html">RDoc</a> directives may now be escaped with a leading
+'\'.  Patch by Thierry Lambert.</p>
+</li><li>
+<p><a href="RDoc.html">RDoc</a> note lists (<code>label::</code>) now generate
+a table with class "rdoc-list".  Patch by Thierry Lambert.</p>
+</li><li>
+<p><a href="RDoc.html">RDoc</a> markup documentation has been moved to <a
+href="RDoc/Markup.html">RDoc::Markup</a> including notes on how to document
+source code.</p>
+</li><li>
+<p>An <a href="RDoc/Require.html">RDoc::Require</a> is now always listed at
+the file level.  Patch by Thierry Lambert.</p>
+</li><li>
+<p>RDoc::CodeObjects now know which file they were defined in.</p>
+</li><li>
+<p><a href="RDoc/Options.html">RDoc::Options</a> calls ::setup_options on the
+generator class specified by <code>--format</code>.  See
+RDoc::Options::setup_generator.</p>
+</li><li>
+<p>rdoc gives an error when multiple formats are given.</p>
+</li><li>
+<p>Files with erb inside will no longer trip <a
+href="RDoc/Parser.html#method-c-binary-3F">RDoc::Parser.binary?</a></p>
+</li><li>
+<p>Last <code>--title</code> wins.  Patch by Thierry Lambert.</p>
+</li><li>
+<p>Better block params handling.  Patch by Thierry Lambert.</p>
+</li><li>
+<p>Moved rdoc/tokenstream.rb to rdoc/token_stream.rb.</p>
+</li><li>
+<p>Moved rdoc/markup/preprocess.rb to rdoc/markup/pre_process.rb.</p>
+</li><li>
+<p>Removed “‘:’ not followed by operator or identifier” warning for new Hash
+syntax.</p>
+</li><li>
+<p>rb_attr() is now supported for attributes.</p>
+</li><li>
+<p><a href="RDoc/Parser/C.html">RDoc::Parser::C</a> now supports yields, doc,
+and args directives like <a
+href="RDoc/Parser/Ruby.html">RDoc::Parser::Ruby</a>.</p>
+</li><li>
+<p>Moved RDoc::Parser::PerlPOD to the rdoc-perl_pod gem.</p>
+</li></ul>
+</li><li>
+<p>Bug fixes</p>
+<ul><li>
+<p><a href="RDoc/Generator.html">RDoc::Generator</a> tests no longer require
+any installed <a href="RDoc.html">RDoc</a> on Ruby 1.9</p>
+</li><li>
+<p>Load existing cache before generating ri.  Ruby r27749 by NAKAMURA Usaku.</p>
+</li><li>
+<p><a href="RDoc.html">RDoc</a> now handles BOM.  Ruby r28062 by Nobuyoshi
+Nakada.</p>
+</li><li>
+<p>Use proper XML encoding for darkfish classpage.  Ruby r28083 by NARUSE,
+Yui.</p>
+</li><li>
+<p>Fix ri output when special characters are inside html tags.  Patch by Tomo
+Kazahaya, Ruby Bug #3512.</p>
+</li><li>
+<p>Don’t bother checking if the pager exists, it’s already done.  Ruby r28842
+by NAKAMURA Usaku.</p>
+</li><li>
+<p><a href="RDoc/Parser/Ruby.html">RDoc::Parser::Ruby</a> now ignores
+non-constant-named singleton classes.  Ruby r29140 by Nobuyoshi Nakada. 
+Ruby Bug #3759.</p>
+</li><li>
+<p><a href="RDoc/Parser/Ruby.html">RDoc::Parser::Ruby</a> call args no longer
+include assignment.  Ruby r29141 by Nobuyoshi Nakada.  Ruby Bug #3759</p>
+</li><li>
+<p>Handle $HOME being unset in ri.  Ruby r29272 by Nobuyoshi Nakada.</p>
+</li><li>
+<p>uniq ancestors and modules too.  Ruby r29312 by Nobuyoshi Nakada.</p>
+</li><li>
+<p><a href="RDoc.html">RDoc</a> now knows about Encoding by default.  Ruby
+r29356 by Nobuyoshi Nakada.</p>
+</li><li>
+<p>ri now defaults to the backspace formatter when piped.  Use <a
+href="RI_rdoc.html">RI</a> environment variable or options to override.
+Ruby r28455 by Yusuke Endoh.</p>
+</li><li>
+<p>__send__ and friends no longer get their underscores removed.  Patch by
+Thierry Lambert.</p>
+</li><li>
+<p>The C parser now makes new public when promoting initialize.</p>
+</li><li>
+<p>Fix crash in markup_code for TkUnknownChar.</p>
+</li><li>
+<p>Fix crash in <a href="RDoc/Parser/C.html">RDoc::Parser::C</a> when aliasing
+methods with Regexp special characters.</p>
+</li><li>
+<p>Fix crash when various operators are used as a name as in <code>alias *
+compose</code>.</p>
+</li><li>
+<p>Fix warning with some dynamic use of <code>attr_*</code></p>
+</li><li>
+<p>Methods added to true, false and nil are now documented.</p>
+</li><li>
+<p>Remove warning for methods defined on globals.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.5.11+%2F+2010-08-20">2.5.11 / 2010-08-20</h3>
+<ul><li>
+<p>Minor Enhancements</p>
+<ul><li>
+<p>Alias comments are now discovered by the C parser.  Reported by Jeremy
+Evans.</p>
+</li><li>
+<p>Removed –all option which is unused in <a href="RDoc.html">RDoc</a>.  Use
+the nodoc or stopdoc/startdoc directives to suppress documentation instead.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.5.10+%2F+2010-08-17">2.5.10 / 2010-08-17</h3>
+<ul><li>
+<p>Minor Enhancements</p>
+<ul><li>
+<p>Support rb_singleton_class().  Reported by Jeremy Evans.</p>
+</li><li>
+<p>Support rb_define_private_method() on rb_singleton_class().  Reported by
+Jeremy Evans.</p>
+</li></ul>
+</li><li>
+<p>Bug Fixes</p>
+<ul><li>
+<p>Treat non-ASCII <a href="RDoc.html">RDoc</a> files as text.  Bug #28391 by
+Kouhei Sutou.</p>
+</li><li>
+<p>Fix potential test failures due to ivar collision.  Bug #28390 by Kouhei
+Sutou.</p>
+</li><li>
+<p>Added duck-typed aref for <a href="RDoc/Attr.html">RDoc::Attr</a> to <a
+href="RDoc/AnyMethod.html">RDoc::AnyMethod</a>.  Bug #28375 by Erik
+Hollensbe</p>
+</li><li>
+<p>Fixed method references in HTML output when show_hash is false.</p>
+</li><li>
+<p>Fixed comments with ‘.’ in call-seq in C sources.  Reported by Jeremy
+Evans.</p>
+</li><li>
+<p><a href="RDoc.html">RDoc</a> now understands singleton aliases.  Reported
+by Jeremy Evans.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.5.9+%2F+2010-07-06">2.5.9 / 2010-07-06</h3>
+<ul><li>
+<p>Bug Fixes</p>
+<ul><li>
+<p>Look up pager correctly.</p>
+</li><li>
+<p>Fixed handling of bullets in verbatim sections.  Partial patch by
+Juha-Jarmo Heinonen.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.5.8+%2F+2010-04-27">2.5.8 / 2010-04-27</h3>
+
+<p><strong>NOTE</strong>:</p>
+
+<p><a href="RDoc.html">RDoc</a> 2.5 did not save method parameters, so you
+should upgrade your rdoc-data gem to a version &gt;= 2.5.3.</p>
+
+<p>To have ri data for core and stdlib you’ll need to:</p>
+
+<pre>gem install rdoc-data</pre>
+
+<p>then run:</p>
+
+<pre>rdoc-data --install</pre>
+
+<p>To have ri data for you gems you’ll also need to run:</p>
+
+<pre>gem rdoc --all --overwrite</pre>
+
+<p>If you don’t want to rebuild the rdoc for `gem server`, add –no-rdoc.</p>
+<ul><li>
+<p>Bug Fixes</p>
+<ul><li>
+<p>ri no longer complains about nonexistent pagers.</p>
+</li><li>
+<p>Fixed failing test</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.5.7+%2F+2010-04-22">2.5.7 / 2010-04-22</h3>
+<ul><li>
+<p>Minor Enhancements</p>
+<ul><li>
+<p>Unrecognized <a href="RDoc.html">RDoc</a> directives can now be registered
+by a plugin for handling.  See <a
+href="RDoc/Markup/PreProcess.html">RDoc::Markup::PreProcess</a>.</p>
+</li><li>
+<p>Added <a href="RDoc/Markup/Raw.html">RDoc::Markup::Raw</a> to allow other
+markup engines to dump raw content into <a href="RDoc.html">RDoc</a>.</p>
+</li></ul>
+</li><li>
+<p>Bug Fixes</p>
+<ul><li>
+<p>rdoc -p no longer means –pipe if files are also given.</p>
+</li><li>
+<p><a href="RDoc.html">RDoc</a> now knows about BasicObject by default.  Ruby
+Bug #1318 by Ambrus Zsbán</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.5.6+%2F+2010-04-22">2.5.6 / 2010-04-22</h3>
+<ul><li>
+<p>Minor Enhancements</p>
+<ul><li>
+<p>Unrecognized <a href="RDoc.html">RDoc</a> directives are added as metadata
+to the object they get attached to.</p>
+
+<pre>##
+# :my_new_directive: my cool value</pre>
+
+<p>Results in a ‘my_new_directive’ metadata key with value ‘my cool value’ on
+the <a href="RDoc/CodeObject.html">RDoc::CodeObject</a> it is for</p>
+</li></ul>
+</li><li>
+<p>Bug Fixes</p>
+<ul><li>
+<p><a href="RDoc.html">RDoc</a> no longer prints out "invalid options:" when
+there were no invalid options.</p>
+</li><li>
+<p>Fixed link size on Darkfish file pages</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.5.5+%2F+2010-04-19">2.5.5 / 2010-04-19</h3>
+<ul><li>
+<p>1 Minor Enhancement</p>
+<ul><li>
+<p>Use binread in <a
+href="RDoc/Markup/PreProcess.html">RDoc::Markup::PreProcess</a>.  Patch
+from ruby trunk.</p>
+</li></ul>
+</li><li>
+<p>3 Bug Fixes</p>
+<ul><li>
+<p>Fixed indentation of method-description lists in Darkfish.  Bug #28081 by
+Theresa Dwinnell.</p>
+</li><li>
+<p>Fixed loading <a href="RDoc/AnyMethod.html">RDoc::AnyMethod</a> aliases to
+no longer infinitely loop.  Bug #28107 by Sven Riedel</p>
+</li><li>
+<p>Fixed handling of ignored invalid options to continue after the invalid
+option.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.5.4+%2F+2010-04-18">2.5.4 / 2010-04-18</h3>
+<ul><li>
+<p>2 Minor Enhancements</p>
+<ul><li>
+<p>Methods will now be cross-referenced when preceeded with ::.  Ruby Bug
+#3169 by Marc-Andre Lafortune.</p>
+</li><li>
+<p>Methods now have human readable fragment identifiers for HTML output.
+(method-i-gsub vs #M000005).  Ruby Bug #3023 by Marc-Andre Lafortune.</p>
+</li></ul>
+</li><li>
+<p>1 Bug Fixes</p>
+<ul><li>
+<p><a href="RDoc/Parser/Ruby.html">RDoc::Parser::Ruby</a> now handles
+<code>while begin a; b end # ...</code>. Ruby Bug #3160 by Yusuke Endoh.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.5.3+%2F+2010-04-10">2.5.3 / 2010-04-10</h3>
+<ul><li>
+<p>1 Minor Enhancement</p>
+<ul><li>
+<p><a href="RDoc/Parser/Simple.html">RDoc::Parser::Simple</a> and the include
+directive remove coding: comment from first line</p>
+</li></ul>
+</li><li>
+<p>2 Bug Fixes</p>
+<ul><li>
+<p>Fixed loading of created.rid when regenerating documentation.  Ruby bug
+#3121 by Yusuke Endoh.</p>
+</li><li>
+<p>Compare times as Integers as created.rid doesn’t store fractional times.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.5.2+%2F+2010-04-09">2.5.2 / 2010-04-09</h3>
+<ul><li>
+<p>1 Minor Enhancement</p>
+<ul><li>
+<p>Imported various changes by Nobu from ruby trunk.</p>
+</li></ul>
+</li><li>
+<p>2 Bug Fixes</p>
+<ul><li>
+<p><a href="RDoc.html">RDoc</a> parses files without extensions as text files
+again.</p>
+</li><li>
+<p><a href="RDoc/Parser/Ruby.html">RDoc::Parser::Ruby</a> parses %{ strings
+correctly again.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.5.1+%2F+2010-04-06">2.5.1 / 2010-04-06</h3>
+<ul><li>
+<p>1 Minor Enhancement</p>
+<ul><li>
+<p><a href="RDoc/Parser/C.html">RDoc::Parser::C</a> now supports the include
+directive for classes and modules.</p>
+</li></ul>
+</li><li>
+<p>6 Bug Fixes</p>
+<ul><li>
+<p><a href="RDoc/AnyMethod.html">RDoc::AnyMethod</a> params now get saved in
+ri data.</p>
+</li><li>
+<p>ri now displays method arguments correctly.</p>
+</li><li>
+<p><a href="RDoc/Markup/Parser.html">RDoc::Markup::Parser</a> allows no space
+between = and header text like rdoc 2.4 and earlier.</p>
+</li><li>
+<p>RDoc::Parser::C’s “in” directive now looks in the current directory.</p>
+</li><li>
+<p>RDoc::Task’s rerdoc task no longer deletes the doc directory twice.</p>
+</li><li>
+<p>rdoc –force-update now works correctly.  Patch by Nobu Nokada</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.5+%2F+2010-03-31">2.5 / 2010-03-31</h3>
+<ul><li>
+<p>9 Major Enhancements</p>
+<ul><li>
+<p>Darkfish now has a “Home” button</p>
+</li><li>
+<p>ri no longer displays the value of a constant.  There’s no easy way to make
+them presentable.  Use irb or ruby -e instead.  Ruby Bug #549.</p>
+</li><li>
+<p>New ri data format now uses Marshal and pre-builds caches</p>
+<ul><li>
+<p>No support for old ri data format, too hard to maintain</p>
+</li><li>
+<p>To upgrade your core ri documentation, install the rdoc-data gem and run
+rdoc-data</p>
+</li></ul>
+</li><li>
+<p><a href="RDoc.html">RDoc</a> now displays how well you've documented your
+library</p>
+</li><li>
+<p>New recursive-descent parser for <a
+href="RDoc/Markup.html">RDoc::Markup</a>.  See <a
+href="RDoc/Markup/Parser.html">RDoc::Markup::Parser</a></p>
+</li><li>
+<p>Updated ruby_lex and ruby_token</p>
+</li><li>
+<p>Removed threading support, <a href="RDoc.html">RDoc</a> is not thread-safe</p>
+</li><li>
+<p>Removed many unsupported options to rdoc</p>
+</li><li>
+<p>Future versions of <a href="RDoc.html">RDoc</a> will not support Ruby
+1.8.6.  Bugs filed for 1.8.6-only issues will be (largely) rejected.</p>
+</li></ul>
+</li><li>
+<p>17 Minor Enhancements</p>
+<ul><li>
+<p>Source Parsing</p>
+<ul><li>
+<p><a href="RDoc.html">RDoc</a> now supports module aliasing via constant
+assignment.</p>
+</li><li>
+<p><a href="RDoc.html">RDoc</a> now tracks superclasses correctly.  Fixes File
+&lt; IO for core docs.</p>
+</li><li>
+<p><a href="RDoc.html">RDoc</a> now ignores methods inside methods.</p>
+</li><li>
+<p><a href="RDoc.html">RDoc</a> now ignores Marshal and other binray files.</p>
+</li><li>
+<p>Removed “Skipping require of dynamic string” warning.</p>
+</li><li>
+<p>C parser now handles Document-method better.  Bug #27329.</p>
+</li><li>
+<p>API enhancements for writing parsers like the Ruby parser, see <a
+href="RDoc/Parser/RubyTools.html">RDoc::Parser::RubyTools</a></p>
+</li></ul>
+</li><li>
+<p>ri</p>
+<ul><li>
+<p>Uses pager over less and more for Debian.  Ruby Bug #1171.</p>
+</li><li>
+<p>ri will use the RI_PAGER environment variable to find a pager.</p>
+</li><li>
+<p>ri data generator now supports SIGINFO (^T)</p>
+</li></ul>
+</li><li>
+<p>When rdoc is in debug mode, ^C now prints a backtrace</p>
+</li><li>
+<p><a
+href="RDoc/Markup/AttributeManager.html">RDoc::Markup::AttributeManager</a>
+no longer uses global state.</p>
+</li><li>
+<p><a href="RDoc/RDoc.html">RDoc::RDoc</a> no longer passes around options. 
+Patch #27167.</p>
+</li><li>
+<p>Darkfish won’t generate a file if its template is missing.  Patch #25857.</p>
+</li><li>
+<p>Improved some wording for the <a href="RDoc.html">RDoc</a> main page. 
+Patch #27264, #27268.</p>
+</li><li>
+<p>Removed diagram generation support (to return in the future).</p>
+</li><li>
+<p>Removed external support for <a href="RDoc/Task.html">RDoc::Task</a>.</p>
+</li></ul>
+</li><li>
+<p>12 Bug Fixes</p>
+<ul><li>
+<p>The :attr: directives now use the name given to create an attribute.  See
+<a
+href="RDoc/Parser/Ruby.html#method-i-parse_meta_attr">RDoc::Parser::Ruby#parse_meta_attr</a>.</p>
+</li><li>
+<p>Fix crossrefs on paths with ‘-’.  Ruby Bug #883.</p>
+</li><li>
+<p>Fix ruby parser for alias with = in the name.  Bug #27522.</p>
+</li><li>
+<p>Images are no longer executable.  Bug #27156.</p>
+</li><li>
+<p>–op is no longer overridden by –ri.  Bug #27054.</p>
+</li><li>
+<p>:method: now works when at the end of a class.  Bug #26910.</p>
+</li><li>
+<p>Preserve elipsis from call-seq in Darkfish.  Patch #26974.</p>
+</li><li>
+<p>Emacs-style <code>coding:</code> is handled properly.  Patch #27388.</p>
+</li><li>
+<p><a href="RDoc/RubyLex.html">RDoc::RubyLex</a> now parses UTF-8 identifiers.
+Bug #26946, #26947.</p>
+</li><li>
+<p>Fixed namespace lookup rules.  Bug #26161.</p>
+</li><li>
+<p>Worked around bug in Selenium where they hide a .jar in a .txt file. Filed
+Selenium bug #27789.</p>
+</li><li>
+<p>Alias comments are no longer hidden.  Reported by Adam Avilla.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.4.3+%2F+2009-04-01">2.4.3 / 2009-04-01</h3>
+<ul><li>
+<p>2 Bug Fixes</p>
+<ul><li>
+<p>Corrected patch for file links</p>
+</li><li>
+<p>Corrected display of file popup</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.4.2+%2F+2009-03-25">2.4.2 / 2009-03-25</h3>
+<ul><li>
+<p>2 Minor Enhancements</p>
+<ul><li>
+<p>Added –pipe for turning <a href="RDoc.html">RDoc</a> on stdin into HTML</p>
+</li><li>
+<p>Added rdoc/task.rb containing a replacement for rake/rdoctask.rb.  Use <a
+href="RDoc/Task.html">RDoc::Task</a> now instead of <a
+href="RDoc/Task.html">Rake::RDocTask</a>.</p>
+</li></ul>
+</li><li>
+<p>10 Bug Fixes</p>
+<ul><li>
+<p>Writing the ri cache file to the proper directory.  Bug #24459 by Lars
+Christensen.</p>
+</li><li>
+<p>Possible fix for Dir::[] and Pathname interaction on 1.9.  Bug #24650 by
+tiburon.</p>
+</li><li>
+<p>Fixed scanning constants for if/end, etc. pairs.  Bug #24609 by Ryan Davis.</p>
+</li><li>
+<p>Fixed private methods in the C parser.  Bug #24599 by Aaron Patterson.</p>
+</li><li>
+<p>Fixed display of markup on <a href="RDoc.html">RDoc</a> main page.  Bug
+#24168 by rhubarb.</p>
+</li><li>
+<p>Fixed display of \ character in documentation proceeding words. Bug #22112
+by James Gray.  See <a href="RDoc.html">RDoc</a> for details.</p>
+</li><li>
+<p>Fixed parsing and display of arg params for some corner cases.  Bug #21113
+by Csiszár Attila.</p>
+</li><li>
+<p>Fixed links in Files box.  Patch #24403 by Eric Wong.</p>
+</li><li>
+<p>Toplevel methods now appear in Object.  Bug #22677 by Ryan Davis.</p>
+</li><li>
+<p>Added back –promiscuous which didn’t do anything you cared about.  Why did
+you enable it?  Nobody looked at that page!  Oh, it warns, too.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.4.1+%2F+2009-02-26">2.4.1 / 2009-02-26</h3>
+<ul><li>
+<p>1 Minor Enhancements</p>
+<ul><li>
+<p>Added :attr:, :attr_reader:, :attr_writer:, :attr_accessor: directives.
+Replaces –accessor.  See <a
+href="RDoc/Parser/Ruby.html">RDoc::Parser::Ruby</a> for details.</p>
+</li></ul>
+</li><li>
+<p>3 Bug Fixes</p>
+<ul><li>
+<p>Don’t complain when exiting normally.  Bug by Matt Neuburg.</p>
+</li><li>
+<p>Restore –inline-source that warns</p>
+</li><li>
+<p>Fixed links to files in Darkfish output</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.4.0+%2F+2009-02-24">2.4.0 / 2009-02-24</h3>
+<ul><li>
+<p>9 Minor Enhancements</p>
+<ul><li>
+<p>`ri -f html` is now XHTML-happy</p>
+</li><li>
+<p>Clarified <a href="RDoc/Markup.html">RDoc::Markup</a> link syntax.  Bug
+#23517 by Eric Armstrong.</p>
+</li><li>
+<p>Number of threads to parse with is now configurable</p>
+</li><li>
+<p>Darkfish can now use alternate templates from $LOAD_PATH via -T</p>
+</li><li>
+<p>Removed F95 parser in favor of the rdoc-f95 gem</p>
+</li><li>
+<p>Moved HTML and XML generators to unmaintained</p>
+<ul><li>
+<p>No gem will be provided as it’s too difficult to make them work</p>
+</li><li>
+<p>Removed options –one-file, –style=, –inline-source, –promiscuous, –op-name</p>
+</li></ul>
+</li><li>
+<p>Removed support for –accessor, use regular documentation or the method
+directive instead.  See <a
+href="RDoc/Parser/Ruby.html">RDoc::Parser::Ruby</a></p>
+</li><li>
+<p>Removed –ri-system as it is unused by Ruby’s makefiles</p>
+</li><li>
+<p>Added method list to index.html</p>
+</li></ul>
+</li><li>
+<p>6 Bug Fixes</p>
+<ul><li>
+<p>nodoc’d classes no longer appear in the index.  Bug #23751 by Clifford
+Heath.</p>
+</li><li>
+<p>Fix 1.9 compatibility issues.  Bug #23815 by paddor.</p>
+</li><li>
+<p>Darkfish now respects –charset</p>
+</li><li>
+<p><a href="RDoc.html">RDoc</a> no longer attempts to be lazy when building
+HTML.  This is a workaround.  Bug #23893 by Stefano Crocco.</p>
+</li><li>
+<p><a href="RDoc.html">RDoc</a> doesn't crash with def (blah).foo() end</p>
+</li><li>
+<p><a href="RDoc.html">RDoc</a> doesn't crash with define functions</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.3.0+%2F+2009-01-28">2.3.0 / 2009-01-28</h3>
+<ul><li>
+<p>3 Major Enhancements</p>
+<ul><li>
+<p>Michael Granger’s Darkfish generator is now the default for HTML output</p>
+</li><li>
+<p>Various rdoc generation speedups by Hongli Lai.  Patches #22555, #22556,
+#22557, #22562, #22565.</p>
+</li><li>
+<p>rdoc/discover.rb files are loaded automatically from installed gems</p>
+</li></ul>
+</li><li>
+<p>8 Minor Enhancements</p>
+<ul><li>
+<p>Added a space after the commas in ri class method lists.  RubyForge
+enhancement #22182.</p>
+</li><li>
+<p>Improved ri –interactive</p>
+</li><li>
+<p>Generators can now override generated file locations</p>
+</li><li>
+<p>Moved unmaintained CHM generator to it’s own package</p>
+</li><li>
+<p>Moved unmaintained extra HTML templates to their own package</p>
+</li><li>
+<p>Removed experimental texinfo generator</p>
+</li><li>
+<p>Converted to minitest</p>
+</li><li>
+<p>Known classes and modules list outputs once per line now for grep</p>
+</li></ul>
+</li><li>
+<p>11 Bug Fixes</p>
+<ul><li>
+<p>Fix missing superclass in ri output</p>
+</li><li>
+<p>Fix an <a href="RDoc.html">RDoc</a> crash when told to parse an empty file</p>
+</li><li>
+<p>Ignore nonexistent files instead of crashing</p>
+</li><li>
+<p>.txt and .rdoc files are always considered text.  Patch #22897 by Aaron
+Patterson.</p>
+</li><li>
+<p>When merging ri data with a nonexistant directory, <a
+href="RDoc.html">RDoc</a> no longer crashes</p>
+</li><li>
+<p>Fix visibility of methods in XML output.  Issue by Yehuda Katz.</p>
+</li><li>
+<p>Fixed relative link generation</p>
+</li><li>
+<p>Fix crash, <a href="RDoc.html">RDoc</a> now ignores comments above local
+variable assignments in modules</p>
+</li><li>
+<p><a href="RDoc.html">RDoc</a> now only accepts adjacent comments for
+rb_define_module and rb_define_class</p>
+</li><li>
+<p>C file <a href="RDoc.html">RDoc</a> is no longer included in token stream</p>
+</li><li>
+<p>Scan all gem paths to match gem name for ri output</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.2.1+%2F+2008-09-24">2.2.1 / 2008-09-24</h3>
+
+<p>This version provides some minor fixes and enhancements to 2.2.0 intended
+to polish <a href="RDoc.html">RDoc</a> for Ruby 1.9.1.</p>
+<ul><li>
+<p>3 Minor Enhancements</p>
+<ul><li>
+<p>Support for parsing <a href="RDoc.html">RDoc</a> from SWIG.  Ruby patch
+#10742 by Gonzalo Garramuno, #13993 by Steven Jenkins.</p>
+</li><li>
+<p>Simple support for Perl POD documentation.  Patch by Hugh Sasse.</p>
+</li><li>
+<p>Changed the default character set of RDoc’s output from iso-8859-1 to
+utf-8.</p>
+</li></ul>
+</li><li>
+<p>9 Bug Fixes</p>
+<ul><li>
+<p>Explicitly set the html template’s text color, so that the generated
+documentation will display correctly on browsers with custom text and
+background color settings (patch by Luther Thompson).</p>
+</li><li>
+<p>Ensure that <a href="RDoc.html">RDoc</a> correctly will associate an alias
+and a method, even if it encounters the alias first because the alias lives
+in a different file.</p>
+</li><li>
+<p>Fix the parsing of multiline constants (patch by Chris Alfeld and Joel
+VanderWerf)</p>
+</li><li>
+<p>Make –exclude usuable.  Ruby patch #11671 by Trans.</p>
+</li><li>
+<p>Detect inline C functions.  Ruby Bug #11993 by Florian Frank.</p>
+</li><li>
+<p>Fix an issue in which <a href="RDoc.html">RDoc</a> might not document a
+class’ superclass correctly if the class was defined in multiple files and
+depending on the order in which <a href="RDoc.html">RDoc</a> processed the
+files.  This should ensure that the child class -&gt; parent class
+relationship is correct in ri documentation, allowing ri to lookup
+inherited methods (i.e., File.read).</p>
+</li><li>
+<p>Stop ri from crashing when it looks for a completely bogus method (i.e.,
+File#reada).  Now, ri exits with a helpful error message.</p>
+</li><li>
+<p>Fixed missing display of constant values in ri.</p>
+</li><li>
+<p>Fixed display of constants in ri’s html output.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.2.0+%2F+2008-09-19">2.2.0 / 2008-09-19</h3>
+
+<p>This version includes some significant enhancements to ri.  See RI.txt for
+documentation about ri.</p>
+<ul><li>
+<p>5 Major Enhancements</p>
+<ul><li>
+<p>More extensive unit tests (special thanks to Chris Lowis for contributing a
+test).</p>
+</li><li>
+<p>Made ri twice as fast for the most common use case of displaying
+information for a class or a fully-qualified method (i.e., ri
+Array#flatten, after ri has created a cache the first time that it runs).</p>
+</li><li>
+<p>Made ri many times faster when searching for an unqualified method (i.e.,
+ri read, again after the first such search has populated ri’s cache)</p>
+</li><li>
+<p>Changed ri to do regular expression searches for unqualified methods; now,
+a regular expression for a method can be passed to ri on the command-line.</p>
+</li><li>
+<p>Added an interactive mode to ri (patch by Daniel Choi).  Now, when ri is
+given a -i argument, it will allow the user to disambiguate unqualified
+methods if more than one is present and also will allow a user to get
+information for a class’ method.</p>
+</li></ul>
+</li><li>
+<p>8 Minor Enhancements</p>
+<ul><li>
+<p><a href="RDoc.html">RDoc</a> now adds the package title to the web pages
+that it generates for files and classes/modules, which helps them appear
+better in search engine results.</p>
+</li><li>
+<p><a href="RDoc.html">RDoc</a> now automatically generates cross-reference
+links for classes and methods specified relative to the global namespace
+(i.e., ::A::B::C#method).</p>
+</li><li>
+<p>All built-in templates now output valid, strict XHTML.</p>
+</li><li>
+<p>The documentation is slightly better organized (the markup details were
+merged into the <a href="RDoc.html">RDoc</a> module’s documentation).</p>
+</li><li>
+<p>Improved rdoc’s HTML generation speed by about 20% (on Windows, the boost
+seems larger).</p>
+</li><li>
+<p>Provided an ri command-line option to control its caching behavior.</p>
+</li><li>
+<p>Improved RDoc’s documentation.  Added RI.txt to document ri.</p>
+</li><li>
+<p>Allow HTML templates distributed as gems to be loaded with the -T option,
+just like the standard templates in rdoc/generator/html (so an HTML
+template lib/new_template.rb in a gem can be used with rdoc -T
+new_template)</p>
+</li></ul>
+</li><li>
+<p>25 Bug fixes:</p>
+<ul><li>
+<p>Fixed prototype detection in C parser.  Can process ruby 1.8 C files again.</p>
+</li><li>
+<p>Fixed the main page for frameless template.  Patch by Marcin Raczkowski.</p>
+</li><li>
+<p>Fixed the main page for frame templates.  Now, if no main page is
+specified, <a href="RDoc.html">RDoc</a> will default to the <a
+href="README_rdoc.html">README</a>.</p>
+</li><li>
+<p>Fixed missing stylesheet in generated chm.  Patch by Gordon Thiesfeld.</p>
+</li><li>
+<p>Fixed the parsing of module names starting with ‘::’.  Patch by Giuseppe
+Bilotta.</p>
+</li><li>
+<p>Fixed a case where <a href="RDoc.html">RDoc</a> first would encounter
+Foo::Bar and then would encounter class Foo.  Previously, <a
+href="RDoc.html">RDoc</a> erroneously would have considered that both a Foo
+class and a Foo module existed.</p>
+</li><li>
+<p>Fix a clase where <a href="RDoc.html">RDoc</a> would not generate correct
+cross-reference links to a class contained within a module of the same name
+(i.e. <a href="RDoc/RDoc.html">RDoc::RDoc</a>)</p>
+</li><li>
+<p>Prevented <a href="RDoc.html">RDoc</a> from trying to parse binary files,
+which would produce garbage output.</p>
+</li><li>
+<p><a href="RDoc.html">RDoc</a> now correctly converts ' characters to
+apostrophes, opening single quotes, and closing single quotes in most cases
+(smart single quotes).</p>
+</li><li>
+<p><a href="RDoc.html">RDoc</a> now correctly converts " characters to opening
+double quotes and and closing double quotes in most cases (smart double
+quotes).</p>
+</li><li>
+<p>© correctly is converted into the copyright symbol.</p>
+</li><li>
+<p>‘&amp;’ characters in text now correctly are translated to HTML character
+codes.</p>
+</li><li>
+<p>Fixed missing stylesheet in generated chm.  Patch by Gordon Thiesfeld.</p>
+</li><li>
+<p>Fixed broken method links in the built-in templates.</p>
+</li><li>
+<p><a href="RDoc.html">RDoc</a> properly links to files and classes in the one
+page HTML template.</p>
+</li><li>
+<p>The kilmer and hefss templates properly syntax highlight when inlining
+source code.</p>
+</li><li>
+<p>The kilmer and hefss template class pages properly display methods again.</p>
+</li><li>
+<p>Fixed broken class, file, and method links in the frameless template.</p>
+</li><li>
+<p>Fixed the clipping of source code in the html and frameless templates when
+the source code cannot fit into the window; a scrollbar now will allow all
+of the source code to be viewed.</p>
+</li><li>
+<p>Fixed the missing constant descriptions in the html and frameless
+templates.</p>
+</li><li>
+<p>Fixed the ri command-line options that customize the directories to be
+searched for documentation.</p>
+</li><li>
+<p>Fixed the XML generator.  Patch by Anthony Durity.</p>
+</li><li>
+<p>Stopped the XML template from generating invalid XML due to malformed
+embedded ruby.</p>
+</li><li>
+<p>Adding missing information about a class’ constants to the XML template.</p>
+</li><li>
+<p>Fixed the horizontal rule markup (—) so that it correctly adds a horizontal
+rule rather than suppressing all text that follows.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.1.0+%2F+2008-07-20">2.1.0 / 2008-07-20</h3>
+<ul><li>
+<p>3 Major Enhancements:</p>
+<ul><li>
+<p><a href="RDoc.html">RDoc</a> now knows about meta-programmed methods, see
+<a href="RDoc/Parser/Ruby.html">RDoc::Parser::Ruby</a></p>
+</li><li>
+<p>Reorganized parsers under <a href="RDoc/Parser.html">RDoc::Parser</a> base
+class</p>
+</li><li>
+<p>ri now walks the ancestors of a class looking for a method e.g. ri
+File#read displays documentation for IO#read (may require regeneration of
+ri data)</p>
+</li></ul>
+</li><li>
+<p>5 Minor Enhancements:</p>
+<ul><li>
+<p>Allow links to files</p>
+</li><li>
+<p>Default options now taken from RDOCOPT environment variable</p>
+</li><li>
+<p>Class method documentation can be found at toplevel now (def X.foo)</p>
+</li><li>
+<p>Allow HTML templates distributed as gems to be loaded with the -T option,
+just like the standard templates in rdoc/generator/html (so an HTML
+template lib/new_template.rb in a gem can be used with rdoc -T
+new_template)</p>
+</li><li>
+<p>`rdoc -v` prints out files, classes, modules and methods as it goes</p>
+</li></ul>
+</li><li>
+<p>11 Bug Fixes:</p>
+<ul><li>
+<p>`ri Foo.bar` now looks for class methods also</p>
+</li><li>
+<p>Sections work in the default template again</p>
+</li><li><dl class="rdoc-list note-list"><dt>Doesn’t warn about :foo
+<dd>
+<p>list item being an unrecognized directive</p>
+</dd></dl>
+</li><li>
+<p><a href="RDoc.html">RDoc</a> no longer converts characters inside tt tags</p>
+</li><li>
+<p>Fixed “unitialized constant RDoc::Markup::ToHtml::HTML”</p>
+</li><li>
+<p>Fixed generation of relative links</p>
+</li><li>
+<p>Fixed various diagram generation issues</p>
+</li><li>
+<p>Fixed templates broken by switch to erb</p>
+</li><li>
+<p>Fixed issue with &lt;!– –&gt; style comments</p>
+</li><li>
+<p>Lowercase words are no longer rdoc’d as methods without leading #, as
+described in the documentation</p>
+</li><li>
+<p><a href="RDoc.html">RDoc</a> now correctly sets superclasses if they were
+originally unknown</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.0.0+%2F+2008-04-10">2.0.0 / 2008-04-10</h3>
+<ul><li>
+<p>3 Major Enhancements:</p>
+<ul><li>
+<p>Renamespaced everything <a href="RDoc.html">RDoc</a> under the <a
+href="RDoc.html">RDoc</a> module.</p>
+</li><li>
+<p>New `ri` implementation.</p>
+<ul><li>
+<p>Reads from a cache in ~/.ri/ for enhanced speed.</p>
+</li><li>
+<p>RubyGems aware, only searches latest gem versions.</p>
+</li></ul>
+</li><li>
+<p>Now up to over 100 tests and 200 assertions.</p>
+</li></ul>
+</li><li>
+<p>4 Minor Enhancements:</p>
+<ul><li>
+<p>Switched to an ERb-based TemplatePage, see RDoc::TemplatePage.</p>
+</li><li>
+<p>Class/module ri now displays attribute and constant comments.</p>
+</li><li>
+<p>Cross-references can be disabled with a leading .</p>
+</li><li>
+<p>Relaxed parsing for some <a href="RDoc.html">RDoc</a> inline markup.</p>
+</li></ul>
+</li></ul>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

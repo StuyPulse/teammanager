@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>builder-3.0.3 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body>
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./CHANGES.html">CHANGES</a>
+  
+    <li class="file"><a href="./MIT-LICENSE.html">MIT-LICENSE</a>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+    <li class="file"><a href="./Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="./doc/releases/builder-1_2_4_rdoc.html">builder-1.2.4</a>
+  
+    <li class="file"><a href="./doc/releases/builder-2_0_0_rdoc.html">builder-2.0.0</a>
+  
+    <li class="file"><a href="./doc/releases/builder-2_1_1_rdoc.html">builder-2.1.1</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Builder.html">Builder</a>
+  
+    <li><a href="./Builder/IllegalBlockError.html">Builder::IllegalBlockError</a>
+  
+    <li><a href="./Builder/XmlBase.html">Builder::XmlBase</a>
+  
+    <li><a href="./Builder/XmlEvents.html">Builder::XmlEvents</a>
+  
+    <li><a href="./Builder/XmlMarkup.html">Builder::XmlMarkup</a>
+  
+    <li><a href="./BlankSlate.html">BlankSlate</a>
+  
+    <li><a href="./Fixnum.html">Fixnum</a>
+  
+    <li><a href="./Kernel.html">Kernel</a>
+  
+    <li><a href="./Module.html">Module</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./String.html">String</a>
+  
+    <li><a href="./Symbol.html">Symbol</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<h1 id="label-Project%3A+Builder">Project: <a href="Builder.html">Builder</a></h1>
+
+<h2 id="label-Goal">Goal</h2>
+
+<p>Provide a simple way to create XML markup and data structures.</p>
+
+<h2 id="label-Classes">Classes</h2>
+<dl class="rdoc-list note-list"><dt><a href="Builder/XmlMarkup.html">Builder::XmlMarkup</a>
+<dd>
+<p>Generate XML markup notiation</p>
+</dd><dt><a href="Builder/XmlEvents.html">Builder::XmlEvents</a>
+<dd>
+<p>Generate XML events (i.e. SAX-like)</p>
+</dd><dt><strong>Notes</strong>
+<dd></dd></dl>
+<ul><li>
+<p>An <code>Builder::XmlTree</code> class to generate XML tree (i.e. DOM-like)
+structures is also planned, but not yet implemented. Also, the events
+builder is currently lagging the markup builder in features.</p>
+</li></ul>
+
+<h2 id="label-Usage">Usage</h2>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'rubygems'</span>
+<span class="ruby-identifier">require_gem</span> <span class="ruby-string">'builder'</span>, <span class="ruby-string">'~&gt; 2.0'</span>
+
+<span class="ruby-identifier">builder</span> = <span class="ruby-constant">Builder</span><span class="ruby-operator">::</span><span class="ruby-constant">XmlMarkup</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">xml</span> = <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">person</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">name</span>(<span class="ruby-string">&quot;Jim&quot;</span>); <span class="ruby-identifier">b</span>.<span class="ruby-identifier">phone</span>(<span class="ruby-string">&quot;555-1234&quot;</span>) }
+<span class="ruby-identifier">xml</span> <span class="ruby-comment">#=&gt; &lt;person&gt;&lt;name&gt;Jim&lt;/name&gt;&lt;phone&gt;555-1234&lt;/phone&gt;&lt;/person&gt;</span>
+</pre>
+
+<p>or</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'rubygems'</span>
+<span class="ruby-identifier">require_gem</span> <span class="ruby-string">'builder'</span>
+
+<span class="ruby-identifier">builder</span> = <span class="ruby-constant">Builder</span><span class="ruby-operator">::</span><span class="ruby-constant">XmlMarkup</span>.<span class="ruby-identifier">new</span>(:<span class="ruby-identifier">target=</span><span class="ruby-operator">&gt;</span><span class="ruby-constant">STDOUT</span>, :<span class="ruby-identifier">indent=</span><span class="ruby-operator">&gt;</span><span class="ruby-value">2</span>)
+<span class="ruby-identifier">builder</span>.<span class="ruby-identifier">person</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">name</span>(<span class="ruby-string">&quot;Jim&quot;</span>); <span class="ruby-identifier">b</span>.<span class="ruby-identifier">phone</span>(<span class="ruby-string">&quot;555-1234&quot;</span>) }
+<span class="ruby-comment">#</span>
+<span class="ruby-comment"># Prints:</span>
+<span class="ruby-comment"># &lt;person&gt;</span>
+<span class="ruby-comment">#   &lt;name&gt;Jim&lt;/name&gt;</span>
+<span class="ruby-comment">#   &lt;phone&gt;555-1234&lt;/phone&gt;</span>
+<span class="ruby-comment"># &lt;/person&gt;</span>
+</pre>
+
+<h2 id="label-Compatibility">Compatibility</h2>
+
+<h3 id="label-Version+2.0.0+Compatibility+Changes">Version 2.0.0 Compatibility Changes</h3>
+
+<p>Version 2.0.0 introduces automatically escaped attribute values for the
+first time.  Versions prior to 2.0.0 did not insert escape characters into
+attribute values in the XML markup.  This allowed attribute values to
+explicitly reference entities, which was occasionally used by a small
+number of developers.  Since strings could always be explicitly escaped by
+hand, this was not a major restriction in functionality.</p>
+
+<p>However, it did suprise most users of builder.  Since the body text is
+normally escaped, everybody expected the attribute values to be escaped as
+well.  Escaped attribute values were the number one support request on the
+1.x <a href="Builder.html">Builder</a> series.</p>
+
+<p>Starting with <a href="Builder.html">Builder</a> version 2.0.0, all
+attribute values expressed as strings will be processed and the appropriate
+characters will be escaped (e.g. “&amp;” will be tranlated to “&amp;amp;”).
+Attribute values that are expressed as <a href="Symbol.html">Symbol</a>
+values will not be processed for escaped characters and will be unchanged
+in output. (Yes, this probably counts as <a href="Symbol.html">Symbol</a>
+abuse, but the convention is convenient and flexible).</p>
+
+<p>Example:</p>
+
+<pre class="ruby"><span class="ruby-identifier">xml</span> = <span class="ruby-constant">Builder</span><span class="ruby-operator">::</span><span class="ruby-constant">XmlMarkup</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">xml</span>.<span class="ruby-identifier">sample</span>(:<span class="ruby-identifier">escaped=</span><span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;This&amp;That&quot;</span>, :<span class="ruby-identifier">unescaped=</span><span class="ruby-operator">&gt;</span>:<span class="ruby-string">&quot;Here&amp;amp;There&quot;</span>)
+<span class="ruby-identifier">xml</span>.<span class="ruby-identifier">target!</span>  =<span class="ruby-operator">&gt;</span>
+  <span class="ruby-operator">&lt;</span><span class="ruby-identifier">sample</span> <span class="ruby-identifier">escaped</span>=<span class="ruby-string">&quot;This&amp;amp;That&quot;</span> <span class="ruby-identifier">unescaped</span>=<span class="ruby-string">&quot;Here&amp;amp;There&quot;</span><span class="ruby-operator">/</span><span class="ruby-operator">&gt;</span>
+</pre>
+
+<h3 id="label-Version+1.0.0+Compatibility+Changes">Version 1.0.0 Compatibility Changes</h3>
+
+<p>Version 1.0.0 introduces some changes that are not backwards compatible
+with earlier releases of builder.  The main areas of incompatibility are:</p>
+<ul><li>
+<p>Keyword based arguments to <code>new</code> (rather than positional based).
+It was found that a developer would often like to specify indentation
+without providing an explicit target, or specify a target without
+indentation.  Keyword based arguments handle this situation nicely.</p>
+</li><li>
+<p><a href="Builder.html">Builder</a> must now be an explicit target for
+markup tags.  Instead of writing</p>
+
+<pre>xml_markup = Builder::XmlMarkup.new
+xml_markup.div { strong(&quot;text&quot;) }</pre>
+
+<p>you need to write</p>
+
+<pre>xml_markup = Builder::XmlMarkup.new
+xml_markup.div { xml_markup.strong(&quot;text&quot;) }</pre>
+</li><li>
+<p>The builder object is passed as a parameter to all nested markup blocks. 
+This allows you to create a short alias for the builder object that can be
+used within the block.  For example, the previous example can be written
+as:</p>
+
+<pre class="ruby"><span class="ruby-identifier">xml_markup</span> = <span class="ruby-constant">Builder</span><span class="ruby-operator">::</span><span class="ruby-constant">XmlMarkup</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">xml_markup</span>.<span class="ruby-identifier">div</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">xml</span><span class="ruby-operator">|</span> <span class="ruby-identifier">xml</span>.<span class="ruby-identifier">strong</span>(<span class="ruby-string">&quot;text&quot;</span>) }
+</pre>
+</li><li>
+<p>If you have both a pre-1.0 and a post-1.0 gem of builder installed, you can
+choose which version to use through the RubyGems <code>require_gem</code>
+facility.</p>
+
+<pre>require_gem 'builder', &quot;~&gt; 0.0&quot;   # Gets the old version
+require_gem 'builder', &quot;~&gt; 1.0&quot;   # Gets the new version</pre>
+</li></ul>
+
+<h2 id="label-Features">Features</h2>
+<ul><li>
+<p>XML Comments are supported …</p>
+
+<pre class="ruby"><span class="ruby-identifier">xml_markup</span>.<span class="ruby-identifier">comment!</span> <span class="ruby-string">&quot;This is a comment&quot;</span>
+  <span class="ruby-comment">#=&gt;  &lt;!-- This is a comment --&gt;</span>
+</pre>
+</li><li>
+<p>XML processing instructions are supported …</p>
+
+<pre class="ruby"><span class="ruby-identifier">xml_markup</span>.<span class="ruby-identifier">instruct!</span> :<span class="ruby-identifier">xml</span>, :<span class="ruby-identifier">version=</span><span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;1.0&quot;</span>, :<span class="ruby-identifier">encoding=</span><span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;UTF-8&quot;</span>
+  <span class="ruby-comment">#=&gt;  &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+</pre>
+
+<p>If the processing instruction is omitted, it defaults to “xml”. When the
+processing instruction is “xml”, the defaults attributes are:</p>
+<dl class="rdoc-list note-list"><dt><strong>version</strong>
+<dd>
+<p>1.0</p>
+</dd><dt><strong>encoding</strong>
+<dd>
+<p>“UTF-8”</p>
+</dd></dl>
+
+<p>(NOTE: if the encoding is set to “UTF-8” and $KCODE is set to “UTF8”, then
+<a href="Builder.html">Builder</a> will emit UTF-8 encoded strings rather
+than encoding non-ASCII characters as entities.)</p>
+</li><li>
+<p>XML entity declarations are now supported to a small degree.</p>
+
+<pre class="ruby"><span class="ruby-identifier">xml_markup</span>.<span class="ruby-identifier">declare!</span> :<span class="ruby-constant">DOCTYPE</span>, :<span class="ruby-identifier">chapter</span>, :<span class="ruby-constant">SYSTEM</span>, <span class="ruby-string">&quot;../dtds/chapter.dtd&quot;</span>
+  <span class="ruby-comment">#=&gt;  &lt;!DOCTYPE chapter SYSTEM &quot;../dtds/chapter.dtd&quot;&gt;</span>
+</pre>
+
+<p>The parameters to a declare! method must be either symbols or strings.
+Symbols are inserted without quotes, and strings are inserted with double
+quotes.  Attribute-like arguments in hashes are not allowed.</p>
+
+<p>If you need to have an argument to declare! be inserted without quotes, but
+the arguement does not conform to the typical Ruby syntax for symbols, then
+use the :“string” form to specify a symbol.</p>
+
+<p>For example:</p>
+
+<pre class="ruby"><span class="ruby-identifier">xml_markup</span>.<span class="ruby-identifier">declare!</span> :<span class="ruby-constant">ELEMENT</span>, :<span class="ruby-identifier">chapter</span>, :<span class="ruby-string">&quot;(title,para+)&quot;</span>
+  <span class="ruby-comment">#=&gt;  &lt;!ELEMENT chapter (title,para+)&gt;</span>
+</pre>
+
+<p>Nested entity declarations are allowed.  For example:</p>
+
+<pre class="ruby"><span class="ruby-ivar">@xml_markup</span>.<span class="ruby-identifier">declare!</span> :<span class="ruby-constant">DOCTYPE</span>, :<span class="ruby-identifier">chapter</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">x</span>.<span class="ruby-identifier">declare!</span> :<span class="ruby-constant">ELEMENT</span>, :<span class="ruby-identifier">chapter</span>, :<span class="ruby-string">&quot;(title,para+)&quot;</span>
+  <span class="ruby-identifier">x</span>.<span class="ruby-identifier">declare!</span> :<span class="ruby-constant">ELEMENT</span>, :<span class="ruby-identifier">title</span>, :<span class="ruby-node">&quot;(#PCDATA)&quot;</span>
+  <span class="ruby-identifier">x</span>.<span class="ruby-identifier">declare!</span> :<span class="ruby-constant">ELEMENT</span>, :<span class="ruby-identifier">para</span>, :<span class="ruby-node">&quot;(#PCDATA)&quot;</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment">#=&gt;</span>
+
+<span class="ruby-operator">&lt;</span><span class="ruby-operator">!</span><span class="ruby-constant">DOCTYPE</span> <span class="ruby-identifier">chapter</span> [
+  <span class="ruby-operator">&lt;</span><span class="ruby-operator">!</span><span class="ruby-constant">ELEMENT</span> <span class="ruby-identifier">chapter</span> (<span class="ruby-identifier">title</span>,<span class="ruby-identifier">para</span><span class="ruby-operator">+</span>)<span class="ruby-operator">&gt;</span>
+  <span class="ruby-operator">&lt;</span><span class="ruby-operator">!</span><span class="ruby-constant">ELEMENT</span> <span class="ruby-identifier">title</span> (<span class="ruby-comment">#PCDATA)&gt;</span>
+  <span class="ruby-operator">&lt;</span><span class="ruby-operator">!</span><span class="ruby-constant">ELEMENT</span> <span class="ruby-identifier">para</span> (<span class="ruby-comment">#PCDATA)&gt;</span>
+]<span class="ruby-operator">&gt;</span>
+</pre>
+</li><li>
+<p>Some support for XML namespaces is now available.  If the first argument to
+a tag call is a symbol, it will be joined to the tag to produce a
+namespace:tag combination.  It is easier to show this than describe it.</p>
+
+<pre>xml.SOAP :Envelope do ... end</pre>
+
+<p>Just put a space before the colon in a namespace to produce the right form
+for builder (e.g. “<code>SOAP:Envelope</code>” =&gt; “<code>xml.SOAP
+:Envelope</code>”)</p>
+</li><li>
+<p><a href="String.html">String</a> attribute values are <em>now</em> escaped
+by default by <a href="Builder.html">Builder</a> (<strong>NOTE:</strong>
+this is <em>new</em> behavior as of version 2.0).</p>
+
+<p>However, occasionally you need to use entities in attribute values. Using a
+symbols (rather than a string) for an attribute value will cause <a
+href="Builder.html">Builder</a> to not run its quoting/escaping algorithm
+on that particular value.</p>
+
+<p>(<strong>Note:</strong> The <code>escape_attrs</code> option for builder is
+now obsolete).</p>
+
+<p>Example:</p>
+
+<pre class="ruby"><span class="ruby-identifier">xml</span> = <span class="ruby-constant">Builder</span><span class="ruby-operator">::</span><span class="ruby-constant">XmlMarkup</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">xml</span>.<span class="ruby-identifier">sample</span>(:<span class="ruby-identifier">escaped=</span><span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;This&amp;That&quot;</span>, :<span class="ruby-identifier">unescaped=</span><span class="ruby-operator">&gt;</span>:<span class="ruby-string">&quot;Here&amp;amp;There&quot;</span>)
+<span class="ruby-identifier">xml</span>.<span class="ruby-identifier">target!</span>  =<span class="ruby-operator">&gt;</span>
+  <span class="ruby-operator">&lt;</span><span class="ruby-identifier">sample</span> <span class="ruby-identifier">escaped</span>=<span class="ruby-string">&quot;This&amp;amp;That&quot;</span> <span class="ruby-identifier">unescaped</span>=<span class="ruby-string">&quot;Here&amp;amp;There&quot;</span><span class="ruby-operator">/</span><span class="ruby-operator">&gt;</span>
+</pre>
+</li><li>
+<p>UTF-8 Support</p>
+
+<p><a href="Builder.html">Builder</a> correctly translates UTF-8 characters
+into valid XML.  (New in version 2.0.0).  Thanks to Sam Ruby for the
+translation code.</p>
+
+<p>You can get UTF-8 encoded output by making sure that the XML encoding is
+set to “UTF-8” and that the $KCODE variable is set to “UTF8”.</p>
+
+<pre class="ruby"><span class="ruby-identifier">$KCODE</span> = <span class="ruby-string">'UTF8'</span>
+<span class="ruby-identifier">xml</span> = <span class="ruby-constant">Builder</span><span class="ruby-operator">::</span><span class="ruby-constant">Markup</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">xml</span>.<span class="ruby-identifier">instruct!</span>(:<span class="ruby-identifier">xml</span>, :<span class="ruby-identifier">encoding</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;UTF-8&quot;</span>)
+<span class="ruby-identifier">xml</span>.<span class="ruby-identifier">sample</span>(<span class="ruby-string">&quot;Iñtërnâtiônàl&quot;</span>)
+<span class="ruby-identifier">xml</span>.<span class="ruby-identifier">target!</span>  =<span class="ruby-operator">&gt;</span>
+  <span class="ruby-string">&quot;&lt;sample&gt;Iñtërnâtiônàl&lt;/sample&gt;&quot;</span>
+</pre>
+</li></ul>
+
+<h2 id="label-Links">Links</h2>
+<dl class="rdoc-list note-list"><dt>Documents           
+<dd>
+<p><a href="http://builder.rubyforge.org/">builder.rubyforge.org/</a></p>
+</dd><dt>Github Clone        
+<dd>
+<p>git://github.com/jimweirich/builder.git</p>
+</dd><dt>Issue / Bug Reports 
+<dd>
+<p><a
+href="https://github.com/jimweirich/builder/issues?state=open">github.com/jimweirich/builder/issues?state=open</a></p>
+</dd></dl>
+
+<h2 id="label-Contact">Contact</h2>
+<dl class="rdoc-list note-list"><dt>Author
+<dd>
+<p>Jim Weirich</p>
+</dd><dt>Email
+<dd>
+<p>gmail at jim.weirich.com</p>
+</dd><dt>Home Page
+<dd>
+<p><a href="http://onestepback.org">onestepback.org</a></p>
+</dd><dt>License
+<dd>
+<p>MIT Licence (<a
+href="http://www.opensource.org/licenses/mit-license.html">www.opensource.org/licenses/mit-license.html</a>)</p>
+</dd></dl>
+
+</div>
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

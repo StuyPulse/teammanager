@@ -1,0 +1,4 @@
+U:RDoc::AnyMethod[iI"
+since:EFI"Numeric#since;FF:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"6Reads best with argument:  10.minutes.since(time);T:
+@fileI"0lib/active_support/core_ext/numeric/time.rb;T00[[I"from_now;Fo;;	[o;
+;	[I"7Reads best without arguments:  10.minutes.from_now;T;@I"(time = ::Time.current);T@

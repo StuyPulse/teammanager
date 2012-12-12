@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>audio - mime-types-1.19 Documentation</title>
+
+<link type="text/css" media="screen" href="../../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../../index.html">Home</a>
+    <a href="../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../../History_rdoc.html">History</a>
+  
+    <li class="file"><a href="../../../Licence_rdoc.html">Licence</a>
+  
+    <li class="file"><a href="../../../Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="../../../README_rdoc.html">README</a>
+  
+    <li class="file"><a href="../../../lib/mime/types/application.html">application</a>
+  
+    <li class="file"><a href="../../../lib/mime/types/audio.html">audio</a>
+  
+    <li class="file"><a href="../../../lib/mime/types/image.html">image</a>
+  
+    <li class="file"><a href="../../../lib/mime/types/message.html">message</a>
+  
+    <li class="file"><a href="../../../lib/mime/types/model.html">model</a>
+  
+    <li class="file"><a href="../../../lib/mime/types/multipart.html">multipart</a>
+  
+    <li class="file"><a href="../../../lib/mime/types/text.html">text</a>
+  
+    <li class="file"><a href="../../../lib/mime/types/video.html">video</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../../MIME.html">MIME</a>
+  
+    <li><a href="../../../MIME/InvalidContentType.html">MIME::InvalidContentType</a>
+  
+    <li><a href="../../../MIME/Type.html">MIME::Type</a>
+  
+    <li><a href="../../../MIME/Types.html">MIME::Types</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<p>audio/1d-interleaved-parityfec ‘IANA,RFC6015 audio/32kadpcm
+’IANA,RFC3802,RFC2421 audio/3gpp ‘IANA,RFC3839,RFC6381 audio/3gpp2
+’IANA,RFC4393,RFC6381 audio/ac3 ‘IANA,RFC4184 audio/AMR @amr :base64
+’RFC4867 audio/AMR-WB @awb :base64 ‘RFC4867 audio/amr-wb+ ’IANA,RFC4352
+audio/asc ‘IANA,RFC6295 audio/ATRAC-ADVANCED-LOSSLESS ’IANA,RFC5584
+audio/ATRAC-X ‘IANA,RFC5584 audio/ATRAC3 ’IANA,RFC5584 audio/basic @au,snd
+:base64 ‘IANA,RFC2045,RFC2046 audio/BV16 ’IANA,RFC4298 audio/BV32
+‘IANA,RFC4298 audio/clearmode ’IANA,RFC4040 audio/CN ‘IANA,RFC3389
+audio/DAT12 ’IANA,RFC3190 audio/dls ‘IANA,RFC4613 audio/dsr-es201108
+’IANA,RFC3557 audio/dsr-es202050 ‘IANA,RFC4060 audio/dsr-es202211
+’IANA,RFC4060 audio/dsr-es202212 ‘IANA,RFC4060 audio/DVI4 ’IANA,RFC4856
+audio/eac3 ‘IANA,RFC4598 audio/EVRC @evc ’IANA,RFC4788 audio/EVRC-QCP
+‘IANA,RFC3625 audio/EVRC0 ’IANA,RFC4788 audio/EVRC1 ‘IANA,RFC4788
+audio/EVRCB ’IANA,RFC5188 audio/EVRCB0 ‘IANA,RFC5188 audio/EVRCB1
+’IANA,RFC4788 audio/EVRCWB ‘IANA,RFC5188 audio/EVRCWB0 ’IANA,RFC5188
+audio/EVRCWB1 ‘IANA,RFC5188 audio/example ’IANA,RFC4735 audio/fwdred
+‘IANA,RFC6354 audio/G719 ’IANA,RFC5404 audio/G722 ‘IANA,RFC4856 audio/G7221
+’IANA,RFC5577 audio/G723 ‘IANA,RFC4856 audio/G726-16 ’IANA,RFC4856
+audio/G726-24 ‘IANA,RFC4856 audio/G726-32 ’IANA,RFC4856 audio/G726-40
+‘IANA,RFC4856 audio/G728 ’IANA,RFC4856 audio/G729 ‘IANA,RFC4856 audio/G7291
+’IANA,RFC4749,RFC5459 audio/G729D ‘IANA,RFC4856 audio/G729E ’IANA,RFC4856
+audio/GSM ‘IANA,RFC4856 audio/GSM-EFR ’IANA,RFC4856 audio/GSM-HR-08
+‘IANA,RFC5993 audio/iLBC ’IANA,RFC3952 audio/ip-mr_v2.5 ‘IANA,RFC6262
+audio/L16 @l16 ’IANA,RFC4856 audio/L20 ‘IANA,RFC3190 audio/L24
+’IANA,RFC3190 audio/L8 ‘IANA,RFC4856 audio/LPC ’IANA,RFC4856
+audio/mobile-xmf ‘IANA,RFC4723 audio/mp4 @mp4,mpg4,f4a,f4b
+’IANA,RFC4337,{Adobe=<a
+href="http://www.kaourantin.net/2007/10/new-file-extensions-and-mime-types.html">www.kaourantin.net/2007/10/new-file-extensions-and-mime-types.html</a>}
+audio/MP4A-LATM @m4a ‘IANA,RFC6416 audio/MPA ’IANA,RFC3555 audio/mpa-robust
+‘IANA,RFC5219 audio/mpeg @mpga,mp2,mp3 :base64 ’IANA,RFC3003
+audio/mpeg4-generic ‘IANA,RFC3640,RFC5691,RFC6295 audio/ogg @ogg
+’IANA,RFC5334 audio/parityfec ‘IANA,RFC5109 audio/PCMA ’IANA,RFC4856
+audio/PCMA-WB ‘IANA,RFC5391 audio/PCMU ’IANA,RFC4856 audio/PCMU-WB
+‘IANA,RFC5391 audio/prs.sid ’<a href="http://Walleij">IANA,</a> audio/QCELP
+‘IANA,RFC3555,RFC3625 audio/RED ’IANA,RFC3555 audio/rtp-enc-aescm128 ‘<a
+href="http://3GPP">IANA,</a> audio/rtp-midi ’IANA,RFC6295 audio/rtx
+‘IANA,RFC4588 audio/SMV @smv ’IANA,RFC3558 audio/SMV-QCP ‘IANA,RFC3625
+audio/SMV0 ’IANA,RFC3558 audio/sp-midi ‘<a
+href="http://Kosonen">IANA,</a>,[T. White=T.White] audio/speex
+’IANA,RFC5574 audio/t140c ‘IANA,RFC4351 audio/t38 ’IANA,RFC4612
+audio/telephone-event ‘IANA,RFC4733 audio/tone ’IANA,RFC4733 audio/UEMCLIP
+‘IANA,RFC5686 audio/ulpfec ’IANA,RFC5109 audio/VDVI ‘IANA,RFC4856
+audio/VMR-WB ’IANA,RFC4348,RFC4424 audio/vnd.3gpp.iufp ‘<a
+href="http://Belling">IANA,</a> audio/vnd.4SB ’IANA,[De Jaham]
+audio/vnd.audiokoz ‘<a href="http://DeBarros">IANA,</a> audio/vnd.CELP
+’IANA,[De Jaham] audio/vnd.cisco.nse ‘<a href="http://Kumar">IANA,</a>
+audio/vnd.cmles.radio-events ’<a href="http://Goulet">IANA,</a>
+audio/vnd.cns.anp1 ‘<a href="http://McLaughlin">IANA,</a>
+audio/vnd.cns.inf1 ’<a href="http://McLaughlin">IANA,</a>
+audio/vnd.dece.audio ‘<a href="http://Dolan">IANA,</a>
+audio/vnd.digital-winds @eol :7bit ’<a href="http://Strazds">IANA,</a>
+audio/vnd.dlna.adts ‘<a href="http://Heredia">IANA,</a>
+audio/vnd.dolby.heaac.1 ’<a href="http://Hattersley">IANA,</a>
+audio/vnd.dolby.heaac.2 ‘<a href="http://Hattersley">IANA,</a>
+audio/vnd.dolby.mlp ’<a href="http://Ward">IANA,</a> audio/vnd.dolby.mps
+‘<a href="http://Hattersley">IANA,</a> audio/vnd.dolby.pl2 ’<a
+href="http://Hattersley">IANA,</a> audio/vnd.dolby.pl2x ‘<a
+href="http://Hattersley">IANA,</a> audio/vnd.dolby.pl2z ’<a
+href="http://Hattersley">IANA,</a> audio/vnd.dolby.pulse.1 ‘<a
+href="http://Hattersley">IANA,</a> audio/vnd.dra ’<a
+href="http://Tian">IANA,</a> audio/vnd.dts ‘<a href="http://Zou">IANA,</a>
+audio/vnd.dts.hd ’<a href="http://Zou">IANA,</a> audio/vnd.dvb.file ‘<a
+href="http://Siebert">IANA,</a> audio/vnd.everad.plj @plj ’<a
+href="http://Cicelsky">IANA,</a> audio/vnd.hns.audio ‘<a
+href="http://Swaminathan">IANA,</a> audio/vnd.lucent.voice @lvp ’<a
+href="http://Vaudreuil">IANA,</a> audio/vnd.ms-playready.media.pya ‘<a
+href="http://DiAcetis">IANA,</a> audio/vnd.nokia.mobile-xmf @mxmf
+’IANA,[Nokia Corporation=Nokia] audio/vnd.nortel.vbk @vbk ‘<a
+href="http://Parsons">IANA,</a> audio/vnd.nuera.ecelp4800 @ecelp4800 ’<a
+href="http://Fox">IANA,</a> audio/vnd.nuera.ecelp7470 @ecelp7470 ‘<a
+href="http://Fox">IANA,</a> audio/vnd.nuera.ecelp9600 @ecelp9600 ’<a
+href="http://Fox">IANA,</a> audio/vnd.octel.sbc ‘<a
+href="http://Vaudreuil">IANA,</a> audio/vnd.rhetorex.32kadpcm ’<a
+href="http://Vaudreuil">IANA,</a> audio/vnd.rip ‘<a
+href="http://Dawe">IANA,</a> audio/vnd.sealedmedia.softseal.mpeg
+@smp3,smp,s1m ’<a href="http://Petersen">IANA,</a> audio/vnd.vmx.cvsd ‘<a
+href="http://Vaudreuil">IANA,</a> audio/vorbis ’IANA,RFC5215
+audio/vorbis-config ‘IANA,RFC5215 audio/webm @webm ’{WebM=<a
+href="http://www.webmproject.org/code/specs/container/">www.webmproject.org/code/specs/container/</a>}</p>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

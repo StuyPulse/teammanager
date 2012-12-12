@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>README - tzinfo-0.3.33 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./CHANGES.html">CHANGES</a>
+  
+    <li class="file"><a href="./README.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./TZInfo.html">TZInfo</a>
+  
+    <li><a href="./TZInfo/AmbiguousTime.html">TZInfo::AmbiguousTime</a>
+  
+    <li><a href="./TZInfo/Country.html">TZInfo::Country</a>
+  
+    <li><a href="./TZInfo/CountryTimezone.html">TZInfo::CountryTimezone</a>
+  
+    <li><a href="./TZInfo/InvalidCountryCode.html">TZInfo::InvalidCountryCode</a>
+  
+    <li><a href="./TZInfo/InvalidTimezoneIdentifier.html">TZInfo::InvalidTimezoneIdentifier</a>
+  
+    <li><a href="./TZInfo/NoOffsetsDefined.html">TZInfo::NoOffsetsDefined</a>
+  
+    <li><a href="./TZInfo/PeriodNotFound.html">TZInfo::PeriodNotFound</a>
+  
+    <li><a href="./TZInfo/TZDataParser.html">TZInfo::TZDataParser</a>
+  
+    <li><a href="./TZInfo/Timezone.html">TZInfo::Timezone</a>
+  
+    <li><a href="./TZInfo/TimezonePeriod.html">TZInfo::TimezonePeriod</a>
+  
+    <li><a href="./TZInfo/TimezoneProxy.html">TZInfo::TimezoneProxy</a>
+  
+    <li><a href="./TZInfo/UnknownTimezone.html">TZInfo::UnknownTimezone</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<h1 id="label-TZInfo+--+Daylight-savings+aware+timezone+support+for+Ruby"><a href="TZInfo.html">TZInfo</a> -- Daylight-savings aware timezone support for Ruby</h1>
+
+<p><a href="http://tzinfo.rubyforge.org">TZInfo</a> uses the tz database  (<a
+href="http://www.twinsun.com/tz/tz-link.htm">www.twinsun.com/tz/tz-link.htm</a>)
+to provide daylight-savings aware transformations between times in
+different timezones. This is the same database as used for zoneinfo on Unix
+machines.</p>
+
+<p>The tz database has been imported (using TZDataParser) and turned into a
+set of Ruby modules (which are packaged with this release).</p>
+
+<h2 id="label-Example+usage">Example usage</h2>
+
+<p>To convert a time in UTC to a local time in the America/New_York timezone,
+you can do the following:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'tzinfo'</span>
+
+<span class="ruby-identifier">tz</span> = <span class="ruby-constant">TZInfo</span><span class="ruby-operator">::</span><span class="ruby-constant">Timezone</span>.<span class="ruby-identifier">get</span>(<span class="ruby-string">'America/New_York'</span>)
+<span class="ruby-identifier">local</span> = <span class="ruby-identifier">tz</span>.<span class="ruby-identifier">utc_to_local</span>(<span class="ruby-constant">Time</span>.<span class="ruby-identifier">utc</span>(<span class="ruby-value">2005</span>,<span class="ruby-value">8</span>,<span class="ruby-value">29</span>,<span class="ruby-value">15</span>,<span class="ruby-value">35</span>,<span class="ruby-value">0</span>))
+</pre>
+
+<p>Note that the Time returned will look like it is UTC (Time.zone will return
+“UTC”). This is because it is not currently possible to change the offset
+of  an individual Time instance.</p>
+
+<p>To convert from a local time to UTC, the local_to_utc method can be used.</p>
+
+<pre>utc = tz.local_to_utc(local)</pre>
+
+<p>Note that the timezone information of the time you pass in is ignored. The
+following two lines will return the same result regardless of the local 
+timezone:</p>
+
+<pre>tz.local_to_utc(Time.local(2006,6,26,1,0,0))
+tz.local_to_utc(Time.utc(2006,6,26,1,0,0))</pre>
+
+<p>To get information about the rules in force at a particular UTC or local
+time, the Timezone.period_for_utc and Timezone.period_for_local methods can
+be used. Both of these methods return TimezonePeriod objects. The following
+gets the  identifier for the period (in this case EDT).</p>
+
+<pre>period = tz.period_for_utc(DateTime.new(2005,8,29,15,35,0))
+id = period.zone_identifier</pre>
+
+<p>In all the above examples, instances of Time can be used instead of
+DateTime. Timezone#utc_to_local and Timezone#local_to_utc both return the
+type they are  passed.</p>
+
+<p>You can get the current local time in a Timezone with the Timezone#now
+method:</p>
+
+<pre>now = tz.now</pre>
+
+<p>All methods in <a href="TZInfo.html">TZInfo</a> that take a time can be
+used with either Time, DateTime or Integers (Time#to_i). The return type
+will be the same as the type passed in.</p>
+
+<p>You can also access Timezones by Country (ISO 3166 country code). The
+following  gets all the Timezone identifiers for the US:</p>
+
+<pre>us = TZInfo::Country.get('US')
+timezones = us.zone_identifiers</pre>
+
+<p>The zone_info method of Country provides an additional description and
+location for each Timezone in the Country.</p>
+
+<p>The above covers the most common uses of Timezone and Country. For more
+detail, see the API documentation for the individual classes.</p>
+
+<h2 id="label-Download">Download</h2>
+
+<p>The latest version of <a href="TZInfo.html">TZInfo</a> can be found at</p>
+<ul><li>
+<p><a
+href="http://rubyforge.org/frs/?group_id=894">rubyforge.org/frs/?group_id=894</a></p>
+</li></ul>
+
+<p>API documentation can be found at</p>
+<ul><li>
+<p><a href="http://tzinfo.rubyforge.org/doc/">tzinfo.rubyforge.org/doc/</a></p>
+</li></ul>
+
+<h2 id="label-Installation">Installation</h2>
+
+<p>The preferred method of installing <a href="TZInfo.html">TZInfo</a> is
+through the GEM file (<a href="http://docs.rubygems.org/">RubyGems</a>
+required):</p>
+
+<pre>% gem install tzinfo-x.y.z.gem</pre>
+
+<p>or to automatically download and install:</p>
+
+<pre>% gem install tzinfo --remote</pre>
+
+<h2 id="label-License">License</h2>
+
+<p><a href="TZInfo.html">TZInfo</a> is released under the <a
+href="http://opensource.org/licenses/mit-license.html">MIT</a> license.</p>
+
+<h2 id="label-Support">Support</h2>
+
+<p>Please post to the <a href="TZInfo.html">TZInfo</a> Users mailing list (<a
+href="http://rubyforge.org/mailman/listinfo/tzinfo-users">rubyforge.org/mailman/listinfo/tzinfo-users</a>)
+if you require assistance or have any suggestions.</p>
+
+<p>Alternatively, you can contact the author Philip Ross directly at gmail at
+phil.ross.com.</p>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

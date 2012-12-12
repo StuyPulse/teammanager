@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module ActiveRecord::Callbacks - activerecord-3.2.3 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/active_record/callbacks.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">ActiveModel::Validations::Callbacks</span>
+  
+  
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../ActiveRecord.html">ActiveRecord</a>
+  
+    <li><a href="../ActiveRecord/ActiveRecordError.html">ActiveRecord::ActiveRecordError</a>
+  
+    <li><a href="../ActiveRecord/AdapterNotFound.html">ActiveRecord::AdapterNotFound</a>
+  
+    <li><a href="../ActiveRecord/AdapterNotSpecified.html">ActiveRecord::AdapterNotSpecified</a>
+  
+    <li><a href="../ActiveRecord/Aggregations.html">ActiveRecord::Aggregations</a>
+  
+    <li><a href="../ActiveRecord/Aggregations/ClassMethods.html">ActiveRecord::Aggregations::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/AssociationTypeMismatch.html">ActiveRecord::AssociationTypeMismatch</a>
+  
+    <li><a href="../ActiveRecord/Associations.html">ActiveRecord::Associations</a>
+  
+    <li><a href="../ActiveRecord/Associations/ClassMethods.html">ActiveRecord::Associations::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/AttributeAssignment.html">ActiveRecord::AttributeAssignment</a>
+  
+    <li><a href="../ActiveRecord/AttributeAssignment/ClassMethods.html">ActiveRecord::AttributeAssignment::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/AttributeAssignmentError.html">ActiveRecord::AttributeAssignmentError</a>
+  
+    <li><a href="../ActiveRecord/AttributeMethods.html">ActiveRecord::AttributeMethods</a>
+  
+    <li><a href="../ActiveRecord/AttributeMethods/BeforeTypeCast.html">ActiveRecord::AttributeMethods::BeforeTypeCast</a>
+  
+    <li><a href="../ActiveRecord/AttributeMethods/ClassMethods.html">ActiveRecord::AttributeMethods::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/AttributeMethods/DeprecatedUnderscoreRead.html">ActiveRecord::AttributeMethods::DeprecatedUnderscoreRead</a>
+  
+    <li><a href="../ActiveRecord/AttributeMethods/DeprecatedUnderscoreRead/ClassMethods.html">ActiveRecord::AttributeMethods::DeprecatedUnderscoreRead::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/AttributeMethods/Dirty.html">ActiveRecord::AttributeMethods::Dirty</a>
+  
+    <li><a href="../ActiveRecord/AttributeMethods/PrimaryKey.html">ActiveRecord::AttributeMethods::PrimaryKey</a>
+  
+    <li><a href="../ActiveRecord/AttributeMethods/PrimaryKey/ClassMethods.html">ActiveRecord::AttributeMethods::PrimaryKey::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/AttributeMethods/Query.html">ActiveRecord::AttributeMethods::Query</a>
+  
+    <li><a href="../ActiveRecord/AttributeMethods/Read.html">ActiveRecord::AttributeMethods::Read</a>
+  
+    <li><a href="../ActiveRecord/AttributeMethods/Read/ClassMethods.html">ActiveRecord::AttributeMethods::Read::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/AttributeMethods/Serialization.html">ActiveRecord::AttributeMethods::Serialization</a>
+  
+    <li><a href="../ActiveRecord/AttributeMethods/Serialization/Attribute.html">ActiveRecord::AttributeMethods::Serialization::Attribute</a>
+  
+    <li><a href="../ActiveRecord/AttributeMethods/Serialization/ClassMethods.html">ActiveRecord::AttributeMethods::Serialization::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/AttributeMethods/TimeZoneConversion.html">ActiveRecord::AttributeMethods::TimeZoneConversion</a>
+  
+    <li><a href="../ActiveRecord/AttributeMethods/TimeZoneConversion/ClassMethods.html">ActiveRecord::AttributeMethods::TimeZoneConversion::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/AttributeMethods/Write.html">ActiveRecord::AttributeMethods::Write</a>
+  
+    <li><a href="../ActiveRecord/AttributeMethods/Write/ClassMethods.html">ActiveRecord::AttributeMethods::Write::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/AutosaveAssociation.html">ActiveRecord::AutosaveAssociation</a>
+  
+    <li><a href="../ActiveRecord/AutosaveAssociation/ClassMethods.html">ActiveRecord::AutosaveAssociation::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/Base.html">ActiveRecord::Base</a>
+  
+    <li><a href="../ActiveRecord/Batches.html">ActiveRecord::Batches</a>
+  
+    <li><a href="../ActiveRecord/Calculations.html">ActiveRecord::Calculations</a>
+  
+    <li><a href="../ActiveRecord/Callbacks.html">ActiveRecord::Callbacks</a>
+  
+    <li><a href="../ActiveRecord/ConfigurationError.html">ActiveRecord::ConfigurationError</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/AbstractAdapter.html">ActiveRecord::ConnectionAdapters::AbstractAdapter</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/AbstractMysqlAdapter.html">ActiveRecord::ConnectionAdapters::AbstractMysqlAdapter</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/ConnectionHandler.html">ActiveRecord::ConnectionAdapters::ConnectionHandler</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/ConnectionManagement.html">ActiveRecord::ConnectionAdapters::ConnectionManagement</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/ConnectionPool.html">ActiveRecord::ConnectionAdapters::ConnectionPool</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/DatabaseLimits.html">ActiveRecord::ConnectionAdapters::DatabaseLimits</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/DatabaseStatements.html">ActiveRecord::ConnectionAdapters::DatabaseStatements</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/Mysql2Adapter.html">ActiveRecord::ConnectionAdapters::Mysql2Adapter</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/MysqlAdapter.html">ActiveRecord::ConnectionAdapters::MysqlAdapter</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/MysqlAdapter/StatementPool.html">ActiveRecord::ConnectionAdapters::MysqlAdapter::StatementPool</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/StatementPool.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::StatementPool</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/TableDefinition.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::TableDefinition</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/Utils.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::Utils</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLColumn.html">ActiveRecord::ConnectionAdapters::PostgreSQLColumn</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/QueryCache.html">ActiveRecord::ConnectionAdapters::QueryCache</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/Quoting.html">ActiveRecord::ConnectionAdapters::Quoting</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/SQLiteAdapter.html">ActiveRecord::ConnectionAdapters::SQLiteAdapter</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/SQLiteAdapter/ExplainPrettyPrinter.html">ActiveRecord::ConnectionAdapters::SQLiteAdapter::ExplainPrettyPrinter</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/SQLiteAdapter/StatementPool.html">ActiveRecord::ConnectionAdapters::SQLiteAdapter::StatementPool</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/SQLiteAdapter/Version.html">ActiveRecord::ConnectionAdapters::SQLiteAdapter::Version</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/SchemaCache.html">ActiveRecord::ConnectionAdapters::SchemaCache</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/SchemaStatements.html">ActiveRecord::ConnectionAdapters::SchemaStatements</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/StatementPool.html">ActiveRecord::ConnectionAdapters::StatementPool</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/Table.html">ActiveRecord::ConnectionAdapters::Table</a>
+  
+    <li><a href="../ActiveRecord/ConnectionAdapters/TableDefinition.html">ActiveRecord::ConnectionAdapters::TableDefinition</a>
+  
+    <li><a href="../ActiveRecord/ConnectionNotEstablished.html">ActiveRecord::ConnectionNotEstablished</a>
+  
+    <li><a href="../ActiveRecord/ConnectionTimeoutError.html">ActiveRecord::ConnectionTimeoutError</a>
+  
+    <li><a href="../ActiveRecord/CounterCache.html">ActiveRecord::CounterCache</a>
+  
+    <li><a href="../ActiveRecord/DangerousAttributeError.html">ActiveRecord::DangerousAttributeError</a>
+  
+    <li><a href="../ActiveRecord/Delegation.html">ActiveRecord::Delegation</a>
+  
+    <li><a href="../ActiveRecord/DynamicFinderMatch.html">ActiveRecord::DynamicFinderMatch</a>
+  
+    <li><a href="../ActiveRecord/DynamicMatchers.html">ActiveRecord::DynamicMatchers</a>
+  
+    <li><a href="../ActiveRecord/DynamicScopeMatch.html">ActiveRecord::DynamicScopeMatch</a>
+  
+    <li><a href="../ActiveRecord/Explain.html">ActiveRecord::Explain</a>
+  
+    <li><a href="../ActiveRecord/FinderMethods.html">ActiveRecord::FinderMethods</a>
+  
+    <li><a href="../ActiveRecord/Fixtures.html">ActiveRecord::Fixtures</a>
+  
+    <li><a href="../ActiveRecord/Fixtures/File.html">ActiveRecord::Fixtures::File</a>
+  
+    <li><a href="../ActiveRecord/Generators.html">ActiveRecord::Generators</a>
+  
+    <li><a href="../ActiveRecord/Generators/Migration.html">ActiveRecord::Generators::Migration</a>
+  
+    <li><a href="../ActiveRecord/Generators/MigrationGenerator.html">ActiveRecord::Generators::MigrationGenerator</a>
+  
+    <li><a href="../ActiveRecord/Generators/ModelGenerator.html">ActiveRecord::Generators::ModelGenerator</a>
+  
+    <li><a href="../ActiveRecord/Generators/ObserverGenerator.html">ActiveRecord::Generators::ObserverGenerator</a>
+  
+    <li><a href="../ActiveRecord/Generators/SessionMigrationGenerator.html">ActiveRecord::Generators::SessionMigrationGenerator</a>
+  
+    <li><a href="../ActiveRecord/IdentityMap.html">ActiveRecord::IdentityMap</a>
+  
+    <li><a href="../ActiveRecord/IdentityMap/Middleware.html">ActiveRecord::IdentityMap::Middleware</a>
+  
+    <li><a href="../ActiveRecord/Inheritance.html">ActiveRecord::Inheritance</a>
+  
+    <li><a href="../ActiveRecord/Inheritance/ClassMethods.html">ActiveRecord::Inheritance::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/Integration.html">ActiveRecord::Integration</a>
+  
+    <li><a href="../ActiveRecord/InvalidForeignKey.html">ActiveRecord::InvalidForeignKey</a>
+  
+    <li><a href="../ActiveRecord/IrreversibleMigration.html">ActiveRecord::IrreversibleMigration</a>
+  
+    <li><a href="../ActiveRecord/Locking.html">ActiveRecord::Locking</a>
+  
+    <li><a href="../ActiveRecord/Locking/Optimistic.html">ActiveRecord::Locking::Optimistic</a>
+  
+    <li><a href="../ActiveRecord/Locking/Optimistic/ClassMethods.html">ActiveRecord::Locking::Optimistic::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/Locking/Pessimistic.html">ActiveRecord::Locking::Pessimistic</a>
+  
+    <li><a href="../ActiveRecord/LogSubscriber.html">ActiveRecord::LogSubscriber</a>
+  
+    <li><a href="../ActiveRecord/Migration.html">ActiveRecord::Migration</a>
+  
+    <li><a href="../ActiveRecord/Migration/CommandRecorder.html">ActiveRecord::Migration::CommandRecorder</a>
+  
+    <li><a href="../ActiveRecord/MigrationProxy.html">ActiveRecord::MigrationProxy</a>
+  
+    <li><a href="../ActiveRecord/ModelSchema.html">ActiveRecord::ModelSchema</a>
+  
+    <li><a href="../ActiveRecord/ModelSchema/ClassMethods.html">ActiveRecord::ModelSchema::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/MultiparameterAssignmentErrors.html">ActiveRecord::MultiparameterAssignmentErrors</a>
+  
+    <li><a href="../ActiveRecord/NestedAttributes.html">ActiveRecord::NestedAttributes</a>
+  
+    <li><a href="../ActiveRecord/NestedAttributes/ClassMethods.html">ActiveRecord::NestedAttributes::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/NestedAttributes/TooManyRecords.html">ActiveRecord::NestedAttributes::TooManyRecords</a>
+  
+    <li><a href="../ActiveRecord/Observer.html">ActiveRecord::Observer</a>
+  
+    <li><a href="../ActiveRecord/Persistence.html">ActiveRecord::Persistence</a>
+  
+    <li><a href="../ActiveRecord/Persistence/ClassMethods.html">ActiveRecord::Persistence::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/PreparedStatementInvalid.html">ActiveRecord::PreparedStatementInvalid</a>
+  
+    <li><a href="../ActiveRecord/QueryCache.html">ActiveRecord::QueryCache</a>
+  
+    <li><a href="../ActiveRecord/QueryCache/ClassMethods.html">ActiveRecord::QueryCache::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/QueryMethods.html">ActiveRecord::QueryMethods</a>
+  
+    <li><a href="../ActiveRecord/Querying.html">ActiveRecord::Querying</a>
+  
+    <li><a href="../ActiveRecord/Railtie.html">ActiveRecord::Railtie</a>
+  
+    <li><a href="../ActiveRecord/Railties.html">ActiveRecord::Railties</a>
+  
+    <li><a href="../ActiveRecord/Railties/ControllerRuntime.html">ActiveRecord::Railties::ControllerRuntime</a>
+  
+    <li><a href="../ActiveRecord/Railties/ControllerRuntime/ClassMethods.html">ActiveRecord::Railties::ControllerRuntime::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/ReadOnlyRecord.html">ActiveRecord::ReadOnlyRecord</a>
+  
+    <li><a href="../ActiveRecord/ReadonlyAttributes.html">ActiveRecord::ReadonlyAttributes</a>
+  
+    <li><a href="../ActiveRecord/ReadonlyAttributes/ClassMethods.html">ActiveRecord::ReadonlyAttributes::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/RecordInvalid.html">ActiveRecord::RecordInvalid</a>
+  
+    <li><a href="../ActiveRecord/RecordNotFound.html">ActiveRecord::RecordNotFound</a>
+  
+    <li><a href="../ActiveRecord/RecordNotSaved.html">ActiveRecord::RecordNotSaved</a>
+  
+    <li><a href="../ActiveRecord/RecordNotUnique.html">ActiveRecord::RecordNotUnique</a>
+  
+    <li><a href="../ActiveRecord/Reflection.html">ActiveRecord::Reflection</a>
+  
+    <li><a href="../ActiveRecord/Reflection/ClassMethods.html">ActiveRecord::Reflection::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/Reflection/MacroReflection.html">ActiveRecord::Reflection::MacroReflection</a>
+  
+    <li><a href="../ActiveRecord/Relation.html">ActiveRecord::Relation</a>
+  
+    <li><a href="../ActiveRecord/Result.html">ActiveRecord::Result</a>
+  
+    <li><a href="../ActiveRecord/Rollback.html">ActiveRecord::Rollback</a>
+  
+    <li><a href="../ActiveRecord/Sanitization.html">ActiveRecord::Sanitization</a>
+  
+    <li><a href="../ActiveRecord/Sanitization/ClassMethods.html">ActiveRecord::Sanitization::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/Schema.html">ActiveRecord::Schema</a>
+  
+    <li><a href="../ActiveRecord/Scoping.html">ActiveRecord::Scoping</a>
+  
+    <li><a href="../ActiveRecord/Scoping/ClassMethods.html">ActiveRecord::Scoping::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/Scoping/Default.html">ActiveRecord::Scoping::Default</a>
+  
+    <li><a href="../ActiveRecord/Scoping/Default/ClassMethods.html">ActiveRecord::Scoping::Default::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/Scoping/Named.html">ActiveRecord::Scoping::Named</a>
+  
+    <li><a href="../ActiveRecord/Scoping/Named/ClassMethods.html">ActiveRecord::Scoping::Named::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/Serialization.html">ActiveRecord::Serialization</a>
+  
+    <li><a href="../ActiveRecord/SerializationTypeMismatch.html">ActiveRecord::SerializationTypeMismatch</a>
+  
+    <li><a href="../ActiveRecord/SessionStore.html">ActiveRecord::SessionStore</a>
+  
+    <li><a href="../ActiveRecord/SessionStore/Session.html">ActiveRecord::SessionStore::Session</a>
+  
+    <li><a href="../ActiveRecord/SessionStore/SqlBypass.html">ActiveRecord::SessionStore::SqlBypass</a>
+  
+    <li><a href="../ActiveRecord/SpawnMethods.html">ActiveRecord::SpawnMethods</a>
+  
+    <li><a href="../ActiveRecord/StaleObjectError.html">ActiveRecord::StaleObjectError</a>
+  
+    <li><a href="../ActiveRecord/StatementInvalid.html">ActiveRecord::StatementInvalid</a>
+  
+    <li><a href="../ActiveRecord/Store.html">ActiveRecord::Store</a>
+  
+    <li><a href="../ActiveRecord/Store/ClassMethods.html">ActiveRecord::Store::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/TestFixtures.html">ActiveRecord::TestFixtures</a>
+  
+    <li><a href="../ActiveRecord/TestFixtures/ClassMethods.html">ActiveRecord::TestFixtures::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/ThrowResult.html">ActiveRecord::ThrowResult</a>
+  
+    <li><a href="../ActiveRecord/Timestamp.html">ActiveRecord::Timestamp</a>
+  
+    <li><a href="../ActiveRecord/Transactions.html">ActiveRecord::Transactions</a>
+  
+    <li><a href="../ActiveRecord/Transactions/ClassMethods.html">ActiveRecord::Transactions::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/Translation.html">ActiveRecord::Translation</a>
+  
+    <li><a href="../ActiveRecord/UnknownAttributeError.html">ActiveRecord::UnknownAttributeError</a>
+  
+    <li><a href="../ActiveRecord/UnknownPrimaryKey.html">ActiveRecord::UnknownPrimaryKey</a>
+  
+    <li><a href="../ActiveRecord/Validations.html">ActiveRecord::Validations</a>
+  
+    <li><a href="../ActiveRecord/Validations/AssociatedValidator.html">ActiveRecord::Validations::AssociatedValidator</a>
+  
+    <li><a href="../ActiveRecord/Validations/ClassMethods.html">ActiveRecord::Validations::ClassMethods</a>
+  
+    <li><a href="../ActiveRecord/Validations/UniquenessValidator.html">ActiveRecord::Validations::UniquenessValidator</a>
+  
+    <li><a href="../ActiveRecord/WrappedDatabaseException.html">ActiveRecord::WrappedDatabaseException</a>
+  
+    <li><a href="../Mysql.html">Mysql</a>
+  
+    <li><a href="../Mysql/Result.html">Mysql::Result</a>
+  
+    <li><a href="../Mysql/Stmt.html">Mysql::Stmt</a>
+  
+    <li><a href="../Mysql/Time.html">Mysql::Time</a>
+  
+    <li><a href="../ArJdbcMySQL.html">ArJdbcMySQL</a>
+  
+    <li><a href="../ArJdbcMySQL/Error.html">ArJdbcMySQL::Error</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module ActiveRecord::Callbacks</h1>
+
+  <div id="description" class="description">
+    
+<h1 id="label-Active+Record+Callbacks">Active Record <a href="Callbacks.html">Callbacks</a></h1>
+
+<p><a href="Callbacks.html">Callbacks</a> are hooks into the life cycle of an
+Active Record object that allow you to trigger logic before or after an
+alteration of the object state. This can be used to make sure that
+associated and dependent objects are deleted when <code>destroy</code> is
+called (by overwriting <code>before_destroy</code>) or to massage
+attributes before they're validated (by overwriting
+<code>before_validation</code>). As an example of the callbacks initiated,
+consider the <code>Base#save</code> call for a new record:</p>
+<ul><li>
+<p>(-) <code>save</code></p>
+</li><li>
+<p>(-) <code>valid</code></p>
+</li><li>
+<p>(1) <code>before_validation</code></p>
+</li><li>
+<p>(-) <code>validate</code></p>
+</li><li>
+<p>(2) <code>after_validation</code></p>
+</li><li>
+<p>(3) <code>before_save</code></p>
+</li><li>
+<p>(4) <code>before_create</code></p>
+</li><li>
+<p>(-) <code>create</code></p>
+</li><li>
+<p>(5) <code>after_create</code></p>
+</li><li>
+<p>(6) <code>after_save</code></p>
+</li><li>
+<p>(7) <code>after_commit</code></p>
+</li></ul>
+
+<p>Also, an <code>after_rollback</code> callback can be configured to be
+triggered whenever a rollback is issued. Check out
+<code>ActiveRecord::Transactions</code> for more details about
+<code>after_commit</code> and <code>after_rollback</code>.</p>
+
+<p>Lastly an <code>after_find</code> and <code>after_initialize</code>
+callback is triggered for each object that  is found and instantiated by a
+finder, with <code>after_initialize</code> being triggered after new
+objects are instantiated as well.</p>
+
+<p>That’s a total of twelve callbacks, which gives you immense power to react
+and prepare for each state in the Active Record life cycle. The sequence
+for calling <code>Base#save</code> for an existing record is similar,
+except that each <code>_create</code> callback is replaced by the
+corresponding <code>_update</code> callback.</p>
+
+<p>Examples:</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">CreditCard</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>
+  <span class="ruby-comment"># Strip everything but digits, so the user can specify &quot;555 234 34&quot; or</span>
+  <span class="ruby-comment"># &quot;5552-3434&quot; or both will mean &quot;55523434&quot;</span>
+  <span class="ruby-identifier">before_validation</span>(:<span class="ruby-identifier">on</span> =<span class="ruby-operator">&gt;</span> :<span class="ruby-identifier">create</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">number</span> = <span class="ruby-identifier">number</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">%r[^0-9]/</span>, <span class="ruby-string">&quot;&quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">attribute_present?</span>(<span class="ruby-string">&quot;number&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">class</span> <span class="ruby-constant">Subscription</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>
+  <span class="ruby-identifier">before_create</span> :<span class="ruby-identifier">record_signup</span>
+
+  <span class="ruby-identifier">private</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">record_signup</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">signed_up_on</span> = <span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">class</span> <span class="ruby-constant">Firm</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>
+  <span class="ruby-comment"># Destroys the associated clients and people when the firm is destroyed</span>
+  <span class="ruby-identifier">before_destroy</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">record</span><span class="ruby-operator">|</span> <span class="ruby-constant">Person</span>.<span class="ruby-identifier">destroy_all</span> <span class="ruby-node">&quot;firm_id = #{record.id}&quot;</span>   }
+  <span class="ruby-identifier">before_destroy</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">record</span><span class="ruby-operator">|</span> <span class="ruby-constant">Client</span>.<span class="ruby-identifier">destroy_all</span> <span class="ruby-node">&quot;client_of = #{record.id}&quot;</span> }
+<span class="ruby-keyword">end</span>
+</pre>
+
+<h2 id="label-Inheritable+callback+queues">Inheritable callback queues</h2>
+
+<p>Besides the overwritable callback methods, it’s also possible to register
+callbacks through the use of the callback macros. Their main advantage is
+that the macros add behavior into a callback queue that is kept intact down
+through an inheritance hierarchy.</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">Topic</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>
+  <span class="ruby-identifier">before_destroy</span> :<span class="ruby-identifier">destroy_author</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">class</span> <span class="ruby-constant">Reply</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Topic</span>
+  <span class="ruby-identifier">before_destroy</span> :<span class="ruby-identifier">destroy_readers</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>Now, when <code>Topic#destroy</code> is run only
+<code>destroy_author</code> is called. When <code>Reply#destroy</code> is
+run, both <code>destroy_author</code> and <code>destroy_readers</code> are
+called. Contrast this to the following situation where the
+<code>before_destroy</code> method is overridden:</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">Topic</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">before_destroy</span>() <span class="ruby-identifier">destroy_author</span> <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">class</span> <span class="ruby-constant">Reply</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Topic</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">before_destroy</span>() <span class="ruby-identifier">destroy_readers</span> <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>In that case, <code>Reply#destroy</code> would only run
+<code>destroy_readers</code> and <em>not</em> <code>destroy_author</code>.
+So, use the callback macros when you want to ensure that a certain callback
+is called for the entire hierarchy, and use the regular overwriteable
+methods when you want to leave it up to each descendant to decide whether
+they want to call <code>super</code> and trigger the inherited callbacks.</p>
+
+<p><strong>IMPORTANT:</strong> In order for inheritance to work for the
+callback queues, you must specify the callbacks before specifying the
+associations. Otherwise, you might trigger the loading of a child before
+the parent has registered the callbacks and they won't be inherited.</p>
+
+<h2 id="label-Types+of+callbacks">Types of callbacks</h2>
+
+<p>There are four types of callbacks accepted by the callback macros: Method
+references (symbol), callback objects, inline methods (using a proc), and
+inline eval methods (using a string). Method references and callback
+objects are the recommended approaches, inline methods using a proc are
+sometimes appropriate (such as for creating mix-ins), and inline eval
+methods are deprecated.</p>
+
+<p>The method reference callbacks work by specifying a protected or private
+method available in the object, like this:</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">Topic</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>
+  <span class="ruby-identifier">before_destroy</span> :<span class="ruby-identifier">delete_parents</span>
+
+  <span class="ruby-identifier">private</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">delete_parents</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">delete_all</span> <span class="ruby-node">&quot;parent_id = #{id}&quot;</span>
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>The callback objects have methods named after the callback called with the
+record as the only parameter, such as:</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">BankAccount</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>
+  <span class="ruby-identifier">before_save</span>      <span class="ruby-constant">EncryptionWrapper</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">after_save</span>       <span class="ruby-constant">EncryptionWrapper</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">after_initialize</span> <span class="ruby-constant">EncryptionWrapper</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">class</span> <span class="ruby-constant">EncryptionWrapper</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">before_save</span>(<span class="ruby-identifier">record</span>)
+    <span class="ruby-identifier">record</span>.<span class="ruby-identifier">credit_card_number</span> = <span class="ruby-identifier">encrypt</span>(<span class="ruby-identifier">record</span>.<span class="ruby-identifier">credit_card_number</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">after_save</span>(<span class="ruby-identifier">record</span>)
+    <span class="ruby-identifier">record</span>.<span class="ruby-identifier">credit_card_number</span> = <span class="ruby-identifier">decrypt</span>(<span class="ruby-identifier">record</span>.<span class="ruby-identifier">credit_card_number</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">alias_method</span> :<span class="ruby-identifier">after_find</span>, :<span class="ruby-identifier">after_save</span>
+
+  <span class="ruby-identifier">private</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">encrypt</span>(<span class="ruby-identifier">value</span>)
+      <span class="ruby-comment"># Secrecy is committed</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">decrypt</span>(<span class="ruby-identifier">value</span>)
+      <span class="ruby-comment"># Secrecy is unveiled</span>
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>So you specify the object you want messaged on a given callback. When that
+callback is triggered, the object has a method by the name of the callback
+messaged. You can make these callbacks more flexible by passing in other
+initialization data such as the name of the attribute to work with:</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">BankAccount</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>
+  <span class="ruby-identifier">before_save</span>      <span class="ruby-constant">EncryptionWrapper</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;credit_card_number&quot;</span>)
+  <span class="ruby-identifier">after_save</span>       <span class="ruby-constant">EncryptionWrapper</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;credit_card_number&quot;</span>)
+  <span class="ruby-identifier">after_initialize</span> <span class="ruby-constant">EncryptionWrapper</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;credit_card_number&quot;</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">class</span> <span class="ruby-constant">EncryptionWrapper</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">attribute</span>)
+    <span class="ruby-ivar">@attribute</span> = <span class="ruby-identifier">attribute</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">before_save</span>(<span class="ruby-identifier">record</span>)
+    <span class="ruby-identifier">record</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{@attribute}=&quot;</span>, <span class="ruby-identifier">encrypt</span>(<span class="ruby-identifier">record</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{@attribute}&quot;</span>)))
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">after_save</span>(<span class="ruby-identifier">record</span>)
+    <span class="ruby-identifier">record</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{@attribute}=&quot;</span>, <span class="ruby-identifier">decrypt</span>(<span class="ruby-identifier">record</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{@attribute}&quot;</span>)))
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">alias_method</span> :<span class="ruby-identifier">after_find</span>, :<span class="ruby-identifier">after_save</span>
+
+  <span class="ruby-identifier">private</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">encrypt</span>(<span class="ruby-identifier">value</span>)
+      <span class="ruby-comment"># Secrecy is committed</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">decrypt</span>(<span class="ruby-identifier">value</span>)
+      <span class="ruby-comment"># Secrecy is unveiled</span>
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>The callback macros usually accept a symbol for the method they’re supposed
+to run, but you can also pass a “method string”, which will then be
+evaluated within the binding of the callback. Example:</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">Topic</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>
+  <span class="ruby-identifier">before_destroy</span> <span class="ruby-string">'self.class.delete_all &quot;parent_id = #{id}&quot;'</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>Notice that single quotes (‘) are used so the <code>#{id}</code> part isn’t
+evaluated until the callback is triggered. Also note that these inline
+callbacks can be stacked just like the regular ones:</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">Topic</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>
+  <span class="ruby-identifier">before_destroy</span> <span class="ruby-string">'self.class.delete_all &quot;parent_id = #{id}&quot;'</span>,
+                 <span class="ruby-string">'puts &quot;Evaluated after parents are destroyed&quot;'</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<h2 id="label-before_validation%2A+returning+statements"><code>before_validation*</code> returning statements</h2>
+
+<p>If the returning value of a <code>before_validation</code> callback can be
+evaluated to <code>false</code>, the process will be aborted and
+<code>Base#save</code> will return <code>false</code>. If <a
+href="Validations.html#method-i-save-21">ActiveRecord::Validations#save!</a>
+is called it will raise a <a
+href="RecordInvalid.html">ActiveRecord::RecordInvalid</a> exception.
+Nothing will be appended to the errors object.</p>
+
+<h2 id="label-Canceling+callbacks">Canceling callbacks</h2>
+
+<p>If a <code>before_*</code> callback returns <code>false</code>, all the
+later callbacks and the associated action are cancelled. If an
+<code>after_*</code> callback returns <code>false</code>, all the later
+callbacks are cancelled. <a href="Callbacks.html">Callbacks</a> are
+generally run in the order they are defined, with the exception of
+callbacks defined as methods on the model, which are called last.</p>
+
+<h2 id="label-Transactions"><a href="Transactions.html">Transactions</a></h2>
+
+<p>The entire callback chain of a <code>save</code>, <code>save!</code>, or
+<code>destroy</code> call runs within a transaction. That includes
+<code>after_*</code> hooks. If everything goes fine a COMMIT is executed
+once the chain has been completed.</p>
+
+<p>If a <code>before_*</code> callback cancels the action a ROLLBACK is
+issued. You can also trigger a ROLLBACK raising an exception in any of the
+callbacks, including <code>after_*</code> hooks. Note, however, that in
+that case the client needs to be aware of it because an ordinary
+<code>save</code> will raise such exception instead of quietly returning
+<code>false</code>.</p>
+
+<h2 id="label-Debugging+callbacks">Debugging callbacks</h2>
+
+<p>The callback chain is accessible via the <code>_*_callbacks</code> method
+on an object. ActiveModel <a href="Callbacks.html">Callbacks</a> support 
+<code>:before</code>, <code>:after</code> and <code>:around</code> as
+values for the <code>kind</code> property. The <code>kind</code> property
+defines what part of the chain the callback runs in.</p>
+
+<p>To find all callbacks in the before_save callback chain:</p>
+
+<pre class="ruby"><span class="ruby-constant">Topic</span>.<span class="ruby-identifier">_save_callbacks</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">cb</span><span class="ruby-operator">|</span> <span class="ruby-identifier">cb</span>.<span class="ruby-identifier">kind</span>.<span class="ruby-identifier">eql?</span>(:<span class="ruby-identifier">before</span>) }
+</pre>
+
+<p>Returns an array of callback objects that form the before_save chain.</p>
+
+<p>To further check if the before_save chain contains a proc defined as
+<code>rest_when_dead</code> use the <code>filter</code> property of the
+callback object:</p>
+
+<pre class="ruby"><span class="ruby-constant">Topic</span>.<span class="ruby-identifier">_save_callbacks</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">cb</span><span class="ruby-operator">|</span> <span class="ruby-identifier">cb</span>.<span class="ruby-identifier">kind</span>.<span class="ruby-identifier">eql?</span>(:<span class="ruby-identifier">before</span>) }.<span class="ruby-identifier">collect</span>(&amp;:<span class="ruby-identifier">filter</span>).<span class="ruby-identifier">include?</span>(:<span class="ruby-identifier">rest_when_dead</span>)
+</pre>
+
+<p>Returns true or false depending on whether the proc is contained in the
+before_save callback chain on a Topic model.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="CALLBACKS">CALLBACKS
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,4 @@
+U:RDoc::Attr[iI"load_default_options:EFI"JSON::load_default_options;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"9The global default options for the JSON.load method:;To:RDoc::Markup::Verbatim;	[I":max_nesting: false
+;FI":allow_nan: true
+;FI":quirks_mode: true;F:@format0:
+@fileI"lib/json/common.rb;TT@
