@@ -1,4 +1,5 @@
 Teammanager::Application.routes.draw do
+
   devise_for :users
 
   root to: 'dashboard#home'
@@ -11,6 +12,7 @@ Teammanager::Application.routes.draw do
   resources :teacher_permission_forms
   resources :trip_deposits
   resources :trip_fees
+  resources :team_dues
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -8,6 +8,7 @@ class Student < ActiveRecord::Base
   has_many :teacher_permission_forms
   has_many :trip_fees
   has_many :trip_deposits
+  has_many :team_dues
   has_many :p_trips, through: :parent_permission_forms, source: :trip
   has_many :t_trips, through: :teacher_permission_forms, source: :trip
   validates :first_name, presence: true
@@ -57,11 +58,19 @@ class Student < ActiveRecord::Base
   end
   def self.to_csv
     csv_string = CSV.generate do |csv|
-      csv << column_names.map { |name| Student.human_attribute_name(name) }
-      csv "Safety Test"
+      column_headers = []
+      column_headers += column_names.map { |name| Student.human_attribute_name(name) }
+      column_headers << "Safety Test?"
+      column_headers << "Medical Form?"
+      column_headers << "Team Dues?"
+      csv << column_headers
       Student.order(:last_name).each do |student|
-         csv << student.attributes.values_at(*column_names)
-         csv << (student.safety_tests.order('date DESC').first.is_valid?).to_s
+         column_values = []
+         column_values += student.attributes.values_at(*column_names)
+         column_values << student.safety_tests.order('year DESC').first.is_valid? ? "yes" : "no"
+         column_values << student.medical_forms.order('date DESC').first.is_valid? ? "yes" : "no"
+         column_values << student.team_dues.order('year DESC').first.is_valid? ? "yes" : "no"   
+         csv << column_values
       end
     end
   end

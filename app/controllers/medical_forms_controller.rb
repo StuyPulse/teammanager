@@ -9,7 +9,7 @@ class MedicalFormsController < ApplicationController
       flash[:notice] = 'Medical form added successfully.'
       redirect_to controller: 'students', action: 'show', id: params[:student_id]
     else
-      flash.now[:alert] = @medical_form.errors.full_messages.join('<br>').html_safe
+      flash.now[:alert] = @medical_form.errors.full_messages.join('<br>').html_safe 
       render action: 'new'
     end
   end
