@@ -1,0 +1,54 @@
+<h1><%= @trip.name %></h1>
+<h4>From <%= @trip.start_date %> to <%= @trip.end_date %></h4>
+<% if @trip.requires_teacher_permission_form %>
+  <p>Requires teacher permission form.</p>
+<% else %>
+  <p>Does not require teacher permission form.</p>
+<% end %>
+<% if @trip.requires_trip_deposit %>
+  <p>Requires trip deposit.</p>
+<% else %>
+  <p>Does not require trip deposit.</p>
+<% end %>
+<% if @trip.requires_trip_fee %>
+  <p>Requires trip fee.</p>
+<% else %>
+  <p>Does not require trip fee.</p>
+<% end %>
+<% if @trip.requires_medical_form %>
+  <p>Requires medical form.</p>
+<% else %>
+  <p>Does not require medical form.</p>
+<% end %>
+<%= link_to 'Back', trips_path, class: 'btn' %>
+<%= link_to 'Edit', {action: 'edit'}, class: 'btn' %>
+<%= button_to 'Delete', {action: 'destroy', id: @trip.id}, method: :delete, class: 'btn btn-danger', confirm: 'Are you sure?', style: 'margin-top:10px' %>
+<h2>Students</h2>
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th>Parent Permission Form</th>
+    <% if @trip.requires_teacher_permission_form %><th>Teacher Permission Form</th><% end %>
+    <% if @trip.requires_trip_deposit %><th>Trip Deposit</th><% end %>
+    <% if @trip.requires_trip_fee %><th>Trip Fee</th><% end %>
+    <% if @trip.requires_medical_form %><th>Medical Form</th><% end %>
+  </tr>
+  <% @trip.all_students.each do |student| %>
+    <tr class="<%= student.can_attend_trip(@trip) ? 'success' : 'error' %>">
+      <td><%= link_to student.full_name, student %></td>
+      <td><%= student.has_parent_permission_form_for(@trip) ? 'Yes' : 'No' %></td>
+      <% if @trip.requires_teacher_permission_form %>
+        <td><%= student.has_teacher_permission_form_for(@trip) ? 'Yes' : 'No' %></td>
+      <% end %>
+      <% if @trip.requires_trip_deposit %>
+        <td><%= student.has_trip_deposit_for(@trip) ? 'Yes' : 'No' %></td>
+      <% end %>
+      <% if @trip.requires_trip_fee %>
+        <td><%= student.has_trip_fee_for(@trip) ? 'Yes' : 'No' %></td>
+      <% end %>
+      <% if @trip.requires_medical_form %>
+        <td><%= student.has_valid_medical_on(@trip.end_date) ? 'Yes' : 'No' %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
