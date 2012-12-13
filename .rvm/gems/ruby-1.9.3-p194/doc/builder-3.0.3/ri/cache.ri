@@ -1,7 +1,0 @@
-{:ancestors{I"Builder::IllegalBlockError:EF[I"RuntimeError;FI"Builder::XmlBase;F[I"BlankSlate;FI"Builder::XmlMarkup;F[I"Builder::XmlBase;FI"Fixnum;F[I"Object;FI"String;F[@I"Builder::XmlEvents;F[I"Builder::XmlMarkup;FI"Symbol;F[@I"BlankSlate;F[@I"Object;F[I"BasicObject;FI"Module;F[@:attributes{I"Builder::XmlBase;F[I"%attr_accessor cache_method_calls;F:class_methods{I"Builder::XmlBase;F[I"cache_method_calls;FI"new;FI"Builder::XmlMarkup;F[I"new;FI"BlankSlate;F[I"find_hidden_method;FI"	hide;FI"reveal;FI"Object;F[I"blank_slate_method_added;FI"find_hidden_method;FI"method_added;FI"Builder;F[I"check_for_name_collision;FI"Kernel;F[I"blank_slate_method_added;FI"method_added;F:encodingIu:Encoding
-UTF-8;F:instance_methods{I"Builder::XmlBase;F[
-I"<<;FI"method_missing;FI"	nil?;FI"	tag!;FI"
-text!;FI"Builder::XmlMarkup;F[
-I"cdata!;FI"comment!;FI"declare!;FI"instruct!;FI"target!;FI"Fixnum;F[I"	xchr;FI"String;F[I"_blankslate_as_name;FI"
-to_xs;FI"Builder::XmlEvents;F[I"_end_tag;FI"_start_tag;FI"
-text!;FI"Symbol;F[I"_blankslate_as_name;FI"Module;F[I"append_features;FI"(blankslate_original_append_features;F:modules[@I"Builder;FI"Builder::IllegalBlockError;F@I"Builder::XmlEvents;F@I"Fixnum;FI"Kernel;FI"Module;F@I"String;FI"Symbol;F

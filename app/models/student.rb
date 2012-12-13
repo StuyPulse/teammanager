@@ -69,7 +69,7 @@ class Student < ActiveRecord::Base
          column_values += student.attributes.values_at(*column_names)
          column_values << student.safety_tests.order('year DESC').first.is_valid? ? "yes" : "no"
          column_values << student.medical_forms.order('date DESC').first.is_valid? ? "yes" : "no"
-         column_values << student.team_dues.order('year DESC').first.is_valid? ? "yes" : "no"
+         column_values << student.team_dues.order('year DESC').first.is_valid? ? "yes" : "no"   
          csv << column_values
       end
     end

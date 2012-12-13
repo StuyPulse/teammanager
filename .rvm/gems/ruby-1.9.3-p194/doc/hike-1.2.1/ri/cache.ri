@@ -1,10 +1,0 @@
-{:ancestors{
-I"Hike::Paths:EF[I"NormalizedArray;FI"Hike::Index;F[I"Object;FI"Hike::Trail;F[I"Object;FI"Hike::Extensions;F[I"NormalizedArray;FI"Hike::NormalizedArray;F[I"
-Array;F:attributes{I"Hike::Index;F[I"attr_reader aliases;FI"attr_reader extensions;FI"attr_reader paths;FI"Hike::Trail;F[I"attr_reader aliases;FI"attr_reader extensions;FI"attr_reader paths;F:class_methods{	I"Hike::Paths;F[I"new;FI"Hike::Index;F[I"new;FI"Hike::Trail;F[I"new;FI"Hike::NormalizedArray;F[I"new;F:encodingIu:Encoding
-UTF-8;F:instance_methods{
-I"Hike::Paths;F[I"normalize_element;FI"Hike::Index;F[I"aliases;FI"build_pattern_for;FI"entries;FI"extensions;FI"extract_options!;FI"	find;FI"find_aliases_for;FI"find_in_base_path;FI"find_in_paths;FI"
-index;FI"
-match;FI"
-paths;FI"paths_contain?;FI"pattern_for;FI"relative?;FI"	root;FI"sort_matches;FI"	stat;FI"Hike::Trail;F[I"alias_extension;FI"aliases;FI"append_extension;FI"append_extensions;FI"append_path;FI"append_paths;FI"entries;FI"extensions;FI"	find;FI"
-index;FI"
-paths;FI"prepend_extension;FI"prepend_extensions;FI"prepend_path;FI"prepend_paths;FI"remove_extension;FI"remove_path;FI"	root;FI"	stat;FI"unalias_extension;FI"Hike::Extensions;F[I"normalize_element;FI"Hike::NormalizedArray;F[I"<<;FI"[]=;FI"collect!;FI"insert;FI"	map!;FI"normalize_elements;FI"	push;FI"replace;FI"unshift;F:modules[I"	Hike;FI"Hike::Extensions;FI"Hike::Index;FI"Hike::NormalizedArray;FI"Hike::Paths;FI"Hike::Trail;F

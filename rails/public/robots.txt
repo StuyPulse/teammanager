@@ -1,3 +1,0 @@
-# http://www.youtube.com/watch?v=VXa9tXcMhXQ
-User-Agent: *
-Disallow: /

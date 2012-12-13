@@ -1,1 +1,0 @@
-[2012-09-11 20:19:19] gunzip < /home/stuy/.rvm/archives/rubygems-1.8.24.tgz | tar xf - -C /home/stuy/.rvm/src

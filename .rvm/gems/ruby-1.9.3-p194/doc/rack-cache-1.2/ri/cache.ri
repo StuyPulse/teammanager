@@ -1,37 +1,0 @@
-{:ancestors{&I"%Rack::Cache::AppEngine::MemCache:EF[I"Object;FI"Rack::Cache::Request;F[I"Rack::Request;FI"Rack::Cache::Key;F[I"Object;FI"Rack::Utils;FI"Rack::Cache::Response;F[I"Object;FI"Rack::Response::Helpers;FI"Rack::Cache::Storage;F[I"Object;FI"Rack::Cache::Context;F[I"Object;FI"Rack::Cache::Options;FI"Rack::Cache::CacheControl;F[I"	Hash;FI"Rack::Cache::MetaStore;F[I"Object;FI"!Rack::Cache::MetaStore::Heap;F[I"Rack::Cache::MetaStore;FI"!Rack::Cache::MetaStore::HEAP;F[@$I" Rack::Cache::MetaStore::MEM;F[@$I"!Rack::Cache::MetaStore::Disk;F[@$I"!Rack::Cache::MetaStore::DISK;F[@$I"!Rack::Cache::MetaStore::FILE;F[@$I")Rack::Cache::MetaStore::MemCacheBase;F[@$I""Rack::Cache::MetaStore::Dalli;F[I")Rack::Cache::MetaStore::MemCacheBase;FI"&Rack::Cache::MetaStore::MemCached;F[@3I"%Rack::Cache::MetaStore::GAEStore;F[@$I"%Rack::Cache::MetaStore::GAECACHE;F[@$I" Rack::Cache::MetaStore::GAE;F[@$I"Rack::Cache::EntityStore;F[I"Object;FI"#Rack::Cache::EntityStore::Heap;F[I"Rack::Cache::EntityStore;FI"#Rack::Cache::EntityStore::HEAP;F[@AI""Rack::Cache::EntityStore::MEM;F[@AI"#Rack::Cache::EntityStore::Disk;F[@AI"#Rack::Cache::EntityStore::DISK;F[@AI"#Rack::Cache::EntityStore::FILE;F[@AI"+Rack::Cache::EntityStore::MemCacheBase;F[@AI"$Rack::Cache::EntityStore::Dalli;F[I"+Rack::Cache::EntityStore::MemCacheBase;FI"(Rack::Cache::EntityStore::MemCached;F[@PI"'Rack::Cache::EntityStore::GAEStore;F[@AI"'Rack::Cache::EntityStore::GAECACHE;F[@AI""Rack::Cache::EntityStore::GAE;F[@A:attributes{I"Rack::Cache::Response;F[	I"attr_accessor body;FI"attr_accessor headers;FI"attr_accessor status;FI"attr_reader now;FI"Rack::Cache::Context;F[I"attr_reader backend;FI"attr_reader trace;F@)[I"attr_reader root;F@+[I"attr_reader root;F@-[I"attr_reader root;F@/[I"attr_reader cache;F@4[I"attr_reader cache;F@6[I"attr_reader cache;F@8[I"attr_reader cache;F@:[I"attr_reader cache;F@F[I"attr_reader root;F@H[I"attr_reader root;F@J[I"attr_reader root;F@L[I"attr_reader cache;F@S[I"attr_reader cache;F@U[I"attr_reader cache;F@W[I"attr_reader cache;F:class_methods{%@[I"new;FI"Rack::Cache::Key;F[I"	call;FI"new;FI"Rack::Cache::Response;F[I"new;FI"Rack::Cache::Storage;F[I"instance;FI"new;FI"Rack::Cache::Context;F[I"new;F@[I"new;F@"[I"new;FI"resolve;F@%[@‘@’@'[@‘@’@)[I"new;FI"resolve;F@+[@–@—@-[@–@—@/[I"resolve;F@1[I"new;F@4[I"new;F@6[I"new;FI"resolve;F@8[@¡@¢@:[@¡@¢@?[I"new;FI"resolve;F@B[@¦@§@D[@¦@§@F[I"new;FI"resolve;F@H[@«@¬@J[@«@¬@L[I"resolve;F@N[I"new;F@Q[I"new;F@S[I"new;FI"resolve;F@U[@¶@·@W[@¶@·I"Rack::Cache;F[I"new;FI"Rack::Cache::Options;F[I"option_accessor;FI"option_name;F:encodingIu:Encoding
-UTF-8;F:instance_methods{&@[I"contains?;FI"delete;FI"get;FI"namespace;FI"namespace=;FI"put;FI"Rack::Cache::Request;F[I"cache_control;FI"no_cache?;FI"request_method;FI"Rack::Cache::Key;F[I"generate;FI"Rack::Cache::Response;F["I"age;FI"	body;FI"cache_control;FI"cache_control=;FI"cacheable?;FI"client_ttl=;FI"	date;FI"	etag;FI"expire!;FI"expires;FI"fresh?;FI"headers;FI"initialize_copy;FI"last_modified;FI"max_age;FI"max_age=;FI"must_revalidate?;FI"not_modified!;FI"now;FI"private=;FI"shared_max_age=;FI"status;FI"	to_a;FI"ttl;FI"	ttl=;FI"validateable?;FI"	vary;FI"
-vary?;FI"vary_header_names;FI"Rack::Cache::Storage;F[I"
-clear;FI"resolve_entitystore_uri;FI"resolve_metastore_uri;FI"Rack::Cache::Context;F[I"backend;FI"	call;FI"
-call!;FI"entitystore;FI"metastore;FI"
-trace;F@[I"max_age;FI"must_revalidate?;FI"no_cache?;FI"no_store?;FI"private?;FI"proxy_revalidate?;FI"public?;FI"s_maxage;FI"shared_max_age;FI"	to_s;FI"Rack::Cache::MetaStore;F[I"cache_key;FI"invalidate;FI"lookup;FI"
-purge;FI"	read;FI"
-store;FI"
-write;F@"[	I"
-purge;FI"	read;FI"to_hash;FI"
-write;F@%[	@@@@@'[	@@@@@)[	I"
-purge;FI"	read;FI"	root;FI"
-write;F@+[	@@@@@-[	@@@@@/[I"
-cache;F@1[I"
-purge;FI"	read;FI"
-write;F@4[	I"
-cache;FI"
-purge;FI"	read;FI"
-write;F@6[	I"
-cache;FI"
-purge;FI"	read;FI"
-write;F@8[	@,@-@.@/@:[	@,@-@.@/@?[
-I"exist?;FI"	open;FI"
-purge;FI"	read;FI"
-write;F@B[
-@3@4@5@6@7@D[
-@3@4@5@6@7@F[I"body_path;FI"exist?;FI"	open;FI"
-purge;FI"	read;FI"	root;FI"spread;FI"storage_path;FI"
-write;F@H[@;@<@=@>@?@@@A@B@C@J[@;@<@=@>@?@@@A@B@C@L[I"
-cache;FI"	open;F@N[	I"exist?;FI"
-purge;FI"	read;FI"
-write;F@Q[	I"exist?;FI"
-purge;FI"	read;FI"
-write;F@S[I"
-cache;FI"exist?;FI"	open;FI"
-purge;FI"	read;FI"
-write;F@U[@T@U@V@W@X@Y@W[@T@U@V@W@X@YI"Rack::Cache::Options;F[I"options;FI"options=;FI"set;F:modules[+I"	Rack;FI"Rack::Cache;FI"Rack::Cache::AppEngine;FI"Rack::Cache::AppEngine::MC;FI"%Rack::Cache::AppEngine::MemCache;FI"Rack::Cache::CacheControl;FI"Rack::Cache::Context;F@AI"#Rack::Cache::EntityStore::DISK;FI"$Rack::Cache::EntityStore::Dalli;FI"#Rack::Cache::EntityStore::Disk;FI"#Rack::Cache::EntityStore::FILE;FI""Rack::Cache::EntityStore::GAE;FI"'Rack::Cache::EntityStore::GAECACHE;FI"'Rack::Cache::EntityStore::GAEStore;FI"#Rack::Cache::EntityStore::HEAP;FI"#Rack::Cache::EntityStore::Heap;FI""Rack::Cache::EntityStore::MEM;F@PI"(Rack::Cache::EntityStore::MemCached;FI"Rack::Cache::Key;F@$I"!Rack::Cache::MetaStore::DISK;FI""Rack::Cache::MetaStore::Dalli;FI"!Rack::Cache::MetaStore::Disk;FI"!Rack::Cache::MetaStore::FILE;FI" Rack::Cache::MetaStore::GAE;FI"%Rack::Cache::MetaStore::GAECACHE;FI"%Rack::Cache::MetaStore::GAEStore;FI"!Rack::Cache::MetaStore::HEAP;FI"!Rack::Cache::MetaStore::Heap;FI" Rack::Cache::MetaStore::MEM;F@3I"&Rack::Cache::MetaStore::MemCached;F@I"Rack::Cache::Request;FI"Rack::Cache::Response;FI"Rack::Cache::Storage;F
