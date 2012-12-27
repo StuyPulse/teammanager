@@ -45,7 +45,8 @@
           <td><%= safety_test.year %></td>
           <td><%= safety_test.is_valid? ? 'Yes' : 'No' %></td>
           <td><%= form_for(safety_test, method: :delete, remote: true, html: {class: "delete_safety_test"}) do |f| %>
-                <%= f.submit "Delete", confirm: "Are you sure?" %> <% end %> </td>
+                <%= f.submit "Delete", confirm: "Are you sure?", class: "btn" %> <% end %> 
+          </td>
         </tr>
       <% end %>
     </table>
@@ -63,7 +64,9 @@
       <% @student.team_dues.order('year DESC').each do |team_due|  %>
         <tr class="<%= team_due.is_valid? ? 'success' : 'error' %>">
           <td><%= team_due.year %></td>
-          <td><%= link_to 'Delete', {controller: 'team_dues', action: 'destroy', id: team_due.id}, method: :delete, confirm: 'Are you sure?' %></td>
+          <td><%= form_for(team_due, method: :delete, remote: true, html: {class: "delete_team_due"}) do |f| %>
+              <%= f.submit "Delete", confirm: "Are you sure?", class: "btn" %> <% end %> 
+          </td>
         </tr>
       <% end %>
     </table>

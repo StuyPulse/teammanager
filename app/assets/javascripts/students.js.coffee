@@ -8,3 +8,9 @@ $(document).ready ->
   $(".delete_safety_test").live "ajax:error", (evt, data, status, xhr) -> 
     alert "ERROR. Safety Test was not deleted successfully."
   
+  
+  $(".delete_team_due").live "ajax:success", (evt, data, status, xhr) ->
+    $(this).closest("tr").fadeOut()
+  
+  $(".delete_team_due").live "ajax:error", (evt, data, status, xhr) ->
+    alert "ERROR. Team Due was not deleted successfully."
