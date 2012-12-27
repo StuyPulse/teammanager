@@ -44,7 +44,8 @@
         <tr class="<%= safety_test.is_valid? ? 'success' : 'error' %>">
           <td><%= safety_test.year %></td>
           <td><%= safety_test.is_valid? ? 'Yes' : 'No' %></td>
-          <td><%= link_to 'Delete', {controller: 'safety_tests', action: 'destroy', id: safety_test.id}, method: :delete, confirm: 'Are you sure?' %></td>
+          <td><%= form_for(safety_test, method: :delete, remote: true, html: {class: "delete_safety_test"}) do |f| %>
+                <%= f.submit "Delete", confirm: "Are you sure?" %> <% end %> </td>
         </tr>
       <% end %>
     </table>

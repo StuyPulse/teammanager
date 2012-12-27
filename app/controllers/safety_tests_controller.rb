@@ -1,4 +1,5 @@
 class SafetyTestsController < ApplicationController
+  respond_to :html, :js
   def new
     @safety_test = SafetyTest.new
   end
@@ -16,9 +17,13 @@ class SafetyTestsController < ApplicationController
 
   def destroy
     test = SafetyTest.find(params[:id])
-    student_id = test.student_id
+    student = test.student
     test.destroy
-      flash[:notice] = 'Safety test deleted successfully.'
-    redirect_to controller: 'students', action: 'show', id: student_id
+    respond_to do |format|
+      format.html {redirect_to(student, notice: "Safety test deleted.") }
+      format.js { render nothing: true }
+    end
+    #flash[:notice] = 'Safety test deleted successfully.'
+    #redirect_to controller: 'students', action: 'show', id: student_id
   end
 end
