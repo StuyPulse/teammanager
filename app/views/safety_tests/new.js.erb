@@ -1,0 +1,8 @@
+var safety_test_row = $("tr[data-year=<%= @safety_test.year %>]")[0];
+$(safety_test_row).removeClass("error").addClass("success");
+console.log(safety_test_row);
+
+var add_safety_test = $(safety_test_row).find(".add_ajax");
+$(add_safety_test).addClass("hidden");
+
+$(add_safety_test).after('<%= form_for(@safety_test, method: :delete, remote: true, html: {class: "delete_ajax"}) do |f| %> <button type="submit" class="btn btn-danger">       <i class="icon-remove"> </i>      </button>    <% end %> ');

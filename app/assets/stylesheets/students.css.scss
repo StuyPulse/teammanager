@@ -18,7 +18,7 @@ $invalidColor: rgb(200,40,0);
   color: $validColor;
 }
 
-tr.toggle_children:hover
+tr.submit_children:hover
 {
   cursor: pointer;
   
@@ -48,4 +48,9 @@ tr.toggle_children:hover
 .hidden
 {
   display: none;
+}
+
+.delete_ajax
+{
+  margin-bottom: 0;
 }

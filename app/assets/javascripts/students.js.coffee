@@ -4,8 +4,8 @@
 $(document).ready ->
   $(".delete_ajax").live "ajax:success", (evt, data, status, xhr) -> 
     $(this).closest("tr").removeClass("success").addClass("error")
-    $(this).hide()
-    $(this).siblings(".add_ajax").removeClass("hidden")
+    $(this).siblings(".add_ajax").removeClass "hidden"
+    $(this).remove()
   
   $(".delete_ajax").live "ajax:error", (evt, data, status, xhr) -> 
     alert "ERROR. Safety Test was not deleted successfully."

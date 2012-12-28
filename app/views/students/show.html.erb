@@ -31,20 +31,7 @@
   <div class="span4">
     <h3>Safety Tests</h3>
     <table class="table" >
-      <tr class="submit_children toggle_children <%= @valid_safety_test ? "success" : "error" %>">
-        <td><%= "#{@current_year - 1}-#{@current_year}" %> </td>
-        <td>
-          <%
-            if @valid_safety_test
-          %>   
-          <%=
-              form_for(@valid_safety_test, method: :delete, remote: true, html: {class: "delete_ajax"}) do |f| %>
-                <button class="de-buttonize valid_item" type="submit"> <i class="icon-ok"> </i> </button>
-              <% end %>
-            <% end %>
-             <a href="<%= url_for(controller: "safety_tests", action: "new", student_id: @student.id) %>" data-remote="true" class="add_ajax invalid_item <%= "hidden" if @valid_safety_test%> "><i class="icon-ok"> </i></a>
-        </td>  
-      </tr>
+    <%= render partial: "seasonal", object: @valid_safety_test, locals: {seasonal_type: :safety_test, year: @current_year, student_id: @student.id}  %>
 
       <% @older_safety_tests.each do |safety_test|  %>
         <tr class="<%= safety_test.is_valid? ? 'success' : 'error' %>">
