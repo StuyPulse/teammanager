@@ -2,6 +2,10 @@ class SafetyTestsController < ApplicationController
   respond_to :html, :js
   def new
     @safety_test = SafetyTest.new
+    @safety_test.student_id = params[:student_id]
+    current_year = Date.today.month < 9 ? Date.today.year : Date.today.year + 1
+    @safety_test.year = current_year
+    @safety_test.save
   end
 
   def create

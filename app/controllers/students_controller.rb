@@ -9,6 +9,19 @@ class StudentsController < ApplicationController
 
   def show
     @student = Student.find params[:id]
+   
+    @current_year = Date.today.month < 9 ? Date.today.year : Date.today.year + 1
+    @valid_safety_test = false
+    valid_safety_tests = @student.safety_tests.find_all{|test| test.year == @current_year} 
+    if valid_safety_tests.any?
+      @valid_safety_test = valid_safety_tests.first
+    end
+    @older_safety_tests = @student.safety_tests.find_all{|test| test.year != @current_year}
+ 
+    @current_season_team_due = false
+    if (@student.team_dues.find_all{|test| test.year == @current_year}).any?
+      @current_season_team_due = true
+    end
   end
 
   def new
