@@ -1,6 +1,5 @@
-var safety_test_row = $("tr[data-year=<%= @safety_test.year %>]")[0];
+var safety_test_row = $("table[data-subject=safety_tests]").find("tr[data-year=<%= @safety_test.year %>]")[0];
 $(safety_test_row).removeClass("error").addClass("success");
-console.log(safety_test_row);
 
 var add_safety_test = $(safety_test_row).find(".add_ajax");
 $(add_safety_test).addClass("hidden");

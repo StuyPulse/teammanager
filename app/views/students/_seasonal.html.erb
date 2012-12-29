@@ -1,4 +1,4 @@
-<tr class="<%= seasonal ? "success" : "error" %> " data-year="<%= year %>">
+<tr class="<%= seasonal ? "success" : "error" %> <%= "hidden" if year != @current_year %>" data-year="<%=year %>">
   <td><%= "#{year - 1}-#{year}" %> </td>
   <td>
   <% if seasonal %>
@@ -8,7 +8,7 @@
       </button>
     <% end %>
    <% end %>
-  <%= link_to polymorphic_path(seasonal_type, student_id: student_id, action: :new), remote: true, class: "btn add_ajax #{"hidden" if seasonal}" do %>
+  <%= link_to polymorphic_path(seasonal_type, student_id: student_id, year: year, action: :new), remote: true, class: "btn add_ajax #{"hidden" if seasonal}" do %>
     <i class="icon-ok"> </i>
   <% end %>
   </td>  

@@ -28,44 +28,8 @@
   </div>
 </div>
 <div class="row">
-  <div class="span4">
-    <h3>Safety Tests</h3>
-    <table class="table" >
-    <%= render partial: "seasonal", object: @valid_safety_test, locals: {seasonal_type: :safety_test, year: @current_year, student_id: @student.id}  %>
+  <%= render "all_seasonals", object: [:safety_test, :team_due], locals: {student_id: @student.id} %>
 
-      <% @older_safety_tests.each do |safety_test|  %>
-        <tr class="<%= safety_test.is_valid? ? 'success' : 'error' %>">
-          <td><%= "#{safety_test.year - 1}-#{safety_test.year}" %></td>
-          <td><%= safety_test.is_valid? ? 'Valid' : 'Not Valid' %></td>
-          <td><%= form_for(safety_test, method: :delete, remote: true, html: {class: "delete_safety_test"}) do |f| %>
-                <%= f.submit "Delete", confirm: "Are you sure?", class: "btn" %> <% end %> 
-          </td>
-        </tr>
-      <% end %>
-    </table>
-  </div>
-  <div class="span4">
-    <h3>Team Dues</h3>
-    <div style="text-align:right">
-      <%= link_to 'Add Team Due', {controller: 'team_dues', action: 'new', student_id: @student.id}, class: 'btn', style: 'margin-top:-88px' %>
-    </div>
-    <table class="table" style="margin-top:-20px">
-      <tr>
-        <th>Season</th>
-        <td> </td>
-        <th></th>
-      </tr>
-      <% @student.team_dues.order('year DESC').each do |team_due|  %>
-        <tr class="<%= team_due.is_valid? ? 'success' : 'error' %>">
-          <td><%= "#{team_due.year - 1}-#{team_due.year}" %></td>
-          <td><%= team_due.is_valid? ? "Valid" : "Not Valid" %> </td>
-          <td><%= form_for(team_due, method: :delete, remote: true, html: {class: "delete_team_due"}) do |f| %>
-              <%= f.submit "Delete", confirm: "Are you sure?", class: "btn" %> <% end %> 
-          </td>
-        </tr>
-      <% end %>
-    </table>
-  </div>
   <div class="span4">
     <h3>Medical Forms</h3>
     <div style="text-align:right">

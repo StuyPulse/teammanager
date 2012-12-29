@@ -18,3 +18,8 @@ $(document).ready ->
     link_children = $(this).find "a:visible"
     if link_children.length > 0
       link_children[0].click()
+  
+  $(".load_more").click ->
+    subject = $(this).data("subject")
+    $("table[data-subject=" + subject + "]").find("tr").removeClass("hidden")
+    $(this).closest("tr").remove()

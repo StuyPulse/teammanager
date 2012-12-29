@@ -11,17 +11,22 @@ class StudentsController < ApplicationController
     @student = Student.find params[:id]
    
     @current_year = Date.today.month < 9 ? Date.today.year : Date.today.year + 1
+    
     @valid_safety_test = false
     valid_safety_tests = @student.safety_tests.find_all{|test| test.year == @current_year} 
     if valid_safety_tests.any?
       @valid_safety_test = valid_safety_tests.first
     end
-    @older_safety_tests = @student.safety_tests.find_all{|test| test.year != @current_year}
+    
+    @first_safety_test_year = @student.safety_tests.any? ? @student.safety_tests.order("YEAR ASC").first.year : @current_year
  
-    @current_season_team_due = false
-    if (@student.team_dues.find_all{|test| test.year == @current_year}).any?
-      @current_season_team_due = true
+    @valid_team_dues = false
+    valid_team_dues = @student.team_dues.find_all{|test| test.year == @current_year}
+    if valid_team_dues.any?
+      @valid_team_due= valid_team_dues.first
     end
+    
+    @first_team_due_year = @student.team_dues.any? ? @student.team_dues.order("YEAR ASC").first.year : @current_year
   end
 
   def new

@@ -1,6 +1,9 @@
 class TeamDuesController < ApplicationController
   def new
     @team_due = TeamDue.new
+    @team_due.student_id = params[:student_id]
+    @team_due.year = params[:year]
+    @team_due.save
   end
   
   def create
