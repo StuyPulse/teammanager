@@ -1,44 +1,17 @@
-  <% seasonal_type = "safety_test"  %>
+<% @seasonals.each do |seasonal| %>
+<% seasonal_type = seasonal[:seasonal_type] %>
   <div class="span4">
-    <h3><%= seasonal_type.humanize.pluralize.titleize %></h3>
+    <h3><%= seasonal_type.pluralize.titleize %></h3>
     <table class="table" data-subject="<%= seasonal_type.pluralize %>">
-    <% (@current_year).downto(@first_safety_test_year) do |year| 
-        safety_test = @student.safety_tests.where("year = #{year}").first %>
-        <% if year == @current_year - 1 %>
-          <tr>
-            <td> <a class="load_more" data-subject="safety_tests">Older Safety Tests </a> </td>
-          </tr>
-        <% end %>
-        <%= render partial: "seasonal", object: safety_test, locals: {seasonal_type: :safety_test, year: year, student_id: @student.id} %>
-      <% end %>
-    </table>
-  </div>
-  <div class="span4">
-    <h3>Safety Tests</h3>
-    <table class="table" data-subject="safety_tests">
-    <% (@current_year).downto(@first_safety_test_year) do |year| 
-        safety_test = @student.safety_tests.where("year = #{year}").first %>
-        <% if year == @current_year - 1 %>
-          <tr>
-            <td> <a class="load_more" data-subject="safety_tests">Older Safety Tests </a> </td>
-          </tr>
-        <% end %>
-        <%= render partial: "seasonal", object: safety_test, locals: {seasonal_type: :safety_test, year: year, student_id: @student.id} %>
-      <% end %>
-    </table>
-  </div>
-  <div class="span4">
-    <h3>Team Dues</h3>
-    <table class="table" data-subject="team_dues">
-      <%= render partial: "seasonal", object: @valid_team_due, locals: {seasonal_type: :team_due, year: @current_year, student_id: @student.id, hidden: false} %>
-      <% if @current_year - @first_team_due_year > 1 %>
+    <% seasonal[:seasonals].each_pair do |year, seasonal| %>
+      <% if year == @current_year - 1  %>
         <tr>
-          <td> <a class="load_more" data-subject="safety_tests">Older Team Dues </a> </td>
+          <td> <a class="load_more" data-subject="<%= seasonal_type.pluralize %>">Older <%= seasonal_type.pluralize.titleize %></a> </td>
         </tr>
-        <% (@current_year - 1).downto(@first_team_due_year) do |year|
-          this_year_team_due = @student.team_dues.where("year = #{year}").first %>
-          <%= render partial: "seasonal", object: this_year_team_due, locals: {seasonal_type: :team_due, year: year, student_id: @student.id, hidden: true} %>
       <% end %>
+     
+      <%= render partial: "seasonal", object: seasonal, locals: {seasonal_type: seasonal_type.to_sym, year: year, student_id: @student.id} %>
     <% end %>
     </table>
   </div>
+<% end %>

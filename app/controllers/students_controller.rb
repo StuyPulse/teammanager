@@ -9,24 +9,24 @@ class StudentsController < ApplicationController
 
   def show
     @student = Student.find params[:id]
-   
+    
+    @seasonals = [] #Contains a hash for every seasonal
+    seasonals_to_display = [SafetyTest, TeamDue]
     @current_year = Date.today.month < 9 ? Date.today.year : Date.today.year + 1
     
-    @valid_safety_test = false
-    valid_safety_tests = @student.safety_tests.find_all{|test| test.year == @current_year} 
-    if valid_safety_tests.any?
-      @valid_safety_test = valid_safety_tests.first
-    end
+    seasonals_to_display.each do |seasonal_model|
+      hash_for_seasonal = {seasonals: {}, seasonal_type: seasonal_model.to_s.tableize.singularize}
+      first_seasonal = seasonal_model.where("student_id = #{@student.id}").order("YEAR ASC").first
+      
+      first_seasonal_year = first_seasonal ? first_seasonal.year : @current_year
     
-    @first_safety_test_year = @student.safety_tests.any? ? @student.safety_tests.order("YEAR ASC").first.year : @current_year
- 
-    @valid_team_dues = false
-    valid_team_dues = @student.team_dues.find_all{|test| test.year == @current_year}
-    if valid_team_dues.any?
-      @valid_team_due= valid_team_dues.first
-    end
+      @current_year.downto(first_seasonal_year) do |year|
+        seasonal = seasonal_model.where("student_id = #{@student.id} and year = #{year}").first
+        hash_for_seasonal[:seasonals][year] = seasonal
+      end
+      @seasonals << hash_for_seasonal
     
-    @first_team_due_year = @student.team_dues.any? ? @student.team_dues.order("YEAR ASC").first.year : @current_year
+    end
   end
 
   def new
