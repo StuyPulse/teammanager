@@ -13,6 +13,9 @@ $(document).ready ->
   $(".delete-ajax").live "ajax:error", (evt, data, status, xhr) -> 
     alert "ERROR. Safety Test was not deleted successfully."
   
+  $(".add-ajax").click ->
+    $(this).addClass "disabled"
+  
   $(".load-more").click ->
     subject = $(this).data("subject")
     $("table[data-subject=" + subject + "]").find("tr").removeClass("hidden")
