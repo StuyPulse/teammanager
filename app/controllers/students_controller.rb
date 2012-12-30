@@ -11,21 +11,22 @@ class StudentsController < ApplicationController
     @student = Student.find params[:id]
     
     @seasonals = [] #Contains a hash for every seasonal
-    seasonals_to_display = [SafetyTest, TeamDue]
+    seasonals_to_display = [SafetyTest, TeamDue] 
     @current_year = Date.today.month < 9 ? Date.today.year : Date.today.year + 1
     
     seasonals_to_display.each do |seasonal_model|
-      hash_for_seasonal = {seasonals: {}, seasonal_type: seasonal_model.to_s.tableize.singularize}
+      hash_for_seasonal = {}
+      hash_for_seasonal[:seasonal_type]  = seasonal_model.to_s.tableize.singularize
+      hash_for_seasonal[:seasonals] = {}
+
       first_seasonal = seasonal_model.where("student_id = #{@student.id}").order("YEAR ASC").first
-      
       first_seasonal_year = first_seasonal ? first_seasonal.year : @current_year
     
       @current_year.downto(first_seasonal_year) do |year|
         seasonal = seasonal_model.where("student_id = #{@student.id} and year = #{year}").first
-        hash_for_seasonal[:seasonals][year] = seasonal
+        hash_for_seasonal[:seasonals][year] = seasonal #nil if there's none
       end
       @seasonals << hash_for_seasonal
-    
     end
   end
 

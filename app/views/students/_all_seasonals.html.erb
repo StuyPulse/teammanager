@@ -1,8 +1,9 @@
 <% @seasonals.each do |seasonal| %>
-<% seasonal_type = seasonal[:seasonal_type] %>
+  <% seasonal_type = seasonal[:seasonal_type] %>
   <div class="span4">
     <h3><%= seasonal_type.pluralize.titleize %></h3>
     <table class="table" data-subject="<%= seasonal_type.pluralize %>">
+
     <% seasonal[:seasonals].each_pair do |year, seasonal| %>
       <% if year == @current_year - 1  %>
         <tr>
@@ -10,7 +11,7 @@
         </tr>
       <% end %>
      
-      <%= render partial: "seasonal", object: seasonal, locals: {seasonal_type: seasonal_type.to_sym, year: year, student_id: @student.id} %>
+      <%= render partial: "seasonal", object: seasonal, locals: {seasonal_type: seasonal_type.to_sym, year: year} %>
     <% end %>
     </table>
   </div>

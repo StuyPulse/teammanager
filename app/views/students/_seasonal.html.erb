@@ -8,7 +8,7 @@
       </button>
     <% end %>
    <% end %>
-  <%= link_to polymorphic_path(seasonal_type, student_id: student_id, year: year, action: :new), remote: true, class: "btn add_ajax #{"hidden" if seasonal}" do %>
+  <%= link_to polymorphic_path(seasonal_type, student_id: @student.id, year: year, action: :new), remote: true, class: "btn add_ajax #{"hidden" if seasonal}" do %>
     <i class="icon-ok"> </i>
   <% end %>
   </td>  

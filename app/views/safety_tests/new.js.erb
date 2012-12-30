@@ -1,7 +1,7 @@
 var safety_test_row = $("table[data-subject=safety_tests]").find("tr[data-year=<%= @safety_test.year %>]")[0];
 $(safety_test_row).removeClass("error").addClass("success");
 
-var add_safety_test = $(safety_test_row).find(".add_ajax");
-$(add_safety_test).addClass("hidden");
+var add_safety_test_link = $(safety_test_row).find(".add_ajax");
+$(add_safety_test_link).addClass("hidden");
 
-$(add_safety_test).after('<%= form_for(@safety_test, method: :delete, remote: true, html: {class: "delete_ajax"}) do |f| %> <button type="submit" class="btn btn-danger">       <i class="icon-remove"> </i>      </button>    <% end %> ');
+$(add_safety_test_link).after('<%= form_for(@safety_test, method: :delete, remote: true, html: {class: "delete_ajax"}) do |f| %> <button type="submit" class="btn btn-danger">       <i class="icon-remove"> </i>      </button>    <% end %> ');
