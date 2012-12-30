@@ -19,11 +19,11 @@ class StudentsController < ApplicationController
       hash_for_seasonal[:seasonal_type]  = seasonal_model.to_s.tableize.singularize
       hash_for_seasonal[:seasonals] = {}
 
-      first_seasonal = seasonal_model.where("student_id = #{@student.id}").order("YEAR ASC").first
+      first_seasonal = seasonal_model.where(student_id: @student.id).order("YEAR ASC").first
       first_seasonal_year = first_seasonal ? first_seasonal.year : @current_year
     
       @current_year.downto(first_seasonal_year) do |year|
-        seasonal = seasonal_model.where("student_id = #{@student.id} and year = #{year}").first
+        seasonal = seasonal_model.where(student_id: @student.id, year: year).first
         hash_for_seasonal[:seasonals][year] = seasonal #nil if there's none
       end
       @seasonals << hash_for_seasonal
