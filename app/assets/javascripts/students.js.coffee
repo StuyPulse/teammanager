@@ -7,7 +7,7 @@ $(document).ready ->
 
   $(".delete-ajax").live "ajax:success", (evt, data, status, xhr) -> 
     $(this).closest("tr").removeClass("success").addClass("error")
-    $(this).siblings(".add-ajax").removeClass "hidden"
+    $(this).siblings(".add-ajax").removeClass "hidden disabled"
     $(this).remove()
   
   $(".delete-ajax").live "ajax:error", (evt, data, status, xhr) -> 
