@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 $(document).ready ->
   $(".delete-ajax").live "ajax:beforeSend", (evt, data, status, xhr) ->
-    $(this).find("button").html("Loading...")
+    $(this).find("button")[0].disabled = "disabled"
 
   $(".delete-ajax").live "ajax:success", (evt, data, status, xhr) -> 
     $(this).closest("tr").removeClass("success").addClass("error")
