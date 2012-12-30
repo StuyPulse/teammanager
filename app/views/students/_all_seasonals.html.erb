@@ -7,7 +7,7 @@
     <% seasonal[:seasonals].each_pair do |year, seasonal| %>
       <% if year == @current_year - 1  %>
         <tr>
-          <td> <a class="load_more" data-subject="<%= seasonal_type.pluralize %>">Older <%= seasonal_type.pluralize.titleize %></a> </td>
+          <td> <a class="load-more" data-subject="<%= seasonal_type.pluralize %>">Older <%= seasonal_type.pluralize.titleize %></a> </td>
         </tr>
       <% end %>
      

@@ -2,13 +2,13 @@
   <td><%= "#{year - 1}-#{year}" %> </td>
   <td>
   <% if seasonal %>
-    <%= form_for(seasonal, method: :delete, remote: true, html: {class: "delete_ajax"}) do |f| %>
+    <%= form_for(seasonal, method: :delete, remote: true, html: {class: "delete-ajax"}) do |f| %>
       <button type="submit" class="btn btn-danger">
         <i class="icon-remove"> </i>
       </button>
     <% end %>
    <% end %>
-  <%= link_to polymorphic_path(seasonal_type, student_id: @student.id, year: year, action: :new), remote: true, class: "btn add_ajax #{"hidden" if seasonal}" do %>
+  <%= link_to polymorphic_path(seasonal_type, student_id: @student.id, year: year, action: :new), remote: true, disable_with: "Loading...", class: "btn add-ajax #{"hidden" if seasonal}" do %>
     <i class="icon-ok"> </i>
   <% end %>
   </td>  
