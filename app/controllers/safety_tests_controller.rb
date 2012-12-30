@@ -26,7 +26,5 @@ class SafetyTestsController < ApplicationController
       format.html {redirect_to(student, notice: "Safety test deleted.") }
       format.js { render nothing: true }
     end
-    #flash[:notice] = 'Safety test deleted successfully.'
-    #redirect_to controller: 'students', action: 'show', id: student_id
   end
 end
