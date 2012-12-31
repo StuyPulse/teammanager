@@ -3,7 +3,7 @@
   <td>
   <% if seasonal %>
     <%= form_for(seasonal, method: :delete, remote: true, html: {class: "delete-ajax"}) do |f| %>
-      <%= button_tag type: "submit", class: "btn btn-danger" do %>
+      <%= button_tag type: "submit", :'data-confirm' => "Delete #{seasonal_type.to_s.titleize}?", class: "btn btn-danger" do %>
         <i class="icon-remove"> </i>
       <% end %>
     <% end %>
