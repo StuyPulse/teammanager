@@ -1,6 +1,9 @@
 class TeamDuesController < ApplicationController
   def new
     @team_due = TeamDue.new
+    @team_due.student_id = params[:student_id]
+    @team_due.year = params[:year]
+    @team_due.save
   end
   
   def create
@@ -16,9 +19,11 @@ class TeamDuesController < ApplicationController
   
   def destroy
     due = TeamDue.find(params[:id])
-    student_id = due.student_id
+    student = due.student
     due.destroy
-    flash[:notice] = "Team due deleted successfully."
-    redirect_to controller: "students", action: "show", id: student_id
+    respond_to do |format|
+      format.html {redirect_to student, notice: "Team Due deleted."}
+      format.js {render nothing: true}
+    end
   end
 end

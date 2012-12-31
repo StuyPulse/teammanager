@@ -2,6 +2,7 @@ class SafetyTest < ActiveRecord::Base
   attr_accessible :year
   belongs_to :student
   validates :year, presence: true
+  validates_uniqueness_of :year, scope: :student_id
 
   def is_valid?
     if Date.today.month < 9
