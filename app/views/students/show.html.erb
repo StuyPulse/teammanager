@@ -23,50 +23,13 @@
 </div>
 <div class="row">
   <div class="span12">
-    <%= link_to 'Back', students_path, class: 'btn' %>
     <%= link_to 'Edit', {action: 'edit'}, class: 'btn' %>
     <%= button_to 'Delete', {action: 'destroy', id: @student.id}, method: :delete, class: 'btn btn-danger', confirm: 'Are you sure?', style: 'margin-top:10px' %>
   </div>
 </div>
 <div class="row">
-  <div class="span4">
-    <h3>Safety Tests</h3>
-    <div style="text-align:right">
-      <%= link_to 'Add Safety Test', {controller: 'safety_tests', action: 'new', student_id: @student.id}, class: 'btn', style: 'margin-top:-88px' %>
-    </div>
-    <table class="table" style="margin-top:-20px">
-      <tr>
-        <th>Year</th>
-        <th>Valid?</th>
-        <th></th>
-      </tr>
-      <% @student.safety_tests.order('year DESC').each do |safety_test|  %>
-        <tr class="<%= safety_test.is_valid? ? 'success' : 'error' %>">
-          <td><%= safety_test.year %></td>
-          <td><%= safety_test.is_valid? ? 'Yes' : 'No' %></td>
-          <td><%= link_to 'Delete', {controller: 'safety_tests', action: 'destroy', id: safety_test.id}, method: :delete, confirm: 'Are you sure?' %></td>
-        </tr>
-      <% end %>
-    </table>
-  </div>
-  <div class="span4">
-    <h3>Team Dues</h3>
-    <div style="text-align:right">
-      <%= link_to 'Add Team Due', {controller: 'team_dues', action: 'new', student_id: @student.id}, class: 'btn', style: 'margin-top:-88px' %>
-    </div>
-    <table class="table" style="margin-top:-20px">
-      <tr>
-        <th>Year</th>
-        <th> </th>
-      </tr>
-      <% @student.team_dues.order('year DESC').each do |team_due|  %>
-        <tr class="<%= team_due.is_valid? ? 'success' : 'error' %>">
-          <td><%= team_due.year %></td>
-          <td><%= link_to 'Delete', {controller: 'team_dues', action: 'destroy', id: team_due.id}, method: :delete, confirm: 'Are you sure?' %></td>
-        </tr>
-      <% end %>
-    </table>
-  </div>
+  <%= render "all_seasonals" %>
+
   <div class="span4">
     <h3>Medical Forms</h3>
     <div style="text-align:right">
