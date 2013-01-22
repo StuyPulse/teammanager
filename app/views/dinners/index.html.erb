@@ -1,0 +1,36 @@
+<h1>Dinners </h1>
+<div style="text-align:right">
+    <%= link_to "New Dinner", {action: 'new'}, class: 'btn btn-primary', style: 'margin-bottom: 10px' %>
+</div>
+<div class="container">
+<% @dinners.in_groups_of 3 do |dinner_group| %>
+  <div class="row" style="margin-bottom: 40px">
+     <% dinner_group.each do |dinner| %>
+      <% next unless dinner %>
+      <div class="span4"> 
+        <table>
+          <tr>
+            <td><h2><%= dinner.date.strftime("%A, %b.%d.%y") %> </h2> </td>
+          </tr>
+          <tr>
+            <td colspan="2"><strong>Volunteer:</strong> <%= dinner.volunteer_name %> </td>
+          </tr>
+          <tr>
+            <td><strong>Cell Phone:</strong> <%= number_to_phone dinner.volunteer_phone, area_code: true %> </td>
+            <td> <% if dinner.volunteer_email %>
+                   <strong>Email: </strong> <%= dinner.volunteer_email %>
+                 <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2"><%= dinner.meal_description %> </td>
+          </tr>
+          <tr>
+            <td colspan="2"><strong>Notes:</strong> <%= dinner.notes %> </td>
+          </tr>
+        </table>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+</div>
