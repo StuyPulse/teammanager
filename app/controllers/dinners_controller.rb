@@ -1,6 +1,7 @@
 class DinnersController < ApplicationController
   def index
-    @dinners = Dinner.all.sort_by &:date
+    @past_dinners = Dinner.all.select{ |dinner| dinner.date.past? }
+    @future_dinners = (Dinner.all.select{ |dinner| not dinner.date.past? }).sort_by &:date
   end
 
   def new
