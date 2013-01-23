@@ -11,3 +11,22 @@ textarea
 {
   margin-bottom: 40px;
 }
+
+.toggle-old-dinners
+{
+  font-size: 16px;
+}
+
+.icon-plus:after
+{
+  content: "show";
+  font-style: normal;
+  padding-left: 5px;
+}
+
+.icon-minus:after
+{
+  content: "hide";
+  font-style: normal;
+  padding-left: 5px;
+}
