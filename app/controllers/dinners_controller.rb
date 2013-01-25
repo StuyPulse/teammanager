@@ -21,11 +21,26 @@ class DinnersController < ApplicationController
   end
 
   def edit
+    @dinner = Dinner.find params[:id]
+  end
+ 
+  def update
+    @dinner = Dinner.find params[:id]
+    if @dinner.update_attributes params[:dinner]
+      flash[:notice] = "Dinner updated successfully."
+      redirect_to action: "index"
+    else
+      flash.now[:alert] = @dinner.errors.full_messages.join("<br>").html_safe
+      render action: "edit"
+    end
   end
 
   def show
   end
 
   def destroy
+    Dinner.find(params[:id]).destroy
+    flash[:notice] = "Dinner deleted successfully."
+    redirect_to action: "index"
   end
 end

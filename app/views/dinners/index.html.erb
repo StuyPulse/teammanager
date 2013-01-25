@@ -14,6 +14,10 @@
   <%= render partial: "dinner_group", object: @present_dinners, locals: {old_dinners: false}  %>
 <% end %>
 
-<h2>Future </h2>
-<%= render partial: "dinner_group", object: @future_dinners, locals: {old_dinners: false} %>
+<% if @future_dinners.any? %>
+  <h2>Future </h2>
+  <%= render partial: "dinner_group", object: @future_dinners, locals: {old_dinners: false} %>
+<% else %>
+  <p>No upcoming dinners. </p>
+<% end %>
 </div>
