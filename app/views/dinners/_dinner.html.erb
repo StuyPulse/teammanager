@@ -29,7 +29,7 @@
         <% end %>
       </td>
     </tr>
-    <tr>
+    <tr class="dinner-actions">
       <td> <%= link_to "Edit", edit_dinner_path(dinner), class: "btn" %> </td>
       <td> <%= button_to "Delete", dinner_path(dinner), method: :delete, class: "btn btn-danger", confirm: "Delete dinner #{dinner.date.strftime("%m/%d/%y")}?" %> </td>
   </table>
