@@ -1,0 +1,36 @@
+<div class="span4"> 
+  <table>
+    <tr>
+      <td colspan="2"><h4><%= dinner.date.strftime("%A, %b.%d.%y") %> </h4> </td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Volunteer:</strong> <%= dinner.volunteer_name %> </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+      <% if dinner.student_id != 0 %>
+        <%= link_to Student.find(dinner.student_id).full_name, student_path(Student.find(dinner.student_id)) %>
+      <% end %>
+      </td>
+    <tr>
+    <td><strong>Cell Phone:</strong> <%= number_to_phone dinner.volunteer_phone, area_code: true %> </td>
+      <td> <% unless dinner.volunteer_email.empty? %>
+             <strong>Email: </strong> <%= dinner.volunteer_email %>
+           <% end %>
+      </td>
+    </tr>
+    <tr>
+        <td colspan="2"><%= dinner.meal_description %> </td>
+    </tr>
+    <tr>
+      <td colspan="2"> 
+        <% unless dinner.notes.empty? %>
+          <strong>Notes:</strong> <%= dinner.notes %> 
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td> <%= link_to "Edit", edit_dinner_path(dinner), class: "btn" %> </td>
+      <td> <%= button_to "Delete", dinner_path(dinner), method: :delete, class: "btn btn-danger", confirm: "Delete dinner #{dinner.date.strftime("%m/%d/%y")}?" %> </td>
+  </table>
+</div>

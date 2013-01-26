@@ -3,7 +3,11 @@
 <head>
   <title>Team Manager</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= yield :extra_stylesheets %>
+
   <%= javascript_include_tag "application" %>
+  <%= yield :extra_javascripts %>
+
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -15,6 +19,7 @@
           <ul class="nav">
             <li><%= link_to 'Students', students_path %></li>
             <li><%= link_to 'Trips', trips_path %></li>
+            <li><%= link_to "Dinners", dinners_path %> </li>
           </ul>
           <ul class="nav pull-right">
             <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>

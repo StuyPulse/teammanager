@@ -1,0 +1,8 @@
+<% dinner_group.in_groups_of 3 do |dinner_row| %>
+  <div class="row dinner-row <%= "hidden old-dinners" if old_dinners %>">
+  <% dinner_row.each do |dinner| %>
+    <% next unless dinner %>
+    <%= render partial: "dinner", object: dinner %>
+  <% end %>
+  </div>
+<% end %>
