@@ -12,6 +12,7 @@ Teammanager::Application.routes.draw do
   resources :trip_deposits
   resources :trip_fees
   resources :team_dues
+  resources :dinners
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

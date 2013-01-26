@@ -1,0 +1,44 @@
+// Place all the styles related to the Dinners controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+textarea
+{
+  resize: vertical;
+  max-height: 300px;
+}
+
+.dinner-row
+{
+  margin-bottom: 40px;
+}
+
+.toggle-old-dinners
+{
+  font-size: 16px;
+}
+
+.icon-plus:after
+{
+  content: "show";
+  font-style: normal;
+  padding-left: 5px;
+}
+
+.icon-minus:after
+{
+  content: "hide";
+  font-style: normal;
+  padding-left: 5px;
+}
+
+
+/*Offset form margin of 20px */
+.btn-danger
+{
+  margin-top: 10px;
+}
+
+a.btn
+{
+  margin-top: -10px;
+}
