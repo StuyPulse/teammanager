@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: trip_fees
+#
+#  id         :integer          not null, primary key
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  student_id :integer
+#  trip_id    :integer
+#
+
 class TripFee < ActiveRecord::Base
   belongs_to :student
   belongs_to :trip

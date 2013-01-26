@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: team_dues
+#
+#  id         :integer          not null, primary key
+#  year       :integer
+#  student_id :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class TeamDue < ActiveRecord::Base
   attr_accessible :year
   belongs_to :student

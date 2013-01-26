@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: safety_tests
+#
+#  id         :integer          not null, primary key
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  student_id :integer
+#  year       :integer
+#
+
 class SafetyTest < ActiveRecord::Base
   attr_accessible :year
   belongs_to :student
