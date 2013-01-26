@@ -35,9 +35,6 @@ class DinnersController < ApplicationController
     end
   end
 
-  def show
-  end
-
   def destroy
     Dinner.find(params[:id]).destroy
     flash[:notice] = "Dinner deleted successfully."

@@ -7,7 +7,6 @@ class Dinner < ActiveRecord::Base
 
   before_save :remove_non_digits_from_phone_number
 
-
   def remove_non_digits_from_phone_number
     volunteer_phone.gsub! /\D/, ''
   end

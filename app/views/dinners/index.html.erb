@@ -10,7 +10,7 @@
 <% end %>
 
 <% if @present_dinners.any? %>
-  <h2 class="inline">Today</h2>
+  <h2>Today</h2>
   <%= render partial: "dinner_group", object: @present_dinners, locals: {old_dinners: false}  %>
 <% end %>
 

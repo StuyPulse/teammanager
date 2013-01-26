@@ -1,14 +1,20 @@
 <div class="span4"> 
   <table>
     <tr>
-      <td><h4><%= dinner.date.strftime("%A, %b.%d.%y") %> </h4> </td>
+      <td colspan="2"><h4><%= dinner.date.strftime("%A, %b.%d.%y") %> </h4> </td>
     </tr>
     <tr>
       <td colspan="2"><strong>Volunteer:</strong> <%= dinner.volunteer_name %> </td>
     </tr>
     <tr>
+      <td colspan="2">
+      <% if dinner.student_id != 0 %>
+        <%= link_to Student.find(dinner.student_id).full_name, student_path(Student.find(dinner.student_id)) %>
+      <% end %>
+      </td>
+    <tr>
     <td><strong>Cell Phone:</strong> <%= number_to_phone dinner.volunteer_phone, area_code: true %> </td>
-      <td> <% if not dinner.volunteer_email.empty? %>
+      <td> <% unless dinner.volunteer_email.empty? %>
              <strong>Email: </strong> <%= dinner.volunteer_email %>
            <% end %>
       </td>
