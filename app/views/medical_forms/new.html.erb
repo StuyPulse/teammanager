@@ -1,3 +1,11 @@
+<% content_for :extra_stylesheets do %>
+  <%= stylesheet_link_tag "datepicker.css" %>
+<% end %>
+
+<% content_for :extra_javascripts do %>
+  <%= javascript_include_tag "bootstrap-datepicker.js" %>
+<% end %>
+
 <h1>Add Medical Form</h1>
 <%= form_for @medical_form do |f| %>
   <div class="control-group">
@@ -5,9 +13,10 @@
     <input type="hidden" name="student_id" value=<%= params[:student_id] %> />
     <input type="text" value="<%= Student.find(params[:student_id]).full_name %>" disabled />
     <%= f.label :date, class: 'control-label' %>
-    <%= f.text_field :date %>
+    <%= f.text_field :date, value: "#{Date.today}", class: "date" %>
   </div>
   <div class="form-actions">
     <%= f.submit 'Save', class: 'btn' %>
   </div>
 <% end %>
+<%= javascript_tag "$('.date').datepicker({ format: 'yyyy-mm-dd' }); " %>
