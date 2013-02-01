@@ -20,16 +20,19 @@ class Trip < ActiveRecord::Base
   has_many :teacher_permission_forms
   has_many :trip_fees
   has_many :trip_deposits
+
   has_many :p_students, through: :parent_permission_forms, source: :student
   has_many :t_students, through: :teacher_permission_forms, source: :student
   has_many :f_students, through: :trip_fees, source: :student
+  has_many :d_students, through: :trip_deposits, source: :student
+
   validates :name, presence: true
   validates :start_date, presence: true
   validates :end_date, presence: true
 
   def all_students
     students_list = 
-    (self.p_students + self.t_students + self.f_students).sort do |a, b|
+    (self.p_students + self.t_students + self.f_students + self.d_students).sort do |a, b|
       comp = a.last_name <=> b.last_name
       comp.zero? ? (a.first_name <=> b.first_name) : comp
     end
