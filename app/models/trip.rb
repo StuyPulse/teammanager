@@ -28,9 +28,12 @@ class Trip < ActiveRecord::Base
   validates :end_date, presence: true
 
   def all_students
+    students_list = 
     (self.p_students + self.t_students + self.f_students).sort do |a, b|
       comp = a.last_name <=> b.last_name
       comp.zero? ? (a.first_name <=> b.first_name) : comp
     end
+    students_list.uniq! #remove duplicates
+    students_list
   end
 end
