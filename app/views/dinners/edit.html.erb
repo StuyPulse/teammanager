@@ -4,7 +4,7 @@
     <%= f.label :date, class: "control-label" %>
     <%= f.text_field :date,  id: "datepicker" %>
     <%= f.label :student_id, class: "control-label" %>
-    <%= select "dinner", "student_id", [["None", 0]] + Student.all.collect { |s| [s.full_name, s.id] }, {} %>
+    <%= select "dinner", "student_id", [["None", 0]] + Student.all.sort_by { |s| s.last_name }.collect { |s| [s.full_name, s.id] }, {} %>
     <%= f.label :volunteer_name, class: "control-label" %>
     <%= f.text_field :volunteer_name %>
     <%= f.label :volunteer_phone, class: "control-label" %>
