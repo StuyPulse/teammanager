@@ -81,10 +81,10 @@ class StudentsController < ApplicationController
           @valid_team_due = @display_student.team_dues.where("year = ?", current_year).any?
           @valid_medical = @display_student.medical_forms.select { |form| form.is_valid?}.any?
         else
-          flash.now[:alert] = "This name doesn't match ID ##{id}. Please try again."
+          flash.now[:alert] = "The information entered does not match any student on record."
         end
       else
-        flash.now[:alert] = "This 4-digit ID doesn't exist. Please try again."
+        flash.now[:alert] = "The information entered does not match any student on record."
       end
     end
   end
