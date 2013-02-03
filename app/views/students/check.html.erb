@@ -1,0 +1,77 @@
+<% if @display_student == "" %>
+  <h1>Check the status of your documents </h1>
+  <%= form_tag do %>
+    <%= label :student, :name, "Your Name: " %>
+    <%= text_field :student, :name, autofocus: :true %>
+    <%= label :student, :id, "Your 4-Digit ID: " %>
+    <%= text_field :student, :id %>
+    <div class="form-actions">
+      <%= submit_tag "Submit", class: "btn" %>
+    </div>
+  <% end %>
+<% else %>
+  <h1>Documents for <%= @display_student.full_name %> </h1>
+  <table class="table" style="margin-top: 20px; width: 25%">
+    <tr class="<%= @valid_safety_test ? "success" : "error" %>">
+      <td>Safety Test</td>
+      <td>
+        <i class="icon-<%= @valid_safety_test ? "ok" : "remove" %>"> </i>
+      </td>
+    </tr>
+    <tr class="<%= @valid_team_due ? "success" : "error" %>">
+      <td>Team Dues</td>
+      <td>
+        <i class="icon-<%= @valid_team_due ? "ok" : "remove" %>"> </i>
+      </td>
+    </tr>
+    <tr class="<%= @valid_medical ? "success" : "error" %>">
+      <td>Medical Form</td>
+      <td>
+        <i class="icon-<%= @valid_medical ? "ok" : "remove" %>"> </i>
+      </td>
+    </tr>
+  </table>
+  <% Trip.all.select { |trip| not trip.end_date.past? }.each do |trip| %> 
+    <h3><%= trip.name %></h3>
+    <table class="table" style="width: 25%">
+      <tr class="<%= @display_student.has_parent_permission_form_for(trip) ? "success" : "error" %>">
+         <td>Parent Permission Form </td>
+         <td> 
+            <i class="icon-<%= @display_student.has_parent_permission_form_for(trip) ? "ok" : "remove" %>"> </i>
+         </td>
+      </tr>
+
+      <% if trip.requires_teacher_permission_form %>
+        <tr class="<%= @display_student.has_teacher_permission_form_for(trip) ? 'success' : 'error' %>">
+          <td>Teacher Permission Form </td>
+          <td>
+            <i class="icon-<%= @display_student.has_teacher_permission_form_for(trip) ? "ok" : "remove" %>"> </i>
+           </td>
+      <% end %>
+
+      <% if trip.requires_trip_deposit %>
+        <tr class="<%= @display_student.has_trip_deposit_for(trip) ? 'success' : 'error' %>">
+          <td>Trip Deposit </td>
+          <td>
+            <i class="icon-<%= @display_student.has_trip_deposit_for(trip) ? "ok" : "remove" %>"> </i>
+          </td>
+      <% end %>
+
+      <% if trip.requires_trip_fee %>
+        <tr class="<%= @display_student.has_trip_fee_for(trip) ? 'success' : 'error' %>">
+          <td>Trip Fee</td>
+          <td>
+            <i class="icon-<%= @display_student.has_trip_fee_for(trip) ? "ok" : "remove" %>"> </i> 
+          </td>
+      <% end %>
+
+      <% if trip.requires_medical_form %>
+        <tr class="<%= @display_student.has_valid_medical_on(trip.end_date) ? 'success' : 'error' %>">
+          <td>Medical Form</td>
+          <td>
+            <i class="icon-<%= @display_student.has_valid_medical_on(trip.end_date)  ? "ok" : "remove" %>"> </i>
+          </td>
+      <% end %>
+    </table>
+  <% end %>
+<% end %>

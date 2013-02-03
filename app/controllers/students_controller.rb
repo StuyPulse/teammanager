@@ -1,4 +1,5 @@
 class StudentsController < ApplicationController
+  skip_before_filter :authenticate_user!, only: [:check]
   def index
     @students = Student.order :last_name
     respond_to do |format|
@@ -64,5 +65,27 @@ class StudentsController < ApplicationController
     Student.find(params[:id]).destroy
     flash[:notice] = 'Student deleted successfully.'
     redirect_to controller: 'students', action: 'index'
+  end
+  
+  def check
+    @display_student = ""
+    if params[:student]
+      name = params[:student]["name"]
+      id = params[:student]["id"]
+      candidates = Student.where("student_id = ?", id)
+      if candidates.any?
+        if candidates.first.full_name == name
+          @display_student = candidates.first
+          current_year = Date.today.month < 9 ? Date.today.year : Date.today.year + 1
+          @valid_safety_test = @display_student.safety_tests.where("year = ?", current_year).any?
+          @valid_team_due = @display_student.team_dues.where("year = ?", current_year).any?
+          @valid_medical = @display_student.medical_forms.select { |form| form.is_valid?}.any?
+        else
+          flash.now[:alert] = "This name doesn't match ID ##{id}. Please try again."
+        end
+      else
+        flash.now[:alert] = "This 4-digit ID doesn't exist. Please try again."
+      end
+    end
   end
 end
