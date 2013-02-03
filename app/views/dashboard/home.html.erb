@@ -1,7 +1,12 @@
 <% if not user_signed_in? %>
-<div style="text-align: center">
-  <%= link_to "Sign in as admin", new_user_session_path, class: "btn" %>
-  <%= link_to "Check your documents", student_check_path, class: "btn" %>
+  <h1>Welcome to the Team Manager!</h1>
+  <div style="text-align: center">
+    <h3>Team Members</h3>
+    <p><%= link_to "Check the status of your documents", student_check_path, class: "btn" %></p>
+    <h3>Team Administrators</h3>
+    <p><%= link_to "Sign in to the Team Manager", new_user_session_path, class: "btn" %></p>
+  </div>
 <% else %>
-  <p>Welcome back! </p>
+  <h1>Welcome back!</h1>
+  <p>Click on the links in the navbar to use the Team Manager.</p>
 <% end %>
