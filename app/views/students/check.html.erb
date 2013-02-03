@@ -1,9 +1,9 @@
 <% if @display_student == "" %>
   <h1>Check your documents </h1>
   <%= form_tag do %>
-    <%= label :student, :name, "Your Name: " %>
-    <%= text_field :student, :name, autofocus: :true %>
-    <%= label :student, :id, "Your 4-Digit ID: " %>
+    <%= label :student, :last_name, "Last Name: " %>
+    <%= text_field :student, :last_name, autofocus: :true %>
+    <%= label :student, :id, "4-Digit ID: " %>
     <%= text_field :student, :id %>
     <div class="form-actions">
       <%= submit_tag "Submit", class: "btn" %>

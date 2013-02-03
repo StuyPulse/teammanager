@@ -70,11 +70,11 @@ class StudentsController < ApplicationController
   def check
     @display_student = ""
     if params[:student]
-      name = params[:student]["name"]
+      last_name = params[:student]["last_name"]
       id = params[:student]["id"]
       candidates = Student.where("student_id = ?", id)
       if candidates.any?
-        if candidates.first.full_name == name
+        if candidates.first.last_name == last_name
           @display_student = candidates.first
           current_year = Date.today.month < 9 ? Date.today.year : Date.today.year + 1
           @valid_safety_test = @display_student.safety_tests.where("year = ?", current_year).any?
