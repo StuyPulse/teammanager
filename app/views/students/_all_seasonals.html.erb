@@ -11,7 +11,7 @@
         </tr>
       <% end %>
      
-      <%= render partial: "seasonal", object: seasonal, locals: {seasonal_type: seasonal_type.to_sym, year: year} %>
+      <%= render partial: "seasonal", object: seasonal, locals: {seasonal_type: seasonal_type.to_sym, year: year, read_only: read_only} %>
     <% end %>
     </table>
   </div>

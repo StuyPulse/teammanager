@@ -1,15 +1,17 @@
 <tr class="<%= seasonal ? "success" : "error" %> <%= "hidden" if year != @current_year %>" data-year="<%=year %>">
   <td><%= "#{year - 1}-#{year}" %> </td>
-  <td>
-  <% if seasonal %>
-    <%= form_for(seasonal, method: :delete, remote: true, html: {class: "delete-ajax"}) do |f| %>
-      <%= button_tag type: "submit", :'data-confirm' => "Delete #{seasonal_type.to_s.titleize}?", class: "btn" do %>
-        <i class="icon-remove"> </i>
+  <% unless read_only %>
+    <td>
+      <% if seasonal %>
+        <%= form_for(seasonal, method: :delete, remote: true, html: {class: "delete-ajax"}) do |f| %>
+          <%= button_tag type: "submit", :'data-confirm' => "Delete #{seasonal_type.to_s.titleize}?", class: "btn" do %>
+            <i class="icon-remove"> </i>
+          <% end %>
+        <% end %>
       <% end %>
-    <% end %>
-   <% end %>
-  <%= link_to polymorphic_path(seasonal_type, student_id: @student.id, year: year, action: :new), remote: true, class: "btn add-ajax #{"hidden" if seasonal}" do %>
-    <i class="icon-ok"> </i>
+      <%= link_to polymorphic_path(seasonal_type, student_id: @student.id, year: year, action: :new), remote: true, class: "btn add-ajax #{"hidden" if seasonal}" do %>
+        <i class="icon-ok"> </i>
+      <% end %>
+    </td>  
   <% end %>
-  </td>  
 </tr>
