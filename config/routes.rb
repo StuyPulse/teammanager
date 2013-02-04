@@ -3,6 +3,7 @@ Teammanager::Application.routes.draw do
 
   root to: 'dashboard#home'
 
+  match "students/check", as: :student_check
   resources :students
   resources :trips
   resources :safety_tests
