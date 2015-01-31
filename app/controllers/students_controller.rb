@@ -69,8 +69,8 @@ class StudentsController < ApplicationController
   
   def check
     if params[:student]
-      last_name = params[:student]["last_name"]
-      id = params[:student]["id"]
+      last_name = params[:student]["last_name"].strip
+      id = params[:student]["id"].strip
       candidates = Student.where("student_id = ?", id)
       if candidates.any?
         if candidates.first.last_name == last_name
