@@ -32,7 +32,7 @@
 
 <p>
   <strong>Phone:</strong>
-  <%= @student.phone %>
+  <%= formatted_phone_number(@student.phone) %>
 </p>
 
 <p>
@@ -57,12 +57,12 @@
 
 <p>
   <strong>Parent home phone:</strong>
-  <%= @student.parent_home_phone %>
+  <%= formatted_phone_number(@student.parent_home_phone) %>
 </p>
 
 <p>
   <strong>Parent cell phone:</strong>
-  <%= @student.parent_cell_phone %>
+  <%= formatted_phone_number(@student.parent_cell_phone) %>
 </p>
 
 <%= link_to 'Edit', edit_student_path(@student) %> |
