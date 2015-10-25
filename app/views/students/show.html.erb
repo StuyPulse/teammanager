@@ -37,7 +37,7 @@
 
 <p>
   <strong>Team:</strong>
-  <%= @student.team.display_name %>
+  <%= @student.team.try(:display_name) %>
 </p>
 
 <p>
