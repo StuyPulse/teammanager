@@ -45,3 +45,4 @@ group :development do
   gem 'spring'
 end
 
+gem 'devise', '~> 3.5.2'

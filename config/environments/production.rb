@@ -76,4 +76,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Devise told me to do this
+  config.action_mailer.default_url_options = { host: 'manage.stuypulse.com', port: 80 }
 end
