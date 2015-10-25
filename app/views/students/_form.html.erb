@@ -39,6 +39,10 @@
     <%= f.label :phone %><br>
     <%= f.text_field :phone %>
   </div>
+  <div class="field">
+    <%= f.label :team_id %><br>
+    <%= f.collection_select(:team_id, Team.all, :id, :display_name, prompt: true) %>
+  </div>
 
   <br/>
   <%# Parent information%>
