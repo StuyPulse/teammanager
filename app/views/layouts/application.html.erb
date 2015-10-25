@@ -2,15 +2,29 @@
 <html>
 <head>
   <title>TeamManager</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= render 'layouts/navbar' %>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-<%= yield %>
+  <div class="container">
+    <% if notice %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
 
+    <% if alert %>
+    <% end %>
+    <p class="alert"><%= alert %></p>
+
+    <%= yield %>
+
+    <hr>
+    <footer>
+      <p>&copy; <%= Time.now.year %> StuyPulse Robotics</p>
+    </footer>
+  </div>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>
