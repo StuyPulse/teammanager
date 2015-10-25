@@ -13,8 +13,8 @@ class Student < ActiveRecord::Base
 
   def format_data
     # Normalize phone numbers
-    phone.gsub!(/\D/, '')
-    parent_home_phone.gsub!(/\D/, '')
-    parent_cell_phone.gsub!(/\D/, '')
+    phone.gsub!(/\D/, '') unless phone.blank?
+    parent_home_phone.gsub!(/\D/, '') unless parent_home_phone.blank?
+    parent_cell_phone.gsub!(/\D/, '') unless parent_cell_phone.blank?
   end
 end
