@@ -74,5 +74,17 @@
 </div>
 
 <%= link_to 'Edit', edit_student_path(@student) %> |
-<%= link_to 'Destroy', @student, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'Destroy', @student, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+<div class="row">
+  <div class="col-md-4">
+    <h2>Safety Tests</h2>
+      <table class="table">
+        <tr>
+          <%= current_year_range %> <%= @student.has_valid_safety_test? %>
+        </tr>
+      </table>
+  </div>
+</div>
+
 <%= link_to 'Back', students_path %>
