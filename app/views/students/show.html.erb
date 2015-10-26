@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>First name:</strong>
   <%= @student.first_name %>
@@ -32,7 +30,7 @@
 
 <p>
   <strong>Phone:</strong>
-  <%= formatted_phone_number(@student.phone) %>
+  <%= number_to_phone(@student.phone) %>
 </p>
 
 <p>
@@ -57,13 +55,14 @@
 
 <p>
   <strong>Parent home phone:</strong>
-  <%= formatted_phone_number(@student.parent_home_phone) %>
+  <%= number_to_phone(@student.parent_home_phone) %>
 </p>
 
 <p>
   <strong>Parent cell phone:</strong>
-  <%= formatted_phone_number(@student.parent_cell_phone) %>
+  <%= number_to_phone(@student.parent_cell_phone) %>
 </p>
 
 <%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Destroy', @student, method: :delete, data: { confirm: 'Are you sure?' } %>
 <%= link_to 'Back', students_path %>

@@ -12,6 +12,7 @@
     <div class="collapse navbar-collapse" id="collapse">
       <ul class="nav navbar-nav">
         <li class="<%= active_class(students_path) %>"><%= link_to "Students", students_path %></li>
+        <li class="<%= active_class(teams_path) %>"><%= link_to "Teams", teams_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
