@@ -10,13 +10,7 @@
   <%= render 'layouts/navbar' %>
 
   <div class="container">
-    <% if notice %>
-      <p class="notice"><%= notice %></p>
-    <% end %>
-
-    <% if alert %>
-    <% end %>
-    <p class="alert"><%= alert %></p>
+    <%= render 'layouts/flash', flash: flash %>
 
     <%= yield %>
 
