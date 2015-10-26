@@ -9,6 +9,10 @@ class Student < ActiveRecord::Base
   validates :sark, length: { is: 4 },
                    numericality: { greater_than: 0 }
 
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
   private
 
   def format_data
