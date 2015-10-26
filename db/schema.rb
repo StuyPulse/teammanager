@@ -11,24 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151025221153) do
+ActiveRecord::Schema.define(version: 20151026005449) do
 
   create_table "students", force: :cascade do |t|
-    t.string   "first_name",        null: false
-    t.string   "last_name",         null: false
-    t.integer  "graduation_year",   null: false
+    t.string   "first_name",                null: false
+    t.string   "last_name",                 null: false
+    t.integer  "graduation_year",           null: false
     t.integer  "osis"
-    t.integer  "sark",              null: false
-    t.string   "email",             null: false
+    t.integer  "sark",                      null: false
+    t.string   "email",                     null: false
     t.string   "phone"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.string   "father_name"
     t.string   "mother_name"
     t.string   "parent_email"
     t.string   "parent_home_phone"
     t.string   "parent_cell_phone"
     t.integer  "team_id"
+    t.string   "parent_preferred_language"
   end
 
   add_index "students", ["email"], name: "index_students_on_email"
@@ -41,6 +42,7 @@ ActiveRecord::Schema.define(version: 20151025221153) do
   add_index "students", ["parent_cell_phone"], name: "index_students_on_parent_cell_phone"
   add_index "students", ["parent_email"], name: "index_students_on_parent_email"
   add_index "students", ["parent_home_phone"], name: "index_students_on_parent_home_phone"
+  add_index "students", ["parent_preferred_language"], name: "index_students_on_parent_preferred_language"
   add_index "students", ["phone"], name: "index_students_on_phone"
   add_index "students", ["sark"], name: "index_students_on_sark"
   add_index "students", ["team_id"], name: "index_students_on_team_id"
