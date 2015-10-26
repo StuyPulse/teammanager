@@ -1,5 +1,6 @@
 class Student < ActiveRecord::Base
   belongs_to :team
+  has_many :safety_tests
   before_save :format_data
   validates :first_name, :last_name, :graduation_year, :sark, :email, presence: true
   validates :osis, length: { is: 9 },
