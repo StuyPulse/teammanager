@@ -40,6 +40,7 @@ group :development do
 
   # Use Capistrano for deployment
   gem 'capistrano-bundler', '~> 1.1.4'
+  gem 'capistrano-figaro-yml', '~> 1.0.2'
   gem 'capistrano-rails', '~> 1.1.5'
   gem 'capistrano-rvm', '~> 0.1.2'
   gem 'capistrano3-puma', '~> 1.2.1'
@@ -51,3 +52,5 @@ gem 'devise', '~> 3.5.2'
 gem 'bootstrap-sass', '~> 3.3.5'
 # Use Puma as the app server
 gem 'puma', '~> 2.14.0'
+# Use figaro to manage application secrets
+gem 'figaro', '~> 1.1.1'
