@@ -10,6 +10,9 @@ set :branch, 'ns/new-and-improved'
 
 set :deploy_to, "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
 
+# Ensure the sqlite3 db goes to a shared directory
+set :linked_files, %w(db/production.sqlite3)
+
 set :pty,             true
 set :use_sudo,        false
 set :stage,           :production
