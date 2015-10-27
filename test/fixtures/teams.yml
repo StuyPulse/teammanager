@@ -2,10 +2,10 @@
 
 one:
   name: MyString
-  division: MyString
+  program: MyString
   number: 1
 
 two:
   name: MyString
-  division: MyString
+  program: MyString
   number: 1
