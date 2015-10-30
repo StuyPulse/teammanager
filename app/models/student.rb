@@ -15,15 +15,7 @@ class Student < ActiveRecord::Base
   end
 
   def has_valid_safety_test?
-    year = current_season_year
-    safety_tests.where(year: year).any?
-  end
-
-  def current_season_year
-    month = Time.now.month
-    year = Time.now.year
-
-    month < 9 ? year - 1 : year
+    safety_tests.valid.any?
   end
 
   private
