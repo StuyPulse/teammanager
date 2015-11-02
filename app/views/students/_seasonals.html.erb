@@ -1,0 +1,16 @@
+<div class="row">
+  <% Student::SEASONALS.each do |seasonal_type| %>
+    <div class="col-md-3">
+      <h2><%= seasonal_type.name.titleize.pluralize %></h2>
+      <table class="table">
+        <tbody>
+          <tr class="<%= @student.has_valid_seasonal?(seasonal_type) ? "success" : "danger" %>">
+            <td>
+              <%= current_year_range %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  <% end %>
+</div>

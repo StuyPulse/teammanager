@@ -1,6 +1,9 @@
 class Student < ActiveRecord::Base
+  SEASONALS = [SafetyTest]
+
   belongs_to :team
   has_many :safety_tests
+
   before_save :format_data
   validates :first_name, :last_name, :graduation_year, :sark, :email, presence: true
   validates :osis, length: { is: 9 },
@@ -14,8 +17,12 @@ class Student < ActiveRecord::Base
     "#{first_name} #{last_name}"
   end
 
-  def has_valid_safety_test?
-    safety_tests.valid.any?
+  def has_valid_seasonal?(type)
+    !valid_seasonal(type).nil?
+  end
+
+  def valid_seasonal(type)
+    try(type.name.underscore.pluralize.to_sym).valid.first
   end
 
   private
