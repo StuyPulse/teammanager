@@ -6,6 +6,7 @@ module Seasonal
   extend ActiveSupport::Concern
 
   included do
+    validates :student_id, :year, presence: true
     scope :valid, -> { where(year: current_season_year) }
   end
 

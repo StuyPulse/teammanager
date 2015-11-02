@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151027150126) do
+ActiveRecord::Schema.define(version: 20151102012755) do
 
   create_table "safety_tests", force: :cascade do |t|
     t.integer  "student_id"
