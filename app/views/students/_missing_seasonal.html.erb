@@ -2,7 +2,7 @@
   <td>
     <%= current_year_range %>
     <%= link_to polymorphic_path([@student, seasonal_type], seasonal_type.name.underscore.to_sym => {student_id: @student.id}, student_id: @student.id, format: :js), remote: true, method: :post do %>
-      <%= button_tag class: "btn btn-default glyphicon glyphicon-ok" do %>
+      <%= button_tag class: "btn btn-success btn-xs glyphicon glyphicon-ok pull-right" do %>
       <% end %>
     <% end %>
   </td>
