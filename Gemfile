@@ -44,6 +44,9 @@ group :development do
   gem 'capistrano-rails', '~> 1.1.5'
   gem 'capistrano-rvm', '~> 0.1.2'
   gem 'capistrano3-puma', '~> 1.2.1'
+
+  # Suppress asset pipeline messages in the log.
+  gem 'quiet_assets', '~> 1.1'
 end
 
 # User sessions and other account-related modules
