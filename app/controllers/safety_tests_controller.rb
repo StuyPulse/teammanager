@@ -8,9 +8,12 @@ class SafetyTestsController < ApplicationController
 
     respond_to do |format|
       if @safety_test.save
+        @student = @safety_test.student
+        format.js
         format.html { redirect_to @safety_test, notice: 'Safety test was successfully created.' }
         format.json { render :show, status: :created, location: @safety_test }
       else
+        format.js
         format.html { render :new }
         format.json { render json: @safety_test.errors, status: :unprocessable_entity }
       end
@@ -20,8 +23,11 @@ class SafetyTestsController < ApplicationController
   # DELETE /safety_tests/1
   # DELETE /safety_tests/1.json
   def destroy
+    @student = @safety_test.student
     @safety_test.destroy
+
     respond_to do |format|
+      format.js
       format.html { redirect_to safety_tests_url, notice: 'Safety test was successfully destroyed.' }
       format.json { head :no_content }
     end

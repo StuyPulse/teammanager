@@ -1,0 +1,9 @@
+<tr class="danger" id="invalid-<%= id_name(seasonal_type) %>">
+  <td>
+    <%= current_year_range %>
+    <%= link_to polymorphic_path([@student, seasonal_type], seasonal_type.name.underscore.to_sym => {student_id: @student.id}, student_id: @student.id, format: :js), remote: true, method: :post do %>
+      <%= button_tag class: "btn btn-default glyphicon glyphicon-ok" do %>
+      <% end %>
+    <% end %>
+  </td>
+</tr>

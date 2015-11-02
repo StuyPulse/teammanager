@@ -9,4 +9,8 @@ module SeasonalsHelper
       "#{year}-#{year+1}"
     end
   end
+
+  def id_name(seasonal_type)
+    seasonal_type.name.underscore.gsub("_", "-")
+  end
 end

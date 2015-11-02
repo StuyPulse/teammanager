@@ -17,10 +17,6 @@ class Student < ActiveRecord::Base
     "#{first_name} #{last_name}"
   end
 
-  def has_valid_seasonal?(type)
-    !valid_seasonal(type).nil?
-  end
-
   def valid_seasonal(type)
     try(type.name.underscore.pluralize.to_sym).valid.first
   end

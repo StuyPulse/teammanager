@@ -4,11 +4,11 @@
       <h2><%= seasonal_type.name.titleize.pluralize %></h2>
       <table class="table">
         <tbody>
-          <tr class="<%= @student.has_valid_seasonal?(seasonal_type) ? "success" : "danger" %>">
-            <td>
-              <%= current_year_range %>
-            </td>
-          </tr>
+          <% if @student.valid_seasonal(seasonal_type) %>
+            <%= render 'valid_seasonal', seasonal_type: seasonal_type %>
+          <% else %>
+            <%= render 'missing_seasonal', seasonal_type: seasonal_type %>
+          <% end %>
         </tbody>
       </table>
     </div>
