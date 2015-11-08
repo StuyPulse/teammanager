@@ -1,8 +1,9 @@
 class Student < ActiveRecord::Base
-  SEASONALS = [SafetyTest]
+  SEASONALS = [SafetyTest, Medical]
 
   belongs_to :team
   has_many :safety_tests
+  has_many :medicals
 
   before_save :format_data
   validates :first_name, :last_name, :graduation_year, :sark, :email, presence: true
