@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151108212255) do
+ActiveRecord::Schema.define(version: 20151108215429) do
+
+  create_table "media_consents", force: :cascade do |t|
+    t.integer  "student_id", null: false
+    t.integer  "year",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "media_consents", ["student_id"], name: "index_media_consents_on_student_id"
+  add_index "media_consents", ["year"], name: "index_media_consents_on_year"
 
   create_table "medicals", force: :cascade do |t|
     t.integer  "student_id", null: false

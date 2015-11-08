@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :media_consents
   resources :teams
  devise_for :users
   root 'students#index'
@@ -7,6 +8,7 @@ Rails.application.routes.draw do
     resources :safety_tests, only: [:create, :destroy]
     resources :medicals, only: [:create, :destroy]
     resources :team_dues, only: [:create, :destroy]
+    resources :media_consents, only: [:create, :destroy]
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
