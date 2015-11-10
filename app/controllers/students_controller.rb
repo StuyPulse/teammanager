@@ -7,6 +7,10 @@ class StudentsController < ApplicationController
     @students = Student.order(:last_name)
   end
 
+  def dashboard
+    @students = Student.order(:last_name)
+  end
+
   # GET /students/1
   # GET /students/1.json
   def show

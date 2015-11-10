@@ -1,1 +1,5 @@
+<% if @button %>
+$("#invalid-safety-test-button").replaceWith("<%=j render partial: 'seasonals/valid_button', locals: { student: @safety_test.student, seasonal_type: :safety_test } %>")
+<% else %>
 $("#invalid-safety-test").replaceWith("<%=j render partial: 'seasonals/valid_seasonal', locals: { student: @safety_test.student, seasonal_type: :safety_test } %>")
+<% end %>

@@ -1,0 +1,6 @@
+<td class="col-md-1" id="valid-<%= id_name(seasonal_type) %>-button">
+<%= link_to polymorphic_path([student, student.valid_seasonal(seasonal_type)], button: true), remote: true, method: :delete, data: { confirm: "Are you sure?" } do %>
+  <%= button_tag class: "btn btn-danger glyphicon #{glyphicon(seasonal_type)}" do %>
+  <% end %>
+<% end %>
+</td>

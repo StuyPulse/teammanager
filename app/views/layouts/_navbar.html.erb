@@ -11,7 +11,13 @@
 
     <div class="collapse navbar-collapse" id="collapse">
       <ul class="nav navbar-nav">
-        <li class="<%= active_class(students_path) %>"><%= link_to "Students", students_path %></li>
+        <li class="<%= active_class(students_path) %> dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Students<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "List", students_path %></li>
+            <li><%= link_to "Dashboard", dashboard_students_path %></li>
+          </ul>
+        </li>
         <li class="<%= active_class(teams_path) %>"><%= link_to "Teams", teams_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">

@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :students do
     resources :media_consents, :medicals, :safety_tests, :team_dues,
       only: [:create, :destroy]
+
+    get 'dashboard', on: :collection
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
