@@ -1,5 +1,5 @@
 class Student < ActiveRecord::Base
-  SEASONALS = [ MediaConsent, Medical, SafetyTest, TeamDue ]
+  SEASONALS = [:media_consent, :medical, :safety_test, :team_due]
 
   belongs_to :team
   has_many :safety_tests
@@ -21,7 +21,7 @@ class Student < ActiveRecord::Base
   end
 
   def valid_seasonal(type)
-    try(type.name.underscore.pluralize.to_sym).valid.first
+    try(type.to_s.pluralize).try(:valid).try(:first)
   end
 
   private
