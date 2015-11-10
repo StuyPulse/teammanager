@@ -5,9 +5,9 @@
       <table class="table">
         <tbody>
           <% if @student.valid_seasonal(seasonal_type) %>
-            <%= render 'valid_seasonal', seasonal_type: seasonal_type %>
+            <%= render 'seasonals/valid_seasonal', seasonal_type: seasonal_type %>
           <% else %>
-            <%= render 'missing_seasonal', seasonal_type: seasonal_type %>
+            <%= render 'seasonals/missing_seasonal', seasonal_type: seasonal_type %>
           <% end %>
         </tbody>
       </table>
