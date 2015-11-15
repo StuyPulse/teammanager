@@ -6,6 +6,7 @@ class Student < ActiveRecord::Base
   has_many :medicals
   has_many :team_dues
   has_many :media_consents
+  has_many :community_services
 
   before_save :format_data
   validates :first_name, :last_name, :graduation_year, :sark, :email, presence: true

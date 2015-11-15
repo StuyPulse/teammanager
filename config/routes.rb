@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
+  resources :community_services
   root 'students#index'
 
   resources :teams
   devise_for :users
 
   resources :students do
-    resources :media_consents, :medicals, :safety_tests, :team_dues,
+    resources :media_consents, :medicals, :safety_tests, :team_dues, :community_services,
       only: [:create, :destroy]
 
     get 'dashboard', on: :collection

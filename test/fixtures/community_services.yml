@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  student_id: 
+  year: 1
+  description: MyString
+  hours: 1.5
+
+two:
+  student_id: 
+  year: 1
+  description: MyString
+  hours: 1.5
