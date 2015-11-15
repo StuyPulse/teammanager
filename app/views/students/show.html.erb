@@ -3,7 +3,7 @@
 </div>
 
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-4">
     <h2>Student</h2>
 
     <p><strong>Graduation year:</strong> <%= @student.graduation_year %></p>
@@ -14,7 +14,7 @@
     <p><strong>Team:</strong> <%= @student.team.try(:display_name) %></p>
   </div>
 
-  <div class="col-md-6">
+  <div class="col-md-4">
     <h2>Parent</h2>
 
     <p><strong>Father name:</strong> <%= @student.father_name %></p>
@@ -23,6 +23,11 @@
     <p><strong>Parent home phone:</strong> <%= number_to_phone(@student.parent_home_phone, area_code: true) %></p>
     <p><strong>Parent cell phone:</strong> <%= number_to_phone(@student.parent_cell_phone, area_code: true) %></p>
     <p><strong>Parent preferred language:</strong> <%= @student.parent_preferred_language %></p>
+  </div>
+
+  <div class="col-md-4">
+    <h2>Community Service</h2>
+    <%= render 'community_services/student_community_services' %>
   </div>
 </div>
 

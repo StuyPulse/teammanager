@@ -1,0 +1,16 @@
+<table class ="table">
+  <thead>
+    <tr>
+      <td>Description</td>
+      <td>Hours</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @student.community_services.valid.each do |service| %>
+      <tr>
+        <td><%= service.description %></td>
+        <td><%= service.hours %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
