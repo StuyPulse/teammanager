@@ -1,59 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Team Manager</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= yield :extra_stylesheets %>
-
-  <%= javascript_include_tag "application" %>
-  <%= yield :extra_javascripts %>
-
+  <title>TeamManager</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="navbar-inner">
-      <div class="container">
-        <%= link_to 'Team Manager', root_url, class: 'brand' %>
-        <% if user_signed_in? %>
-          <ul class="nav">
-            <li><%= link_to 'Students', students_path %></li>
-            <li><%= link_to 'Trips', trips_path %></li>
-            <li><%= link_to "Dinners", dinners_path %> </li>
-          </ul>
-          <ul class="nav pull-right">
-            <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
-          </ul>
-        <% end %>
-      </div>
-    </div>
-  </div>
+  <%= render 'layouts/navbar' %>
 
   <div class="container">
-    <% if notice %>
-      <div class="row">
-        <div class="span12">
-          <div class="alert alert-success">
-            <button type="button" class="close" data-dismiss="alert">×</button>
-            <%= notice %>
-          </div>
-        </div>
-      </div>
-    <% end %>
-    <% if alert %>
-      <div class="row">
-        <div class="span12">
-          <div class="alert alert-error">
-            <button type="button" class="close" data-dismiss="alert">×</button>
-            <%= alert %>
-          </div>
-        </div>
-      </div>
-    <% end %>
+    <%= render 'layouts/flash', flash: flash %>
+
     <%= yield %>
+
     <hr>
     <footer>
-      <p>&copy; 2013 The Stuypulse Web Team</p>
+      <p>&copy; <%= Time.now.year %> StuyPulse Robotics</p>
     </footer>
   </div>
 </body>

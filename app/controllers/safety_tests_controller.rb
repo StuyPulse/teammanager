@@ -1,30 +1,46 @@
 class SafetyTestsController < ApplicationController
-  respond_to :html, :js
-  def new
-    @safety_test = SafetyTest.new
-    @safety_test.student_id = params[:student_id]
-    @safety_test.year = params[:year] 
-    @safety_test.save
-  end
+  before_action :set_safety_test, only: [:destroy]
 
+  # POST /safety_tests
+  # POST /safety_tests.json
   def create
-    @safety_test = Student.find(params[:student_id]).safety_tests.new params[:safety_test]
-    if @safety_test.save
-      flash[:notice] = 'Safety test added successfully.'
-      redirect_to controller: 'students', action: 'show', id: params[:student_id]
-    else
-      flash.now[:alert] = @safety_test.errors.full_messages.join('<br>').html_safe
-      render action: 'new'
+    @safety_test = SafetyTest.new(safety_test_params)
+
+    respond_to do |format|
+      if @safety_test.save
+        @student = @safety_test.student
+        format.js
+        format.html { redirect_to @safety_test, notice: 'Safety test was successfully created.' }
+        format.json { render :show, status: :created, location: @safety_test }
+      else
+        format.js
+        format.html { render :new }
+        format.json { render json: @safety_test.errors, status: :unprocessable_entity }
+      end
     end
   end
 
+  # DELETE /safety_tests/1
+  # DELETE /safety_tests/1.json
   def destroy
-    test = SafetyTest.find(params[:id])
-    student = test.student
-    test.destroy
+    @student = @safety_test.student
+    @safety_test.destroy
+
     respond_to do |format|
-      format.html {redirect_to(student, notice: "Safety test deleted.") }
-      format.js { render nothing: true }
+      format.js
+      format.html { redirect_to safety_tests_url, notice: 'Safety test was successfully destroyed.' }
+      format.json { head :no_content }
     end
   end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_safety_test
+      @safety_test = SafetyTest.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def safety_test_params
+      params.require(:safety_test).permit(:student_id, :year)
+    end
 end

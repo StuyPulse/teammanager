@@ -1,0 +1,79 @@
+<%= form_for(@student) do |f| %>
+  <% if @student.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+      <ul>
+      <% @student.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>Fields marked with an asterisk (*) are required.<p>
+
+  <div class="field">
+    <%= f.label :first_name, 'First Name*' %><br>
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name, 'Last Name*' %><br>
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :graduation_year, 'Graduation Year*' %><br>
+    <%= f.number_field :graduation_year %>
+  </div>
+  <div class="field">
+    <%= f.label :osis, 'OSIS' %><br>
+    <%= f.number_field :osis %>
+  </div>
+  <div class="field">
+    <%= f.label :sark, 'SARK ID (4-digit)*' %><br>
+    <%= f.number_field :sark %>
+  </div>
+  <div class="field">
+    <%= f.label :email, 'Email*' %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br>
+    <%= f.text_field :phone %>
+  </div>
+  <div class="field">
+    <%= f.label :team_id %><br>
+    <%= f.collection_select(:team_id, Team.all, :id, :display_name, prompt: true) %>
+  </div>
+
+  <br/>
+  <%# Parent information%>
+
+  <div class="field">
+    <%= f.label :father_name %><br>
+    <%= f.text_field :father_name %>
+  </div>
+  <div class="field">
+    <%= f.label :mother_name %><br>
+    <%= f.text_field :mother_name %>
+  </div>
+  <div class="field">
+    <%= f.label :parent_email %><br>
+    <%= f.text_field :parent_email %>
+  </div>
+  <div class="field">
+    <%= f.label :parent_home_phone %><br>
+    <%= f.text_field :parent_home_phone %>
+  </div>
+  <div class="field">
+    <%= f.label :parent_cell_phone %><br>
+    <%= f.text_field :parent_cell_phone %>
+  </div>
+  <div class="field">
+    <%= f.label :parent_preferred_language %><br>
+    <%= f.text_field :parent_preferred_language %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

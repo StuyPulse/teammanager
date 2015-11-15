@@ -1,0 +1,9 @@
+<tr class="success" id="valid-<%= id_name(seasonal_type) %>">
+  <td>
+    <%= current_year_range %>
+    <%= link_to polymorphic_path([@student, @student.valid_seasonal(seasonal_type)]), remote: true, method: :delete, data: { confirm: "Are you sure?" } do %>
+      <%= button_tag class: "btn btn-danger btn-xs glyphicon glyphicon-remove pull-right" do %>
+      <% end %>
+    <% end %>
+  </td>
+</tr>

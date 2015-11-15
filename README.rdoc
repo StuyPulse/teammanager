@@ -1,5 +1,0 @@
-== Team Manager
-A Rails-based team administration and organization project. Information can be entered and is stored in a database, from where it is readily accessable and searchable. Exporting students to CSV is also supported.
-
-Created and developed by Stuy 694, Stuypulse Robotics
-

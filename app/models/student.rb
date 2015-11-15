@@ -1,113 +1,35 @@
-# == Schema Information
-#
-# Table name: students
-#
-#  id                 :integer          not null, primary key
-#  first_name         :string(255)
-#  last_name          :string(255)
-#  year               :integer
-#  student_email      :string(255)
-#  student_cell_phone :string(255)
-#  mother_name        :string(255)
-#  father_name        :string(255)
-#  preferred_language :string(255)
-#  parent_email       :string(255)
-#  parent_home_phone  :string(255)
-#  parent_cell_phone  :string(255)
-#  created_at         :datetime         not null
-#  updated_at         :datetime         not null
-#  student_id         :integer
-#
-
-require 'csv'
-
 class Student < ActiveRecord::Base
-  attr_accessible :father_name, :first_name, :last_name, :mother_name, :parent_cell_phone, :parent_email, :parent_home_phone, :preferred_language, :student_cell_phone, :student_email, :student_id, :year
-  has_many :medical_forms
-  has_many :safety_tests
-  has_many :parent_permission_forms
-  has_many :teacher_permission_forms
-  has_many :trip_fees
-  has_many :trip_deposits
-  has_many :team_dues
-  has_many :p_trips, through: :parent_permission_forms, source: :trip
-  has_many :t_trips, through: :teacher_permission_forms, source: :trip
-  validates :first_name, presence: true
-  validates :last_name, presence: true
+  SEASONALS = [:media_consent, :medical, :safety_test, :team_due]
 
-  before_save :remove_non_digits_from_phone_number
+  belongs_to :team
+  has_many :safety_tests
+  has_many :medicals
+  has_many :team_dues
+  has_many :media_consents
+
+  before_save :format_data
+  validates :first_name, :last_name, :graduation_year, :sark, :email, presence: true
+  validates :osis, length: { is: 9 },
+                   numericality: { greater_than: 0 },
+                   allow_blank: true
+
+  validates :sark, length: { is: 4 },
+                   numericality: { greater_than: 0 }
 
   def full_name
-    "#{self.first_name} #{self.last_name}"
+    "#{first_name} #{last_name}"
   end
 
-  def has_valid_medical_on date
-    self.medical_forms.where('date > ?', date - 1.year).count > 0
+  def valid_seasonal(type)
+    try(type.to_s.pluralize).try(:valid).try(:first)
   end
 
-  def remove_non_digits_from_phone_number
-    student_cell_phone.gsub! /\D/, ''
-    parent_home_phone.gsub! /\D/, ''
-    parent_cell_phone.gsub! /\D/, ''
-  end
+  private
 
-  def all_trips
-    (self.p_trips + self.t_trips).sort { |a, b| b.date <=> a.date } # Sort by date descending
-  end
-
-  def has_parent_permission_form_for trip
-    self.parent_permission_forms.where(trip_id: trip.id).count > 0
-  end
-
-  def has_teacher_permission_form_for trip
-    self.teacher_permission_forms.where(trip_id: trip.id).count > 0
-  end
-
-  def has_trip_deposit_for trip
-    self.trip_deposits.where(trip_id: trip.id).count > 0
-  end
-  def has_trip_fee_for trip
-    self.trip_fees.where(trip_id: trip.id).count > 0
-  end
-
-  def can_attend_trip trip
-    self.has_parent_permission_form_for trip \
-    and (!trip.requires_teacher_permission_form or self.has_teacher_permission_form_for trip) \
-    and (!trip.requires_trip_deposit or self.has_trip_deposit_for trip) \
-    and (!trip.requires_trip_fee or self.has_trip_fee_for trip) \
-    and (!trip.requires_medical_form or self.has_valid_medical_on trip.end_date)
-  end
-  def self.to_csv
-    csv_string = CSV.generate do |csv|
-      column_headers = []
-      column_headers += column_names.map { |name| Student.human_attribute_name(name) }
-      column_headers << "Safety Test?"
-      column_headers << "Medical Form?"
-      column_headers << "Team Dues?"
-      csv << column_headers
-      Student.order(:last_name).each do |student|
-         column_values = []
-         column_values += student.attributes.values_at(*column_names)
-         
-         if student.safety_tests.any? 
-           column_values << (student.safety_tests.order('year DESC').first.is_valid? ? "YES" : "NO")
-         else
-           column_values << "NO"
-         end
-
-         if student.medical_forms.any?
-           column_values << (student.medical_forms.order('date DESC').first.is_valid? ? "YES" : "NO")
-         else
-           column_values << "NO"
-         end
-
-         if student.team_dues.any?
-           column_values << (student.team_dues.order('year DESC').first.is_valid? ? "YES" : "NO" )
-         else
-           column_values << "NO"
-         end
-           csv << column_values
-      end
-    end
+  def format_data
+    # Normalize phone numbers
+    phone.gsub!(/\D/, '') unless phone.blank?
+    parent_home_phone.gsub!(/\D/, '') unless parent_home_phone.blank?
+    parent_cell_phone.gsub!(/\D/, '') unless parent_cell_phone.blank?
   end
 end

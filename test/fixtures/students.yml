@@ -1,50 +1,19 @@
-# == Schema Information
-#
-# Table name: students
-#
-#  id                 :integer          not null, primary key
-#  first_name         :string(255)
-#  last_name          :string(255)
-#  year               :integer
-#  student_email      :string(255)
-#  student_cell_phone :string(255)
-#  mother_name        :string(255)
-#  father_name        :string(255)
-#  preferred_language :string(255)
-#  parent_email       :string(255)
-#  parent_home_phone  :string(255)
-#  parent_cell_phone  :string(255)
-#  created_at         :datetime         not null
-#  updated_at         :datetime         not null
-#  student_id         :integer
-#
-
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
   first_name: MyString
   last_name: MyString
-  year: 1
-  id: 1
-  student_email: MyString
-  student_cell_phone: 1
-  mother_name: MyString
-  father_name: MyString
-  preferred_language: MyString
-  parent_email: MyString
-  parent_home_phone: 1
-  parent_cell_phone: 1
+  graduation_year: 1
+  osis: 1
+  sark: 1
+  email: MyString
+  phone: MyString
 
 two:
   first_name: MyString
   last_name: MyString
-  year: 1
-  id: 1
-  student_email: MyString
-  student_cell_phone: 1
-  mother_name: MyString
-  father_name: MyString
-  preferred_language: MyString
-  parent_email: MyString
-  parent_home_phone: 1
-  parent_cell_phone: 1
+  graduation_year: 1
+  osis: 1
+  sark: 1
+  email: MyString
+  phone: MyString

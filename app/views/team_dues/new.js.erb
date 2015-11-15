@@ -1,7 +1,0 @@
-var team_due_row = $("table[data-subject=team_dues]").find("tr[data-year=<%= @team_due.year %>]")[0];
-$(team_due_row).removeClass("error").addClass("success");
-
-var add_team_due = $(team_due_row).find(".add-ajax");
-$(add_team_due).addClass("hidden");
-
-$(add_team_due).after('<%= form_for(@team_due, method: :delete, remote: true, html: {class: "delete-ajax"}) do |f| %> <button type="submit" data-confirm="Delete Team Due?" class="btn btn-danger">       <i class="icon-remove"> </i>      </button>    <% end %> ');
