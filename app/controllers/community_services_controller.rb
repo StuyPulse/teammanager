@@ -4,13 +4,13 @@ class CommunityServicesController < ApplicationController
   # post /community_services
   # post /community_services.json
   def create
-    @community_service = communityservice.new(community_service_params)
+    @community_service = CommunityService.new(community_service_params)
 
     respond_to do |format|
       if @community_service.save
-        @student = @community_services.student
+        @student = @community_service.student
         format.js
-        format.html { redirect_to @community_service, notice: 'community service was successfully created.' }
+        format.html { redirect_to @community_service, notice: 'Community service was successfully created.' }
         format.json { render :show, status: :created, location: @community_service }
       else
         format.js

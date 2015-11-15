@@ -1,22 +1,31 @@
-<table class ="table">
-  <thead>
-    <tr>
-      <td>Description</td>
-      <td>Hours</td>
-    </tr>
-  </thead>
-  <tbody>
-    <% @student.community_services.valid.each do |service| %>
-      <tr id="<%= dom_id(service) %>">
-        <td><%= service.description %></td>
-        <td><%= service.hours %></td>
-        <td>
-          <%= link_to student_community_service_path(@student, service), remote: true, method: :delete, data: { confirm: "Are you sure?" } do %>
-            <%= button_tag class: "btn btn-danger btn-xs glyphicon glyphicon-remove pull-right" do %>
-            <% end %>
-          <% end %>
-        </td>
+<div id="community_services">
+  <table class="table">
+    <thead>
+      <tr>
+        <td>Description</td>
+        <td>Hours</td>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @student.community_services.valid.each do |service| %>
+        <tr id="<%= dom_id(service) %>">
+          <td><%= service.description %></td>
+          <td><%= service.hours %></td>
+          <td>
+            <%= link_to student_community_service_path(@student, service), remote: true, method: :delete, data: { confirm: "Are you sure?" } do %>
+              <%= button_tag class: "btn btn-danger btn-xs glyphicon glyphicon-remove pull-right" do %>
+              <% end %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= form_for CommunityService.new, remote: true do |f| %>
+    <%= f.hidden_field :student_id, value: @student.id %>
+    <%= f.text_field :description, placeholder: "Description" %>
+    <%= f.number_field :hours, step: 0.25, placeholder: "Hours" %>
+    <%= f.button "", class: "btn btn-success btn-xs glyphicon glyphicon-ok" %>
+  <% end %>
+</div>
