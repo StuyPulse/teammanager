@@ -6,7 +6,7 @@ server 'manage.stuypulse.com', port: 22, roles: [:web, :app, :db], primary: true
 set :application, 'teammanager'
 set :repo_url, 'git@github.com:Team694/teammanager.git'
 set :user, 'deploy'
-set :branch, 'ns/new-and-improved'
+set :branch, 'master'
 
 set :deploy_to, "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
 
