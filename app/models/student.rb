@@ -25,6 +25,10 @@ class Student < ActiveRecord::Base
     try(type.to_s.pluralize).try(:valid).try(:first)
   end
 
+  def total_service_hours
+    community_services.valid.sum(:hours)
+  end
+
   private
 
   def format_data
