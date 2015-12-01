@@ -20,6 +20,10 @@
         </tr>
       <% end %>
     </tbody>
+    <tr>
+      <td><b>Total</b></td>
+      <td><b><%= @student.total_service_hours %></b></td>
+    </tr>
   </table>
 
   <%= form_for CommunityService.new, remote: true do |f| %>
