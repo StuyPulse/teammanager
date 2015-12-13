@@ -1,0 +1,17 @@
+<h1>Welcome to Team Manager!</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h3>Check the status of your documents:</h3>
+    <%= form_tag check_students_path, class: 'form-inline' do %>
+      <div class="form-group">
+        <%= label :student, :last_name, 'Last Name:' %>
+        <%= text_field :student, :last_name, placeholder: 'Smith', autofocus: true %>
+      </div>
+      <div class="form-group">
+        <%= label :student, :osis, 'OSIS:' %>
+        <%= number_field :student, :osis, placeholder: '200000000' %>
+      </div>
+      <%= submit_tag 'Check', class: 'btn btn-default' %>
+    <% end %>
+  </div>
+</div>

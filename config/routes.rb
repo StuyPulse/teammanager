@@ -1,15 +1,20 @@
 Rails.application.routes.draw do
-  resources :community_services
-  root 'students#index'
+  root 'static#home'
 
-  resources :teams
   devise_for :users
+
+  resources :community_services
+  resources :teams
 
   resources :students do
     resources :media_consents, :medicals, :safety_tests, :team_dues, :community_services,
       only: [:create, :destroy]
 
-    get 'dashboard', on: :collection
+    collection do
+      get 'check', to: redirect('/students')
+      post 'check'
+      get 'dashboard'
+    end
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

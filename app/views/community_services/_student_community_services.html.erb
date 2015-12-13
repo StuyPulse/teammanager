@@ -26,10 +26,12 @@
     </tr>
   </table>
 
-  <%= form_for CommunityService.new, remote: true do |f| %>
-    <%= f.hidden_field :student_id, value: @student.id %>
-    <%= f.text_field :description, placeholder: "Description" %>
-    <%= f.number_field :hours, step: 0.25, placeholder: "Hours" %>
-    <%= f.button "", class: "btn btn-success btn-xs glyphicon glyphicon-ok" %>
+  <% if current_user %>
+    <%= form_for CommunityService.new, remote: true do |f| %>
+      <%= f.hidden_field :student_id, value: @student.id %>
+      <%= f.text_field :description, placeholder: "Description" %>
+      <%= f.number_field :hours, step: 0.25, placeholder: "Hours" %>
+      <%= f.button "", class: "btn btn-success btn-xs glyphicon glyphicon-ok" %>
+    <% end %>
   <% end %>
 </div>

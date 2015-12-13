@@ -1,8 +1,10 @@
 <tr class="danger" id="invalid-<%= id_name(seasonal_type) %>">
   <td>
     <%= current_year_range %>
-    <%= link_to polymorphic_path([@student, seasonal_type.to_s.pluralize], seasonal_type => {student_id: @student.id}), remote: true, method: :post do %>
-      <%= button_tag class: "btn btn-success btn-xs glyphicon glyphicon-ok pull-right" do %>
+    <% if current_user %>
+      <%= link_to polymorphic_path([@student, seasonal_type.to_s.pluralize], seasonal_type => {student_id: @student.id}), remote: true, method: :post do %>
+        <%= button_tag class: "btn btn-success btn-xs glyphicon glyphicon-ok pull-right" do %>
+        <% end %>
       <% end %>
     <% end %>
   </td>
