@@ -1,0 +1,18 @@
+<h1>Welcome to the Team Manager!</h1>
+<div style="text-align: center">
+  <h3>Team Members</h3>
+  <h4>Check the status of your documents:</h4>
+  <%= form_tag(check_students_path) do %>
+    <div class="field">
+      <%= label :student, :last_name, 'Last Name:' %>
+      <%= text_field :student, :last_name, autofocus: true %>
+    </div>
+    <div class="field">
+      <%= label :student, :osis, 'OSIS:' %>
+      <%= number_field :student, :osis, autofocus: true %>
+    </div>
+    <div class="actions">
+      <%= submit_tag 'Check Info' %>
+    </div>
+  <% end %>
+</div>
