@@ -1,5 +1,10 @@
 <h1>Students</h1>
 
+<div class="pull-right">
+  <%= link_to 'New Student', new_student_path, class: 'btn btn-primary' %>
+  <%= link_to 'Export to CSV', params.merge(format: :csv), class: 'btn btn-primary' %>
+</div>
+
 <table class="table">
   <thead>
     <tr>
@@ -29,7 +34,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Student', new_student_path %>

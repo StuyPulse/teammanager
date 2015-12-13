@@ -1,3 +1,5 @@
+require 'csv'
+
 class Student < ActiveRecord::Base
   SEASONALS = [:media_consent, :medical, :safety_test, :team_due]
 
@@ -27,6 +29,15 @@ class Student < ActiveRecord::Base
 
   def total_service_hours
     community_services.valid.sum(:hours)
+  end
+
+  def self.to_csv
+    CSV.generate do |csv|
+      csv << column_names
+      order(:id).each do |student|
+        csv << student.attributes.values_at(*column_names)
+      end
+    end
   end
 
   private

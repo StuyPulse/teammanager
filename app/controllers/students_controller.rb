@@ -6,6 +6,10 @@ class StudentsController < ApplicationController
   # GET /students.json
   def index
     @students = Student.order(:last_name)
+    respond_to do |format|
+      format.html
+      format.csv { render text: @students.to_csv }
+    end
   end
 
   def dashboard
