@@ -1,14 +1,17 @@
-Rails.application.routes.draw do resources :community_services
+Rails.application.routes.draw do
   root 'static#home'
 
-  resources :teams
   devise_for :users
+
+  resources :community_services
+  resources :teams
 
   resources :students do
     resources :media_consents, :medicals, :safety_tests, :team_dues, :community_services,
       only: [:create, :destroy]
 
     collection do
+      get 'check', to: redirect('/students')
       post 'check'
       get 'dashboard'
     end

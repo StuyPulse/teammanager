@@ -31,9 +31,13 @@
   </div>
 </div>
 
-<%= link_to 'Edit', edit_student_path(@student) %> |
-<%= link_to 'Destroy', @student, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% if current_user %>
+  <%= link_to 'Edit', edit_student_path(@student) %> |
+  <%= link_to 'Destroy', @student, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
 
 <%= render 'seasonals/seasonals' %>
 
-<%= link_to 'Back', students_path %>
+<% if current_user %>
+  <%= link_to 'Back', students_path %>
+<% end %>
