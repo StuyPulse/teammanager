@@ -33,10 +33,10 @@ class Student < ActiveRecord::Base
 
   def self.to_csv
     CSV.generate do |csv|
-      csv << column_names + (SEASONALS.map {|seasonal| "#{seasonal.to_s.pluralize}?"})
+      csv << column_names + (SEASONALS.map { |s| "has_#{s.to_s.pluralize}?" })
       order(:id).each do |student|
-        statuses_of_seasonals = (SEASONALS.map {|seasonal| student.valid_seasonal(seasonal) != nil})
-        csv << student.attributes.values_at(*column_names) + statuses_of_seasonals
+        statuses_of_seasonals = student.attributes.values_at(*column_names) + (SEASONALS.map { |s| student.valid_seasonal(s).nil? })
+        csv << statuses_of_seasonals
       end
     end
   end
