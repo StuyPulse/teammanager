@@ -1,7 +1,7 @@
-<% Student::SEASONALS.each do |seasonal_type| %>
-  <% if student.valid_seasonal(seasonal_type) %>
-    <%= render 'seasonals/valid_button', seasonal_type: seasonal_type, student: student %>
+<% Seasonal.seasonal_types.each do |type, _| %>
+  <% if student.valid_seasonal(type) %>
+    <%= render 'seasonals/valid_button', seasonal_type: type, student: student %>
   <% else %>
-    <%= render 'seasonals/missing_button', seasonal_type: seasonal_type, student: student %>
+    <%= render 'seasonals/missing_button', seasonal_type: type, student: student %>
   <% end %>
 <% end %>

@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :seasonals
   root 'static#home'
 
   devise_for :users
@@ -8,8 +7,7 @@ Rails.application.routes.draw do
   resources :teams
 
   resources :students do
-    resources :media_consents, :medicals, :safety_tests, :team_dues, :community_services,
-      only: [:create, :destroy]
+    resources :seasonals, :community_services, only: [:create, :destroy]
 
     collection do
       get 'check', to: redirect('/students')
