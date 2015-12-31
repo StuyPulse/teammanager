@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151115195947) do
+ActiveRecord::Schema.define(version: 20151231032526) do
 
   create_table "community_services", force: :cascade do |t|
     t.integer  "student_id",  null: false
@@ -54,6 +54,18 @@ ActiveRecord::Schema.define(version: 20151115195947) do
 
   add_index "safety_tests", ["student_id"], name: "index_safety_tests_on_student_id"
   add_index "safety_tests", ["year"], name: "index_safety_tests_on_year"
+
+  create_table "seasonals", force: :cascade do |t|
+    t.integer  "student_id",    null: false
+    t.integer  "year",          null: false
+    t.integer  "seasonal_type", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "seasonals", ["seasonal_type"], name: "index_seasonals_on_seasonal_type"
+  add_index "seasonals", ["student_id"], name: "index_seasonals_on_student_id"
+  add_index "seasonals", ["year"], name: "index_seasonals_on_year"
 
   create_table "students", force: :cascade do |t|
     t.string   "first_name",                null: false

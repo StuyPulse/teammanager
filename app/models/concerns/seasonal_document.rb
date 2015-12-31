@@ -8,12 +8,13 @@
 # that school year.
 # Ex.: A safety test with year 2015 is valid for the 2014-2015 school year.
 # Ex.: A team due with year 2016 is valid for the 2015-2016 school year.
-module Seasonal
+module SeasonalDocument
   extend ActiveSupport::Concern
 
   included do
-    validates :student_id, :year, presence: true
+    belongs_to :student
 
+    validates :student_id, :year, presence: true
     before_validation :add_current_year
 
     scope :valid, -> { where(year: current_season_year) }

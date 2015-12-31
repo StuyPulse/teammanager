@@ -47,6 +47,9 @@ group :development do
 
   # Suppress asset pipeline messages in the log.
   gem 'quiet_assets', '~> 1.1'
+
+  # Use pry for `rails c`
+  gem 'pry-rails', '~> 0.3.4'
 end
 
 # User sessions and other account-related modules

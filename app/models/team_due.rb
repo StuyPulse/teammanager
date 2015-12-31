@@ -1,5 +1,5 @@
 class TeamDue < ActiveRecord::Base
-  include Seasonal
+  include SeasonalDocument
 
   belongs_to :student
 end

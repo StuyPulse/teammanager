@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @seasonal.student %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @seasonal.year %>
+</p>
+
+<p>
+  <strong>Seasonal type:</strong>
+  <%= @seasonal.seasonal_type %>
+</p>
+
+<%= link_to 'Edit', edit_seasonal_path(@seasonal) %> |
+<%= link_to 'Back', seasonals_path %>
