@@ -1,5 +1,5 @@
 <td class="col-md-1" id="invalid-<%= id_name(seasonal_type) %>-button">
-  <%= link_to polymorphic_path([student, seasonal_type.to_s.pluralize], seasonal_type => {student_id: student.id}, button: true), remote: true, method: :post do %>
+  <%= link_to student_seasonals_path(student, seasonal: {student_id: student.id, seasonal_type: seasonal_type}), remote: true, method: :post do %>
     <%= button_tag class: "btn btn-success glyphicon #{glyphicon(seasonal_type)}" do %>
     <% end %>
   <% end %>

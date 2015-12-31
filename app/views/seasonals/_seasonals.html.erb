@@ -1,7 +1,7 @@
 <div class="row">
-  <% Student::SEASONALS.each do |seasonal_type| %>
+  <% Seasonal.seasonal_types.each do |seasonal_type, _| %>
     <div class="col-md-3">
-      <h2><%= seasonal_type.to_s.titleize.pluralize %></h2>
+      <h2><%= seasonal_type.titleize.pluralize %></h2>
       <table class="table">
         <tbody>
           <% if @student.valid_seasonal(seasonal_type) %>

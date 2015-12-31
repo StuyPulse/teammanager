@@ -4,6 +4,7 @@ class Student < ActiveRecord::Base
   SEASONALS = [:media_consent, :medical, :safety_test, :team_due]
 
   belongs_to :team
+  has_many :seasonals
   has_many :safety_tests
   has_many :medicals
   has_many :team_dues
@@ -24,7 +25,9 @@ class Student < ActiveRecord::Base
   end
 
   def valid_seasonal(type)
-    try(type.to_s.pluralize).try(:valid).try(:first)
+    # Ordinarily, I would just use `seasonal_type: type`, but Rails enums are
+    # trolling me and returning inconsistent results.
+    seasonals.valid.where(seasonal_type: Seasonal.seasonal_types[type]).first
   end
 
   def total_service_hours
@@ -43,7 +46,7 @@ class Student < ActiveRecord::Base
   private
 
   def format_data
-    # Normalize phone numbers
+    # Remove all non-digits from phone numbers
     phone.gsub!(/\D/, '') unless phone.blank?
     parent_home_phone.gsub!(/\D/, '') unless parent_home_phone.blank?
     parent_cell_phone.gsub!(/\D/, '') unless parent_cell_phone.blank?

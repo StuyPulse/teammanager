@@ -1,5 +1,5 @@
 class SafetyTest < ActiveRecord::Base
-  include Seasonal
+  include SeasonalDocument
 
   belongs_to :student
 end

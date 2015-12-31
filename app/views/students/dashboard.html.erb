@@ -5,10 +5,10 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Osis</th>
-      <th>Sark</th>
-      <% Student::SEASONALS.each do |seasonal_type| %>
-        <th><%= seasonal_type.to_s.titleize %></th>
+      <th>OSIS</th>
+      <th>SARK</th>
+      <% Seasonal.seasonal_types.each do |type, _| %>
+        <th><%= type.titleize %></th>
       <% end %>
     </tr>
   </thead>
