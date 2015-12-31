@@ -1,14 +1,8 @@
 require 'csv'
 
 class Student < ActiveRecord::Base
-  SEASONALS = [:media_consent, :medical, :safety_test, :team_due]
-
   belongs_to :team
   has_many :seasonals
-  has_many :safety_tests
-  has_many :medicals
-  has_many :team_dues
-  has_many :media_consents
   has_many :community_services
 
   before_save :format_data
