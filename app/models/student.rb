@@ -30,9 +30,16 @@ class Student < ActiveRecord::Base
 
   def self.to_csv
     CSV.generate do |csv|
-      csv << column_names
+      # The first row of data is the list of column names
+      seasonal_existence_column_names =
+        Seasonal.seasonal_types.keys.map {|type| "has_#{type}"}
+      row = column_names + seasonal_existence_column_names
+      csv << row
+
       order(:id).each do |student|
-        csv << student.attributes.values_at(*column_names)
+        existence_of_seasonals = Seasonal.seasonal_types.keys.map {|type| student.valid_seasonal(type).present?}
+        row = student.attributes.values_at(*column_names) + existence_of_seasonals
+        csv << row
       end
     end
   end
