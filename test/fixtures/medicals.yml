@@ -1,9 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  student_id: 
-  year: 1
-
-two:
-  student_id: 
-  year: 1

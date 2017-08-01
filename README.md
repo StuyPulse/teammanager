@@ -1,14 +1,24 @@
-# teammanager
+# README
 
-Rails app for the organiztion and administration of team member information.
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-Handles:
-* Student information
-* Team dues
-* Safety tests
-* Medicals
-* Trips
-* Community service hours
-* Attendance
+Things you may want to cover:
 
-Created and developed by FRC team 694, StuyPulse Robotics. ISC licensed.
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
