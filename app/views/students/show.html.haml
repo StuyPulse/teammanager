@@ -21,7 +21,7 @@
       = @student.phone
     %p
       %strong Team:
-      = "#{@student.team.program} #{@student.team.number} #{@student.team.name}"
+      = "#{@student.team.display_name}"
     = link_to 'Edit', edit_student_path(@student)
   .col
     %h2 Forms
