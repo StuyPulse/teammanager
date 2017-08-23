@@ -1,17 +1,16 @@
 %p#notice= notice
 %h1 Students
-%table
+%table{ :class => "table"}
   %thead
     %tr
-      %th First name
-      %th Last name
-      %th Preferred name
-      %th Grad year
+      %th First Name
+      %th Last Name
+      %th Preferred Name
+      %th Graduation Year
       %th Osis
       %th Email
       %th Phone
       %th Team
-      %th{:colspan => "3"}
   %tbody
     - @students.each do |student|
       %tr
