@@ -7,22 +7,21 @@
 .row
   .col
     %h2 Student Info
-    %ul{ :style => "list-style: none; padding-left: 0px"}
-      %li
-        %strong Graduation Year:
-        = "#{@student.grad_year}"
-      %li
-        %strong OSIS:
-        = @student.osis
-      %li
-        %strong Email:
-        = @student.email
-      %li
-        %strong Phone:
-        = @student.phone
-      %li
-        %strong Team:
-        = "#{@student.team.program} #{@student.team.number} #{@student.team.name}"
+    %p
+      %strong Graduation Year:
+      = "#{@student.grad_year}"
+    %p
+      %strong OSIS:
+      = @student.osis
+    %p
+      %strong Email:
+      = @student.email
+    %p
+      %strong Phone:
+      = @student.phone
+    %p
+      %strong Team:
+      = "#{@student.team.program} #{@student.team.number} #{@student.team.name}"
     = link_to 'Edit', edit_student_path(@student)
   .col
     %h2 Forms
