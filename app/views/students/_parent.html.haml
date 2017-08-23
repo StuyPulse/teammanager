@@ -1,0 +1,17 @@
+.col-md
+  %p
+    %strong First Name:
+    = parent.first_name
+  %p
+    %strong Last Name:
+    = parent.last_name
+  %p
+    %strong Email:
+    = parent.email
+  %p
+    %strong Phone:
+    = parent.phone
+  %p
+    %strong Preferred Language:
+    = parent.preferred_language
+  = link_to 'Edit', edit_parent_path(parent)

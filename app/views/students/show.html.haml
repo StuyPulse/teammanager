@@ -29,6 +29,8 @@
   .col
     %h2 Parent Info
 .row
+  = render :partial => "parent", :collection => @student.parents
+.row
   .col
     %h2 Hours
 = link_to 'Back', students_path
