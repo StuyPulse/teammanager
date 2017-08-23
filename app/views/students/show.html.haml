@@ -4,6 +4,7 @@
     = @student.full_name
     - if !@student.preferred_name.empty?
       = "( #{@student.preferred_name} )"
+%hr
 .row
   .col
     %h2 Student Info
@@ -25,11 +26,13 @@
     = link_to 'Edit', edit_student_path(@student)
   .col
     %h2 Forms
+%hr
 .row
   .col
     %h2 Parent Info
 .row
   = render :partial => "parent", :collection => @student.parents
+%hr
 .row
   .col
     %h2 Hours
