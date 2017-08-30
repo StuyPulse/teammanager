@@ -1,0 +1,12 @@
+%nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  = link_to "Team Manager", root_url, class: 'navbar-brand'
+  %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+    %span.navbar-toggler-icon
+  #navbarSupportedContent.collapse.navbar-collapse
+    %ul.navbar-nav.mr-auto
+    %ul.nav.navbar-nav.navbar-right
+      %li
+        - if current_user
+          = link_to "Sign out", destroy_user_session_path, method: :delete
+        - else
+          = link_to "Sign in", new_user_session_path
