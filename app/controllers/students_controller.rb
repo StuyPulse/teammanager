@@ -4,26 +4,31 @@ class StudentsController < ApplicationController
   # GET /students
   # GET /students.json
   def index
+    authorize Student
     @students = Student.all
   end
 
   # GET /students/1
   # GET /students/1.json
   def show
+    authorize @student
   end
 
   # GET /students/new
   def new
+    authorize Student
     @student = Student.new
   end
 
   # GET /students/1/edit
   def edit
+    authorize @student
   end
 
   # POST /students
   # POST /students.json
   def create
+    authorize Student
     @student = Student.new(student_params)
 
     respond_to do |format|
@@ -40,6 +45,7 @@ class StudentsController < ApplicationController
   # PATCH/PUT /students/1
   # PATCH/PUT /students/1.json
   def update
+    authorize @student
     respond_to do |format|
       if @student.update(student_params)
         format.html { redirect_to @student, notice: 'Student was successfully updated.' }
@@ -54,6 +60,7 @@ class StudentsController < ApplicationController
   # DELETE /students/1
   # DELETE /students/1.json
   def destroy
+    authorize @student
     @student.destroy
     respond_to do |format|
       format.html { redirect_to students_url, notice: 'Student was successfully destroyed.' }

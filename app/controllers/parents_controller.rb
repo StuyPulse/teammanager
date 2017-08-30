@@ -4,26 +4,31 @@ class ParentsController < ApplicationController
   # GET /parents
   # GET /parents.json
   def index
+    authorize Parent
     @parents = Parent.all
   end
 
   # GET /parents/1
   # GET /parents/1.json
   def show
+    authorize @parent
   end
 
   # GET /parents/new
   def new
+    authorize Parent
     @parent = Parent.new
   end
 
   # GET /parents/1/edit
   def edit
+    authorize @parent
   end
 
   # POST /parents
   # POST /parents.json
   def create
+    authorize Parent
     @parent = Parent.new(parent_params)
 
     respond_to do |format|
@@ -40,6 +45,7 @@ class ParentsController < ApplicationController
   # PATCH/PUT /parents/1
   # PATCH/PUT /parents/1.json
   def update
+    authorize @parent
     respond_to do |format|
       if @parent.update(parent_params)
         format.html { redirect_to @parent, notice: 'Parent was successfully updated.' }
@@ -54,6 +60,7 @@ class ParentsController < ApplicationController
   # DELETE /parents/1
   # DELETE /parents/1.json
   def destroy
+    authorize @parent
     @parent.destroy
     respond_to do |format|
       format.html { redirect_to parents_url, notice: 'Parent was successfully destroyed.' }
