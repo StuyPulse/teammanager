@@ -1,1 +1,15 @@
-%h1 Team Manager
+%h1 Welcome to Team Manager!
+.center
+  %h3 Team Members
+  %h4 Check your information:
+  = form_tag(check_students_path) do
+    .field
+      = label :student, :last_name, 'Last Name: '
+      = text_field :student, :last_name, autofocus: true
+    .field
+      = label :student, :osis, 'OSIS: '
+      = text_field :student, :osis
+    .field
+      = label :student, :email, 'Email: '
+      = text_field :student, :email
+    = submit_tag 'Check Info'
