@@ -1,0 +1,23 @@
+%h1 Listing team_dues
+
+%table
+  %thead
+    %tr
+      %th Year
+      %th Student
+      %th
+      %th
+      %th
+
+  %tbody
+    - @team_dues.each do |team_due|
+      %tr
+        %td= team_due.year
+        %td= team_due.student
+        %td= link_to 'Show', team_due
+        %td= link_to 'Edit', edit_team_due_path(team_due)
+        %td= link_to 'Destroy', team_due, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Team due', new_team_due_path
