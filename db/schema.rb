@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170903180949) do
+ActiveRecord::Schema.define(version: 20170903201846) do
 
   create_table "parents", force: :cascade do |t|
     t.string "first_name", null: false
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20170903180949) do
     t.integer "team_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
     t.index ["email"], name: "index_students_on_email", unique: true
     t.index ["first_name"], name: "index_students_on_first_name"
     t.index ["grad_year"], name: "index_students_on_grad_year"
@@ -53,6 +54,7 @@ ActiveRecord::Schema.define(version: 20170903180949) do
     t.index ["phone"], name: "index_students_on_phone"
     t.index ["preferred_name"], name: "index_students_on_preferred_name"
     t.index ["team_id"], name: "index_students_on_team_id"
+    t.index ["user_id"], name: "index_students_on_user_id"
   end
 
   create_table "team_dues", force: :cascade do |t|
@@ -85,11 +87,9 @@ ActiveRecord::Schema.define(version: 20170903180949) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "student_id"
     t.boolean "is_admin", default: false, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["student_id"], name: "index_users_on_student_id", unique: true
   end
 
 end
