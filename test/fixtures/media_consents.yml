@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+mediacurryear:
+  year: <%= MediaConsent.current_year %>
+  student: nicole
+
+medialastyear:
+  year: <%= MediaConsent.current_year - 1 %>
+  student: nicole

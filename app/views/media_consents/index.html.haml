@@ -1,0 +1,23 @@
+%h1 Listing media_consents
+
+%table
+  %thead
+    %tr
+      %th Year
+      %th Student
+      %th
+      %th
+      %th
+
+  %tbody
+    - @media_consents.each do |media_consent|
+      %tr
+        %td= media_consent.year
+        %td= media_consent.student
+        %td= link_to 'Show', media_consent
+        %td= link_to 'Edit', edit_media_consent_path(media_consent)
+        %td= link_to 'Destroy', media_consent, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Media consent', new_media_consent_path

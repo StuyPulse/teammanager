@@ -5,6 +5,7 @@ class Student < ApplicationRecord
   belongs_to :user, optional: true
   has_and_belongs_to_many :parents
   has_many :team_dues
+  has_many :media_consents
   validates :first_name, :last_name, :grad_year, :osis, :email, :phone,
             :team_id, presence: true, allow_blank: false
 end

@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-curryear:
-  year: 2018
+duescurryear:
+  year: <%= TeamDue.current_year %>
   student: helen
 
-lastyear:
-  year: 2017
+dueslastyear:
+  year: <%= TeamDue.current_year - 1 %>
   student: helen

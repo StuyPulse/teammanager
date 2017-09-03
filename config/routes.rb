@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :media_consents
   resources :team_dues
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
