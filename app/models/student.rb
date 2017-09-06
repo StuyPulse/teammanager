@@ -9,8 +9,10 @@ class Student < ApplicationRecord
   has_many :medicals
   has_many :services
   has_many :events, through: :services
+
   validates :first_name, :last_name, :grad_year, :osis, :email, :phone,
             :team_id, presence: true, allow_blank: false
+  validates :parents, presence: true
 
   def valid_forms(type)
     case type
@@ -20,6 +22,13 @@ class Student < ApplicationRecord
       medicals.valid
     when :media_consents
       media_consents.valid
+    end
+  end
+
+  rails_admin do
+    create do
+      exclude_fields :team_dues, :media_consents, :medicals, :events, :services,
+                     :user
     end
   end
 end
