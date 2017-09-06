@@ -11,4 +11,15 @@ class Student < ApplicationRecord
   has_many :events, through: :services
   validates :first_name, :last_name, :grad_year, :osis, :email, :phone,
             :team_id, presence: true, allow_blank: false
+
+  def valid_forms(type)
+    case type
+    when :team_dues
+      team_dues.valid
+    when :medicals
+      medicals.valid
+    when :media_consents
+      media_consents.valid
+    end
+  end
 end

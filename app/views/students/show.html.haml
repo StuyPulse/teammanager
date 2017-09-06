@@ -2,7 +2,7 @@
 .row
   %h1
     = @student.full_name
-    - if !@student.preferred_name.empty?
+    - if @student.preferred_name
       = "( #{@student.preferred_name} )"
 %hr
 .row
@@ -26,6 +26,9 @@
     = link_to 'Edit', edit_student_path(@student)
   .col
     %h2 Forms
+    = render partial: "student_form", locals: {form_type: :team_dues}
+    = render partial: "student_form", locals: {form_type: :media_consents}
+    = render partial: "student_form", locals: {form_type: :medicals}
 %hr
 .row
   .col

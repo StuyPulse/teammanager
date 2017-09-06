@@ -1,0 +1,5 @@
+%h4= form_type.to_s.titleize
+- if @student.valid_forms(form_type).any?
+  = "Valid"
+- else
+  = "Missing"
