@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+medicvalid:
+  date: <%= Date.today - 30 %>
+  student: helen
+
+medicinvalid:
+  date: <%= Date.today - 4000 %>
+  student: nicole

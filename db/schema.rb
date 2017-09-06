@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170903211847) do
+ActiveRecord::Schema.define(version: 20170906004522) do
 
   create_table "media_consents", force: :cascade do |t|
     t.integer "year", null: false
@@ -19,6 +19,15 @@ ActiveRecord::Schema.define(version: 20170903211847) do
     t.datetime "updated_at", null: false
     t.index ["student_id"], name: "index_media_consents_on_student_id"
     t.index ["year"], name: "index_media_consents_on_year"
+  end
+
+  create_table "medicals", force: :cascade do |t|
+    t.date "date", null: false
+    t.integer "student_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["date"], name: "index_medicals_on_date"
+    t.index ["student_id"], name: "index_medicals_on_student_id"
   end
 
   create_table "parents", force: :cascade do |t|

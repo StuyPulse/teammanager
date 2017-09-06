@@ -1,0 +1,23 @@
+%h1 Listing medicals
+
+%table
+  %thead
+    %tr
+      %th Date
+      %th Student
+      %th
+      %th
+      %th
+
+  %tbody
+    - @medicals.each do |medical|
+      %tr
+        %td= medical.date
+        %td= medical.student
+        %td= link_to 'Show', medical
+        %td= link_to 'Edit', edit_medical_path(medical)
+        %td= link_to 'Destroy', medical, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Medical', new_medical_path
