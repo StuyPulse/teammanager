@@ -7,6 +7,8 @@ class Student < ApplicationRecord
   has_many :team_dues
   has_many :media_consents
   has_many :medicals
+  has_many :services
+  has_many :events, through: :services
   validates :first_name, :last_name, :grad_year, :osis, :email, :phone,
             :team_id, presence: true, allow_blank: false
 end
