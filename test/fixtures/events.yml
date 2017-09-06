@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+soupkitchen:
+  name: Soup Kitchen
+  description: Holy Apostles Soup Kitchen event
+  date: <%= Date.today - 20.days %>
+  valid_year: <%= (Date.today - 20.days).year %>
+  default_hours: 4.0
+
+govisland:
+  name: Governors Island Park Stewardship
+  description: Governors Island park stewardship hosted by bloomberg
+  date: <%= Date.today - 2.years %>
+  valid_year: <%= (Date.today - 2.years).year %>
+  default_hours: 0.0

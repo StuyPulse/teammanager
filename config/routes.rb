@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :events
   resources :medicals
   resources :media_consents
   resources :team_dues
