@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170906204330) do
+ActiveRecord::Schema.define(version: 20170906210511) do
 
   create_table "events", force: :cascade do |t|
     t.string "name", null: false
     t.text "description"
     t.date "date", null: false
     t.integer "valid_year", null: false
-    t.float "default_hours", default: 0.0, null: false
+    t.float "default_hours", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["date"], name: "index_events_on_date"
