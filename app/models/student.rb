@@ -29,7 +29,7 @@ class Student < ApplicationRecord
   rails_admin do
     create do
       exclude_fields :team_dues, :media_consents, :medicals, :events, :services,
-                     :user
+                     :safety_tests, :user
     end
   end
 end
