@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :safety_tests
   resources :services
   resources :events
   resources :medicals

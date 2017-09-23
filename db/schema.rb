@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170906210511) do
+ActiveRecord::Schema.define(version: 20170923150548) do
 
   create_table "events", force: :cascade do |t|
     t.string "name", null: false
@@ -63,6 +63,19 @@ ActiveRecord::Schema.define(version: 20170906210511) do
     t.integer "parent_id", null: false
     t.index ["parent_id", "student_id"], name: "index_parents_students_on_parent_id_and_student_id"
     t.index ["student_id", "parent_id"], name: "index_parents_students_on_student_id_and_parent_id"
+  end
+
+  create_table "safety_tests", force: :cascade do |t|
+    t.boolean "is_passed", null: false
+    t.boolean "is_signed", null: false
+    t.integer "student_id", null: false
+    t.integer "year", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["is_passed"], name: "index_safety_tests_on_is_passed"
+    t.index ["is_signed"], name: "index_safety_tests_on_is_signed"
+    t.index ["student_id"], name: "index_safety_tests_on_student_id"
+    t.index ["year"], name: "index_safety_tests_on_year"
   end
 
   create_table "services", force: :cascade do |t|

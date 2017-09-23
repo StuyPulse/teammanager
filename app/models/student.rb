@@ -7,6 +7,7 @@ class Student < ApplicationRecord
   has_many :team_dues
   has_many :media_consents
   has_many :medicals
+  has_many :safety_tests
   has_many :services
   has_many :events, through: :services
 

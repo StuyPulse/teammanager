@@ -1,0 +1,22 @@
+= form_for @safety_test do |f|
+  - if @safety_test.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@safety_test.errors.count, "error")} prohibited this safety_test from being saved:"
+      %ul
+        - @safety_test.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :is_passed
+    = f.check_box :is_passed
+  .field
+    = f.label :is_signed
+    = f.check_box :is_signed
+  .field
+    = f.label :student
+    = f.text_field :student
+  .field
+    = f.label :year
+    = f.text_field :year
+  .actions
+    = f.submit 'Save'

@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+fail:
+  is_passed: false
+  is_signed: false
+  student: nicole
+  year: 2017
+
+passed:
+  is_passed: true
+  is_signed: false
+  student: nicole
+  year: 2017
+
+oldsigned:
+  is_passed: true
+  is_signed: true
+  student: helen
+  year: 2017
+
+validsigned:
+  is_passed: true
+  is_signed: true
+  student: helen
+  year: 2018

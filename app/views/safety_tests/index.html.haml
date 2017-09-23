@@ -1,0 +1,27 @@
+%h1 Listing safety_tests
+
+%table
+  %thead
+    %tr
+      %th Is passed
+      %th Is signed
+      %th Student
+      %th Year
+      %th
+      %th
+      %th
+
+  %tbody
+    - @safety_tests.each do |safety_test|
+      %tr
+        %td= safety_test.is_passed
+        %td= safety_test.is_signed
+        %td= safety_test.student
+        %td= safety_test.year
+        %td= link_to 'Show', safety_test
+        %td= link_to 'Edit', edit_safety_test_path(safety_test)
+        %td= link_to 'Destroy', safety_test, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Safety test', new_safety_test_path

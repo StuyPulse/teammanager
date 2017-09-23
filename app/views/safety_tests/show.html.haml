@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Is passed:
+  = @safety_test.is_passed
+%p
+  %b Is signed:
+  = @safety_test.is_signed
+%p
+  %b Student:
+  = @safety_test.student
+%p
+  %b Year:
+  = @safety_test.year
+
+= link_to 'Edit', edit_safety_test_path(@safety_test)
+\|
+= link_to 'Back', safety_tests_path
