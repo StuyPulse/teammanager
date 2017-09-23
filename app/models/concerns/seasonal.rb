@@ -20,6 +20,12 @@ module Seasonal
     scope :valid_for, -> (year) { where(year: year) }
 
     scope :valid, -> { valid_for(current_year) }
+
+    after_initialize do
+      if new_record?
+        set_current_year
+      end
+    end
   end
 
   def set_current_year
