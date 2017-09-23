@@ -5,7 +5,7 @@ class Medical < ApplicationRecord
 
   scope :valid, -> { where('date > ?', Date.today - 1.year) }
 
-  def valid?
+  def good?
     date <= Date.today && Date.today < date + 1.year
   end
 end
