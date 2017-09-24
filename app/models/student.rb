@@ -14,6 +14,7 @@ class Student < ApplicationRecord
   validates :first_name, :last_name, :grad_year, :osis, :email, :phone,
             presence: true, allow_blank: false
   validates :parents, presence: true
+  phony_normalize :phone, default_country_code: 'US'
 
   def valid_forms(type)
     case type

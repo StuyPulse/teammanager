@@ -147,6 +147,10 @@ GEM
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
     orm_adapter (0.5.0)
+    phony (2.15.48)
+    phony_rails (0.14.6)
+      activesupport (>= 3.0)
+      phony (> 2.15)
     popper_js (1.11.1)
     postmark (1.10.0)
       json
@@ -278,6 +282,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
+  phony_rails
   postmark-rails (~> 0.15.0)
   puma (~> 3.7)
   pundit
