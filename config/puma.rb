@@ -26,16 +26,16 @@ workers ENV.fetch("WEB_CONCURRENCY") { 2 }
 # process behavior so workers use less memory. If you use this option
 # you need to make sure to reconnect any threads in the `on_worker_boot`
 # block.
-#
-# preload_app!
+
+preload_app!
 
 # If you are preloading your application and using Active Record, it's
 # recommended that you close any connections to the database before workers
 # are forked to prevent connection leakage.
 #
-# before_fork do
-#   ActiveRecord::Base.connection_pool.disconnect! if defined?(ActiveRecord)
-# end
+before_fork do
+  ActiveRecord::Base.connection_pool.disconnect! if defined?(ActiveRecord)
+end
 
 # The code in the `on_worker_boot` will be called if you are using
 # clustered mode by specifying a number of `workers`. After each worker
@@ -44,10 +44,9 @@ workers ENV.fetch("WEB_CONCURRENCY") { 2 }
 # or connections that may have been created at application boot, as Ruby
 # cannot share connections between processes.
 #
-# on_worker_boot do
-#   ActiveRecord::Base.establish_connection if defined?(ActiveRecord)
-# end
-#
+on_worker_boot do
+ ActiveRecord::Base.establish_connection if defined?(ActiveRecord)
+end
 
 if env == "production"
   # Allow puma to be restarted by `rails restart` command.
@@ -66,11 +65,6 @@ if env == "production"
   pidfile "#{shared_dir}/pids/puma.pid"
   state_path "#{shared_dir}/pids/puma.state"
   activate_control_app
-
-  on_worker_boot do
-    ActiveRecord::Base.connection.disconnect! rescue ActiveRecord::ConnectionNotEstablished
-    ActiveRecord::Base.establish_connection(YAML.load_file("#{app_dir}/config/database.yml")[rails_env])
-  end
 else
   port ENV.fetch("PORT") { 3000 }
 end
