@@ -23,7 +23,6 @@
     %p
       %strong Team:
       = "#{@student.team.display_name}"
-    = link_to 'Edit', edit_student_path(@student)
   .col
     %h2 Forms
     = render partial: "student_form", locals: {form_type: :team_dues}
