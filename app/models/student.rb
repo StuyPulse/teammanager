@@ -36,5 +36,9 @@ class Student < ApplicationRecord
       exclude_fields :team_dues, :media_consents, :medicals, :events, :services,
                      :safety_tests, :user
     end
+
+    list do
+      sort_by :last_name
+    end
   end
 end
