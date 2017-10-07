@@ -1,6 +1,8 @@
 class Student < ApplicationRecord
   include Nameable
 
+  has_paper_trail
+
   belongs_to :team, optional: true
   belongs_to :user, optional: true
   has_and_belongs_to_many :parents
