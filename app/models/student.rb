@@ -19,6 +19,7 @@ class Student < ApplicationRecord
   validates :osis, length: { is: 9 },
                    numericality: { greater_than: 0,
                                    message: 'cannot be negative' }
+  validate :check_preferred_name
 
   phony_normalize :phone, default_country_code: 'US'
 
@@ -41,6 +42,13 @@ class Student < ApplicationRecord
 
     list do
       sort_by :last_name
+    end
+  end
+
+  protected
+  def check_preferred_name
+    if preferred_name && preferred_name.downcase == first_name.downcase
+      errors.add(:preferred_name, "can't match first name")
     end
   end
 end
