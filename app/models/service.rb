@@ -2,7 +2,9 @@ class Service < ApplicationRecord
   belongs_to :student
   belongs_to :event
 
-  before_save :set_default_hours
+  before_validation :set_default_hours
+
+  validates :hours, numericality: { greater_than: 0 }
 
   rails_admin do
     visible false

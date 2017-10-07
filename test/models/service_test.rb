@@ -19,4 +19,24 @@ class ServiceTest < ActiveSupport::TestCase
     s.save
     assert s.hours == 3.0
   end
+
+  test "service with zero hours not valid" do
+    s = Service.new(student: Student.take,
+                    event: @event,
+                    hours: 0.0)
+    refute s.save
+  end
+
+  test "service with negative hours not valid" do
+    s = Service.new(student: Student.take,
+                    event: @event,
+                    hours: -1.0)
+    refute s.save
+  end
+
+  test "service with nonzero positive hours valid" do
+    s = Service.new(student: Student.take,
+                    event: @event)
+    assert s.save
+  end
 end
