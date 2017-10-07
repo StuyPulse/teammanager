@@ -4,7 +4,7 @@ class Service < ApplicationRecord
 
   before_validation :set_default_hours
 
-  validates :hours, numericality: { greater_than: 0 }
+  validates :hours, numericality: { greater_than: 0 }, presence: true
 
   rails_admin do
     visible false
