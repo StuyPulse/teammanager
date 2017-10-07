@@ -26,6 +26,42 @@ RailsAdmin.config do |config|
   # https://stackoverflow.com/q/40377340
   config.parent_controller = '::ApplicationController'
 
+  # Organize navigation links
+  config.model 'Student' do
+    navigation_label 'Members'
+    weight -2
+  end
+
+  config.model 'Parent' do
+    navigation_label 'Members'
+  end
+
+  config.model 'Event' do
+    navigation_label 'Community Service'
+  end
+
+  config.model 'Service' do
+    navigation_label 'Community Service'
+  end
+
+  config.model 'MediaConsent' do
+    navigation_label 'Forms'
+    weight -1
+  end
+
+  config.model 'SafetyTest' do
+    navigation_label 'Forms'
+  end
+
+  config.model 'Medical' do
+    navigation_label 'Forms'
+  end
+
+  config.model 'TeamDue' do
+    navigation_label 'Forms'
+  end
+
+
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory
