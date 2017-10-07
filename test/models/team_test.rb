@@ -3,7 +3,8 @@ require 'test_helper'
 class TeamTest < ActiveSupport::TestCase
   setup do
     @team = Team.new(name: 'TeamName',
-                    number: '1234')
+                    number: '1234',
+                    program: 'FRC')
   end
 
   test 'programs FTC and FRC will pass validations' do
@@ -20,5 +21,11 @@ class TeamTest < ActiveSupport::TestCase
     refute @team.save
     @team.program = 'fRC'
     refute @team.save
+  end
+
+  test "team with whitespace in name stripped" do
+    @team.name = "\t\n\r   Coolest     team \r"
+    assert @team.save
+    assert @team.name == "Coolest     team"
   end
 end

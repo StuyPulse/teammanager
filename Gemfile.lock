@@ -49,6 +49,8 @@ GEM
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
     arel (8.0.0)
+    auto_strip_attributes (2.2.0)
+      activerecord (>= 3.0)
     autoprefixer-rails (7.1.2.6)
       execjs
     bcrypt (3.1.11)
@@ -272,6 +274,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  auto_strip_attributes (~> 2.2)
   bootstrap (~> 4.0.0.beta)
   byebug
   capybara (~> 2.13)
