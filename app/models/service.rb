@@ -1,4 +1,6 @@
 class Service < ApplicationRecord
+  has_paper_trail
+
   belongs_to :student
   belongs_to :event
 

@@ -5,5 +5,7 @@ class User < ApplicationRecord
          :rememberable, :trackable, :validatable,
          :timeoutable
 
+  has_paper_trail
+
   has_one :student
 end

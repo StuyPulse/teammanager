@@ -1,4 +1,6 @@
 class Medical < ApplicationRecord
+  has_paper_trail
+
   belongs_to :student
 
   validates :date, :student_id, presence: true

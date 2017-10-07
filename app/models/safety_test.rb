@@ -1,5 +1,8 @@
 class SafetyTest < ApplicationRecord
   include Seasonal
+
+  has_paper_trail
+
   belongs_to :student
 
   before_validation :make_passed_if_signed

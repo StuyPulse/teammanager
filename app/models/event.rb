@@ -1,4 +1,6 @@
 class Event < ApplicationRecord
+  has_paper_trail
+
   has_many :services
   has_many :students, through: :services
 
