@@ -49,8 +49,12 @@ class ContactFormImporter
                           osis: row.fetch("OSIS"),
                           grad_year: row.fetch("Graduation Year"),
                           email: row.fetch("Email"),
-                          phone: row.fetch("Phone Number"),
-                          team: find_team(row.fetch("Which team are you in?")))
+                          phone: row.fetch("Phone Number"))
+    begin
+      student.team = find_team(row.fetch("Which team are you in?"))
+    rescue KeyError
+    end
+    return student
   end
 
   def import_row(row)
