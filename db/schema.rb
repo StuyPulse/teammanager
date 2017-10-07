@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171007154426) do
+ActiveRecord::Schema.define(version: 20171007184236) do
 
   create_table "events", force: :cascade do |t|
     t.string "name", null: false
@@ -100,9 +100,11 @@ ActiveRecord::Schema.define(version: 20171007154426) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.boolean "is_newbie", default: true, null: false
     t.index ["email"], name: "index_students_on_email", unique: true
     t.index ["first_name"], name: "index_students_on_first_name"
     t.index ["grad_year"], name: "index_students_on_grad_year"
+    t.index ["is_newbie"], name: "index_students_on_is_newbie"
     t.index ["last_name"], name: "index_students_on_last_name"
     t.index ["osis"], name: "index_students_on_osis", unique: true
     t.index ["phone"], name: "index_students_on_phone"
