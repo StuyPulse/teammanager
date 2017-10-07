@@ -1,4 +1,6 @@
 class Team < ApplicationRecord
+  has_paper_trail
+
   has_many :students
 
   auto_strip_attributes :name
