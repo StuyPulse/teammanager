@@ -8,7 +8,6 @@ class Event < ApplicationRecord
             allow_blank: false
 
   rails_admin do
-    visible false
     create do
       exclude_fields :services, :students
     end
