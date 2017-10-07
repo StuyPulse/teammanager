@@ -6,6 +6,7 @@ class ContactFormImporter
     for i in 0..lines.length() - 1
       begin
         import_row(lines[i])
+        print "."
       rescue ActiveRecord::RecordInvalid
         puts "Failed to add student at CSV file row: " + (i + 2).to_s
         next
