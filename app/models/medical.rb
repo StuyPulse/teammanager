@@ -1,4 +1,6 @@
 class Medical < ApplicationRecord
+  include Dateable
+
   has_paper_trail
 
   belongs_to :student
