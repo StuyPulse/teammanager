@@ -1,4 +1,6 @@
 class Event < ApplicationRecord
+  include Dateable
+
   has_paper_trail
 
   has_many :services
