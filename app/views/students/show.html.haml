@@ -22,7 +22,10 @@
       = @student.phone
     %p
       %strong Team:
-      = "#{@student.team.display_name}"
+      - if @student.team
+        = "#{@student.team.display_name}"
+      - else
+        No team
   .col
     %h2 Forms
     = render partial: "student_form", locals: {form_type: :team_dues}
