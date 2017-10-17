@@ -1,0 +1,24 @@
+= form_tag check_students_path do
+  %h3 Check your info
+  %hr
+  .field.form-group
+    = label :student, :last_name, 'Last Name'
+    = text_field :student, :last_name,
+      placeholder: 'Lopez',
+      autofocus: true,
+      class: 'form-control'
+  .field.form-group
+    = label :student, :osis, 'OSIS'
+    = number_field :student, :osis,
+      placeholder: '200555999',
+      class: 'form-control'
+    %small.form-text.text-muted
+      You can find your OSIS on your school ID. It's nine digits long and starts with 2.
+  .field.form-group
+    = label :student, :email, 'Email'
+    = email_field :student, :email,
+      placeholder: 'kate@example.com',
+      class: 'form-control'
+    %small.form-text.text-muted
+      Enter the email you filled out the contact form with.
+  = submit_tag 'Check Info', class: 'btn btn-primary'
