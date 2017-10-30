@@ -28,9 +28,10 @@
         No team
   .col
     %h2 Forms
-    = render partial: "student_form", locals: {form_type: :team_dues}
-    = render partial: "student_form", locals: {form_type: :media_consents}
-    = render partial: "student_form", locals: {form_type: :medicals}
+    %table.table.table-striped{style: "table-layout:fixed"}
+      = render partial: "student_form", locals: {form_type: :team_dues}
+      = render partial: "student_form", locals: {form_type: :media_consents}
+      = render partial: "student_form", locals: {form_type: :medicals}
 %hr
 .row
   .col

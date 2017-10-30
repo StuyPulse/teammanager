@@ -5,6 +5,9 @@ class SafetyTest < ApplicationRecord
 
   belongs_to :student
 
+  scope :passed, -> { where(is_passed: true) }
+  scope :signed, -> { passed.where(is_signed: true) }
+
   before_validation :make_passed_if_signed
 
   validates :is_passed, inclusion: { in: [ true ] }, if: :is_signed
