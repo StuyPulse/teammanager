@@ -1,0 +1,23 @@
+%h1 Listing stims
+
+%table
+  %thead
+    %tr
+      %th Year
+      %th Student
+      %th
+      %th
+      %th
+
+  %tbody
+    - @stims.each do |stim|
+      %tr
+        %td= stim.year
+        %td= stim.student
+        %td= link_to 'Show', stim
+        %td= link_to 'Edit', edit_stim_path(stim)
+        %td= link_to 'Destroy', stim, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Stim', new_stim_path

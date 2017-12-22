@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :stims
   resources :safety_tests
   resources :services
   resources :events

@@ -11,6 +11,7 @@ class Student < ApplicationRecord
   has_many :medicals
   has_many :safety_tests
   has_many :services
+  has_many :stims
   has_many :events, through: :services
 
   auto_strip_attributes :first_name, :last_name, :preferred_name, :email
@@ -39,7 +40,7 @@ class Student < ApplicationRecord
   rails_admin do
     create do
       exclude_fields :team_dues, :media_consents, :medicals, :events, :services,
-                     :safety_tests, :user
+                     :safety_tests, :stims, :user
     end
 
     list do

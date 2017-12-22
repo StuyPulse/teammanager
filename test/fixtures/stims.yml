@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+stimscurryear:
+  year: <%= Stim.current_year %>
+  student: helen
+
+stimslastyear:
+  year: <%= Stim.current_year - 1 %>
+  student: helen

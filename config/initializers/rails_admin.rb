@@ -61,6 +61,9 @@ RailsAdmin.config do |config|
     navigation_label 'Forms'
   end
 
+  config.model 'Stim' do
+    navigation_label 'Forms'
+  end
 
   config.actions do
     dashboard                     # mandatory
