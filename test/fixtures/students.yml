@@ -3,7 +3,7 @@
 helen:
   first_name: Helen
   last_name: Ye
-  grad_year: 2000
+  grad_year: <%= Date.today.year + 3 %>
   osis: 123456781
   email: helen@example.com
   phone: 123-456-7890
@@ -32,3 +32,14 @@ ryan:
   phone: 123-456-7890
   team: fission
   parents: mom
+
+alum:
+  first_name: Al
+  last_name: Um
+  grad_year: <%= Date.today.year - 15 %>
+  osis: 123456784
+  email: alum@example.com
+  phone: 123-456-1234
+  team: stuypulse
+  parents: dad
+  is_active: false

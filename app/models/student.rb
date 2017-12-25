@@ -6,13 +6,16 @@ class Student < ApplicationRecord
   belongs_to :team, optional: true
   belongs_to :user, optional: true
   has_and_belongs_to_many :parents
-  has_many :team_dues
   has_many :media_consents
   has_many :medicals
   has_many :safety_tests
-  has_many :services
   has_many :stims
+  has_many :team_dues
+
+  has_many :services
   has_many :events, through: :services
+
+  scope :active, -> { where(is_active: true) }
 
   auto_strip_attributes :first_name, :last_name, :preferred_name, :email
 
@@ -25,6 +28,11 @@ class Student < ApplicationRecord
   validate :check_preferred_name
 
   phony_normalize :phone, default_country_code: 'US'
+
+  def is_graduated?
+    # Assume students graduate on the last day of June
+    Date.today > Date.new(grad_year, 6, -1)
+  end
 
   def valid_forms(type)
     case type

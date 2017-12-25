@@ -60,4 +60,13 @@ class StudentTest < ActiveSupport::TestCase
     @student.preferred_name = "fIrSt"
     refute @student.save
   end
+
+  test "is_graduated?" do
+    assert students(:alum).is_graduated?
+    refute students(:helen).is_graduated?
+  end
+
+  test "scope active requires is_active = true" do
+    assert_equal Student.active.count, 3
+  end
 end
