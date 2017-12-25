@@ -29,6 +29,11 @@ class Student < ApplicationRecord
 
   phony_normalize :phone, default_country_code: 'US'
 
+  def is_graduated?
+    # Assume students graduate on the last day of June
+    Date.today > Date.new(grad_year, 6, -1)
+  end
+
   def valid_forms(type)
     case type
     when :team_dues

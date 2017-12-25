@@ -3,7 +3,7 @@
 helen:
   first_name: Helen
   last_name: Ye
-  grad_year: 2000
+  grad_year: <%= Date.today.year + 3 %>
   osis: 123456781
   email: helen@example.com
   phone: 123-456-7890
