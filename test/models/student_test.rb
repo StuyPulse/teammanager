@@ -60,4 +60,8 @@ class StudentTest < ActiveSupport::TestCase
     @student.preferred_name = "fIrSt"
     refute @student.save
   end
+
+  test "scope active requires is_active = true" do
+    assert_equal Student.active.count, 3
+  end
 end
