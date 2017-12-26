@@ -16,6 +16,7 @@ class Student < ApplicationRecord
   has_many :events, through: :services
 
   scope :active, -> { where(is_active: true) }
+  scope :inactive, -> { where(is_active: false) }
 
   auto_strip_attributes :first_name, :last_name, :preferred_name, :email
 
@@ -52,6 +53,8 @@ class Student < ApplicationRecord
     end
 
     list do
+      filters [:is_newbie, :team, :grad_year]
+      scopes [:active, :inactive, nil]
       sort_by :last_name
     end
   end
