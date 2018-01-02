@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171225170108) do
+ActiveRecord::Schema.define(version: 20180102220219) do
 
   create_table "events", force: :cascade do |t|
     t.string "name", null: false
@@ -93,6 +93,8 @@ ActiveRecord::Schema.define(version: 20171225170108) do
     t.integer "student_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "has_media_consent", default: false, null: false
+    t.index ["has_media_consent"], name: "index_stims_on_has_media_consent"
     t.index ["student_id"], name: "index_stims_on_student_id"
     t.index ["year"], name: "index_stims_on_year"
   end
