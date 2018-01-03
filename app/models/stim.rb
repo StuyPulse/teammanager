@@ -5,5 +5,5 @@ class Stim < ApplicationRecord
 
   has_paper_trail
 
-  validates :has_media_consent, presence: true
+  validates :has_media_consent, inclusion: { in: [true, false] }
 end
