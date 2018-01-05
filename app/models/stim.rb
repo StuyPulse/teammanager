@@ -5,5 +5,16 @@ class Stim < ApplicationRecord
 
   has_paper_trail
 
+  scope :consented, -> { where(has_media_consent: true) }
+
+  before_validation :set_has_guardian_if_has_media_consent
+
   validates :has_media_consent, inclusion: { in: [true, false] }
+  validates :has_guardian, inclusion: { in: [ true, false ] }
+  validates :has_guardian, inclusion: { in: [ true ] }, if: :has_media_consent
+
+  protected
+  def set_has_guardian_if_has_media_consent
+    self.has_guardian = true if self.has_media_consent
+  end
 end
