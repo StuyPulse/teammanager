@@ -1,10 +1,43 @@
 %tr
-  %td.pt-3
-    %h5= form_type.to_s.titleize
-  - if @student.valid_forms(form_type).any?
-    %td.text-center.pt-3.table-success
-      %h5= "Valid"
+  - if form_type != :stims
+    %td.pt-3
+      %p.lead= form_type.to_s.titleize
+    - if @student.valid_forms(form_type).any?
+      %td.text-center.pt-3.table-success
+        %h5= "Valid"
+    - else
+      %td.text-center.pt-3.table-danger
+        %h5
+          %strong= "Missing"
   - else
-    %td.text-center.pt-3.table-danger
-      %h5
-        %strong= "Missing"
+    %td.pt-3
+      %p.lead
+        On Team
+    - stims = valid_stims
+    - if stims.any?
+      %td.text-center.pt-3.table-success
+        %h5= "Done"
+    - else
+      %td.text-center.pt-3.table-danger
+        %h5
+          %strong= "Missing"
+    %tr
+      %td.pt-3
+        %p.lead Guardian Connected
+      - if stims.has_guardian.any?
+        %td.text-center.pt-3.table-success
+          %h5= "Done"
+      - else
+        %td.text-center.pt-3.table-danger
+          %h5
+            %strong= "Missing"
+    %tr
+      %td.pt-3
+        %p.lead Media Consent
+      - if stims.consented.any?
+        %td.text-center.pt-3.table-success
+          %h5= "Done"
+      - else
+        %td.text-center.pt-3.table-danger
+          %h5
+            %strong= "Missing"
