@@ -43,6 +43,8 @@ class Student < ApplicationRecord
       medicals.valid
     when :media_consents
       media_consents.valid
+    when :stims
+      stims.valid
     end
   end
 
