@@ -34,25 +34,22 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'bootstrap', '~> 4.0.0.beta'
+gem "jquery-rails"
 
 gem "haml"
 gem "haml-rails"
 
 gem 'devise'
+gem 'pundit'
+gem 'paper_trail'
 
-gem "jquery-rails"
-
-gem "pundit"
 gem 'rails_admin', '~> 1.2'
-gem "rails_admin_pundit", :github => "sudosu/rails_admin_pundit"
+gem 'rails_admin_pundit', :github => "sudosu/rails_admin_pundit"
 
 gem 'postmark-rails', '~> 0.15.0'
 
+gem 'auto_strip_attributes', "~> 2.2"
 gem 'phony_rails'
-
-gem "auto_strip_attributes", "~> 2.2"
-
-gem 'paper_trail'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
