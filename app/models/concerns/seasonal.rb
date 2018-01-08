@@ -26,6 +26,17 @@ module Seasonal
         set_current_year
       end
     end
+
+    rails_admin do
+      list do
+        field :year
+        field :student do
+          queryable true
+          searchable [:first_name, :last_name]
+        end
+        include_all_fields
+      end
+    end
   end
 
   def set_current_year
