@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Student:
+  = @service.student
+%p
+  %b Event:
+  = @service.event
+%p
+  %b Hours:
+  = @service.hours
+
+= link_to 'Edit', edit_service_path(@service)
+\|
+= link_to 'Back', services_path

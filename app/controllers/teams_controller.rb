@@ -4,26 +4,31 @@ class TeamsController < ApplicationController
   # GET /teams
   # GET /teams.json
   def index
+    authorize Team
     @teams = Team.all
   end
 
   # GET /teams/1
   # GET /teams/1.json
   def show
+    authorize @team
   end
 
   # GET /teams/new
   def new
+    authorize Team
     @team = Team.new
   end
 
   # GET /teams/1/edit
   def edit
+    authorize @team
   end
 
   # POST /teams
   # POST /teams.json
   def create
+    authorize Team
     @team = Team.new(team_params)
 
     respond_to do |format|
@@ -40,6 +45,7 @@ class TeamsController < ApplicationController
   # PATCH/PUT /teams/1
   # PATCH/PUT /teams/1.json
   def update
+    authorize @team
     respond_to do |format|
       if @team.update(team_params)
         format.html { redirect_to @team, notice: 'Team was successfully updated.' }
@@ -54,6 +60,7 @@ class TeamsController < ApplicationController
   # DELETE /teams/1
   # DELETE /teams/1.json
   def destroy
+    authorize @team
     @team.destroy
     respond_to do |format|
       format.html { redirect_to teams_url, notice: 'Team was successfully destroyed.' }
@@ -69,6 +76,6 @@ class TeamsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def team_params
-      params.require(:team).permit(:name, :program, :number)
+      params.require(:team).permit(:program, :number, :name)
     end
 end

@@ -1,11 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  program: MyString
-  number: 1
+stuypulse:
+  program: FRC
+  number: 694
+  name: StuyPulse
 
-two:
-  name: MyString
-  program: MyString
-  number: 1
+fission:
+  program: FTC
+  number: 310
+  name: Fission
+
+fusion:
+  program: FTC
+  number: 479
+  name: Fusion

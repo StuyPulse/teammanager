@@ -1,19 +1,45 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  first_name: MyString
-  last_name: MyString
-  graduation_year: 1
-  osis: 1
-  sark: 1
-  email: MyString
-  phone: MyString
+helen:
+  first_name: Helen
+  last_name: Ye
+  grad_year: <%= Date.today.year + 3 %>
+  osis: 123456781
+  email: helen@example.com
+  phone: 123-456-7890
+  team: stuypulse
+  parents: mom, dad
+  user: admin
 
-two:
-  first_name: MyString
-  last_name: MyString
-  graduation_year: 1
-  osis: 1
-  sark: 1
-  email: MyString
-  phone: MyString
+nicole:
+  first_name: Nicole
+  last_name: Shin
+  grad_year: 2000
+  osis: 123456782
+  email: nicole@example.com
+  phone: 123-456-7890
+  team: stuypulse
+  parents: mom, dad
+  user: student
+
+ryan:
+  first_name: Ryan
+  last_name: Siu
+  preferred_name: Ry
+  grad_year: 2000
+  osis: 123456783
+  email: ryan@example.com
+  phone: 123-456-7890
+  team: fission
+  parents: mom
+
+alum:
+  first_name: Al
+  last_name: Um
+  grad_year: <%= Date.today.year - 15 %>
+  osis: 123456784
+  email: alum@example.com
+  phone: 123-456-1234
+  team: stuypulse
+  parents: dad
+  is_active: false

@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Date:
+  = @medical.date
+%p
+  %b Student:
+  = @medical.student
+
+= link_to 'Edit', edit_medical_path(@medical)
+\|
+= link_to 'Back', medicals_path

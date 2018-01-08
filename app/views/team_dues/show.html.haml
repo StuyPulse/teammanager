@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Year:
+  = @team_due.year
+%p
+  %b Student:
+  = @team_due.student
+
+= link_to 'Edit', edit_team_due_path(@team_due)
+\|
+= link_to 'Back', team_dues_path

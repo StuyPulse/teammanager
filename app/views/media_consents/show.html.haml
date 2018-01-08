@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Year:
+  = @media_consent.year
+%p
+  %b Student:
+  = @media_consent.student
+
+= link_to 'Edit', edit_media_consent_path(@media_consent)
+\|
+= link_to 'Back', media_consents_path

@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,131 +10,178 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151231032526) do
+ActiveRecord::Schema.define(version: 20180105030215) do
 
-  create_table "community_services", force: :cascade do |t|
-    t.integer  "student_id",  null: false
-    t.integer  "year",        null: false
-    t.string   "description", null: false
-    t.float    "hours",       null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+  create_table "events", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "description"
+    t.date "date", null: false
+    t.integer "valid_year", null: false
+    t.float "default_hours", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["date"], name: "index_events_on_date"
+    t.index ["name"], name: "index_events_on_name"
+    t.index ["valid_year"], name: "index_events_on_valid_year"
   end
-
-  add_index "community_services", ["student_id"], name: "index_community_services_on_student_id"
-  add_index "community_services", ["year"], name: "index_community_services_on_year"
 
   create_table "media_consents", force: :cascade do |t|
-    t.integer  "student_id", null: false
-    t.integer  "year",       null: false
+    t.integer "year", null: false
+    t.integer "student_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["student_id"], name: "index_media_consents_on_student_id"
+    t.index ["year"], name: "index_media_consents_on_year"
   end
-
-  add_index "media_consents", ["student_id"], name: "index_media_consents_on_student_id"
-  add_index "media_consents", ["year"], name: "index_media_consents_on_year"
 
   create_table "medicals", force: :cascade do |t|
-    t.integer  "student_id", null: false
-    t.integer  "year",       null: false
+    t.date "date", null: false
+    t.integer "student_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["date"], name: "index_medicals_on_date"
+    t.index ["student_id"], name: "index_medicals_on_student_id"
   end
 
-  add_index "medicals", ["student_id"], name: "index_medicals_on_student_id"
-  add_index "medicals", ["year"], name: "index_medicals_on_year"
+  create_table "parents", force: :cascade do |t|
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.string "email"
+    t.string "phone", null: false
+    t.string "preferred_language"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_parents_on_email"
+    t.index ["first_name"], name: "index_parents_on_first_name"
+    t.index ["last_name"], name: "index_parents_on_last_name"
+    t.index ["phone"], name: "index_parents_on_phone"
+    t.index ["preferred_language"], name: "index_parents_on_preferred_language"
+  end
+
+  create_table "parents_students", id: false, force: :cascade do |t|
+    t.integer "student_id", null: false
+    t.integer "parent_id", null: false
+    t.index ["parent_id", "student_id"], name: "index_parents_students_on_parent_id_and_student_id"
+    t.index ["student_id", "parent_id"], name: "index_parents_students_on_student_id_and_parent_id"
+  end
 
   create_table "safety_tests", force: :cascade do |t|
-    t.integer  "student_id"
-    t.integer  "year"
+    t.boolean "is_passed", null: false
+    t.boolean "is_signed", null: false
+    t.integer "student_id", null: false
+    t.integer "year", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["is_passed"], name: "index_safety_tests_on_is_passed"
+    t.index ["is_signed"], name: "index_safety_tests_on_is_signed"
+    t.index ["student_id"], name: "index_safety_tests_on_student_id"
+    t.index ["year"], name: "index_safety_tests_on_year"
   end
 
-  add_index "safety_tests", ["student_id"], name: "index_safety_tests_on_student_id"
-  add_index "safety_tests", ["year"], name: "index_safety_tests_on_year"
-
-  create_table "seasonals", force: :cascade do |t|
-    t.integer  "student_id",    null: false
-    t.integer  "year",          null: false
-    t.integer  "seasonal_type", null: false
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+  create_table "services", force: :cascade do |t|
+    t.integer "student_id"
+    t.integer "event_id"
+    t.float "hours", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_services_on_event_id"
+    t.index ["student_id"], name: "index_services_on_student_id"
   end
 
-  add_index "seasonals", ["seasonal_type"], name: "index_seasonals_on_seasonal_type"
-  add_index "seasonals", ["student_id"], name: "index_seasonals_on_student_id"
-  add_index "seasonals", ["year"], name: "index_seasonals_on_year"
+  create_table "stims", force: :cascade do |t|
+    t.integer "year", null: false
+    t.integer "student_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "has_media_consent", default: false, null: false
+    t.boolean "has_guardian", default: false, null: false
+    t.index ["has_guardian"], name: "index_stims_on_has_guardian"
+    t.index ["has_media_consent"], name: "index_stims_on_has_media_consent"
+    t.index ["student_id"], name: "index_stims_on_student_id"
+    t.index ["year"], name: "index_stims_on_year"
+  end
 
   create_table "students", force: :cascade do |t|
-    t.string   "first_name",                null: false
-    t.string   "last_name",                 null: false
-    t.integer  "graduation_year",           null: false
-    t.integer  "osis"
-    t.integer  "sark",                      null: false
-    t.string   "email",                     null: false
-    t.string   "phone"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-    t.string   "father_name"
-    t.string   "mother_name"
-    t.string   "parent_email"
-    t.string   "parent_home_phone"
-    t.string   "parent_cell_phone"
-    t.integer  "team_id"
-    t.string   "parent_preferred_language"
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.string "preferred_name"
+    t.integer "grad_year", null: false
+    t.integer "osis", null: false
+    t.string "email", null: false
+    t.string "phone", null: false
+    t.integer "team_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.boolean "is_newbie", default: true, null: false
+    t.boolean "is_active", default: true, null: false
+    t.index ["email"], name: "index_students_on_email", unique: true
+    t.index ["first_name"], name: "index_students_on_first_name"
+    t.index ["grad_year"], name: "index_students_on_grad_year"
+    t.index ["is_active"], name: "index_students_on_is_active"
+    t.index ["is_newbie"], name: "index_students_on_is_newbie"
+    t.index ["last_name"], name: "index_students_on_last_name"
+    t.index ["osis"], name: "index_students_on_osis", unique: true
+    t.index ["phone"], name: "index_students_on_phone"
+    t.index ["preferred_name"], name: "index_students_on_preferred_name"
+    t.index ["team_id"], name: "index_students_on_team_id"
+    t.index ["user_id"], name: "index_students_on_user_id"
   end
-
-  add_index "students", ["email"], name: "index_students_on_email"
-  add_index "students", ["father_name"], name: "index_students_on_father_name"
-  add_index "students", ["first_name"], name: "index_students_on_first_name"
-  add_index "students", ["graduation_year"], name: "index_students_on_graduation_year"
-  add_index "students", ["last_name"], name: "index_students_on_last_name"
-  add_index "students", ["mother_name"], name: "index_students_on_mother_name"
-  add_index "students", ["osis"], name: "index_students_on_osis", unique: true
-  add_index "students", ["parent_cell_phone"], name: "index_students_on_parent_cell_phone"
-  add_index "students", ["parent_email"], name: "index_students_on_parent_email"
-  add_index "students", ["parent_home_phone"], name: "index_students_on_parent_home_phone"
-  add_index "students", ["parent_preferred_language"], name: "index_students_on_parent_preferred_language"
-  add_index "students", ["phone"], name: "index_students_on_phone"
-  add_index "students", ["sark"], name: "index_students_on_sark"
-  add_index "students", ["team_id"], name: "index_students_on_team_id"
 
   create_table "team_dues", force: :cascade do |t|
-    t.integer  "student_id", null: false
-    t.integer  "year",       null: false
+    t.integer "year", null: false
+    t.integer "student_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["student_id"], name: "index_team_dues_on_student_id"
+    t.index ["year"], name: "index_team_dues_on_year"
   end
-
-  add_index "team_dues", ["student_id"], name: "index_team_dues_on_student_id"
-  add_index "team_dues", ["year"], name: "index_team_dues_on_year"
 
   create_table "teams", force: :cascade do |t|
-    t.string   "name",       null: false
-    t.string   "program",    null: false
-    t.integer  "number",     null: false
+    t.string "program", null: false
+    t.integer "number", null: false
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "teams", ["name"], name: "index_teams_on_name"
-  add_index "teams", ["number"], name: "index_teams_on_number"
-  add_index "teams", ["program"], name: "index_teams_on_program"
-
   create_table "users", force: :cascade do |t|
-    t.string   "email",               default: "", null: false
-    t.string   "encrypted_password",  default: "", null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",       default: 0,  null: false
+    t.integer "sign_in_count", default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "is_admin", default: false, null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  create_table "version_associations", force: :cascade do |t|
+    t.integer "version_id"
+    t.string "foreign_key_name", null: false
+    t.integer "foreign_key_id"
+    t.index ["foreign_key_name", "foreign_key_id"], name: "index_version_associations_on_foreign_key"
+    t.index ["version_id"], name: "index_version_associations_on_version_id"
+  end
+
+  create_table "versions", force: :cascade do |t|
+    t.string "item_type", null: false
+    t.integer "item_id", null: false
+    t.string "event", null: false
+    t.string "whodunnit"
+    t.text "object", limit: 1073741823
+    t.datetime "created_at"
+    t.text "object_changes", limit: 1073741823
+    t.integer "transaction_id"
+    t.index ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
+    t.index ["transaction_id"], name: "index_versions_on_transaction_id"
+  end
 
 end

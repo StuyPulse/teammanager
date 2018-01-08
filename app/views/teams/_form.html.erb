@@ -1,10 +1,10 @@
-<%= form_for(@team) do |f| %>
-  <% if @team.errors.any? %>
+<%= form_with(model: team, local: true) do |form| %>
+  <% if team.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@team.errors.count, "error") %> prohibited this team from being saved:</h2>
+      <h2><%= pluralize(team.errors.count, "error") %> prohibited this team from being saved:</h2>
 
       <ul>
-      <% @team.errors.full_messages.each do |message| %>
+      <% team.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -12,18 +12,21 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= form.label :program %>
+    <%= form.text_field :program, id: :team_program %>
   </div>
+
   <div class="field">
-    <%= f.label :program %><br>
-    <%= f.text_field :program %>
+    <%= form.label :number %>
+    <%= form.number_field :number, id: :team_number %>
   </div>
+
   <div class="field">
-    <%= f.label :number %><br>
-    <%= f.number_field :number %>
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :team_name %>
   </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= form.submit %>
   </div>
 <% end %>

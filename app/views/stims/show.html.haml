@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Year:
+  = @stim.year
+%p
+  %b Student:
+  = @stim.student
+
+= link_to 'Edit', edit_stim_path(@stim)
+\|
+= link_to 'Back', stims_path

@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @event.name
+%p
+  %b Description:
+  = @event.description
+%p
+  %b Date:
+  = @event.date
+%p
+  %b Valid year:
+  = @event.valid_year
+%p
+  %b Default hours:
+  = @event.default_hours
+
+= link_to 'Edit', edit_event_path(@event)
+\|
+= link_to 'Back', events_path

@@ -1,55 +1,70 @@
-require 'csv'
+class Student < ApplicationRecord
+  include Nameable
 
-class Student < ActiveRecord::Base
-  belongs_to :team
-  has_many :seasonals
-  has_many :community_services
+  has_paper_trail
 
-  before_save :format_data
-  validates :first_name, :last_name, :graduation_year, :sark, :email, presence: true
+  belongs_to :team, optional: true
+  belongs_to :user, optional: true
+  has_and_belongs_to_many :parents
+  has_many :media_consents
+  has_many :medicals
+  has_many :safety_tests
+  has_many :stims
+  has_many :team_dues
+
+  has_many :services
+  has_many :events, through: :services
+
+  scope :active, -> { where(is_active: true) }
+  scope :inactive, -> { where(is_active: false) }
+
+  auto_strip_attributes :first_name, :last_name, :preferred_name, :email
+
+  validates :first_name, :last_name, :grad_year, :osis, :email, :phone,
+            presence: true, allow_blank: false
+  validates :parents, presence: true
   validates :osis, length: { is: 9 },
-                   numericality: { greater_than: 0 },
-                   allow_blank: true
+                   numericality: { greater_than: 0,
+                                   message: 'cannot be negative' }
+  validate :check_preferred_name
 
-  validates :sark, length: { is: 4 },
-                   numericality: { greater_than: 0 }
+  phony_normalize :phone, default_country_code: 'US'
 
-  def full_name
-    "#{first_name} #{last_name}"
+  def is_graduated?
+    # Assume students graduate on the last day of June
+    Date.today > Date.new(grad_year, 6, -1)
   end
 
-  def valid_seasonal(type)
-    # Ordinarily, I would just use `seasonal_type: type`, but Rails enums are
-    # trolling me and returning inconsistent results.
-    seasonals.valid.where(seasonal_type: Seasonal.seasonal_types[type]).first
-  end
-
-  def total_service_hours
-    community_services.valid.sum(:hours)
-  end
-
-  def self.to_csv
-    CSV.generate do |csv|
-      # The first row of data is the list of column names
-      seasonal_existence_column_names =
-        Seasonal.seasonal_types.keys.map {|type| "has_#{type}"}
-      row = column_names + seasonal_existence_column_names
-      csv << row
-
-      order(:id).each do |student|
-        existence_of_seasonals = Seasonal.seasonal_types.keys.map {|type| student.valid_seasonal(type).present?}
-        row = student.attributes.values_at(*column_names) + existence_of_seasonals
-        csv << row
-      end
+  def valid_forms(type)
+    case type
+    when :team_dues
+      team_dues.valid
+    when :medicals
+      medicals.valid
+    when :media_consents
+      media_consents.valid
+    when :stims
+      stims.valid
     end
   end
 
-  private
+  rails_admin do
+    create do
+      exclude_fields :team_dues, :media_consents, :medicals, :events, :services,
+                     :safety_tests, :stims, :user
+    end
 
-  def format_data
-    # Remove all non-digits from phone numbers
-    phone.gsub!(/\D/, '') unless phone.blank?
-    parent_home_phone.gsub!(/\D/, '') unless parent_home_phone.blank?
-    parent_cell_phone.gsub!(/\D/, '') unless parent_cell_phone.blank?
+    list do
+      filters [:is_newbie, :team, :grad_year]
+      scopes [:active, :inactive, nil]
+      sort_by :last_name
+    end
+  end
+
+  protected
+  def check_preferred_name
+    if preferred_name && preferred_name.downcase == first_name.downcase
+      errors.add(:preferred_name, "can't match first name")
+    end
   end
 end

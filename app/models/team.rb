@@ -1,10 +1,14 @@
-class Team < ActiveRecord::Base
+class Team < ApplicationRecord
+  has_paper_trail
+
   has_many :students
-  validates :name, :program, :number, presence: true
-  validates :program, inclusion: {in: %w(FLL FRC FTC),
-    message: "%{value} is not a FIRST program. Use FLL, FRC, or FTC."}
+
+  auto_strip_attributes :name
+
+  validates :program, :number, :name, presence: true, allow_blank: false
+  validates :program, inclusion: { in: %w(FRC FTC) }
 
   def display_name
-    "#{program} #{number}: #{name}"
+    "#{program} #{number} #{name}"
   end
 end

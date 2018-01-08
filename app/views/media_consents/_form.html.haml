@@ -1,0 +1,16 @@
+= form_for @media_consent do |f|
+  - if @media_consent.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@media_consent.errors.count, "error")} prohibited this media_consent from being saved:"
+      %ul
+        - @media_consent.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :year
+    = f.number_field :year
+  .field
+    = f.label :student
+    = f.text_field :student
+  .actions
+    = f.submit 'Save'

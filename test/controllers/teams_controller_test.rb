@@ -1,49 +1,48 @@
 require 'test_helper'
 
-class TeamsControllerTest < ActionController::TestCase
+class TeamsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @team = teams(:one)
   end
 
   test "should get index" do
-    get :index
+    get teams_url
     assert_response :success
-    assert_not_nil assigns(:teams)
   end
 
   test "should get new" do
-    get :new
+    get new_team_url
     assert_response :success
   end
 
   test "should create team" do
     assert_difference('Team.count') do
-      post :create, team: { program: @team.program, name: @team.name, number: @team.number }
+      post teams_url, params: { team: { name: @team.name, number: @team.number, program: @team.program } }
     end
 
-    assert_redirected_to team_path(assigns(:team))
+    assert_redirected_to team_url(Team.last)
   end
 
   test "should show team" do
-    get :show, id: @team
+    get team_url(@team)
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @team
+    get edit_team_url(@team)
     assert_response :success
   end
 
   test "should update team" do
-    patch :update, id: @team, team: { program: @team.program, name: @team.name, number: @team.number }
-    assert_redirected_to team_path(assigns(:team))
+    patch team_url(@team), params: { team: { name: @team.name, number: @team.number, program: @team.program } }
+    assert_redirected_to team_url(@team)
   end
 
   test "should destroy team" do
     assert_difference('Team.count', -1) do
-      delete :destroy, id: @team
+      delete team_url(@team)
     end
 
-    assert_redirected_to teams_path
+    assert_redirected_to teams_url
   end
 end

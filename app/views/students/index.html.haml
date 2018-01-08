@@ -1,0 +1,28 @@
+%h1 Students
+%table{ :class => "table"}
+  %thead
+    %tr
+      %th First Name
+      %th Last Name
+      %th Preferred Name
+      %th Graduation Year
+      %th Osis
+      %th Email
+      %th Phone
+      %th Team
+  %tbody
+    - @students.each do |student|
+      %tr
+        %td= student.first_name
+        %td= student.last_name
+        %td= student.preferred_name
+        %td= student.grad_year
+        %td= student.osis
+        %td= student.email
+        %td= student.phone
+        %td= student.team.display_name
+        %td= link_to 'Show', student
+        %td= link_to 'Edit', edit_student_path(student)
+        %td= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Student', new_student_path

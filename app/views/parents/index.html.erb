@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Parents</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Preferred language</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @parents.each do |parent| %>
+      <tr>
+        <td><%= parent.first_name %></td>
+        <td><%= parent.last_name %></td>
+        <td><%= parent.email %></td>
+        <td><%= parent.phone %></td>
+        <td><%= parent.preferred_language %></td>
+        <td><%= link_to 'Show', parent %></td>
+        <td><%= link_to 'Edit', edit_parent_path(parent) %></td>
+        <td><%= link_to 'Destroy', parent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Parent', new_parent_path %>

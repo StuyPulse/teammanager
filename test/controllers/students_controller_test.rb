@@ -1,49 +1,48 @@
 require 'test_helper'
 
-class StudentsControllerTest < ActionController::TestCase
+class StudentsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @student = students(:one)
   end
 
   test "should get index" do
-    get :index
+    get students_url
     assert_response :success
-    assert_not_nil assigns(:students)
   end
 
   test "should get new" do
-    get :new
+    get new_student_url
     assert_response :success
   end
 
   test "should create student" do
     assert_difference('Student.count') do
-      post :create, student: { email: @student.email, first_name: @student.first_name, graduation_year: @student.graduation_year, last_name: @student.last_name, osis: @student.osis, phone: @student.phone, sark: @student.sark }
+      post students_url, params: { student: { email: @student.email, first_name: @student.first_name, grad_year: @student.grad_year, last_name: @student.last_name, osis: @student.osis, phone: @student.phone, preferred_name: @student.preferred_name, team_id: @student.team_id } }
     end
 
-    assert_redirected_to student_path(assigns(:student))
+    assert_redirected_to student_url(Student.last)
   end
 
   test "should show student" do
-    get :show, id: @student
+    get student_url(@student)
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @student
+    get edit_student_url(@student)
     assert_response :success
   end
 
   test "should update student" do
-    patch :update, id: @student, student: { email: @student.email, first_name: @student.first_name, graduation_year: @student.graduation_year, last_name: @student.last_name, osis: @student.osis, phone: @student.phone, sark: @student.sark }
-    assert_redirected_to student_path(assigns(:student))
+    patch student_url(@student), params: { student: { email: @student.email, first_name: @student.first_name, grad_year: @student.grad_year, last_name: @student.last_name, osis: @student.osis, phone: @student.phone, preferred_name: @student.preferred_name, team_id: @student.team_id } }
+    assert_redirected_to student_url(@student)
   end
 
   test "should destroy student" do
     assert_difference('Student.count', -1) do
-      delete :destroy, id: @student
+      delete student_url(@student)
     end
 
-    assert_redirected_to students_path
+    assert_redirected_to students_url
   end
 end

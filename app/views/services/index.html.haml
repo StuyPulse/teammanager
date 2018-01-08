@@ -1,0 +1,25 @@
+%h1 Listing services
+
+%table
+  %thead
+    %tr
+      %th Student
+      %th Event
+      %th Hours
+      %th
+      %th
+      %th
+
+  %tbody
+    - @services.each do |service|
+      %tr
+        %td= service.student
+        %td= service.event
+        %td= service.hours
+        %td= link_to 'Show', service
+        %td= link_to 'Edit', edit_service_path(service)
+        %td= link_to 'Destroy', service, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Service', new_service_path

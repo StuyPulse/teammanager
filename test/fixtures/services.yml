@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+helensoupkitchen:
+  student: helen
+  event: soupkitchen
+  hours: 4.0
+
+nicolegovisland:
+  student: nicole
+  event: govisland
+  hours: 3.5

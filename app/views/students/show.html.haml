@@ -1,0 +1,48 @@
+%p#notice= notice
+.row
+  %h1
+    = @student.full_name
+    - if @student.preferred_name
+      = "( #{@student.preferred_name} )"
+%hr
+.row
+  .col
+    %h2 Student Info
+    %p
+      %strong Graduation Year:
+      = "#{@student.grad_year}"
+    %p
+      %strong OSIS:
+      = @student.osis
+    %p
+      %strong Email:
+      = @student.email
+    %p
+      %strong Phone:
+      = @student.phone
+    %p
+      %strong Team:
+      - if @student.team
+        = "#{@student.team.display_name}"
+      - else
+        No team
+  .col
+    %h2 Forms
+    %table.table.table-striped{style: "table-layout:fixed"}
+      = render partial: "student_form", locals: {form_type: :team_dues}
+      = render partial: "student_form", locals: {form_type: :media_consents}
+      = render partial: "student_form", locals: {form_type: :medicals}
+    %h2 STIMS
+    %table.table.table-striped{style: "table-layout:fixed"}
+      %tr
+      = render partial: "student_form", locals: {form_type: :stims}
+%hr
+.row
+  .col
+    %h2 Parent Info
+.row
+  = render :partial => "parent", :collection => @student.parents
+%hr
+.row
+  .col
+    %h2 Hours

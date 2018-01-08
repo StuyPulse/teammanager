@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+stimsconsentedcurryear:
+  year: <%= Stim.current_year %>
+  student: helen
+  has_media_consent: true
+  has_guardian: true
+
+stimsguardiannoconsentcurryear:
+  year: <%= Stim.current_year %>
+  student: nicole
+  has_media_consent: false
+  has_guardian: true
+
+stimsnoguardianorconsentcurryear:
+  year: <%= Stim.current_year %>
+  student: ryan
+  has_media_consent: false
+  has_guardian: false
+
+stimslastyear:
+  year: <%= Stim.current_year - 1 %>
+  student: helen
+  has_media_consent: true
+  has_guardian: true
