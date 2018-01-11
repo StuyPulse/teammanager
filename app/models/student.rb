@@ -45,6 +45,8 @@ class Student < ApplicationRecord
       media_consents.valid
     when :stims
       stims.valid
+    when :safety_tests
+      safety_tests.valid
     end
   end
 
