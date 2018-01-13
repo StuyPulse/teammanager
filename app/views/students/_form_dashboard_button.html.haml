@@ -1,0 +1,11 @@
+- if form_type == :stims
+  - valid = student.valid_forms(:stims).consented.any?
+- elsif form_type == :safety_tests
+  - valid = student.valid_forms(:safety_tests).signed.any?
+- else
+  - valid = student.valid_forms(form_type).any?
+%td.text-center
+  - if valid
+    .btn.active.btn-success= "✔"
+  - else
+    .btn.active.btn-danger= "✘"

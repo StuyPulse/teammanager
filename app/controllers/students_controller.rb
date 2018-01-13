@@ -10,6 +10,11 @@ class StudentsController < ApplicationController
     @students = Student.all
   end
 
+  def dashboard
+    authorize Student
+    @students = Student.active
+  end
+
   # GET /students/1
   # GET /students/1.json
   def show

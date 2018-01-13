@@ -1,4 +1,8 @@
 class StudentPolicy < ApplicationPolicy
+  def dashboard?
+    @user.is_admin?
+  end
+
   class Scope < Scope
     def resolve
       scope.all
