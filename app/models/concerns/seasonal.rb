@@ -43,6 +43,10 @@ module Seasonal
     self.year ||= self.class.current_year
   end
 
+  def name
+    "#{year} #{self.class.to_s.titleize}"
+  end
+
   module ClassMethods
     def current_year
       if Time.now.month < 9

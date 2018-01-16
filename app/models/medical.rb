@@ -23,4 +23,8 @@ class Medical < ApplicationRecord
   def good?
     date <= Date.today && Date.today < date + 1.year
   end
+
+  def name
+    "#{date.strftime("%F")} #{self.class.to_s.titleize}"
+  end
 end
