@@ -26,6 +26,8 @@ RailsAdmin.config do |config|
   # https://stackoverflow.com/q/40377340
   config.parent_controller = '::ApplicationController'
 
+  config.total_columns_width = 1000
+
   # Organize navigation links
   config.model 'Student' do
     navigation_label 'Members'
