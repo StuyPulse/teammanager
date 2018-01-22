@@ -8,9 +8,11 @@ class Medical < ApplicationRecord
   validates :date, :student_id, presence: true
 
   scope :valid, -> { where('date > ?', Date.today - 1.year) }
+  scope :invalid, -> { where('date <= ?', Date.today - 1.year)}
 
   rails_admin do
     list do
+      scopes [:valid, :invalid, nil]
       field :student do
         queryable true
         searchable [:first_name, :last_name]
