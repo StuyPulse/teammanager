@@ -25,6 +25,10 @@ class Medical < ApplicationRecord
   end
 
   def name
-    "#{date.strftime("%F")} #{self.class.to_s.titleize}"
+    if date.nil?
+      return "Medical"
+    end
+
+    "#{date.strftime("%F")} Medical"
   end
 end
