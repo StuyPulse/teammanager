@@ -15,6 +15,9 @@ module Seasonal
     belongs_to :student
 
     validates :year, :student_id, presence: true
+    validates_uniqueness_of :student_id, scope: :year,
+      message: " already has this form for this year."
+
     before_validation :set_current_year
 
     scope :valid_for, -> (year) { where(year: year) }
