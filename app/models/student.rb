@@ -12,6 +12,7 @@ class Student < ApplicationRecord
   has_many :safety_tests
   has_many :stims
   has_many :team_dues
+  has_many :permission_slips
 
   has_many :services
   has_many :events, through: :services
