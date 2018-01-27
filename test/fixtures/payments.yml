@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+nicolecnydeposit:
+  student: nicole
+  required_payment: cnydeposit
+  excused: false
+
+nicolecnyfee:
+  student: nicole
+  required_payment: cnyfee
+  excused: true

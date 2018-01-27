@@ -3,6 +3,7 @@ class RequiredPayment < ApplicationRecord
   self.inheritance_column = 'not_type'
 
   belongs_to :trip
+  has_many :payments
 
   validates :type, :amount, presence: true, allow_blank: false
   validates :amount, numericality: { greater_than: 0 }
