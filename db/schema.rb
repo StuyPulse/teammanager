@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180126224356) do
+ActiveRecord::Schema.define(version: 20180127003536) do
 
   create_table "events", force: :cascade do |t|
     t.string "name", null: false
@@ -74,6 +74,16 @@ ActiveRecord::Schema.define(version: 20180126224356) do
     t.index ["student_id"], name: "index_permission_slips_on_student_id"
     t.index ["trip_id"], name: "index_permission_slips_on_trip_id"
     t.index ["type"], name: "index_permission_slips_on_type"
+  end
+
+  create_table "required_payments", force: :cascade do |t|
+    t.integer "trip_id", null: false
+    t.string "type", null: false
+    t.integer "amount", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["trip_id"], name: "index_required_payments_on_trip_id"
+    t.index ["type"], name: "index_required_payments_on_type"
   end
 
   create_table "safety_tests", force: :cascade do |t|

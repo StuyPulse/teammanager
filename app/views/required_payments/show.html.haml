@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Trip:
+  = @required_payment.trip
+%p
+  %b Type:
+  = @required_payment.type
+%p
+  %b Amount:
+  = @required_payment.amount
+
+= link_to 'Edit', edit_required_payment_path(@required_payment)
+\|
+= link_to 'Back', required_payments_path

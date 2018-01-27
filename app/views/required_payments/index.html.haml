@@ -1,0 +1,25 @@
+%h1 Listing required_payments
+
+%table
+  %thead
+    %tr
+      %th Trip
+      %th Type
+      %th Amount
+      %th
+      %th
+      %th
+
+  %tbody
+    - @required_payments.each do |required_payment|
+      %tr
+        %td= required_payment.trip
+        %td= required_payment.type
+        %td= required_payment.amount
+        %td= link_to 'Show', required_payment
+        %td= link_to 'Edit', edit_required_payment_path(required_payment)
+        %td= link_to 'Destroy', required_payment, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Required payment', new_required_payment_path
