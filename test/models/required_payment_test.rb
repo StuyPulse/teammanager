@@ -38,8 +38,16 @@ class RequiredPaymentTest < ActiveSupport::TestCase
     assert @required_payment.valid?
   end
 
-  test "name of a new required payment is nothing" do
-    assert_equal "Required Payment", RequiredPayment.new.name
+  test "name of a required payment with nil trip or amount is nothing" do
+    @required_payment = RequiredPayment.new(type: "Fee")
+    assert_equal "Required Payment", @required_payment.name
+
+    @required_payment.trip = Trip.take
+    assert_equal "Required Payment", @required_payment.name
+
+    @required_payment.trip = nil
+    @required_payment.amount = 694
+    assert_equal "Required Payment", @required_payment.name
   end
 
   test "name includes trip name and amount" do
