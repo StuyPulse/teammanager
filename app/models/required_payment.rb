@@ -17,7 +17,7 @@ class RequiredPayment < ApplicationRecord
     if trip.nil?
       return "Required Payment"
     end
-    if type.nil? or amount.nil?
+    if amount.nil?
       return "#{self.trip.to_s.titleize} Required Payment"
     end
     "#{self.trip.name} $#{amount} #{type}"
