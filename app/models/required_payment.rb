@@ -1,3 +1,12 @@
+# Required payments represent the payments required for a student 
+# to go on a trip.
+#
+# They DO NOT represent the student's actual payment.
+# For example, the 2018 Central New York Regional required:
+#   - a $100 deposit
+#   - a $250 fee
+# A trip will only ever have one deposit, which is the first payment,
+# but it may have many fees.
 class RequiredPayment < ApplicationRecord
   # This allows for use of the column 'type'
   self.inheritance_column = 'not_type'

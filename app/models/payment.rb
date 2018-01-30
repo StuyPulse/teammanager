@@ -1,3 +1,4 @@
+# Payment represents the actual payment that a student gives in.
 class Payment < ApplicationRecord
   belongs_to :student
   belongs_to :required_payment
