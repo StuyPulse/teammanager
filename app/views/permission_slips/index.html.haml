@@ -1,0 +1,25 @@
+%h1 Listing permission_slips
+
+%table
+  %thead
+    %tr
+      %th Type
+      %th Trip
+      %th Student
+      %th
+      %th
+      %th
+
+  %tbody
+    - @permission_slips.each do |permission_slip|
+      %tr
+        %td= permission_slip.type
+        %td= permission_slip.trip
+        %td= permission_slip.student
+        %td= link_to 'Show', permission_slip
+        %td= link_to 'Edit', edit_permission_slip_path(permission_slip)
+        %td= link_to 'Destroy', permission_slip, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Permission slip', new_permission_slip_path

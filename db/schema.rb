@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180105030215) do
+ActiveRecord::Schema.define(version: 20180127010540) do
 
   create_table "events", force: :cascade do |t|
     t.string "name", null: false
@@ -63,6 +63,38 @@ ActiveRecord::Schema.define(version: 20180105030215) do
     t.integer "parent_id", null: false
     t.index ["parent_id", "student_id"], name: "index_parents_students_on_parent_id_and_student_id"
     t.index ["student_id", "parent_id"], name: "index_parents_students_on_student_id_and_parent_id"
+  end
+
+  create_table "payments", force: :cascade do |t|
+    t.integer "student_id", null: false
+    t.integer "required_payment_id", null: false
+    t.boolean "excused", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["excused"], name: "index_payments_on_excused"
+    t.index ["required_payment_id"], name: "index_payments_on_required_payment_id"
+    t.index ["student_id"], name: "index_payments_on_student_id"
+  end
+
+  create_table "permission_slips", force: :cascade do |t|
+    t.string "type", null: false
+    t.integer "trip_id", null: false
+    t.integer "student_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["student_id"], name: "index_permission_slips_on_student_id"
+    t.index ["trip_id"], name: "index_permission_slips_on_trip_id"
+    t.index ["type"], name: "index_permission_slips_on_type"
+  end
+
+  create_table "required_payments", force: :cascade do |t|
+    t.integer "trip_id", null: false
+    t.string "type", null: false
+    t.integer "amount", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["trip_id"], name: "index_required_payments_on_trip_id"
+    t.index ["type"], name: "index_required_payments_on_type"
   end
 
   create_table "safety_tests", force: :cascade do |t|
@@ -128,6 +160,13 @@ ActiveRecord::Schema.define(version: 20180105030215) do
     t.index ["user_id"], name: "index_students_on_user_id"
   end
 
+  create_table "students_trips", id: false, force: :cascade do |t|
+    t.integer "student_id", null: false
+    t.integer "trip_id", null: false
+    t.index ["student_id", "trip_id"], name: "index_students_trips_on_student_id_and_trip_id"
+    t.index ["trip_id", "student_id"], name: "index_students_trips_on_trip_id_and_student_id"
+  end
+
   create_table "team_dues", force: :cascade do |t|
     t.integer "year", null: false
     t.integer "student_id", null: false
@@ -143,6 +182,14 @@ ActiveRecord::Schema.define(version: 20180105030215) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "trips", force: :cascade do |t|
+    t.string "name", null: false
+    t.boolean "requires_teacher_permission", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_trips_on_name"
   end
 
   create_table "users", force: :cascade do |t|
