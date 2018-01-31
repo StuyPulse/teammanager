@@ -5,12 +5,18 @@ class Student < ApplicationRecord
 
   belongs_to :team, optional: true
   belongs_to :user, optional: true
+
   has_and_belongs_to_many :parents
+  has_and_belongs_to_many :trips
+
   has_many :media_consents
   has_many :medicals
   has_many :safety_tests
   has_many :stims
   has_many :team_dues
+
+  has_many :permission_slips
+  has_many :payments
 
   has_many :services
   has_many :events, through: :services

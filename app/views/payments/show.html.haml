@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Student:
+  = @payment.student
+%p
+  %b Required payment:
+  = @payment.required_payment
+%p
+  %b Excused:
+  = @payment.excused
+
+= link_to 'Edit', edit_payment_path(@payment)
+\|
+= link_to 'Back', payments_path

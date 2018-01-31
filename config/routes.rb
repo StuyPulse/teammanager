@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :payments
+  resources :required_payments
+  resources :permission_slips
+  resources :trips
   resources :stims
   resources :safety_tests
   resources :services
