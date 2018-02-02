@@ -3,7 +3,7 @@
 fail:
   is_passed: false
   is_signed: false
-  student: nicole
+  student: ryan
   year: 2017
 
 passed:

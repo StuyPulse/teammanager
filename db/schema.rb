@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20180127010540) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["student_id"], name: "index_media_consents_on_student_id"
+    t.index ["year", "student_id"], name: "index_media_consents_on_year_and_student_id", unique: true
     t.index ["year"], name: "index_media_consents_on_year"
   end
 
@@ -107,6 +108,7 @@ ActiveRecord::Schema.define(version: 20180127010540) do
     t.index ["is_passed"], name: "index_safety_tests_on_is_passed"
     t.index ["is_signed"], name: "index_safety_tests_on_is_signed"
     t.index ["student_id"], name: "index_safety_tests_on_student_id"
+    t.index ["year", "student_id"], name: "index_safety_tests_on_year_and_student_id", unique: true
     t.index ["year"], name: "index_safety_tests_on_year"
   end
 
@@ -130,6 +132,7 @@ ActiveRecord::Schema.define(version: 20180127010540) do
     t.index ["has_guardian"], name: "index_stims_on_has_guardian"
     t.index ["has_media_consent"], name: "index_stims_on_has_media_consent"
     t.index ["student_id"], name: "index_stims_on_student_id"
+    t.index ["year", "student_id"], name: "index_stims_on_year_and_student_id", unique: true
     t.index ["year"], name: "index_stims_on_year"
   end
 
@@ -173,6 +176,7 @@ ActiveRecord::Schema.define(version: 20180127010540) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["student_id"], name: "index_team_dues_on_student_id"
+    t.index ["year", "student_id"], name: "index_team_dues_on_year_and_student_id", unique: true
     t.index ["year"], name: "index_team_dues_on_year"
   end
 
