@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+2018newyork:
+  name: "2018 New York Regional"
+  requires_teacher_permission: false
+  students: helen, nicole, ryan
+
+2018centralnewyork:
+  name: "2018 Central New York Regional"
+  requires_teacher_permission: true
+  students: helen, nicole

@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Type:
+  = @permission_slip.type
+%p
+  %b Trip:
+  = @permission_slip.trip
+%p
+  %b Student:
+  = @permission_slip.student
+
+= link_to 'Edit', edit_permission_slip_path(@permission_slip)
+\|
+= link_to 'Back', permission_slips_path

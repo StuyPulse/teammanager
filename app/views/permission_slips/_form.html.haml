@@ -1,0 +1,19 @@
+= form_for @permission_slip do |f|
+  - if @permission_slip.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@permission_slip.errors.count, "error")} prohibited this permission_slip from being saved:"
+      %ul
+        - @permission_slip.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :type
+    = f.text_field :type
+  .field
+    = f.label :trip
+    = f.text_field :trip
+  .field
+    = f.label :student
+    = f.text_field :student
+  .actions
+    = f.submit 'Save'
