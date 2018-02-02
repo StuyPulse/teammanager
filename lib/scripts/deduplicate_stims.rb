@@ -15,14 +15,18 @@ duplicate_pairs.each do |year, student_id|
 
   # If all the stims are good, destroy all but the earliest one
   if good.count == stims.count
-    dupes = stims.order(created_by: :desc).take(good.count - 1)
-    dupes.destroy_all
+    dupes = stims.order(created_at: :desc).take(good.count - 1)
+    dupes.each do |dupe|
+      dupe.destroy
+    end
     next
   end
 
   # If any stim is good, destroy the ones that are not good
   if good.count != stims.count
     bad = stims.where.not(has_guardian: true, has_media_consent: true)
-    bad.destroy_all
+    bad.each do |dupe|
+      dupe.destroy
+    end
   end
 end
