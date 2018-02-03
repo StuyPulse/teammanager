@@ -67,6 +67,22 @@ RailsAdmin.config do |config|
     navigation_label 'Forms'
   end
 
+  config.model 'Trip' do
+    navigation_label 'Trips'
+  end
+
+  config.model 'RequiredPayment' do
+    navigation_label 'Trips'
+  end
+
+  config.model 'Payment' do
+    navigation_label 'Trips'
+  end
+
+  config.model 'PermissionSlip' do
+    navigation_label 'Trips'
+  end
+
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory
