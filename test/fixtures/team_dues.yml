@@ -4,6 +4,11 @@ duescurryear:
   year: <%= TeamDue.current_year %>
   student: helen
 
+excusedduescurryear:
+  year: <%= TeamDue.current_year %>
+  student: nicole
+  excused: true
+
 dueslastyear:
   year: <%= TeamDue.current_year - 1 %>
   student: helen
