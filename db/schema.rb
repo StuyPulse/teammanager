@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180131225205) do
+ActiveRecord::Schema.define(version: 20180205211038) do
 
   create_table "events", force: :cascade do |t|
     t.string "name", null: false
@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 20180131225205) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["excused"], name: "index_payments_on_excused"
+    t.index ["required_payment_id", "student_id"], name: "index_payments_on_required_payment_id_and_student_id", unique: true
     t.index ["required_payment_id"], name: "index_payments_on_required_payment_id"
     t.index ["student_id"], name: "index_payments_on_student_id"
   end
