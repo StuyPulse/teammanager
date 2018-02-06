@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180206001041) do
+ActiveRecord::Schema.define(version: 20180206150625) do
 
   create_table "events", force: :cascade do |t|
     t.string "name", null: false
@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 20180206001041) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["student_id"], name: "index_permission_slips_on_student_id"
+    t.index ["trip_id", "type", "student_id"], name: "index_permission_slips_on_trip_id_and_type_and_student_id", unique: true
     t.index ["trip_id"], name: "index_permission_slips_on_trip_id"
     t.index ["type"], name: "index_permission_slips_on_type"
   end
