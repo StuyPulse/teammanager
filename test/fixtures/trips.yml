@@ -3,9 +3,13 @@
 2018newyork:
   name: "2018 New York Regional"
   requires_teacher_permission: false
+  start_date: <%= Date.new(2018, 4, 6) %>
+  end_date: <%= Date.new(2018, 4, 8) %>
   students: helen, nicole, ryan
 
 2018centralnewyork:
   name: "2018 Central New York Regional"
   requires_teacher_permission: true
+  start_date: <%= Date.new(2018, 3, 2) %>
+  end_date: <%= Date.new(2018, 3, 4) %>
   students: helen, nicole
