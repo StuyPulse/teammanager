@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-cnyteacher:
-  type: "Teacher"
-  trip: 2018newyork
-  student: helen
-
 nyparent:
   type: "Parent"
+  trip: 2018newyork
+  student: nicole
+
+cnyteacher:
+  type: "Teacher"
   trip: 2018centralnewyork
-  student: ryan
+  student: helen
