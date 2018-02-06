@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180131225205) do
+ActiveRecord::Schema.define(version: 20180206001041) do
 
   create_table "events", force: :cascade do |t|
     t.string "name", null: false
@@ -195,6 +195,8 @@ ActiveRecord::Schema.define(version: 20180131225205) do
     t.boolean "requires_teacher_permission", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "start_date", null: false
+    t.date "end_date", null: false
     t.index ["name"], name: "index_trips_on_name"
   end
 
