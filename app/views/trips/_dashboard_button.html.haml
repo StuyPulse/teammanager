@@ -1,0 +1,36 @@
+- if column_type == :payment
+  - id = "payment#{student.id}_#{required_payment.id}"
+- else
+  - id = "#{column_type.to_s}#{student.id}" 
+
+%td.text-center{ id: id }
+  - if column_type == :parent_permission
+    - valid_button = student.find_permission_slip("Parent", trip.id).any?
+    - path = permission_slips_path(permission_slip: {type: "Parent",
+            student_id: student.id, trip_id: trip.id})
+
+  - elsif column_type == :teacher_permission
+    - valid_button = student.find_permission_slip("Teacher", trip.id).any?
+    - path = permission_slips_path(permission_slip: {type: "Teacher",
+            student_id: student.id, trip_id: trip.id})
+
+  - elsif column_type == :valid_forms
+    - valid_button = student.eligible_for_trip(trip)
+    - path = nil
+
+  - elsif column_type == :payment
+    - valid_button = student.find_payment(required_payment.id).any?
+    - path = payments_path(payment: {required_payment_id: required_payment.id,
+            student_id: student.id})
+
+  - else
+    - valid_button = false
+    - path = nil
+
+  - if valid_button
+    .btn.active.btn-success= "✔"
+  - elsif path != nil
+    = button_to "✘", path, method: :post, remote: true,
+      class: "btn btn-danger a-white"
+  - else
+    .btn.active.btn-danger= "✘"

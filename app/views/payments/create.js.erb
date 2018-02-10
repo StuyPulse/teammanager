@@ -1,0 +1,1 @@
+$(<%= "payment#{@payment.student_id}_#{@payment.required_payment_id}" %>).replaceWith("<%=j render partial: 'trips/dashboard_button', locals: { column_type: "payment".to_sym, required_payment: @payment.required_payment, student: @payment.student } %>")

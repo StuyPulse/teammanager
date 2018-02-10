@@ -24,6 +24,14 @@ class Medical < ApplicationRecord
     date <= Date.today && Date.today < date + 1.year
   end
 
+  def self.good_for_trip(trip)
+    where('date <= ? AND date > ? AND date <= ? AND date > ?',
+          trip.start_date,
+          trip.start_date - 1.year,
+          trip.end_date,
+          trip.end_date - 1.year)
+  end
+
   def name
     if date.nil?
       return "Medical"

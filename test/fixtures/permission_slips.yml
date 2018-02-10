@@ -2,10 +2,10 @@
 
 nyparent:
   type: "Parent"
-  trip: 2018newyork
+  trip: newyork2018
   student: nicole
 
 cnyteacher:
   type: "Teacher"
-  trip: 2018centralnewyork
+  trip: centralnewyork2018
   student: helen

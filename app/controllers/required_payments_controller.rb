@@ -28,6 +28,7 @@ class RequiredPaymentsController < ApplicationController
 
     respond_to do |format|
       if @required_payment.save
+        format.js
         format.html { redirect_to @required_payment, notice: 'Required payment was successfully created.' }
         format.json { render :show, status: :created, location: @required_payment }
       else

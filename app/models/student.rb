@@ -56,6 +56,44 @@ class Student < ApplicationRecord
     end
   end
 
+  def valid_forms_for_year(type, year)
+    case type
+    when :team_dues
+      team_dues.valid_for(year)
+    when :media_consents
+      media_consents.valid_for(year)
+    when :stims
+      stims.valid_for(year)
+    when :safety_tests
+      safety_tests.valid_for(year)
+    end
+  end
+
+  # A student will never have a permissions slip with
+  # the same type and trip as another permission slip
+  def find_permission_slip(type, trip_id)
+    permission_slips.where(type: type, trip_id: trip_id)
+  end
+
+  # A student will never have two payments for the same
+  # payment requirement
+  def find_payment(required_payment_id)
+    payments.where(required_payment_id: required_payment_id)
+  end
+
+  def eligible_for_trip(trip)
+    year = trip.end_date.year
+    has_consented_stim = valid_forms_for_year(:stims, year).consented.any?
+    has_signed_safety_test =
+      valid_forms_for_year(:safety_tests, year).signed.any?
+    puts valid_forms_for_year(:team_dues, year).any?
+    puts valid_forms_for_year(:media_consents, year).any?
+    valid_forms_for_year(:team_dues, year).any? &&
+      valid_forms_for_year(:media_consents, year).any? &&
+      medicals.good_for_trip(trip).any? &&
+      has_consented_stim && has_signed_safety_test
+  end
+
   rails_admin do
     create do
       exclude_fields :team_dues, :media_consents, :medicals, :events, :services,

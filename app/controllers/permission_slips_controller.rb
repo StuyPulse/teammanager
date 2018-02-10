@@ -24,13 +24,16 @@ class PermissionSlipsController < ApplicationController
   # POST /permission_slips
   # POST /permission_slips.json
   def create
+    authorize PermissionSlip
     @permission_slip = PermissionSlip.new(permission_slip_params)
 
     respond_to do |format|
       if @permission_slip.save
-        format.html { redirect_to @permission_slip, notice: 'Permission slip was successfully created.' }
+        format.js
+        format.html { redirect_to @permission_slip, notice: 'Permission Slip was successfully created.' }
         format.json { render :show, status: :created, location: @permission_slip }
       else
+        format.js
         format.html { render :new }
         format.json { render json: @permission_slip.errors, status: :unprocessable_entity }
       end
