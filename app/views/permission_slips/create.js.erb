@@ -1,1 +1,7 @@
-$(<%= "#{@permission_slip.type.downcase}_permission#{@permission_slip.student_id}" %>).replaceWith("<%=j render partial: 'trips/dashboard_button', locals: { column_type: "#{@permission_slip.type.downcase}_permission".to_sym, student: @permission_slip.student, trip: @permission_slip.trip } %>")
+var permission_slip = $(<%= "#{@permission_slip.type.downcase}_permission#{@permission_slip.student_id}" %>)
+permission_slip.replaceWith("<%=
+                              j render partial: 'trips/dashboard_button',
+                                locals: { column_type: "#{@permission_slip.type.downcase}_permission".to_sym,
+                                          student: @permission_slip.student,
+                                          trip: @permission_slip.trip }
+                                %>")

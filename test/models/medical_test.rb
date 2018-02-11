@@ -9,7 +9,7 @@ class MedicalTest < ActiveSupport::TestCase
     refute Medical.new(date: Date.today - 2.years).good?
   end
 
-  test "medical from valid from trip start to end date is good for trip" do
+  test "medical that is valid from trip's start to end date is good for trip" do
     trip = trips(:faketrip2000)
     medical = Medical.create(date: Date.new(2000, 1, 2),
                              student: students(:helen))

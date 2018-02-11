@@ -1,16 +1,16 @@
 - if column_type == :payment
-  - id = "payment#{student.id}_#{required_payment.id}"
+  - dom_id = "payment#{student.id}_#{required_payment.id}"
 - else
-  - id = "#{column_type.to_s}#{student.id}" 
+  - dom_id = "#{column_type.to_s}#{student.id}"
 
-%td.text-center{ id: id }
+%td.text-center{ id: dom_id }
   - if column_type == :parent_permission
-    - valid_button = student.find_permission_slip("Parent", trip.id).any?
+    - valid_button = !(student.find_permission_slip("Parent", trip.id).nil?)
     - path = permission_slips_path(permission_slip: {type: "Parent",
             student_id: student.id, trip_id: trip.id})
 
   - elsif column_type == :teacher_permission
-    - valid_button = student.find_permission_slip("Teacher", trip.id).any?
+    - valid_button = !(student.find_permission_slip("Teacher", trip.id).nil?)
     - path = permission_slips_path(permission_slip: {type: "Teacher",
             student_id: student.id, trip_id: trip.id})
 
@@ -19,7 +19,7 @@
     - path = nil
 
   - elsif column_type == :payment
-    - valid_button = student.find_payment(required_payment.id).any?
+    - valid_button = !(student.find_payment(required_payment.id).nil?)
     - path = payments_path(payment: {required_payment_id: required_payment.id,
             student_id: student.id})
 

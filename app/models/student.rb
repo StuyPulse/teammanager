@@ -72,22 +72,25 @@ class Student < ApplicationRecord
   # A student will never have a permissions slip with
   # the same type and trip as another permission slip
   def find_permission_slip(type, trip_id)
-    permission_slips.where(type: type, trip_id: trip_id)
+    permission_slips.where(type: type, trip_id: trip_id).take
   end
 
   # A student will never have two payments for the same
   # payment requirement
   def find_payment(required_payment_id)
-    payments.where(required_payment_id: required_payment_id)
+    payments.where(required_payment_id: required_payment_id).take
   end
 
   def eligible_for_trip(trip)
+    # If the trip occurs after August, the student's forms must be valid
+    # for the following year to be eligible for the trip
     year = trip.end_date.year
+    if trip.end_date.month > 8
+      year += 1
+    end
     has_consented_stim = valid_forms_for_year(:stims, year).consented.any?
     has_signed_safety_test =
       valid_forms_for_year(:safety_tests, year).signed.any?
-    puts valid_forms_for_year(:team_dues, year).any?
-    puts valid_forms_for_year(:media_consents, year).any?
     valid_forms_for_year(:team_dues, year).any? &&
       valid_forms_for_year(:media_consents, year).any? &&
       medicals.good_for_trip(trip).any? &&
