@@ -1,23 +1,20 @@
-%h1 Listing trips
+%h1 Trips
 
-%table
-  %thead
-    %tr
-      %th Name
-      %th Requires teacher permission
-      %th
-      %th
-      %th
-
-  %tbody
-    - @trips.each do |trip|
+.table-responsive
+  %table.table.table-hover.table-condensed
+    %thead
       %tr
-        %td= trip.name
-        %td= trip.requires_teacher_permission
-        %td= link_to 'Show', trip
-        %td= link_to 'Edit', edit_trip_path(trip)
-        %td= link_to 'Destroy', trip, method: :delete, data: { confirm: 'Are you sure?' }
+        %th Name
+        %th
+
+    %tbody
+      - @trips.each do |trip|
+        %tr
+          %td= trip.name
+          %td
+            = link_to 'Dashboard', dashboard_trip_path(id: trip.id),
+              target: :_blank, class: 'btn btn-primary a-white'
 
 %br
 
-= link_to 'New Trip', new_trip_path
+= link_to 'Trip Admin Page', rails_admin.index_path(model_name: 'trip')

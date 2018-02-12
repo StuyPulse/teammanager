@@ -1,4 +1,8 @@
 class TripPolicy < ApplicationPolicy
+  def index?
+    @user.is_admin?
+  end
+
   def dashboard?
     @user.is_admin?
   end
