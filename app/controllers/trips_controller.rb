@@ -1,10 +1,14 @@
 class TripsController < ApplicationController
-  before_action :set_trip, only: [:show, :edit, :update, :destroy]
+  before_action :set_trip, only: [:dashboard, :show, :edit, :update, :destroy]
 
   # GET /trips
   # GET /trips.json
   def index
     @trips = Trip.all
+  end
+
+  def dashboard
+    authorize Trip
   end
 
   # GET /trips/1
@@ -27,6 +31,7 @@ class TripsController < ApplicationController
     @trip = Trip.new(trip_params)
 
     respond_to do |format|
+      format.js
       if @trip.save
         format.html { redirect_to @trip, notice: 'Trip was successfully created.' }
         format.json { render :show, status: :created, location: @trip }

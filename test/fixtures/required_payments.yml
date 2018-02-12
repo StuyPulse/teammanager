@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 cnydeposit:
-  trip: 2018centralnewyork
+  trip: centralnewyork2018
   type: "Deposit"
   amount: 100
 
 cnyfee:
-  trip: 2018centralnewyork
+  trip: centralnewyork2018
   type: "Fee"
   amount: 250

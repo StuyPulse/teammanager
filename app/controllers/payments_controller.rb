@@ -24,13 +24,16 @@ class PaymentsController < ApplicationController
   # POST /payments
   # POST /payments.json
   def create
+    authorize Payment
     @payment = Payment.new(payment_params)
 
     respond_to do |format|
       if @payment.save
+        format.js
         format.html { redirect_to @payment, notice: 'Payment was successfully created.' }
         format.json { render :show, status: :created, location: @payment }
       else
+        format.js
         format.html { render :new }
         format.json { render json: @payment.errors, status: :unprocessable_entity }
       end
