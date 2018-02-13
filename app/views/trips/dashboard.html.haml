@@ -13,7 +13,7 @@
         %th= "Valid Forms"
         %th
     %tbody
-      - @trip.students.each do |student|
+      - @trip.students.order(:last_name).each do |student|
         %tr
           %td= student.name
           %td= student.osis
