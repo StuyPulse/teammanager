@@ -33,5 +33,4 @@
                     student: student}
           %td.text-center
             .btn.btn-primary.a-white
-              = link_to 'View', rails_admin.show_path(model_name: 'student',
-                                                      id: student.id)
+              = link_to 'View', student_path(id: student), target: :_blank
