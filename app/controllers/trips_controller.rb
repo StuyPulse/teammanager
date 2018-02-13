@@ -4,6 +4,7 @@ class TripsController < ApplicationController
   # GET /trips
   # GET /trips.json
   def index
+    authorize Trip
     @trips = Trip.all
   end
 
