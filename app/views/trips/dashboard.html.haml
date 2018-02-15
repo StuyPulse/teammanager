@@ -28,9 +28,8 @@
             = render partial: "dashboard_button",
               locals: {column_type: :payment, trip: @trip,
                       student: student, required_payment: required_payment}
-          = render partial: "dashboard_button",
-            locals: {column_type: :valid_forms, trip: @trip,
-                    student: student}
+          = render partial: "dashboard_forms_cell",
+            locals: {trip: @trip, student: student}
           %td.text-center
             .btn.btn-primary.a-white
               = link_to 'View', student_path(id: student)
