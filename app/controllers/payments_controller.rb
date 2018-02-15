@@ -29,11 +29,11 @@ class PaymentsController < ApplicationController
 
     respond_to do |format|
       if @payment.save
-        format.js
+        format.js { render action: "update_trip_dashboard" }
         format.html { redirect_to @payment, notice: 'Payment was successfully created.' }
         format.json { render :show, status: :created, location: @payment }
       else
-        format.js
+        format.js { render action: "update_trip_dashboard" }
         format.html { render :new }
         format.json { render json: @payment.errors, status: :unprocessable_entity }
       end
@@ -57,8 +57,11 @@ class PaymentsController < ApplicationController
   # DELETE /payments/1
   # DELETE /payments/1.json
   def destroy
+    authorize @payment
+
     @payment.destroy
     respond_to do |format|
+      format.js { render action: "update_trip_dashboard" }
       format.html { redirect_to payments_url, notice: 'Payment was successfully destroyed.' }
       format.json { head :no_content }
     end

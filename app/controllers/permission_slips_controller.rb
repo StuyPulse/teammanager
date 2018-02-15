@@ -29,11 +29,11 @@ class PermissionSlipsController < ApplicationController
 
     respond_to do |format|
       if @permission_slip.save
-        format.js
+        format.js { render action: "update_trip_dashboard" }
         format.html { redirect_to @permission_slip, notice: 'Permission Slip was successfully created.' }
         format.json { render :show, status: :created, location: @permission_slip }
       else
-        format.js
+        format.js { render action: "update_trip_dashboard" }
         format.html { render :new }
         format.json { render json: @permission_slip.errors, status: :unprocessable_entity }
       end
@@ -57,8 +57,11 @@ class PermissionSlipsController < ApplicationController
   # DELETE /permission_slips/1
   # DELETE /permission_slips/1.json
   def destroy
+    authorize @permission_slip
+
     @permission_slip.destroy
     respond_to do |format|
+      format.js { render action: "update_trip_dashboard" }
       format.html { redirect_to permission_slips_url, notice: 'Permission slip was successfully destroyed.' }
       format.json { head :no_content }
     end

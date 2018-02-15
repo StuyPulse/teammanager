@@ -5,12 +5,12 @@
       %tr
         %th= "Name"
         %th= "OSIS"
-        %th= "Parent Permission"
+        %th.text-center= "Parent Permission"
         - if @trip.requires_teacher_permission
-          %th= "Teacher Permission"
+          %th.text-center= "Teacher Permission"
         - @trip.required_payments.each do |required_payment|
-          %th= "$#{required_payment.amount} #{required_payment.type}"
-        %th= "Valid Forms"
+          %th.text-center= "$#{required_payment.amount} #{required_payment.type}"
+        %th.text-center= "Valid Forms"
         %th
     %tbody
       - @trip.students.order(:last_name).each do |student|
@@ -28,9 +28,8 @@
             = render partial: "dashboard_button",
               locals: {column_type: :payment, trip: @trip,
                       student: student, required_payment: required_payment}
-          = render partial: "dashboard_button",
-            locals: {column_type: :valid_forms, trip: @trip,
-                    student: student}
+          = render partial: "dashboard_forms_cell",
+            locals: {trip: @trip, student: student}
           %td.text-center
             .btn.btn-primary.a-white
               = link_to 'View', student_path(id: student)
