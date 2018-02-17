@@ -35,11 +35,10 @@
     %h2 Safety Test
     %table.table.table-striped{style: "table-layout:fixed"}
       %tr
-      = render partial: "student_form", locals: {form_type: :safety_tests}
+      = render partial: "student_safety_test_table"
     %h2 STIMS
     %table.table.table-striped{style: "table-layout:fixed"}
-      %tr
-      = render partial: "student_form", locals: {form_type: :stims}
+      = render partial: "student_stim_table"
 %hr
 .row
   .col

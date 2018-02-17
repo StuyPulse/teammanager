@@ -1,0 +1,28 @@
+%tr
+  %td.pb-1.pt-3
+    %p.lead On Team
+  - stims = @student.valid_forms(:stims)
+  - if stims.any?
+    %td.text-center.pb-1.pt-3.table-success
+      %p.lead= "Done"
+  - else
+    %td.text-center.pb-1.pt-3.table-danger
+      %p.lead.font-weight-bold= "Not Done"
+  %tr
+    %td.pb-1.pt-3
+      %p.lead Guardian Connected
+    - if stims.has_guardian.any?
+      %td.text-center.pb-1.pt-3.table-success
+        %p.lead= "Connected"
+    - else
+      %td.text-center.pb-1.pt-3.table-danger
+        %p.lead.font-weight-bold= "Not Connected"
+  %tr
+    %td.pb-1.pt-3
+      %p.lead Media Consent
+    - if stims.consented.any?
+      %td.text-center.pb-1.pt-3.table-success
+        %p.lead= "Submitted"
+    - else
+      %td.text-center.pb-1.pt-3.table-danger
+        %p.lead.font-weight-bold= "Not Submitted"
