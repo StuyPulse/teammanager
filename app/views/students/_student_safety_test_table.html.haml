@@ -1,0 +1,28 @@
+- safety_tests = @student.valid_forms(:safety_tests)
+%tr
+  %td.pb-1.pt-3
+    %p.lead Taken
+  - if safety_tests.any?
+    %td.text-center.pb-1.pt-3.table-success
+      %p.lead= "Taken"
+  - else
+    %td.text-center.pb-1.pt-3.table-danger
+      %p.lead.font-weight-bold= "Not Taken"
+%tr
+  %td.pb-1.pt-3
+    %p.lead Passed
+  - if safety_tests.passed.any?
+    %td.text-center.pb-1.pt-3.table-success
+      %p.lead= "Passed"
+  - else
+    %td.text-center.pb-1.pt-3.table-danger
+      %p.lead.font-weight-bold= "Not Passed"
+%tr
+  %td.pb-1.pt-3
+    %p.lead Signed
+  - if safety_tests.signed.any?
+    %td.text-center.pb-1.pt-3.table-success
+      %p.lead= "Signed"
+  - else
+    %td.text-center.pb-1.pt-3.table-danger
+      %p.lead.font-weight-bold= "Not Signed"

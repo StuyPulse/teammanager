@@ -32,10 +32,13 @@
       = render partial: "student_form", locals: {form_type: :team_dues}
       = render partial: "student_form", locals: {form_type: :media_consents}
       = render partial: "student_form", locals: {form_type: :medicals}
-    %h2 STIMS
+    %h2 Safety Test
     %table.table.table-striped{style: "table-layout:fixed"}
       %tr
-      = render partial: "student_form", locals: {form_type: :stims}
+      = render partial: "student_safety_test_table"
+    %h2 STIMS
+    %table.table.table-striped{style: "table-layout:fixed"}
+      = render partial: "student_stim_table"
 %hr
 .row
   .col
