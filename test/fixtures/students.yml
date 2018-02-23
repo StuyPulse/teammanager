@@ -7,6 +7,7 @@ helen:
   osis: 123456781
   email: helen@example.com
   phone: 123-456-7890
+  gender: "Female"
   team: stuypulse
   parents: mom, dad
   affiliations: se
@@ -32,6 +33,7 @@ ryan:
   osis: 123456783
   email: ryan@example.com
   phone: 123-456-7890
+  gender: "Male"
   team: fission
   parents: mom
 
