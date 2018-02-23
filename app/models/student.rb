@@ -33,9 +33,15 @@ class Student < ApplicationRecord
   validates :osis, length: { is: 9 },
                    numericality: { greater_than: 0,
                                    message: 'cannot be negative' }
+  validates :gender, inclusion: { in: %w(Female Male Other) }
   validate :check_preferred_name
 
   phony_normalize :phone, default_country_code: 'US'
+
+  # Enum for rails_admin create
+  def gender_enum
+    ['Female', 'Male', 'Other']
+  end
 
   def is_graduated?
     # Assume students graduate on the last day of June
