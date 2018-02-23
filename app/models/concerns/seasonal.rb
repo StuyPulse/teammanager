@@ -21,8 +21,10 @@ module Seasonal
     before_validation :set_current_year
 
     scope :valid_for, -> (year) { where(year: year) }
+    scope :invalid_for, -> (year) { where.not(year: year) }
 
     scope :valid, -> { valid_for(current_year) }
+    scope :invalid, -> { invalid_for(current_year) }
 
     after_initialize do
       if new_record?
@@ -32,6 +34,7 @@ module Seasonal
 
     rails_admin do
       list do
+        scopes [:valid, :invalid, nil]
         field :year
         field :student do
           queryable true
