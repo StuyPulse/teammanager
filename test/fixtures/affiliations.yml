@@ -1,0 +1,16 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+me:
+  name: "Mechanical Engineering"
+
+se:
+  name: "Software Engineering"
+
+marketing:
+  name: "Marketing"
+
+driveteam:
+  name: "Drive Team"
+
+strategy:
+  name: "Strategy"

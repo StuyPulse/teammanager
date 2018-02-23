@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180206150625) do
+ActiveRecord::Schema.define(version: 20180223153443) do
+
+  create_table "affiliations", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_affiliations_on_name"
+  end
+
+  create_table "affiliations_students", id: false, force: :cascade do |t|
+    t.integer "student_id", null: false
+    t.integer "affiliation_id", null: false
+    t.index ["affiliation_id", "student_id"], name: "index_affiliations_students_on_affiliation_id_and_student_id"
+    t.index ["student_id", "affiliation_id"], name: "index_affiliations_students_on_student_id_and_affiliation_id"
+  end
 
   create_table "events", force: :cascade do |t|
     t.string "name", null: false
