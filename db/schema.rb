@@ -166,8 +166,10 @@ ActiveRecord::Schema.define(version: 20180223153443) do
     t.integer "user_id"
     t.boolean "is_newbie", default: true, null: false
     t.boolean "is_active", default: true, null: false
+    t.string "gender"
     t.index ["email"], name: "index_students_on_email", unique: true
     t.index ["first_name"], name: "index_students_on_first_name"
+    t.index ["gender"], name: "index_students_on_gender"
     t.index ["grad_year"], name: "index_students_on_grad_year"
     t.index ["is_active"], name: "index_students_on_is_active"
     t.index ["is_newbie"], name: "index_students_on_is_newbie"
