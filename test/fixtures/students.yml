@@ -9,6 +9,7 @@ helen:
   phone: 123-456-7890
   team: stuypulse
   parents: mom, dad
+  affiliations: se
   user: admin
 
 nicole:
@@ -20,6 +21,7 @@ nicole:
   phone: 123-456-7890
   team: stuypulse
   parents: mom, dad
+  affiliations: engineering, strategy
   user: student
 
 ryan:
@@ -42,4 +44,5 @@ alum:
   phone: 123-456-1234
   team: stuypulse
   parents: dad
+  affiliations: marketing, driveteam
   is_active: false

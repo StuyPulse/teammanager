@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :affiliations
   resources :payments
   resources :required_payments
   resources :permission_slips

@@ -1,0 +1,13 @@
+= form_for @affiliation do |f|
+  - if @affiliation.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@affiliation.errors.count, "error")} prohibited this affiliation from being saved:"
+      %ul
+        - @affiliation.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .actions
+    = f.submit 'Save'
