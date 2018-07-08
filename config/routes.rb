@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  root :to => "static#home"
+
+  get 'forms', to: 'static#forms'
   resources :affiliations
   resources :payments
   resources :required_payments
@@ -17,7 +20,6 @@ Rails.application.routes.draw do
   resources :team_dues
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
-  root :to => "static#home"
 
   resources :parents
   resources :teams
