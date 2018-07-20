@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180223153443) do
+ActiveRecord::Schema.define(version: 20180720215104) do
 
   create_table "affiliations", force: :cascade do |t|
     t.string "name", null: false
@@ -232,6 +232,8 @@ ActiveRecord::Schema.define(version: 20180223153443) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "is_admin", default: false, null: false
+    t.string "provider"
+    t.string "uid"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
