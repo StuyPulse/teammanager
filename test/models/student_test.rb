@@ -50,6 +50,10 @@ class StudentTest < ActiveSupport::TestCase
     @student.email = "\t\r\n   mary@example.com \n"
     assert @student.save
     assert @student.email == "mary@example.com"
+
+    @student.team_email = "\t\r\n   mary@example.com \n"
+    assert @student.save
+    assert @student.team_email == "mary@example.com"
   end
 
   test "student validates preferred name is not first name" do

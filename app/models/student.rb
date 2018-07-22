@@ -25,10 +25,11 @@ class Student < ApplicationRecord
   scope :active, -> { where(is_active: true) }
   scope :inactive, -> { where(is_active: false) }
 
-  auto_strip_attributes :first_name, :last_name, :preferred_name, :email
+  auto_strip_attributes :first_name, :last_name, :preferred_name, :email, :team_email
 
   validates :first_name, :last_name, :grad_year, :osis, :email, :phone,
             presence: true, allow_blank: false
+  validates :team_email, allow_blank: false
   validates :parents, presence: true
   validates :osis, length: { is: 9 },
                    numericality: { greater_than: 0,
