@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  EMAIL_DOMAIN_WHITELIST = %w(stuypulse.com)
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :recoverable,
@@ -9,6 +11,17 @@ class User < ApplicationRecord
   has_paper_trail
 
   has_one :student
+
+  validate :email_domain_is_in_whitelist
+
+  def email_domain_is_in_whitelist
+    EMAIL_DOMAIN_WHITELIST.each do |domain|
+      return if email.ends_with? "@#{domain}"
+    end
+
+    errors.add(:email, "domain is not allowed. Allowed domains:
+                         #{EMAIL_DOMAIN_WHITELIST.join(", ")}")
+  end
 
   def self.from_omniauth(access_token)
     data = access_token.info
