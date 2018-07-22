@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180720215104) do
+ActiveRecord::Schema.define(version: 20180722183338) do
 
   create_table "affiliations", force: :cascade do |t|
     t.string "name", null: false
@@ -167,6 +167,7 @@ ActiveRecord::Schema.define(version: 20180720215104) do
     t.boolean "is_newbie", default: true, null: false
     t.boolean "is_active", default: true, null: false
     t.string "gender"
+    t.string "team_email"
     t.index ["email"], name: "index_students_on_email", unique: true
     t.index ["first_name"], name: "index_students_on_first_name"
     t.index ["gender"], name: "index_students_on_gender"
@@ -177,6 +178,7 @@ ActiveRecord::Schema.define(version: 20180720215104) do
     t.index ["osis"], name: "index_students_on_osis", unique: true
     t.index ["phone"], name: "index_students_on_phone"
     t.index ["preferred_name"], name: "index_students_on_preferred_name"
+    t.index ["team_email"], name: "index_students_on_team_email"
     t.index ["team_id"], name: "index_students_on_team_id"
     t.index ["user_id"], name: "index_students_on_user_id"
   end
