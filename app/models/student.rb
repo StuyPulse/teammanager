@@ -29,7 +29,6 @@ class Student < ApplicationRecord
 
   validates :first_name, :last_name, :grad_year, :osis, :email, :phone,
             presence: true, allow_blank: false
-  validates :team_email, allow_blank: false
   validates :parents, presence: true
   validates :osis, length: { is: 9 },
                    numericality: { greater_than: 0,
