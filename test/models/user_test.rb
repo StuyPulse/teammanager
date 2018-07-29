@@ -2,8 +2,7 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   setup do
-    @user = User.new(email: "test",
-                     password: "test_password")
+    @user = User.new(email: "test")
   end
 
   test "stuypulse.com email will pass validation" do

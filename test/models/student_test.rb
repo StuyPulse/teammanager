@@ -7,7 +7,8 @@ class StudentTest < ActiveSupport::TestCase
                           grad_year: 2000,
                           phone: "1234567890",
                           email: "student@test.com",
-                          osis: 123456789)
+                          osis: 123456789,
+                          gender: "Other")
     @student.parents << Parent.take
   end
 

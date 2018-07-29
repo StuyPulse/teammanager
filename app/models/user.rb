@@ -3,8 +3,7 @@ class User < ApplicationRecord
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :recoverable,
-         :rememberable, :trackable, :validatable,
+  devise :recoverable, :rememberable, :trackable,
          :timeoutable
   devise :omniauthable, omniauth_providers: [:google_oauth2]
 
@@ -28,9 +27,7 @@ class User < ApplicationRecord
     user = User.where(email: data['email']).first
 
     unless user
-      user = User.create(email: data['email'],
-          password: Devise.friendly_token[0,20]
-         )
+      user = User.create(email: data['email'])
     end
 
     user
