@@ -6,14 +6,11 @@
 #
 mentor:
   email: mentor@example.com
-  encrypted_password: <%= Devise::Encryptor.digest(User, '1234567890') %>
   is_admin: true
 
 student:
   email: student@example.com
-  encrypted_password: <%= Devise::Encryptor.digest(User, '1234567890') %>
 
 admin:
   email: admin@example.com
-  encrypted_password: <%= Devise::Encryptor.digest(User, '1234567890') %>
   is_admin: true
