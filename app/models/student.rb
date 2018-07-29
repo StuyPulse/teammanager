@@ -33,7 +33,7 @@ class Student < ApplicationRecord
   validates :osis, length: { is: 9 },
                    numericality: { greater_than: 0,
                                    message: 'cannot be negative' }
-  validates :gender, inclusion: { in: %w(Female Male Other) }
+  validates :gender, inclusion: { in: %w(Female Male Other) }, :allow_nil => true
   validate :check_preferred_name
 
   phony_normalize :phone, default_country_code: 'US'
