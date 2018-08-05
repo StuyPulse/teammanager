@@ -11,6 +11,9 @@
           class: 'nav-link'
         %li.nav-item= link_to "Trips", trips_path,
           class: 'nav-link'
+      - if current_user
+        %li.nav-item= link_to "Student Profile", student_path(current_user.student.id),
+          class: 'nav-link'
     %ul.nav.navbar-nav.navbar-right
       %li
         - if current_user
