@@ -5,6 +5,9 @@ class StudentPolicyTest < ActiveSupport::TestCase
   def test_scope
   end
 
+  def test_new
+  end
+
   def test_show
   end
 
