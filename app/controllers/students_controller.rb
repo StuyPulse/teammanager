@@ -65,11 +65,11 @@ class StudentsController < ApplicationController
   def update
     authorize @student
     respond_to do |format|
-      if @student.update(student_params)
+      if @student.update_attributes(permitted_attributes(@student))
         format.html { redirect_to @student, notice: 'Student was successfully updated.' }
         format.json { render :show, status: :ok, location: @student }
       else
-        format.html { render :edit }
+        format.html { render :edit, notice: 'Student was unsuccessfully updated.' }
         format.json { render json: @student.errors, status: :unprocessable_entity }
       end
     end
