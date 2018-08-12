@@ -17,6 +17,7 @@
     %ul.nav.navbar-nav.navbar-right
       %li
         - if current_user
+          = "Welcome, #{current_user.email}!"
           = link_to "Sign out", destroy_user_session_path, method: :delete
         - else
           = link_to "Sign in", user_google_oauth2_omniauth_authorize_path 
