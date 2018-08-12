@@ -11,6 +11,8 @@ class User < ApplicationRecord
 
   has_one :student
 
+  before_save :link_user_to_student
+
   validate :email_domain_is_in_whitelist
 
   def email_domain_is_in_whitelist
@@ -31,5 +33,11 @@ class User < ApplicationRecord
     end
 
     user
+  end
+
+  def link_user_to_student
+    return if student
+
+    self.student = Student.find_by(team_email: email)
   end
 end
