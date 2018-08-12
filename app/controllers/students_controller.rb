@@ -65,7 +65,7 @@ class StudentsController < ApplicationController
   def update
     authorize @student
     respond_to do |format|
-      if @student.update(student_params)
+      if @student.update(permitted_attributes(@student))
         format.html { redirect_to @student, notice: 'Student was successfully updated.' }
         format.json { render :show, status: :ok, location: @student }
       else
