@@ -51,7 +51,7 @@ class StudentsController < ApplicationController
 
     respond_to do |format|
       if @student.save
-        format.html { redirect_to @student, notice: 'Student was successfully created.' }
+        format.html { redirect_to @student }
         format.json { render :show, status: :created, location: @student }
       else
         format.html { render :new }
@@ -65,7 +65,7 @@ class StudentsController < ApplicationController
   def update
     authorize @student
     respond_to do |format|
-      if @student.update_attributes(permitted_attributes(@student))
+      if @student.update(permitted_attributes(@student))
         format.html { redirect_to @student, notice: 'Student was successfully updated.' }
         format.json { render :show, status: :ok, location: @student }
       else

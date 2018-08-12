@@ -14,8 +14,6 @@
       - if current_user&.student
         %li.nav-item= link_to "Student Profile", student_path(current_user.student.id),
           class: 'nav-link'
-        %li.nav-item= link_to "Edit Student Profile", edit_student_path(current_user.student.id),
-          class: 'nav-link'
     %ul.nav.navbar-nav.navbar-right
       %li
         - if current_user
