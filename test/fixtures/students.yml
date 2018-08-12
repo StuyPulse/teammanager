@@ -6,6 +6,7 @@ helen:
   grad_year: <%= Date.today.year + 3 %>
   osis: 123456781
   email: helen@example.com
+  team_email: helen.ye@stuypulse.com
   phone: 123-456-7890
   gender: "Female"
   team: stuypulse
@@ -19,6 +20,7 @@ nicole:
   grad_year: 2000
   osis: 123456782
   email: nicole@example.com
+  team_email: nicole.shin@stuypulse.com
   phone: 123-456-7890
   team: stuypulse
   parents: mom, dad
@@ -32,6 +34,7 @@ ryan:
   grad_year: 2000
   osis: 123456783
   email: ryan@example.com
+  team_email: ryan.siu@stuypulse.com
   phone: 123-456-7890
   gender: "Male"
   team: fission
@@ -43,6 +46,7 @@ alum:
   grad_year: <%= Date.today.year - 15 %>
   osis: 123456784
   email: alum@example.com
+  team_email: al.um@stuypulse.com
   phone: 123-456-1234
   team: stuypulse
   parents: dad
