@@ -27,7 +27,7 @@
       - else
         No team
     %p
-      - if policy(current_user, @student).update?
+      - if policy(@student).update?
         = link_to "Edit Profile", edit_student_path(@student)
   .col
     %h2 Forms
