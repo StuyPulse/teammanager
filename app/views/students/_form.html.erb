@@ -12,8 +12,8 @@
   <% end %>
 
   <% if current_user&.is_admin %>
-    <%= render partial: 'admin_params', locals: {form: form} %>
+    <%= render partial: 'students/forms/admin_params', locals: {form: form} %>
   <% elsif (@user == @record&.user) %>
-    <%= render partial: 'student_params', locals: {form: form} %>
+    <%= render partial: 'students/forms/student_params', locals: {form: form} %>
   <% end %>
 <% end %>
