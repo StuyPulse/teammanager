@@ -1,7 +1,7 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
-  skip_before_action :authenticate_user!, only: :check
-  skip_after_action :verify_authorized, only: :check
+  skip_before_action :authenticate_user!
+  skip_after_action :verify_authorized
 
   # GET /students
   # GET /students.json
@@ -30,17 +30,6 @@ class StudentsController < ApplicationController
   # GET /students/1/edit
   def edit
     authorize @student
-  end
-
-  def check
-    @student = Student.find_by(osis: params['student']['osis'],
-                               last_name: params['student']['last_name'],
-                               email: params['student']['email'])
-    if @student
-      render :show
-    else
-      redirect_to root_path, alert: 'No student with that info was found.'
-    end
   end
 
   # POST /students
