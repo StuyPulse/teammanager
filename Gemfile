@@ -40,6 +40,7 @@ gem "haml"
 gem "haml-rails"
 
 gem 'devise'
+gem "mini_racer"
 gem 'omniauth-google-oauth2'
 gem 'pundit'
 gem 'paper_trail'

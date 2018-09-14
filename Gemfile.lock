@@ -135,6 +135,7 @@ GEM
       activerecord
       kaminari-core (= 1.1.1)
     kaminari-core (1.1.1)
+    libv8 (6.7.288.46.1)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -147,6 +148,8 @@ GEM
     method_source (0.9.0)
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
+    mini_racer (0.2.0)
+      libv8 (>= 6.3)
     minitest (5.11.3)
     multi_json (1.13.1)
     multi_xml (0.6.0)
@@ -315,6 +318,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
+  mini_racer
   omniauth-google-oauth2
   paper_trail
   phony_rails
