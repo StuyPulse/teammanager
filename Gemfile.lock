@@ -247,7 +247,7 @@ GEM
     ruby_dep (1.5.0)
     ruby_parser (3.11.0)
       sexp_processor (~> 4.9)
-    rubyzip (1.2.1)
+    rubyzip (1.2.2)
     sass (3.5.6)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -316,7 +316,7 @@ DEPENDENCIES
   jquery-rails
   listen (>= 3.0.5, < 3.2)
   omniauth-google-oauth2
-  paper_trail
+  paper_trail (~> 9.2.0)
   phony_rails
   postmark-rails (~> 0.15.0)
   puma (~> 3.7)
@@ -324,6 +324,7 @@ DEPENDENCIES
   rails (~> 5.1.2)
   rails_admin (~> 1.2)
   rails_admin_pundit!
+  rubyzip (~> 1.2.2)
   sass-rails (~> 5.0)
   selenium-webdriver
   spring
