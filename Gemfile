@@ -42,7 +42,7 @@ gem "haml-rails"
 gem 'devise'
 gem 'omniauth-google-oauth2'
 gem 'pundit'
-gem 'paper_trail'
+gem 'paper_trail', '~> 9.2.0'
 
 gem 'rails_admin', '~> 1.2'
 gem 'rails_admin_pundit', :github => "sudosu/rails_admin_pundit"
@@ -52,6 +52,7 @@ gem 'postmark-rails', '~> 0.15.0'
 gem 'auto_strip_attributes', "~> 2.2"
 gem 'phony_rails'
 
+gem 'rubyzip', '~> 1.2.2'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
