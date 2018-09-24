@@ -25,9 +25,9 @@ class Student < ApplicationRecord
   scope :active, -> { where(is_active: true) }
   scope :inactive, -> { where(is_active: false) }
 
-  auto_strip_attributes :first_name, :last_name, :preferred_name, :email, :team_email
+  auto_strip_attributes :first_name, :last_name, :preferred_name, :personal_email, :team_email
 
-  validates :first_name, :last_name, :grad_year, :osis, :email, :phone,
+  validates :first_name, :last_name, :grad_year, :osis, :personal_email, :phone,
             presence: true, allow_blank: false
   validates :parents, presence: true
   validates :osis, length: { is: 9 },
@@ -35,6 +35,7 @@ class Student < ApplicationRecord
                                    message: 'cannot be negative' }
   validates :gender, inclusion: { in: %w(Female Male Other) }, :allow_nil => true
   validate :check_preferred_name
+  validate :validate_personal_and_team_email
 
   phony_normalize :phone, default_country_code: 'US'
 
@@ -121,6 +122,11 @@ class Student < ApplicationRecord
   def check_preferred_name
     if preferred_name && preferred_name.downcase == first_name.downcase
       errors.add(:preferred_name, "can't match first name")
+    end
+  end
+  def validate_personal_and_team_email
+    if personal_email == team_email
+      errors.add(:personal_email, "your personal email is not your stuypulse.com email!")
     end
   end
 end
