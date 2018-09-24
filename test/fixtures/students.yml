@@ -5,7 +5,7 @@ helen:
   last_name: Ye
   grad_year: <%= Date.today.year + 3 %>
   osis: 123456781
-  email: helen@example.com
+  personal_email: helen@example.com
   team_email: helen.ye@stuypulse.com
   phone: 123-456-7890
   gender: "Female"
@@ -19,7 +19,7 @@ nicole:
   last_name: Shin
   grad_year: 2000
   osis: 123456782
-  email: nicole@example.com
+  personal_email: nicole@example.com
   team_email: nicole.shin@stuypulse.com
   phone: 123-456-7890
   team: stuypulse
@@ -33,19 +33,34 @@ ryan:
   preferred_name: Ry
   grad_year: 2000
   osis: 123456783
-  email: ryan@example.com
+  personal_email: ryan@example.com
   team_email: ryan.siu@stuypulse.com
   phone: 123-456-7890
   gender: "Male"
   team: fission
   parents: mom
 
+bryan: 
+  first_name: Bryan
+  last_name: Lai
+  preferred_name: Bry
+  grad_year: 2020
+  osis: 213300452
+  personal_email: bryanjl22@hotmail.com
+  team_email: bryan.lai@stuypulse.com
+  phone: 347-788-7918
+  gender: "male"
+  team: stuypulse
+  parents: mom, dad
+  affiliations: se
+  user: admin
+
 alum:
   first_name: Al
   last_name: Um
   grad_year: <%= Date.today.year - 15 %>
   osis: 123456784
-  email: alum@example.com
+  personal_email: alum@example.com
   team_email: al.um@stuypulse.com
   phone: 123-456-1234
   team: stuypulse
