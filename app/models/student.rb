@@ -126,7 +126,7 @@ class Student < ApplicationRecord
   end
   def validate_personal_and_team_email
     if personal_email == team_email
-      errors.add(:personal_email, "your personal email is not your stuypulse.com email!")
+      errors.add(:personal_email, "can't be identical to stuypulse.com email!")
     end
   end
 end

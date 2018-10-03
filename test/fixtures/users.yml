@@ -14,3 +14,4 @@ student:
 admin:
   email: admin@example.com
   is_admin: true
+
