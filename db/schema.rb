@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180722183338) do
+ActiveRecord::Schema.define(version: 20180920204141) do
 
   create_table "affiliations", force: :cascade do |t|
     t.string "name", null: false
@@ -168,6 +168,8 @@ ActiveRecord::Schema.define(version: 20180722183338) do
     t.boolean "is_active", default: true, null: false
     t.string "gender"
     t.string "team_email"
+    t.date "birthday"
+    t.index ["birthday"], name: "index_students_on_birthday"
     t.index ["email"], name: "index_students_on_email", unique: true
     t.index ["first_name"], name: "index_students_on_first_name"
     t.index ["gender"], name: "index_students_on_gender"
