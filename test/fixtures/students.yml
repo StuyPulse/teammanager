@@ -40,6 +40,18 @@ ryan:
   team: fission
   parents: mom
 
+victor:
+  first_name: Victor
+  last_name: Siu
+  grad_year: 2021
+  osis: 218787778
+  email: victor@example.com
+  team_email: victor.siu@stuypulse.com
+  phone: 123-456-7890
+  team: stuypulse
+  parents: mom, dad
+
+
 alum:
   first_name: Al
   last_name: Um
