@@ -27,30 +27,30 @@ class ContactFormImporter
   # Given a CSV::Row from the contact form return an instance of the first
   # parent
   def generate_parent_one(row)
-    parent_one = Parent.new(first_name: row.fetch("Parent 1's First Name"),
-                            last_name: row.fetch("Parent 1's Last Name"),
-                            phone: row.fetch("Parent 1's Phone Number"),
-                            email: row.fetch("Parent 1's Email"))
+    parent_one = Parent.new(first_name: row.fetch("Parent 1's First Name:"),
+                            last_name: row.fetch("Parent 1's Last Name:"),
+                            phone: row.fetch("Parent 1's Phone Number:"),
+                            email: row.fetch("Parent 1's Email:"))
   end
 
   # Given a CSV::Row from the contact form return an instance of the second
   # parent
   def generate_parent_two(row)
-    parent_two = Parent.new(first_name: row.fetch("Parent 2's First Name"),
-                            last_name: row.fetch("Parent 2's Last Name"),
-                            phone: row.fetch("Parent 2's Phone Number"),
-                            email: row.fetch("Parent 2's Email"))
+    parent_two = Parent.new(first_name: row.fetch("Parent 2's First Name:"),
+                            last_name: row.fetch("Parent 2's Last Name:"),
+                            phone: row.fetch("Parent 2's Phone Number:"),
+                            email: row.fetch("Parent 2's Email:"))
   end
 
   # Given a CSV::Row from the contact form return an instance of the student
   def generate_student(row)
-    student = Student.new(first_name: row.fetch("First Name"),
-                          last_name: row.fetch("Last Name"),
-                          preferred_name: row.fetch("Preferred Name"),
-                          osis: row.fetch("OSIS"),
-                          grad_year: row.fetch("Graduation Year"),
-                          email: row.fetch("Email"),
-                          phone: row.fetch("Phone Number"))
+    student = Student.new(first_name: row.fetch("First Name:"),
+                          last_name: row.fetch("Last Name:"),
+                          preferred_name: row.fetch("Preferred Name: (If different from your first name)"),
+                          osis: row.fetch("OSIS:"),
+                          grad_year: row.fetch("Graduation Year:"),
+                          personal_email: row.fetch("Personal Email: (not your stuy.edu email)"),
+                          phone: row.fetch("Phone:"))
     begin
       student.team = find_team(row.fetch("Which team are you in?"))
     rescue KeyError
