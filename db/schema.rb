@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181019214306) do
+ActiveRecord::Schema.define(version: 20180920204141) do
 
   create_table "affiliations", force: :cascade do |t|
     t.string "name", null: false
@@ -158,7 +158,7 @@ ActiveRecord::Schema.define(version: 20181019214306) do
     t.string "preferred_name"
     t.integer "grad_year", null: false
     t.integer "osis", null: false
-    t.string "personal_email", null: false
+    t.string "email", null: false
     t.string "phone", null: false
     t.integer "team_id"
     t.datetime "created_at", null: false
@@ -170,6 +170,7 @@ ActiveRecord::Schema.define(version: 20181019214306) do
     t.string "team_email"
     t.date "birthday"
     t.index ["birthday"], name: "index_students_on_birthday"
+    t.index ["email"], name: "index_students_on_email", unique: true
     t.index ["first_name"], name: "index_students_on_first_name"
     t.index ["gender"], name: "index_students_on_gender"
     t.index ["grad_year"], name: "index_students_on_grad_year"
@@ -177,7 +178,6 @@ ActiveRecord::Schema.define(version: 20181019214306) do
     t.index ["is_newbie"], name: "index_students_on_is_newbie"
     t.index ["last_name"], name: "index_students_on_last_name"
     t.index ["osis"], name: "index_students_on_osis", unique: true
-    t.index ["personal_email"], name: "index_students_on_personal_email", unique: true
     t.index ["phone"], name: "index_students_on_phone"
     t.index ["preferred_name"], name: "index_students_on_preferred_name"
     t.index ["team_email"], name: "index_students_on_team_email"

@@ -49,7 +49,7 @@ class ContactFormImporter
                           preferred_name: row.fetch("Preferred Name: (If different from your first name)"),
                           osis: row.fetch("OSIS:"),
                           grad_year: row.fetch("Graduation Year:"),
-                          personal_email: row.fetch("Personal Email: (not your stuy.edu email)"),
+                          email: row.fetch("Personal Email: (not your stuy.edu email)"),
                           phone: row.fetch("Phone:"))
     begin
       student.team = find_team(row.fetch("Which team are you in?"))
