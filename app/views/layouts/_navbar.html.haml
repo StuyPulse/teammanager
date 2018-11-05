@@ -15,6 +15,7 @@
         %li.nav-item= link_to "Student Profile", student_path(current_user.student.id),
           class: 'nav-link'
 
+      - if current_user
         %li.nav-item= link_to "Forms", forms_path,
           class: 'nav-link'
 
