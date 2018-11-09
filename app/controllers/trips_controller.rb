@@ -12,6 +12,9 @@ class TripsController < ApplicationController
     authorize Trip
   end
 
+  def import
+    authorize Trip
+  end
   # GET /trips/1
   # GET /trips/1.json
   def show
