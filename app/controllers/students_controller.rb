@@ -13,6 +13,11 @@ class StudentsController < ApplicationController
     @students = Student.active
   end
 
+  def import
+    authorize Student
+    @students = Student.active
+  end
+
   # GET /students/1
   # GET /students/1.json
   def show

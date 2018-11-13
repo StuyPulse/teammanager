@@ -42,6 +42,8 @@ class ApplicationPolicy
     case action
       when :dashboard
         user.is_admin?
+      when :import
+        user.is_admin?
       when :index
         user.is_admin?
       when :show
