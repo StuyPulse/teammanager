@@ -1,5 +1,5 @@
 class TripsController < ApplicationController
-  before_action :set_trip, only: [:dashboard, :show, :edit, :update, :destroy]
+  before_action :set_trip, only: [:dashboard, :import, :show, :edit, :update, :destroy]
 
   # GET /trips
   # GET /trips.json
