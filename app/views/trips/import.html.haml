@@ -1,14 +1,2 @@
-%h1= @trip.name
-.table-responsive
-  %table.table.table-hover.table-condensed
-    %thead
-      %tr
-        %th="Import Students for " + @trip.name + ":"
-        %th="Name"
-        %th="OSIS"
-      %tbody
-        -@trip.students.order(:last_name).each do |student|
-          %tr
-            %td= ""
-            %td= student.name
-            %td= student.osis
+%h1= "Import Students for:  " + @trip.name
+=render 'import_form'

@@ -1,0 +1,4 @@
+=form_for @trip, action: "import", method: "post", url: "" do |f|
+  =f.label :Add_Students
+  =f.text_field :import, placeholder: "Enter Student Osises Here:", size:"100"
+  =f.submit "Import Students", :class => "btn.btn-primary.a-white"

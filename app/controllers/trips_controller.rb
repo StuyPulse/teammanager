@@ -13,7 +13,11 @@ class TripsController < ApplicationController
   end
 
   def import
-    authorize Trip
+    if request.post?
+      authorize Trip
+    else
+      authorize Trip
+    end
   end
   # GET /trips/1
   # GET /trips/1.json
