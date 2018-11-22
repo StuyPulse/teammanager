@@ -1,13 +1,12 @@
 class TripsController < ApplicationController
   before_action :set_trip, only: [:dashboard, :import, :show, :edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token, only: [:import]
 
   # GET /trips
   # GET /trips.json
   def index
     authorize Trip
-    @trips = Trip.all
-  end
-
+    @trips = Trip.all end
   def dashboard
     authorize Trip
   end
@@ -15,6 +14,10 @@ class TripsController < ApplicationController
   def import
     if request.post?
       authorize Trip
+      @data = trip_params[:importStudents].split(" ")
+      for i in @data
+        @trip.students.create(@data)
+      end
     else
       authorize Trip
     end
@@ -59,8 +62,7 @@ class TripsController < ApplicationController
         format.json { render :show, status: :ok, location: @trip }
       else
         format.html { render :edit }
-        format.json { render json: @trip.errors, status: :unprocessable_entity }
-      end
+        format.json { render json: @trip.errors, status: :unprocessable_entity } end
     end
   end
 
@@ -82,6 +84,7 @@ class TripsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def trip_params
-      params.require(:trip).permit(:name, :requires_teacher_permission)
+      params.require(:trip).permit(:name, :requires_teacher_permission, :importStudents)
     end
+
 end
