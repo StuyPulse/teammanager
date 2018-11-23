@@ -9,8 +9,6 @@ Rails.application.routes.draw do
   resources :trips do
     member do
       get 'dashboard'
-    end
-    member do
       get 'import'
       post 'import'
     end
@@ -32,9 +30,6 @@ Rails.application.routes.draw do
   resources :students do
     collection do
       get 'dashboard'
-    end
-    collection do
-      get 'import'
     end
   end
 

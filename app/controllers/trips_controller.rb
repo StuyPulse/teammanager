@@ -1,31 +1,29 @@
 class TripsController < ApplicationController
   before_action :set_trip, only: [:dashboard, :import, :show, :edit, :update, :destroy]
-  skip_before_action :verify_authenticity_token, only: [:import]
 
   # GET /trips
   # GET /trips.json
   def index
     authorize Trip
-    @trips = Trip.all end
+    @trips = Trip.all
+  end
+
   def dashboard
     authorize Trip
   end
 
   def import
+    authorize Trip
     if request.post?
-      authorize Trip
-      @trip = Trip.find(params[:id])
-      @data = trip_params[:importStudents].split(" ")
-      for i in @data
-        if Student.where(osis: i.to_i).exists?
-          if !@trip.students.where(osis: i.to_i).exists?
-           @trip.students << Student.find_by(osis: i.to_i)
+      @osies = trip_params[:students_to_import].split(" ").map(&:to_i)
+      for i in @osies
+        if Student.where(osis: i).exists?
+          if !@trip.students.where(osis: i).exists?
+           @trip.students << Student.find_by(osis: i)
            @trip.save
          end
         end
       end
-    else
-      authorize Trip
     end
   end
   # GET /trips/1
@@ -68,7 +66,8 @@ class TripsController < ApplicationController
         format.json { render :show, status: :ok, location: @trip }
       else
         format.html { render :edit }
-        format.json { render json: @trip.errors, status: :unprocessable_entity } end
+        format.json { render json: @trip.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -90,7 +89,7 @@ class TripsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def trip_params
-      params.require(:trip).permit(:name, :requires_teacher_permission, :importStudents)
+      params.require(:trip).permit(:name, :requires_teacher_permission, :students_to_import)
     end
 
 end
