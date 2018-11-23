@@ -17,9 +17,11 @@ class TripsController < ApplicationController
       @trip = Trip.find(params[:id])
       @data = trip_params[:importStudents].split(" ")
       for i in @data
-        if !@trip.students.where(osis: i.to_i).exists?
-        @trip.students << Student.find_by(osis: i.to_i)
-        @trip.save
+        if Student.where(osis: i.to_i).exists?
+          if !@trip.students.where(osis: i.to_i).exists?
+           @trip.students << Student.find_by(osis: i.to_i)
+           @trip.save
+         end
         end
       end
     else
