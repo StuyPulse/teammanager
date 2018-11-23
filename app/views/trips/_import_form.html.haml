@@ -1,7 +1,7 @@
 =form_for @trip, action: "import", method: "post", url: "", authenticity_token: true do |f|
-  =f.label :Insert_Student_OSISES_Below
-  =f.submit "Import Students", :class => "btn.btn-primary.a-white"
-  %br
+  =f.label "Directions:", "Directions: Separate each OSIS with a space."
   =hidden_field_tag :authenticity_token, form_authenticity_token
   =f.text_area :students_to_import, placeholder: "Enter Student Osises Here:", size:"100"
-=link_to 'Trip Admin Page', rails_admin.index_path(model_name: 'trip')
+  %br
+  =f.submit "Import Students", :class => "btn btn-primary.a-white"
+=link_to 'Trip Admin Page', rails_admin.show_path(model_name: 'trip', id: @trip.id)
