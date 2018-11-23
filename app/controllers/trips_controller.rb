@@ -14,9 +14,13 @@ class TripsController < ApplicationController
   def import
     if request.post?
       authorize Trip
+      @trip = Trip.find(params[:id])
       @data = trip_params[:importStudents].split(" ")
       for i in @data
-        @trip.students.create(@data)
+        if !@trip.students.where(osis: i.to_i).exists?
+        @trip.students << Student.find_by(osis: i.to_i)
+        @trip.save
+        end
       end
     else
       authorize Trip
