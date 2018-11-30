@@ -15,14 +15,21 @@ class TripsController < ApplicationController
   def import
     authorize Trip
     if request.post?
+      @wrong_ids = []
       @osies = trip_params[:students_to_import].split(" ").map(&:to_i)
       for i in @osies
         if Student.where(osis: i).exists?
           if !@trip.students.where(osis: i).exists?
            @trip.students << Student.find_by(osis: i)
            @trip.save
-         end
+          end
+        else
+          @wrong_ids << i
         end
+      end
+      if @wrong_ids.length > 0
+        puts @wrong_ids
+        flash[:flashes] = "The osises in this array: " + @wrong_ids.to_s +  " do not exist in the database."
       end
     end
   end
