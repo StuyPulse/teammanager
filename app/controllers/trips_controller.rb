@@ -18,18 +18,17 @@ class TripsController < ApplicationController
       @wrong_ids = []
       @osies = trip_params[:students_to_import].split(" ").map(&:to_i)
       for i in @osies
-        if Student.where(osis: i).exists?
-          if !@trip.students.where(osis: i).exists?
+        #Checks to see if the student is not on the trip and the Student exists in the database.
+        if !@trip.students.where(osis: i).exists? and Student.find_by(osis:i)
            @trip.students << Student.find_by(osis: i)
            @trip.save
-          end
         else
           @wrong_ids << i
         end
       end
       if @wrong_ids.length > 0
-        puts @wrong_ids
-        flash[:flashes] = "The osises in this array: " + @wrong_ids.to_s +  " do not exist in the database."
+       puts @wrong_ids
+       flash[:flashes] = "The osises in this array: " + @wrong_ids.to_s +  " do not exist in the database."
       end
     end
   end
@@ -98,5 +97,4 @@ class TripsController < ApplicationController
     def trip_params
       params.require(:trip).permit(:name, :requires_teacher_permission, :students_to_import)
     end
-
 end
