@@ -19,12 +19,14 @@ class TripsController < ApplicationController
       @osies = trip_params[:students_to_import].split(" ").map(&:to_i)
       for i in @osies
         #Checks to see if the student is not on the trip and the Student exists in the database.
-        if !@trip.students.where(osis: i).exists? and Student.find_by(osis:i)
-           @trip.students << Student.find_by(osis: i)
-           @trip.save
-        else
+	student = Student.find_by(osis:i)
+        unless student and !@trip.students.where(osis: i).exists?
           @wrong_ids << i
-        end
+	  next	  
+        else
+	  @trip.students << student
+          @trip.save
+	end
       end
       if @wrong_ids.length > 0
        puts @wrong_ids
