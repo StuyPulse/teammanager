@@ -20,19 +20,19 @@ class TripsController < ApplicationController
       @osies = trip_params[:students_to_import].split(" ").map(&:to_i)
       for i in @osies
         #Checks to see if the student is not on the trip and the Student exists in the database.
-	student = Student.find_by(osis:i)
+        student = Student.find_by(osis:i)
         unless student
           @wrong_ids << i
-	  next
+          next
         end
         if @trip.students.find_by(osis:i)
           @on_trip_ids << i
         else
-	  @trip.students << student
+          @trip.students << student
           @trip.save
-	end
+        end
       end
-        flash[:flashes] = "The osises in this array: #{@wrong_ids.to_s} do not exist in the database. and the osies in this array: #{@on_trip_ids.to_s} are already on the trip."
+      flash[:flashes] = "The osises in this array: #{@wrong_ids.to_s} do not exist in the database. and the osies in this array: #{@on_trip_ids.to_s} are already on the trip."
     end
   end
   # GET /trips/1
@@ -91,13 +91,13 @@ class TripsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_trip
-      @trip = Trip.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_trip
+    @trip = Trip.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def trip_params
-      params.require(:trip).permit(:name, :requires_teacher_permission, :students_to_import)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def trip_params
+    params.require(:trip).permit(:name, :requires_teacher_permission, :students_to_import)
+  end
 end
