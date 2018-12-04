@@ -16,22 +16,23 @@ class TripsController < ApplicationController
     authorize Trip
     if request.post?
       @wrong_ids = []
+      @on_trip_ids = []
       @osies = trip_params[:students_to_import].split(" ").map(&:to_i)
       for i in @osies
         #Checks to see if the student is not on the trip and the Student exists in the database.
 	student = Student.find_by(osis:i)
-        unless student and !@trip.students.where(osis: i).exists?
+        unless student
           @wrong_ids << i
-	  next	  
+	  next
+        end
+        if @trip.students.find_by(osis:i)
+          @on_trip_ids << i
         else
 	  @trip.students << student
           @trip.save
 	end
       end
-      if @wrong_ids.length > 0
-       puts @wrong_ids
-       flash[:flashes] = "The osises in this array: " + @wrong_ids.to_s +  " do not exist in the database."
-      end
+        flash[:flashes] = "The osises in this array: #{@wrong_ids.to_s} do not exist in the database. and the osies in this array: #{@on_trip_ids.to_s} are already on the trip."
     end
   end
   # GET /trips/1
