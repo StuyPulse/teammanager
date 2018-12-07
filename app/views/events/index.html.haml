@@ -7,6 +7,8 @@
         %th Name
         %th Description
         %th Default hours
+        %td
+        %td
 
     %tbody
       - @events.each do |event|
@@ -14,3 +16,13 @@
           %td= event.name
           %td= event.description
           %td= event.default_hours
+          %td
+            = link_to 'Services Dashboard', dashboard_event_path(id: event.id),
+              class: 'btn btn-primary a-white'
+          %td
+            = link_to 'Add Services', add_services_event_path(id: event.id),
+              class: 'btn btn-primary a-white'
+
+%br
+
+= link_to 'Event Admin Page', rails_admin.index_path(model_name: 'event')

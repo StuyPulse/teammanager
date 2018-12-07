@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: [:show, :edit, :update, :destroy, :dashboard, :add_services]
 
   # GET /events
   # GET /events.json
@@ -8,6 +8,14 @@ class EventsController < ApplicationController
     @events = Event.all
   end
 
+  def dashboard
+    authorize Event
+    @events = Event.all
+  end
+
+  def add_services
+    authorize Event
+  end
   # GET /events/1
   # GET /events/1.json
   def show

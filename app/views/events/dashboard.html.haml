@@ -1,0 +1,12 @@
+%h1= @event.name 
+.table-responsive
+  %table.table.table-hover.table-condensed
+    %thead
+      %tr
+        %th= "Student"
+        %th= "Hours"
+    %tbody
+      - @event.services.order(:event_id).each do |service|
+        %tr
+          %td= service.student.name
+          %td= service.hours
