@@ -4,6 +4,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
+    authorize Event
     @events = Event.all
   end
 
