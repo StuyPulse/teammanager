@@ -1,29 +1,16 @@
-%h1 Listing events
+%h1 Events
 
-%table
-  %thead
-    %tr
-      %th Name
-      %th Description
-      %th Date
-      %th Valid year
-      %th Default hours
-      %th
-      %th
-      %th
-
-  %tbody
-    - @events.each do |event|
+.table-responsive
+  %table.table.table-hover.table-condensed
+    %thead
       %tr
-        %td= event.name
-        %td= event.description
-        %td= event.date
-        %td= event.valid_year
-        %td= event.default_hours
-        %td= link_to 'Show', event
-        %td= link_to 'Edit', edit_event_path(event)
-        %td= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }
+        %th Name
+        %th Description
+        %th Default hours
 
-%br
-
-= link_to 'New Event', new_event_path
+    %tbody
+      - @events.each do |event|
+        %tr
+          %td= event.name
+          %td= event.description
+          %td= event.default_hours
