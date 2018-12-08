@@ -15,6 +15,25 @@ class EventsController < ApplicationController
 
   def add_services
     authorize Event
+    if request.post?
+      @wrong_ids = []
+      @new_services = event_params[:service_params].split(" ").map(&:to_i)
+      i = 0
+      while i < @new_services.length - 1
+          student = Student.find_by(osis: @new_services[i])
+          hours = @new_services[i + 1]
+          unless student
+            @wrong_ids << @new_services[i]
+            i += 2
+          end
+          unless @event.students.find_by(osis: @new_services[i])
+            @event.services.create(:student_id => student.id, :event_id => @event.id, :hours => hours)
+          @event.save
+          i += 2
+          end
+          i += 2
+      end
+    end
   end
   # GET /events/1
   # GET /events/1.json
@@ -78,6 +97,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:name, :description, :date, :valid_year, :default_hours)
+      params.require(:event).permit(:name, :description, :date, :valid_year, :default_hours, :service_params)
     end
 end
