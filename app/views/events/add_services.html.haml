@@ -6,5 +6,6 @@
   =f.text_area :service_params, placeholder: "Examples Below: \n 213300452 4 \n 212312321 5", size: "100"
   %br
   =f.submit "Bulk Add Services", :class => "btn btn-primary.a-white"
+-render 'layouts/flash'
 =link_to 'Event Admin Page', rails_admin.show_path(model_name: 'event', id: @event.id)
 

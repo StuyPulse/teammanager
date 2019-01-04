@@ -34,6 +34,7 @@ class EventsController < ApplicationController
         end
           i += 2
       end
+      flash[:flashes] = "The osises in this array: #{@wrong_ids.to_s} do not exist in the database."
     end
   end
   # GET /events/1
