@@ -20,7 +20,7 @@ class EventsController < ApplicationController
       @new_services = event_params[:service_params].split(" ").map(&:to_i)
       i = 0
       while i < @new_services.length - 1
-          student = Student.find_by(osis: @new_services[i])
+        if student = Student.find_by(osis: @new_services[i])
           hours = @new_services[i + 1]
           unless student
             @wrong_ids << @new_services[i]
@@ -28,9 +28,10 @@ class EventsController < ApplicationController
           end
           unless @event.students.find_by(osis: @new_services[i])
             @event.services.create(:student_id => student.id, :event_id => @event.id, :hours => hours)
-          @event.save
-          i += 2
+            @event.save
+            i += 2
           end
+        end
           i += 2
       end
     end
