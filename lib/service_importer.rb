@@ -1,5 +1,5 @@
 class ServiceImporter
-
+  attr_accessor :wrong_ids
   # input is a string that has student osises and hours like so:
   # Each line has an OSIS, space, and # of hours per line.
   # (osis)  (hrs)
@@ -19,5 +19,7 @@ class ServiceImporter
         event.services.create(:student_id => student.id, :event_id => event.id, :hours => hours).save!
       end
     end
+    #Return @wrong_ids.to_s
+    @wrong_ids.to_s
   end
 end

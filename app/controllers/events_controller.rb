@@ -19,7 +19,7 @@ class EventsController < ApplicationController
     authorize Event
     if request.post?
       si = ServiceImporter.new
-      si.add_services_to_event(@event,event_params[:service_params])
+      flash[:flashes] = "Services not added: #{si.add_services_to_event(@event,event_params[:service_params])}"
     end
   end
 
