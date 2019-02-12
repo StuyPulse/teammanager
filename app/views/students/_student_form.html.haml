@@ -1,9 +1,12 @@
 %tr
   %td.pb-1.pt-3
     %p.lead= form_type.to_s.titleize
-  - if @student.valid_forms(form_type).any?
+  - if form_type == :medicals && @student.medicals.any?
     %td.text-center.pb-1.pt-3.table-success
-      %p.lead= "Valid"
+      %p.lead= "Valid until " + @student.medicals.first.date.to_s
+  - elsif @student.valid_forms(form_type).any?
+    %td.text-center.pb-1.pt-3.table-success
+      %p.lead= "Valid "
   - else
     %td.text-center.pb-1.pt-3.table-danger
       %p.lead.font-weight-bold= "Missing"
