@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   resources :trips do
     member do
       get 'dashboard'
+      get 'import'
+      post 'import'
     end
   end
   resources :stims

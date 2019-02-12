@@ -23,6 +23,9 @@ RailsAdmin.config do |config|
   ## To disable Gravatar integration in Navigation Bar set to false
   # config.show_gravatar = true
 
+  # https://github.com/sferik/rails_admin/issues/3014
+  config.excluded_models = ['ActiveStorage::Blob', 'ActiveStorage::Attachment']
+
   # https://stackoverflow.com/q/40377340
   config.parent_controller = '::ApplicationController'
 
