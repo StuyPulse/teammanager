@@ -38,6 +38,7 @@ class TripsController < ApplicationController
   # GET /trips/1
   # GET /trips/1.json
   def show
+    authorize Trip
   end
 
   # GET /trips/new
