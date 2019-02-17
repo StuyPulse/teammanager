@@ -13,6 +13,14 @@
  */
 @import "bootstrap";
 
+@font-face {
+        font-family: "Comfortaa";
+        src: url("fonts/comfortaa-v19-latin-regular.eot"),
+        url("fonts/comfortaa-v19-latin-regular.ttf"),
+        url("fonts/comfortaa-v19-latin-regular.woff");
+
+}
+
 hr {
     background-color: #ccc;
 }
@@ -20,4 +28,8 @@ hr {
 .a-white a {
     color: white;
     text-decoration: none;
+}
+
+* {
+        font-family: "Comfortaa";
 }
