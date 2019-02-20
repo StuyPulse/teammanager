@@ -1,11 +1,19 @@
+%br
 %h1= "Create Multiple Services for: #{@event.name}"
-= form_for @event, action:"add_services", method: "post", url: "", authenticity_token: true do |f|
-  =f.label "Directions:", "Directions: Type in OSIS of student for the service and then the # of hours they participated after a space."
-  =hidden_field_tag :authenticity_token, form_authenticity_token
-  %br
-  =f.text_area :service_params, placeholder: "Examples Below: \n 213300452 4 \n 212312321 5", size: "100"
-  %br
-  =f.submit "Bulk Add Services", :class => "btn btn-primary.a-white"
--render 'layouts/flash'
-=link_to 'Event Admin Page', rails_admin.show_path(model_name: 'event', id: @event.id)
+%div.card.bg-primary.text-white
+  %div.card-header.text-center
+    %h1 Directions: Type an OSIS followed by a space with the # of hours, then a new line.
+    %h5 (You can copy 2 columns with the OSIS and # of hours and paste it here.)
+  %div.card-body.bg-white.text-dark.text-center
+    =form_for @event, action:"add_services", method: "post", url: "", authenticity_token: true do |f|
+      =hidden_field_tag :authenticity_token, form_authenticity_token
+      %br
+      =f.text_area :service_params, placeholder: "Examples Below: \n 213300452 4 \n 212312321 5"
+      %br
+      =f.submit "Bulk Add Services", :class => "btn btn-primary", :style => "margin-right: auto;"
+      %br
+      %br
+      -render 'layouts/flash'
+      =link_to 'Event Admin Page', rails_admin.show_path(model_name: 'event', id: @event.id)
+
 
