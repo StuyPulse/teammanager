@@ -35,18 +35,18 @@
 .row
   %div.col-sm-4
     %h1 Forms
-    %table.table.table-striped{style: "table-layout:fixed"}
+    %table.table.table-striped.table-bordered.shadow{style: "table-layout:fixed"}
       = render partial: "student_form", locals: {form_type: :team_dues}
       = render partial: "student_form", locals: {form_type: :media_consents}
       = render partial: "student_form", locals: {form_type: :medicals}
   %div.col-sm-4
     %h1 Safety Test
-    %table.table.table-striped{style: "table-layout:fixed"}
+    %table.table.table-striped.table-bordered.shadow{style: "table-layout:fixed"}
       %tr
       = render partial: "student_safety_test_table"
   %div.col-sm-4
     %h1 STIMS
-    %table.table.table-striped{style: "table-layout:fixed"}
+    %table.table.table-striped.table-bordered.shadow{style: "table-layout:fixed"}
       = render partial: "student_stim_table"
 %hr
 .row
