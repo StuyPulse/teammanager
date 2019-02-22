@@ -1,13 +1,13 @@
 %br
 %h1= @event.name 
-.table-responsive
-  %table.table.table-hover.table-condensed.shadow.p-3.mb-5.bg-white.rounded
-    %thead.thead-light
+%table.table.table-hover.table-condensed.shadow.p-3.mb-5.bg-white.rounded
+  %thead.thead-light
+    %tr
+      %th= "Student"
+      %th= "Hours"
+  %tbody
+    - @event.services.order(:event_id).each do |service|
       %tr
-        %th= "Student"
-        %th= "Hours"
-    %tbody
-      - @event.services.order(:event_id).each do |service|
-        %tr
-          %td= service.student.name
-          %td= service.hours
+        %td= service.student.name
+        %td= service.hours
+=link_to 'Back to List of Events', events_path

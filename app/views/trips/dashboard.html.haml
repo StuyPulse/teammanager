@@ -1,36 +1,36 @@
 %br
 %h1= @trip.name
-.table-responsive
-  %table.table.table-hover.table-condensed.shadow.p-3.mb-5.bg-white.rounded
-    %thead.thead-light
+%table.table.table-hover.table-condensed.shadow.p-3.mb-5.bg-white.rounded
+  %thead.thead-light
+    %tr
+      %th= "Name"
+      %th= "OSIS"
+      %th.text-center= "Parent Permission"
+      - if @trip.requires_teacher_permission
+        %th.text-center= "Teacher Permission"
+      - @trip.required_payments.each do |required_payment|
+        %th.text-center= "$#{required_payment.amount} #{required_payment.type}"
+      %th.text-center= "Valid Forms"
+      %th
+  %tbody
+    - @trip.students.order(:last_name).each do |student|
       %tr
-        %th= "Name"
-        %th= "OSIS"
-        %th.text-center= "Parent Permission"
+        %td= student.name
+        %td= student.osis
+        = render partial: "dashboard_button",
+          locals: {column_type: :parent_permission, trip: @trip,
+                  student: student}
         - if @trip.requires_teacher_permission
-          %th.text-center= "Teacher Permission"
-        - @trip.required_payments.each do |required_payment|
-          %th.text-center= "$#{required_payment.amount} #{required_payment.type}"
-        %th.text-center= "Valid Forms"
-        %th
-    %tbody
-      - @trip.students.order(:last_name).each do |student|
-        %tr
-          %td= student.name
-          %td= student.osis
           = render partial: "dashboard_button",
-            locals: {column_type: :parent_permission, trip: @trip,
+            locals: {column_type: :teacher_permission, trip: @trip,
                     student: student}
-          - if @trip.requires_teacher_permission
-            = render partial: "dashboard_button",
-              locals: {column_type: :teacher_permission, trip: @trip,
-                      student: student}
-          - @trip.required_payments.each do |required_payment|
-            = render partial: "dashboard_button",
-              locals: {column_type: :payment, trip: @trip,
-                      student: student, required_payment: required_payment}
-          = render partial: "dashboard_forms_cell",
-            locals: {trip: @trip, student: student}
-          %td.text-center
-            .btn.btn-primary.a-white
-              = link_to 'View', student_path(id: student)
+        - @trip.required_payments.each do |required_payment|
+          = render partial: "dashboard_button",
+            locals: {column_type: :payment, trip: @trip,
+                    student: student, required_payment: required_payment}
+        = render partial: "dashboard_forms_cell",
+          locals: {trip: @trip, student: student}
+        %td.text-center
+          .btn.btn-primary.a-white
+            = link_to 'View', student_path(id: student)
+=link_to 'Back to List of Trips', trips_path
