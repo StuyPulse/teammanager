@@ -1,14 +1,28 @@
+require 'service_importer'
+
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: [:show, :edit, :update, :destroy, :dashboard, :add_services]
 
   # GET /events
   # GET /events.json
   def index
+    authorize Event
     @events = Event.all
   end
 
-  # GET /events/1
-  # GET /events/1.json
+  def dashboard
+    authorize Event
+    @events = Event.all
+  end
+
+  def add_services
+    authorize Event
+    if request.post?
+      si = ServiceImporter.new
+      flash[:flashes] = "Services not added: #{si.add_services_to_event(@event,event_params[:service_params])}"
+    end
+  end
+
   def show
   end
 
@@ -69,6 +83,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:name, :description, :date, :valid_year, :default_hours)
+      params.require(:event).permit(:name, :description, :date, :valid_year, :default_hours, :service_params)
     end
 end

@@ -16,7 +16,13 @@ Rails.application.routes.draw do
   resources :stims
   resources :safety_tests
   resources :services
-  resources :events
+  resources :events do
+    member do
+      get 'dashboard'
+      get 'add_services'
+      post 'add_services'
+    end
+  end
   resources :medicals
   resources :media_consents
   resources :team_dues
