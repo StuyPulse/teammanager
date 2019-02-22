@@ -11,6 +11,10 @@
  * It is generally better to create a new file per style scope.
  *
  */
+
+$primary: #5C99FF;
+$info: #4A7BCC;
+
 @import "bootstrap";
 
 @font-face {
@@ -40,6 +44,14 @@ hr {
 .btn, .btn:hover {
         color: white;
         text-decoration: none;
+}
+
+.btn-info:hover {
+        background-color: #2E4D7F;
+}
+
+.card-header {
+        margin-top: 5px;
 }
 
 h1 {

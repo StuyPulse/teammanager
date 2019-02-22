@@ -1,4 +1,3 @@
-%p#notice= notice
 %h1
   = @student.full_name
   - if @student.preferred_name
@@ -28,7 +27,7 @@
             = "#{@student.team.display_name}"
           - else
             No team
-        %div.btn.btn-primary
+        %div.btn.btn-info
           - if policy(@student).update?
             = link_to "Edit Profile", edit_student_path(@student), :class => "btn"
 %br
