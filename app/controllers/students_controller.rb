@@ -17,6 +17,7 @@ class StudentsController < ApplicationController
   # GET /students/1.json
   def show
     authorize @student
+    @recent_medical = @student.medicals.order("date").last.date.to_s
   end
 
   # GET /students/new
