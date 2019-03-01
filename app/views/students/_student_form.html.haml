@@ -3,7 +3,7 @@
     %p.lead= form_type.to_s.titleize
   - if form_type == :medicals && @student.medicals.valid && @student.medicals.exists?
     %td.text-center.pb-1.pt-3.table-info
-      %p.lead= "Valid until #{@student.medicals.order("created_at").last.date.to_s}"
+      %p.lead= "Valid until #{@student.medicals.order("date").last.date.to_s}"
   - elsif @student.valid_forms(form_type).any?
     %td.text-center.pb-1.pt-3.table-success
       %p.lead= "Valid"
