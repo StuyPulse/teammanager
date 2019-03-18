@@ -55,14 +55,14 @@ GEM
     arel (9.0.0)
     auto_strip_attributes (2.4.0)
       activerecord (>= 4.0)
-    autoprefixer-rails (8.6.5)
+    autoprefixer-rails (9.4.9)
       execjs
     bcrypt (3.1.12)
     bindex (0.5.0)
-    bootstrap (4.1.3)
-      autoprefixer-rails (>= 6.0.3)
-      popper_js (>= 1.12.9, < 2)
-      sass (>= 3.5.2)
+    bootstrap (4.3.1)
+      autoprefixer-rails (>= 9.1.0)
+      popper_js (>= 1.14.3, < 2)
+      sassc-rails (>= 2.0.0)
     builder (3.2.3)
     byebug (10.0.2)
     capybara (2.18.0)
@@ -188,7 +188,7 @@ GEM
     phony_rails (0.14.7)
       activesupport (>= 3.0)
       phony (> 2.15)
-    popper_js (1.12.9)
+    popper_js (1.14.5)
     postmark (1.10.0)
       json
       rake
@@ -267,6 +267,15 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    sassc (2.0.1)
+      ffi (~> 1.9)
+      rake
+    sassc-rails (2.1.0)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     selenium-webdriver (3.13.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2)
@@ -313,7 +322,7 @@ PLATFORMS
 
 DEPENDENCIES
   auto_strip_attributes (~> 2.2)
-  bootstrap (~> 4.1.2)
+  bootstrap (~> 4.3.1)
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
