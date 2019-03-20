@@ -83,7 +83,7 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.5)
     crass (1.0.4)
-    devise (4.4.3)
+    devise (4.6.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0, < 6.0)
@@ -249,9 +249,9 @@ GEM
     remotipart (1.4.2)
     request_store (1.4.1)
       rack (>= 1.4)
-    responders (2.4.0)
-      actionpack (>= 4.2.0, < 5.3)
-      railties (>= 4.2.0, < 5.3)
+    responders (2.4.1)
+      actionpack (>= 4.2.0, < 6.0)
+      railties (>= 4.2.0, < 6.0)
     ruby_dep (1.5.0)
     ruby_parser (3.11.0)
       sexp_processor (~> 4.9)
@@ -295,8 +295,8 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.1.14)
       execjs (>= 0.3.0, < 3)
-    warden (1.2.7)
-      rack (>= 1.0)
+    warden (1.2.8)
+      rack (>= 2.0.6)
     web-console (3.6.2)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -317,7 +317,7 @@ DEPENDENCIES
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
-  devise
+  devise (~> 4.6.0)
   haml
   haml-rails
   jbuilder (~> 2.5)
@@ -329,7 +329,7 @@ DEPENDENCIES
   postmark-rails (~> 0.15.0)
   puma (~> 3.7)
   pundit
-  rails (>= 5.2.2.1)
+  rails (~> 5.2.2.1)
   rails_admin (~> 1.2)
   rails_admin_pundit!
   rubyzip (~> 1.2.2)
