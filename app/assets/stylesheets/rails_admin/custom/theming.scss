@@ -9,8 +9,16 @@
         url('../fonts/comfortaa-v19-latin-700.svg#Comfortaa') format('svg'); /* Legacy iOS */
 }
 
+@font-face {
+        font-family: "Product-Sans";
+        src: url('../fonts/product-sans.ttf');
+        src: url('../fonts/product-sans-bold-italic.ttf') format('truetype'),
+        url('../fonts/product-sans-bold.ttf') format('truetype'),
+        url('../fonts/product-sans-italic.ttf') format('truetype');
+}
+
 * {
-        font-family: "Comfortaa";
+        font-family: "Product-Sans";
 }
 
 h1 {
