@@ -332,7 +332,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
-  omniauth-google-oauth2
+  omniauth-google-oauth2 (<= 1.9.0)
   paper_trail (~> 9.2.0)
   phony_rails
   postmark-rails (~> 0.15.0)

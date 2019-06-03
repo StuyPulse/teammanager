@@ -40,7 +40,7 @@ gem "haml"
 gem "haml-rails"
 
 gem 'devise', '~> 4.6.0'
-gem 'omniauth-google-oauth2'
+gem 'omniauth-google-oauth2', '<= 1.9.0'
 gem 'pundit'
 gem 'paper_trail', '~> 9.2.0'
 
