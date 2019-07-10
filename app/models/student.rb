@@ -43,6 +43,10 @@ class Student < ApplicationRecord
     ['Female', 'Male', 'Other']
   end
 
+  def last_valid_medical
+    medicals.order(date: :desc).first
+  end
+
   def is_graduated?
     # Assume students graduate on the last day of June
     Date.today > Date.new(grad_year, 6, -1)
