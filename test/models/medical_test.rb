@@ -40,4 +40,9 @@ class MedicalTest < ActiveSupport::TestCase
     assert_equal "Medical",
       Medical.new.name
   end
+
+  test "valid_through returns the last day a medical is valid" do
+    @medical = Medical.new(date: Date.new(2011, 1, 3))
+    assert @medical.valid_through == Date.new(2012, 1, 2)
+  end
 end
