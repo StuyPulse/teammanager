@@ -17,7 +17,7 @@ class StudentsController < ApplicationController
   # GET /students/1.json
   def show
     authorize @student
-    @student.last_valid_medical.date.to_s
+    @student.last_valid_medical
   end
 
   # GET /students/new
