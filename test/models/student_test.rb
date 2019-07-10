@@ -9,6 +9,9 @@ class StudentTest < ActiveSupport::TestCase
                           email: "student@test.com",
                           osis: 123456789,
                           gender: "Other")
+    @medical1 = Medical.new(student: @student, date: 2014-12-01)
+    @medical2 = Medical.new(student: @student, date: 2015-11-11)
+    @medical3 = Medical.new(student: @student, date: 2013-6-03)
     @student.parents << Parent.take
   end
 
@@ -69,6 +72,10 @@ class StudentTest < ActiveSupport::TestCase
   test "is_graduated?" do
     assert students(:alum).is_graduated?
     refute students(:helen).is_graduated?
+  end
+
+  test "last_valid_medical returns last valid medical" do
+    assert student.last_valid_medical == @medical2
   end
 
   test "scope active requires is_active = true" do
