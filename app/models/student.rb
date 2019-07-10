@@ -44,7 +44,7 @@ class Student < ApplicationRecord
   end
 
   def last_valid_medical
-    medicals.order("date").last.date.to_s
+    medicals.order("date").last
   end
 
   def is_graduated?
