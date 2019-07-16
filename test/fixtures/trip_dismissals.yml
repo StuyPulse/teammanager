@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  trip: one
-  student: one
+newyork2018td:
+  trip: newyork2018
+  student: bryan
 
-two:
-  trip: two
-  student: two
+centralnewyork2018td:
+  trip: centralnewyork2018
+  student: helen
