@@ -74,6 +74,10 @@ RailsAdmin.config do |config|
     navigation_label 'Trips'
   end
 
+  config.model 'Trip_Dismissal' do
+    navigation_label 'Trips'
+  end
+
   config.model 'RequiredPayment' do
     navigation_label 'Trips'
   end

@@ -1,0 +1,23 @@
+%h1 Listing trip_dismissals
+
+%table
+  %thead
+    %tr
+      %th Trip
+      %th Student
+      %th
+      %th
+      %th
+
+  %tbody
+    - @trip_dismissals.each do |trip_dismissal|
+      %tr
+        %td= trip_dismissal.trip
+        %td= trip_dismissal.student
+        %td= link_to 'Show', trip_dismissal
+        %td= link_to 'Edit', edit_trip_dismissal_path(trip_dismissal)
+        %td= link_to 'Destroy', trip_dismissal, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Trip dismissal', new_trip_dismissal_path

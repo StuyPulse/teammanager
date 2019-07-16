@@ -1,0 +1,16 @@
+= form_for @trip_dismissal do |f|
+  - if @trip_dismissal.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@trip_dismissal.errors.count, "error")} prohibited this trip_dismissal from being saved:"
+      %ul
+        - @trip_dismissal.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :trip
+    = f.text_field :trip
+  .field
+    = f.label :student
+    = f.text_field :student
+  .actions
+    = f.submit 'Save'

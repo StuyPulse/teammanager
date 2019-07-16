@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :trip_dismissals
   root :to => "static#home"
 
   get 'forms', to: 'static#forms'
