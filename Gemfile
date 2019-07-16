@@ -41,6 +41,9 @@ gem "haml-rails"
 
 gem 'devise', '~> 4.6.0'
 gem 'omniauth-google-oauth2'
+# https://github.com/omniauth/omniauth/pull/809#issuecomment-502079405
+# https://github.com/omniauth/omniauth/wiki/Resolving-CVE-2015-9284#with-rails-applications
+gem 'omniauth-rails_csrf_protection', '~> 0.1'
 gem 'pundit'
 gem 'paper_trail', '~> 9.2.0'
 
