@@ -213,8 +213,8 @@ ActiveRecord::Schema.define(version: 2019_07_16_182438) do
   end
 
   create_table "trip_dismissals", force: :cascade do |t|
-    t.integer "trip_id", null: false
-    t.integer "student_id", null: false
+    t.integer "trip_id"
+    t.integer "student_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["student_id"], name: "index_trip_dismissals_on_student_id"

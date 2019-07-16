@@ -4,26 +4,32 @@ class TripDismissalsController < ApplicationController
   # GET /trip_dismissals
   # GET /trip_dismissals.json
   def index
+    authorize TripDismissal
     @trip_dismissals = TripDismissal.all
   end
 
   # GET /trip_dismissals/1
   # GET /trip_dismissals/1.json
   def show
+    authorize @trip_dismissal
   end
 
   # GET /trip_dismissals/new
   def new
+    authorize TripDismissal
+    @trip_dismissals = TripDismissal.all
     @trip_dismissal = TripDismissal.new
   end
 
   # GET /trip_dismissals/1/edit
   def edit
+    authorize @student
   end
 
   # POST /trip_dismissals
   # POST /trip_dismissals.json
   def create
+    authorize TripDismissal
     @trip_dismissal = TripDismissal.new(trip_dismissal_params)
 
     respond_to do |format|
@@ -40,6 +46,7 @@ class TripDismissalsController < ApplicationController
   # PATCH/PUT /trip_dismissals/1
   # PATCH/PUT /trip_dismissals/1.json
   def update
+    authorize @student
     respond_to do |format|
       if @trip_dismissal.update(trip_dismissal_params)
         format.html { redirect_to @trip_dismissal, notice: 'Trip dismissal was successfully updated.' }
@@ -54,6 +61,7 @@ class TripDismissalsController < ApplicationController
   # DELETE /trip_dismissals/1
   # DELETE /trip_dismissals/1.json
   def destroy
+    authorize @student
     @trip_dismissal.destroy
     respond_to do |format|
       format.html { redirect_to trip_dismissals_url, notice: 'Trip dismissal was successfully destroyed.' }
