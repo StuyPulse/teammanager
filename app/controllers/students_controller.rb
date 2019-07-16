@@ -2,6 +2,7 @@ class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
   skip_before_action :set_student, only: [:signup]
   skip_after_action :verify_authorized
+  before_action :authenticate_user!, except: [:signup]
 
   # GET /students
   # GET /students.json

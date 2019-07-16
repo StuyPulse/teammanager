@@ -3,6 +3,7 @@ class Student < ApplicationRecord
 
   has_paper_trail
 
+
   belongs_to :team, optional: true
   belongs_to :user, optional: true
 
@@ -36,6 +37,8 @@ class Student < ApplicationRecord
                                    message: 'cannot be negative' }
   validates :gender, inclusion: { in: %w(Female Male Other) }, :allow_nil => true
   validate :check_preferred_name
+
+  accepts_nested_attributes_for :parents
 
   phony_normalize :phone, default_country_code: 'US'
 

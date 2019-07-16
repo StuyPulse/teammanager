@@ -1,0 +1,47 @@
+<h1> Newbie Signups: </h1>
+<%= form_with model: Student.new do |s| %>
+        <div class="field">
+                <%= s.label :first_name %>
+                <%= s.text_field :first_name, id: :student_first_name %>
+        </div>
+
+        <div class="field">
+                <%= s.label :last_name %>
+                <%= s.text_field :last_name, id: :student_last_name %>
+        </div>
+
+        <div class="field">
+                <%= s.label :preferred_name %>
+                <%= s.text_field :preferred_name, id: :student_preferred_name %>
+        </div>
+
+        <div class="field">
+                <%= s.label :grad_year %>
+                <%= s.number_field :grad_year, id: :student_grad_year %>
+        </div>
+
+        <div class="field">
+                <%= s.label :osis %>
+                <%= s.number_field :osis, id: :student_osis %>
+        </div>
+
+        <div class="field">
+                <%= s.label :email %>
+                <%= s.text_field :email, id: :student_email %>
+        </div>
+
+        <div class="field">
+                <%= s.label :phone %>
+                <%= s.text_field :phone, id: :student_phone %>
+        </div>
+
+        <div class="field">
+                <%= s.label :team_id %>
+                <%= s.text_field :team_id, id: :student_team_id %>
+        </div>
+
+        <%= s.fields_for :parent do |p| %>
+                <%= p.text_field :line_1 %>
+        <% end %>
+        <%= s.submit %>
+<% end %>
