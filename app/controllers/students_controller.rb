@@ -1,5 +1,7 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
+  skip_before_action :set_student, only: [:signup]
+  skip_after_action :verify_authorized
 
   # GET /students
   # GET /students.json
@@ -71,6 +73,10 @@ class StudentsController < ApplicationController
       format.html { redirect_to students_url, notice: 'Student was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  # For Newbie Signups:
+  def signup
   end
 
   private

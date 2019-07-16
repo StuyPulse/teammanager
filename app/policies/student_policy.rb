@@ -40,6 +40,10 @@ class StudentPolicy < ApplicationPolicy
     false
   end
 
+  def signup?
+    true
+  end
+
   class Scope < Scope
     def resolve
       scope.all
