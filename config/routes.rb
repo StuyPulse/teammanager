@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :payments
   resources :required_payments
   resources :permission_slips
+  resources :trip_dismissals
   resources :trips do
     member do
       get 'dashboard'

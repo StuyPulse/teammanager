@@ -32,6 +32,14 @@
       - path = payments_path(payment: {required_payment_id: required_payment.id,
               student_id: student.id})
 
+  - elsif column_type == :trip_dismissal
+    -trip_dismissal = student.find_trip_dismissal(trip.id)
+    -valid_button = !(trip_dismissal.nil?)
+    - if valid_button
+      - path = trip_dismissals_path(trip_dismissal)
+    - else
+      - path = trip_dismissals_path(trip_dismissal: {student_id: student.id, trip_id: trip.id})
+
   - else
     - valid_button = false
     - path = nil
