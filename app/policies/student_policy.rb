@@ -2,9 +2,9 @@ class StudentPolicy < ApplicationPolicy
 
   def permitted_attributes
     if @user.is_admin?
-      [:first_name, :last_name, :preferred_name, :grad_year, :osis, :email, :phone, :team_id]
+      [:first_name, :last_name, :preferred_name, :grad_year, :osis, :email, :phone, :team_id, :gender, :avatar]
     elsif (@user == @record.user)
-      [:preferred_name, :phone, :team_id, :gender]
+      [:preferred_name, :phone, :team_id, :gender, :avatar]
     end
   end
 

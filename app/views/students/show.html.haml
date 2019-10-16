@@ -2,8 +2,9 @@
 .row
   %h1
     = @student.full_name
-    - if @student.preferred_name
-      = "( #{@student.preferred_name} )"
+  %div{:style => "text-align: right"}
+  - if @student.avatar.attached?
+    %img{:src => "#{url_for(@student.avatar)}", :style => "height: 40px", :float => "right"}
 %hr
 .row
   .col
