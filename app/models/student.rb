@@ -3,6 +3,8 @@ class Student < ApplicationRecord
 
   has_paper_trail
 
+  has_one_attached :avatar
+
   belongs_to :team, optional: true
   belongs_to :user, optional: true
 

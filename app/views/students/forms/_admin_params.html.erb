@@ -38,6 +38,16 @@
   <%= form.text_field :team_id, id: :student_team_id %>
 </div>
 
+<div class="gender">
+  <%= form.label :gender %>
+  <%= form.text_field :gender, id: :gender %>
+</div>
+
+<div class="avatar">
+  <%= form.label :avatar %>
+  <%= form.file_field :avatar, id: :avatar %>
+</div>
+
 <div class="actions">
   <%= form.submit %>
 </div>
