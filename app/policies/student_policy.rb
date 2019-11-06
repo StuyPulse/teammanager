@@ -32,6 +32,10 @@ class StudentPolicy < ApplicationPolicy
     @user.is_admin? || (@user == @record.user)
   end
 
+  def informs?
+    @user.is_admin? || (@user == @record.user)
+  end
+
   def edit?
     update?
   end

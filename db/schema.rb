@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_16_211728) do
+ActiveRecord::Schema.define(version: 2019_10_16_222422) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -65,6 +65,8 @@ ActiveRecord::Schema.define(version: 2019_10_16_211728) do
     t.integer "student_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image"
+    t.index ["image"], name: "index_media_consents_on_image"
     t.index ["student_id"], name: "index_media_consents_on_student_id"
     t.index ["year", "student_id"], name: "index_media_consents_on_year_and_student_id", unique: true
     t.index ["year"], name: "index_media_consents_on_year"
@@ -240,6 +242,8 @@ ActiveRecord::Schema.define(version: 2019_10_16_211728) do
     t.integer "student_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image"
+    t.index ["image"], name: "index_trip_dismissals_on_image"
     t.index ["student_id"], name: "index_trip_dismissals_on_student_id"
     t.index ["trip_id"], name: "index_trip_dismissals_on_trip_id"
   end

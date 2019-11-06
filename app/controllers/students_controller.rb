@@ -13,6 +13,14 @@ class StudentsController < ApplicationController
     @students = Student.active
   end
 
+
+  # GET /students/1
+  # GET /students/1.json
+  def informs
+    @student = Student.find(params[:id])
+    authorize @student
+  end
+
   # GET /students/1
   # GET /students/1.json
   def show

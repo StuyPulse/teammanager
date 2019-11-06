@@ -31,7 +31,8 @@
       - if policy(@student).update?
         = link_to "Edit Profile", edit_student_path(@student)
   .col
-    %h2 Forms
+    %h2 
+      = link_to "Form Information", informs_student_path(@student)
     %table.table.table-striped{style: "table-layout:fixed"}
       = render partial: "student_form", locals: {form_type: :team_dues}
       = render partial: "student_form", locals: {form_type: :media_consents}
