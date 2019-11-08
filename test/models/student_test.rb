@@ -71,6 +71,15 @@ class StudentTest < ActiveSupport::TestCase
     refute students(:helen).is_graduated?
   end
 
+  test "last_valid_medical returns last valid medical" do
+    @student.save
+    @medical1 = Medical.create(student: @student, date: Date.new(2014,12,1))
+    @medical2 = Medical.create(student: @student, date: Date.new(2015,11,11))
+    @medical3 = Medical.create(student: @student, date: Date.new(2013,5,23))
+    @student.medicals = [@medical1, @medical2, @medical3]
+    assert @student.last_valid_medical == @medical2
+  end
+
   test "scope active requires is_active = true" do
     assert_equal Student.active.count, 3
   end

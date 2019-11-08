@@ -15,6 +15,7 @@ class Student < ApplicationRecord
   has_many :safety_tests
   has_many :stims
   has_many :team_dues
+  has_many :trip_dismissals
 
   has_many :permission_slips
   has_many :payments
@@ -41,6 +42,10 @@ class Student < ApplicationRecord
   # Enum for rails_admin create
   def gender_enum
     ['Female', 'Male', 'Other']
+  end
+
+  def last_valid_medical
+    medicals.order(date: :desc).first
   end
 
   def is_graduated?
@@ -86,6 +91,10 @@ class Student < ApplicationRecord
   # payment requirement
   def find_payment(required_payment_id)
     payments.where(required_payment_id: required_payment_id).take
+  end
+
+  def find_trip_dismissal(trip_id)
+    trip_dismissals.where(trip_id: trip_id).take
   end
 
   def eligible_for_trip(trip)

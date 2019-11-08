@@ -40,6 +40,19 @@ ryan:
   team: fission
   parents: mom
 
+Bryan:
+  first_name: Bryan
+  last_name: Lai
+  preferred_name: Bry
+  grad_year: 2000
+  osis: 213300452
+  email: bryan@example.com
+  team_email: bryan.lai@stuypulse.com
+  phone: 123-456-7890
+  gender: "Male"
+  team: fission
+  parents: mom
+
 victor:
   first_name: Victor
   last_name: Siu

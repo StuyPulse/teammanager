@@ -39,4 +39,9 @@ class Medical < ApplicationRecord
 
     "#{date.strftime("%F")} Medical"
   end
+
+  def valid_through
+    return date + 1.year - 1.day
+  end
+
 end

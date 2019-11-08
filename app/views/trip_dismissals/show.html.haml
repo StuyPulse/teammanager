@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Trip:
+  = @trip_dismissal.trip
+%p
+  %b Student:
+  = @trip_dismissal.student
+
+= link_to 'Edit', edit_trip_dismissal_path(@trip_dismissal)
+\|
+= link_to 'Back', trip_dismissals_path
