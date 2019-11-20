@@ -1,20 +1,17 @@
-<br>
-<div class="card bg-primary text-white">
-<div class="card-header text-center">
-<h1> Directions: Separate each OSIS with a new line. </h1>
-<h5> (You can copy a column in Google Sheets and paste it in here.) </h5>
-</div>
-<div class="card-body text-dark bg-white text-center">
-=form_for @trip, action: "import", method: "post", url: "", authenticity_token: true do |f|
-    =hidden_field_tag :authenticity_token, form_authenticity_token
-    =f.text_area :students_to_import, placeholder: "Enter Student Osises Here:"
-    <br>
-    =f.submit "Import Students", :class => "btn btn-primary", :style => "margin-right: auto;"
-    <br>
-    <br>
-    =link_to 'Trip Admin Page', rails_admin.show_path(model_name: 'trip', id: @trip.id)
-    <br>
-    <br>
+.card.bg-primary.text-white
+  .card-header.text-center
+    %h1 Directions: Separate each OSIS with a new line.
+    %h5 (You can copy a column in Google Sheets and paste it in here.)
+%div
+  .card-body.text-dark.bg-white.text-center
+    =form_for @trip, action: "import", method: "post", url: "", authenticity_token: true do |f|
+      =hidden_field_tag :authenticity_token, form_authenticity_token
+      =f.text_area :students_to_import, placeholder: "Enter Student Osises Here:"
+      <br>
+      =f.submit "Import Students", :class => "btn btn-primary", :style => "margin-right: auto;"
+      <br>
+      <br>
+      =link_to 'Trip Admin Page', rails_admin.show_path(model_name: 'trip', id: @trip.id)
+      <br>
+      <br>
     =link_to 'Back to List of Trips', trips_path
-</div>
-</div>
