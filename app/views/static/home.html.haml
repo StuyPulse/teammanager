@@ -1,4 +1,13 @@
-%h1 Welcome to Team Manager!
-%b
--unless current_user
-  %p Sign in to your Team Manager account using your stuypulse.com email!
+%br
+%div.card.text-center.bg-primary.text-white
+  %div.card-header
+    %h1 Welcome to Team Manager!
+%br
+  //For Logged-In Users:
+-if current_user
+  =render partial: "student_homepage"
+  -if current_user.is_admin
+    =render partial: "admin_homepage"
+-else
+  %div.text-center
+    %h3 Use your Stuypulse Google Account to enter the website!

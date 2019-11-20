@@ -1,0 +1,21 @@
+%div.row
+  %div.col-sm-6
+    %div.card.text-center.bg-primary.text-white
+      %div.card-header
+        %h3 Admin Dashboard
+      %div.card-body.bg-white
+        %div.card-text.text-dark
+          %h5 The main dashboard and directory to view, edit or delete a variety of files. This includes students, trips, forms, safety tests, etc.
+        %br
+        %div.btn.btn-info
+          =link_to "Go to Admin Dashboard", rails_admin.dashboard_path, :class => "btn"
+  %div.col-sm-6
+    %div.card.text-center.bg-primary.text-white
+      %div.card-header
+        %h3 Student Dashboard
+      %div.card-body.bg-white
+        %div.card-text.text-dark
+          %h5 The student dashboard provides a table that lists out all students on the team. It provides information such as valid forms.
+        %br
+        %div.btn.btn-info
+          =link_to "Go to Student Dashboard", dashboard_students_path, :class => "btn"

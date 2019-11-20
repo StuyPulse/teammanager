@@ -11,6 +11,12 @@
  * It is generally better to create a new file per style scope.
  *
  */
+
+$primary: #5C99FF;
+$info: #4A7BCC;
+
+@import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 @import "bootstrap";
 
 hr {
@@ -20,4 +26,36 @@ hr {
 .a-white a {
     color: white;
     text-decoration: none;
+}
+
+* {
+        font-family: "Comfortaa";
+}
+
+.th {
+        font-family: "Poppins";
+}
+
+.btn, .btn:hover {
+        color: white;
+        text-decoration: none;
+}
+
+.btn-info:hover {
+        background-color: #2E4D7F;
+}
+
+.card-header {
+        margin-top: 5px;
+}
+
+h1 {
+        text-align: center;
+}
+
+textarea {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
 }

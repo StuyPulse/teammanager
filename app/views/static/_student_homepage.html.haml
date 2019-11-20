@@ -1,0 +1,21 @@
+%div.row
+  %div.col-sm-6
+    %div.card.text-center.bg-primary.text-white
+      %div.card-header
+        %h3 Student Profile
+      %div.card-body.bg-white.text-dark
+        %h5 View and edit your personal information here! You can see whether you have valid forms as well as edit some of your credentials like your phone number or nickname.
+        %br
+        %div.btn.btn-info
+          =link_to "Go to your Student Profile", student_path(current_user.student.id), :class => "btn"
+  %div.col-sm-6
+    %div.card.text-center.bg-primary.text-white
+      %div.card-header
+        %h3 Forms
+      %div.card-body.bg-white.text-dark
+        %h5 View a variety of forms necessary for the team. This includes media consent forms, trip forms, medical forms, and much more. Don't forget to fill them out!
+        %br
+        %div.btn.btn-info
+          =link_to "Go to Forms", forms_path, :class => "btn"
+%br
+

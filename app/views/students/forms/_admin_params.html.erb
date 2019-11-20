@@ -1,43 +1,50 @@
-<div class="field">
-  <%= form.label :first_name %>
-  <%= form.text_field :first_name, id: :student_first_name %>
-</div>
-
-<div class="field">
-  <%= form.label :last_name %>
-  <%= form.text_field :last_name, id: :student_last_name %>
-</div>
-
-<div class="field">
-  <%= form.label :preferred_name %>
-  <%= form.text_field :preferred_name, id: :student_preferred_name %>
-</div>
-
-<div class="field">
-  <%= form.label :grad_year %>
-  <%= form.number_field :grad_year, id: :student_grad_year %>
-</div>
-
-<div class="field">
-  <%= form.label :osis %>
-  <%= form.number_field :osis, id: :student_osis %>
-</div>
-
-<div class="field">
-  <%= form.label :email %>
-  <%= form.text_field :email, id: :student_email %>
-</div>
-
-<div class="field">
-  <%= form.label :phone %>
-  <%= form.text_field :phone, id: :student_phone %>
-</div>
-
-<div class="field">
-  <%= form.label :team_id %>
-  <%= form.text_field :team_id, id: :student_team_id %>
-</div>
-
-<div class="actions">
-  <%= form.submit %>
-</div>
+<br>
+<div class="card text-center text-white bg-primary">
+  <div class="card-header">
+    <h1> Editing Student </h1>
+  </div>
+  <div class="card-body text-dark bg-white">
+    <br>
+    <div class="field"> <%= form.label :first_name %> <%= form.text_field :first_name, id: :student_first_name %> 
+  </div>
+  <br>
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name, id: :student_last_name %>
+  </div>
+  <br>
+  <div class="field">
+    <%= form.label :preferred_name %>
+    <%= form.text_field :preferred_name, id: :student_preferred_name %>
+  </div>
+  <br>
+  <div class="field">
+    <%= form.label :grad_year %>
+    <%= form.number_field :grad_year, id: :student_grad_year %>
+  </div>
+  <br>
+  <div class="field">
+    <%= form.label :osis %>
+    <%= form.number_field :osis, id: :student_osis %>
+  </div>
+  <br>
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :student_email %>
+  </div>
+  <br>
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone, id: :student_phone %>
+  </div>
+  <br>
+  <div class="field">
+    <%= form.label :team_id %>
+    <%= form.text_field :team_id, id: :student_team_id %>
+  </div>
+  <br>
+  <%= link_to 'Return to Student Profile', @student %>
+  <br>
+  <br>
+  <%=form.submit class: "btn btn-info"%>
+  </div>

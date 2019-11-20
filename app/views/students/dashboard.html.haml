@@ -1,31 +1,31 @@
+%br
 %h1= "Students"
-.table-responsive
-  %table.table.table-hover.table-condensed
-    %thead
+%table.table.table-hover.table-condensed.shadow.p-3.mb-5.rounded
+  %thead.thead-light
+    %tr
+      %th= "Name"
+      %th= "OSIS"
+      %th.text-center= "Media Consent"
+      %th.text-center= "Medicals"
+      %th.text-center= "Safety Test"
+      %th.text-center= "STIMS"
+      %th.text-center= "Team Dues"
+      %th
+  %tbody
+    - @students.each do |student|
       %tr
-        %th= "Name"
-        %th= "OSIS"
-        %th.text-center= "Media Consent"
-        %th.text-center= "Medicals"
-        %th.text-center= "Safety Test"
-        %th.text-center= "STIMS"
-        %th.text-center= "Team Dues"
-        %th
-    %tbody
-      - @students.each do |student|
-        %tr
-          %td= student.name
-          %td= student.osis
-          = render partial: "form_dashboard_button",
-            locals: {form_type: :media_consents, student: student}
-          = render partial: "form_dashboard_button",
-            locals: {form_type: :medicals, student: student}
-          = render partial: "form_dashboard_button",
-            locals: {form_type: :safety_tests, student: student}
-          = render partial: "form_dashboard_button",
-            locals: {form_type: :stims, student: student}
-          = render partial: "form_dashboard_button",
-            locals: {form_type: :team_dues, student: student}
-          %td.text-center
-            .btn.btn-primary.a-white
-              = link_to 'View', student_path(id: student)
+        %td= student.name
+        %td= student.osis
+        = render partial: "form_dashboard_button",
+          locals: {form_type: :media_consents, student: student}
+        = render partial: "form_dashboard_button",
+          locals: {form_type: :medicals, student: student}
+        = render partial: "form_dashboard_button",
+          locals: {form_type: :safety_tests, student: student}
+        = render partial: "form_dashboard_button",
+          locals: {form_type: :stims, student: student}
+        = render partial: "form_dashboard_button",
+          locals: {form_type: :team_dues, student: student}
+        %td.text-center
+          .btn.btn-primary.a-white
+            = link_to 'View', student_path(id: student)

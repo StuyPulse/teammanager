@@ -1,23 +1,31 @@
-<div class="field">
-  <%= form.label :preferred_name %>
-  <%= form.text_field :preferred_name, id: :student_preferred_name %>
-</div>
-
-<div class="field">
-  <%= form.label :phone %>
-  <%= form.text_field :phone, id: :student_phone %>
-</div>
-
-<div class="field">
-  <%= form.label :team_id %>
-  <%= form.text_field :team_id, id: :student_team_id %>
-</div>
-
-<div class="gender">
-  <%= form.label :gender %>
-  <%= form.text_field :gender, id: :gender %>
-</div>
-
-<div class="actions">
-  <%= form.submit %>
+<div class="card text-center text-white bg-primary">
+  <div class="card-header">
+    <h1> Editing Student </h1>
+  </div>
+  <div class="card-body text-dark bg-white">
+    <div class="field">
+      <%= form.label :preferred_name %>
+      <%= form.text_field :preferred_name, id: :student_preferred_name%>
+    </div>
+    <br>
+    <div class="field">
+      <%= form.label :phone %>
+      <%= form.text_field :phone, id: :student_phone %>
+    </div>
+    <br>
+    <div class="field">
+      <%= form.label :team_id %>
+      <%= form.text_field :team_id, id: :student_team_id %>
+    </div>
+    <br>
+    <div class="gender">
+      <%= form.label :gender %>
+      <%= form.text_field :gender, id: :gender %>
+    </div>
+    <br>
+    <%= link_to 'Return to Student Profile', @student %>
+    <br>
+    <br>
+    <%= form.submit class: "btn btn-info"%>
+  </div>
 </div>

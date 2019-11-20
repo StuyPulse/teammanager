@@ -1,46 +1,51 @@
-%p#notice= notice
-.row
-  %h1
-    = @student.full_name
-    - if @student.preferred_name
-      = "( #{@student.preferred_name} )"
+%h1
+  = @student.full_name
+  - if @student.preferred_name
+    = "( #{@student.preferred_name} )"
 %hr
 .row
-  .col
-    %h2 Student Info
-    %p
-      %strong Graduation Year:
-      = "#{@student.grad_year}"
-    %p
-      %strong OSIS:
-      = @student.osis
-    %p
-      %strong Email:
-      = @student.email
-    %p
-      %strong Phone:
-      = @student.phone
-    %p
-      %strong Team:
-      - if @student.team
-        = "#{@student.team.display_name}"
-      - else
-        No team
-    %p
-      - if policy(@student).update?
-        = link_to "Edit Profile", edit_student_path(@student)
-  .col
-    %h2 Forms
-    %table.table.table-striped{style: "table-layout:fixed"}
+  %div.col
+    %div.card.bg-primary.text-white
+      %div.card-header
+        %h1 Student Info
+      %div.card-body.bg-white.text-dark.text-center
+        %p
+          %strong Graduation Year:
+          = "#{@student.grad_year}"
+        %p
+          %strong OSIS:
+          = @student.osis
+        %p
+          %strong Email:
+          = @student.email
+        %p
+          %strong Phone:
+          = @student.phone
+        %p
+          %strong Team:
+          - if @student.team
+            = "#{@student.team.display_name}"
+          - else
+            No team
+        %div.btn.btn-info
+          - if policy(@student).update?
+            = link_to "Edit Profile", edit_student_path(@student), :class => "btn"
+%br
+.row
+  %div.col-sm-4
+    %h1 Forms
+    %table.table.table-striped.table-bordered.shadow{style: "table-layout:fixed"}
       = render partial: "student_form", locals: {form_type: :team_dues}
       = render partial: "student_form", locals: {form_type: :media_consents}
       = render partial: "student_form", locals: {form_type: :medicals}
-    %h2 Safety Test
-    %table.table.table-striped{style: "table-layout:fixed"}
+  %div.col-sm-4
+    %h1 Safety Test
+    %table.table.table-striped.table-bordered.shadow{style: "table-layout:fixed"}
       %tr
       = render partial: "student_safety_test_table"
-    %h2 STIMS
-    %table.table.table-striped{style: "table-layout:fixed"}
+  %div.col-sm-4
+    %h1 STIMS
+    %table.table.table-striped.table-bordered.shadow{style: "table-layout:fixed"}
       = render partial: "student_stim_table"
 %hr
 .row
