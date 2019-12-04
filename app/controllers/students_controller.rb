@@ -30,6 +30,18 @@ class StudentsController < ApplicationController
     authorize @student
   end
 
+  def find_missing
+    authorize Student
+    @students = []
+    for student in Student.all
+      @email, @missing_forms = student.has_forms_for_year
+
+      @students.push([@email, @missing_forms])
+    end
+    for i in @students
+      puts i[0] + "\n"
+    end
+  end
   # POST /students
   # POST /students.json
   def create

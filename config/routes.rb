@@ -37,6 +37,8 @@ Rails.application.routes.draw do
   resources :students do
     collection do
       get 'dashboard'
+      get 'find_missing'
+      post 'find_missing'
     end
   end
 

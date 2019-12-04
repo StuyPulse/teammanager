@@ -40,6 +40,10 @@ class StudentPolicy < ApplicationPolicy
     false
   end
 
+  def find_missing?
+    @user.is_admin?
+  end
+
   class Scope < Scope
     def resolve
       scope.all

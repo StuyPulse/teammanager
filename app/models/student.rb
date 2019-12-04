@@ -113,6 +113,32 @@ class Student < ApplicationRecord
       has_consented_stim && has_signed_safety_test
   end
 
+  def has_forms_for_year
+    #Checks to see if a student has valid forms for this year.
+    #Returns the personal email of the student and array of missing forms.
+    year = Date.current.year
+    if Date.current.month > 8
+      year += 1
+    end
+    @forms_needed = []
+    unless valid_forms_for_year(:safety_tests, year).signed.any?
+      @forms_needed.push("Needs safety test signed,")
+    end
+    unless valid_forms_for_year(:team_dues, year).any?
+      @forms_needed.push("Needs team dues,")
+    end
+    unless valid_forms_for_year(:media_consents, year).any?
+      @forms_needed.push("Needs media consent,")
+    end
+    unless medicals.valid.any?
+      @forms_needed.push("Needs valid medicals,")
+    end
+    unless valid_forms_for_year(:stims,year).consented.any?
+      @forms_needed.push("Needs consented STIMS,")
+    end
+    return email,@forms_needed
+  end
+
   rails_admin do
     create do
       exclude_fields :team_dues, :media_consents, :medicals, :events, :services,
