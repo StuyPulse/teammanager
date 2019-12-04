@@ -39,7 +39,7 @@ gem "jquery-rails"
 gem "haml"
 gem "haml-rails"
 
-gem 'devise', '~> 4.6.1'
+gem 'devise', '~> 4.7.1'
 gem 'omniauth-google-oauth2'
 # https://github.com/omniauth/omniauth/pull/809#issuecomment-502079405
 # https://github.com/omniauth/omniauth/wiki/Resolving-CVE-2015-9284#with-rails-applications
