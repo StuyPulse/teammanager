@@ -83,4 +83,10 @@ class StudentTest < ActiveSupport::TestCase
   test "scope active requires is_active = true" do
     assert_equal Student.active.count, 3
   end
+
+  test "missing forms returns all missing forms" do
+    @student.save
+    byebug
+    assert (Set.new(@student.missing_forms) == Set.new(["Needs consented STIMS,","Needs valid medicals,","Needs media consent,", "Needs team dues,","Needs safety test signed,"]))
+  end
 end

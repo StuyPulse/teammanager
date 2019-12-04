@@ -105,17 +105,15 @@ class Student < ApplicationRecord
       year += 1
     end
     has_consented_stim = valid_forms_for_year(:stims, year).consented.any?
-    has_signed_safety_test =
-      valid_forms_for_year(:safety_tests, year).signed.any?
+    has_signed_safety_test = valid_forms_for_year(:safety_tests, year).signed.any?
     valid_forms_for_year(:team_dues, year).any? &&
       valid_forms_for_year(:media_consents, year).any? &&
       medicals.good_for_trip(trip).any? &&
       has_consented_stim && has_signed_safety_test
   end
 
-  def has_forms_for_year
-    #Checks to see if a student has valid forms for this year.
-    #Returns the personal email of the student and array of missing forms.
+  def missing_forms
+    #Returns a string array of a student's  missing forms.
     year = Date.current.year
     if Date.current.month > 8
       year += 1
@@ -136,7 +134,22 @@ class Student < ApplicationRecord
     unless valid_forms_for_year(:stims,year).consented.any?
       @forms_needed.push("Needs consented STIMS,")
     end
-    return email,@forms_needed
+    return @forms_needed
+  end
+
+  def self.missing_forms_to_csv
+    @students = []
+    @needed_forms = []
+    for student in self.all
+      @needed_forms.push(student.missing_forms.join(''))
+      @students.push(student.email)
+    end
+    csv_string = CSV.generate(headers: true) do |csv|
+      for i in 0..@students.size
+       csv << [@students[i], @needed_forms[i]]
+      end
+    end
+    return csv_string
   end
 
   rails_admin do

@@ -32,14 +32,10 @@ class StudentsController < ApplicationController
 
   def find_missing
     authorize Student
-    @students = []
-    for student in Student.all
-      @email, @missing_forms = student.has_forms_for_year
-
-      @students.push([@email, @missing_forms])
-    end
-    for i in @students
-      puts i[0] + "\n"
+    @students = Student.all
+    respond_to do |format|
+      format.html
+      format.csv { send_data @students.missing_forms_to_csv, filename: "students-missing-forms-#{Date.today}.csv" }
     end
   end
   # POST /students

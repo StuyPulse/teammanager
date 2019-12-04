@@ -1,7 +1,7 @@
 %br
 %td.text-center
 %center
-  =button_to 'Export CSV for Students Missing Forms', find_missing_students_path, method: :post, class: 'btn btn-primary a-white'
+  =button_to 'Export CSV for Students Missing Forms', find_missing_students_path + ".csv", method: :get, class: 'btn btn-primary a-white'
 %br
 %h1= "Students"
 %table.table.table-hover.table-condensed.shadow.p-3.mb-5.rounded
