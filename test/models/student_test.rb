@@ -86,7 +86,6 @@ class StudentTest < ActiveSupport::TestCase
 
   test "missing forms returns all missing forms" do
     @student.save
-    byebug
     assert (Set.new(@student.missing_forms) == Set.new(["Needs consented STIMS,","Needs valid medicals,","Needs media consent,", "Needs team dues,","Needs safety test signed,"]))
   end
 end
