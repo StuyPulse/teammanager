@@ -53,7 +53,7 @@ GEM
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
     arel (9.0.0)
-    auto_strip_attributes (2.4.0)
+    auto_strip_attributes (2.5.0)
       activerecord (>= 4.0)
     autoprefixer-rails (9.4.9)
       execjs
@@ -322,7 +322,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  auto_strip_attributes (~> 2.2)
+  auto_strip_attributes (~> 2.5)
   bootstrap (~> 4.3.1)
   byebug
   capybara (~> 2.13)

@@ -52,7 +52,7 @@ gem 'rails_admin_pundit', :github => "sudosu/rails_admin_pundit"
 
 gem 'postmark-rails', '~> 0.15.0'
 
-gem 'auto_strip_attributes', "~> 2.2"
+gem 'auto_strip_attributes', "~> 2.5"
 gem 'phony_rails'
 
 gem 'rubyzip', '~> 1.3.0'
