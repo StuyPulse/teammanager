@@ -119,34 +119,44 @@ class Student < ApplicationRecord
       year += 1
     end
     @forms_needed = []
-    unless valid_forms_for_year(:safety_tests, year).signed.any?
-      @forms_needed.push("Needs safety test signed,")
-    end
-    unless valid_forms_for_year(:team_dues, year).any?
-      @forms_needed.push("Needs team dues,")
-    end
-    unless valid_forms_for_year(:media_consents, year).any?
-      @forms_needed.push("Needs media consent,")
-    end
-    unless medicals.valid.any?
-      @forms_needed.push("Needs valid medicals,")
-    end
-    unless valid_forms_for_year(:stims,year).consented.any?
-      @forms_needed.push("Needs consented STIMS,")
+    if grad_year >= year
+      unless valid_forms_for_year(:safety_tests, year).signed.any?
+        @forms_needed.push("Needs safety test signed,")
+      end
+      unless valid_forms_for_year(:team_dues, year).any?
+        @forms_needed.push("Needs team dues,")
+      end
+      unless valid_forms_for_year(:media_consents, year).any?
+        @forms_needed.push("Needs media consent,")
+      end
+      unless medicals.valid.any?
+        @forms_needed.push("Needs valid medicals,")
+      end
+      unless valid_forms_for_year(:stims,year).consented.any?
+        @forms_needed.push("Needs consented STIMS,")
+      end
     end
     return @forms_needed
   end
 
   def self.missing_forms_to_csv
+    year = Date.current.year
+    if Date.current.month > 8
+      year += 1
+    end
     @students = []
+    @emails = []
     @needed_forms = []
     for student in self.all
-      @needed_forms.push(student.missing_forms.join(''))
-      @students.push(student.email)
+      if(student.grad_year >= year and student.is_active)
+        @needed_forms.push(student.missing_forms.join(''))
+        @students.push(student.first_name + " " + student.last_name)
+        @emails.push(student.email)
+      end
     end
     csv_string = CSV.generate(headers: true) do |csv|
       for i in 0..@students.size
-       csv << [@students[i], @needed_forms[i]]
+        csv << [@students[i], @emails[i], @needed_forms[i]]
       end
     end
     return csv_string
