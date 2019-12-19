@@ -50,7 +50,7 @@ gem 'paper_trail', '~> 9.2.0'
 gem 'rails_admin', '~> 1.2'
 gem 'rails_admin_pundit', :github => "sudosu/rails_admin_pundit"
 
-gem 'postmark-rails', '~> 0.15.0'
+gem 'postmark-rails', '~> 0.19.0'
 
 gem 'auto_strip_attributes', "~> 2.5"
 gem 'phony_rails'
