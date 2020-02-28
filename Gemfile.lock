@@ -198,7 +198,8 @@ GEM
       actionmailer (>= 3.0.0)
       postmark (~> 1.10.0)
     public_suffix (3.0.2)
-    puma (3.12.2)
+    puma (4.3.2)
+      nio4r (~> 2.0)
     pundit (1.1.0)
       activesupport (>= 3.0.0)
     rack (2.0.8)
@@ -338,7 +339,7 @@ DEPENDENCIES
   paper_trail (~> 9.2.0)
   phony_rails
   postmark-rails (~> 0.15.0)
-  puma (~> 3.12)
+  puma (~> 4.3)
   pundit (~> 1.1.0)
   rails (~> 5.2.2.1)
   rails_admin (~> 1.2)
