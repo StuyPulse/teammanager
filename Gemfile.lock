@@ -198,7 +198,7 @@ GEM
       actionmailer (>= 3.0.0)
       postmark (~> 1.10.0)
     public_suffix (3.0.2)
-    puma (3.12.4)
+    puma (3.12.6)
     pundit (1.1.0)
       activesupport (>= 3.0.0)
     rack (2.2.2)
