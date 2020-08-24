@@ -45,7 +45,7 @@ gem 'omniauth-google-oauth2'
 # https://github.com/omniauth/omniauth/wiki/Resolving-CVE-2015-9284#with-rails-applications
 gem 'omniauth-rails_csrf_protection', '~> 0.1'
 gem 'pundit', '~> 1.1.0'
-gem 'paper_trail', '~> 9.2.0'
+gem 'paper_trail', '~> 11.0.0'
 
 gem 'rails_admin', '~> 1.2'
 gem 'rails_admin_pundit', :github => "sudosu/rails_admin_pundit"
