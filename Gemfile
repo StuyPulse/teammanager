@@ -47,7 +47,7 @@ gem 'omniauth-rails_csrf_protection', '~> 0.1'
 gem 'pundit', '~> 1.1.0'
 gem 'paper_trail', '~> 9.2.0'
 
-gem 'rails_admin', '~> 1.2'
+gem 'rails_admin', '~> 1.4'
 gem 'rails_admin_pundit', :github => "sudosu/rails_admin_pundit"
 
 gem 'postmark-rails', '~> 0.15.0'
