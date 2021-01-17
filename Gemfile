@@ -5,13 +5,12 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.2.1'
+gem 'rails', '~> 5.2.4'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
-gem 'puma', '~> 3.12'
+gem 'puma', '~> 5.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -22,9 +21,9 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
+gem 'turbolinks', '~> 5.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.5'
+gem 'jbuilder', '~> 2.10'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -33,26 +32,30 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'bootstrap', '~> 4.3.1'
-gem "jquery-rails"
+gem 'bootstrap', '~> 4.5'
+gem 'jquery-rails'
 
-gem "haml"
-gem "haml-rails"
+gem 'haml'
+gem 'haml-rails'
 
 gem 'devise', '~> 4.7.1'
 gem 'omniauth-google-oauth2'
 # https://github.com/omniauth/omniauth/pull/809#issuecomment-502079405
 # https://github.com/omniauth/omniauth/wiki/Resolving-CVE-2015-9284#with-rails-applications
 gem 'omniauth-rails_csrf_protection', '~> 0.1'
+# devise doesn't yet support omniauth 2, so this is necessary until then
+gem 'omniauth', '~> 1.9.1'
 gem 'pundit', '~> 1.1.0'
 gem 'paper_trail', '~> 9.2.0'
+# can remove this after upgrading to a high enough version of paper_trail
+gem 'paper_trail-association_tracking', '1.0.0'
 
-gem 'rails_admin', '~> 1.2'
-gem 'rails_admin_pundit', :github => "sudosu/rails_admin_pundit"
+gem 'rails_admin', '~> 1.4.3'
+gem 'rails_admin_pundit', :github => 'sudosu/rails_admin_pundit'
 
-gem 'postmark-rails', '~> 0.15.0'
+gem 'postmark-rails', '~> 0.20'
 
-gem 'auto_strip_attributes', "~> 2.5"
+gem 'auto_strip_attributes', '~> 2.6'
 gem 'phony_rails'
 
 gem 'rubyzip', '~> 1.3.0'
@@ -60,13 +63,13 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.13'
+  gem 'capybara', '~> 3'
   gem 'selenium-webdriver'
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
+  gem 'web-console', '~> 3'
   gem 'listen', '>= 3.0.5', '< 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
