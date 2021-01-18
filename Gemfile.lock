@@ -203,7 +203,7 @@ GEM
     public_suffix (4.0.6)
     puma (5.1.1)
       nio4r (~> 2.0)
-    pundit (1.1.0)
+    pundit (2.1.0)
       activesupport (>= 3.0.0)
     rack (2.2.3)
     rack-pjax (1.1.0)
@@ -346,7 +346,7 @@ DEPENDENCIES
   phony_rails
   postmark-rails (~> 0.20)
   puma (~> 5.1)
-  pundit (~> 1.1.0)
+  pundit (~> 2.1.0)
   rails (~> 5.2.4)
   rails_admin (~> 1.4.3)
   rails_admin_pundit!
