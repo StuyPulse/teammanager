@@ -50,6 +50,8 @@ class ApplicationPolicy
         user.is_admin?
       when :edit
         user.is_admin?
+      when :update
+        user.is_admin?
       when :destroy
         user.is_admin?
       when :export
