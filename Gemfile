@@ -50,7 +50,7 @@ gem 'paper_trail', '~> 9.2.0'
 # can remove this after upgrading to a high enough version of paper_trail
 gem 'paper_trail-association_tracking', '1.0.0'
 
-gem 'rails_admin', '~> 1.4.3'
+gem 'rails_admin', '~> 2.0'
 gem 'rails_admin_pundit', :github => 'sudosu/rails_admin_pundit'
 
 gem 'postmark-rails', '~> 0.20'
