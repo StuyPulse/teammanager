@@ -26,7 +26,7 @@ class Student < ApplicationRecord
   scope :active, -> { where(is_active: true) }
   scope :inactive, -> { where(is_active: false) }
 
-  auto_strip_attributes :first_name, :last_name, :preferred_name, :email, :team_email
+  auto_strip_attributes :first_name, :last_name, :preferred_name, :email, :team_email, :gender
 
   validates :first_name, :last_name, :grad_year, :osis, :email, :phone,
             presence: true, allow_blank: false
@@ -36,6 +36,7 @@ class Student < ApplicationRecord
                                    message: 'cannot be negative' }
   validates :gender, inclusion: { in: %w(Female Male Other) }, :allow_nil => true
   validate :check_preferred_name
+  validates :phone, phony_plausible: true
 
   phony_normalize :phone, default_country_code: 'US'
 

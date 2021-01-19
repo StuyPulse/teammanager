@@ -4,12 +4,12 @@ mom:
   first_name: Mom
   last_name: Parenta
   email: mom@example.com
-  phone: 123-456-7890
+  phone: +11234567890
   preferred_language: Mandarin
 
 dad:
   first_name: Dad
   last_name: Parento
   email: dad@example.com
-  phone: 123-456-7890
+  phone: +11234567890
   preferred_language: French
