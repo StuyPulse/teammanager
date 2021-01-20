@@ -12,7 +12,7 @@ RailsAdmin.config do |config|
   config.authorize_with :pundit
 
   ## == PaperTrail ==
-  # config.audit_with :paper_trail, 'User', 'PaperTrail::Version'
+  config.audit_with :paper_trail, 'User', 'PaperTrail::Version'
 
   ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
 
@@ -98,9 +98,9 @@ RailsAdmin.config do |config|
     delete
     show_in_app
 
-    ## With an audit adapter, you can add:
-    # history_index
-    # history_show
+    # history actions require audit integration with paper_trail
+    history_index
+    history_show
   end
 end
 
@@ -108,13 +108,18 @@ end
 # action authorizations in one method like before with rails_admin_pundit.
 # Removing it would mean making one method per action in our policies.
 #
-# https://github.com/sudosu/rails_admin_pundit/issues/12#issuecomment-328357027
+# https://github.com/sferik/rails_admin/issues/3143
 module RailsAdmin
   module Extensions
     module Pundit
       class AuthorizationAdapter
+        def initialize(controller)
+          @controller = controller
+          @controller.class.send(:alias_method, :pundit_user, :_current_user)
+        end
+
         def authorize(action, abstract_model = nil, model_object = nil)
-          record = model_object || abstract_model && abstract_model.model
+          record = model_object || abstract_model&.model
           if action && !policy(record).send(*action_for_pundit(action))
             raise ::Pundit::NotAuthorizedError.new("not allowed to #{action} this #{record}")
           end
@@ -122,8 +127,16 @@ module RailsAdmin
         end
 
         def authorized?(action, abstract_model = nil, model_object = nil)
-          record = model_object || abstract_model && abstract_model.model
+          record = model_object || abstract_model&.model
           policy(record).send(*action_for_pundit(action)) if action
+        end
+
+        private
+
+        def policy(record)
+          @controller.send(:policy, record)
+        rescue ::Pundit::NotDefinedError
+          ::ApplicationPolicy.new(@controller.send(:_current_user), record)
         end
 
         def action_for_pundit(action)

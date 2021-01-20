@@ -58,6 +58,8 @@ class ApplicationPolicy
         user.is_admin?
       when :history
         user.is_admin?
+      when :bulk_delete
+        false
       when :show_in_app
         user.is_admin?
       else

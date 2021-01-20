@@ -1,13 +1,16 @@
 class User < ApplicationRecord
   EMAIL_DOMAIN_WHITELIST = %w(stuypulse.com)
 
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+  # Other devise modules are also available, like :confirmable and :lockable
   devise :recoverable, :rememberable, :trackable,
          :timeoutable
   devise :omniauthable, omniauth_providers: [:google_oauth2]
 
-  has_paper_trail
+  # Don't make new versions for changes to fields that update every sign-in.
+  # It just clutters up the versions table for little payoff.
+  has_paper_trail ignore: [:sign_in_count,
+                           :current_sign_in_at, :last_sign_in_at,
+                           :current_sign_in_ip, :last_sign_in_ip]
 
   has_one :student
 
@@ -39,5 +42,9 @@ class User < ApplicationRecord
     return if student
 
     self.student = Student.find_by(team_email: email)
+  end
+
+  def name
+    self.email
   end
 end
