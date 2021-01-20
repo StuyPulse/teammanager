@@ -1,11 +1,3 @@
-GIT
-  remote: https://github.com/sudosu/rails_admin_pundit.git
-  revision: 5fde2da4120bde58b5edf4e0a3351d392ddee85c
-  specs:
-    rails_admin_pundit (0.0.1)
-      pundit (>= 0.2.3)
-      rails_admin (>= 0.6.2)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -221,7 +213,7 @@ GEM
     public_suffix (4.0.6)
     puma (5.1.1)
       nio4r (~> 2.0)
-    pundit (1.1.0)
+    pundit (2.1.0)
       activesupport (>= 3.0.0)
     racc (1.5.2)
     rack (2.2.3)
@@ -281,7 +273,7 @@ GEM
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
-    ruby2_keywords (0.0.2)
+    ruby2_keywords (0.0.4)
     ruby_dep (1.5.0)
     ruby_parser (3.15.1)
       sexp_processor (~> 4.9)
@@ -374,11 +366,10 @@ DEPENDENCIES
   phony_rails
   postmark-rails (~> 0.20)
   puma (~> 5.1)
-  pundit (~> 1.1.0)
+  pundit (~> 2.1.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.0.0)
   rails_admin (~> 2.0)
-  rails_admin_pundit!
   sass-rails (~> 5.0)
   selenium-webdriver
   spring

@@ -46,10 +46,9 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection', '~> 0.1'
 # devise doesn't yet support omniauth 2, so this is necessary until then
 gem 'omniauth', '~> 1.9.1'
-gem 'pundit', '~> 1.1.0'
+gem 'pundit', '~> 2.1.0'
 
 gem 'rails_admin', '~> 2.0'
-gem 'rails_admin_pundit', :github => 'sudosu/rails_admin_pundit'
 
 gem 'paper_trail', '~> 11.1.0'
 gem 'paper_trail-association_tracking', '~> 2.1.1'

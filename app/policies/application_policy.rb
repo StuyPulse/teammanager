@@ -44,9 +44,9 @@ class ApplicationPolicy
         user.is_admin?
       when :index
         user.is_admin?
-      when :show
-        user.is_admin?
       when :new
+        user.is_admin?
+      when :show
         user.is_admin?
       when :edit
         user.is_admin?

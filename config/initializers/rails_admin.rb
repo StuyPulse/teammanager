@@ -8,9 +8,6 @@ RailsAdmin.config do |config|
   # end
   config.current_user_method(&:current_user)
 
-  ## == Cancan ==
-  # config.authorize_with :cancan
-
   ## == Pundit ==
   config.authorize_with :pundit
 
@@ -104,5 +101,35 @@ RailsAdmin.config do |config|
     ## With an audit adapter, you can add:
     # history_index
     # history_show
+  end
+end
+
+# This custom authorization adapter allows us to keep all the rails_admin
+# action authorizations in one method like before with rails_admin_pundit.
+# Removing it would mean making one method per action in our policies.
+#
+# https://github.com/sudosu/rails_admin_pundit/issues/12#issuecomment-328357027
+module RailsAdmin
+  module Extensions
+    module Pundit
+      class AuthorizationAdapter
+        def authorize(action, abstract_model = nil, model_object = nil)
+          record = model_object || abstract_model && abstract_model.model
+          if action && !policy(record).send(*action_for_pundit(action))
+            raise ::Pundit::NotAuthorizedError.new("not allowed to #{action} this #{record}")
+          end
+          @controller.instance_variable_set(:@_pundit_policy_authorized, true)
+        end
+
+        def authorized?(action, abstract_model = nil, model_object = nil)
+          record = model_object || abstract_model && abstract_model.model
+          policy(record).send(*action_for_pundit(action)) if action
+        end
+
+        def action_for_pundit(action)
+          [:rails_admin?, action]
+        end
+      end
+    end
   end
 end
