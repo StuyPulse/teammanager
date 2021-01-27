@@ -70,7 +70,7 @@ GEM
     bindex (0.8.1)
     bootsnap (1.5.1)
       msgpack (~> 1.0)
-    bootstrap (4.5.3)
+    bootstrap (4.6.0)
       autoprefixer-rails (>= 9.1.0)
       popper_js (>= 1.14.3, < 2)
       sassc-rails (>= 2.0.0)
@@ -92,7 +92,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    concurrent-ruby (1.1.7)
+    concurrent-ruby (1.1.8)
     crass (1.0.6)
     devise (4.7.3)
       bcrypt (~> 3.0)
@@ -318,7 +318,7 @@ GEM
       sprockets (>= 3.0.0)
     sqlite3 (1.4.2)
     temple (0.8.2)
-    thor (1.0.1)
+    thor (1.1.0)
     thread_safe (0.3.6)
     tilt (2.0.10)
     turbolinks (5.2.1)
@@ -352,7 +352,7 @@ PLATFORMS
 DEPENDENCIES
   auto_strip_attributes (~> 2.6)
   bootsnap (>= 1.1.0)
-  bootstrap (~> 4.5)
+  bootstrap (~> 4.6)
   byebug
   capybara (~> 3)
   coffee-rails (~> 4.2)
