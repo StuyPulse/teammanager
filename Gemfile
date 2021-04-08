@@ -51,7 +51,7 @@ gem 'pundit', '~> 2.1.0'
 gem 'rails_admin', '~> 2.0'
 gem 'rails_admin_history_rollback', '~> 1.0.2'
 
-gem 'paper_trail', '~> 11.1.0'
+gem 'paper_trail', '~> 12.0.0'
 gem 'paper_trail-association_tracking', '~> 2.1.1'
 
 gem 'postmark-rails', '~> 0.20'
