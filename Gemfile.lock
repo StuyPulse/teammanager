@@ -199,9 +199,9 @@ GEM
       request_store (~> 1.1)
     paper_trail-association_tracking (2.1.1)
     phony (2.18.22)
-    phony_rails (0.14.13)
+    phony_rails (0.15.0)
       activesupport (>= 3.0)
-      phony (> 2.15)
+      phony (>= 2.18.12)
     popper_js (1.16.0)
     postmark (1.21.3)
       json
