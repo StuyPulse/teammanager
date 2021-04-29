@@ -2,11 +2,11 @@
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
 #
-# Note that this schema.rb definition is the authoritative source for your
-# database schema. If you need to create the application database on another
-# system, you should be using db:schema:load, not running all the migrations
-# from scratch. The latter is a flawed and unsustainable approach (the more migrations
-# you'll amass, the slower it'll run and the greater likelihood for issues).
+# This file is the source Rails uses to define your schema when running `rails
+# db:schema:load`. When creating a new database, `rails db:schema:load` tends to
+# be faster and is potentially less error prone than running all of your
+# migrations from scratch. Old migrations may fail to apply correctly if those
+# migrations use external dependencies or application code.
 #
 # It's strongly recommended that you check this file into your version control system.
 
@@ -273,4 +273,19 @@ ActiveRecord::Schema.define(version: 2021_01_19_042945) do
     t.index ["transaction_id"], name: "index_versions_on_transaction_id"
   end
 
+  add_foreign_key "media_consents", "students"
+  add_foreign_key "medicals", "students"
+  add_foreign_key "payments", "required_payments"
+  add_foreign_key "payments", "students"
+  add_foreign_key "permission_slips", "students"
+  add_foreign_key "permission_slips", "trips"
+  add_foreign_key "required_payments", "trips"
+  add_foreign_key "safety_tests", "students"
+  add_foreign_key "services", "events"
+  add_foreign_key "services", "students"
+  add_foreign_key "stims", "students"
+  add_foreign_key "students", "teams"
+  add_foreign_key "team_dues", "students"
+  add_foreign_key "trip_dismissals", "students"
+  add_foreign_key "trip_dismissals", "trips"
 end
