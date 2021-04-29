@@ -2,7 +2,7 @@ require 'test_helper'
 
 class MediaConsentsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @media_consent = media_consents(:one)
+    @media_consent = media_consents(:mediacurryear)
   end
 
   test "should get index" do

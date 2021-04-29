@@ -2,7 +2,7 @@ require 'test_helper'
 
 class SafetyTestsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @safety_test = safety_tests(:one)
+    @safety_test = safety_tests(:passed)
   end
 
   test "should get index" do

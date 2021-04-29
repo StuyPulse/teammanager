@@ -2,7 +2,7 @@ require 'test_helper'
 
 class RequiredPaymentsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @required_payment = required_payments(:one)
+    @required_payment = required_payments(:cnydeposit)
   end
 
   test "should get index" do

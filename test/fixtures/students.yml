@@ -7,7 +7,7 @@ helen:
   osis: 123456781
   email: helen@example.com
   team_email: helen.ye@stuypulse.com
-  phone: +11234567890
+  phone: +12125551234
   gender: "Female"
   team: stuypulse
   parents: mom, dad
@@ -21,7 +21,7 @@ nicole:
   osis: 123456782
   email: nicole@example.com
   team_email: nicole.shin@stuypulse.com
-  phone: +11234567890
+  phone: +12125551234
   team: stuypulse
   parents: mom, dad
   affiliations: engineering, strategy
@@ -35,7 +35,7 @@ ryan:
   osis: 123456783
   email: ryan@example.com
   team_email: ryan.siu@stuypulse.com
-  phone: +11234567890
+  phone: +12125551234
   gender: "Male"
   team: fission
   parents: mom
@@ -60,7 +60,7 @@ victor:
   osis: 218787778
   email: victor@example.com
   team_email: victor.siu@stuypulse.com
-  phone: +11234567890
+  phone: +12125551234
   team: stuypulse
   parents: mom, dad
 
@@ -72,7 +72,7 @@ alum:
   osis: 123456784
   email: alum@example.com
   team_email: al.um@stuypulse.com
-  phone: +11234561234
+  phone: +12125551234
   team: stuypulse
   parents: dad
   affiliations: marketing, driveteam

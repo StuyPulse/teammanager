@@ -17,7 +17,6 @@ class PermissionSlipTest < ActiveSupport::TestCase
     refute @permission_slip.valid?
 
     @permission_slip.type = "Teacher"
-    puts @permission_slip.errors.keys
     assert @permission_slip.valid?
 
     @permission_slip.type = "Parent"

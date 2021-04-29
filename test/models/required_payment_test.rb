@@ -31,7 +31,6 @@ class RequiredPaymentTest < ActiveSupport::TestCase
     refute @required_payment.valid?
 
     @required_payment.type = "Deposit"
-    puts @required_payment.errors.keys
     assert @required_payment.valid?
 
     @required_payment.type = "Fee"

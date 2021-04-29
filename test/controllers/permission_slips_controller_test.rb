@@ -2,7 +2,7 @@ require 'test_helper'
 
 class PermissionSlipsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @permission_slip = permission_slips(:one)
+    @permission_slip = permission_slips(:nyparent)
   end
 
   test "should get index" do

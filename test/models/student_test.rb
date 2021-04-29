@@ -5,7 +5,7 @@ class StudentTest < ActiveSupport::TestCase
     @student = Student.new(first_name: "first",
                           last_name: "last",
                           grad_year: 2000,
-                          phone: "1234567890",
+                          phone: "212-555-1234",
                           email: "student@test.com",
                           osis: 123456789,
                           gender: "Other")
@@ -81,6 +81,6 @@ class StudentTest < ActiveSupport::TestCase
   end
 
   test "scope active requires is_active = true" do
-    assert_equal Student.active.count, 3
+    assert_equal Student.where(is_active: true).count, Student.active.count
   end
 end
