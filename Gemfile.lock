@@ -92,7 +92,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    concurrent-ruby (1.1.8)
+    concurrent-ruby (1.1.10)
     crass (1.0.6)
     devise (4.7.3)
       bcrypt (~> 3.0)
@@ -130,7 +130,7 @@ GEM
       haml (>= 4.0, < 6)
       nokogiri (>= 1.6.0)
       ruby_parser (~> 3.5)
-    i18n (1.8.10)
+    i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     jbuilder (2.11.2)
       activesupport (>= 5.0.0)
@@ -167,7 +167,7 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.0)
     mini_portile2 (2.5.1)
-    minitest (5.14.4)
+    minitest (5.16.3)
     msgpack (1.4.2)
     multi_json (1.15.0)
     multi_xml (0.6.0)
@@ -216,7 +216,7 @@ GEM
     public_suffix (4.0.6)
     puma (5.3.1)
       nio4r (~> 2.0)
-    pundit (2.1.0)
+    pundit (2.3.0)
       activesupport (>= 3.0.0)
     racc (1.5.2)
     rack (2.2.3)
@@ -327,7 +327,7 @@ GEM
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
-    tzinfo (1.2.9)
+    tzinfo (1.2.10)
       thread_safe (~> 0.1)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
@@ -347,7 +347,7 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.4.2)
+    zeitwerk (2.6.6)
 
 PLATFORMS
   ruby
@@ -373,7 +373,7 @@ DEPENDENCIES
   phony_rails
   postmark-rails (~> 0.20)
   puma (~> 5.1)
-  pundit (~> 2.1.0)
+  pundit (~> 2.3.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.0.0)
   rails_admin (~> 2.0)
